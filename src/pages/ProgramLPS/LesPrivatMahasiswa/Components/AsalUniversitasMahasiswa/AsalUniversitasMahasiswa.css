@@ -1,0 +1,104 @@
+.asal-universitas-container {
+  color: #ffffff;
+  text-align: center;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+  font-family: "Open Sans", sans-serif;
+}
+
+.asal-universitas-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #ff6500;
+}
+
+.asal-universitas-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+
+.asal-universitas-item {
+  background-color: #25496f;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-family: "Nunito", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px; /* Atur tinggi minimum */
+  min-width: 150px; /* Atur lebar minimum */
+  text-align: center;
+  font-size: 1rem;
+}
+
+/* Aturan responsif */
+@media (max-width: 768px) {
+  .asal-universitas-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .asal-universitas-list {
+    grid-template-columns: 1fr;
+  }
+
+  .asal-universitas-title {
+    font-size: 1.4rem;
+  }
+}
+
+.asal-universitas-note {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  color: #3a4a3f;
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* Responsif */
+@media (max-width: 1024px) {
+  /* Tablet landscape */
+  .asal-universitas-title {
+    font-size: 1.75rem; /* Title lebih kecil */
+  }
+
+  .asal-universitas-item {
+    font-size: 1rem; /* Item lebih kecil */
+  }
+}
+
+@media (max-width: 768px) {
+  /* Tablet portrait */
+  .asal-universitas-list {
+    grid-template-columns: repeat(2, 1fr); /* Ubah menjadi 2 kolom */
+  }
+
+  .asal-universitas-title {
+    font-size: 1.4rem; /* Title lebih kecil */
+  }
+
+  .asal-universitas-item {
+    font-size: 0.9rem; /* Item lebih kecil */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Ponsel */
+  .asal-universitas-list {
+    grid-template-columns: 1fr; /* Ubah menjadi 1 kolom */
+  }
+
+  .asal-universitas-title {
+    font-size: 1.25rem; /* Title lebih kecil */
+  }
+
+  .asal-universitas-item {
+    font-size: 0.85rem; /* Item lebih kecil */
+  }
+}

@@ -1,0 +1,81 @@
+/* KeunggulanEndAlasanMemilih.css */
+
+.container-keunggulan-lps {
+  padding: 3rem 1rem;
+  background-color: #1e3e62; /* Warna latar belakang yang lembut */
+  text-align: center;
+
+  margin-bottom: 40px;
+  border-radius: 20px;
+  /* Negative margin to overlap previous content */
+  margin-top: -50px; /* Nilai negatif untuk mendekatkan */
+  z-index: 1; /* Pastikan tetap terlihat di atas */
+  position: relative; /* Untuk memastikan z-index bekerja */
+}
+
+.title {
+  font-size: 1.4rem;
+  color: #fcfaee; /* Warna teks judul */
+  margin-bottom: 2rem;
+  font-weight: 500;
+  font-family: "Open Sans", sans-serif;
+}
+
+.keunggulan-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.keunggulan-list li {
+  display: flex;
+  align-items: flex-start; /* Pastikan teks sejajar dengan ikon */
+  gap: 5px; /* Memberikan jarak antara ceklis dan teks */
+  font-size: 0.95rem;
+  color: #ffffff;
+  padding: 0.5rem;
+  font-family: "Nunito", sans-serif;
+}
+
+.keunggulan-list li::before {
+  content: "✓"; /* Simbol ceklis */
+  color: #4caf50; /* Warna ceklis */
+  font-weight: bold;
+  flex-shrink: 0; /* Jangan biarkan ikon mengecil */
+}
+
+/* Responsif untuk layar tablet */
+@media (max-width: 1024px) {
+  .title {
+    font-size: 1.7rem; /* Ukuran lebih kecil untuk tablet */
+  }
+
+  .keunggulan-list li {
+    font-size: 0.95rem; /* Menyesuaikan untuk tablet */
+  }
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.4rem; /* Ukuran lebih kecil untuk layar kecil */
+  }
+
+  .keunggulan-list li {
+    font-size: 0.9rem; /* Menyesuaikan agar tetap mudah dibaca */
+  }
+}
+
+/* Responsif untuk layar sangat kecil */
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.3rem; /* Ukuran lebih kecil untuk ponsel */
+  }
+
+  .keunggulan-list li {
+    font-size: 0.85rem; /* Ukuran font yang sesuai untuk ponsel */
+  }
+}

@@ -1,0 +1,53 @@
+.univ__pengajar_lps__container {
+  text-align: center;
+
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.centered__pengajarLps {
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+  color: #1e3e62;
+  margin-bottom: 20px;
+  max-width: 800px;
+  margin-left: auto;
+  opacity: 0.98;
+  margin-right: auto;
+  font-weight: 600;
+}
+
+.centered__Univ_pengajarLps img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Responsif untuk Tablet Landscape (≤ 64rem) */
+@media (max-width: 1024px) {
+  .centered__pengajarLps {
+    font-size: 0.9375rem; /* Sedikit lebih kecil */
+    max-width: 700px; /* Kurangi lebar maksimal */
+  }
+}
+
+/* Responsif untuk Tablet Portrait dan Ponsel Lebar (≤ 48rem) */
+@media (max-width: 768px) {
+  .centered__pengajarLps {
+    font-size: 0.875rem; /* Lebih kecil */
+    max-width: 600px; /* Kurangi lebar maksimal */
+  }
+}
+
+/* Responsif untuk Ponsel Kecil (≤ 30rem) */
+@media (max-width: 480px) {
+  .centered__pengajarLps {
+    font-size: 0.8125rem; /* Ukuran terkecil */
+    max-width: 90%; /* Maksimalkan penggunaan layar kecil */
+    margin-left: auto; /* Pastikan teks tetap di tengah */
+    margin-right: auto;
+    text-align: center; /* Pusatkan teks */
+  }
+}

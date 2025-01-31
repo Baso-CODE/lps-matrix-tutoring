@@ -1,0 +1,126 @@
+/* Toggle button for mobile menu */
+.menu-toggle {
+  position: relative;
+  z-index: 999;
+  display: inline-block;
+}
+
+/* Drawer for mobile menu */
+.menu-drawer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  min-height: 100vh;
+  background-color: #1e3e62; /* Latar belakang dengan transparansi */
+  backdrop-filter: blur(10px);
+  color: white;
+  padding: 24px;
+  padding-bottom: 80px;
+  overflow-y: auto;
+  z-index: 998;
+}
+.menu-drawer ul {
+  width: 100%; /* Pastikan lebar 100% */
+  display: flex; /* Menggunakan flex untuk pengaturan */
+  flex-direction: column; /* Mengatur item dalam kolom */
+
+  padding: 0; /* Menghilangkan padding default */
+  list-style-type: none; /* Menghilangkan bullet point */
+}
+
+/* Main menu item styles */
+.menu-item {
+  margin-bottom: 10px;
+}
+
+.menu-item-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  padding: 16px;
+  border-radius: 8px;
+  color: #f1f1f1;
+  cursor: pointer;
+  font-family: "Open Sans", sans-serif;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.menu-item-link:hover {
+  background-color: rgba(0, 162, 255, 0.05);
+}
+
+/* Chevron icon styles */
+.chevron-icon {
+  transition: transform 0.2s ease-in-out;
+}
+
+.rotate-180 {
+  transform: rotate(180deg);
+}
+
+/* Sub-menu styles */
+/* .sub-menu-mobile {
+    margin-left: 20px;
+    overflow: hidden;
+    transition: height 0.3s ease-in-out;
+  } */
+
+.sub-menu-item {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  gap: 8px;
+  margin-left: 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.sub-menu-item:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.sub-menu-item-link {
+  display: flex; /* Menggunakan flex untuk align item */
+  align-items: center; /* Mengatur item secara vertikal */
+  text-decoration: none; /* Menghilangkan garis bawah */
+  color: #f1f1f1; /* Warna teks */
+  gap: 6px;
+  padding: 8px 16px; /* Ruang di dalam sub-menu item link */
+  border-radius: 8px; /* Menambahkan sudut melengkung */
+  transition: background-color 0.2s ease-in-out; /* Transisi saat hover */
+  font-family: "Open Sans", sans-serif;
+}
+
+.sub-menu-item-link:hover {
+  background-color: rgba(
+    0,
+    162,
+    255,
+    0.1
+  ); /* Warna latar belakang saat hover */
+}
+
+.menu-toggle svg {
+  width: 1.5em; /* Set icon width */
+  height: 1.5em; /* Set icon height */
+}
+
+.menu-toggle {
+  background-color: transparent; /* Make background transparent */
+  border: none; /* Remove border */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  font-size: 24px; /* Adjust font size */
+  color: #333; /* Set default icon color */
+  transition: color 0.3s ease; /* Smooth transition for color change */
+  padding: 10px; /* Add padding for better click area */
+  margin: 0; /* Reset margin */
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .menu-drawer {
+    width: 60%; /* Lebar 60% untuk rentang layar ini */
+    top: 4.8rem;
+  }
+}

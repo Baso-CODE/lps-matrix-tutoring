@@ -1,0 +1,57 @@
+/* ProgramIntensifCPNS.css */
+
+.program-intensif-container-cpns {
+  line-height: normal;
+  font-family: "Nunito", sans-serif;
+}
+
+.program-title-cpns {
+  font-size: 1.7rem;
+  color: #ff6500;
+  font-weight: 600;
+  text-align: start;
+  margin-bottom: 1.5rem;
+  font-family: "Open Sans", sans-serif;
+}
+
+.program-description-cpns {
+  font-size: 1rem;
+  color: #555;
+  line-height: normal;
+  text-align: start;
+  margin-bottom: 1.5rem;
+  font-family: "Nunito", sans-serif;
+}
+
+/* For larger tablets and small desktops */
+@media (max-width: 1024px) {
+  .program-title-cpns {
+    font-size: 1.4rem; /* Slightly smaller for tablets */
+  }
+
+  .program-description-cpns {
+    font-size: 0.95rem; /* Slightly smaller for tablets */
+  }
+}
+
+/* For smaller tablets and larger phones */
+@media (max-width: 768px) {
+  .program-title-cpns {
+    font-size: 1.4rem; /* Adjusted for smaller tablets */
+  }
+
+  .program-description-cpns {
+    font-size: 0.9rem; /* Smaller text for readability */
+  }
+}
+
+/* For small mobile screens */
+@media (max-width: 500px) {
+  .program-title-cpns {
+    font-size: 1.3rem; /* Smaller size for mobile */
+  }
+
+  .program-description-cpns {
+    font-size: 0.85rem; /* Smaller text for mobile */
+  }
+}

@@ -1,0 +1,136 @@
+/* TigaJalurMasukPTN.css */
+.container-tiga-jalur {
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  overflow: hidden;
+
+  text-align: center;
+}
+
+.title-tiga-jalur {
+  font-size: 1.4rem;
+  color: #ff6500;
+  margin-bottom: 2rem;
+  font-family: "Open Sans", sans-serif;
+}
+
+.card-container-tiga-jalur {
+  display: flex;
+  justify-content: space-around;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.card-tiga-jalur {
+  flex: 1;
+  max-width: 300px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.card-tiga-jalur:hover {
+  transform: scale(1.05);
+}
+
+.card-title-tiga-jalur {
+  font-size: 1.2rem;
+  color: #ff8000;
+  margin-bottom: 1rem;
+  font-family: "Open Sans", sans-serif;
+}
+
+.card-description-tiga-jalur {
+  font-size: 0.9rem;
+  color: #343131;
+  line-height: normal;
+  font-family: "Nunito", sans-serif;
+}
+
+/* Additional Description Styling */
+.additional-description {
+  margin-top: 2rem;
+  font-size: 1rem;
+  color: #343131;
+  text-align: start;
+  font-weight: 400;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: normal;
+  font-family: "Nunito", sans-serif;
+}
+/* Responsif untuk layar yang lebih kecil */
+@media (max-width: 768px) {
+  .card-container-tiga-jalur {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card-tiga-jalur {
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Responsif untuk tablet */
+@media (max-width: 1024px) {
+  .title-tiga-jalur {
+    font-size: 1.3rem; /* Ukuran lebih kecil untuk tablet */
+  }
+
+  .card-title-tiga-jalur {
+    font-size: 1.15rem; /* Ukuran lebih kecil untuk tablet */
+  }
+
+  .card-description-tiga-jalur {
+    font-size: 0.9rem; /* Ukuran lebih kecil untuk tablet */
+  }
+  .additional-description {
+    font-size: 0.9rem; /* Ukuran lebih kecil untuk tablet */
+    line-height: normal;
+    margin-top: 1.5rem; /* Mengurangi jarak margin atas */
+  }
+}
+
+/* Responsif untuk ponsel */
+@media (max-width: 768px) {
+  .title-tiga-jalur {
+    font-size: 1.2rem; /* Ukuran lebih kecil untuk ponsel */
+  }
+
+  .card-title-tiga-jalur {
+    font-size: 1rem; /* Ukuran lebih kecil untuk ponsel */
+  }
+
+  .card-description-tiga-jalur {
+    font-size: 0.85rem; /* Ukuran lebih kecil untuk ponsel */
+  }
+  .additional-description {
+    font-size: 0.85rem; /* Ukuran lebih kecil untuk ponsel */
+    line-height: normal;
+
+    margin-top: 1rem; /* Jarak margin atas lebih kecil */
+  }
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 480px) {
+  .title-tiga-jalur {
+    font-size: 1.1rem; /* Ukuran terkecil untuk layar kecil */
+  }
+
+  .card-title-tiga-jalur {
+    font-size: 0.9rem; /* Ukuran terkecil untuk layar kecil */
+  }
+
+  .card-description-tiga-jalur {
+    font-size: 0.8rem; /* Ukuran terkecil untuk layar kecil */
+  }
+  .additional-description {
+    font-size: 0.8rem; /* Ukuran terkecil untuk layar kecil */
+    line-height: normal;
+    margin-top: 0.5rem; /* Jarak margin atas lebih kecil */
+  }
+}

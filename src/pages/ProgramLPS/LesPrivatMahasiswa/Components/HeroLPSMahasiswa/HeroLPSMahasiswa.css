@@ -1,0 +1,136 @@
+.container-halaman__mahasiswa {
+  margin-top: 5vh;
+  overflow: hidden;
+  margin-bottom: 5vh;
+  display: flex;
+  justify-content: center;
+}
+
+.content-hero-home__mahasiswa {
+  display: flex;
+  flex-direction: column; /* Atur tata letak kolom */
+  justify-content: center;
+  height: auto;
+}
+
+.rumah-adat-hero__mahasiswa {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px; /* Jarak antara gambar dan teks */
+  border-radius: 20px;
+}
+
+.isi-content-hero__mahasiswa {
+  text-align: center; /* Pusatkan teks jika diinginkan */
+  width: 100%;
+}
+
+.title-halaman-hero__mahasiswa {
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  text-align: center;
+  line-height: normal;
+  color: #ff6500;
+  font-family: "Open Sans", sans-serif;
+}
+
+.child-paragraf-hero__mahasiswa {
+  font-size: 16px;
+  color: #343131;
+  text-align: start;
+  line-height: normal;
+  margin-bottom: 20px;
+  font-weight: 400;
+  font-family: "Nunito", sans-serif;
+}
+
+.btn-learn-more__sd_smp_sma {
+  padding: 12px 24px;
+  background-color: #d2b04c;
+  color: #fcfaee;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: "Open Sans", sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-learn-more__sd_smp_sma:hover {
+  background-color: #69733f;
+}
+
+/* Title Styling */
+.program-mahasiswa-title-h3 {
+  margin-top: 4vh;
+  font-size: 1.3rem;
+  color: #ff6500;
+  text-align: start;
+  font-weight: 500;
+  margin-bottom: 2px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.additional-description-mahasiswa {
+  font-size: 1rem;
+  color: #343131;
+  text-align: start;
+  font-weight: 400;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: normal;
+  font-family: "Nunito", sans-serif;
+}
+/* Responsif untuk layar lebih kecil */
+@media (max-width: 1024px) {
+  .title-halaman-hero__mahasiswa {
+    font-size: 2rem; /* Ukuran judul lebih kecil */
+  }
+
+  .child-paragraf-hero__mahasiswa {
+    font-size: 0.975rem; /* Ukuran paragraf lebih kecil */
+  }
+
+  .btn-learn-more__sd_smp_sma {
+    font-size: 0.9375rem; /* Ukuran tombol lebih kecil */
+  }
+  .program-mahasiswa-title-h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .title-halaman-hero__mahasiswa {
+    font-size: 1.75rem; /* Ukuran judul lebih kecil */
+  }
+
+  .child-paragraf-hero__mahasiswa {
+    font-size: 0.87rem; /* Ukuran paragraf lebih kecil */
+  }
+
+  .btn-learn-more__sd_smp_sma {
+    font-size: 0.875rem; /* Ukuran tombol lebih kecil */
+  }
+  .program-mahasiswa-title-h3 {
+    font-size: 1.1rem;
+  }
+  .additional-description-mahasiswa {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title-halaman-hero__mahasiswa {
+    font-size: 1.4rem; /* Ukuran judul paling kecil */
+  }
+
+  .child-paragraf-hero__mahasiswa {
+    font-size: 0.85rem; /* Ukuran paragraf paling kecil */
+  }
+
+  .btn-learn-more__sd_smp_sma {
+    font-size: 0.8125rem; /* Ukuran tombol paling kecil */
+  }
+}

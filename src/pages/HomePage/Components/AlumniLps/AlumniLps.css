@@ -1,0 +1,60 @@
+/* Container Styling */
+.alumni-lps-container {
+  margin: 5vh auto;
+}
+
+/* Header Styling */
+.alumni-lps-header h2 {
+  text-align: start;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  color: #ff6500;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+
+/* Image Styling */
+.alumni-lps-container img {
+  width: 100%;
+
+  height: auto;
+  border-radius: 8px;
+
+  margin-top: 20px;
+}
+
+.desktop-image-testimoni {
+  display: block;
+  width: 100%;
+
+  height: auto;
+  border-radius: 8px;
+}
+
+.mobile-image-testimoni {
+  display: none;
+  width: 100%;
+
+  height: auto;
+  border-radius: 8px;
+}
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .alumni-lps-header h2 {
+    font-size: 1.4rem;
+  }
+
+  .alumni-lps-container img {
+    max-width: 100%;
+  }
+
+  .desktop-image-testimoni {
+    display: none; /* Sembunyikan gambar desktop */
+  }
+
+  .mobile-image-testimoni {
+    display: block; /* Tampilkan gambar mobile */
+    width: 100%; /* Pastikan gambar responsif */
+    height: auto;
+  }
+}

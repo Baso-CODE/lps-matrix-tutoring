@@ -1,0 +1,47 @@
+.contact-section {
+  text-align: start;
+
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.contact-heading {
+  font-family: "Open Sans", sans-serif;
+  color: #ff6500;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.contact-info {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.contact-list {
+  list-style: circle;
+  padding: 0;
+  padding-left: 1rem;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+}
+
+.contact-list li {
+  font-size: 18px;
+  margin: 1rem 0;
+  color: orange;
+}
+
+.contact-list li a {
+  text-decoration: none;
+  color: orange;
+}
+
+.contact-list li a:hover {
+  text-decoration: underline;
+}
+
+.contact-commitment {
+  font-size: 14px;
+  color: #666;
+}

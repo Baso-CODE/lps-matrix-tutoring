@@ -1,0 +1,122 @@
+/* Container utama */
+.cara-belajar-container {
+  text-align: center;
+  margin-top: 5vh;
+  overflow: hidden;
+  margin-bottom: 5vh;
+}
+
+.cara-belajar-title {
+  font-size: 1.4rem;
+  color: #ff6500;
+  margin-bottom: 2rem;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+}
+
+/* List fitur */
+.features-list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2rem; /* Jarak antar item */
+}
+
+/* Item fitur */
+.feature-item {
+  display: flex;
+  align-items: center; /* Vertikal center */
+  justify-content: start; /* Horizontal center */
+
+  background-color: #f9f9f9; /* Latar belakang yang lembut */
+  border-radius: 10px; /* Sudut melengkung */
+  padding: 1rem; /* Jarak dalam */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Bayangan */
+}
+
+/* Gambar */
+.feature-image {
+  width: 120px; /* Ukuran gambar */
+  height: auto;
+  border-radius: 8px; /* Sudut gambar melengkung */
+  margin-right: 1.5rem; /* Jarak antara gambar dan teks */
+}
+
+/* Teks fitur */
+.feature-text {
+  text-align: left; /* Rata kiri untuk teks */
+}
+
+.feature-title {
+  font-size: 1.2rem; /* Ukuran font judul */
+  color: #ff8000; /* Warna judul */
+  margin: 0; /* Menghilangkan margin */
+  font-family: "Open Sans", sans-serif;
+  font-weight: 500;
+}
+
+.feature-description {
+  font-size: 1rem; /* Ukuran font deskripsi */
+  color: #343131; /* Warna deskripsi */
+  font-weight: normal;
+  line-height: normal; /* Jarak antar baris */
+  font-family: "Nunito", sans-serif;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .feature-item {
+    flex-direction: column; /* Menumpuk gambar dan teks */
+    text-align: center; /* Rata tengah */
+  }
+
+  .feature-image {
+    margin-bottom: 1rem; /* Jarak bawah untuk gambar */
+    margin-right: 0; /* Menghilangkan margin kanan */
+  }
+}
+
+/* For screens up to 1024px (tablet landscape) */
+@media (max-width: 1024px) {
+  .cara-belajar-title {
+    font-size: 1.8rem; /* Slightly smaller for tablets */
+  }
+
+  .feature-title {
+    font-size: 1.4rem; /* Adjusted for tablet */
+  }
+
+  .feature-description {
+    font-size: 0.95rem; /* Slightly smaller */
+  }
+}
+
+/* For screens up to 768px (tablet portrait) */
+@media (max-width: 768px) {
+  .cara-belajar-title {
+    font-size: 1.6rem; /* Smaller font size for portrait tablet */
+  }
+
+  .feature-title {
+    font-size: 1.3rem; /* Adjusted for portrait tablet */
+  }
+
+  .feature-description {
+    font-size: 0.9rem; /* Slightly smaller */
+  }
+}
+
+/* For screens up to 500px (mobile) */
+@media (max-width: 500px) {
+  .cara-belajar-title {
+    font-size: 1.4rem; /* Smaller font size for mobile */
+  }
+
+  .feature-title {
+    font-size: 1.2rem; /* Reduced for smaller screens */
+  }
+
+  .feature-description {
+    font-size: 0.85rem; /* Smaller font for mobile */
+  }
+}

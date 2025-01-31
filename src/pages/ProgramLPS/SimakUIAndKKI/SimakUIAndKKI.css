@@ -1,0 +1,11 @@
+.container-simakUi-KKI-page {
+  height: 100vh;
+  display: flex; /* Tambahkan display: flex untuk mengaktifkan flexbox */
+  justify-content: center; /* Menyelaraskan secara horizontal */
+  align-items: center; /* Menyelaraskan secara vertikal */
+}
+
+.container-simakUi-KKI-page h1 {
+  color: #ff6500;
+  text-align: center;
+}

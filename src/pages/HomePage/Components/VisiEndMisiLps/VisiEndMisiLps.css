@@ -1,0 +1,79 @@
+/* VisiEndMisiLps.css */
+
+.visi-misi-container {
+  text-align: center;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+  overflow: hidden;
+}
+
+.visi-misi-title {
+  font-size: 1.4rem;
+  color: #ff6500;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  font-family: "Open Sans", sans-serif;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 4vh;
+  padding-top: 4vh;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.card {
+  background-color: #ffffff;
+  width: 250px;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.card-title {
+  font-size: 1.2rem;
+  color: #ff8000;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.card-title img {
+  width: 4rem;
+  height: 4rem;
+
+  /* border-radius: 50%; */
+}
+
+.card-content {
+  font-size: 1rem;
+  color: #343131;
+  line-height: normal;
+  font-family: "Nunito", sans-serif;
+}
+
+/* VisiEndMisiLps.css */
+
+@media (max-width: 600px) {
+  .card {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .card-content {
+    font-size: 0.9rem;
+  }
+}

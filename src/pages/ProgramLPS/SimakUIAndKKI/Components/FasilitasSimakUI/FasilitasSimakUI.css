@@ -1,0 +1,100 @@
+/* Container Styling */
+.fasilitas-simak-ui-container {
+  margin-bottom: 2vh;
+  margin-top: 2vh;
+  overflow: hidden;
+}
+
+/* Card Container Styling */
+.fasilitas-simak-ui-cards {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+}
+
+/* Card Styling */
+.fasilitas-simak-ui-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  text-align: center;
+
+  transition: transform 0.2s;
+}
+
+.fasilitas-simak-ui-card:hover {
+  transform: scale(1.05);
+}
+
+/* Icon Styling */
+/* Icon Styling */
+.fasilitas-icon {
+  width: 58px; /* Sesuaikan ukuran icon */
+  height: 58px;
+  margin-bottom: 0.5rem; /* Berikan jarak dengan elemen berikutnya */
+  display: inline-block;
+  object-fit: contain; /* Pastikan gambar tidak terdistorsi */
+}
+
+/* Title Styling */
+.fasilitas-title {
+  font-size: 1.2rem;
+  color: #ff8000;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-family: "Open Sans", sans-serif;
+}
+
+/* List Styling */
+.fasilitas-list {
+  list-style-type: disc; /* Gunakan tanda bulat */
+  padding: 0 1.5rem; /* Tambahkan padding kiri untuk menyesuaikan posisi */
+
+  color: #343131;
+  font-family: "Nunito", sans-serif;
+  line-height: normal;
+  text-align: start;
+}
+
+.fasilitas-list li {
+  font-weight: 400;
+  border-radius: 8px;
+  margin-bottom: 0.6rem;
+  text-align: start; /* Pastikan teks rata kiri */
+  color: #343131;
+  font-size: 1rem;
+  display: list-item; /* Gunakan mode list-item */
+  position: relative;
+}
+
+.fasilitas-list li::marker {
+  color: #4caf50; /* Ubah warna bulatan menjadi hijau */
+  font-size: 1rem; /* Sesuaikan ukuran bulatan */
+}
+
+.fasilitas-list li:last-child {
+  border-bottom: none;
+}
+
+/* Responsive Styling */
+@media (min-width: 768px) {
+  /* Tablet and above: 2 columns */
+  .fasilitas-simak-ui-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Desktop and above: 2 columns */
+  .fasilitas-simak-ui-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+  .fasilitas-list li {
+    font-size: 0.9rem;
+  }
+}

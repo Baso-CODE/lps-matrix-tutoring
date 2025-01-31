@@ -1,0 +1,134 @@
+/* HeadingCPNS.css */
+
+.heading-cpns-container {
+  text-align: center;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+}
+
+.heading-title-cpns {
+  font-size: 2rem;
+  color: #ff6500;
+  margin-bottom: 1rem;
+  font-family: "Open Sans", sans-serif;
+}
+
+.heading-description-bottom-cpns {
+  font-size: 1rem;
+  color: #555;
+  line-height: normal;
+  margin-bottom: 1.5rem;
+  font-family: "Nunito", sans-serif;
+}
+
+.heading-description-cpns {
+  font-size: 1rem;
+  color: #3a4a3f;
+  text-align: start;
+  font-weight: 400;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: normal;
+  font-family: "Nunito", sans-serif;
+}
+
+.heading-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .heading-title {
+    font-size: 2.5rem;
+  }
+
+  .heading-description,
+  .heading-description-bottom {
+    font-size: 1.125rem;
+  }
+}
+
+/* HeadingCPNS.css */
+
+.heading-cpns-container {
+  text-align: center;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+}
+
+.heading-title-cpns {
+  font-size: 2rem; /* Default desktop size */
+  color: #ff6500;
+  margin-bottom: 1rem;
+  font-family: "Open Sans", sans-serif;
+}
+
+.heading-description-bottom-cpns {
+  font-size: 1rem; /* Default desktop size */
+  color: #555;
+  line-height: normal;
+  text-align: start;
+  margin-bottom: 1.5rem;
+  font-family: "Nunito", sans-serif;
+}
+
+.heading-description-cpns {
+  font-size: 1rem; /* Default desktop size */
+  color: #3a4a3f;
+  text-align: start;
+  font-weight: 400;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: normal;
+  font-family: "Nunito", sans-serif;
+}
+
+.heading-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* RESPONSIVE STYLES */
+
+/* For larger tablets and small desktops */
+@media (max-width: 1024px) {
+  .heading-title-cpns {
+    font-size: 1.8rem; /* Slightly smaller for tablets */
+  }
+
+  .heading-description-cpns,
+  .heading-description-bottom-cpns {
+    font-size: 0.95rem; /* Slightly smaller for tablets */
+  }
+}
+
+/* For smaller tablets and larger phones */
+@media (max-width: 768px) {
+  .heading-title-cpns {
+    font-size: 1.6rem; /* Adjusted for smaller tablets */
+  }
+
+  .heading-description-cpns,
+  .heading-description-bottom-cpns {
+    font-size: 0.9rem; /* Smaller text for readability */
+  }
+}
+
+/* For small mobile screens */
+@media (max-width: 500px) {
+  .heading-title-cpns {
+    font-size: 1.4rem; /* Smaller size for mobile */
+  }
+
+  .heading-description-cpns,
+  .heading-description-bottom-cpns {
+    font-size: 0.85rem; /* Smaller text for mobile */
+  }
+}

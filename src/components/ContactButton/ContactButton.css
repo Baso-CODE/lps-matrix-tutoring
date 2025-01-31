@@ -1,0 +1,98 @@
+.contact-container {
+  text-align: center;
+  padding: 20px;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+  background-color: #ffb243;
+  border-radius: 8px;
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-title {
+  font-size: 1.2rem;
+  color: #f3f7ec;
+  font-weight: 500;
+  font-family: "Open Sans", sans-serif;
+  margin-bottom: 10px;
+}
+
+.contact-description {
+  font-size: 1em;
+  color: #555;
+  font-weight: normal;
+  font-family: "Nunito", sans-serif;
+  margin-bottom: 15px;
+}
+
+.contact-info p {
+  font-size: 1.1em;
+  color: #f3f7ec;
+  font-family: "Nunito", sans-serif;
+  margin: 5px 0;
+  font-style: italic;
+}
+
+.contact-footer {
+  font-size: 0.95em;
+  color: #333;
+  margin-top: 20px;
+  font-style: italic;
+}
+
+/* Responsif untuk layar tablet */
+@media (max-width: 1024px) {
+  .contact-title {
+    font-size: 1.2em; /* Ukuran judul sedikit lebih kecil */
+  }
+
+  .contact-description {
+    font-size: 0.95em; /* Ukuran deskripsi sedikit lebih kecil */
+  }
+
+  .contact-info p {
+    font-size: 1em; /* Ukuran informasi lebih kecil */
+  }
+
+  .contact-footer {
+    font-size: 0.9em; /* Ukuran footer lebih kecil */
+  }
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+  .contact-title {
+    font-size: 1.2em; /* Ukuran judul lebih kecil */
+  }
+
+  .contact-description {
+    font-size: 0.9em; /* Ukuran deskripsi lebih kecil */
+  }
+
+  .contact-info p {
+    font-size: 0.95em; /* Ukuran informasi lebih kecil */
+  }
+
+  .contact-footer {
+    font-size: 0.85em; /* Ukuran footer lebih kecil */
+  }
+}
+
+/* Responsif untuk layar sangat kecil */
+@media (max-width: 480px) {
+  .contact-title {
+    font-size: 1rem; /* Ukuran judul lebih kecil untuk layar sangat kecil */
+  }
+
+  .contact-description {
+    font-size: 0.85em; /* Ukuran deskripsi lebih kecil */
+  }
+
+  .contact-info p {
+    font-size: 0.9em; /* Ukuran informasi lebih kecil */
+  }
+
+  .contact-footer {
+    font-size: 0.8em; /* Ukuran footer lebih kecil */
+  }
+}

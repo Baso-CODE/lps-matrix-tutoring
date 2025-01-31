@@ -1,0 +1,113 @@
+/* Container */
+.container-succes-story-home {
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+}
+
+.success-story-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+/* Title and Text Container */
+.success-story-title-container {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .success-story-title-container {
+    gap: 2.5rem;
+  }
+}
+
+/* Title Styling */
+.success-story-title {
+  font-size: 1.4rem; /* equivalent to text-3xl */
+  font-weight: 600;
+  color: #ff6500;
+  font-family: "Open Sans", sans-serif;
+}
+
+@media (min-width: 1024px) {
+  .success-story-title {
+    font-size: 1.7rem; /* equivalent to text-4xl */
+  }
+}
+
+/* Description Text */
+.success-story-description {
+  display: none;
+  max-width: 40rem;
+  color: #4b5563;
+  font-family: "Nunito", sans-serif;
+  font-weight: 500;
+}
+
+@media (min-width: 768px) {
+  .success-story-description {
+    display: block;
+  }
+}
+
+/* Button Styling */
+.success-story-button {
+  display: inline-block;
+  border-radius: 0.5rem;
+  background-color: #ff6500;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-family: "Open Sans", sans-serif;
+  color: #e5e7eb;
+  border: none;
+  transition: background-color 0.1s ease;
+}
+
+.success-story-button:hover {
+  background-color: #b43f3f;
+}
+
+.success-story-button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #a5b4fc;
+}
+
+.success-story-button:active {
+  background-color: #e5e7eb;
+}
+
+@media (min-width: 768px) {
+  .success-story-button {
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+/* Gallery Container */
+.success-story-gallery {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+  grid-template-columns: repeat(2, 1fr); /* Default: 2 columns */
+}
+
+/* Display 1 column on small screens, 2 columns on medium and larger screens */
+@media (min-width: 768px) {
+  .success-story-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Image Styling */
+.success-story-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}

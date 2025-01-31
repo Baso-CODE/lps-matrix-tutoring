@@ -1,0 +1,106 @@
+/* ProgramCPNS.css */
+
+.program-container {
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+  text-align: start;
+}
+
+.main-title-cpns {
+  font-size: 1.4rem;
+  text-align: start;
+  font-weight: 600;
+  color: #ff6500;
+  font-family: "Open Sans", sans-serif;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.program-image {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.program-section {
+  margin-bottom: 2rem;
+}
+
+.section-title-cpns {
+  font-size: 1.25rem;
+  color: #ff8000;
+  font-family: "Open Sans", sans-serif;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.section-description {
+  font-size: 1rem;
+  color: #343131;
+  line-height: normal;
+  text-align: start;
+
+  font-family: "Nunito", sans-serif;
+}
+
+.package-list {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #555;
+  font-size: 1rem;
+  font-family: "Nunito", sans-serif;
+}
+
+/* Responsif untuk layar tablet */
+@media (max-width: 1024px) {
+  .main-title-cpns {
+    font-size: 1.3rem; /* Menyesuaikan ukuran judul utama */
+  }
+
+  .section-title-cpns {
+    font-size: 1.2rem; /* Menyesuaikan ukuran judul section */
+  }
+
+  .section-description {
+    font-size: 0.95rem; /* Menyesuaikan ukuran deskripsi */
+  }
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+  .main-title-cpns {
+    font-size: 1.2rem; /* Lebih kecil untuk layar kecil */
+  }
+
+  .section-title-cpns {
+    font-size: 1.1rem; /* Ukuran lebih kecil */
+  }
+
+  .section-description {
+    font-size: 0.9rem; /* Lebih kecil untuk deskripsi */
+  }
+  .package-list {
+    font-size: 0.9rem;
+  }
+}
+
+/* Responsif untuk layar sangat kecil */
+@media (max-width: 480px) {
+  .main-title-cpns {
+    font-size: 1.2rem; /* Menyesuaikan ukuran pada layar ponsel kecil */
+  }
+
+  .section-title-cpns {
+    font-size: 1rem; /* Ukuran lebih kecil untuk judul */
+  }
+
+  .section-description {
+    font-size: 0.85rem; /* Menyesuaikan untuk deskripsi */
+  }
+}

@@ -1,0 +1,52 @@
+.mata-pelajaran-container {
+  text-align: center;
+  margin: 4vh 0;
+}
+
+.mata-pelajaran-title {
+  font-size: 1.4rem;
+  color: #ff6500;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  font-family: "Open Sans", sans-serif;
+}
+
+.mata-pelajaran-list {
+  display: grid;
+  gap: 1rem;
+  list-style-type: disc;
+  padding-left: 1.5rem; /* Spasi untuk bullet point */
+  font-family: "Nunito", sans-serif;
+  font-size: 1rem;
+  margin: 0 auto; /* Center alignment */
+}
+
+.mata-pelajaran-item {
+  text-align: left; /* Text alignment for the list items */
+  color: #000; /* Default text color */
+}
+
+.mata-pelajaran-list li::marker {
+  color: #28a745; /* Warna hijau untuk bulatan */
+}
+
+/* Grid columns for desktop (3 columns) */
+@media (min-width: 1025px) {
+  .mata-pelajaran-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Grid columns for tablet (2 columns) */
+@media (max-width: 1024px) {
+  .mata-pelajaran-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Grid columns for mobile (1 column) */
+@media (max-width: 768px) {
+  .mata-pelajaran-list {
+    grid-template-columns: 1fr;
+  }
+}

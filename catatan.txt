@@ -1,0 +1,11 @@
+color
+
+button: FF6500
+heading Font: 1E3E62
+description Font: 0B192C
+
+bg Navbar: 243642
+bg Navbar: EBD3F8
+hover:B43F3F
+
+button: FF8225

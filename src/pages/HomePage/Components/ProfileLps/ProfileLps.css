@@ -1,0 +1,120 @@
+.container-halaman-hero-home {
+  margin-top: 28px;
+  min-height: 50vh;
+  /* background-color: #00139b; */
+  align-items: center;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.content-hero-home {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: auto;
+}
+.title-halaman-hero-home {
+  font-size: 36px; /* Ukuran font judul */
+  font-weight: bold; /* Membuat judul menjadi tebal */
+  margin-bottom: 15px; /* Spasi di bawah judul */
+  text-align: left; /* Mengatur teks judul rata kiri */
+  line-height: normal; /* Jarak antar garis teks */
+  color: #ff6500; /* Warna teks judul */
+  font-family: "Open Sans", sans-serif;
+}
+
+.title-halaman-hero-home-1e3e62 {
+  color: #1e3e62;
+}
+.isi-content-hero-home {
+  flex: 0 0 60%;
+  /* margin-right: 5px; */
+}
+
+.rumah-adat-hero-home {
+  flex: 0 0 40%;
+  width: 40%;
+  height: auto;
+}
+
+.btn-daftar-sekarang,
+.btn-learn-more {
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: #ff8000;
+  color: #fcfaee;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: "Open Sans", sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-daftar-sekarang:hover,
+.btn-learn-more:hover {
+  background-color: #ff9d3d;
+}
+
+.btn-learn-more {
+  background-color: #1e3e62;
+  color: #fcfaee;
+  margin-left: 10px;
+  font-family: "Open Sans", sans-serif;
+}
+
+/* Style for child-paragraf-hero-home */
+.child-paragraf-hero-home {
+  font-size: 1rem;
+  color: #343131;
+  line-height: normal;
+  margin-bottom: 20px;
+  font-weight: 400;
+  font-family: "Nunito", sans-serif;
+}
+
+.highlight-yellow {
+  color: #fdc905; /* Warna kuning */
+}
+
+/* Media query for mobile devices */
+@media (max-width: 820px) {
+  .content-hero-home {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+  }
+  .container-halaman-hero-home {
+    margin-top: 5vh;
+  }
+  .title-halaman-hero-home {
+    font-size: 28px; /* Ukuran font lebih kecil untuk layar kecil */
+  }
+  .rumah-adat-hero-home {
+    width: 100%;
+    height: auto;
+  }
+
+  .isi-content-hero-home {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .btn-daftar-sekarang,
+  .btn-learn-more {
+    width: 100%;
+    text-align: center;
+    margin-left: 0;
+  }
+}
+
+/* For smaller tablets and larger phones */
+@media (max-width: 768px) {
+  .child-paragraf-hero-home {
+    font-size: 0.9rem;
+  }
+}

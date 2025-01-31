@@ -1,0 +1,119 @@
+/* Container Styling */
+.program-simak-ui-container {
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+}
+
+/* Image Styling */
+.program-simak-ui-image {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  margin-bottom: 1.5rem;
+}
+
+/* Title Styling */
+.program-simak-ui-title {
+  font-size: 1.8rem;
+  color: #ff6500;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-family: "Open Sans", sans-serif;
+}
+/* Title Styling */
+.program-simak-ui-title-h3 {
+  font-size: 1.4rem;
+  color: #ff6500;
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+  font-family: "Open Sans", sans-serif;
+}
+
+/* Description Styling */
+.program-simak-ui-description {
+  font-size: 1rem;
+  color: #343131;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 1.5rem;
+  font-family: "Nunito", sans-serif;
+}
+
+/* List Styling */
+.program-simak-ui-list {
+  list-style-type: disc; /* Mengatur titik bulat sebagai marker default */
+  padding-left: 1.5rem; /* Memberikan jarak kiri untuk daftar */
+  font-size: 1rem;
+  color: #343131;
+  font-family: "Nunito", sans-serif;
+}
+
+.program-simak-ui-list li {
+  padding: 0.1rem 0;
+}
+
+/* Custom marker styling */
+.program-simak-ui-list li::marker {
+  color: #1e3e62; /* Ubah warna titik */
+  font-size: 1.2rem; /* Ubah ukuran titik jika perlu */
+}
+
+/* Responsif untuk layar tablet */
+@media (max-width: 1024px) {
+  .program-simak-ui-list li::marker {
+    color: #1e3e62; /* Warna titik untuk layar lebih kecil */
+  }
+  .program-simak-ui-title {
+    font-size: 1.6rem; /* Ukuran judul lebih kecil */
+  }
+
+  .program-simak-ui-title-h3 {
+    font-size: 1.4rem; /* Ukuran sub-judul lebih kecil */
+  }
+
+  .program-simak-ui-description {
+    font-size: 0.95rem; /* Ukuran deskripsi lebih kecil */
+  }
+
+  .program-simak-ui-list {
+    font-size: 0.95rem; /* Ukuran daftar lebih kecil */
+  }
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+  .program-simak-ui-title {
+    font-size: 1.4rem; /* Ukuran judul lebih kecil */
+  }
+
+  .program-simak-ui-title-h3 {
+    font-size: 1.2rem; /* Ukuran sub-judul lebih kecil */
+  }
+
+  .program-simak-ui-description {
+    font-size: 0.9rem; /* Ukuran deskripsi lebih kecil */
+  }
+
+  .program-simak-ui-list {
+    font-size: 0.9rem; /* Ukuran daftar lebih kecil */
+  }
+}
+
+/* Responsif untuk layar sangat kecil */
+@media (max-width: 480px) {
+  .program-simak-ui-title {
+    font-size: 1.3rem; /* Ukuran judul paling kecil */
+  }
+
+  .program-simak-ui-title-h3 {
+    font-size: 1.1rem; /* Ukuran sub-judul paling kecil */
+  }
+
+  .program-simak-ui-description {
+    font-size: 0.85rem; /* Ukuran deskripsi paling kecil */
+  }
+
+  .program-simak-ui-list {
+    font-size: 0.85rem; /* Ukuran daftar paling kecil */
+  }
+}

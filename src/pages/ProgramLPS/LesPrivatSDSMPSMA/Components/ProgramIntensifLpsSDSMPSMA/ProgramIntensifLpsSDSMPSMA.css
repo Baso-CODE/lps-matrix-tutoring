@@ -1,0 +1,63 @@
+/* ProgramIntensifCPNS.css */
+
+.program-intensif-container__sd_smp_sma {
+  line-height: normal;
+  font-family: "Nunito", sans-serif;
+  margin-top: 8vh;
+}
+
+.program-title__sd_smp_sma {
+  font-size: 1.4rem;
+  color: #ff6500;
+  text-align: start;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  font-family: "Open Sans", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+.program-description__sd_smp_sma {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #343131;
+  line-height: normal;
+  text-align: start;
+  margin-bottom: 1.5rem;
+  font-family: "Nunito", sans-serif;
+}
+
+/* Responsif untuk Tablet Landscape (≤ 64rem) */
+@media (max-width: 1024px) {
+  .program-title__sd_smp_sma {
+    font-size: 1.4rem; /* Kurangi ukuran font */
+  }
+
+  .program-description__sd_smp_sma {
+    font-size: 1; /* Kurangi ukuran font */
+  }
+}
+
+/* Responsif untuk Tablet Portrait dan Ponsel Lebar (≤ 48rem) */
+@media (max-width: 768px) {
+  .program-title__sd_smp_sma {
+    font-size: 1.25rem; /* Ukuran lebih kecil untuk ponsel */
+  }
+
+  .program-description__sd_smp_sma {
+    font-size: 0.9rem; /* Ukuran lebih kecil untuk deskripsi */
+  }
+}
+
+/* Responsif untuk Ponsel Kecil (≤ 30rem) */
+@media (max-width: 480px) {
+  .program-title__sd_smp_sma {
+    font-size: 1.2rem; /* Ukuran terkecil untuk ponsel kecil */
+    text-align: start; /* Pusatkan teks */
+  }
+
+  .program-description__sd_smp_sma {
+    font-size: 0.85rem; /* Ukuran terkecil untuk deskripsi */
+    text-align: start; /* Pusatkan teks */
+  }
+}

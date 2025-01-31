@@ -1,0 +1,68 @@
+.asal-siswa-container {
+  padding: 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.asal-siswa-title {
+  font-size: 1.4rem;
+  color: #ff6500;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+}
+
+.asal-siswa-list {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* Default untuk mobile */
+  gap: 10px;
+  font-family: "Nunito", sans-serif;
+  color: #112743;
+  max-height: 300px; /* Tentukan tinggi maksimum */
+  overflow-y: auto; /* Aktifkan scroll jika konten melebihi tinggi */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.asal-siswa-item {
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .asal-siswa-list {
+    grid-template-columns: repeat(2, 1fr); /* 2 kolom untuk tablet */
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .asal-siswa-list {
+    grid-template-columns: repeat(3, 1fr); /* 3 kolom untuk desktop */
+  }
+}
+
+.asal-siswa-note {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 1rem;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .asal-siswa-title {
+    font-size: 1.2rem;
+  }
+
+  .asal-siswa-item {
+    text-align: center;
+    font-size: 0.9rem;
+  }
+}

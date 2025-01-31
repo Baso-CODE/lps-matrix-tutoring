@@ -1,0 +1,90 @@
+/* MateriUjianSNBT.css */
+
+.container-materi-snbt {
+  margin: 0 auto;
+}
+
+.main-title {
+  font-size: 1.4rem;
+
+  color: #ff8000;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  margin-bottom: 2rem;
+}
+
+.materi-item {
+  margin-bottom: 1.5rem;
+}
+
+.materi-title {
+  font-size: 1.2rem;
+  font-family: "Open Sans", sans-serif;
+  background-color: #ff9d3d; /* Warna Sage */
+  color: #ffffff;
+  padding: 0.4rem 0.6rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: default;
+  width: fit-content;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 0.5rem;
+}
+
+.materi-description {
+  font-size: 1rem;
+  color: #343131;
+  line-height: normal;
+  font-weight: normal;
+  font-family: "Nunito", sans-serif;
+}
+
+/* For screens up to 1024px (tablet landscape) */
+@media (max-width: 1024px) {
+  .main-title {
+    font-size: 1.8rem; /* Slightly smaller */
+  }
+
+  .materi-title {
+    font-size: 1.1rem; /* Adjusted for tablet */
+  }
+
+  .materi-description {
+    font-size: 0.95rem; /* Slightly smaller for readability */
+    margin-left: 1rem; /* Adjust margin */
+  }
+}
+
+/* For screens up to 768px (tablet portrait) */
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 1.6rem; /* Smaller font size for portrait tablet */
+  }
+
+  .materi-title {
+    font-size: 1rem; /* Adjusted for portrait tablet */
+    padding: 0.5rem 0.8rem; /* Adjust padding */
+  }
+
+  .materi-description {
+    font-size: 0.9rem; /* Slightly smaller */
+    margin-left: 0.8rem; /* Reduce margin */
+  }
+}
+
+/* For screens up to 500px (mobile) */
+@media (max-width: 500px) {
+  .main-title {
+    font-size: 1.4rem; /* Smaller font size for mobile */
+  }
+
+  .materi-title {
+    font-size: 0.9rem; /* Reduced for smaller screens */
+    padding: 0.4rem 0.6rem; /* Compact padding */
+  }
+
+  .materi-description {
+    font-size: 0.85rem; /* Smaller font for mobile */
+    margin-left: 0.5rem; /* Minimal margin */
+  }
+}

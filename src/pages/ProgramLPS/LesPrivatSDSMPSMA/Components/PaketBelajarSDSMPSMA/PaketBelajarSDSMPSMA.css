@@ -1,0 +1,186 @@
+/* PaketBelajarSimakUI.css */
+
+.paket-belajar-container__sd_smp_sma {
+  text-align: center;
+  margin-top: 10vh;
+  overflow: hidden;
+  margin-bottom: 10vh;
+}
+
+.title-paket-induk__sd_smp_sma {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: #ff6500;
+  font-family: "Open Sans", sans-serif;
+}
+
+.description-paket-belajar__sd_smp_sma {
+  font-size: 0.9rem;
+  color: #343131;
+  margin-bottom: 2rem;
+  text-align: start;
+  font-family: "Nunito", sans-serif;
+}
+
+.paket-cards__sd_smp_sma {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.paket-card__sd_smp_sma {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.paket-icon__sd_smp_sma {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.paket-title__sd_smp_sma {
+  font-size: 1.4rem;
+  color: #ff8000;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  font-family: "Open Sans", sans-serif;
+}
+
+.paket-sesi__sd_smp_sma {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1rem;
+  font-family: "Nunito", sans-serif;
+}
+
+.call-button {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Nunito", sans-serif;
+  transition: background-color 0.3s;
+}
+
+.call-button:hover {
+  background-color: #d2b04c;
+}
+
+/* Responsive adjustments */
+@media (min-width: 400px) {
+  .paket-card__sd_smp_sma {
+    width: 100%; /* 2 columns on tablets */
+  }
+}
+@media (min-width: 768px) {
+  .paket-card__sd_smp_sma {
+    width: 30%; /* 3 columns on desktops */
+  }
+}
+
+@media (min-width: 1024px) {
+  .paket-card__sd_smp_sma {
+    width: 28.2%; /* 3 columns on desktops */
+  }
+}
+
+/* @media (min-width: 1200px) {
+  .title-paket-induk__sd_smp_sma {
+    font-size: 1.4rem;
+  }
+  .description-paket-belajar__sd_smp_sma {
+    font-size: 1rem;
+  }
+  .paket-icon__sd_smp_sma {
+    font-size: 2.5rem;
+  }
+  .paket-title__sd_smp_sma {
+    font-size: 1.4rem;
+  }
+  .paket-sesi__sd_smp_sma {
+    font-size: 1.125rem;
+  }
+  .call-button {
+    padding: 0.75rem 1.5rem;
+  }
+} */
+
+/* Responsif untuk Tablet Landscape (≤ 64rem) */
+@media (max-width: 1024px) {
+  .title-paket-induk__sd_smp_sma {
+    font-size: 1.8rem; /* Kurangi ukuran font */
+  }
+
+  .description-paket-belajar__sd_smp_sma {
+    font-size: 0.875rem; /* Kurangi ukuran font */
+  }
+
+  .paket-icon__sd_smp_sma {
+    font-size: 1.8rem; /* Kurangi ukuran font */
+  }
+
+  .paket-title__sd_smp_sma {
+    font-size: 1.4rem; /* Kurangi ukuran font */
+  }
+
+  .paket-sesi__sd_smp_sma {
+    font-size: 0.9375rem; /* Kurangi ukuran font */
+  }
+}
+
+/* Responsif untuk Tablet Portrait dan Ponsel Lebar (≤ 48rem) */
+@media (max-width: 768px) {
+  .title-paket-induk__sd_smp_sma {
+    font-size: 1.4rem; /* Ukuran lebih kecil untuk ponsel */
+  }
+
+  .description-paket-belajar__sd_smp_sma {
+    font-size: 0.8125rem; /* Ukuran lebih kecil */
+  }
+
+  .paket-icon__sd_smp_sma {
+    font-size: 1.6rem; /* Ukuran lebih kecil */
+  }
+
+  .paket-title__sd_smp_sma {
+    font-size: 1.25rem; /* Ukuran lebih kecil */
+  }
+
+  .paket-sesi__sd_smp_sma {
+    font-size: 0.875rem; /* Ukuran lebih kecil */
+  }
+}
+
+/* Responsif untuk Ponsel Kecil (≤ 30rem) */
+@media (max-width: 480px) {
+  .title-paket-induk__sd_smp_sma {
+    font-size: 1.25rem; /* Ukuran terkecil */
+    text-align: center; /* Pusatkan teks */
+  }
+
+  .description-paket-belajar__sd_smp_sma {
+    font-size: 0.85rem; /* Ukuran terkecil */
+    text-align: start; /* Pusatkan teks */
+  }
+
+  .paket-icon__sd_smp_sma {
+    font-size: 1.4rem; /* Ukuran terkecil */
+  }
+
+  .paket-title__sd_smp_sma {
+    font-size: 1.1rem; /* Ukuran terkecil */
+  }
+
+  .paket-sesi__sd_smp_sma {
+    font-size: 0.8125rem; /* Ukuran terkecil */
+  }
+}

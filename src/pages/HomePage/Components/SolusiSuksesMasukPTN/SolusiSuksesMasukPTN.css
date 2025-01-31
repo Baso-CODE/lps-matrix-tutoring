@@ -1,0 +1,141 @@
+.container-solusi-sukses {
+  max-width: 100%;
+  margin-bottom: 10vh;
+  margin-top: 10vh;
+  overflow: hidden;
+
+  text-align: center;
+}
+
+.solusi-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #ff6500;
+  margin-bottom: 2rem;
+  font-family: "Open Sans", sans-serif;
+}
+
+.card-container-solusi-sukses-ptn {
+  display: flex;
+  justify-content: space-around;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.color-d2b04c {
+  color: #1e3e62;
+}
+.color-d2b04c-description {
+  color: #1e3e62;
+  font-weight: bold;
+}
+.card-solusi-sukses-ptn {
+  flex: 1;
+  max-width: 300px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-header-solusi-sukses-ptn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  justify-content: center;
+}
+
+.card-icon-solusi-sukses-ptn {
+  width: 40px; /* Lebar gambar */
+  height: 40px; /* Tinggi gambar */
+  object-fit: contain; /* Menjaga proporsi gambar */
+}
+.card-title-solusi-sukes-ptn {
+  font-size: 1.2rem;
+  color: #ff8000;
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+.card-description-solusi-sukses-ptn {
+  font-size: 1rem;
+  font-weight: normal;
+  color: #555;
+  line-height: normal;
+  font-family: "Nunito", sans-serif;
+}
+
+.extra-description {
+  margin-top: 2rem;
+  font-size: 1rem;
+  color: #555;
+  line-height: normal;
+  padding: 0 1rem; /* Padding for smaller screens */
+  font-family: "Nunito", sans-serif;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.quote-mark {
+  font-size: 1.4rem; /* Ukuran tanda kutip lebih besar */
+  color: #333; /* Warna tanda kutip sedikit lebih gelap */
+  font-weight: bold;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  .card-container-solusi-sukses-ptn {
+    flex-direction: column;
+    align-items: center;
+  }
+  .card-solusi-sukses-ptn {
+    max-width: 100%;
+  }
+}
+
+/* Responsif untuk layar lebih kecil */
+@media (max-width: 1024px) {
+  .solusi-title {
+    font-size: 1.4rem;
+  }
+  .card-description-solusi-sukses-ptn {
+    font-size: 0.95rem;
+  }
+  .card-title-solusi-sukes-ptn {
+    font-size: 1.2rem;
+  }
+  .extra-description {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .solusi-title {
+    font-size: 1.3rem;
+  }
+  .card-description-solusi-sukses-ptn {
+    font-size: 0.9rem;
+  }
+  .card-title-solusi-sukes-ptn {
+    font-size: 1.4rem;
+  }
+  .extra-description {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 480px) {
+  .solusi-title {
+    font-size: 1.2rem;
+  }
+  .card-description-solusi-sukses-ptn {
+    font-size: 0.85rem;
+  }
+  .card-title-solusi-sukes-ptn {
+    font-size: 1rem;
+  }
+  .extra-description {
+    font-size: 0.85rem;
+  }
+}

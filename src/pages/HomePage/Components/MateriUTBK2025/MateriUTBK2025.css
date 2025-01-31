@@ -1,0 +1,91 @@
+.container-materi-utbk {
+  width: 100%;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+
+  border-radius: 10px;
+}
+
+.materi-title {
+  font-size: 2rem;
+  color: #ff6500;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+}
+.materi-description {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #666;
+  margin-bottom: 1rem;
+  line-height: normal;
+  font-family: "Nunito", sans-serif;
+}
+
+.materi-columns {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.materi-section {
+  flex: 1;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.materi-subtitle {
+  font-size: 1.2rem;
+  color: #ff8000;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  font-family: "Open Sans", sans-serif;
+}
+
+.materi-overview {
+  font-size: 1rem;
+  color: #444;
+  margin-top: 2rem;
+  font-weight: 400;
+  line-height: normal;
+  text-align: start;
+  font-family: "Nunito", sans-serif;
+}
+
+.materi-list {
+  list-style-type: none;
+  padding: 0;
+  font-family: "Nunito", sans-serif;
+  color: #555;
+}
+
+.materi-list li {
+  font-size: 1rem;
+  line-height: normal;
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.materi-list li::before {
+  content: "✓ ";
+  color: #4caf50;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  .materi-columns {
+    flex-direction: column;
+  }
+  .materi-overview {
+    font-size: 0.9rem;
+  }
+  .materi-list li {
+    font-size: 0.9rem;
+  }
+}

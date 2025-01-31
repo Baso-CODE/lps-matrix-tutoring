@@ -1,0 +1,94 @@
+/* Layout and General Styling */
+.values-company {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  text-align: center;
+  border-radius: 10px;
+  padding: 40px 20px;
+  margin: 40px auto;
+
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: "Open Sans", sans-serif;
+}
+
+/* Title Styling */
+.values-title {
+  font-size: 1.6rem;
+  color: #ff6500;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 10px;
+  letter-spacing: 1.5px;
+}
+
+/* Description Styling */
+.values-description {
+  font-size: 1rem;
+  color: #6c757d;
+  margin-bottom: 30px;
+
+  line-height: normal;
+}
+
+/* Values List Styling */
+.values-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.value-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #ffffff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  width: 80%;
+
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  font-size: 18px;
+  font-weight: 600;
+  color: #2c3e50;
+  transition: all 0.3s ease;
+}
+
+.value-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background-color: #f1f3f5;
+}
+
+/* Emoji Styling */
+.emoji {
+  width: 3rem;
+  height: 3rem;
+}
+
+/* Responsif untuk layar lebih kecil */
+@media (max-width: 1024px) {
+  .values-title {
+    font-size: 1.4rem;
+  }
+  .value-item {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .values-title {
+    font-size: 1.4rem;
+  }
+  .value-item {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 480px) {
+  .values-title {
+    font-size: 1.3rem;
+  }
+  .value-item {
+    font-size: 0.85rem;
+  }
+  /* .values-description  */
+}

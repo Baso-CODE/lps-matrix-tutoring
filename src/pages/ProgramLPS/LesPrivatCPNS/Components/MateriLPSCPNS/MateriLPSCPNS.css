@@ -1,0 +1,133 @@
+/* MateriLPSCPNS.css */
+
+.materi-container-cpns {
+  margin-bottom: 10vh;
+  margin-top: 10vh;
+  overflow: hidden;
+  overflow: hidden;
+}
+
+.materi-title-cpns {
+  font-size: 1.7rem;
+  text-align: center;
+  color: #ff6500;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  font-family: "Open Sans", sans-serif;
+}
+
+.card-group-cpns {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.materi-card-cpns {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.materi-card-cpns:hover {
+  transform: translateY(-5px);
+}
+
+.card-icon-cpns {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-icon-cpns img {
+  width: 50px; /* Atur ukuran lebar sesuai kebutuhan */
+  height: 50px; /* Atur ukuran tinggi sesuai kebutuhan */
+  object-fit: cover; /* Pastikan gambar tetap proporsional */
+  margin-bottom: 0.5rem;
+}
+
+.card-title-cpns {
+  font-size: 1.4rem;
+  color: #ff8000;
+  font-weight: 500;
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+.card-description-cpns {
+  font-size: 1rem;
+  color: #343131;
+  font-weight: 400;
+  line-height: normal;
+  font-family: "Nunito", sans-serif;
+}
+
+/* Responsif untuk tampilan tablet dan mobile */
+@media (max-width: 768px) {
+  .card-group {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .materi-card {
+    width: 90%;
+    max-width: 100%;
+  }
+}
+
+/* Responsif untuk tampilan tablet dan mobile */
+@media (max-width: 1024px) {
+  .materi-title-cpns {
+    font-size: 1.6rem; /* Slightly smaller on tablets */
+  }
+
+  .card-title-cpns {
+    font-size: 1.4rem; /* Adjusted for tablets */
+  }
+
+  .card-description-cpns {
+    font-size: 0.95rem; /* Adjusted for readability */
+  }
+}
+
+@media (max-width: 768px) {
+  .card-group-cpns {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .materi-card-cpns {
+    width: 90%;
+    max-width: 100%;
+  }
+
+  .materi-title-cpns {
+    font-size: 1.4rem; /* Smaller for smaller tablets */
+  }
+
+  .card-title-cpns {
+    font-size: 1.3rem; /* Adjusted for smaller tablets */
+  }
+
+  .card-description-cpns {
+    font-size: 0.9rem; /* Slightly smaller for smaller tablets */
+  }
+}
+
+@media (max-width: 500px) {
+  .materi-title-cpns {
+    font-size: 1.3rem; /* Smaller size for mobile screens */
+  }
+
+  .card-title-cpns {
+    font-size: 1.1rem; /* Smaller size for mobile screens */
+  }
+
+  .card-description-cpns {
+    font-size: 0.85rem; /* Adjusted for readability */
+  }
+}

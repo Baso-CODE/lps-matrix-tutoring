@@ -1,0 +1,101 @@
+.fitur-layanan-lps {
+  text-align: center;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+}
+
+.fitur-title {
+  font-size: 1.4rem;
+  color: #ff6500;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  font-family: "Open Sans", sans-serif;
+}
+
+.fitur-item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Specific layout for "Les Privat Masuk PTN" with image on the right */
+.image-right {
+  flex-direction: row-reverse;
+}
+
+.fitur-image {
+  flex: 1;
+  max-width: 300px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.fitur-content {
+  flex: 2;
+  text-align: left;
+}
+
+.fitur-subtitle {
+  font-size: 1.2rem;
+  color: #ff8000;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  font-family: "Open Sans", sans-serif;
+}
+
+.fitur-description {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #343131;
+  margin-bottom: 1rem;
+  line-height: normal;
+  font-family: "Nunito", sans-serif;
+}
+
+.fitur-list {
+  list-style-type: none;
+  padding: 0;
+  font-family: "Nunito", sans-serif;
+  color: #343131;
+}
+
+.fitur-list li {
+  font-size: 1rem;
+  line-height: normal;
+
+  padding-left: 1rem; /* Add space for the checkmark */
+  position: relative;
+}
+
+/* Add the green checkmark before each list item */
+.fitur-list li::before {
+  content: "✓ "; /* Green checkmark */
+  color: #4caf50; /* Green color */
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+@media (max-width: 768px) {
+  .fitur-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .fitur-image {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .fitur-title,
+  .fitur-subtitle {
+    text-align: start;
+  }
+  .fitur-description {
+    font-size: 0.9rem;
+  }
+  .fitur-list li {
+    font-size: 0.9rem;
+  }
+}

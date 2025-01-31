@@ -1,0 +1,210 @@
+.menu-item {
+  position: relative;
+  list-style: none;
+}
+
+.menu-link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 500;
+  padding: 4px 8px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  text-decoration: none;
+  color: white; /* Tambahkan warna font */
+  font-family: "Open Sans", sans-serif;
+}
+
+.menu-link:hover {
+  color: #ff6500; /* Ubah warna font saat hover */
+}
+
+/* Tambahkan kelas untuk link aktif */
+.menu-link.active {
+  color: #434735; /* Warna font untuk link aktif */
+}
+
+.chevron-icon {
+  margin-top: 2px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.rotate-180 {
+  transform: rotate(180deg);
+}
+
+.grid {
+  display: grid;
+  gap: 20px;
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.menu-box {
+  cursor: pointer;
+}
+
+.menu-heading {
+  font-size: 14px;
+  color: #737373;
+  margin-bottom: 8px;
+}
+
+.menu-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+}
+
+.icon-box {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+.menu-box:hover .icon-box {
+  background-color: white;
+  color: #1a1a1a;
+}
+
+@media (max-width: 768px) {
+  .sub-menu {
+    width: auto;
+  }
+
+  .grid {
+    gap: 16px;
+  }
+}
+.menu-item {
+  position: relative;
+  list-style: none;
+}
+
+.menu-link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  text-decoration: none;
+  color: #ff8000; /* Tambahkan warna font */
+}
+
+.menu-link:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.chevron-icon {
+  margin-top: 2px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.rotate-180 {
+  transform: rotate(180deg);
+}
+
+.sub-menu {
+  position: absolute;
+  top: 100%; /* Submenu muncul tepat di bawah elemen parent */
+  left: 0;
+  z-index: 999; /* Pastikan submenu ada di atas elemen lain */
+  padding: 16px;
+  border-radius: 6px;
+  backdrop-filter: blur(4px); /* Efek blur pada background */
+  background-color: #eeeeee;
+  display: none; /* Mulanya disembunyikan */
+  width: 500px; /* Batasi lebar submenu */
+  min-height: 400px;
+  grid-gap: 20px;
+}
+
+.grid {
+  display: grid;
+  gap: 20px;
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: auto; /* Pastikan tinggi item otomatis mengikuti konten */
+}
+
+.menu-box {
+  cursor: pointer;
+  min-width: 150px; /* Set minimum width untuk memastikan elemen tidak terlalu kecil */
+  word-wrap: break-word; /* Membantu memecah kata panjang */
+}
+
+.menu-heading {
+  font-size: 14px;
+  color: #737373;
+  margin-bottom: 8px;
+}
+
+.menu-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.icon-box {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 8px;
+  color: #1e3e62;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+.menu-box:hover .icon-box {
+  background-color: white;
+  color: #1a1a1a;
+}
+
+.submenu-name {
+  font-weight: 700;
+  margin-bottom: -10px;
+  color: #ff8000;
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.submenu-desc {
+  font-size: 15px;
+  font-weight: 500;
+  color: #ff6500;
+  font-family: "Open Sans", sans-serif;
+}
+
+@media (max-width: 768px) {
+  .sub-menu {
+    width: auto;
+  }
+
+  .grid {
+    gap: 16px;
+  }
+}

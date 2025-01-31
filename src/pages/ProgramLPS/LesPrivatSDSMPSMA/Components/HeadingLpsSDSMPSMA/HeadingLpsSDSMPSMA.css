@@ -1,0 +1,128 @@
+.container-halaman__sd_smp_sma {
+  margin-top: 10vh;
+
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-hero-home__sd_smp_sma {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+
+.rumah-adat-hero__sd_smp_sma {
+  width: 100%;
+  height: max-content;
+  margin-bottom: 20px; /* Jarak antara gambar dan teks */
+  border-radius: 20px;
+}
+
+.isi-content-hero__sd_smp_sma {
+  text-align: center; /* Pusatkan teks jika diinginkan */
+  width: 100%;
+}
+
+.title-halaman-hero__sd_smp_sma {
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  text-align: center;
+
+  line-height: normal;
+  color: #ff6500;
+  font-family: "Open Sans", sans-serif;
+}
+
+.child-paragraf-hero__sd_smp_sma {
+  font-size: 1rem;
+  color: #343131;
+  line-height: normal;
+  margin-bottom: 20px;
+  font-weight: 400;
+  text-align: start;
+  font-family: "Nunito", sans-serif;
+}
+
+.btn-learn-more__sd_smp_sma {
+  padding: 12px 24px;
+  background-color: #1e3e62;
+  color: #fcfaee;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: "Open Sans", sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-learn-more__sd_smp_sma:hover {
+  background-color: #69733f;
+}
+
+/* Responsif untuk layar lebih kecil */
+@media (max-width: 820px) {
+  .content-hero-home__sd_smp_sma {
+    align-items: center;
+  }
+
+  .title-halaman-hero__sd_smp_sma {
+    font-size: 28px;
+  }
+
+  .btn-learn-more__sd_smp_sma {
+    width: 60%;
+    text-align: center;
+    margin-left: 0;
+  }
+}
+@media (min-width: 1024px) {
+  .btn-learn-more__sd_smp_sma {
+    visibility: hidden;
+  }
+}
+
+/* Ukuran font untuk tablet */
+@media (max-width: 1024px) {
+  .title-halaman-hero__sd_smp_sma {
+    font-size: 30px; /* Ukuran lebih kecil untuk tablet */
+  }
+  .child-paragraf-hero__sd_smp_sma {
+    font-size: 0.9rem;
+  }
+}
+
+/* Ukuran font untuk ponsel */
+@media (max-width: 768px) {
+  .title-halaman-hero__sd_smp_sma {
+    font-size: 28px; /* Ukuran lebih kecil untuk ponsel */
+  }
+  .child-paragraf-hero__sd_smp_sma {
+    font-size: 1rem;
+  }
+  .btn-learn-more__sd_smp_sma {
+    width: 80%;
+    text-align: center;
+    margin-left: 0;
+  }
+}
+
+/* Ukuran font untuk layar sangat kecil */
+@media (max-width: 480px) {
+  .title-halaman-hero__sd_smp_sma {
+    font-size: 22px; /* Ukuran terkecil untuk layar kecil */
+  }
+  .child-paragraf-hero__sd_smp_sma {
+    font-size: 0.85rem; /* Smaller font for mobile */
+  }
+  .btn-learn-more__sd_smp_sma {
+    width: 100%;
+    text-align: center;
+    margin-left: 0;
+  }
+}

@@ -6,6 +6,7 @@ import HeadingLpsSDSMPSMA from "./Components/HeadingLpsSDSMPSMA/HeadingLpsSDSMPS
 import PaketBelajarSDSMPSMA from "./Components/PaketBelajarSDSMPSMA/PaketBelajarSDSMPSMA";
 import PaketSesiSDSMPSMA from "./Components/PaketSesiSDSMPSMA/PaketSesiSDSMPSMA";
 import ProgramIntensifLpsSDSMPSMA from "./Components/ProgramIntensifLpsSDSMPSMA/ProgramIntensifLpsSDSMPSMA";
+import Promo from "../../../components/Promo/Promo";
 
 const LesPrivatSDSMPSMA = () => {
   return (
@@ -64,6 +65,7 @@ const LesPrivatSDSMPSMA = () => {
         <PaketSesiSDSMPSMA />
         <ContactFooter />
         <UnivPengajarLps />
+        <Promo />
         {/* <ContactButton /> */}
       </div>
     </>

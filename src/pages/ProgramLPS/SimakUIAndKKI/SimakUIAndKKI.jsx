@@ -8,6 +8,7 @@ import "./SimakUIAndKKI.css";
 import ProgramBelajarSIMAKUI from "./Components/ProgramBelajarAll/ProgramBelajarAll";
 import AlumniLps from "../../HomePage/Components/AlumniLps/AlumniLps";
 import AsalSiswaLPS from "../LesPrivatUTBK/Components/AsalSiswaLPS/AsalSiswaLPS";
+import Promo from "../../../components/Promo/Promo";
 
 const SimakUIAndKKI = () => {
   return (
@@ -67,6 +68,7 @@ const SimakUIAndKKI = () => {
         <AsalSiswaLPS />
         <ContactFooter />
         <UnivPengajarLps />
+        <Promo />
       </div>
     </>
   );

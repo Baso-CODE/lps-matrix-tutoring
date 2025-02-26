@@ -6,6 +6,7 @@ import ProgramIntensiPascaSarjana from "../Components/ProgramIntensiPascaSarjana
 import UnivPengajarLps from "../../../../components/UnivPengajarLps/UnivPengajarLps";
 import ContactButton from "../../../../components/ContactButton/ContactButton";
 import { useParams } from "react-router-dom";
+import Promo from "../../../../components/Promo/Promo";
 const LesPrivatPascaSarjanaSlug = () => {
   const { slug } = useParams();
 
@@ -56,6 +57,7 @@ const LesPrivatPascaSarjanaSlug = () => {
         <ProgramIntensiPascaSarjana />
         <UnivPengajarLps />
         <ContactButton />
+        <Promo />
       </div>
     </>
   );

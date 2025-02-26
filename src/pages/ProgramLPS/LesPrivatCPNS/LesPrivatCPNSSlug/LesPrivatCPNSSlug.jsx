@@ -8,6 +8,7 @@ import MateriLPSCPNS from "../Components/MateriLPSCPNS/MateriLPSCPNS";
 import ProgramCPNS from "../Components/ProgramCPNS/ProgramCPNS";
 import ProgramIntensifCPNS from "../Components/ProgramIntensifCPNS/ProgramIntensifCPNS";
 import { useParams } from "react-router-dom";
+import Promo from "../../../../components/Promo/Promo";
 
 const LesPrivatCPNSSlug = () => {
   const { slug } = useParams();
@@ -63,6 +64,7 @@ const LesPrivatCPNSSlug = () => {
         <JadwalBelajarCPNS />
         <UnivPengajarLps />
         <ContactButton />
+        <Promo />
       </div>
     </>
   );

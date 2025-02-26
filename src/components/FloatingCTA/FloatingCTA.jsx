@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./FloatingCTA.css";
 
@@ -13,22 +14,35 @@ const FloatingCTA = () => {
 `.trim(); // Placeholder untuk pesan yang diinginkan
 
   const finalUrl = `${baseUrl}${encodeURIComponent(message)}`;
+
+  // Simulasi jumlah notifikasi pesan masuk
+  const [unreadMessages, setUnreadMessages] = useState(0);
+
+  useEffect(() => {
+    // Simulasi jumlah chat masuk (bisa diganti dengan API jika ada)
+    setUnreadMessages(3); // Ganti angka sesuai kebutuhan
+  }, []);
+
   return (
     <div className="box-float-main">
-      <div className=" main-parent-wa">
+      <div className="main-parent-wa">
         <label htmlFor="" className="label-cta">
           Chat With Us
         </label>
         <Link
           to={finalUrl}
-          className=" parent-btn-wa"
+          className="parent-btn-wa"
           target="_blank"
           rel="noopener noreferrer">
-          <button className=" btn-float-wa">
-            <span className=" parent-icon-wa">
+          <button className="btn-float-wa">
+            <span className="parent-icon-wa relative">
+              {/* Badge Notifikasi */}
+              {unreadMessages > 0 && (
+                <span className="notif-badge">{unreadMessages}</span>
+              )}
               <img
                 src="/images/icon-wa.svg"
-                alt="Klik untuk langsung terhubung dengan tim Les Privat Masuk PTN yang siap membantu Anda memilih program belajar terbaik sesuai kebutuhan dan wilayah Anda!"
+                alt="Klik untuk langsung terhubung dengan tim Les Privat Masuk PTN!"
                 className="icon-wa"
               />
             </span>

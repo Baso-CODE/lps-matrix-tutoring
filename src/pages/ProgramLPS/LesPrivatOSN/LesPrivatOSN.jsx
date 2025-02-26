@@ -10,6 +10,7 @@ import "./LesPrivatOSN.css";
 import AlumniLps from "../../HomePage/Components/AlumniLps/AlumniLps";
 import SuccessStory from "../../HomePage/Components/SuccessStory/SuccessStory";
 import GaleryBelajarSiswa from "../../../components/GaleryBelajarSiswa/GaleryBelajarSiswa";
+import Promo from "../../../components/Promo/Promo";
 
 const LesPrivatOSN = () => {
   return (
@@ -71,6 +72,7 @@ const LesPrivatOSN = () => {
         <GaleryBelajarSiswa />
         <ContactFooter />
         <UnivPengajarLps />
+        <Promo />
         {/* <ContactButton /> */}
       </div>
     </>

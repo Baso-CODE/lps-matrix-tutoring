@@ -8,6 +8,7 @@ import PaketBelajarPascaSarjana from "./Components/PaketBelajarPascaSarjana/Pake
 import ProgramIntensiPascaSarjana from "./Components/ProgramIntensiPascaSarjana/ProgramIntensiPascaSarjana";
 import ContactFooter from "../../../components/ContactFooter/ContactFooter";
 import SuccessStory from "../../HomePage/Components/SuccessStory/SuccessStory";
+import Promo from "../../../components/Promo/Promo";
 
 const LesPrivatPascaSarjana = () => {
   return (
@@ -66,6 +67,7 @@ const LesPrivatPascaSarjana = () => {
         <SuccessStory />
         <ContactFooter />
         <UnivPengajarLps />
+        <Promo />
         {/* <ContactButton /> */}
       </div>
     </>

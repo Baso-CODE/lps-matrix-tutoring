@@ -9,6 +9,7 @@ import ProgramIntensifCPNS from "./Components/ProgramIntensifCPNS/ProgramIntensi
 import "./LesPrivatCPNS.css";
 import ContactFooter from "../../../components/ContactFooter/ContactFooter";
 import AsalSiswaLPS from "../LesPrivatUTBK/Components/AsalSiswaLPS/AsalSiswaLPS";
+import Promo from "../../../components/Promo/Promo";
 
 const LesPrivatCPNS = () => {
   return (
@@ -71,6 +72,7 @@ const LesPrivatCPNS = () => {
         <AsalSiswaLPS />
         <ContactFooter />
         <UnivPengajarLps />
+        <Promo />
         {/* <ContactButton /> */}
       </div>
     </>

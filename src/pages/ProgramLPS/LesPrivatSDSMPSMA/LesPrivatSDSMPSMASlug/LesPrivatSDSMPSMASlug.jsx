@@ -7,6 +7,7 @@ import PaketBelajarSDSMPSMA from "../Components/PaketBelajarSDSMPSMA/PaketBelaja
 import PaketSesiSDSMPSMA from "../Components/PaketSesiSDSMPSMA/PaketSesiSDSMPSMA";
 import ProgramIntensifLpsSDSMPSMA from "../Components/ProgramIntensifLpsSDSMPSMA/ProgramIntensifLpsSDSMPSMA";
 import { useParams } from "react-router-dom";
+import Promo from "../../../../components/Promo/Promo";
 
 const LesPrivatSDSMPSMASlug = () => {
   const { slug } = useParams();
@@ -60,6 +61,7 @@ const LesPrivatSDSMPSMASlug = () => {
         <PaketSesiSDSMPSMA />
         <UnivPengajarLps />
         <ContactButton />
+        <Promo />
       </div>
     </>
   );

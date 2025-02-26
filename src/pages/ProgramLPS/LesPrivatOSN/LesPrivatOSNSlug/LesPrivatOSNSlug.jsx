@@ -7,6 +7,7 @@ import PaketSesiOSN from "../Components/PaketSesiOSN/PaketSesiOSN";
 import UnivPengajarLps from "../../../../components/UnivPengajarLps/UnivPengajarLps";
 import ContactButton from "../../../../components/ContactButton/ContactButton";
 import { useParams } from "react-router-dom";
+import Promo from "../../../../components/Promo/Promo";
 
 const LesPrivatOSNSlug = () => {
   const { slug } = useParams();
@@ -59,6 +60,7 @@ const LesPrivatOSNSlug = () => {
         <PaketSesiOSN />
         <UnivPengajarLps />
         <ContactButton />
+        <Promo />
       </div>
     </>
   );

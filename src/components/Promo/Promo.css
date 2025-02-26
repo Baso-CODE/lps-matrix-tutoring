@@ -1,0 +1,35 @@
+.parent-promo-home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5vh;
+  padding-bottom: 20px;
+}
+.child-promo-home {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.parent-promo-home-mobile {
+  /* display: flex;
+    justify-content: center;
+    align-items: center; */
+  display: none;
+  /* padding-top: 50px; */
+  padding-bottom: 20px;
+}
+.child-promo-home-mobile {
+  width: 100%;
+}
+
+/* RESPONSIVE */
+@media only screen and (max-width: 500px) {
+  .parent-promo-home {
+    display: none;
+  }
+  .parent-promo-home-mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

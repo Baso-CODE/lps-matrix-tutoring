@@ -7,6 +7,7 @@ import HeroLPSMahasiswa from "../Components/HeroLPSMahasiswa/HeroLPSMahasiswa";
 import LayananLPSMahasiswa from "../Components/LayananLPSMahasiswa/LayananLPSMahasiswa";
 import PaketLPSMahasiswa from "../Components/PaketLPSMahasiswa/PaketLPSMahasiswa";
 import { useParams } from "react-router-dom";
+import Promo from "../../../../components/Promo/Promo";
 
 const LesPrivatMahasiswaSlug = () => {
   const { slug } = useParams();
@@ -61,6 +62,7 @@ const LesPrivatMahasiswaSlug = () => {
         <AsalUniversitasMahasiswa />
         <UnivPengajarLps />
         <ContactButton />
+        <Promo />
       </div>
     </>
   );

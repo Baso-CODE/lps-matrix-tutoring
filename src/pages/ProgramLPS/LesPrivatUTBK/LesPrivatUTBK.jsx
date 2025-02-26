@@ -12,6 +12,7 @@ import MateriUjianSNBT from "./Components/MateriUjianSNBT/MateriUjianSNBT";
 import PerbedaanSBMPTAndSNBT from "./Components/PerbedaanSBMPTAndSNBT/PerbedaanSBMPTAndSNBT";
 import TigaJalurMasukPTN from "./Components/TigaJalurMasukPTN/TigaJalurMasukPTN";
 import "./LesPrivatUTBK.css";
+import Promo from "../../../components/Promo/Promo";
 
 const LesPrivatUTBK = () => {
   return (
@@ -77,6 +78,7 @@ const LesPrivatUTBK = () => {
         <ContactFooter />
         <UnivPengajarLps />
         {/* <ContactButton /> */}
+        <Promo />
       </div>
     </>
   );

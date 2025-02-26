@@ -5,6 +5,7 @@ import FasilitasSimakUI from "../Components/FasilitasSimakUI/FasilitasSimakUI";
 import PaketBelajarSimakUI from "../Components/PaketBelajarSimakUI/PaketBelajarSimakUI";
 import ProgramSimakUI from "../Components/ProgramSimakUI/ProgramSimakUI";
 import { useParams } from "react-router-dom";
+import Promo from "../../../../components/Promo/Promo";
 
 const SimakUIAndKKISLug = () => {
   const { slug } = useParams();
@@ -55,6 +56,7 @@ const SimakUIAndKKISLug = () => {
         <PaketBelajarSimakUI />
         <UnivPengajarLps />
         <ContactButton />
+        <Promo />
       </div>
     </>
   );

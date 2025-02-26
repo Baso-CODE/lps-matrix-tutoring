@@ -119,6 +119,7 @@ function App() {
           element={<LesPrivatOSNSlug />}></Route>
       </Routes>
       <FloatingCTA />
+
       <FooterNew />
     </>
   );

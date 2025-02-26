@@ -7,6 +7,7 @@ import HeroLPSMahasiswa from "./Components/HeroLPSMahasiswa/HeroLPSMahasiswa";
 import LayananLPSMahasiswa from "./Components/LayananLPSMahasiswa/LayananLPSMahasiswa";
 import PaketLPSMahasiswa from "./Components/PaketLPSMahasiswa/PaketLPSMahasiswa";
 import "./LesPrivatMahasiswa.css";
+import Promo from "../../../components/Promo/Promo";
 
 const LesPrivatMahasiswa = () => {
   return (
@@ -67,6 +68,7 @@ const LesPrivatMahasiswa = () => {
         <AsalUniversitasMahasiswa />
         <ContactFooter />
         <UnivPengajarLps />
+        <Promo />
         {/* <ContactButton /> */}
       </div>
     </>

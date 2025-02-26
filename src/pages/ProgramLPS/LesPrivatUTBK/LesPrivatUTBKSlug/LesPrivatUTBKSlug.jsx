@@ -9,6 +9,7 @@ import MateriUjianSNBT from "../Components/MateriUjianSNBT/MateriUjianSNBT";
 import PerbedaanSBMPTAndSNBT from "../Components/PerbedaanSBMPTAndSNBT/PerbedaanSBMPTAndSNBT";
 import TigaJalurMasukPTN from "../Components/TigaJalurMasukPTN/TigaJalurMasukPTN";
 import { useParams } from "react-router-dom";
+import Promo from "../../../../components/Promo/Promo";
 
 const LesPrivatUTBKSlug = () => {
   const { slug } = useParams();
@@ -64,6 +65,7 @@ const LesPrivatUTBKSlug = () => {
         <AsalSiswaLPS />
         <UnivPengajarLps />
         <ContactButton />
+        <Promo />
       </div>
     </>
   );

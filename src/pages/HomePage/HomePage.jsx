@@ -16,6 +16,7 @@ import TestimoniWaSiswa from "./Components/TestimoniWaSiswa/TestimoniWaSiswa";
 import VisiEndMisiLps from "./Components/VisiEndMisiLps/VisiEndMisiLps";
 import "./HomePage.css";
 import Information from "../../components/Information/Information";
+import Promo from "../../components/Promo/Promo";
 const HomePage = () => {
   return (
     <>
@@ -83,6 +84,7 @@ const HomePage = () => {
 
         <SolusiSuksesMasukPTN />
         <UnivPengajarLps />
+        <Promo />
       </div>
     </>
   );

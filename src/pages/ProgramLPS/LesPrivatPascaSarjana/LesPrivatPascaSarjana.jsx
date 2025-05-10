@@ -9,13 +9,14 @@ import ProgramIntensiPascaSarjana from "./Components/ProgramIntensiPascaSarjana/
 import ContactFooter from "../../../components/ContactFooter/ContactFooter";
 import SuccessStory from "../../HomePage/Components/SuccessStory/SuccessStory";
 import Promo from "../../../components/Promo/Promo";
+import Slider from "../../../components/Slider/Slider";
 
 const LesPrivatPascaSarjana = () => {
   return (
     <>
       <Helmet>
         <title>
-          Les Privat Pasca Sarjana • UI UGM ITB UNAIR UNHAS Undip - Bimbingan
+          Les Privat Pasca Sarjana UI UGM ITB UNAIR UNHAS Undip Bimbingan
           Belajar Intensif
         </title>
         <meta
@@ -29,7 +30,7 @@ const LesPrivatPascaSarjana = () => {
         <meta property="og:type" content="website" />
         <meta
           property="og:title"
-          content="Les Privat Pasca Sarjana • UI, UGM, ITB, Undip - Bimbingan Belajar Intensif"
+          content="Les Privat Pasca Sarjana UI, UGM, ITB, Undip Bimbingan Belajar Intensif"
         />
         <meta
           property="og:description"
@@ -47,7 +48,7 @@ const LesPrivatPascaSarjana = () => {
         />
         <meta
           name="twitter:title"
-          content="Les Privat Pasca Sarjana • UI, UGM, ITB, Undip - Bimbingan Belajar Intensif"
+          content="Les Privat Pasca Sarjana UI, UGM, ITB, Undip Bimbingan Belajar Intensif"
         />
         <meta
           name="twitter:description"
@@ -61,6 +62,7 @@ const LesPrivatPascaSarjana = () => {
 
       <div className="container-all">
         <HeroLpsPascaSarjana />
+        <Slider />
         <FasilitasSimakUI />
         <PaketBelajarPascaSarjana />
         <ProgramIntensiPascaSarjana />

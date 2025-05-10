@@ -40,6 +40,7 @@ Wilayah :
           <div className="logo-container">
             <Link to={"/"}>
               <img
+                loading="eager"
                 src={"/images/LOGO2.webp"}
                 alt="Bimbel Les Privat ONLINE dan Les Privat Datang ke Rumah untuk Program SBMPTN UTBK SNBT Simak UI UTUL UGM. Guru Privat Masuk UI ITB UGM dan Kedokteran di PTN Favorit."
                 className="logo-nav"

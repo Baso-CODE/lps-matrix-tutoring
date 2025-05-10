@@ -9,6 +9,7 @@ const HeroAbout = () => {
       <section className="about__us-content">
         <div className="about__us-image">
           <img
+            loading="lazy"
             src="/images/about-us/hero-about.webp"
             alt="Bimbel Les Privat ONLINE dan Les Privat Datang ke Rumah untuk Program SBMPTN UTBK SNBT Simak UI UTUL UGM. Guru Privat Masuk UI ITB UGM dan Kedokteran di PTN Favorit."
           />

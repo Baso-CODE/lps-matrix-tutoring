@@ -52,6 +52,7 @@ const CaraBelajarOfflineAtauOnline = () => {
             className="feature-item"
             data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}>
             <img
+              loading="lazy"
               src={feature.image}
               alt="Bimbel Les Privat ONLINE dan Les Privat Datang ke Rumah untuk Program SBMPTN UTBK SNBT Simak UI UTUL UGM. Guru Privat Masuk UI ITB UGM dan Kedokteran di PTN Favorit."
               className="feature-image"

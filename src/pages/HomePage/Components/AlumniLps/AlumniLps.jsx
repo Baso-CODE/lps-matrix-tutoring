@@ -21,14 +21,17 @@ const AlumniLps = () => {
         .
       </p>
       <img
+        loading="lazy"
         src="/images/alumni-dek.webp"
         alt="Bimbel Les Privat ONLINE dan Les Privat Datang ke Rumah untuk Program SBMPTN UTBK SNBT Simak UI UTUL UGM. Guru Privat Masuk UI ITB UGM dan Kedokteran di PTN Favorit."
       />
       <img
+        loading="lazy"
         src="/images/alumni-dek2.webp"
         alt="Bimbel Les Privat ONLINE dan Les Privat Datang ke Rumah untuk Program SBMPTN UTBK SNBT Simak UI UTUL UGM. Guru Privat Masuk UI ITB UGM dan Kedokteran di PTN Favorit."
       />
       <img
+        loading="lazy"
         src="/images/alumni-dek3.webp"
         alt="Bimbel Les Privat ONLINE dan Les Privat Datang ke Rumah untuk Program SBMPTN UTBK SNBT Simak UI UTUL UGM. Guru Privat Masuk UI ITB UGM dan Kedokteran di PTN Favorit."
       />

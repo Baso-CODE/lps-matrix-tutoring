@@ -5,6 +5,7 @@ const ProgramSimakUI = () => {
     <div className="program-simak-ui-container">
       {/* Image Section */}
       <img
+        loading="lazy"
         src="/images/program/SIMAK-UI.webp" // Ganti dengan URL atau path gambar yang sesuai
         alt="Bimbel Les Privat ONLINE dan Les Privat Datang ke Rumah untuk Program SBMPTN UTBK SNBT Simak UI UTUL UGM. Guru Privat Masuk UI ITB UGM dan Kedokteran di PTN Favorit."
         className="program-simak-ui-image"

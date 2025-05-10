@@ -10,14 +10,15 @@ import "./LesPrivatCPNS.css";
 import ContactFooter from "../../../components/ContactFooter/ContactFooter";
 import AsalSiswaLPS from "../LesPrivatUTBK/Components/AsalSiswaLPS/AsalSiswaLPS";
 import Promo from "../../../components/Promo/Promo";
+import Slider from "../../../components/Slider/Slider";
 
 const LesPrivatCPNS = () => {
   return (
     <>
       <Helmet>
         <title>
-          Bimbel CPNS di JABODETABEK - Les Privat Intensif Tes CPNS TWK TIU TKP
-          - Privat Online dan Offline
+          Bimbel CPNS di JABODETABEK Les Privat Intensif Tes CPNS TWK TIU TKP
+          Privat Online dan Offline
         </title>
         <meta
           name="description"
@@ -30,8 +31,7 @@ const LesPrivatCPNS = () => {
         <meta property="og:type" content="website" />
         <meta
           property="og:title"
-          content="Bimbel CPNS di JABODETABEK - Les Privat Intensif Tes CPNS TWK TIU TKP
-          - Privat Online dan Offline"
+          content="Bimbel CPNS di JABODETABEK Les Privat Intensif Tes CPNS TWK TIU TKP Privat Online dan Offline"
         />
         <meta
           property="og:description"
@@ -49,8 +49,7 @@ const LesPrivatCPNS = () => {
         />
         <meta
           name="twitter:title"
-          content="Bimbel CPNS di JABODETABEK - Les Privat Intensif Tes CPNS TWK TIU TKP
-          - Privat Online dan Offline"
+          content="Bimbel CPNS di JABODETABEK Les Privat Intensif Tes CPNS TWK TIU TKP Privat Online dan Offline"
         />
         <meta
           name="twitter:description"
@@ -65,6 +64,7 @@ const LesPrivatCPNS = () => {
       <div className="container-all">
         <HeadingCPNS />
         <ProgramIntensifCPNS />
+        <Slider />
         <MateriLPSCPNS />
         <ProgramCPNS />
         <ApaAjaYgDiPeroleh />

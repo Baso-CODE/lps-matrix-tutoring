@@ -10,6 +10,7 @@ const MateriLPSCPNS = () => {
         <div className="materi-card-cpns">
           <div className="card-icon-cpns">
             <img
+              loading="lazy"
               src="/images/icon/cpns/intelegensi.webp"
               alt="Ilustrasi Tes Intelegensi Umum, Menguji Kemampuan Analisis, Logika, Numerik, dan Pemahaman Verbal"
             />
@@ -23,6 +24,7 @@ const MateriLPSCPNS = () => {
         <div className="materi-card-cpns">
           <div className="card-icon-cpns">
             <img
+              loading="lazy"
               src="/images/icon/cpns/globe.webp"
               alt="Ilustrasi Tes Wawasan Kebangsaan, Mengukur Pengetahuan Tentang Kebangsaan, Sejarah, dan NKRI"
             />
@@ -36,6 +38,7 @@ const MateriLPSCPNS = () => {
         <div className="materi-card-cpns">
           <div className="card-icon-cpns">
             <img
+              loading="lazy"
               src="/images/icon/cpns/suitcase.webp"
               alt="Ilustrasi Tes Karakteristik Pribadi, Mengukur Sikap, Perilaku, dan Kepribadian untuk Pelayanan Publik"
             />

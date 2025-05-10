@@ -38,6 +38,7 @@ const Information = () => {
           </div>
           <div className="information-image-container">
             <img
+              loading="lazy"
               src={info.image}
               alt={`Ilustrasi informasi ${
                 info.title

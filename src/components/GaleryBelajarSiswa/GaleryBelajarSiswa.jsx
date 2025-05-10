@@ -82,6 +82,7 @@ const GaleryBelajarSiswa = () => {
         <div className="gallery-layout">
           <div className="preview">
             <img
+              loading="lazy"
               src={previewImage}
               alt={`Gambar utama untuk mode ${currentMode}, menampilkan kegiatan siswa di LPS Matrix yang sedang belajar dengan bimbingan tutor profesional, di mana siswa mendapatkan perhatian penuh untuk memastikan pemahaman maksimal dan kemajuan akademis yang signifikan.`}
             />
@@ -89,6 +90,7 @@ const GaleryBelajarSiswa = () => {
           <div className="thumbnail-container">
             {thumbnails.map((img, index) => (
               <img
+                loading="lazy"
                 key={index}
                 src={img}
                 alt={`Thumbnail ${

@@ -4,6 +4,7 @@ const HeadingLpsSDSMPSMA = () => {
     <div className="container-halaman__sd_smp_sma">
       <div className="content-hero-home__sd_smp_sma">
         <img
+          loading="lazy"
           data-aos="zoom-out"
           className="rumah-adat-hero__sd_smp_sma"
           src={"/images/program/SD,SMP,SMA.webp"}

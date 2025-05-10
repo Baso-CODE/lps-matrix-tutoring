@@ -4,6 +4,7 @@ const HeroLpsOSN = () => {
     <div className="container-halaman__sd_smp_sma">
       <div className="content-hero-home__sd_smp_sma">
         <img
+          loading="lazy"
           data-aos="fade-out"
           className="rumah-adat-hero__mahasiswa"
           src={"/images/program/OSN.webp"}

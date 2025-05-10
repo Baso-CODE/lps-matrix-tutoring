@@ -14,9 +14,9 @@ const PaketSesiOSN = () => {
         :
       </p>
       <ul className="package-list">
-        <li>Intensif Olimpiade Paket 20 Sesi</li>
-        <li>Intensif Olimpiade Paket 40 Sesi</li>
-        <li>Intensif Olimpiade Paket 60 Sesi</li>
+        <li>Intensif Olimpiade Paket 100 Sesi</li>
+        <li>Intensif Olimpiade Paket 150 Sesi</li>
+        <li>Intensif Olimpiade Paket 200 Sesi</li>
       </ul>
       <p className="section-description">
         {" "}

@@ -1,5 +1,8 @@
 import { Helmet } from "react-helmet";
+import { useParams } from "react-router-dom";
 import ContactButton from "../../../../components/ContactButton/ContactButton";
+import Promo from "../../../../components/Promo/Promo";
+import Slider from "../../../../components/Slider/Slider";
 import UnivPengajarLps from "../../../../components/UnivPengajarLps/UnivPengajarLps";
 import ApaAjaYgDiPeroleh from "../Components/ApaAjaYgDiPeroleh/ApaAjaYgDiPeroleh";
 import HeadingCPNS from "../Components/HeadingCPNS/HeadingCPNS";
@@ -7,8 +10,6 @@ import JadwalBelajarCPNS from "../Components/JadwalBelajarCPNS/JadwalBelajarCPNS
 import MateriLPSCPNS from "../Components/MateriLPSCPNS/MateriLPSCPNS";
 import ProgramCPNS from "../Components/ProgramCPNS/ProgramCPNS";
 import ProgramIntensifCPNS from "../Components/ProgramIntensifCPNS/ProgramIntensifCPNS";
-import { useParams } from "react-router-dom";
-import Promo from "../../../../components/Promo/Promo";
 
 const LesPrivatCPNSSlug = () => {
   const { slug } = useParams();
@@ -18,8 +19,8 @@ const LesPrivatCPNSSlug = () => {
     <>
       <Helmet>
         <title>
-          Bimbel CPNS di {slugUpperCase} - Les Privat Intensif Tes CPNS TWK TIU
-          TKP - Privat Online dan Offline
+          Bimbel CPNS di {slugUpperCase} Les Privat Intensif Tes CPNS TWK TIU
+          TKP Privat Online dan Offline
         </title>
         <meta
           name="description"
@@ -32,32 +33,42 @@ const LesPrivatCPNSSlug = () => {
         <meta property="og:type" content="website" />
         <meta
           property="og:title"
-          content={`Bimbel CPNS di ${slugUpperCase} - Les Privat Intensif Tes CPNS TWK TIU TKP
-      - Privat Online dan Offline`}
+          content={`Bimbel CPNS di ${slugUpperCase}  Les Privat Intensif Tes CPNS TWK TIU TKP
+       Privat Online dan Offline`}
         />
         <meta
           property="og:description"
           content="Bimbingan intensif untuk persiapan ujian CPNS dengan pengajar profesional dan fasilitas lengkap, memastikan persiapan optimal."
         />
-        <meta property="og:image" content="URL_GAMBAR_OG_CPNS" />
+        <meta
+          property="og:image"
+          content="https://apps.lesprivatmasukptn.com/images/program/CPNS.webp"
+        />
         <meta property="og:url" content={window.location.href} />
         <link rel="canonical" href={window.location.href} />
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:card"
+          content="https://apps.lesprivatmasukptn.com/images/program/CPNS.webp"
+        />
         <meta
           name="twitter:title"
-          content={`Bimbel CPNS di ${slugUpperCase} - Les Privat Intensif Tes CPNS TWK TIU TKP
-          - Privat Online dan Offline`}
+          content={`Bimbel CPNS di ${slugUpperCase}  Les Privat Intensif Tes CPNS TWK TIU TKP
+           Privat Online dan Offline`}
         />
         <meta
           name="twitter:description"
           content="Persiapan terbaik untuk ujian CPNS dengan bimbingan intensif dari LPS Matrix Indonesia, bersama pengajar berpengalaman untuk hasil optimal."
         />
-        <meta name="twitter:image" content="URL_GAMBAR_TWITTER_CPNS" />
+        <meta
+          name="twitter:image"
+          content="https://apps.lesprivatmasukptn.com/images/program/CPNS.webp"
+        />
       </Helmet>
 
       <div className="container-all">
         <HeadingCPNS />
         <ProgramIntensifCPNS />
+        <Slider />
         <MateriLPSCPNS />
         <ApaAjaYgDiPeroleh />
         <ProgramCPNS />

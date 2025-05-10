@@ -54,6 +54,7 @@ const SuccessStory = () => {
         <div className="success-story-gallery">
           {successStories.map((item, index) => (
             <img
+              loading="lazy"
               src={item.image}
               alt="Bimbel Les Privat ONLINE dan Les Privat Datang ke Rumah untuk Program SBMPTN UTBK SNBT Simak UI UTUL UGM. Guru Privat Masuk UI ITB UGM dan Kedokteran di PTN Favorit."
               key={index}

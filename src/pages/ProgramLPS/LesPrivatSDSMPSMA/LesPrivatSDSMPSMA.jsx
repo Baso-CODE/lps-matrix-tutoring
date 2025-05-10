@@ -13,8 +13,8 @@ const LesPrivatSDSMPSMA = () => {
     <>
       <Helmet>
         <title>
-          Les Privat SD, SMP, SMA - Persiapan Belajar Intensif • Online & Guru
-          Datang ke Rumah - LES PRIVAT SBMPTN ™
+          Les Privat SD, SMP, SMA - Persiapan Belajar Intensif Online & Guru
+          Datang ke Rumah LES PRIVAT SBMPTN ™
         </title>
         <meta
           name="description"
@@ -27,7 +27,7 @@ const LesPrivatSDSMPSMA = () => {
         <meta property="og:type" content="website" />
         <meta
           property="og:title"
-          content="Les Privat SD, SMP, SMA - Persiapan Belajar Intensif • Online & Guru Datang ke Rumah - LES PRIVAT SBMPTN ™"
+          content="Les Privat SD, SMP, SMA - Persiapan Belajar Intensif Online & Guru Datang ke Rumah LES PRIVAT SBMPTN ™"
         />
         <meta
           property="og:description"
@@ -45,7 +45,7 @@ const LesPrivatSDSMPSMA = () => {
         />
         <meta
           name="twitter:title"
-          content="Les Privat SD, SMP, SMA - Persiapan Belajar Intensif • Online & Guru Datang ke Rumah - LES PRIVAT SBMPTN ™"
+          content="Les Privat SD, SMP, SMA Persiapan Belajar Intensif Online & Guru Datang ke Rumah LES PRIVAT SBMPTN ™"
         />
         <meta
           name="twitter:description"

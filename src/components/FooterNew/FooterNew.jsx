@@ -156,6 +156,7 @@ Wilayah: [Isi Wilayah]
       <div className="new-footer-section">
         <h3>Member of:</h3>
         <img
+          loading="lazy"
           src="/images/footer/hilpi.jpg"
           alt="Hilpi, Himpunan Lembaga Pendidikan dan Pelatihan Indonesia, member of Matrix Bimbel and Les Privat Program"
           className="member-logo-footer-matrix"
@@ -165,6 +166,7 @@ Wilayah: [Isi Wilayah]
         </p>
         <a href={finalUrl} target="_blank" rel="noopener noreferrer">
           <img
+            loading="lazy"
             src="/images/banner.webp"
             alt="Bimbel Karantina Masuk PTN dan Program Les Privat terbaik untuk UTBK, SIMAK UI, KKI, dan semua jenjang pendidikan."
             className="member-logo-footer-matrix"

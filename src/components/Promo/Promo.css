@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 5vh;
+  /* padding-top: 5vh; */
   padding-bottom: 20px;
 }
 .child-promo-home {
@@ -23,7 +23,7 @@
 }
 
 /* RESPONSIVE */
-@media only screen and (max-width: 500px) {
+/* @media only screen and (max-width: 500px) {
   .parent-promo-home {
     display: none;
   }
@@ -32,4 +32,4 @@
     justify-content: center;
     align-items: center;
   }
-}
+} */

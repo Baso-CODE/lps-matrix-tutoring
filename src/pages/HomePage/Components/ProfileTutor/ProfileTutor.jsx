@@ -74,6 +74,7 @@ const ProfileTutor = () => {
         {tutors.map((tutor, index) => (
           <div key={index} className="carousel-item">
             <img
+              loading="lazy"
               src={tutor.image}
               alt={`Bimbel Les Privat ONLINE dan Les Privat Datang ke Rumah untuk Program SBMPTN UTBK SNBT Simak UI UTUL UGM. Guru Privat Masuk UI ITB UGM dan Kedokteran di PTN Favorit. ${
                 index + 1

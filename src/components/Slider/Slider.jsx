@@ -29,6 +29,7 @@ const Slider = () => {
 
   const lazyLoadImage = (src, alt) => (
     <img
+      loading="lazy"
       data-src={src}
       alt={alt}
       className="lazyload"

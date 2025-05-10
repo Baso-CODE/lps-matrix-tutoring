@@ -20,6 +20,7 @@ const Promo = () => {
       </div> */}
       <div className=" parent-promo-home">
         <img
+          loading="lazy"
           src="/images/diskon-bulanan.webp"
           alt="Promo les privat Online & Guru ke Rumah (TK, SD, SMP, SMA, AKM, Mahasiswa, Bahasa Asing, Simak UI, SBMPTN"
           className="child-promo-home"

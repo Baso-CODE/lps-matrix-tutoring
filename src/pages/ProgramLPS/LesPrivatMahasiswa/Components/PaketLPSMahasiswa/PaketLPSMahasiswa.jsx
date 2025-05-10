@@ -43,6 +43,7 @@ const PaketLPSMahasiswa = () => {
         {packages.map((pkg, index) => (
           <div className="paket-card__sd_smp_sma" key={index}>
             <img
+              loading="lazy"
               src={pkg.icon}
               alt={`Icon Paket ${pkg.title} - Menunjukkan jumlah sesi dan komposisi program`}
               className="paket-icon"

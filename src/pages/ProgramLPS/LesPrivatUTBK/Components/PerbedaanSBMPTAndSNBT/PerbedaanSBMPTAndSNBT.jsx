@@ -11,7 +11,7 @@ const PerbedaanSBMPTAndSNBT = () => {
         <Tilt>
           <div className="card-perbedaan" data-aos="fade-right">
             <div className="imagePerbedaan">
-              <img src="/images/icon/SNBP.webp" alt="" />
+              <img src="/images/icon/SNBP.webp" alt="SNBP" loading="lazy" />
             </div>
             <h2 className="card-title-perbedaan">SBMPTN</h2>
             <ol className="card-list-perbedaan">
@@ -26,7 +26,7 @@ const PerbedaanSBMPTAndSNBT = () => {
         <Tilt>
           <div className="card-perbedaan" data-aos="fade-left">
             <div className="imagePerbedaan">
-              <img src="/images/icon/SNBT.webp" alt="" />
+              <img src="/images/icon/SNBT.webp" alt="SNBT" loading="lazy" />
             </div>
             <h2 className="card-title-perbedaan">SNBT</h2>
             <ol className="card-list-perbedaan">

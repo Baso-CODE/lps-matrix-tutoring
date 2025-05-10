@@ -4,6 +4,7 @@ const HeroLPSMahasiswa = () => {
     <div className="container-halaman__mahasiswa">
       <div className="content-hero-home__mahasiswa">
         <img
+          loading="lazy"
           data-aos="zoom-in-down"
           className="rumah-adat-hero__mahasiswa"
           src={"/images/program/MAHASISWA.webp"}

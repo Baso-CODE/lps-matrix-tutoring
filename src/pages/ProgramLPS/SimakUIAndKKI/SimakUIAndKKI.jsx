@@ -15,8 +15,8 @@ const SimakUIAndKKI = () => {
     <>
       <Helmet>
         <title>
-          Les Privat SIMAK UI di - UTBK SNBT, SIMAK KKI UI & CBT UGM • Online &
-          Guru Datang ke Rumah - LES PRIVAT SBMPTN ™
+          Les Privat SIMAK UI UTBK SNBT, SIMAK KKI UI & CBT UGM Online & Guru
+          Datang ke Rumah LES PRIVAT SBMPTN ™
         </title>
         <meta
           name="description"
@@ -29,7 +29,7 @@ const SimakUIAndKKI = () => {
         <meta property="og:type" content="website" />
         <meta
           property="og:title"
-          content="Les Privat SIMAK UI - UTBK SNBT, SIMAK KKI UI & CBT UGM • Online & Guru Datang ke Rumah - LES PRIVAT SBMPTN ™"
+          content="Les Privat SIMAK UI UTBK SNBT, SIMAK KKI UI & CBT UGM Online & Guru Datang ke Rumah LES PRIVAT SBMPTN ™"
         />
         <meta
           property="og:description"
@@ -47,7 +47,7 @@ const SimakUIAndKKI = () => {
         />
         <meta
           name="twitter:title"
-          content="Les Privat SIMAK UI - UTBK SNBT, SIMAK KKI UI & CBT UGM • Online & Guru Datang ke Rumah - LES PRIVAT SBMPTN ™"
+          content="Les Privat SIMAK UI UTBK SNBT, SIMAK KKI UI & CBT UGM Online & Guru Datang ke Rumah LES PRIVAT SBMPTN ™"
         />
         <meta
           name="twitter:description"

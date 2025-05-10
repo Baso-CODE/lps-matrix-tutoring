@@ -11,14 +11,14 @@ import AlumniLps from "../../HomePage/Components/AlumniLps/AlumniLps";
 import SuccessStory from "../../HomePage/Components/SuccessStory/SuccessStory";
 import GaleryBelajarSiswa from "../../../components/GaleryBelajarSiswa/GaleryBelajarSiswa";
 import Promo from "../../../components/Promo/Promo";
+import Slider from "../../../components/Slider/Slider";
 
 const LesPrivatOSN = () => {
   return (
     <>
       <Helmet>
         <title>
-          Les Privat OSN • Persiapan Olimpiade Sains Nasional - Bimbingan
-          Intensif
+          Les Privat OSN Persiapan Olimpiade Sains Nasional Bimbingan Intensif
         </title>
         <meta
           name="description"
@@ -31,7 +31,7 @@ const LesPrivatOSN = () => {
         <meta property="og:type" content="website" />
         <meta
           property="og:title"
-          content="Les Privat OSN • Persiapan Olimpiade Sains Nasional - Bimbingan Intensif"
+          content="Les Privat OSN Persiapan Olimpiade Sains Nasional Bimbingan Intensif"
         />
         <meta
           property="og:description"
@@ -49,7 +49,7 @@ const LesPrivatOSN = () => {
         />
         <meta
           name="twitter:title"
-          content="Les Privat OSN • Persiapan Olimpiade Sains Nasional - Bimbingan Intensif"
+          content="Les Privat OSN Persiapan Olimpiade Sains Nasional Bimbingan Intensif"
         />
         <meta
           name="twitter:description"
@@ -64,6 +64,7 @@ const LesPrivatOSN = () => {
       <div className="container-all">
         <HeroLpsOSN />
         <ProgramIntensiOSN />
+        <Slider />
         <FasilitasSimakUI />
         <PaketBelajarOSN />
         <PaketSesiOSN />

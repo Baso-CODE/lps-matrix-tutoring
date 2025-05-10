@@ -11,6 +11,7 @@ const UnivPengajarLps = () => {
       </p>
       <div className="centered__Univ_pengajarLps">
         <img
+          loading="lazy"
           src="/images/pengajar.webp"
           alt="Bimbel Les Privat ONLINE dan Les Privat Datang ke Rumah untuk Program SBMPTN UTBK SNBT Simak UI UTUL UGM. Guru Privat Masuk UI ITB UGM dan Kedokteran di PTN Favorit."
           width={"1859"}

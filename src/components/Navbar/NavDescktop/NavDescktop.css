@@ -131,7 +131,7 @@
   background-color: #eeeeee;
   display: none; /* Mulanya disembunyikan */
   width: 500px; /* Batasi lebar submenu */
-  min-height: 400px;
+  min-height: 300px;
   grid-gap: 20px;
 }
 
@@ -186,16 +186,17 @@
 
 .submenu-name {
   font-weight: 700;
-  margin-bottom: -10px;
+
   color: #ff8000;
   font-size: 14px;
   font-family: "Open Sans", sans-serif;
 }
 
 .submenu-desc {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
   color: #ff6500;
+  line-height: 1rem;
   font-family: "Open Sans", sans-serif;
 }
 

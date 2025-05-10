@@ -49,7 +49,7 @@ Wilayah :
           </button> */}
         </div>
         {/*         
-        <img
+        <img loading="lazy"
           data-aos="fade-left"
           className="rumah-adat-hero-home"
           src={"/images/heroo.png"}
@@ -58,6 +58,7 @@ Wilayah :
           height="1075"
         /> */}
         <img
+          loading="lazy"
           data-aos="fade-left"
           className="rumah-adat-hero-home"
           src="/images/HERO.png" // Path to your video file

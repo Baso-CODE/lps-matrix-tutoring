@@ -124,3 +124,9 @@
     top: 4.8rem;
   }
 }
+
+@media (min-width: 771px) {
+  .menu-drawer {
+    border-radius: 0px 30px 30px 0px;
+  }
+}

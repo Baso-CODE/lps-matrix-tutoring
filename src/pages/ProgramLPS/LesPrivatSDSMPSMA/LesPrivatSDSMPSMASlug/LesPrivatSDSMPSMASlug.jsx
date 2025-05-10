@@ -17,8 +17,9 @@ const LesPrivatSDSMPSMASlug = () => {
     <>
       <Helmet>
         <title>
-          Les Privat SD SMP SMA di {slugUpperCase} - Persiapan Belajar Intensif
-          • Online & Guru Datang ke Rumah - LES PRIVAT SBMPTN ™
+          Les Privat SD SMP SMA di {slugUpperCase} Persiapan Belajar Intensif
+          Online & Guru Datang ke Rumah LES PRIVAT SD SMP SMA LPS Matrix
+          Indonesia ™
         </title>
         <meta
           name="description"
@@ -31,25 +32,34 @@ const LesPrivatSDSMPSMASlug = () => {
         <meta property="og:type" content="website" />
         <meta
           property="og:title"
-          content={`Les Privat SD, SMP, SMA di ${slugUpperCase} - Persiapan Belajar Intensif • Online & Guru Datang ke Rumah - LES PRIVAT SBMPTN ™`}
+          content={`Les Privat SD, SMP, SMA di ${slugUpperCase} Persiapan Belajar Intensif Online & Guru Datang ke Rumah LES PRIVAT SD SMP SMA LPS Matrix Indonesia ™`}
         />
         <meta
           property="og:description"
           content="Bimbingan belajar privat untuk SD, SMP, dan SMA dengan pengajar berpengalaman, fasilitas lengkap, tersedia secara online dan guru datang ke rumah."
         />
-        <meta property="og:image" content="URL_GAMBAR_OG_SDSMPSMA" />
+        <meta
+          property="og:image"
+          content="https://apps.lesprivatmasukptn.com/images/program/SD,SMP,SMA.webp"
+        />
         <meta property="og:url" content={window.location.href} />
         <link rel="canonical" href={window.location.href} />
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:card"
+          content="https://apps.lesprivatmasukptn.com/images/program/SD,SMP,SMA.webp"
+        />
         <meta
           name="twitter:title"
-          content={`Les Privat SD, SMP, SMA di ${slugUpperCase} - Persiapan Belajar Intensif • Online & Guru Datang ke Rumah - LES PRIVAT SBMPTN ™`}
+          content={`Les Privat SD, SMP, SMA di ${slugUpperCase} Persiapan Belajar Intensif Online & Guru Datang ke Rumah LES PRIVAT SD SMP SMA LPS Matrix Indonesia ™`}
         />
         <meta
           name="twitter:description"
           content="Program bimbingan belajar privat untuk SD, SMP, dan SMA dengan fasilitas lengkap dan pengajar profesional dari LPS Matrix Indonesia."
         />
-        <meta name="twitter:image" content="URL_GAMBAR_TWITTER_SDSMPSMA" />
+        <meta
+          name="twitter:image"
+          content="https://apps.lesprivatmasukptn.com/images/program/SD,SMP,SMA.webp"
+        />
       </Helmet>
 
       <div className="container-all">

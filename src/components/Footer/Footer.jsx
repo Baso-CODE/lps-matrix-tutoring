@@ -35,6 +35,7 @@ Wilayah: [Isi Wilayah]
         <div className="grid-container-footer-matrix">
           <div className="office-info-footer">
             <img
+              loading="eager"
               src="/images/logoLPS.png"
               alt="Bimbel Les Privat ONLINE dan Les Privat Datang ke Rumah untuk Program SBMPTN UTBK SNBT Simak UI UTUL UGM. Guru Privat Masuk UI ITB UGM dan Kedokteran di PTN Favorit."
               className="footer-matrix-image"
@@ -79,6 +80,7 @@ Wilayah: [Isi Wilayah]
           <div className="member-of-footer-matrix">
             <div className="section-title-footer-matrix">Member of:</div>
             <img
+              loading="lazy"
               src="/images/footer/hilpi.jpg"
               alt="Bimbel Les Privat ONLINE dan Les Privat Datang ke Rumah untuk Program SBMPTN UTBK SNBT Simak UI UTUL UGM. Guru Privat Masuk UI ITB UGM dan Kedokteran di PTN Favorit. "
               className="member-logo-footer-matrix"
@@ -89,6 +91,7 @@ Wilayah: [Isi Wilayah]
               Our Student`s School:
             </div>
             <img
+              loading="lazy"
               src="/images/footer/asal_sekolah_siswa.webp"
               alt="Bimbel Les Privat ONLINE dan Les Privat Datang ke Rumah untuk Program SBMPTN UTBK SNBT Simak UI UTUL UGM. Guru Privat Masuk UI ITB UGM dan Kedokteran di PTN Favorit."
               className="member-logo-footer-matrix"
@@ -102,6 +105,7 @@ Wilayah: [Isi Wilayah]
               Our Students are From:
             </div>
             <img
+              loading="lazy"
               src="/images/footer/negara.png"
               alt="Bimbel Les Privat ONLINE dan Les Privat Datang ke Rumah untuk Program SBMPTN UTBK SNBT Simak UI UTUL UGM. Guru Privat Masuk UI ITB UGM dan Kedokteran di PTN Favorit."
               className="students-flag-footer-matrix"

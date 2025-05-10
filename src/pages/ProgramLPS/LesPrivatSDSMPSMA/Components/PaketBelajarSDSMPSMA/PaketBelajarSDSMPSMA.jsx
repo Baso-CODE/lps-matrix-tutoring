@@ -43,6 +43,7 @@ const PaketBelajarSDSMPSMA = () => {
         {packages.map((pkg, index) => (
           <div className="paket-card__sd_smp_sma" key={index}>
             <img
+              loading="lazy"
               src={pkg.icon}
               alt="paket belajar program osn"
               className="paket-icon"

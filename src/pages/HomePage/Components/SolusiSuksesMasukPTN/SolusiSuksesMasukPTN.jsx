@@ -14,6 +14,7 @@ const SolusiSuksesMasukPTN = () => {
         <div className="card-solusi-sukses-ptn" data-aos="fade-right">
           <div className="card-header-solusi-sukses-ptn">
             <img
+              loading="lazy"
               src="/images/solusi-sukses/EXPERT TUTOR.webp"
               alt="Ilustrasi Guru Les Privat Ahli di Bidangnya, Alumni dan Mahasiswa dari PTN Terbaik"
               className="card-icon-solusi-sukses-ptn"
@@ -32,6 +33,7 @@ const SolusiSuksesMasukPTN = () => {
         <div className="card-solusi-sukses-ptn" data-aos="fade-up">
           <div className="card-header-solusi-sukses-ptn">
             <img
+              loading="lazy"
               src="/images/solusi-sukses/SMART_METODE.webp"
               alt="Ilustrasi Metode Pembelajaran Cerdas yang Terintegrasi untuk Siswa"
               className="card-icon-solusi-sukses-ptn"
@@ -50,6 +52,7 @@ const SolusiSuksesMasukPTN = () => {
         <div className="card-solusi-sukses-ptn" data-aos="fade-left">
           <div className="card-header-solusi-sukses-ptn">
             <img
+              loading="lazy"
               src="/images/solusi-sukses/EXCLUSIVE_SERVICE.webp"
               alt="Ilustrasi Layanan Eksklusif yang Menjamin Kualitas dan Kepuasan"
               className="card-icon-solusi-sukses-ptn"

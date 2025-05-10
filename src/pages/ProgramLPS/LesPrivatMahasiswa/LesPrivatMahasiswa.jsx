@@ -8,14 +8,15 @@ import LayananLPSMahasiswa from "./Components/LayananLPSMahasiswa/LayananLPSMaha
 import PaketLPSMahasiswa from "./Components/PaketLPSMahasiswa/PaketLPSMahasiswa";
 import "./LesPrivatMahasiswa.css";
 import Promo from "../../../components/Promo/Promo";
+import Slider from "../../../components/Slider/Slider";
 
 const LesPrivatMahasiswa = () => {
   return (
     <>
       <Helmet>
         <title>
-          Les Privat Mahasiswa - Kedokteran Akuntansi Ekonomi Manajemen - Online
-          dan guru datang ke rumah
+          Les Privat Mahasiswa Kedokteran Akuntansi Ekonomi Manajemen Online dan
+          guru datang ke rumah
         </title>
         <meta
           name="description"
@@ -28,8 +29,7 @@ const LesPrivatMahasiswa = () => {
         <meta property="og:type" content="website" />
         <meta
           property="og:title"
-          content="Les Privat Mahasiswa - Kedokteran Akuntansi Ekonomi Manajemen -
-          Online dan guru datang ke rumah"
+          content="Les Privat Mahasiswa Kedokteran Akuntansi Ekonomi Manajemen Online dan guru datang ke rumah"
         />
         <meta
           property="og:description"
@@ -47,8 +47,7 @@ const LesPrivatMahasiswa = () => {
         />
         <meta
           name="twitter:title"
-          content="Les Privat Mahasiswa - Kedokteran Akuntansi Ekonomi Manajemen -
-          Online dan guru datang ke rumah"
+          content="Les Privat Mahasiswa Kedokteran Akuntansi Ekonomi Manajemen Online dan guru datang ke rumah"
         />
         <meta
           name="twitter:description"
@@ -62,6 +61,7 @@ const LesPrivatMahasiswa = () => {
 
       <div className="container-all">
         <HeroLPSMahasiswa />
+        <Slider />
         <LayananLPSMahasiswa />
         <FasilitasSimakUI />
         <PaketLPSMahasiswa />

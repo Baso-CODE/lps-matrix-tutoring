@@ -10,6 +10,7 @@ const ValuesCompany = () => {
       <div className="values-list">
         <div className="value-item">
           <img
+            loading="lazy"
             src="/images/about-us/integrity.webp"
             alt="Integrity: A symbol of trust and honesty in our work"
             className="emoji"
@@ -18,6 +19,7 @@ const ValuesCompany = () => {
         </div>
         <div className="value-item">
           <img
+            loading="lazy"
             src="/images/about-us/toga_1.webp"
             alt="Expertise: Demonstrating knowledge and skill in every aspect"
             className="emoji"
@@ -26,6 +28,7 @@ const ValuesCompany = () => {
         </div>
         <div className="value-item">
           <img
+            loading="lazy"
             src="/images/about-us/profesional.webp"
             alt="Professionalism: Maintaining high standards and ethics in our work"
             className="emoji"

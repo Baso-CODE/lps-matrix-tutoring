@@ -20,11 +20,13 @@ const TestimoniWaSiswa = () => {
       </p>
 
       <img
+        loading="lazy"
         className="desktop-image-testimoni"
         src="/images/TESTIMONI.webp"
         alt="Bimbel Les Privat ONLINE dan Les Privat Datang ke Rumah untuk Program SBMPTN UTBK SNBT Simak UI UTUL UGM. Guru Privat Masuk UI ITB UGM dan Kedokteran di PTN Favorit."
       />
       <img
+        loading="lazy"
         src="/images/TESTIMONI-HP.webp"
         className="mobile-image-testimoni"
         alt="Bimbel Les Privat ONLINE dan Les Privat Datang ke Rumah untuk Program SBMPTN UTBK SNBT Simak UI UTUL UGM. Guru Privat Masuk UI ITB UGM dan Kedokteran di PTN Favorit."

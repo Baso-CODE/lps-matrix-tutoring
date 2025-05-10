@@ -41,6 +41,7 @@ const FloatingCTA = () => {
                 <span className="notif-badge">{unreadMessages}</span>
               )}
               <img
+                loading="lazy"
                 src="/images/icon-wa.svg"
                 alt="Klik untuk langsung terhubung dengan tim Les Privat Masuk PTN!"
                 className="icon-wa"

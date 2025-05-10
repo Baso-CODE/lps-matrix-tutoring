@@ -44,6 +44,7 @@ const PaketBelajarSimakUI = () => {
         {packages.map((pkg, index) => (
           <div className="paket-card" key={index}>
             <img
+              loading="lazy"
               src={pkg.icon}
               alt="paket belajar program simak ui"
               className="paket-icon"

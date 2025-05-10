@@ -13,14 +13,15 @@ import PerbedaanSBMPTAndSNBT from "./Components/PerbedaanSBMPTAndSNBT/PerbedaanS
 import TigaJalurMasukPTN from "./Components/TigaJalurMasukPTN/TigaJalurMasukPTN";
 import "./LesPrivatUTBK.css";
 import Promo from "../../../components/Promo/Promo";
+import ContactButton from "../../../components/ContactButton/ContactButton";
 
 const LesPrivatUTBK = () => {
   return (
     <>
       <Helmet>
         <title>
-          Les Privat UTBK SNBT • Undip, Unair, Unpad, UB, Udayana, Simak UI &
-          CBT UGM • Online & Guru Datang ke Rumah - LES PRIVAT SBMPTN ™
+          Les Privat UTBK SNBT Undip, Unair, Unpad, UB, Udayana, Simak UI & CBT
+          UGM Online & Guru Datang ke Rumah LES PRIVAT SBMPTN ™
         </title>
         <meta
           name="description"
@@ -33,7 +34,7 @@ const LesPrivatUTBK = () => {
         <meta property="og:type" content="website" />
         <meta
           property="og:title"
-          content="Les Privat UTBK SNBT • Undip, Unair, Unpad, UB, Udayana, Simak UI & CBT UGM • Online & Guru Datang ke Rumah - LES PRIVAT SBMPTN ™"
+          content="Les Privat UTBK SNBT Undip, Unair, Unpad, UB, Udayana, Simak UI & CBT UGM Online & Guru Datang ke Rumah LES PRIVAT SBMPTN ™"
         />
         <meta
           property="og:description"
@@ -51,7 +52,7 @@ const LesPrivatUTBK = () => {
         />
         <meta
           name="twitter:title"
-          content="Les Privat UTBK SNBT • Undip, Unair, Unpad, UB, Udayana, Simak UI & CBT UGM • Online & Guru Datang ke Rumah - LES PRIVAT SBMPTN ™"
+          content="Les Privat UTBK SNBT Undip, Unair, Unpad, UB, Udayana, Simak UI & CBT UGM Online & Guru Datang ke Rumah LES PRIVAT SBMPTN ™"
         />
         <meta
           name="twitter:description"
@@ -77,8 +78,8 @@ const LesPrivatUTBK = () => {
         <SuccessStory />
         <ContactFooter />
         <UnivPengajarLps />
-        {/* <ContactButton /> */}
         <Promo />
+        <ContactButton />
       </div>
     </>
   );

@@ -8,6 +8,7 @@ const VisiEndMisiLps = () => {
         <div className="card">
           <h2 className="card-title">
             <img
+              loading="lazy"
               src="/images/visi-misi/VISI.webp"
               alt="Ilustrasi Visi LPS, Menjadi Lembaga Pendidikan Privat Terbaik di Indonesia"
             />
@@ -21,6 +22,7 @@ const VisiEndMisiLps = () => {
         <div className="card">
           <h2 className="card-title">
             <img
+              loading="eager"
               src="/images/visi-misi/MISI.webp"
               alt="Ilustrasi Misi LPS, Memberikan Layanan Les Privat Berkualitas dengan Guru Terbaik"
             />
@@ -35,6 +37,7 @@ const VisiEndMisiLps = () => {
         <div className="card">
           <h2 className="card-title">
             <img
+              loading="lazy"
               src="/images/visi-misi/FILOSOFI.webp"
               alt="Ilustrasi Filosofi LPS, Pendidikan Sebagai Investasi Terbaik untuk Masa Depan"
             />{" "}
@@ -48,6 +51,7 @@ const VisiEndMisiLps = () => {
         <div className="card">
           <h2 className="card-title">
             <img
+              loading="lazy"
               src="/images/visi-misi/PROMISE.webp"
               alt="Ilustrasi Promise LPS, Komitmen untuk Memberikan Bimbingan Terbaik kepada Siswa"
             />

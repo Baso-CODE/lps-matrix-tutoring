@@ -6,6 +6,7 @@ const HistoryAndSuccesLps = () => {
       <div className="about__us-section history">
         <div className="about__us-image-history-and-success">
           <img
+            loading="lazy"
             src={"/images/about-us/history-us.webp"}
             alt="Bimbel Les Privat ONLINE dan Les Privat Datang ke Rumah untuk Program SBMPTN UTBK SNBT Simak UI UTUL UGM. Guru Privat Masuk UI ITB UGM dan Kedokteran di PTN Favorit."
           />
@@ -54,6 +55,7 @@ const HistoryAndSuccesLps = () => {
         </div>
         <div className="about__us-image-history-and-success">
           <img
+            loading="lazy"
             src={"/images/about-us/succes-story.webp"}
             alt="Bimbel Les Privat ONLINE dan Les Privat Datang ke Rumah untuk Program SBMPTN UTBK SNBT Simak UI UTUL UGM. Guru Privat Masuk UI ITB UGM dan Kedokteran di PTN Favorit."
             height={"1152"}

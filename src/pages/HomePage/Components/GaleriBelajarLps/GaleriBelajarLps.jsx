@@ -19,6 +19,7 @@ const GaleriBelajarLps = () => {
       </p>
 
       <img
+        loading="lazy"
         src="/images/gallery-belajar.png"
         alt="Bimbel Les Privat ONLINE dan Les Privat Datang ke Rumah untuk Program SBMPTN UTBK SNBT Simak UI UTUL UGM. Guru Privat Masuk UI ITB UGM dan Kedokteran di PTN Favorit."
       />

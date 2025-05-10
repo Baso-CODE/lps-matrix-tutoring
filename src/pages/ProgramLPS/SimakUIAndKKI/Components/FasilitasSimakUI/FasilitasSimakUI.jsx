@@ -11,6 +11,7 @@ const FasilitasSimakUI = () => {
             src="/images/icon/fasilitas/fasilitas.webp"
             alt="Icon Fasilitas"
             className="fasilitas-icon"
+            loading="lazy"
           />
           <h2 className="fasilitas-title">Fasilitas</h2>
           <ul className="fasilitas-list">
@@ -26,6 +27,7 @@ const FasilitasSimakUI = () => {
         {/* Card 2: Target Belajar */}
         <div className="fasilitas-simak-ui-card">
           <img
+            loading="lazy"
             src="/images/icon/fasilitas/target.webp"
             alt="Icon Fasilitas"
             className="fasilitas-icon"
@@ -46,6 +48,7 @@ const FasilitasSimakUI = () => {
         {/* Card 3: Schedulling */}
         <div className="fasilitas-simak-ui-card">
           <img
+            loading="lazy"
             src="/images/icon/fasilitas/schedulling.webp"
             alt="Icon Fasilitas"
             className="fasilitas-icon"
@@ -65,6 +68,7 @@ const FasilitasSimakUI = () => {
         {/* Card 4: Lokasi Belajar */}
         <div className="fasilitas-simak-ui-card">
           <img
+            loading="lazy"
             src="/images/icon/fasilitas/location.webp"
             alt="Icon Fasilitas"
             className="fasilitas-icon"

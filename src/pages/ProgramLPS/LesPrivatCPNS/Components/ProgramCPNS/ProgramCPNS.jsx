@@ -5,6 +5,7 @@ const ProgramCPNS = () => {
     <div className="program-container">
       <div className="image-container" data-aos="flip-up">
         <img
+          loading="lazy"
           src="/images/simak-ui/program-cpns.webp"
           alt="Bimbel Les Privat ONLINE dan Les Privat Datang ke Rumah untuk Program SBMPTN UTBK SNBT Simak UI UTUL UGM. Guru Privat Masuk UI ITB UGM dan Kedokteran di PTN Favorit."
           className="program-image"

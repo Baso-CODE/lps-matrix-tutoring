@@ -8,6 +8,7 @@ import UnivPengajarLps from "../../../../components/UnivPengajarLps/UnivPengajar
 import ContactButton from "../../../../components/ContactButton/ContactButton";
 import { useParams } from "react-router-dom";
 import Promo from "../../../../components/Promo/Promo";
+import Slider from "../../../../components/Slider/Slider";
 
 const LesPrivatOSNSlug = () => {
   const { slug } = useParams();
@@ -17,8 +18,8 @@ const LesPrivatOSNSlug = () => {
     <>
       <Helmet>
         <title>
-          Les Privat OSN di {slugUpperCase} • Persiapan Olimpiade Sains Nasional
-          - Bimbingan Intensif
+          Les Privat OSN di {slugUpperCase} Persiapan Olimpiade Sains Nasional -
+          Bimbingan Intensif
         </title>
         <meta
           name="description"
@@ -37,10 +38,16 @@ const LesPrivatOSNSlug = () => {
           property="og:description"
           content="Bimbingan intensif untuk OSN dengan pengajar profesional dan fasilitas lengkap, mempersiapkan siswa untuk Olimpiade Sains Nasional."
         />
-        <meta property="og:image" content="URL_GAMBAR_OG_OSN" />
+        <meta
+          property="og:image"
+          content="https://apps.lesprivatmasukptn.com/images/program/OSN.webp"
+        />
         <meta property="og:url" content={window.location.href} />
         <link rel="canonical" href={window.location.href} />
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:card"
+          content="https://apps.lesprivatmasukptn.com/images/program/OSN.webp"
+        />
         <meta
           name="twitter:title"
           content={`Les Privat OSN di ${slugUpperCase} • Persiapan Olimpiade Sains Nasional - Bimbingan Intensif`}
@@ -49,12 +56,16 @@ const LesPrivatOSNSlug = () => {
           name="twitter:description"
           content="Persiapan OSN terbaik dengan bimbingan intensif dari LPS Matrix Indonesia, bersama pengajar berpengalaman untuk hasil optimal."
         />
-        <meta name="twitter:image" content="URL_GAMBAR_TWITTER_OSN" />
+        <meta
+          name="twitter:image"
+          content="https://apps.lesprivatmasukptn.com/images/program/OSN.webp"
+        />
       </Helmet>
 
       <div className="container-all">
         <HeroLpsOSN />
         <ProgramIntensiOSN />
+        <Slider />
         <FasilitasSimakUI />
         <PaketBelajarOSN />
         <PaketSesiOSN />

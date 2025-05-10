@@ -8,6 +8,7 @@ const FiturDanLayanan = () => {
       {/* Les Privat Akademik */}
       <div className="fitur-item">
         <img
+          loading="lazy"
           src="/images/fiturLayanan/AKADEMIK.webp" // ganti dengan path gambar Anda
           alt="Bimbel Les Privat ONLINE dan Les Privat Datang ke Rumah untuk Program SBMPTN UTBK SNBT Simak UI UTUL UGM. Guru Privat Masuk UI ITB UGM dan Kedokteran di PTN Favorit."
           className="fitur-image"
@@ -33,6 +34,7 @@ const FiturDanLayanan = () => {
       {/* Les Privat Masuk PTN - Custom Layout with Image on the Right */}
       <div className="fitur-item image-right">
         <img
+          loading="lazy"
           src="/images/fiturLayanan/MASUK_PTN.webp"
           alt="Bimbel Les Privat ONLINE dan Les Privat Datang ke Rumah untuk Program SBMPTN UTBK SNBT Simak UI UTUL UGM. Guru Privat Masuk UI ITB UGM dan Kedokteran di PTN Favorit."
           className="fitur-image"
@@ -61,6 +63,7 @@ const FiturDanLayanan = () => {
       {/* Les Privat Kedinasan */}
       <div className="fitur-item">
         <img
+          loading="lazy"
           src="/images/fiturLayanan/KEDINASAN.webp"
           alt="Bimbel Les Privat ONLINE dan Les Privat Datang ke Rumah untuk Program SBMPTN UTBK SNBT Simak UI UTUL UGM. Guru Privat Masuk UI ITB UGM dan Kedokteran di PTN Favorit."
           className="fitur-image"

@@ -22,8 +22,8 @@ const HomePage = () => {
     <>
       <Helmet>
         <title>
-          Les Privat UTBK SNBT • Undip, Unair, Unpad, UB, Udayana, Simak UI &
-          CBT UGM • Online & Guru Datang ke Rumah
+          Les Privat UTBK SNBT Undip, Unair, Unpad, UB, Udayana, Simak UI & CBT
+          UGM Online & Guru Datang ke Rumah
         </title>
         <meta
           name="description"
@@ -36,7 +36,7 @@ const HomePage = () => {
         <meta property="og:type" content="website" />
         <meta
           property="og:title"
-          content="Les Privat UTBK SNBT • Undip, Unair, Unpad, UB, Udayana, Simak UI & CBT UGM • Online & Guru Datang ke Rumah"
+          content="Les Privat UTBK SNBT Undip, Unair, Unpad, UB, Udayana, Simak UI & CBT UGM Online & Guru Datang ke Rumah"
         />
         <meta
           property="og:description"
@@ -54,7 +54,7 @@ const HomePage = () => {
         />
         <meta
           name="twitter:title"
-          content="Les Privat UTBK SNBT • Undip, Unair, Unpad, UB, Udayana, Simak UI & CBT UGM • Online & Guru Datang ke Rumah"
+          content="Les Privat UTBK SNBT Undip, Unair, Unpad, UB, Udayana, Simak UI & CBT UGM Online & Guru Datang ke Rumah"
         />
         <meta
           name="twitter:description"

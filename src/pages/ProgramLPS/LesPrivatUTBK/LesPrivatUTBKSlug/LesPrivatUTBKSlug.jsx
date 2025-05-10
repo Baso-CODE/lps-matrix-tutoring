@@ -19,9 +19,9 @@ const LesPrivatUTBKSlug = () => {
     <>
       <Helmet>
         <title>
-          Les Privat UTBK SNBT di {slugUpperCase} • Undip, Unair, Unpad, UB,
-          Udayana, Simak UI & CBT UGM • Online & Guru Datang ke Rumah - LES
-          PRIVAT SBMPTN ™
+          Les Privat UTBK SNBT di {slugUpperCase} Undip, Unair, Unpad, UB,
+          Udayana, Simak UI & CBT UGM Online & Guru Datang ke Rumah - LES PRIVAT
+          UTBK SNBT ™
         </title>
         <meta
           name="description"
@@ -34,25 +34,34 @@ const LesPrivatUTBKSlug = () => {
         <meta property="og:type" content="website" />
         <meta
           property="og:title"
-          content={`Les Privat UTBK SNBT di ${slugUpperCase} • Undip, Unair, Unpad, UB, Udayana, Simak UI & CBT UGM • Online & Guru Datang ke Rumah - LES PRIVAT SBMPTN ™`}
+          content={`Les Privat UTBK SNBT di ${slugUpperCase}  Undip, Unair, Unpad, UB, Udayana, Simak UI & CBT UGM  Online & Guru Datang ke Rumah - LES PRIVAT UTBK SNBT ™`}
         />
         <meta
           property="og:description"
           content="Program bimbingan intensif UTBK SNBT dengan pengajar profesional untuk persiapan terbaik masuk PTN favorit Anda."
         />
-        <meta property="og:image" content="URL_GAMBAR_OG_UTBK" />
+        <meta
+          property="og:image"
+          content="https://apps.lesprivatmasukptn.com/images/program/UTBK.webp"
+        />
         <meta property="og:url" content={window.location.href} />
         <link rel="canonical" href={window.location.href} />
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:card"
+          content="https://apps.lesprivatmasukptn.com/images/program/UTBK.webp"
+        />
         <meta
           name="twitter:title"
-          content={`Les Privat UTBK SNBT di ${slugUpperCase} • Undip, Unair, Unpad, UB, Udayana, Simak UI & CBT UGM • Online & Guru Datang ke Rumah - LES PRIVAT SBMPTN ™`}
+          content={`Les Privat UTBK SNBT di ${slugUpperCase}  Undip, Unair, Unpad, UB, Udayana, Simak UI & CBT UGM  Online & Guru Datang ke Rumah - LES PRIVAT UTBK SNBT ™`}
         />
         <meta
           name="twitter:description"
           content="Persiapan UTBK SNBT terbaik dengan pengajar berpengalaman dan fasilitas lengkap dari LPS Matrix Indonesia."
         />
-        <meta name="twitter:image" content="URL_GAMBAR_TWITTER_UTBK" />
+        <meta
+          name="twitter:image"
+          content="https://apps.lesprivatmasukptn.com/images/program/UTBK.webp"
+        />
       </Helmet>
 
       <div className="container-all">

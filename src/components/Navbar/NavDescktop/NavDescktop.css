@@ -193,11 +193,11 @@
 }
 
 .submenu-desc {
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 15px;
+  font-weight: 600;
   color: #ff6500;
   line-height: 1rem;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Yellowtail", cursive;
 }
 
 @media (max-width: 768px) {

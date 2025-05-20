@@ -25,10 +25,18 @@ import LesPrivatUTBKSlug from "./pages/ProgramLPS/LesPrivatUTBK/LesPrivatUTBKSlu
 import SimakUIAndKKI from "./pages/ProgramLPS/SimakUIAndKKI/SimakUIAndKKI";
 import SimakUIAndKKISLug from "./pages/ProgramLPS/SimakUIAndKKI/SimakUIAndKKISLug/SimakUIAndKKISLug";
 import TestimonyPage from "./pages/TestimonyPage/TestimonyPage";
+import { useAppDispatch } from "./lib/hooks";
+import { fetchContactCs } from "./lib/features/contactCsSlice";
 
 function App() {
   const [loading, setLoading] = useState(false);
   const location = useLocation();
+
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(fetchContactCs());
+  }, [dispatch]);
 
   useEffect(() => {
     // Initialize AOS

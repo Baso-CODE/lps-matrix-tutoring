@@ -9,9 +9,9 @@ const ProgramBelajarSIMAKUI = () => {
         disesuaikan dengan ketersediaan waktu Anda.
       </p>
       <ul className="package-list">
-        <li>Intensif Paket 20 sesi</li>
-        <li>Intensif Paket 40 sesi</li>
-        <li>Intensif Paket 60 sesi</li>
+        <li>Intensif Paket 101 sesi</li>
+        <li>Intensif Paket 150 sesi</li>
+        <li>Intensif Paket 200 sesi</li>
       </ul>
       <p className="section-description">
         Paket ini ditujukan bagi Anda yang ingin memulai segera, namun masih

@@ -1,11 +1,26 @@
+import { useEffect, useState } from "react";
 import "./HeadingCPNS.css";
+import { getJumbotronProgram } from "../../../../../api/jumbotron/getJumbotronProgram";
 
 const HeadingCPNS = () => {
+  const [jumbotron, setJumbotron] = useState(null);
+
+  useEffect(() => {
+    const fetchJumbotron = async () => {
+      try {
+        const result = await getJumbotronProgram("cpns");
+        setJumbotron(result.data);
+      } catch (error) {
+        console.error("Error fetching:", error);
+      }
+    };
+    fetchJumbotron();
+  }, []);
   return (
     <div className="heading-cpns-container">
       <img
         loading="lazy"
-        src="/images/program/CPNS.webp"
+        src={jumbotron?.link_image || "/images/program/CPNS.webp"}
         alt="Bimbel Les Privat ONLINE dan Les Privat Datang ke Rumah untuk Program SBMPTN UTBK SNBT Simak UI UTUL UGM. Guru Privat Masuk UI ITB UGM dan Kedokteran di PTN Favorit."
         className="heading-image"
       />

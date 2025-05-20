@@ -1,5 +1,20 @@
+import { useEffect, useState } from "react";
 import "./HeroLPSMahasiswa.css";
+import { getJumbotronProgram } from "../../../../../api/jumbotron/getJumbotronProgram";
 const HeroLPSMahasiswa = () => {
+  const [jumbotron, setJumbotron] = useState(null);
+
+  useEffect(() => {
+    const fetchJumbotron = async () => {
+      try {
+        const result = await getJumbotronProgram("lesprivat-mahasiswa");
+        setJumbotron(result.data);
+      } catch (error) {
+        console.error("Error fetching:", error);
+      }
+    };
+    fetchJumbotron();
+  }, []);
   return (
     <div className="container-halaman__mahasiswa">
       <div className="content-hero-home__mahasiswa">
@@ -7,7 +22,7 @@ const HeroLPSMahasiswa = () => {
           loading="lazy"
           data-aos="zoom-in-down"
           className="rumah-adat-hero__mahasiswa"
-          src={"/images/program/MAHASISWA.webp"}
+          src={jumbotron?.link_image || "/images/program/MAHASISWA.webp"}
           alt="Bimbel Les Privat ONLINE dan Les Privat Datang ke Rumah untuk Program SBMPTN UTBK SNBT Simak UI UTUL UGM. Guru Privat Masuk UI ITB UGM dan Kedokteran di PTN Favorit."
         />
         <div className="isi-content-hero__mahasiswa">

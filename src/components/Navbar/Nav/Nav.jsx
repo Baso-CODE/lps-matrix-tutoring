@@ -2,23 +2,15 @@ import { useEffect, useState } from "react";
 import NavDescktop from "../NavDescktop/NavDescktop";
 import NavMobile from "../NavMobile/NavMobile";
 
-import "./Nav.css";
 import { Link } from "react-router-dom";
 import { Menus } from "../../../helpers/NavbarMenus/Menus";
+import "./Nav.css";
+import { selectContactCsData } from "../../../lib/features/contactCsSlice";
+import { useAppSelector } from "../../../lib/hooks";
 
 const Nav = () => {
+  const contactData = useAppSelector(selectContactCsData);
   const [isScrolled, setIsScrolled] = useState(false);
-  const phone = "6285774023474"; // Nomor telepon
-  const baseUrl = `https://api.whatsapp.com/send?phone=${phone}&text=Halo%20Kak%20Dita%20https://apps.lesprivatmasukptn.com/,%20saya%20ingin%20tanya%20tentang%20program%20belajar:%0A`;
-
-  const message = `
-Kelas : 
-Mapel : 
-Kurikulum : 
-Wilayah : 
-`.trim(); // Placeholder untuk pesan yang diinginkan
-
-  const finalUrl = `${baseUrl}${encodeURIComponent(message)}`;
 
   const handleScroll = () => {
     const scrollTop = window.scrollY;
@@ -56,13 +48,18 @@ Wilayah :
 
           <div className="auth-menu">
             <a
-              href={finalUrl}
+              href={contactData?.link_cta}
               aria-label="sign-in"
               className="sign-in-button"
               target="_blank"
               rel="noopener noreferrer">
-              Daftar Sekarang
-            </a>{" "}
+              Free Konsultasi
+              <img
+                src="/images/daftar-sekarang.png"
+                alt=""
+                className="button-icon-nav"
+              />
+            </a>
             <div className="mobile-menu">
               <NavMobile Menus={Menus} />
             </div>

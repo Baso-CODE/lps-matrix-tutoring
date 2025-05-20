@@ -3,13 +3,13 @@ import "./VisiEndMisiLps.css";
 const VisiEndMisiLps = () => {
   return (
     <div className="visi-misi-container">
-      <h1 className="visi-misi-title">Visi dan Misi LPS</h1>
+      {/* <h1 className="visi-misi-title">Visi dan Misi LPS</h1> */}
       <div className="card-container">
         <div className="card">
           <h2 className="card-title">
             <img
               loading="lazy"
-              src="/images/visi-misi/VISI.webp"
+              src="/images/visi-misi/vission.gif"
               alt="Ilustrasi Visi LPS, Menjadi Lembaga Pendidikan Privat Terbaik di Indonesia"
             />
             Visi
@@ -23,7 +23,7 @@ const VisiEndMisiLps = () => {
           <h2 className="card-title">
             <img
               loading="eager"
-              src="/images/visi-misi/MISI.webp"
+              src="/images/visi-misi/mission.gif"
               alt="Ilustrasi Misi LPS, Memberikan Layanan Les Privat Berkualitas dengan Guru Terbaik"
             />
             Misi
@@ -38,7 +38,7 @@ const VisiEndMisiLps = () => {
           <h2 className="card-title">
             <img
               loading="lazy"
-              src="/images/visi-misi/FILOSOFI.webp"
+              src="/images/visi-misi/filosofi.gif"
               alt="Ilustrasi Filosofi LPS, Pendidikan Sebagai Investasi Terbaik untuk Masa Depan"
             />{" "}
             Filosofi
@@ -52,7 +52,7 @@ const VisiEndMisiLps = () => {
           <h2 className="card-title">
             <img
               loading="lazy"
-              src="/images/visi-misi/PROMISE.webp"
+              src="/images/visi-misi/promise.gif"
               alt="Ilustrasi Promise LPS, Komitmen untuk Memberikan Bimbingan Terbaik kepada Siswa"
             />
             Promise

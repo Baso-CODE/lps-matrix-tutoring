@@ -1,11 +1,27 @@
+import { useEffect, useState } from "react";
+import { getJumbotronProgram } from "../../../../../api/jumbotron/getJumbotronProgram";
+
 const HeroLpsPascaSarjana = () => {
+  const [jumbotron, setJumbotron] = useState(null);
+
+  useEffect(() => {
+    const fetchJumbotron = async () => {
+      try {
+        const result = await getJumbotronProgram("lesprivat-pascasarjana");
+        setJumbotron(result.data);
+      } catch (error) {
+        console.error("Error fetching:", error);
+      }
+    };
+    fetchJumbotron();
+  }, []);
   return (
     <div className="program-simak-ui-container">
       {/* Image Section */}
       <img
         loading="lazy"
         data-aos="zoom-in-down"
-        src={"/images/program/PASCA-SARJANA.webp"} // Ganti dengan URL atau path gambar yang sesuai
+        src={jumbotron?.link_image || "/images/program/PASCA-SARJANA.webp"} // Ganti dengan URL atau path gambar yang sesuai
         alt="Bimbel Les Privat ONLINE dan Les Privat Datang ke Rumah untuk Program SBMPTN UTBK SNBT Simak UI UTUL UGM. Guru Privat Masuk UI ITB UGM dan Kedokteran di PTN Favorit."
         className="program-simak-ui-image"
       />

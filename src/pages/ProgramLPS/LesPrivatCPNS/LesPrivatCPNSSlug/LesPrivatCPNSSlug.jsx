@@ -1,15 +1,22 @@
 import { Helmet } from "react-helmet";
 import { useParams } from "react-router-dom";
-import ContactButton from "../../../../components/ContactButton/ContactButton";
+import ContactFooter from "../../../../components/ContactFooter/ContactFooter";
+import GaleryBelajarSiswa from "../../../../components/GaleryBelajarSiswa/GaleryBelajarSiswa";
 import Promo from "../../../../components/Promo/Promo";
 import Slider from "../../../../components/Slider/Slider";
 import UnivPengajarLps from "../../../../components/UnivPengajarLps/UnivPengajarLps";
+import ProfileTutor from "../../../HomePage/Components/ProfileTutor/ProfileTutor";
+import TestimoniWaSiswa from "../../../HomePage/Components/TestimoniWaSiswa/TestimoniWaSiswa";
+import VisiEndMisiLps from "../../../HomePage/Components/VisiEndMisiLps/VisiEndMisiLps";
+import AsalSiswaLPS from "../../LesPrivatUTBK/Components/AsalSiswaLPS/AsalSiswaLPS";
 import ApaAjaYgDiPeroleh from "../Components/ApaAjaYgDiPeroleh/ApaAjaYgDiPeroleh";
 import HeadingCPNS from "../Components/HeadingCPNS/HeadingCPNS";
 import JadwalBelajarCPNS from "../Components/JadwalBelajarCPNS/JadwalBelajarCPNS";
 import MateriLPSCPNS from "../Components/MateriLPSCPNS/MateriLPSCPNS";
+import PaketBelajarCPNS from "../Components/PaketBelajarCPNS/PaketBelajarCPNS";
 import ProgramCPNS from "../Components/ProgramCPNS/ProgramCPNS";
 import ProgramIntensifCPNS from "../Components/ProgramIntensifCPNS/ProgramIntensifCPNS";
+import SuccesStoryCPNS from "../Components/SuccesStoryCPNS/SuccesStoryCPNS";
 
 const LesPrivatCPNSSlug = () => {
   const { slug } = useParams();
@@ -68,13 +75,20 @@ const LesPrivatCPNSSlug = () => {
       <div className="container-all">
         <HeadingCPNS />
         <ProgramIntensifCPNS />
+        <PaketBelajarCPNS />
         <Slider />
         <MateriLPSCPNS />
-        <ApaAjaYgDiPeroleh />
         <ProgramCPNS />
+        <ApaAjaYgDiPeroleh />
         <JadwalBelajarCPNS />
+        <VisiEndMisiLps />
+        <ProfileTutor />
+        <GaleryBelajarSiswa />
+        <AsalSiswaLPS />
+        <SuccesStoryCPNS />
+        <TestimoniWaSiswa />
+        <ContactFooter />
         <UnivPengajarLps />
-        <ContactButton />
         <Promo />
       </div>
     </>

@@ -1,6 +1,21 @@
+import { useEffect, useState } from "react";
 import "./HeadingUTBK.css";
+import { getJumbotronProgram } from "../../../../../api/jumbotron/getJumbotronProgram";
 
 const HeadingUTBK = () => {
+  const [jumbotron, setJumbotron] = useState(false);
+
+  useEffect(() => {
+    const fetchJumbotron = async () => {
+      try {
+        const result = await getJumbotronProgram("utbk");
+        setJumbotron(result.data);
+      } catch (error) {
+        console.error("Error fetching:", error);
+      }
+    };
+    fetchJumbotron();
+  }, []);
   return (
     <div className="container-halaman__sd_smp_sma">
       <div className="content-hero-home__sd_smp_sma">
@@ -8,7 +23,7 @@ const HeadingUTBK = () => {
           loading="lazy"
           data-aos="zoom-in-up"
           className="rumah-adat-hero__sd_smp_sma"
-          src={"/images/program/UTBK.webp"}
+          src={jumbotron.link_image || "/images/program/UTBK.webp"}
           alt="Bimbel Les Privat ONLINE dan Les Privat Datang ke Rumah untuk Program SBMPTN UTBK SNBT Simak UI UTUL UGM. Guru Privat Masuk UI ITB UGM dan Kedokteran di PTN Favorit."
         />
         <div className="isi-content-hero__sd_smp_sma">

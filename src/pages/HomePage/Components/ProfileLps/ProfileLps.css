@@ -42,10 +42,15 @@
 
 .btn-daftar-sekarang,
 .btn-learn-more {
+  display: inline-flex; /* Membuat teks dan ikon berada dalam satu baris */
+  align-items: center; /* Mengatur ikon agar vertikal di tengah teks */
+  justify-content: center; /* Mengatur agar konten (teks dan ikon) berada di tengah tombol */
+  gap: 8px; /* Memberikan jarak antara teks dan ikon */
   margin-top: 20px;
   padding: 12px 24px;
   background-color: #ff8000;
   color: #fcfaee;
+  text-decoration: none;
   border: none;
   border-radius: 5px;
   font-size: 16px;
@@ -53,6 +58,12 @@
   font-family: "Open Sans", sans-serif;
   cursor: pointer;
   transition: background-color 0.3s ease;
+}
+.button-icon-profile-lps {
+  width: 30px;
+
+  height: 30px;
+  /* Anda bisa menambahkan properti lain seperti warna, margin, dll. di sini */
 }
 
 .btn-daftar-sekarang:hover,

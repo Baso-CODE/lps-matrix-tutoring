@@ -1,6 +1,9 @@
-import "./FooterNew.css";
 import { Link } from "react-router-dom";
+import "./FooterNew.css";
+import { selectContactCsData } from "../../lib/features/contactCsSlice";
+import { useAppSelector } from "../../lib/hooks";
 const FooterNew = () => {
+  const contactData = useAppSelector(selectContactCsData);
   // Data admin
   const admins = [
     {
@@ -23,19 +26,6 @@ const FooterNew = () => {
 
     return `${baseUrl}${encodeURIComponent(message)}`;
   };
-
-  // image cta
-  const phone = "6282134093567"; // Nomor telepon
-  const baseUrl = `https://api.whatsapp.com/send?phone=${phone}&text=Halo%20Kak%20Ulya%20https://apps.lesprivatmasukptn.com/,%20saya%20ingin%20bertanya%20program%20belajar%20untuk:%0A`;
-
-  const message = `
-Kelas: [Isi Kelas]
-Mapel: [Isi Mapel]
-Kurikulum: [Isi Kurikulum]
-Wilayah: [Isi Wilayah]
-  `.trim(); // Placeholder untuk pesan yang diinginkan
-
-  const finalUrl = `${baseUrl}${encodeURIComponent(message)}`;
 
   const currentYear = new Date().getFullYear();
   return (
@@ -164,7 +154,10 @@ Wilayah: [Isi Wilayah]
         <p className="new-footer-section-alamat">
           Pilih yang terbaik untuk masa depan dan kesuksesanmu.
         </p>
-        <a href={finalUrl} target="_blank" rel="noopener noreferrer">
+        <a
+          href={contactData?.link_cta}
+          target="_blank"
+          rel="noopener noreferrer">
           <img
             loading="lazy"
             src="/images/banner.webp"

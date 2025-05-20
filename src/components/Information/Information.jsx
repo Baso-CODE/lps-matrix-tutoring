@@ -25,7 +25,7 @@ const Information = () => {
 
   return (
     <div className="information-container">
-      <h1 className="information-title">Informasi Penting</h1>
+      {/* <h1 className="information-title">Informasi Penting</h1> */}
       {informations.map((info, index) => (
         <div
           className={`information-item ${

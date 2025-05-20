@@ -3,17 +3,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import "./ProgramBelajarLps.css";
 
 const ProgramBelajarLps = () => {
-  const [activeIndex, setActiveIndex] = useState([0]);
+  const [activeIndex, setActiveIndex] = useState([]); // Ubah initial state menjadi array kosong
 
-  const toggleDetails = (index) => {
-    setActiveIndex((prevIndex) => {
-      // Jika index sudah ada di array, hapus untuk menutupnya
-      if (prevIndex.includes(index)) {
-        return prevIndex.filter((i) => i !== index);
-      }
-      // Jika index belum ada, tambahkan untuk membukanya
-      return [...prevIndex, index];
-    });
+  const handleMouseEnter = (index) => {
+    setActiveIndex([index]); // Set active index menjadi array berisi index yang di-hover
+  };
+
+  const handleMouseLeave = (index) => {
+    setActiveIndex((prevIndex) => prevIndex.filter((i) => i !== index)); // Hapus index saat kursor keluar
   };
 
   return (
@@ -25,7 +22,9 @@ const ProgramBelajarLps = () => {
         <div className="program-item">
           <button
             className="program-title-button"
-            onClick={() => toggleDetails(0)}>
+            onMouseEnter={() => handleMouseEnter(0)} // Gunakan onMouseEnter
+            onMouseLeave={() => handleMouseLeave(0)} // Tambahkan onMouseLeave untuk menutup
+          >
             🏠 Privat Offline
             <span className={`arrow ${activeIndex.includes(0) ? "open" : ""}`}>
               ▼
@@ -36,7 +35,7 @@ const ProgramBelajarLps = () => {
               <motion.div
                 className="program-details"
                 initial={{ opacity: 0, height: 0, overflow: "hidden" }}
-                animate={{ opacity: 1, height: "auto" }} // Ganti tinggi sesuai kebutuhan
+                animate={{ opacity: 1, height: "auto" }}
                 exit={{ opacity: 0, height: 0, overflow: "hidden" }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}>
                 <p>Berlaku untuk semua jenjang pendidikan dan kebutuhan.</p>
@@ -80,7 +79,9 @@ const ProgramBelajarLps = () => {
         <div className="program-item">
           <button
             className="program-title-button"
-            onClick={() => toggleDetails(1)}>
+            onMouseEnter={() => handleMouseEnter(1)} // Gunakan onMouseEnter
+            onMouseLeave={() => handleMouseLeave(1)} // Tambahkan onMouseLeave untuk menutup
+          >
             💻 Privat Online
             <span className={`arrow ${activeIndex.includes(1) ? "open" : ""}`}>
               ▼
@@ -131,7 +132,9 @@ const ProgramBelajarLps = () => {
         <div className="program-item">
           <button
             className="program-title-button"
-            onClick={() => toggleDetails(2)}>
+            onMouseEnter={() => handleMouseEnter(2)} // Gunakan onMouseEnter
+            onMouseLeave={() => handleMouseLeave(2)} // Tambahkan onMouseLeave untuk menutup
+          >
             🏕️ Supercamp
             <span className={`arrow ${activeIndex.includes(2) ? "open" : ""}`}>
               ▼

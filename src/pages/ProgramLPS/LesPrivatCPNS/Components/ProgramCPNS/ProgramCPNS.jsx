@@ -47,9 +47,9 @@ const ProgramCPNS = () => {
           Tes SKD CPNS sebagai berikut:
         </p>
         <ul className="package-list">
-          <li>Paket 20 sesi</li>
-          <li>Paket 40 sesi</li>
-          <li>Paket 60 sesi</li>
+          <li>Paket 100 sesi</li>
+          <li>Paket 150 sesi</li>
+          <li>Paket 200 sesi</li>
         </ul>
         <p className="section-description">
           Sebelum siswa belajar, siswa les privat CPNS akan diminta untuk

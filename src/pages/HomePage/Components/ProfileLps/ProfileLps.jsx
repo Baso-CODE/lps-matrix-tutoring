@@ -1,16 +1,10 @@
+import { Link } from "react-router-dom";
 import "./ProfileLps.css";
+import { selectContactCsData } from "../../../../lib/features/contactCsSlice";
+import { useAppSelector } from "../../../../lib/hooks";
 const ProfileLps = () => {
-  const phone = "6281311778441"; // Nomor telepon
-  const baseUrl = `https://api.whatsapp.com/send?phone=${phone}&text=Halo%20Kak%20Fina%20https://apps.lesprivatmasukptn.com/,%20saya%20ingin%20tanya%20tentang%20program%20belajar:%0A`;
-
-  const message = `
-Kelas : 
-Mapel : 
-Kurikulum : 
-Wilayah : 
-`.trim();
-
-  const finalUrl = `${baseUrl}${encodeURIComponent(message)}`;
+  const contactData = useAppSelector(selectContactCsData);
+  const finalUrl = contactData?.link_cta;
   return (
     <div className="container-halaman-hero-home">
       <div className="content-hero-home">
@@ -38,12 +32,19 @@ Wilayah :
             </p>
           </div>
           {/* Added a second button */}
-          <button
+          {/* Added a second button */}
+          <Link
             data-aos="fade-up"
             className="btn-daftar-sekarang"
-            onClick={() => window.open(finalUrl, "_blank")}>
+            to={finalUrl}
+            target="_blank">
             Daftar Sekarang
-          </button>
+            <img
+              src="/images/daftar-sekarang.png"
+              alt=""
+              className="button-icon-profile-lps"
+            />
+          </Link>
           {/* <button data-aos="fade-up" className="btn-learn-more">
             Pelajari Lebih Lanjut
           </button> */}

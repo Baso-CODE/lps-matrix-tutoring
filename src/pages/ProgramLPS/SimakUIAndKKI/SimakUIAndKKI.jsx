@@ -1,14 +1,22 @@
 import { Helmet } from "react-helmet";
 import ContactFooter from "../../../components/ContactFooter/ContactFooter";
+import Promo from "../../../components/Promo/Promo";
 import UnivPengajarLps from "../../../components/UnivPengajarLps/UnivPengajarLps";
-import FasilitasSimakUI from "./Components/FasilitasSimakUI/FasilitasSimakUI";
-import PaketBelajarSimakUI from "./Components/PaketBelajarSimakUI/PaketBelajarSimakUI";
-import ProgramSimakUI from "./Components/ProgramSimakUI/ProgramSimakUI";
-import "./SimakUIAndKKI.css";
-import ProgramBelajarSIMAKUI from "./Components/ProgramBelajarAll/ProgramBelajarAll";
 import AlumniLps from "../../HomePage/Components/AlumniLps/AlumniLps";
 import AsalSiswaLPS from "../LesPrivatUTBK/Components/AsalSiswaLPS/AsalSiswaLPS";
-import Promo from "../../../components/Promo/Promo";
+import FasilitasSimakUI from "./Components/FasilitasSimakUI/FasilitasSimakUI";
+import PaketBelajarSimakUI from "./Components/PaketBelajarSimakUI/PaketBelajarSimakUI";
+import ProgramBelajarSIMAKUI from "./Components/ProgramBelajarAll/ProgramBelajarAll";
+import ProgramSimakUI from "./Components/ProgramSimakUI/ProgramSimakUI";
+import "./SimakUIAndKKI.css";
+
+import GaleryBelajarSiswa from "../../../components/GaleryBelajarSiswa/GaleryBelajarSiswa";
+import Slider from "../../../components/Slider/Slider";
+import FiturDanLayanan from "../../HomePage/Components/FiturDanLayanan/FiturDanLayanan";
+import ProfileTutor from "../../HomePage/Components/ProfileTutor/ProfileTutor";
+import ProgramBelajarLps from "../../HomePage/Components/ProgramBelajarLps/ProgramBelajarLps";
+import TestimoniWaSiswa from "../../HomePage/Components/TestimoniWaSiswa/TestimoniWaSiswa";
+import VisiEndMisiLps from "../../HomePage/Components/VisiEndMisiLps/VisiEndMisiLps";
 
 const SimakUIAndKKI = () => {
   return (
@@ -64,7 +72,15 @@ const SimakUIAndKKI = () => {
         <FasilitasSimakUI />
         <PaketBelajarSimakUI />
         <ProgramBelajarSIMAKUI />
+        {/* <KeunggulanEndAlasanMemilih /> */}
+        <Slider />
+        <VisiEndMisiLps />
+        <ProgramBelajarLps />
+        <FiturDanLayanan />
+        <ProfileTutor />
+        <GaleryBelajarSiswa />
         <AlumniLps />
+        <TestimoniWaSiswa />
         <AsalSiswaLPS />
         <ContactFooter />
         <UnivPengajarLps />

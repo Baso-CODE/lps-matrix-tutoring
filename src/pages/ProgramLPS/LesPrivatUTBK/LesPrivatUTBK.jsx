@@ -14,6 +14,13 @@ import TigaJalurMasukPTN from "./Components/TigaJalurMasukPTN/TigaJalurMasukPTN"
 import "./LesPrivatUTBK.css";
 import Promo from "../../../components/Promo/Promo";
 import ContactButton from "../../../components/ContactButton/ContactButton";
+import TestimoniWaSiswa from "../../HomePage/Components/TestimoniWaSiswa/TestimoniWaSiswa";
+import Slider from "../../../components/Slider/Slider";
+import ProfileTutor from "../../HomePage/Components/ProfileTutor/ProfileTutor";
+import VisiEndMisiLps from "../../HomePage/Components/VisiEndMisiLps/VisiEndMisiLps";
+import KeunggulanEndAlasanMemilih from "../../HomePage/Components/KeunggulanEndAlasanMemilih/KeunggulanEndAlasanMemilih";
+import Information from "../../../components/Information/Information";
+import SolusiSuksesMasukPTN from "../../HomePage/Components/SolusiSuksesMasukPTN/SolusiSuksesMasukPTN";
 
 const LesPrivatUTBK = () => {
   return (
@@ -70,12 +77,18 @@ const LesPrivatUTBK = () => {
         <TigaJalurMasukPTN />
         <PerbedaanSBMPTAndSNBT />
         <MateriUjianSNBT />
+        <Information />
+        <Slider />
+        <VisiEndMisiLps />
+        <ProfileTutor />
+        <KeunggulanEndAlasanMemilih />
         <GaleryBelajarSiswa />
+        <SolusiSuksesMasukPTN />
         <CaraBelajarOfflineAtauOnline />
-
         <AsalSiswaLPS />
         <AlumniLps />
         <SuccessStory />
+        <TestimoniWaSiswa />
         <ContactFooter />
         <UnivPengajarLps />
         <Promo />

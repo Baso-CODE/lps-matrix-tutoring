@@ -1,16 +1,22 @@
 import { Helmet } from "react-helmet-async";
+import ContactFooter from "../../../components/ContactFooter/ContactFooter";
+import GaleryBelajarSiswa from "../../../components/GaleryBelajarSiswa/GaleryBelajarSiswa";
+import Promo from "../../../components/Promo/Promo";
+import Slider from "../../../components/Slider/Slider";
 import UnivPengajarLps from "../../../components/UnivPengajarLps/UnivPengajarLps";
+import ProfileTutor from "../../HomePage/Components/ProfileTutor/ProfileTutor";
+import TestimoniWaSiswa from "../../HomePage/Components/TestimoniWaSiswa/TestimoniWaSiswa";
+import VisiEndMisiLps from "../../HomePage/Components/VisiEndMisiLps/VisiEndMisiLps";
+import AsalSiswaLPS from "../LesPrivatUTBK/Components/AsalSiswaLPS/AsalSiswaLPS";
 import ApaAjaYgDiPeroleh from "./Components/ApaAjaYgDiPeroleh/ApaAjaYgDiPeroleh";
 import HeadingCPNS from "./Components/HeadingCPNS/HeadingCPNS";
 import JadwalBelajarCPNS from "./Components/JadwalBelajarCPNS/JadwalBelajarCPNS";
 import MateriLPSCPNS from "./Components/MateriLPSCPNS/MateriLPSCPNS";
+import PaketBelajarCPNS from "./Components/PaketBelajarCPNS/PaketBelajarCPNS";
 import ProgramCPNS from "./Components/ProgramCPNS/ProgramCPNS";
 import ProgramIntensifCPNS from "./Components/ProgramIntensifCPNS/ProgramIntensifCPNS";
+import SuccesStoryCPNS from "./Components/SuccesStoryCPNS/SuccesStoryCPNS";
 import "./LesPrivatCPNS.css";
-import ContactFooter from "../../../components/ContactFooter/ContactFooter";
-import AsalSiswaLPS from "../LesPrivatUTBK/Components/AsalSiswaLPS/AsalSiswaLPS";
-import Promo from "../../../components/Promo/Promo";
-import Slider from "../../../components/Slider/Slider";
 
 const LesPrivatCPNS = () => {
   return (
@@ -64,12 +70,18 @@ const LesPrivatCPNS = () => {
       <div className="container-all">
         <HeadingCPNS />
         <ProgramIntensifCPNS />
+        <PaketBelajarCPNS />
         <Slider />
         <MateriLPSCPNS />
         <ProgramCPNS />
         <ApaAjaYgDiPeroleh />
         <JadwalBelajarCPNS />
+        <VisiEndMisiLps />
+        <ProfileTutor />
+        <GaleryBelajarSiswa />
         <AsalSiswaLPS />
+        <SuccesStoryCPNS />
+        <TestimoniWaSiswa />
         <ContactFooter />
         <UnivPengajarLps />
         <Promo />

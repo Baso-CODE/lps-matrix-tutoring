@@ -1,5 +1,9 @@
 import { Helmet } from "react-helmet-async";
+import { useParams } from "react-router-dom";
 import ContactButton from "../../../../components/ContactButton/ContactButton";
+import Information from "../../../../components/Information/Information";
+import Promo from "../../../../components/Promo/Promo";
+import Slider from "../../../../components/Slider/Slider";
 import UnivPengajarLps from "../../../../components/UnivPengajarLps/UnivPengajarLps";
 import AsalSiswaLPS from "../Components/AsalSiswaLPS/AsalSiswaLPS";
 import CaraBelajarOfflineAtauOnline from "../Components/CaraBelajarOfflineAtauOnline/CaraBelajarOfflineAtauOnline";
@@ -8,8 +12,15 @@ import MataPelajaranLPS from "../Components/MataPelajaranLPS/MataPelajaranLPS";
 import MateriUjianSNBT from "../Components/MateriUjianSNBT/MateriUjianSNBT";
 import PerbedaanSBMPTAndSNBT from "../Components/PerbedaanSBMPTAndSNBT/PerbedaanSBMPTAndSNBT";
 import TigaJalurMasukPTN from "../Components/TigaJalurMasukPTN/TigaJalurMasukPTN";
-import { useParams } from "react-router-dom";
-import Promo from "../../../../components/Promo/Promo";
+import VisiEndMisiLps from "../../../HomePage/Components/VisiEndMisiLps/VisiEndMisiLps";
+import ProfileTutor from "../../../HomePage/Components/ProfileTutor/ProfileTutor";
+import KeunggulanEndAlasanMemilih from "../../../HomePage/Components/KeunggulanEndAlasanMemilih/KeunggulanEndAlasanMemilih";
+import GaleryBelajarSiswa from "../../../../components/GaleryBelajarSiswa/GaleryBelajarSiswa";
+import SolusiSuksesMasukPTN from "../../../HomePage/Components/SolusiSuksesMasukPTN/SolusiSuksesMasukPTN";
+import AlumniLps from "../../../HomePage/Components/AlumniLps/AlumniLps";
+import SuccessStory from "../../../HomePage/Components/SuccessStory/SuccessStory";
+import TestimoniWaSiswa from "../../../HomePage/Components/TestimoniWaSiswa/TestimoniWaSiswa";
+import ContactFooter from "../../../../components/ContactFooter/ContactFooter";
 
 const LesPrivatUTBKSlug = () => {
   const { slug } = useParams();
@@ -66,15 +77,26 @@ const LesPrivatUTBKSlug = () => {
 
       <div className="container-all">
         <HeadingUTBK />
+        <MataPelajaranLPS />
         <TigaJalurMasukPTN />
         <PerbedaanSBMPTAndSNBT />
         <MateriUjianSNBT />
+        <Information />
+        <Slider />
+        <VisiEndMisiLps />
+        <ProfileTutor />
+        <KeunggulanEndAlasanMemilih />
+        <GaleryBelajarSiswa />
+        <SolusiSuksesMasukPTN />
         <CaraBelajarOfflineAtauOnline />
-        <MataPelajaranLPS />
         <AsalSiswaLPS />
+        <AlumniLps />
+        <SuccessStory />
+        <TestimoniWaSiswa />
+        <ContactFooter />
         <UnivPengajarLps />
-        <ContactButton />
         <Promo />
+        <ContactButton />
       </div>
     </>
   );

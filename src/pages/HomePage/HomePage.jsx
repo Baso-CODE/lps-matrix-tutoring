@@ -13,10 +13,10 @@ import SolusiSuksesMasukPTN from "./Components/SolusiSuksesMasukPTN/SolusiSukses
 import SuccessStory from "./Components/SuccessStory/SuccessStory";
 import TestimoniWaSiswa from "./Components/TestimoniWaSiswa/TestimoniWaSiswa";
 
-import VisiEndMisiLps from "./Components/VisiEndMisiLps/VisiEndMisiLps";
-import "./HomePage.css";
 import Information from "../../components/Information/Information";
 import Promo from "../../components/Promo/Promo";
+import VisiEndMisiLps from "./Components/VisiEndMisiLps/VisiEndMisiLps";
+import "./HomePage.css";
 const HomePage = () => {
   return (
     <>

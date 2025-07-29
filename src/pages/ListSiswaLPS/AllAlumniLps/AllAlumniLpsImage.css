@@ -1,0 +1,105 @@
+/* AllAlumniLpsImage.css */
+
+.alumni-image-section {
+  padding: 80px 0; /* Padding atas dan bawah */
+  text-align: center; /* Pusatkan teks header */
+}
+
+.alumni-image-container {
+  max-width: 1200px; /* Lebar maksimum konten */
+  margin: 0 auto; /* Pusatkan kontainer */
+}
+
+.alumni-image-header {
+  margin-bottom: 40px; /* Jarak antara header dan grid gambar */
+}
+
+.alumni-image-title {
+  font-size: 1.8rem;
+  color: #333333;
+  font-weight: 700;
+  font-family: "Nunito", sans-serif;
+}
+
+.alumni-image-subtitle {
+  font-size: 1.1rem;
+  color: #555555;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: "Nunito", sans-serif;
+}
+
+.alumni-image-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.alumni-image-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.alumni-image-card:hover {
+  transform: translateY(-5px); /* Efek angkat saat hover */
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15); /* Bayangan lebih kuat saat hover */
+  border-radius: 20px;
+}
+
+.alumni-single-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 20px;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .alumni-image-grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 25px;
+  }
+  .alumni-image-title {
+    font-size: 1.6rem;
+  }
+  .alumni-image-subtitle {
+    font-size: 1rem; /* Pusatkan subtitle */
+  }
+}
+
+/* Mobile (misalnya, di bawah 767px) */
+@media (max-width: 767px) {
+  .alumni-image-section {
+    padding: 60px 0;
+  }
+  .alumni-image-header {
+    margin-bottom: 30px;
+  }
+  .alumni-image-title {
+    font-size: 1.5rem;
+  }
+  .alumni-image-subtitle {
+    font-size: 0.95rem;
+  }
+  .alumni-image-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+/* Untuk layar yang sangat kecil */
+@media (max-width: 480px) {
+  .alumni-image-section {
+    padding: 40px 0;
+  }
+  .alumni-image-title {
+    font-size: 1.4rem;
+  }
+  .alumni-image-subtitle {
+    font-size: 0.9rem;
+  }
+}

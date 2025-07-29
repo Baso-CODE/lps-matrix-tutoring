@@ -3,7 +3,7 @@
   position: fixed;
   bottom: 3%;
   right: 3%;
-  z-index: 9998;
+  z-index: 999;
   padding: 10px;
   display: grid;
   justify-content: center;
@@ -12,7 +12,7 @@
   padding-left: 0;
 }
 .btn-float-tlp {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Nunito", sans-serif;
   font-size: 15px;
   background-color: #9b0029;
   border: 1px solid transparent;
@@ -33,7 +33,7 @@
   cursor: pointer;
 }
 .btn-float-wa {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Nunito", sans-serif;
   font-size: 16px;
 
   border: 1px solid transparent;
@@ -71,7 +71,7 @@
   padding: 8px;
   border-radius: 5px;
   font-weight: 600;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 
 /* Badge Notifikasi */
@@ -95,7 +95,7 @@
 @media only screen and (min-width: 320px) and (max-width: 768px) {
   .box-float-main {
     right: 2%;
-    bottom: 1%;
+    bottom: 9%;
   }
   .icon-wa {
     width: 35px;

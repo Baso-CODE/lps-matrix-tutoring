@@ -63,11 +63,8 @@ const TigaJalurMasukPTN = () => {
         tingkat SD, SMP, SMA, Mahasiswa dan umum, baik untuk belajar materi
         pelajaran di sekolah maupun untuk persiapan ujian seperti Olimpiade,
         TOEFL/IELTS, tes CPNS, tes Akpol dan kebutuhan lainnya akan kami
-        upayakan.
-      </p>
-      <p className="additional-description">
-        LPS menyediakan Layanan Les Privat secara Offline dan Online khususnya
-        untuk Les Privat Persiapan Masuk PTN seperti{" "}
+        upayakan. LPS menyediakan Layanan Les Privat secara Offline dan Online
+        khususnya untuk Les Privat Persiapan Masuk PTN seperti{" "}
         <span className="color-d2b04c-description">Les Privat SNBT / UTBK</span>{" "}
         , Simak UI, KKI UI, IUP UGM, Simak S2 dan Ujian Mandiri PTN lainnya.
       </p>

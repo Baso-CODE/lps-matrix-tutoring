@@ -5,11 +5,20 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
 import FloatingCTA from "./components/FloatingCTA/FloatingCTA";
 import FooterNew from "./components/FooterNew/FooterNew";
+import BottomNavigationBar from "./components/Navbar/BottomNavigationBar/BottomNavigationBar";
 import Nav from "./components/Navbar/Nav/Nav";
+import ProgramModal from "./components/Navbar/ProgramModal/ProgramModal";
+import StoriesModal from "./components/Navbar/StoriesModal/StoriesModal";
+import PromoFloating from "./components/PromoFloating/PromoFloating";
 import LoadingSpinner from "./helpers/LoadingSpinner/LoadingSpinner";
+import { Menus } from "./helpers/NavbarMenus/Menus";
+import ScrollToTopButton from "./helpers/ScrollToTopButton/ScrollToTopButton";
 import ToTop from "./helpers/ToTop";
+import { fetchContactCs } from "./lib/features/contactCsSlice";
+import { useAppDispatch } from "./lib/hooks";
 import AboutPage from "./pages/AboutPage/AboutPage";
 import HomePage from "./pages/HomePage/HomePage";
+import ListSiswaPage from "./pages/ListSiswaLPS/ListSiswaPage";
 import LesPrivatCPNS from "./pages/ProgramLPS/LesPrivatCPNS/LesPrivatCPNS";
 import LesPrivatCPNSSlug from "./pages/ProgramLPS/LesPrivatCPNS/LesPrivatCPNSSlug/LesPrivatCPNSSlug";
 import LesPrivatMahasiswa from "./pages/ProgramLPS/LesPrivatMahasiswa/LesPrivatMahasiswa";
@@ -24,43 +33,75 @@ import LesPrivatUTBK from "./pages/ProgramLPS/LesPrivatUTBK/LesPrivatUTBK";
 import LesPrivatUTBKSlug from "./pages/ProgramLPS/LesPrivatUTBK/LesPrivatUTBKSlug/LesPrivatUTBKSlug";
 import SimakUIAndKKI from "./pages/ProgramLPS/SimakUIAndKKI/SimakUIAndKKI";
 import SimakUIAndKKISLug from "./pages/ProgramLPS/SimakUIAndKKI/SimakUIAndKKISLug/SimakUIAndKKISLug";
+import SuccessStoriesPage from "./pages/SuccesStoriesPage/SuccessStoriesPage";
 import TestimonyPage from "./pages/TestimonyPage/TestimonyPage";
+
+const programSubMenuData =
+  Menus.find((menu) => menu.name === "Program")?.subMenu || [];
+
+const storiesSubMenuData =
+  Menus.find((menu) => menu.name === "Stories")?.subMenu || [];
 
 function App() {
   const [loading, setLoading] = useState(false);
   const location = useLocation();
 
+  const dispatch = useAppDispatch();
+
   useEffect(() => {
-    // Initialize AOS
+    dispatch(fetchContactCs());
+  }, [dispatch]);
+
+  useEffect(() => {
     AOS.init({
       duration: 1400,
       once: true,
     });
 
-    // Handle page change for loading spinner
     const handlePageChange = () => {
-      setLoading(true); // Set loading true on page change
+      setLoading(true);
       const timer = setTimeout(() => {
-        setLoading(false); // Set loading false after 1 second
+        setLoading(false);
       }, 1000);
 
-      return () => clearTimeout(timer); // Cleanup timer on unmount
+      return () => clearTimeout(timer);
     };
 
     handlePageChange();
   }, [location]);
 
+  const [showProgramModal, setShowProgramModal] = useState(false);
+  const handleOpenProgramModal = () => {
+    setShowProgramModal(true);
+  };
+  const handleCloseProgramModal = () => {
+    setShowProgramModal(false);
+  };
+
+  // State dan handler BARU untuk Stories Modal
+  const [showStoriesModal, setShowStoriesModal] = useState(false);
+  const handleOpenStoriesModal = () => {
+    setShowStoriesModal(true);
+  };
+  const handleCloseStoriesModal = () => {
+    setShowStoriesModal(false);
+  };
+
   return (
     <>
       <ToTop />
+      <ScrollToTopButton />
       <Nav />
       {loading && <LoadingSpinner />}
       <Routes>
         <Route path="/" element={<HomePage />}></Route>
+        <Route path="*" element={<HomePage />}></Route>
         <Route path="/about-us" element={<AboutPage />}></Route>
         <Route path="/testimoni-lps" element={<TestimonyPage />}></Route>
-
-        {/* PROGRAM LPS */}
+        <Route
+          path="/success-stories-lps"
+          element={<SuccessStoriesPage />}></Route>
+        <Route path="/list-siswa-lps" element={<ListSiswaPage />}></Route>
 
         {/* program utbk */}
         <Route
@@ -118,9 +159,23 @@ function App() {
           path="/les-privat-osn-terbaik-di/:slug"
           element={<LesPrivatOSNSlug />}></Route>
       </Routes>
+      <BottomNavigationBar
+        onProgramClick={handleOpenProgramModal}
+        onStoriesClick={handleOpenStoriesModal}
+      />
       <FloatingCTA />
-
+      <PromoFloating />
       <FooterNew />
+      <ProgramModal
+        isOpen={showProgramModal}
+        onClose={handleCloseProgramModal}
+        programSubMenu={programSubMenuData}
+      />
+      <StoriesModal // Modal BARU untuk Stories
+        isOpen={showStoriesModal}
+        onClose={handleCloseStoriesModal}
+        storiesSubMenu={storiesSubMenuData} // Meneruskan data sub-menu stories
+      />
     </>
   );
 }

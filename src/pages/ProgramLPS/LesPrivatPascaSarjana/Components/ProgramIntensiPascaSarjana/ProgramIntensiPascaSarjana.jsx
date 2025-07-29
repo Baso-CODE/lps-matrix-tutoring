@@ -12,9 +12,9 @@ const ProgramIntensiPascaSarjana = () => {
         tutor berpengalaman yang siap mendukung di setiap langkah.
       </p>
       <ul className="package-list">
-        <li>Intesif SIMAK S2 UI Paket 20 Sesi</li>
-        <li>Intesif SIMAK S2 UI Paket 40 Sesi</li>
-        <li>Intesif SIMAK S2 UI Paket 60 Sesi</li>
+        <li>Intesif SIMAK S2 UI Paket 100 Sesi</li>
+        <li>Intesif SIMAK S2 UI Paket 150 Sesi</li>
+        <li>Intesif SIMAK S2 UI Paket 200 Sesi</li>
       </ul>
       <p className="section-description">
         {" "}

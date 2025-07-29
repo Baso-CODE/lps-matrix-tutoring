@@ -1,0 +1,184 @@
+/* PaketBelajarSimakUI.css */
+
+.paket-belajar-container__osn {
+  text-align: center;
+  overflow: hidden;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+}
+
+.title-paket-induk__osn {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: var(--color-orange-default); /* Oranye utama untuk judul induk */
+  font-weight: 700;
+  font-family: "Nunito", sans-serif;
+}
+
+.description-paket-belajar__osn {
+  font-size: 0.9rem;
+  text-align: start;
+  color: var(--color-gray-dark); /* Abu-abu gelap untuk deskripsi */
+  font-weight: 400;
+  margin-bottom: 2rem;
+  font-family: "Nunito", sans-serif;
+}
+
+.paket-cards__osn {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.paket-card__osn {
+  background-color: var(
+    --color-gray-lightest
+  ); /* Latar belakang kartu putih keabu-abuan */
+  border-radius: 8px;
+  padding: 1.5rem;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.paket-icon__osn {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  /* Jika ikon adalah SVG atau bisa diwarnai, bisa tambahkan warna di sini.
+     Misalnya: color: var(--color-orange-default); */
+}
+
+.paket-title__osn {
+  font-size: 1.4rem;
+  color: var(--color-orange-dark); /* Oranye gelap untuk judul paket */
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  font-family: "Nunito", sans-serif;
+}
+
+.paket-sesi__osn {
+  font-size: 1rem;
+  color: var(--color-gray-medium); /* Abu-abu sedang untuk teks sesi */
+  margin-bottom: 1rem;
+  font-family: "Nunito", sans-serif;
+}
+
+.call-button {
+  background-color: var(--color-orange-default); /* Oranye utama untuk tombol */
+  color: var(--color-gray-lightest); /* Putih keabu-abuan untuk teks tombol */
+  border: none;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Nunito", sans-serif;
+  transition: background-color 0.3s;
+}
+
+.call-button:hover {
+  background-color: var(
+    --color-orange-dark
+  ); /* Oranye gelap untuk hover tombol */
+}
+
+/* Responsive adjustments */
+@media (min-width: 400px) {
+  .paket-card__osn {
+    width: 100%; /* 2 columns on tablets */
+  }
+}
+@media (min-width: 768px) {
+  .paket-card__osn {
+    width: 30%; /* 3 columns on desktops */
+  }
+}
+
+@media (min-width: 1024px) {
+  .paket-card__osn {
+    width: 28.2%; /* 3 columns on desktops */
+  }
+}
+
+@media (min-width: 1200px) {
+  .title-paket-induk__osn {
+    font-size: 1.4rem;
+  }
+  .description-paket-belajar__osn {
+    font-size: 1rem;
+  }
+  .paket-icon__osn {
+    font-size: 2.5rem;
+  }
+  .paket-title__osn {
+    font-size: 1.4rem;
+  }
+  .paket-sesi__osn {
+    font-size: 1.125rem;
+  }
+  .call-button {
+    padding: 0.75rem 1.5rem;
+  }
+}
+
+/* Responsif untuk Tablet Landscape (≤ 64rem) */
+@media (max-width: 1024px) {
+  .title-paket-induk__osn {
+    font-size: 1.4rem; /* Lebih kecil untuk tablet landscape */
+  }
+  .description-paket-belajar__osn {
+    font-size: 0.95rem;
+  }
+  .paket-icon__osn {
+    font-size: 1.8rem;
+  }
+  .paket-title__osn {
+    font-size: 1.3rem;
+  }
+  .paket-sesi__osn {
+    font-size: 0.95rem;
+  }
+}
+
+/* Responsif untuk Tablet Portrait dan Ponsel Lebar (≤ 48rem) */
+@media (max-width: 768px) {
+  .title-paket-induk__osn {
+    font-size: 1.4rem; /* Lebih kecil untuk layar kecil */
+  }
+  .description-paket-belajar__osn {
+    font-size: 0.9rem;
+  }
+  .paket-icon__osn {
+    font-size: 1.6rem;
+  }
+  .paket-title__osn {
+    font-size: 1.2rem;
+  }
+  .paket-sesi__osn {
+    font-size: 0.875rem;
+  }
+}
+
+/* Responsif untuk Ponsel Kecil (≤ 30rem) */
+@media (max-width: 480px) {
+  .title-paket-induk__osn {
+    font-size: 1.3rem; /* Ukuran terkecil */
+    text-align: start;
+  }
+  .description-paket-belajar__osn {
+    font-size: 0.85rem;
+  }
+  .paket-icon__osn {
+    font-size: 1.4rem;
+  }
+  .paket-title__osn {
+    font-size: 1rem;
+  }
+  .paket-sesi__osn {
+    font-size: 0.8rem;
+  }
+  .call-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+}

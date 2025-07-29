@@ -40,16 +40,16 @@ const ProgramCPNS = () => {
           lainnya yang sudah disepakati bersama.
         </p>
       </div>
-      <div className="program-section">
+      {/* <div className="program-section">
         <h2 className="section-title-cpns">Paket Sesi Les Privat</h2>
         <p className="section-description">
-          LPS Matrix memiliki pilihan paket sesi belajar Les Privat persiapan
+          LPS Education memiliki pilihan paket sesi belajar Les Privat persiapan
           Tes SKD CPNS sebagai berikut:
         </p>
         <ul className="package-list">
-          <li>Paket 20 sesi</li>
-          <li>Paket 40 sesi</li>
-          <li>Paket 60 sesi</li>
+          <li>Paket 100 sesi</li>
+          <li>Paket 150 sesi</li>
+          <li>Paket 200 sesi</li>
         </ul>
         <p className="section-description">
           Sebelum siswa belajar, siswa les privat CPNS akan diminta untuk
@@ -62,11 +62,11 @@ const ProgramCPNS = () => {
           awal siswa.
         </p>
         <p className="section-description">
-          Setiap siswa LPS Matrix setiap bulannya akan mendapatkan laporan
+          Setiap siswa LPS Education setiap bulannya akan mendapatkan laporan
           progress perkembangan belajar siswa. Tersedia juga Tryout Online SKD
           CPNS yang frekuensinya disesuaikan dengan paket sesi yang diambil.
         </p>
-      </div>
+      </div> */}
     </div>
   );
 };

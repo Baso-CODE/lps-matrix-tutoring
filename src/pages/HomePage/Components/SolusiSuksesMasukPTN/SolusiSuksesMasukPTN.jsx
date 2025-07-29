@@ -15,7 +15,7 @@ const SolusiSuksesMasukPTN = () => {
           <div className="card-header-solusi-sukses-ptn">
             <img
               loading="lazy"
-              src="/images/solusi-sukses/EXPERT TUTOR.webp"
+              src="/images/solusi-sukses/expert_tutor.gif"
               alt="Ilustrasi Guru Les Privat Ahli di Bidangnya, Alumni dan Mahasiswa dari PTN Terbaik"
               className="card-icon-solusi-sukses-ptn"
             />
@@ -34,7 +34,7 @@ const SolusiSuksesMasukPTN = () => {
           <div className="card-header-solusi-sukses-ptn">
             <img
               loading="lazy"
-              src="/images/solusi-sukses/SMART_METODE.webp"
+              src="/images/solusi-sukses/smart_methode.gif"
               alt="Ilustrasi Metode Pembelajaran Cerdas yang Terintegrasi untuk Siswa"
               className="card-icon-solusi-sukses-ptn"
             />
@@ -53,7 +53,7 @@ const SolusiSuksesMasukPTN = () => {
           <div className="card-header-solusi-sukses-ptn">
             <img
               loading="lazy"
-              src="/images/solusi-sukses/EXCLUSIVE_SERVICE.webp"
+              src="/images/solusi-sukses/exclusive.gif"
               alt="Ilustrasi Layanan Eksklusif yang Menjamin Kualitas dan Kepuasan"
               className="card-icon-solusi-sukses-ptn"
             />
@@ -67,22 +67,6 @@ const SolusiSuksesMasukPTN = () => {
         </div>
       </div>
       {/* New Description Below Cards */}
-      <p className="extra-description">
-        <span className="quote-mark">&ldquo;</span>{" "}
-        <span className="color-d2b04c-description">
-          Bimbel Les Privat ONLINE & Datang ke Rumah.
-        </span>{" "}
-        Guru Les Privat Seleksi Bersama Masuk Perguruan Tinggi Negeri. Les
-        Privat Intensif Program SBMPTN Masuk UI UGM ITB IPB Unpad Undip Unair
-        dan berbagai PTN Favorit Impian Lainnya. Program Les Privat Persiapan
-        Masuk Perguruan Tinggi Negeri Terbaik. Guru Privat SBMPTN ONLINE dan
-        Datang ke rumah untuk mengajar Les Privat SBMPTN dan Simak UI
-        berdasarkan mata pelajaran yang dibutuhkan.{" "}
-        <span className="color-d2b04c-description">
-          Program Les Privat SBMPTN.
-        </span>{" "}
-        <span className="quote-mark">&rdquo;</span>
-      </p>
     </div>
   );
 };

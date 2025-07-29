@@ -13,28 +13,37 @@
 }
 
 .gallery_belajar_lps-container {
-  padding-bottom: 5vh;
+  padding-bottom: 1vh;
 }
 
 /* Ukuran tombol default (desktop) */
 .mode-button {
   padding: 1rem 4rem; /* Perbesar padding */
   font-size: 1.25rem; /* Perbesar ukuran font */
-  border: none;
+  /* border: none; */
   border-radius: 5px; /* Perbesar radius agar lebih menarik */
   cursor: pointer;
-  background-color: #1e3e62;
-  color: white;
+  /* Mengubah background dari biru ke oranye default */
+  background-color: #ffffff;
+  /* Mengubah warna teks ke abu-abu sangat terang */
+  color: var(--color-gray-darker);
+  border: 2px solid var(--color-blue-light);
   transition: background-color 0.3s, transform 0.2s;
 }
 
 .mode-button.active {
-  background-color: #ff6500;
+  /* Warna aktif tetap oranye utama */
+  background-color: var(--color-blue-light);
+  /* outline: var(--color-orange-default); */
+  border: 2px solid var(--color-orange-default);
+  color: #ffffff;
 }
 
 .mode-button:hover {
-  background-color: #112743;
+  /* Mengubah background hover dari biru gelap ke oranye gelap */
+  background-color: var(--color-orange-dark);
   transform: scale(1.05); /* Efek hover */
+  color: #ffffff;
 }
 
 /* Layout Galeri */
@@ -54,7 +63,7 @@
   width: 100%;
   height: auto;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow tetap menggunakan RGBA */
 }
 
 /* Thumbnail Gambar */
@@ -70,7 +79,7 @@
   cursor: pointer;
   border-radius: 5px;
   transition: transform 0.3s;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Shadow tetap menggunakan RGBA */
 }
 
 .thumbnail:hover {
@@ -113,7 +122,6 @@
   .thumbnail-container {
     flex-direction: row; /* Thumbnail berjajar horizontal */
     justify-content: center; /* Pusatkan thumbnail */
-
     width: 100%;
   }
 
@@ -149,7 +157,6 @@
 
   .thumbnail-container {
     flex-direction: row; /* Thumbnail tetap horizontal */
-
     justify-content: center;
     width: 100%;
   }

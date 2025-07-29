@@ -15,9 +15,9 @@ const HeroAbout = () => {
           />
         </div>
       </section>
-      <h1 className="sekilas__lps_jakarta">Sekilas LPS Jakarta</h1>
+      <h1 className="sekilas__lps_jakarta">Sekilas LPS Education</h1>
       <p className="additional-description-about__us">
-        LPS Jakarta adalah lembaga les pivat spesialis masuk PTN Favorit yang
+        LPS Education adalah lembaga les pivat spesialis masuk PTN Favorit yang
         dikelola oleh “Excellent Team”. Dengan tagline “Your Learning Partner
         for Success” kami berupaya menjadi partner terbaik membantu siswa masuk
         PTN Favorit. Tim Tutor Program Masuk PTN adalah mahasiswa & alumni dari

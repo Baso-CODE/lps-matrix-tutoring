@@ -1,0 +1,114 @@
+/* ListSiswaLPS.css */
+
+.parent-table-student {
+  display: flex;
+  justify-content: center; /* Memusatkan item di sepanjang sumbu utama (vertikal untuk kolom) */
+  flex-direction: column;
+  /* align-items: center; telah dihapus di perbaikan sebelumnya, yang benar */
+  margin-top: 11vh;
+  margin-bottom: 10vh;
+}
+
+.student-table {
+  width: 100%;
+  margin: auto;
+  border-collapse: collapse;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  font-family: "Nunito", sans-serif;
+}
+
+/* Header Row */
+.student-table thead {
+  background-color: #f76300;
+  color: white;
+}
+
+.student-table th {
+  padding: 12px 15px;
+  text-align: left;
+}
+
+/* Table Body */
+.student-table tbody tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+.student-table tbody tr:nth-child(even) {
+  background-color: #f7eee6;
+}
+
+.student-table td {
+  padding: 12px 15px;
+  text-align: left;
+  font-size: 0.9rem;
+  font-family: "Nunito", sans-serif;
+}
+
+.main-title-list-student {
+  text-align: start;
+  color: var(--color-gray-darker);
+
+  font-family: "Nunito", sans-serif;
+}
+.child-title-list-student {
+  font-family: "Nunito", sans-serif;
+  font-size: 1.1rem;
+  text-align: start;
+  margin-bottom: 2rem;
+}
+.child-title-list-student_bottom {
+  font-family: "Nunito", sans-serif;
+  font-size: 1.1rem;
+  text-align: start;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 2rem;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+  .student-table th,
+  .student-table td {
+    padding: 8px 10px;
+  }
+  .parent-table-student {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+  }
+
+  .student-table {
+    border: 0;
+    /* margin: 10px auto; */
+    width: 100%;
+    max-width: none;
+  }
+
+  .student-table th,
+  .student-table td {
+    font-size: 14px;
+  }
+  .main-title-list-student {
+    font-size: 23px;
+  }
+  .child-title-list-student {
+    font-size: 13px;
+    text-align: start;
+  }
+  .child-title-list-student_bottom {
+    font-size: 13px;
+    text-align: left; /* Tetap rata kiri */
+    max-width: 90%; /* Sesuaikan max-width untuk mobile */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .student-table th,
+  .student-table td {
+    padding: 5px 8px;
+    font-size: 11px;
+  }
+  .child-title-list-student_bottom {
+    font-size: 0.9rem;
+  }
+}

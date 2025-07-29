@@ -1,10 +1,60 @@
+.container-footer {
+  padding-left: 12%;
+  padding-right: 12%;
+  padding-top: 70px;
+  background-color: #333;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Default styling for copyright - pastikan ini di bawah media queries jika ada konflik */
+.new-footer-copyright {
+  text-align: center;
+  width: 100%;
+  margin-top: 20px;
+  font-family: "Nunito", sans-serif;
+  font-size: 14px;
+  color: #f3f3f3;
+  padding-bottom: 20px; /* Default padding-bottom untuk desktop/tablet */
+}
+
+/* RESPONSIVE */
+@media only screen and (max-width: 500px) {
+  .container-footer {
+    padding-left: 4%;
+    padding-right: 4%;
+    padding-top: 14%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .container-footer {
+    padding-left: 4%;
+    padding-right: 4%;
+    /* padding-bottom: 80px; */
+  }
+}
+@media only screen and (max-width: 820px) {
+  .container-footer {
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .container-footer {
+    padding-left: 4%;
+    padding-right: 4%;
+    /* padding-bottom: 20px; <--- Hapus atau sesuaikan ini jika ada konflik */
+  }
+}
+
 .new-footer {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  background-color: #333;
   color: #fff;
-  padding: 1rem;
+  flex-grow: 1;
 }
 
 .new-footer-section {
@@ -16,11 +66,11 @@
   margin-bottom: 10px;
   font-size: 18px;
   font-weight: 600;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Nunito", sans-serif;
   color: #f96900;
 }
 .new-footer-section h4 {
-  margin: 10px 0 5px; /* Kurangi margin bawah agar lebih dekat dengan elemen berikutnya */
+  margin: 10px 0 5px;
   font-size: 14px;
   font-family: "Nunito", sans-serif;
   font-weight: normal;
@@ -29,13 +79,13 @@
 
 .new-footer-section-alamat {
   font-family: "Nunito", sans-serif;
-  margin: 0 0 8px; /* Kurangi margin atas dan bawah */
+  margin: 0 0 8px;
   font-weight: normal;
   font-size: 13px;
 }
 .new-footer-section-description {
   font-family: "Nunito", sans-serif;
-  margin: 0 0 8px; /* Kurangi margin atas dan bawah */
+  margin: 0 0 8px;
   font-weight: normal;
   font-size: 14px;
 }
@@ -43,12 +93,12 @@
 .new-footer-section ul {
   list-style: none;
   padding: 0;
-  margin: 0; /* Hilangkan margin default */
+  margin: 0;
 }
 
 .new-footer-section ul li {
   font-weight: normal;
-  margin: 3px 0; /* Sesuaikan agar lebih dekat */
+  margin: 3px 0;
   font-size: 13px;
   font-family: "Nunito", sans-serif;
 }
@@ -85,7 +135,7 @@
   margin-top: 5px;
   margin-left: 20px;
   list-style: none;
-  display: block; /* Sub-menu disembunyikan default */
+  display: block;
 }
 
 .footer-nav ul li a {
@@ -111,7 +161,7 @@
 .admin-name {
   color: #fff;
   font-style: italic;
-  font-weight: 600; /* Tambahan opsional untuk penekanan */
+  font-weight: 600;
 }
 
 @media (max-width: 768px) {
@@ -156,7 +206,7 @@
 }
 @media (max-width: 480px) {
   .new-footer-section h3 {
-    font-size: 15px;
+    font-size: 1.1rem;
   }
   .new-footer-section h4 {
     font-size: 13px;
@@ -167,15 +217,8 @@
   .new-footer-section p {
     font-size: 12px;
   }
-}
-
-.new-footer-copyright {
-  text-align: center; /* Pastikan teks berada di tengah */
-  width: 100%; /* Membuat elemen memenuhi lebar parent */
-  margin-top: 20px; /* Jarak dari elemen atasnya */
-  font-family: "Nunito", sans-serif; /* Sesuaikan dengan gaya keseluruhan */
-  font-size: 14px; /* Sesuaikan ukuran font */
-  display: flex; /* Aktifkan Flexbox */
-  justify-content: center; /* Pusatkan konten secara horizontal */
-  align-items: center; /* Pusatkan konten secara vertikal (jika ada tinggi elemen) */
+  /* Ini adalah bagian penting: Tambahkan padding-bottom untuk mengakomodasi bottom navbar */
+  .new-footer-copyright {
+    padding-bottom: 84px;
+  }
 }

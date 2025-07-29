@@ -3,7 +3,7 @@ import "./FiturDanLayanan.css";
 const FiturDanLayanan = () => {
   return (
     <div className="fitur-layanan-lps">
-      <h1 className="fitur-title">Fitur dan Layanan LPS</h1>
+      {/* <h1 className="fitur-title">Fitur dan Layanan LPS</h1> */}
 
       {/* Les Privat Akademik */}
       <div className="fitur-item">
@@ -24,8 +24,9 @@ const FiturDanLayanan = () => {
             <li>Les Privat SD</li>
             <li>Les Privat SMP</li>
             <li>Les Privat SMA</li>
+            <li>Les Privat TKA(Tes Kemampuan Akademik)</li>
             <li>Les Privat Mahasiswa</li>
-            <li>Les Privat Olimpiade</li>
+            <li>Les Privat Olimpiade(Nasional dan Internasional)</li>
             <li>Les Privat TOEFL/IELTS</li>
           </ul>
         </div>
@@ -50,12 +51,23 @@ const FiturDanLayanan = () => {
             <li>Les Privat UTBK SNBT</li>
             <li>Les Privat Simak UI</li>
             <li>Les Privat Simak KKI</li>
-            <li>Les Privat Simak S2</li>
+            <li>Les Privat Simak S2/S3/PPDS/Spesialis 2</li>
             <li>Les Privat IUP UGM</li>
             <li>Les Privat UTUL UGM</li>
+            <li>Les Privat SM ITB</li>
+            <li>Les Privat IUP ITB</li>
+            <li>Les Privat SM ITS</li>
+            <li>Les Privat IUP ITS</li>
             <li>Les Privat UM UNDIP</li>
+            <li>Les Privat IUP Undip</li>
+            <li>Les Privat UM Unair</li>
             <li>Les Privat IUP Unair</li>
             <li>Les Privat SMUP Unpad</li>
+            <li>Les Privat SM-IPB</li>
+            <li>Les Privat Penmaba UNJ</li>
+            <li>Les Privat UM UNS</li>
+            <li>Les Privat SEMA UPNVJ</li>
+            <li>Les Privat UM UNHAS</li>
           </ul>
         </div>
       </div>
@@ -78,6 +90,7 @@ const FiturDanLayanan = () => {
             <li>Les Privat CPNS</li>
             <li>Les Privat AKPOL</li>
             <li>Les Privat STAN/STIS</li>
+            <li>Les Privat Sekolah Kedinasan lainnya</li>
           </ul>
         </div>
       </div>

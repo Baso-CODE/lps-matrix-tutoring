@@ -1,25 +1,49 @@
+import { useEffect, useState } from "react";
+import { getJumbotronProgram } from "../../../../../api/jumbotron/getJumbotronProgram";
+import { selectContactCsData } from "../../../../../lib/features/contactCsSlice";
+import { useAppSelector } from "../../../../../lib/hooks";
 import "./HeroLPSMahasiswa.css";
 const HeroLPSMahasiswa = () => {
+  const [jumbotron, setJumbotron] = useState(null);
+  const contactData = useAppSelector(selectContactCsData);
+  const finalUrl = contactData?.link_cta;
+
+  useEffect(() => {
+    const fetchJumbotron = async () => {
+      try {
+        const result = await getJumbotronProgram("lesprivat-mahasiswa");
+        setJumbotron(result.data);
+      } catch (error) {
+        console.error("Error fetching:", error);
+      }
+    };
+    fetchJumbotron();
+  }, []);
+
+  // const handleCTAClick = (e) => {
+  //   const targetUrl = contactData?.link_cta || "https://wa.me/6285887562039";
+  //   handleCTAClickLogic(targetUrl, e);
+  // };
   return (
     <div className="container-halaman__mahasiswa">
       <div className="content-hero-home__mahasiswa">
         <img
-          loading="lazy"
+          loading="eager"
           data-aos="zoom-in-down"
           className="rumah-adat-hero__mahasiswa"
-          src={"/images/program/MAHASISWA.webp"}
+          src={jumbotron?.link_image || "/images/program/MAHASISWA.webp"}
           alt="Bimbel Les Privat ONLINE dan Les Privat Datang ke Rumah untuk Program SBMPTN UTBK SNBT Simak UI UTUL UGM. Guru Privat Masuk UI ITB UGM dan Kedokteran di PTN Favorit."
         />
         <div className="isi-content-hero__mahasiswa">
           <h1 className="title-halaman-hero__mahasiswa">
-            Les Privat Mahasiswa – Privat ke Rumah dan Private Online
+            Les Privat Mahasiswa – Privat ke Rumah dan Privat Online
           </h1>
           <div>
             <p className="child-paragraf-hero__mahasiswa">
               <span className="color-d2b04c-description">
                 Les Privat Mahasiswa
               </span>{" "}
-              by LPS Matrix siap menjadi teman pendamping Anda dalam belajar
+              by LPS Education siap menjadi teman pendamping Anda dalam belajar
               materi kuliah yang dianggap sulit. Dengan les privat mahasiswa,
               semua mata kuliah yang teramat sulit dikuasai akan menjadi mudah
               untuk dipahami.
@@ -34,7 +58,11 @@ const HeroLPSMahasiswa = () => {
             </p>
           </div>
 
-          <button className="btn-learn-more__sd_smp_sma">
+          <button
+            className="btn-learn-more__sd_smp_sma"
+            onClick={() =>
+              window.open(finalUrl, "_blank", "noopener,noreferrer")
+            }>
             Konsultasi Sekarang
           </button>
         </div>
@@ -56,6 +84,8 @@ const HeroLPSMahasiswa = () => {
           memenuhi kebutuhan belajar para mahasiswa ini terbagi ke dalam dua
           pilihan, yaitu Privat Offline (Les Privat ke Rumah) dan Bimbel Online
           Mahasiswa.{" "}
+        </p>
+        <p className="additional-description-mahasiswa">
           <span className="color-d2b04c-description">Les Privat Mahasiswa</span>{" "}
           dengan sistem guru privat datang ke rumah melayani permintaan les
           privat untuk Anda yang berlokasi di Jakarta, Bogor, Depok, Tangerang,
@@ -63,6 +93,9 @@ const HeroLPSMahasiswa = () => {
           bisa menjangkau seluruh wilayah di Indonesia.
         </p>
       </div>
+      {/* <button className="btn-learn-more__sd_smp_sma" onClick={handleCTAClick}>
+        Konsultasi Sekarang
+      </button> */}
     </div>
   );
 };

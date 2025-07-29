@@ -1,0 +1,137 @@
+/* OsnCurriculumOverview.css */
+
+.osn-curriculum-overview-section {
+  padding: 80px 0;
+  background-color: var(--color-light-grey); /* Warna latar belakang lembut */
+  text-align: center;
+}
+
+.container-general {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.osn-curriculum-overview-title {
+  font-size: 1.7rem;
+  color: var(--color-dark-blue); /* Warna judul gelap */
+  margin-bottom: 15px;
+  font-weight: 700;
+  font-family: "Nunito", sans-serif;
+}
+
+.osn-curriculum-overview-title span {
+  color: var(--color-orange-default); /* Penekanan pada kata kunci */
+}
+
+.osn-curriculum-overview-subtitle {
+  font-size: 1.15rem;
+  color: var(--color-gray-dark);
+  font-family: "Nunito", sans-serif;
+  margin-bottom: 50px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.subjects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  justify-content: center;
+}
+
+.subject-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  /* Tambahkan 'filter' ke properti transition */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer; /* Menandakan bahwa kartu bisa diklik */
+}
+
+/* Efek saat hover pada kartu yang tidak aktif */
+.subject-card:not(.blurred):hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* Kelas untuk efek blur */
+.subject-card.blurred {
+  filter: blur(3px) brightness(0.7);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.subject-card:not(.blurred) {
+  border: 2px solid var(--color-orange-default);
+}
+
+.subject-icon-wrapper {
+  width: 90px;
+  height: 90px;
+  background-color: var(--color-orange-light);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.subject-icon-wrapper img {
+  width: 7rem;
+  height: 7rem;
+  object-fit: contain;
+}
+
+.subject-name {
+  font-size: 1.3rem;
+  color: var(--color-orange-dark); /* Warna nama subjek */
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-family: "Nunito", sans-serif;
+}
+
+.subject-description {
+  font-size: 1rem;
+  color: var(--color-gray-medium);
+  line-height: 1.7;
+  font-family: "Nunito", sans-serif;
+  flex-grow: 1; /* Agar deskripsi mengisi ruang yang tersisa */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .osn-curriculum-overview-title {
+    font-size: 2rem;
+  }
+  .osn-curriculum-overview-subtitle {
+    font-size: 1rem;
+  }
+  .subject-name {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .osn-curriculum-overview-section {
+    padding: 60px 0;
+  }
+  .osn-curriculum-overview-title {
+    font-size: 1.5rem;
+  }
+  .subject-card {
+    padding: 25px;
+  }
+  .subject-icon-wrapper {
+    width: 70px;
+    height: 70px;
+  }
+}

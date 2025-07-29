@@ -1,27 +1,28 @@
+import { selectContactCsData } from "../../../../../lib/features/contactCsSlice";
+import { useAppSelector } from "../../../../../lib/hooks";
 import "./PaketLPSMahasiswa.css";
 
 const PaketLPSMahasiswa = () => {
-  const phone = "6285747281466"; // Nomor telepon
-  const baseUrl = `https://api.whatsapp.com/send?phone=${phone}&text=Halo%20Kak%20Linda%20https://apps.lesprivatmasukptn.com/,%20saya%20ingin%20tanya%20tentang%20program%20belajar:%0A`;
-
+  const contactData = useAppSelector(selectContactCsData);
+  const baseUrl = contactData?.link_cta;
   const packages = [
     {
       icon: "/images/icon/paket/silver.webp",
       title: "Silver Package",
-      sessions: "100 sesi",
-      message: `Paket: Silver Package%0ASesi: 100 sesi`,
+      sessions: "20 sesi",
+      message: `Paket: Silver Package%0ASesi: 20 sesi`,
     },
     {
       icon: "/images/icon/paket/gold.webp",
       title: "Gold Package",
-      sessions: "150 sesi",
-      message: `Paket: Gold Package%0ASesi: 150 sesi`,
+      sessions: "40 sesi",
+      message: `Paket: Gold Package%0ASesi: 40 sesi`,
     },
     {
       icon: "/images/icon/paket/platinum.webp",
       title: "Platinum Package",
-      sessions: "200 sesi",
-      message: `Paket: Platinum Package%0ASesi: 200 sesi`,
+      sessions: "60 sesi",
+      message: `Paket: Platinum Package%0ASesi: 60 sesi`,
     },
   ];
   const handleCallNow = (message) => {

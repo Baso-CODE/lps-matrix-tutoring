@@ -8,7 +8,7 @@ const AboutPage = () => {
   return (
     <div className="container-all">
       <HeroAbout />
-      <HistoryAndSuccesLps />\
+      <HistoryAndSuccesLps />
       <VisiEndMisiLps />
       <ValuesCompany />
     </div>

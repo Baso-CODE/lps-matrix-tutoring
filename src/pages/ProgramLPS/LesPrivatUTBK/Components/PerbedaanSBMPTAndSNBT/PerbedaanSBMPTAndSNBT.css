@@ -1,7 +1,7 @@
 /* PerbedaanSBMPTAndSNBT.css */
 
 .container-perbedaan-sbmptn-snbt {
-  margin-top: 5vh;
+  margin-top: 10vh;
   margin-bottom: 5vh;
   text-align: center;
   overflow: hidden;
@@ -9,16 +9,16 @@
 
 .title-perbedaan {
   font-size: 1.5rem;
-  color: #ff6500;
+  color: #333;
   /* margin-bottom: 2rem; */
-  font-family: "Open Sans", sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 
 .card-container-perbedaan {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   padding: 1rem;
 }
 
@@ -28,6 +28,7 @@
   background-color: #ffffff;
   border-radius: 8px;
   padding: 1.5rem;
+  min-height: 41vh;
   box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s;
   text-align: center;
@@ -45,16 +46,16 @@
 }
 
 .imagePerbedaan img {
-  width: 5rem; /* Sesuaikan dengan font-size */
-  height: 5rem; /* Sesuaikan dengan font-size */
-  object-fit: contain; /* Pastikan gambar proporsional */
+  width: 7rem;
+  height: 7rem;
+  object-fit: contain;
 }
 
 .card-title-perbedaan {
   font-size: 1.2rem;
   color: #ff8000;
 
-  font-family: "Open Sans", sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 
 .card-list-perbedaan {
@@ -109,21 +110,5 @@
   .card-list-perbedaan {
     font-size: 0.85rem; /* Ukuran lebih kecil untuk teks daftar */
     line-height: 1.5; /* Line-height lebih rapat */
-  }
-}
-
-/* Responsif untuk layar kecil */
-@media (max-width: 480px) {
-  .title-perbedaan {
-    font-size: 1.1rem; /* Ukuran terkecil untuk layar kecil */
-  }
-
-  .card-title-perbedaan {
-    font-size: 0.9rem; /* Ukuran terkecil untuk judul kartu */
-  }
-
-  .card-list-perbedaan {
-    font-size: 0.85rem; /* Ukuran terkecil untuk teks daftar */
-    line-height: 1.4; /* Line-height lebih rapat */
   }
 }

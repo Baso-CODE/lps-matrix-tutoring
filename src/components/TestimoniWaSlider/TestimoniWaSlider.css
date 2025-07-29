@@ -1,0 +1,67 @@
+/* Container Utama */
+.testimonial-slider-container {
+  text-align: center;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+}
+
+/* Judul */
+.testimonial-slider-container h2 {
+  font-size: 1.7rem;
+  color: var(--color-gray-darker);
+  margin-bottom: 20px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+}
+
+/* Embla Slider Styles */
+.embla {
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+}
+
+.embla__container {
+  display: flex;
+  gap: 15px;
+  padding-right: 5px; /* Padding kanan */
+  padding-left: 5px; /* Padding kiri */
+}
+
+.embla__slide-tesimoni-ortu {
+  flex: 0 0 100%; /* Default: Full width (mobile) */
+  min-width: 0;
+  overflow: hidden;
+}
+
+.testimonial-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsiveness */
+@media (min-width: 768px) {
+  .embla__slide-tesimoni-ortu {
+    flex: 0 0 calc(50% - 15px); /* 2 slides on Tablet */
+  }
+}
+@media (max-width: 768px) {
+  .testimonial-image {
+    width: 100%;
+    height: auto;
+  }
+  .embla__container {
+    padding-right: 5px; /* Padding kanan */
+    padding-left: 5px; /* Padding kiri */
+  }
+  .testimonial-slider-container h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .embla__slide-tesimoni-ortu {
+    flex: 0 0 calc(33.333% - 15px); /* 3 slides on Desktop */
+  }
+}

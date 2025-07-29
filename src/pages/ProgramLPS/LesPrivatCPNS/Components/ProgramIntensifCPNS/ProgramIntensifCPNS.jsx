@@ -25,10 +25,8 @@ const ProgramIntensifCPNS = () => {
         mengikuti Tryout – Tryout CPNS agar menunjang proses pembelajaran
         sebelum dilaksanakannya tes CPNS. Dengan mengikuti Tryout – Tryout CPNS
         baik yang tersedia gratis atau berbayar, maka siswa akan lebih terlatih
-        dan mengetahui jenis – jenis soal yang muncul pada tes SKD CPNS.
-      </p>
-      <p className="program-description-cpns">
-        Jika anda membutuhkan layanan Tryout CPNS Online maka LPS Matrix dapat
+        dan mengetahui jenis – jenis soal yang muncul pada tes SKD CPNS. Jika
+        anda membutuhkan layanan Tryout CPNS Online maka LPS Education dapat
         menjadi rekomendasi tempat belajar terbaik. Siswa Les Privat CPNS 2025
         di LPS difasilitasi Asesmen dan Tryout Online CPNS sehingga progress
         belajar akan lebih terukur dan siswa bisa mengetahui kekurangannya di

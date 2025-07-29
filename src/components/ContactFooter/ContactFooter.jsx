@@ -31,10 +31,7 @@ const ContactFooter = () => {
       <ul className="contact-list">
         {contacts.map((contact, index) => (
           <li key={index}>
-            <Link
-              to={generateWhatsAppUrl(contact.phone, contact.name)}
-              target="_blank"
-              rel="noopener noreferrer">
+            <Link to={generateWhatsAppUrl(contact.phone, contact.name)}>
               {contact.label} (CALL/WA)
             </Link>
           </li>

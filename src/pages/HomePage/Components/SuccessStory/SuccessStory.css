@@ -26,10 +26,10 @@
 
 /* Title Styling */
 .success-story-title {
-  font-size: 1.4rem; /* equivalent to text-3xl */
-  font-weight: 600;
-  color: #ff6500;
-  font-family: "Open Sans", sans-serif;
+  font-size: 1.5rem; /* equivalent to text-3xl */
+  font-weight: 700;
+  color: var(--color-gray-darker); /* Oranye utama */
+  font-family: "Nunito", sans-serif;
 }
 
 @media (min-width: 1024px) {
@@ -42,7 +42,7 @@
 .success-story-description {
   display: none;
   max-width: 40rem;
-  color: #4b5563;
+  color: var(--color-gray-dark); /* Menggunakan abu-abu gelap untuk deskripsi */
   font-family: "Nunito", sans-serif;
   font-weight: 500;
 }
@@ -57,29 +57,36 @@
 .success-story-button {
   display: inline-block;
   border-radius: 0.5rem;
-  background-color: #ff6500;
+  background-color: var(--color-orange-default); /* Oranye utama untuk tombol */
   padding: 0.5rem 1rem;
   text-align: center;
   text-decoration: none;
   font-size: 0.875rem;
   font-weight: 600;
-  font-family: "Open Sans", sans-serif;
-  color: #e5e7eb;
+  font-family: "Nunito", sans-serif;
+  color: var(--color-gray-lightest); /* Putih keabu-abuan untuk teks tombol */
   border: none;
   transition: background-color 0.1s ease;
 }
 
 .success-story-button:hover {
-  background-color: #b43f3f;
+  background-color: var(
+    --color-orange-dark
+  ); /* Oranye lebih gelap untuk hover */
 }
 
 .success-story-button:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 2px #a5b4fc;
+  /* Menggunakan oranye terang untuk fokus, atau orange-light jika ingin lebih menonjol */
+  box-shadow: 0 0 0 2px var(--color-orange-light);
 }
 
 .success-story-button:active {
-  background-color: #e5e7eb;
+  /* Menggunakan abu-abu ringan untuk active state (saat ditekan) */
+  background-color: var(--color-gray-lighter);
+  color: var(
+    --color-orange-default
+  ); /* Kembalikan warna teks ke oranye saat aktif */
 }
 
 @media (min-width: 768px) {
@@ -92,15 +99,15 @@
 /* Gallery Container */
 .success-story-gallery {
   display: grid;
-  gap: 1rem;
+  gap: 1.3rem;
   margin-top: 2rem;
-  grid-template-columns: repeat(2, 1fr); /* Default: 2 columns */
+  grid-template-columns: repeat(3, 1fr); /* Default: 2 columns */
 }
 
 /* Display 1 column on small screens, 2 columns on medium and larger screens */
 @media (min-width: 768px) {
   .success-story-gallery {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -110,4 +117,11 @@
   height: auto;
   border-radius: 8px;
   object-fit: cover;
+}
+
+@media (max-width: 480px) {
+  .success-story-gallery {
+    gap: 0.8rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

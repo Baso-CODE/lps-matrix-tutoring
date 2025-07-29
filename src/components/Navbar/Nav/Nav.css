@@ -80,8 +80,8 @@
 /* Sign-in Button */
 
 .sign-in-button {
-  background-color: #ff6500; /* Solid background for better contrast */
-  color: #ffffff; /* White text for contrast */
+  background-color: #ff6500;
+  color: #ffffff;
   text-decoration: none;
   padding: 10px 16px;
   border-radius: 12px;
@@ -91,9 +91,19 @@
   transition: background-color 0.3s ease, transform 0.2s ease;
   cursor: pointer;
   outline: none;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Nunito", sans-serif;
+  display: inline-flex; /* Tambahkan ini */
+  align-items: center; /* Tambahkan ini */
+  gap: 8px; /* Tambahkan ini */
 }
 
+/* Style untuk ikon WhatsApp */
+.button-icon-nav {
+  width: 24px; /* Atur ukuran sesuai kebutuhan */
+  height: 24px;
+  /* margin-left: 5px;  Jarak antara teks dan ikon */
+  /* Anda mungkin perlu menyesuaikan margin/padding agar terlihat pas */
+}
 .sign-in-button:hover {
   background-color: #b43f3f; /* Slightly darker on hover */
 }

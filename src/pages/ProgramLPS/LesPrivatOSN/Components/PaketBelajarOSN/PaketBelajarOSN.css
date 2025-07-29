@@ -10,9 +10,9 @@
 .title-paket-induk__osn {
   font-size: 1.4rem;
   margin-bottom: 1rem;
-  color: #ff6500;
+  color: #333;
   font-weight: 700;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 
 .description-paket-belajar__osn {
@@ -41,7 +41,8 @@
 }
 
 .paket-icon__osn {
-  font-size: 2rem;
+  width: 5rem;
+  height: 5rem;
   margin-bottom: 0.5rem;
 }
 
@@ -50,7 +51,7 @@
   color: #ff8000;
   margin-bottom: 0.5rem;
   font-weight: bold;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 
 .paket-sesi__osn {
@@ -101,9 +102,7 @@
   .description-paket-belajar__osn {
     font-size: 1rem;
   }
-  .paket-icon__osn {
-    font-size: 2.5rem;
-  }
+
   .paket-title__osn {
     font-size: 1.4rem;
   }
@@ -123,9 +122,7 @@
   .description-paket-belajar__osn {
     font-size: 0.95rem;
   }
-  .paket-icon__osn {
-    font-size: 1.8rem;
-  }
+
   .paket-title__osn {
     font-size: 1.3rem;
   }
@@ -142,9 +139,7 @@
   .description-paket-belajar__osn {
     font-size: 0.9rem;
   }
-  .paket-icon__osn {
-    font-size: 1.6rem;
-  }
+
   .paket-title__osn {
     font-size: 1.2rem;
   }
@@ -160,11 +155,9 @@
     text-align: start;
   }
   .description-paket-belajar__osn {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
   }
-  .paket-icon__osn {
-    font-size: 1.4rem;
-  }
+
   .paket-title__osn {
     font-size: 1rem;
   }

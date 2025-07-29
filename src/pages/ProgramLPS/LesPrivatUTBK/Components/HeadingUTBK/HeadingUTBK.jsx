@@ -1,6 +1,30 @@
+import { useEffect, useState } from "react";
+import { getJumbotronProgram } from "../../../../../api/jumbotron/getJumbotronProgram";
+import { selectContactCsData } from "../../../../../lib/features/contactCsSlice";
+import { useAppSelector } from "../../../../../lib/hooks";
 import "./HeadingUTBK.css";
 
 const HeadingUTBK = () => {
+  const contactData = useAppSelector(selectContactCsData);
+  const finalUrl = contactData?.link_cta;
+  const [jumbotron, setJumbotron] = useState(false);
+
+  useEffect(() => {
+    const fetchJumbotron = async () => {
+      try {
+        const result = await getJumbotronProgram("utbk");
+        setJumbotron(result.data);
+      } catch (error) {
+        console.error("Error fetching:", error);
+      }
+    };
+    fetchJumbotron();
+  }, []);
+
+  // const handleCTAClick = (e) => {
+  //   const targetUrl = contactData?.link_cta || "https://wa.me/6285887562039";
+  //   handleCTAClickLogic(targetUrl, e);
+  // };
   return (
     <div className="container-halaman__sd_smp_sma">
       <div className="content-hero-home__sd_smp_sma">
@@ -8,7 +32,7 @@ const HeadingUTBK = () => {
           loading="lazy"
           data-aos="zoom-in-up"
           className="rumah-adat-hero__sd_smp_sma"
-          src={"/images/program/UTBK.webp"}
+          src={jumbotron.link_image || "/images/program/UTBK.webp"}
           alt="Bimbel Les Privat ONLINE dan Les Privat Datang ke Rumah untuk Program SBMPTN UTBK SNBT Simak UI UTUL UGM. Guru Privat Masuk UI ITB UGM dan Kedokteran di PTN Favorit."
         />
         <div className="isi-content-hero__sd_smp_sma">
@@ -24,15 +48,14 @@ const HeadingUTBK = () => {
               menawarkan pembelajaran privat yang berfokus pada pemahaman
               mendalam konsep dasar dan latihan intensif untuk kesiapan UTBK.
               Dengan bimbingan tutor berpengalaman, kami hadir di rumah atau
-              secara online.
-            </p>
-            <p className="child-paragraf-hero__sd_smp_sma">
-              Program ini dirancang untuk meningkatkan keterampilan mengerjakan
-              soal dan pemahaman materi esensial, didukung evaluasi berkala oleh{" "}
+              secara online. Program ini dirancang untuk meningkatkan
+              keterampilan mengerjakan soal dan pemahaman materi esensial,
+              didukung evaluasi berkala oleh{" "}
               <span className="color-d2b04c-description">Tim Akademik LPS</span>{" "}
               yang akan memberikan rekomendasi untuk mendukung kemajuan belajar
               siswa.
             </p>
+
             <p className="child-paragraf-hero__sd_smp_sma">
               Tujuan program ini adalah memastikan siswa dapat meraih hasil
               akademik terbaik dan lolos ke perguruan tinggi impian mereka
@@ -40,7 +63,11 @@ const HeadingUTBK = () => {
             </p>
           </div>
 
-          <button className="btn-learn-more__sd_smp_sma">
+          <button
+            className="btn-learn-more__sd_smp_sma"
+            onClick={() =>
+              window.open(finalUrl, "_blank", "noopener,noreferrer")
+            }>
             Konsultasi Sekarang
           </button>
         </div>

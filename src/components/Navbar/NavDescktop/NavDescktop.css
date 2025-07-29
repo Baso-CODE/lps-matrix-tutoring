@@ -14,7 +14,7 @@
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
   text-decoration: none;
   color: white; /* Tambahkan warna font */
-  font-family: "Open Sans", sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 
 .menu-link:hover {
@@ -104,7 +104,7 @@
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
   text-decoration: none;
-  color: #ff8000; /* Tambahkan warna font */
+  color: #2d3748; /* Tambahkan warna font */
 }
 
 .menu-link:hover {
@@ -122,22 +122,22 @@
 
 .sub-menu {
   position: absolute;
-  top: 100%; /* Submenu muncul tepat di bawah elemen parent */
+  top: 100%;
   left: 0;
-  z-index: 999; /* Pastikan submenu ada di atas elemen lain */
+  z-index: 999;
   padding: 16px;
   border-radius: 6px;
-  backdrop-filter: blur(4px); /* Efek blur pada background */
-  background-color: #eeeeee;
-  display: none; /* Mulanya disembunyikan */
-  width: 500px; /* Batasi lebar submenu */
-  min-height: 300px;
+  backdrop-filter: blur(4px);
+  background-color: #ffffff;
+  display: none;
+  width: max-content;
+  height: fit-content;
   grid-gap: 20px;
 }
 
 .grid {
   display: grid;
-  gap: 20px;
+  gap: 30px;
 }
 
 .grid-cols-1 {
@@ -174,7 +174,7 @@
 .icon-box {
   background-color: rgba(255, 255, 255, 0.05);
   padding: 8px;
-  color: #1e3e62;
+  color: var(--color-orange-default);
   border-radius: 8px;
   transition: all 0.3s ease-in-out;
 }
@@ -186,18 +186,17 @@
 
 .submenu-name {
   font-weight: 700;
-
-  color: #ff8000;
+  color: var(--color-orange-default);
   font-size: 14px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 
 .submenu-desc {
-  font-size: 14px;
-  font-weight: 500;
-  color: #ff6500;
+  font-size: 15px;
+  font-weight: 600;
+  color: #2d3748;
   line-height: 1rem;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 
 @media (max-width: 768px) {

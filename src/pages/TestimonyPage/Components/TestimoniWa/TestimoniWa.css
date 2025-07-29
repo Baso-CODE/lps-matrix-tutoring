@@ -1,0 +1,21 @@
+/* Gallery Container */
+.success-story-wa-siswa-page {
+  display: grid;
+  gap: 1.3rem;
+  margin-top: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Display 1 column on small screens, 2 columns on medium and larger screens */
+@media (min-width: 768px) {
+  .success-story-wa-siswa-page {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .success-story-wa-siswa-page {
+    gap: 0.8rem;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

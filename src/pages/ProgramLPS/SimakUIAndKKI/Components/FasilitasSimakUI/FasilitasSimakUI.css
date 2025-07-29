@@ -15,6 +15,7 @@
 /* Card Styling */
 .fasilitas-simak-ui-card {
   background-color: #ffffff;
+  border: 2px solid var(--color-orange-default);
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 1rem;
@@ -30,20 +31,20 @@
 /* Icon Styling */
 /* Icon Styling */
 .fasilitas-icon {
-  width: 58px; /* Sesuaikan ukuran icon */
-  height: 58px;
+  width: 8rem;
+  height: 8rem;
   margin-bottom: 0.5rem; /* Berikan jarak dengan elemen berikutnya */
   display: inline-block;
-  object-fit: contain; /* Pastikan gambar tidak terdistorsi */
+  object-fit: contain;
 }
 
 /* Title Styling */
 .fasilitas-title {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: #ff8000;
   font-weight: 600;
   margin-bottom: 1rem;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 
 /* List Styling */
@@ -60,7 +61,7 @@
 .fasilitas-list li {
   font-weight: 400;
   border-radius: 8px;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.4rem;
   text-align: start; /* Pastikan teks rata kiri */
   color: #343131;
   font-size: 1rem;

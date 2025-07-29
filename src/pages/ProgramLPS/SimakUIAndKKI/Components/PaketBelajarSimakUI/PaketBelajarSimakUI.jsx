@@ -7,28 +7,27 @@ const PaketBelajarSimakUI = () => {
   const packages = [
     {
       icon: "/images/icon/paket/silver.webp",
-      title: "Silver Package",
+      title: "Silver Paket",
       sessions: "20 sesi",
-      message: `Paket: Silver Package%0ASesi: 100 sesi`,
+      message: `Paket: Silver Package%0ASesi: 20 sesi`,
     },
     {
       icon: "/images/icon/paket/gold.webp",
-      title: "Gold Package",
+      title: "Gold Paket",
       sessions: "40 sesi",
-      message: `Paket: Gold Package%0ASesi: 150 sesi`,
+      message: `Paket: Gold Package%0ASesi: 40 sesi`,
     },
     {
       icon: "/images/icon/paket/platinum.webp",
-      title: "Platinum Package",
+      title: "Platinum Paket",
       sessions: "60 sesi",
-      message: `Paket: Platinum Package%0ASesi: 200 sesi`,
+      message: `Paket: Platinum Package%0ASesi: 60 sesi`,
     },
   ];
   const handleCallNow = (message) => {
     const finalUrl = `${baseUrl}${message}`;
     window.open(finalUrl, "_blank");
   };
-
   return (
     <div className="paket-belajar-container">
       <h1 className="title-paket-induk__osn">Paket Belajar SIMAK UI</h1>

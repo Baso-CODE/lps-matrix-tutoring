@@ -7,42 +7,81 @@
   overflow: hidden;
 }
 
+.visi-misi-lps-title-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; /* Tambahkan ini untuk memusatkan secara horizontal */
+  width: 100%; /* Pastikan kontainer ini memenuhi lebar penuh agar centering berfungsi */
+  margin-bottom: 2rem; /* Pindahkan margin-bottom dari .visi-misi-title ke sini */
+}
+
+.visi-misi-lps-title-container img {
+  max-width: 4vw;
+  width: 100%;
+  height: auto;
+  margin-left: 1rem;
+}
+
 .visi-misi-title {
-  font-size: 1.4rem;
-  color: #ff6500;
-  margin-bottom: 2rem;
-  font-weight: 600;
-  font-family: "Open Sans", sans-serif;
+  font-size: 1.7rem;
+  color: var(--color-gray-darker);
+  font-weight: 800;
+  font-family: "Nunito", sans-serif;
 }
 
 .card-container {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  gap: 1.5rem;
   padding-bottom: 4vh;
   padding-top: 4vh;
-  gap: 1.5rem;
   justify-content: center;
+
+  /* Default for Mobile (1 column) */
+  grid-template-columns: 1fr;
+}
+
+/* Tablet Layout (2 columns) */
+@media (min-width: 601px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Laptop/Desktop Layout (4 columns) */
+@media (min-width: 1025px) {
+  .card-container {
+    grid-template-columns: repeat(4, 1fr); /* 4 kolom untuk layar besar */
+  }
 }
 
 .card {
-  background-color: #ffffff;
-  width: 250px;
+  background-color: var(
+    --color-gray-lightest
+  ); /* Latar belakang kartu putih keabu-abuan */
   padding: 1.5rem;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Shadow tetap menggunakan RGBA */
   text-align: left;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s, filter 0.3s ease-in-out; /* Tambahkan filter untuk transisi blur */
 }
 
 .card:hover {
   transform: translateY(-8px);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  filter: none; /* Pastikan kartu yang di-hover tidak blur */
+}
+
+/* Kelas untuk efek blur */
+.card.blurred {
+  filter: blur(3px); /* Sesuaikan nilai blur sesuai keinginan */
+  pointer-events: none; /* Nonaktifkan interaksi pada kartu yang di-blur */
 }
 
 .card-title {
   font-size: 1.2rem;
-  color: #ff8000;
-  font-family: "Open Sans", sans-serif;
+  color: var(--color-orange-dark); /* Oranye gelap untuk judul kartu */
+  font-family: "Nunito", sans-serif;
   font-weight: 700;
   margin-bottom: 1rem;
   display: flex;
@@ -53,26 +92,32 @@
 .card-title img {
   width: 4rem;
   height: 4rem;
-
-  /* border-radius: 50%; */
+  object-fit: contain; /* Pastikan gambar icon proporsional */
 }
 
 .card-content {
   font-size: 1rem;
-  color: #343131;
+  color: var(--color-gray-dark); /* Abu-abu gelap untuk konten kartu */
   line-height: normal;
   font-family: "Nunito", sans-serif;
 }
 
-/* VisiEndMisiLps.css */
+/* Media Queries for fine-tuning */
+@media (max-width: 768px) {
+  .card-content {
+    font-size: 0.9rem;
+  }
 
-@media (max-width: 600px) {
-  .card {
-    width: 100%;
+  .visi-misi-lps-title-container img {
+    max-width: 10vw;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
+  .visi-misi-title {
+    font-size: 1.5rem;
+  }
+
   .card-content {
     font-size: 0.9rem;
   }

@@ -1,9 +1,9 @@
-import { baseUrlTesting } from "../../utils/config";
+import { baseUrl } from "../../utils/config";
 
 export async function getJumbotronProgram(program) {
   try {
     const response = await fetch(
-      `${baseUrlTesting}/jumbotron-program/program/${program}`
+      `${baseUrl}/jumbotron-program/program/${program}`
     );
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);

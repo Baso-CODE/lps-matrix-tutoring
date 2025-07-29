@@ -1,11 +1,27 @@
+import { useState } from "react";
 import "./VisiEndMisiLps.css";
 
 const VisiEndMisiLps = () => {
+  const [hoveredCard, setHoveredCard] = useState(null);
+
   return (
     <div className="visi-misi-container">
-      {/* <h1 className="visi-misi-title">Visi dan Misi LPS</h1> */}
+      <div className="visi-misi-lps-title-container">
+        <h1 className="visi-misi-title">Visi dan Misi</h1>
+        <img
+          src="/images/visi-misi-lps-logo.png"
+          alt="Visi Misi LPS Education Logo"
+          loading="eager"
+        />
+      </div>
+
       <div className="card-container">
-        <div className="card">
+        <div
+          className={`card ${
+            hoveredCard !== null && hoveredCard !== "visi" ? "blurred" : ""
+          }`}
+          onMouseEnter={() => setHoveredCard("visi")}
+          onMouseLeave={() => setHoveredCard(null)}>
           <h2 className="card-title">
             <img
               loading="lazy"
@@ -19,7 +35,14 @@ const VisiEndMisiLps = () => {
             siswa berprestasi dan berkarakter unggul.
           </p>
         </div>
-        <div className="card">
+
+        {/* Kartu Misi */}
+        <div
+          className={`card ${
+            hoveredCard !== null && hoveredCard !== "misi" ? "blurred" : ""
+          }`}
+          onMouseEnter={() => setHoveredCard("misi")}
+          onMouseLeave={() => setHoveredCard(null)}>
           <h2 className="card-title">
             <img
               loading="eager"
@@ -34,7 +57,14 @@ const VisiEndMisiLps = () => {
             unggul dalam akademik maupun non-akademik.
           </p>
         </div>
-        <div className="card">
+
+        {/* Kartu Filosofi */}
+        <div
+          className={`card ${
+            hoveredCard !== null && hoveredCard !== "filosofi" ? "blurred" : ""
+          }`}
+          onMouseEnter={() => setHoveredCard("filosofi")}
+          onMouseLeave={() => setHoveredCard(null)}>
           <h2 className="card-title">
             <img
               loading="lazy"
@@ -48,7 +78,14 @@ const VisiEndMisiLps = () => {
             menginspirasi generasi penerus untuk terus berkembang.
           </p>
         </div>
-        <div className="card">
+
+        {/* Kartu Promise */}
+        <div
+          className={`card ${
+            hoveredCard !== null && hoveredCard !== "promise" ? "blurred" : ""
+          }`}
+          onMouseEnter={() => setHoveredCard("promise")}
+          onMouseLeave={() => setHoveredCard(null)}>
           <h2 className="card-title">
             <img
               loading="lazy"

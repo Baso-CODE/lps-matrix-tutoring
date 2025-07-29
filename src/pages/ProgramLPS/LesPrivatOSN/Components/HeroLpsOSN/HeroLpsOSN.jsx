@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
-import "./HeroLpsOSN.css";
 import { getJumbotronProgram } from "../../../../../api/jumbotron/getJumbotronProgram";
+import { selectContactCsData } from "../../../../../lib/features/contactCsSlice";
+import { useAppSelector } from "../../../../../lib/hooks";
+import "./HeroLpsOSN.css";
 const HeroLpsOSN = () => {
+  const contactData = useAppSelector(selectContactCsData);
+  const finalUrl = contactData?.link_cta;
   const [jumbotron, setJumbotron] = useState(null);
 
   useEffect(() => {
@@ -15,6 +19,12 @@ const HeroLpsOSN = () => {
     };
     fetchJumbotron();
   }, []);
+
+  // const handleCTAClick = (e) => {
+  //   const targetUrl = contactData?.link_cta || "https://wa.me/6285887562039";
+  //   handleCTAClickLogic(targetUrl, e);
+  // };
+
   return (
     <div className="container-halaman__sd_smp_sma">
       <div className="content-hero-home__sd_smp_sma">
@@ -64,8 +74,11 @@ const HeroLpsOSN = () => {
               terbaik Anda di bidang akademik!
             </p>
           </div>
-
-          <button className="btn-learn-more__sd_smp_sma">
+          <button
+            className="btn-learn-more__sd_smp_sma"
+            onClick={() =>
+              window.open(finalUrl, "_blank", "noopener,noreferrer")
+            }>
             Konsultasi Sekarang
           </button>
         </div>

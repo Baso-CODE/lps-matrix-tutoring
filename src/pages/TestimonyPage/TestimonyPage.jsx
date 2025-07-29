@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import SuccessStory from "./Components/SuccessStory/SuccessStory";
 import TestimoniWa from "./Components/TestimoniWa/TestimoniWa";
 import "./TestimonyPage.css";
 
@@ -17,9 +16,8 @@ const TestimonyPage = () => {
   }, [location]);
   return (
     <div className="container-all">
-      <SuccessStory />
       <TestimoniWa />
-      {/* <GalleryBelajar /> */}
+      {/* <SuccessStory /> */}
     </div>
   );
 };

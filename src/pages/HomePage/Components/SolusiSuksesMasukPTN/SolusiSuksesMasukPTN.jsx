@@ -67,22 +67,6 @@ const SolusiSuksesMasukPTN = () => {
         </div>
       </div>
       {/* New Description Below Cards */}
-      <p className="extra-description">
-        <span className="quote-mark">&ldquo;</span>{" "}
-        <span className="color-d2b04c-description">
-          Bimbel Les Privat ONLINE & Datang ke Rumah.
-        </span>{" "}
-        Guru Les Privat Seleksi Bersama Masuk Perguruan Tinggi Negeri. Les
-        Privat Intensif Program SBMPTN Masuk UI UGM ITB IPB Unpad Undip Unair
-        dan berbagai PTN Favorit Impian Lainnya. Program Les Privat Persiapan
-        Masuk Perguruan Tinggi Negeri Terbaik. Guru Privat SBMPTN ONLINE dan
-        Datang ke rumah untuk mengajar Les Privat SBMPTN dan Simak UI
-        berdasarkan mata pelajaran yang dibutuhkan.{" "}
-        <span className="color-d2b04c-description">
-          Program Les Privat SBMPTN.
-        </span>{" "}
-        <span className="quote-mark">&rdquo;</span>
-      </p>
     </div>
   );
 };

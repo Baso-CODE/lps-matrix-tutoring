@@ -1,77 +1,170 @@
 import { Helmet } from "react-helmet-async";
-import ContactButton from "../../../../components/ContactButton/ContactButton";
+import { useParams } from "react-router-dom";
+import AlumniLpsNew from "../../../../components/AlumniLpsNew/AlumniLpsNew";
+import Slider from "../../../../components/Slider/Slider";
+import TestimoniWaSlider from "../../../../components/TestimoniWaSlider/TestimoniWaSlider";
 import UnivPengajarLps from "../../../../components/UnivPengajarLps/UnivPengajarLps";
+import FiturDanLayanan from "../../../HomePage/Components/FiturDanLayanan/FiturDanLayanan";
+import KeunggulanEndAlasanMemilih from "../../../HomePage/Components/KeunggulanEndAlasanMemilih/KeunggulanEndAlasanMemilih";
+import ProfileTutor from "../../../HomePage/Components/ProfileTutor/ProfileTutor";
+import ProgramBelajarLps from "../../../HomePage/Components/ProgramBelajarLps/ProgramBelajarLps";
+import TestimoniWaSiswa from "../../../HomePage/Components/TestimoniWaSiswa/TestimoniWaSiswa";
+import VisiEndMisiLps from "../../../HomePage/Components/VisiEndMisiLps/VisiEndMisiLps";
 import FasilitasSimakUI from "../../SimakUIAndKKI/Components/FasilitasSimakUI/FasilitasSimakUI";
 import HeadingLpsSDSMPSMA from "../Components/HeadingLpsSDSMPSMA/HeadingLpsSDSMPSMA";
 import PaketBelajarSDSMPSMA from "../Components/PaketBelajarSDSMPSMA/PaketBelajarSDSMPSMA";
-import PaketSesiSDSMPSMA from "../Components/PaketSesiSDSMPSMA/PaketSesiSDSMPSMA";
 import ProgramIntensifLpsSDSMPSMA from "../Components/ProgramIntensifLpsSDSMPSMA/ProgramIntensifLpsSDSMPSMA";
-import { useParams } from "react-router-dom";
-import Promo from "../../../../components/Promo/Promo";
 
 const LesPrivatSDSMPSMASlug = () => {
   const { slug } = useParams();
 
-  const slugUpperCase = slug.toUpperCase();
+  const formatSlugToTitle = (textSlug) => {
+    return textSlug
+      ? textSlug
+          .split("-")
+          .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+          .join(" ")
+      : "";
+  };
+
+  const dynamicLocationName = formatSlugToTitle(slug) || "Online";
+  const baseUrl = "https://apps.lesprivatmasukptn.com";
+
+  const canonicalUrl = `${baseUrl}/les-privat-sd-smp-sma-terbaik-di/${slug}`;
+
+  const ogImage =
+    "https://apps.lesprivatmasukptn.com/images/program/SD,SMP,SMA.webp";
+
+  const pageTitle = `📖 Les Privat SD, SMP, SMA di ${dynamicLocationName} | Semua Mapel - LPS Education`;
+  const descriptionContent = `Dapatkan les privat SD, SMP, dan SMA di ${dynamicLocationName} terbaik dari LPS Education ✔️ Guru Datang ke Rumah/Online ✔️ Untuk Semua Mata Pelajaran. Tingkatkan prestasi akademik siswa.`;
+  const ogTitle = `Les Privat SD, SMP, SMA di ${dynamicLocationName} | Semua Mata Pelajaran - LPS Education`;
+  const ogDescription = `Bimbingan belajar privat SD, SMP, SMA intensif di ${dynamicLocationName} dengan pengajar berpengalaman dari LPS Education. Tersedia online dan offline. Bantu tingkatkan prestasi akademik siswa.`;
+  const twitterTitle = `Les Privat SD, SMP, SMA di ${dynamicLocationName} | LPS Education`;
+  const twitterDescription = `Tingkatkan prestasi belajar SD, SMP, SMA dengan les privat dari LPS Education di ${dynamicLocationName}. Program fleksibel, guru profesional, online atau offline.`;
+
+  const ogImageAlt = `Les Privat SD SMP SMA ${dynamicLocationName} LPS Education`;
+
+  const articleTags = [
+    "les privat SD",
+    "les privat SMP",
+    "les privat SMA",
+    "bimbingan belajar online",
+    "guru privat datang ke rumah",
+    "les privat semua mata pelajaran",
+    "les privat Matematika",
+    "les privat IPA",
+    "les privat Bahasa Inggris",
+    "persiapan Ujian Nasional",
+    "persiapan PTS PAS",
+    "LPS Education",
+    dynamicLocationName.toLowerCase(),
+    "les privat Fisika",
+    "les privat Kimia",
+    "les privat Biologi",
+    "les privat Sejarah",
+    "les privat Geografi",
+    "les privat Sosiologi",
+    "les privat Ekonomi",
+    "les privat Akuntansi",
+  ];
+
   return (
     <>
       <Helmet>
-        <title>
-          Les Privat SD SMP SMA di {slugUpperCase} Persiapan Belajar Intensif
-          Online & Guru Datang ke Rumah LES PRIVAT SD SMP SMA LPS Matrix
-          Indonesia ™
-        </title>
-        <meta
-          name="description"
-          content="Dapatkan les privat untuk SD, SMP, dan SMA terbaik dengan LPS Matrix Indonesia. Program intensif bersama pengajar profesional dan fasilitas lengkap, online maupun offline."
-        />
+        {/* Basic SEO Meta Tags */}
+        <title>{pageTitle}</title>
+        <meta name="description" content={descriptionContent} />
         <meta
           name="keywords"
-          content="les privat SD, les privat SMP, les privat SMA, bimbingan belajar intensif, program belajar LPS Matrix"
+          content={`les privat SD ${dynamicLocationName}, les privat SMP ${dynamicLocationName}, les privat SMA ${dynamicLocationName}, bimbingan belajar ${dynamicLocationName}, guru privat ${dynamicLocationName}, les privat semua mata pelajaran ${dynamicLocationName}, les privat Matematika ${dynamicLocationName}, les privat IPA ${dynamicLocationName}, les privat Bahasa Inggris ${dynamicLocationName}, persiapan Ujian Nasional ${dynamicLocationName}, persiapan PTS PAS ${dynamicLocationName}, LPS Education, les privat Fisika ${dynamicLocationName}, les privat Kimia ${dynamicLocationName}, les privat Biologi ${dynamicLocationName}, les privat Sejarah ${dynamicLocationName}, les privat Geografi ${dynamicLocationName}, les privat Sosiologi ${dynamicLocationName}, les privat Ekonomi ${dynamicLocationName}, les privat Akuntansi ${dynamicLocationName}`}
         />
-        <meta property="og:type" content="website" />
+        <link rel="canonical" href={canonicalUrl} />
         <meta
-          property="og:title"
-          content={`Les Privat SD, SMP, SMA di ${slugUpperCase} Persiapan Belajar Intensif Online & Guru Datang ke Rumah LES PRIVAT SD SMP SMA LPS Matrix Indonesia ™`}
+          name="robots"
+          content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"
         />
-        <meta
-          property="og:description"
-          content="Bimbingan belajar privat untuk SD, SMP, dan SMA dengan pengajar berpengalaman, fasilitas lengkap, tersedia secara online dan guru datang ke rumah."
-        />
-        <meta
-          property="og:image"
-          content="https://apps.lesprivatmasukptn.com/images/program/SD,SMP,SMA.webp"
-        />
-        <meta property="og:url" content={window.location.href} />
-        <link rel="canonical" href={window.location.href} />
-        <meta
-          name="twitter:card"
-          content="https://apps.lesprivatmasukptn.com/images/program/SD,SMP,SMA.webp"
-        />
-        <meta
-          name="twitter:title"
-          content={`Les Privat SD, SMP, SMA di ${slugUpperCase} Persiapan Belajar Intensif Online & Guru Datang ke Rumah LES PRIVAT SD SMP SMA LPS Matrix Indonesia ™`}
-        />
-        <meta
-          name="twitter:description"
-          content="Program bimbingan belajar privat untuk SD, SMP, dan SMA dengan fasilitas lengkap dan pengajar profesional dari LPS Matrix Indonesia."
-        />
-        <meta
-          name="twitter:image"
-          content="https://apps.lesprivatmasukptn.com/images/program/SD,SMP,SMA.webp"
-        />
+
+        {/* Open Graph Meta Tags (for social media sharing) */}
+        <meta property="og:locale" content="id_ID" />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={ogTitle} />
+        <meta property="og:description" content={ogDescription} />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:site_name" content="LPS Education" />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:image:secure_url" content={ogImage} />
+        <meta property="og:image:width" content="800" />
+        <meta property="og:image:height" content="600" />
+        <meta property="og:image:alt" content={ogImageAlt} />
+        <meta property="og:image:type" content="image/webp" />
+        {articleTags.map((tag) => (
+          <meta key={tag} property="og:article:tag" content={tag} />
+        ))}
+        <meta property="article:section" content="Les Privat SD SMP SMA" />
+
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={twitterTitle} />
+        <meta name="twitter:description" content={twitterDescription} />
+        <meta name="twitter:image" content={ogImage} />
+
+        {/* Schema Markup (JSON-LD) - BreadcrumbList */}
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "BreadcrumbList",
+                  "@id": "${canonicalUrl}#breadcrumb",
+                  "itemListElement": [
+                    {
+                      "@type": "ListItem",
+                      "position": "1",
+                      "item": {
+                        "@id": "${baseUrl}",
+                        "name": "Home"
+                      }
+                    },
+                    {
+                      "@type": "ListItem",
+                      "position": "2",
+                      "item": {
+                        "@id": "${baseUrl}/les-privat-sd-smp-sma-terbaik",
+                      }
+                    },
+                    {
+                      "@type": "ListItem",
+                      "position": "3",
+                      "item": {
+                        "@id": "${canonicalUrl}",
+                        "name": "${pageTitle.replace(/<\/?[^>]+(>|$)/g, "")}"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          `}
+        </script>
       </Helmet>
 
       <div className="container-all">
         <HeadingLpsSDSMPSMA />
         <FasilitasSimakUI />
         <ProgramIntensifLpsSDSMPSMA />
-
         <PaketBelajarSDSMPSMA />
-        <PaketSesiSDSMPSMA />
+        {/* <PaketSesiSDSMPSMA /> */}
+        <Slider />
+        <VisiEndMisiLps />
+        <ProgramBelajarLps />
+        <FiturDanLayanan />
+        <KeunggulanEndAlasanMemilih />
+        <ProfileTutor />
         <UnivPengajarLps />
-        <ContactButton />
-        <Promo />
+        <AlumniLpsNew />
+        <TestimoniWaSlider />
+        <TestimoniWaSiswa />
       </div>
     </>
   );

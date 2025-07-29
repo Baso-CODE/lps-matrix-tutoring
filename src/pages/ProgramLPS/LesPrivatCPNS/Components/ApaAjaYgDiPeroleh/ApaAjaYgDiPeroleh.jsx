@@ -1,11 +1,11 @@
 import "./ApaAjaYgDiPeroleh.css";
 const ApaAjaYgDiPeroleh = () => {
   return (
-    <div className="container-keunggulan-lps">
-      <h2 className="title">
+    <div className="jadwal-container">
+      <h2 className="jadwal-title">
         Kemudahan yang Diperoleh Siswa LPS – Les Privat CPNS:
       </h2>
-      <ul className="keunggulan-list">
+      <ul className="jadwal-list">
         <li>Asesmen awal untuk mengukur basic kemampuan siswa</li>
         <li>
           Tersedia pilihan paket sesi belajar mulai dari 20, 40, dan 60 sesi

@@ -14,20 +14,21 @@
 
 /* Title Styling */
 .program-simak-ui-title {
-  font-size: 1.8rem;
-  color: #ff6500;
+  font-size: 1.7rem;
+  color: var(--color-gray-darker);
   font-weight: 700;
   margin-bottom: 1rem;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 /* Title Styling */
 .program-simak-ui-title-h3 {
   font-size: 1.4rem;
-  color: #ff6500;
-  font-weight: 500;
+  color: #333;
+  font-weight: 700;
   margin-top: 3rem;
+  margin-bottom: 1rem;
 
-  font-family: "Open Sans", sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 
 /* Description Styling */
@@ -46,6 +47,7 @@
   padding-left: 1.5rem; /* Memberikan jarak kiri untuk daftar */
   font-size: 1rem;
   color: #343131;
+  margin-left: 1rem;
   font-family: "Nunito", sans-serif;
 }
 
@@ -57,6 +59,17 @@
 .program-simak-ui-list li::marker {
   color: #1e3e62; /* Ubah warna titik */
   font-size: 1.2rem; /* Ubah ukuran titik jika perlu */
+}
+
+.additional-description_simak-ui {
+  font-size: 1rem;
+  color: #343131;
+  text-align: start;
+  font-weight: 400;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: normal;
+  font-family: "Nunito", sans-serif;
 }
 
 /* Responsif untuk layar tablet */
@@ -79,12 +92,23 @@
   .program-simak-ui-list {
     font-size: 0.95rem; /* Ukuran daftar lebih kecil */
   }
+  .additional-description_simak-ui {
+    font-size: 0.9rem; /* Ukuran lebih kecil untuk tablet */
+    line-height: normal;
+    margin-top: 1.5rem; /* Mengurangi jarak margin atas */
+  }
 }
 
 /* Responsif untuk layar kecil */
 @media (max-width: 768px) {
   .program-simak-ui-title {
     font-size: 1.4rem; /* Ukuran judul lebih kecil */
+  }
+  .additional-description_simak-ui {
+    font-size: 0.85rem; /* Ukuran lebih kecil untuk ponsel */
+    line-height: normal;
+
+    margin-top: 1rem; /* Jarak margin atas lebih kecil */
   }
 
   .program-simak-ui-title-h3 {
@@ -116,5 +140,10 @@
 
   .program-simak-ui-list {
     font-size: 0.85rem; /* Ukuran daftar paling kecil */
+  }
+  .additional-description_simak-ui {
+    font-size: 0.8rem; /* Ukuran terkecil untuk layar kecil */
+    line-height: normal;
+    margin-top: 0.5rem; /* Jarak margin atas lebih kecil */
   }
 }

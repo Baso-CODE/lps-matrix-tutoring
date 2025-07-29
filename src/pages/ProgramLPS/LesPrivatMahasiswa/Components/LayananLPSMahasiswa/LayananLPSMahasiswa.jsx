@@ -8,13 +8,12 @@ const LayananLPSMahasiswa = () => {
         Layanan Les Privat Mahasiswa
       </h3>
       <p className="additional-description-mahasiswa">
-        LPS Matrix melayani permintaan guru les privat datang ke rumah dan
+        LPS Education melayani permintaan guru les privat datang ke rumah dan
         privat online untuk mahasiswa. Berikut beberapa materi kuliah yang dapat
         kami upayakan tutornya:
       </p>
-      {/* Program List Section */}
-      {/* Program List Section */}
-      <ul className="program-simak-ui-list">
+
+      <ul className="program-simak-ui-list__mahasiswa">
         <li>Les Privat SIMAK UI S1 dan Vokasi</li>
         <li>Les Privat Simak UI S1 KKI</li>
         <li>Les Privat Simak UI S2</li>

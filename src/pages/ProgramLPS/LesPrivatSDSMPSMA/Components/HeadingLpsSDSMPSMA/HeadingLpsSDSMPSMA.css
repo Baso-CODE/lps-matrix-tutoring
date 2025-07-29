@@ -29,13 +29,13 @@
 
 .title-halaman-hero__sd_smp_sma {
   font-size: 1.7rem;
-  font-weight: 700;
+  font-weight: 800;
   margin-bottom: 15px;
   text-align: center;
 
   line-height: normal;
-  color: #ff6500;
-  font-family: "Open Sans", sans-serif;
+  color: var(--color-gray-darker);
+  font-family: "Nunito", sans-serif;
 }
 
 .child-paragraf-hero__sd_smp_sma {
@@ -50,13 +50,13 @@
 
 .btn-learn-more__sd_smp_sma {
   padding: 12px 24px;
-  background-color: #1e3e62;
+  background-color: var(--color-orange-default);
   color: #fcfaee;
   border: none;
   border-radius: 5px;
   font-size: 16px;
   font-weight: bold;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Nunito", sans-serif;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -118,7 +118,7 @@
     font-size: 22px; /* Ukuran terkecil untuk layar kecil */
   }
   .child-paragraf-hero__sd_smp_sma {
-    font-size: 0.85rem; /* Smaller font for mobile */
+    font-size: 0.9rem; /* Smaller font for mobile */
   }
   .btn-learn-more__sd_smp_sma {
     width: 100%;

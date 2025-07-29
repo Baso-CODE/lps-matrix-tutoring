@@ -24,7 +24,7 @@ const ValuesCompany = () => {
             alt="Expertise: Demonstrating knowledge and skill in every aspect"
             className="emoji"
           />
-          <span>EXPERTISE</span>
+          <span>EXPERT</span>
         </div>
         <div className="value-item">
           <img
@@ -33,7 +33,7 @@ const ValuesCompany = () => {
             alt="Professionalism: Maintaining high standards and ethics in our work"
             className="emoji"
           />
-          <span>PROFESSIONALISM</span>
+          <span>SINERGY</span>
         </div>
       </div>
     </div>

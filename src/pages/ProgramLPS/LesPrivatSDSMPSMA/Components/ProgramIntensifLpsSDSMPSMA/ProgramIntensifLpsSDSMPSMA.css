@@ -3,18 +3,19 @@
 .program-intensif-container__sd_smp_sma {
   line-height: normal;
   font-family: "Nunito", sans-serif;
-  margin-top: 8vh;
+  margin-top: 2vh;
 }
 
 .program-title__sd_smp_sma {
-  font-size: 1.4rem;
-  color: #ff6500;
+  font-size: 1.3rem;
+  color: #333;
   text-align: start;
   margin-bottom: 1.5rem;
   font-weight: 700;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Nunito", sans-serif;
   padding: 0;
   margin: 0;
+  margin-bottom: 1vh;
 }
 
 .program-description__sd_smp_sma {

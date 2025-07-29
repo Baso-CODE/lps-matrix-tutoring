@@ -1,10 +1,8 @@
-import { baseUrlTesting } from "../../utils/config";
+import { baseUrl } from "../../utils/config";
 
 export async function getLoopSingleContact() {
   try {
-    const response = await fetch(
-      `${baseUrlTesting}/contactCs/get-looping-single`
-    );
+    const response = await fetch(`${baseUrl}/contactCs/get-looping-single`);
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }

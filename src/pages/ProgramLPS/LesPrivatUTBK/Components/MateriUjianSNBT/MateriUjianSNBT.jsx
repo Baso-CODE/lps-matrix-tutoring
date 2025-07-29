@@ -4,7 +4,7 @@ import "./MateriUjianSNBT.css";
 const MateriUjianSNBT = () => {
   return (
     <div className="container-materi-snbt">
-      <h1 className="main-title">Materi Ujian SNBT</h1>
+      {/* <h1 className="main-title">Materi Ujian SNBT</h1> */}
 
       <div className="materi-item">
         <div className="materi-title">1. Tes Potensi Skolastik (TPS)</div>

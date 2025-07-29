@@ -1,19 +1,19 @@
 .mata-pelajaran-container {
   text-align: center;
-  margin: 4vh 0;
+  margin: 20px 0;
 }
 
 .mata-pelajaran-title {
   font-size: 1.4rem;
-  color: #ff6500;
+  color: #333;
   margin-bottom: 1.5rem;
-  font-weight: 600;
-  font-family: "Open Sans", sans-serif;
+
+  font-family: "Nunito", sans-serif;
 }
 
 .mata-pelajaran-list {
   display: grid;
-  gap: 1rem;
+  gap: 0.5rem;
   list-style-type: disc;
   padding-left: 1.5rem; /* Spasi untuk bullet point */
   font-family: "Nunito", sans-serif;
@@ -24,6 +24,7 @@
 .mata-pelajaran-item {
   text-align: left; /* Text alignment for the list items */
   color: #000; /* Default text color */
+  font-size: 15px;
 }
 
 .mata-pelajaran-list li::marker {

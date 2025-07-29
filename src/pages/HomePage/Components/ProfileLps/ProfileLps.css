@@ -1,7 +1,8 @@
+/* Main Container for the entire Hero section */
 .container-halaman-hero-home {
   margin-top: 28px;
   min-height: 50vh;
-  /* background-color: #00139b; */
+  /* background-color: var(--color-orange-lighter); /* Contoh jika ingin background oranye sangat terang */
   align-items: center;
   overflow: hidden;
   display: flex;
@@ -9,26 +10,42 @@
   border-radius: 10px;
 }
 
+/* Wrapper to constrain content width */
 .content-hero-home {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  height: auto;
+  /* min-height: 120vh; */
 }
+
 .title-halaman-hero-home {
-  font-size: 36px; /* Ukuran font judul */
-  font-weight: bold; /* Membuat judul menjadi tebal */
-  margin-bottom: 15px; /* Spasi di bawah judul */
-  text-align: left; /* Mengatur teks judul rata kiri */
-  line-height: normal; /* Jarak antar garis teks */
-  color: #ff6500; /* Warna teks judul */
-  font-family: "Open Sans", sans-serif;
+  font-size: 3rem;
+  font-weight: bold;
+
+  line-height: 2.9rem;
+  text-align: left;
+  color: var(--color-orange-default); /* Primary: Oranye khas Anda */
+  font-family: "Playfair Display", serif;
+}
+
+.logo-profile-lps__container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.logo-profile__lps {
+  width: 100%; /* Ukuran logo yang sesuai */
+  height: auto; /* Tinggi otomatis untuk menjaga proporsi */
+  margin-bottom: 10px; /* Jarak antara logo dan judul */
 }
 
 .title-halaman-hero-home-1e3e62 {
-  color: #1e3e62;
+  /* Class ini sebelumnya menggunakan warna biru. Sekarang akan diubah ke abu-abu sangat gelap */
+  color: var(--color-gray-darker); /* Abu-abu sangat gelap untuk kontras */
 }
+
 .isi-content-hero-home {
   flex: 0 0 60%;
   /* margin-right: 5px; */
@@ -42,54 +59,55 @@
 
 .btn-daftar-sekarang,
 .btn-learn-more {
-  display: inline-flex; /* Membuat teks dan ikon berada dalam satu baris */
-  align-items: center; /* Mengatur ikon agar vertikal di tengah teks */
-  justify-content: center; /* Mengatur agar konten (teks dan ikon) berada di tengah tombol */
-  gap: 8px; /* Memberikan jarak antara teks dan ikon */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   margin-top: 20px;
   padding: 12px 24px;
-  background-color: #ff8000;
-  color: #fcfaee;
+  background-color: var(--color-orange-default); /* Primary: Oranye utama */
+  color: var(--color-gray-lightest);
   text-decoration: none;
   border: none;
   border-radius: 5px;
   font-size: 16px;
   font-weight: bold;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Nunito", sans-serif;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+
 .button-icon-profile-lps {
   width: 30px;
-
   height: 30px;
-  /* Anda bisa menambahkan properti lain seperti warna, margin, dll. di sini */
 }
 
 .btn-daftar-sekarang:hover,
 .btn-learn-more:hover {
-  background-color: #ff9d3d;
+  background-color: var(
+    --color-orange-dark
+  ); /* Oranye lebih gelap untuk hover */
 }
 
 .btn-learn-more {
-  background-color: #1e3e62;
-  color: #fcfaee;
+  background-color: var(--color-gray-dark);
+  color: var(--color-gray-lightest);
   margin-left: 10px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 
 /* Style for child-paragraf-hero-home */
 .child-paragraf-hero-home {
   font-size: 1rem;
-  color: #343131;
-  line-height: normal;
+  color: var(--color-gray-dark);
+  line-height: 22px;
   margin-bottom: 20px;
   font-weight: 400;
   font-family: "Nunito", sans-serif;
 }
 
 .highlight-yellow {
-  color: #fdc905; /* Warna kuning */
+  color: var(--color-orange-default); /* Konsisten dengan oranye primary */
 }
 
 /* Media query for mobile devices */
@@ -127,5 +145,31 @@
 @media (max-width: 768px) {
   .child-paragraf-hero-home {
     font-size: 0.9rem;
+  }
+
+  .btn-daftar-sekarang,
+  .btn-learn-more {
+    width: 100%;
+    text-align: center;
+    margin-left: 0;
+    padding: 12px 0px;
+  }
+
+  .title-halaman-hero-home {
+    font-size: 36px; /* Ukuran font lebih kecil untuk tablet */
+  }
+
+  .isi-content-hero-home {
+    flex: 0 0 100%; /* Isi konten mengambil seluruh lebar */
+    margin-right: 0; /* Menghapus margin kanan */
+  }
+
+  .rumah-adat-hero-home {
+    width: 100%; /* Rumah adat mengambil seluruh lebar */
+    height: auto; /* Tinggi otomatis untuk gambar */
+  }
+  .logo-profile__lps {
+    width: 100%; /* Ukuran logo yang sesuai untuk tablet */
+    height: auto; /* Tinggi otomatis untuk menjaga proporsi */
   }
 }

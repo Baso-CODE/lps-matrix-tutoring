@@ -36,14 +36,14 @@
 .section-title-footer-matrix {
   font-size: 1.125rem;
   font-weight: bold;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Nunito", sans-serif;
   margin-bottom: 0.9rem;
 }
 
 .section-subtitle-footer-matrix {
   font-size: 1rem;
   font-weight: bold;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Nunito", sans-serif;
   margin-bottom: 0.5rem;
 }
 
@@ -96,7 +96,7 @@
   margin-top: 0.7rem;
   text-align: center;
   font-size: 0.8rem;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 
 .footer-matrix-image {
@@ -118,6 +118,6 @@
     margin-top: 1rem;
     text-align: center;
     font-size: 0.7rem;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Nunito", sans-serif;
   }
 }

@@ -4,137 +4,24 @@ import "swiper/css/effect-cards";
 import { EffectCards } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import "./SuccesStoryCPNS.css"; // Import file CSS yang baru
-
-// function SuccesStoryCPNS() {
-//   const succesStories = [
-//     {
-//       image: "/images/CPNS/AliffiaRafiza.png",
-//       participantName: "Siswa AliffiaRafiza",
-//     },
-//     {
-//       image: "/images/CPNS/AlviSyahrizal.png",
-//       participantName: "Siswa AlviSyahrizal",
-//     },
-//     {
-//       image: "/images/CPNS/AnnisaRahmaputri.png",
-//       participantName: "Siswa AnnisaRahmaputri",
-//     },
-//     {
-//       image: "/images/CPNS/BimoIlhamWibowo.png",
-//       participantName: "Siswa BimoIlhamWibowo",
-//     },
-//   ];
-//   //   const [succesStories, setSuccessStories] = useState([]);
-
-//   //   useEffect(() => {
-//   //     async function fetchSuccessStories() {
-//   //       try {
-//   //         const result = await getAllSuccesStorysIsDeleted();
-//   //         setSuccessStories(result.data);
-//   //       } catch (error) {
-//   //         console.log("Failed to fetch success stories", error);
-//   //       }
-//   //     }
-//   //     fetchSuccessStories();
-//   //   }, []);
-
-//   return (
-//     <div className="success-story-cpns-container">
-//       <div className="success-story-cpns-wrapper">
-//         <div className="success-story-cpns-title-container">
-//           <h2 className="success-story-cpns-title">Success Story</h2>
-//         </div>
-
-//         {/* Bagian Deskripsi dan Swiper */}
-//         <div className="success-story-cpns-content">
-//           {/* Bagian Kiri: Title dan Deskripsi */}
-//           <div className="success-story-cpns-left">
-//             <h3 className="success-story-cpns-subtitle">
-//               Tentang Success Story Edumatrix Indonesia
-//             </h3>
-//             <p className="success-story-cpns-description">
-//               Edumatrix Indonesia telah membantu banyak siswa meraih kesuksesan
-//               dirancang untuk memberikan dampak positif dan signifikan dalam
-//               perkembangan akademik dan pribadi setiap siswa. melalui pendekatan
-//               pendidikan yang inovatif.
-//             </p>
-//             <p className="success-story-cpns-description">
-//               Dari bimbingan intensif hingga program pengembangan keterampilan,
-//               Success Story kami menunjukkan komitmen kami terhadap pendidikan
-//               yang berkualitas dan hasil yang nyata bagi setiap peserta didik.
-//             </p>
-
-//             <div className="success-story-cpns-swipe-info">
-//               {/* <FaChevronLeft className="text-white text-3xl cursor-pointer" /> */}
-//               <span className="success-story-cpns-swipe-text">
-//                 Swipe Card to see more
-//               </span>
-//               <PiHandSwipeRightBold className="success-story-cpns-swipe-icon" />
-//             </div>
-//           </div>
-
-//           {/* Bagian Kanan: Swiper Cards */}
-//           <div className="success-story-cpns-swiper-container">
-//             <Swiper
-//               effect={"cards"}
-//               grabCursor={true}
-//               modules={[EffectCards]}
-//               className="success-story-cpns-swiper">
-//               {succesStories.map((story, index) => (
-//                 <SwiperSlide
-//                   key={index}
-//                   className="success-story-cpns-swiper-slide">
-//                   <img
-//                     loading="lazy"
-//                     src={`${imageUrlClient}/succesStory-images/${story.image}`}
-//                     alt={`Succes story Siswa OSN Edumatirix Indonesia atas nama ${story.participantName}`}
-//                     className="success-story-cpns-swiper-image"
-//                   />
-//                 </SwiperSlide>
-//               ))}
-//             </Swiper>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default SuccesStoryCPNS;
+import { useEffect, useState } from "react";
+import { getSuccesStoryCPNS } from "../../../../../api/succesStoryCpns/getSuccesStoryCPNS";
+import "./SuccesStoryCPNS.css";
 
 const SuccesStoryCPNS = () => {
-  const succesStories = [
-    {
-      image: "/images/CPNS/AliffiaRafiza.png",
-      participantName: "Siswa AliffiaRafiza",
-    },
-    {
-      image: "/images/CPNS/AlviSyahrizal.png",
-      participantName: "Siswa AlviSyahrizal",
-    },
-    {
-      image: "/images/CPNS/AnnisaRahmaputri.png",
-      participantName: "Siswa AnnisaRahmaputri",
-    },
-    {
-      image: "/images/CPNS/BimoIlhamWibowo.png",
-      participantName: "Siswa BimoIlhamWibowo",
-    },
-  ];
-  //   const [succesStories, setSuccessStories] = useState([]);
+  const [succesStories, setSuccessStories] = useState([]);
 
-  //   useEffect(() => {
-  //     async function fetchSuccessStories() {
-  //       try {
-  //         const result = await getAllSuccesStorysIsDeleted();
-  //         setSuccessStories(result.data);
-  //       } catch (error) {
-  //         console.log("Failed to fetch success stories", error);
-  //       }
-  //     }
-  //     fetchSuccessStories();
-  //   }, []);
+  useEffect(() => {
+    async function fetchSuccessStories() {
+      try {
+        const result = await getSuccesStoryCPNS();
+        setSuccessStories(result.data);
+      } catch (error) {
+        console.log("Failed to fetch success stories", error);
+      }
+    }
+    fetchSuccessStories();
+  }, []);
 
   return (
     <div className="success-story-cpns-container">
@@ -147,11 +34,9 @@ const SuccesStoryCPNS = () => {
         <div className="success-story-cpns-content">
           {/* Bagian Kiri: Title dan Deskripsi */}
           <div className="success-story-cpns-left">
-            <h3 className="success-story-cpns-subtitle">
-              Tentang Success Story Edumatrix Indonesia
-            </h3>
+            <h3 className="success-story-cpns-subtitle">Success Stories ...</h3>
             <p className="success-story-cpns-description">
-              Edumatrix Indonesia telah membantu banyak siswa meraih kesuksesan
+              LPS Education telah membantu banyak siswa meraih kesuksesan
               dirancang untuk memberikan dampak positif dan signifikan dalam
               perkembangan akademik dan pribadi setiap siswa. melalui pendekatan
               pendidikan yang inovatif.
@@ -184,7 +69,7 @@ const SuccesStoryCPNS = () => {
                   className="success-story-cpns-swiper-slide">
                   <img
                     loading="lazy"
-                    src={story.image}
+                    src={story.link_image}
                     alt={`Succes story Siswa OSN Edumatirix Indonesia atas nama ${story.participantName}`}
                     className="success-story-cpns-swiper-image"
                   />

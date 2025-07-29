@@ -6,6 +6,7 @@ import {
   Medal,
   School,
   University,
+  UserCog,
   Users,
 } from "lucide-react"; // Import the necessary icons
 
@@ -17,12 +18,6 @@ export const Menus = [
   {
     name: "Program",
     subMenu: [
-      {
-        name: "Bimbel Karantina PTN",
-        desc: "Bimbel Untuk Persiapan PTN",
-        icon: Users, // Ikon topi kelulusan untuk program PTN
-        link: "https://supercampmatrix.co.id/",
-      },
       {
         name: "Les Privat UTBK 2025",
         desc: "Les untuk Persiapan UTBK",
@@ -65,6 +60,12 @@ export const Menus = [
         icon: Medal, // Ikon medali untuk program olimpiade
         link: "/les-privat-osn-terbaik",
       },
+      {
+        name: "Bimbel Karantina PTN",
+        desc: "Bimbel Untuk Persiapan PTN",
+        icon: Users, // Ikon topi kelulusan untuk program PTN
+        link: "https://supercampmatrix.co.id/",
+      },
     ],
     gridCols: 2,
   },
@@ -73,7 +74,27 @@ export const Menus = [
     link: "/about-us", // Link untuk About Us
   },
   {
-    name: "Testimoni",
-    link: "/testimoni-lps", // Link untuk Tutor
+    name: "Stories",
+    subMenu: [
+      {
+        name: "Alumni LPS",
+        desc: "Semua Siswa LPS",
+        icon: UserCog,
+        link: "/list-siswa-lps",
+      },
+      {
+        name: "Testimonies",
+        desc: "Semua Testimoni",
+        icon: BookCheck,
+        link: "/testimoni-lps",
+      },
+      {
+        name: "Succcess Stories",
+        desc: "Semua Success Stories",
+        icon: Briefcase,
+        link: "/success-stories-lps",
+      },
+    ],
+    gridCols: 1,
   },
 ];

@@ -1,17 +1,22 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "./FloatingCTA.css";
 import { selectContactCsData } from "../../lib/features/contactCsSlice";
 import { useAppSelector } from "../../lib/hooks";
+import "./FloatingCTA.css";
 
 const FloatingCTA = () => {
   const contactData = useAppSelector(selectContactCsData);
-  // Simulasi jumlah notifikasi pesan masuk
+
   const [unreadMessages, setUnreadMessages] = useState(0);
 
   useEffect(() => {
     setUnreadMessages(1);
   }, []);
+
+  // const handleCTAClick = (e) => {
+  //   const targetUrl = contactData?.link_cta || "https://wa.me/6285887562039";
+  //   handleCTAClickLogic(targetUrl, e);
+  // };
 
   return (
     <div className="box-float-main">
@@ -19,14 +24,9 @@ const FloatingCTA = () => {
         <label htmlFor="" className="label-cta">
           Chat With Us
         </label>
-        <Link
-          to={contactData?.link_cta}
-          className="parent-btn-wa"
-          target="_blank"
-          rel="noopener noreferrer">
+        <Link className="parent-btn-wa" to={contactData?.link_cta}>
           <button className="btn-float-wa">
             <span className="parent-icon-wa relative">
-              {/* Badge Notifikasi */}
               {unreadMessages > 0 && (
                 <span className="notif-badge">{unreadMessages}</span>
               )}

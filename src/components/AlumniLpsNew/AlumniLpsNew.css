@@ -1,0 +1,142 @@
+/* Styling untuk Komponen AlumniLpsNew */
+.alumni-lps-container {
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+  max-width: 1200px;
+  margin-left: 0;
+  overflow: hidden;
+  margin-right: 0;
+}
+
+.alumni-lps-header h2 {
+  text-align: start;
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  color: var(--color-gray-darker); /* Abu-abu sangat gelap untuk judul */
+  font-size: 1.7rem;
+  margin-bottom: 15px;
+}
+
+.color-d2b04c-description {
+  color: var(--color-orange-default); /* Oranye utama, konsisten dengan palet */
+  font-weight: bold;
+}
+
+/* Grid Container for Images */
+.alumnilPS-images-grid {
+  display: grid;
+  gap: 20px;
+  padding: 0;
+  list-style: none;
+  margin-bottom: 30px; /* Jarak antara grid gambar dan pagination */
+}
+
+.alumnilPS-images-grid img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover; /* Memastikan gambar mengisi area tanpa terdistorsi */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow tetap menggunakan RGBA untuk transparansi */
+}
+
+/* --- Pagination Controls Styling --- */
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.pagination-button {
+  background-color: var(
+    --color-orange-default
+  ); /* Warna utama tombol paginasi: oranye */
+  color: var(--color-gray-lightest); /* Warna teks tombol: putih keabu-abuan */
+  border: none;
+  border-radius: 5px;
+  padding: 0; /* Set padding menjadi 0 */
+  width: 40px; /* Lebar tetap untuk tombol */
+  height: 40px; /* Tinggi tetap untuk tombol */
+  font-size: 1rem; /* Biarkan jika ada teks nomor halaman */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex; /* Gunakan flexbox untuk menengahkan gambar/konten */
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Pastikan tidak ada yang meluap dari tombol */
+}
+
+/* Styling untuk gambar di dalam tombol paginasi */
+.pagination-button img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.pagination-button:hover:not(:disabled) {
+  background-color: var(
+    --color-orange-dark
+  ); /* Oranye lebih gelap saat hover */
+  transform: translateY(-2px); /* Efek sedikit naik saat hover */
+}
+
+.pagination-button:disabled {
+  background-color: var(--color-gray-light); /* Abu-abu terang saat disabled */
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.pagination-button.active {
+  background-color: var(
+    --color-orange-default
+  ); /* Oranye utama untuk halaman aktif */
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Loading and Error Messages */
+.loading-message,
+.no-data-message {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--color-gray-dark); /* Abu-abu gelap untuk pesan umum */
+  margin-top: 30px;
+}
+
+.error-message {
+  color: var(--color-error-red); /* Merah dari palet untuk error */
+}
+
+/* --- Media Queries for Responsive Design --- */
+
+/* Desktop Layout (3 columns) */
+@media (min-width: 992px) {
+  .alumnilPS-images-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Tablet Layout (2 columns) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .alumnilPS-images-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile Layout (1 column) */
+@media (max-width: 767px) {
+  .alumni-lps-header h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .alumnilPS-images-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .alumnilPS-images-grid img {
+    height: 100%; /* Sedikit lebih kecil di mobile */
+  }
+}

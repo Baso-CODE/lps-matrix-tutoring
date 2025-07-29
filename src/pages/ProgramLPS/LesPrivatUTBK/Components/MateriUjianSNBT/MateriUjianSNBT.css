@@ -9,7 +9,7 @@
 
   color: #ff8000;
   text-align: center;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Nunito", sans-serif;
   margin-bottom: 2rem;
 }
 
@@ -19,12 +19,12 @@
 
 .materi-title {
   font-size: 1.2rem;
-  font-family: "Open Sans", sans-serif;
-  background-color: #ff9d3d; /* Warna Sage */
+  font-family: "Nunito", sans-serif;
+  background-color: var(--color-orange-default);
   color: #ffffff;
   padding: 0.4rem 0.6rem;
   border-radius: 8px;
-  font-weight: 600;
+  font-weight: 700;
   cursor: default;
   width: fit-content;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);

@@ -1,0 +1,125 @@
+/* OsnWinnerBenefits.css */
+
+.osn-winner-benefits-section {
+  padding: 80px 0;
+  background-color: var(
+    --color-light-grey
+  ); /* Menggunakan warna latar belakang yang konsisten */
+  text-align: center;
+}
+
+.container-general {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.osn-winner-benefits-title {
+  font-size: 1.7rem;
+  color: var(--color-dark-blue);
+  margin-bottom: 15px;
+  font-weight: 800;
+  font-family: "Nunito", sans-serif;
+}
+
+.osn-winner-benefits-title span {
+  color: var(--color-orange-default); /* Warna penekanan */
+}
+
+.osn-winner-benefits-subtitle {
+  font-family: "Nunito", sans-serif;
+  font-size: 1.15rem;
+  color: var(--color-gray-dark);
+  margin-bottom: 50px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  justify-content: center;
+}
+
+.benefit-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.benefit-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+}
+
+.benefit-icon-wrapper {
+  width: 90px;
+  height: 90px;
+  background-color: var(--color-orange-light);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.benefit-icon-wrapper img {
+  width: 7rem;
+  height: 7rem;
+  object-fit: contain;
+}
+
+.benefit-title {
+  font-size: 1.5rem;
+  color: var(--color-orange-dark); /* Warna judul manfaat */
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-family: "Nunito", sans-serif;
+}
+
+.benefit-description {
+  font-size: 1rem;
+  color: var(--color-gray-medium);
+  line-height: 1.7;
+  font-family: "Nunito", sans-serif;
+  flex-grow: 1;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .osn-winner-benefits-title {
+    font-size: 1.5rem;
+  }
+  .osn-winner-benefits-subtitle {
+    font-size: 1rem;
+  }
+  .benefit-title {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .osn-winner-benefits-section {
+    padding: 60px 0;
+  }
+  .osn-winner-benefits-title {
+    font-size: 1.5rem;
+  }
+  .benefit-card {
+    padding: 25px;
+  }
+  .benefit-icon-wrapper {
+    width: 60px;
+    height: 60px;
+  }
+}

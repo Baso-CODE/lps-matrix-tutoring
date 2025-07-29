@@ -1,67 +1,49 @@
+import { useEffect, useState } from "react";
 import "./SuccessStory.css";
+import { getSuccessStory } from "../../../../api/successStory/getSuccessStory";
 
 const SuccessStory = () => {
-  const successStories = [
-    { image: "/images/success-story/testimoni-1.webp" },
-    { image: "/images/success-story/testimoni-2.webp" },
-    { image: "/images/success-story/testimoni-3.webp" },
-    { image: "/images/success-story/testimoni-4.webp" },
-    { image: "/images/success-story/testimoni-5.webp" },
-    { image: "/images/success-story/testimoni-6.webp" },
-    { image: "/images/success-story/testimoni-7.webp" },
-    { image: "/images/success-story/testimoni-8.webp" },
-    { image: "/images/success-story/testimoni-9.webp" },
-    { image: "/images/success-story/testimoni-10.webp" },
-    { image: "/images/success-story/testimoni-11.webp" },
-    { image: "/images/success-story/testimoni-12.webp" },
-    { image: "/images/success-story/testimoni-13.webp" },
-    { image: "/images/success-story/testimoni-14.webp" },
-    { image: "/images/success-story/testimoni-15.webp" },
-    { image: "/images/success-story/testimoni-16.webp" },
-    { image: "/images/success-story/testimoni-17.webp" },
-    { image: "/images/success-story/testimoni-18.webp" },
-    { image: "/images/success-story/testimoni-19.webp" },
-    { image: "/images/success-story/testimoni-20.webp" },
-    { image: "/images/success-story/testimoni-21.webp" },
-    { image: "/images/success-story/testimoni-22.webp" },
-    { image: "/images/success-story/testimoni-23.webp" },
-    { image: "/images/success-story/testimoni-24.webp" },
-    { image: "/images/success-story/testimoni-25.webp" },
-    { image: "/images/success-story/testimoni-26.webp" },
-    { image: "/images/success-story/testimoni-27.webp" },
-    { image: "/images/success-story/testimoni-28.webp" },
-    { image: "/images/success-story/testimoni-29.webp" },
-    { image: "/images/success-story/testimoni-30.webp" },
-    { image: "/images/success-story/testimoni-31.webp" },
-    { image: "/images/success-story/testimoni-32.webp" },
-  ];
+  const [dataSuccessStory, setDataSuccessStory] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const result = await getSuccessStory();
+        setDataSuccessStory(result.data);
+      } catch (error) {
+        console.error("errot fetch data", error);
+      }
+    };
+    fetchData();
+  }, []);
   return (
     <section id="success-story">
-      <div className="alumni-lps-container">
-        <div className="alumni-lps-header">
-          <h2>All Succes Story</h2>
+      <div className="succesStory-lps-container">
+        <div className="succesStory-lps-header">
+          <h2>Success Stories</h2>
         </div>
         <p className="additional-description-about__us">
-          LPS Jakarta adalah lembaga les pivat spesialis masuk PTN Favorit yang
-          dikelola oleh “Excellent Team”. Dengan tagline “Your Learning Partner
-          for Success” kami berupaya menjadi partner terbaik membantu siswa
-          masuk PTN Favorit. Tim Tutor Program Masuk PTN adalah mahasiswa &
-          alumni dari UI, ITB, UGM, STAN, STIS dan PTN Terbaik lainnya. Fokus
-          kami adalah menjadi mitra terbaik siswa dalam meraih PTN Favorit di
-          Indonesia.
+          Setiap foto ini punya kisah sendiri, bukti nyata kalau bimbingan kami
+          mendampingi kamu sampai dengan lolos PTN.
         </p>
         {/* Image Gallery */}
         <div className="success-story-gallery">
-          {successStories.map((item, index) => (
+          {dataSuccessStory.map((item, index) => (
             <img
               loading="lazy"
-              src={item.image}
-              alt="Bimbel Les Privat ONLINE dan Les Privat Datang ke Rumah untuk Program SBMPTN UTBK SNBT Simak UI UTUL UGM. Guru Privat Masuk UI ITB UGM dan Kedokteran di PTN Favorit."
+              src={item.link_image}
+              alt={`Success Story Image ${item.name}`}
               key={index}
               className="success-story-image"
             />
           ))}
         </div>
+        <p className="additional-description-about__us">
+          Dan masih banyak lagi kisah sukses yang terus bertambah setiap
+          tahunnya, membuktikan komitmen kami dalam mengantar siswa lolos ke
+          Kedokteran dan berbagai Program Studi unggulan di PTN Favorit impian
+          Anda! ...
+        </p>
       </div>
     </section>
   );

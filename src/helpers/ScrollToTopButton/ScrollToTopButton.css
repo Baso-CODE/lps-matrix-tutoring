@@ -1,0 +1,42 @@
+/* ScrollToTopButton.css */
+
+.scroll-to-top-button {
+  position: fixed;
+  /* Posisi di bagian bawah, sesuaikan agar tidak bertabrakan dengan bottom navbar */
+  /* Untuk mobile, bottom navbar memiliki tinggi sekitar 64px (h-16) */
+  /* Kita akan tempatkan tombol di atas bottom navbar */
+  bottom: calc(
+    var(--bottom-nav-height, 64px) + 33px
+  ); /* Default 64px + 20px margin */
+  left: 20px; /* Jarak dari kanan */
+  background-color: var(
+    --color-orange-default
+  ); /* Menggunakan warna oranye default dari palet Anda */
+  color: white;
+  padding: 12px; /* Padding sekitar ikon */
+  border-radius: 50%; /* Bentuk lingkaran */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Efek bayangan */
+  border: none;
+  cursor: pointer;
+  display: flex; /* Untuk menengahkan ikon */
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Transisi untuk hover */
+  z-index: 999; /* Pastikan di atas elemen lain */
+}
+
+.scroll-to-top-button:hover {
+  background-color: var(
+    --color-orange-dark
+  ); /* Warna oranye sedikit lebih gelap saat hover */
+  transform: translateY(-2px); /* Efek sedikit naik saat hover */
+}
+
+/* Responsif untuk desktop/tablet (di mana bottom navbar mungkin tidak ada) */
+@media (min-width: 1024px) {
+  /* Sesuai dengan lg:hidden pada bottom navbar */
+  .scroll-to-top-button {
+    bottom: 32px; /* Bottom 32px untuk desktop */
+    left: 10.5%; /* Sesuaikan right dengan XL:right-[10.5%] Anda */
+  }
+}

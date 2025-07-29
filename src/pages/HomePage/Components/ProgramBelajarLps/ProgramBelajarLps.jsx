@@ -3,167 +3,166 @@ import { motion, AnimatePresence } from "framer-motion";
 import "./ProgramBelajarLps.css";
 
 const ProgramBelajarLps = () => {
-  const [activeIndex, setActiveIndex] = useState([]); // Ubah initial state menjadi array kosong
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  const handleMouseEnter = (index) => {
-    setActiveIndex([index]); // Set active index menjadi array berisi index yang di-hover
+  const handleToggleClick = (index) => {
+    setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
   };
 
-  const handleMouseLeave = (index) => {
-    setActiveIndex((prevIndex) => prevIndex.filter((i) => i !== index)); // Hapus index saat kursor keluar
-  };
+  const programsData = [
+    {
+      id: 0,
+      title: "🏠 Privat Offline",
+      details: (
+        <>
+          <p>Berlaku untuk semua jenjang pendidikan dan kebutuhan.</p>
+          <ul>
+            <li>
+              <strong>Les Privat Offline:</strong> Guru privat datang ke rumah.
+            </li>
+            <li>
+              <strong>Area Jangkauan:</strong> Jakarta, Bogor, Depok, Tangerang,
+              Tangsel, Bekasi, dan sekitarnya
+            </li>
+            <li>
+              <strong>Jenjang Pendidikan:</strong> Tersedia untuk semua jenjang
+              pendidikan mulai dari SD hingga Mahasiswa.
+            </li>
+            <li>
+              <strong>Mata Pelajaran:</strong> Semua mata pelajaran dan
+              kebutuhan belajar tingkat SD SMP SMA Mahasiswa, persiapan TKA,
+              UTBK SNBT, dan Ujian Mandiri PTN Reguler dan IUP (Kelas
+              Internasional), serta Persiapan Tes TOEFL, CPNS, dan Kedinasan.
+            </li>
+            <li>
+              <strong>Kurikulum:</strong> Tersedia untuk semua Kurikulum baik
+              Kurikulum Nasional (Kurikulum Merdeka, Kurikulum 2013), Nasional
+              Plus, dan Internasional (IB, Cambridge, Singapore), dan lainnya
+            </li>
+            <li>
+              <strong>Jadwal Fleksibel:</strong> Waktu belajar menyesuaikan
+              dengan permintaan dan kebutuhan siswa
+            </li>
+            <li>
+              <strong>Konsultasi Awal:</strong> Sesi konsultasi gratis untuk
+              mendiskusikan kebutuhan dan tujuan belajar siswa.
+            </li>
+            <li>
+              <strong>Metode Pengajaran:</strong> Pendekatan belajar yang
+              interaktif dan menyenangkan, disesuaikan dengan gaya belajar
+              siswa.
+            </li>
+          </ul>
+        </>
+      ),
+    },
+    {
+      id: 1,
+      title: "💻 Privat Online",
+      details: (
+        <>
+          <p>Berlaku untuk semua jenjang pendidikan dan kebutuhan.</p>
+          <ul>
+            <li>
+              <strong>Les Privat Online:</strong> Belajar via Zoom/Google Meet
+              dengan jadwal yang fleksibel.
+            </li>
+            <li>
+              <strong>Area Jangkauan:</strong> Seluruh wilayah Indonesia,
+              memungkinkan pembelajaran dari mana saja.
+            </li>
+            <li>
+              <strong>Preferensi Tutor/Guru:</strong> Preferensi tutor dan
+              kriterianya disesuaikan dengan permintaan orangtua/siswa yang
+              belajar.
+            </li>
+            <li>
+              <strong>Durasi belajar:</strong> Sesi belajar berdurasi 1,5 - 2
+              jam untuk setiap sesinya dan disesuaikan dengan kebutuhan siswa.
+            </li>
+          </ul>
+        </>
+      ),
+    },
+    {
+      id: 2,
+      title: "🏕️ Supercamp",
+      details: (
+        <>
+          <p>Program Spesialis Bimbel Karantina Masuk PTN.</p>
+          <ul>
+            <li>
+              <strong>Supercamp:</strong> Program Intensif menginap selama 4
+              minggu yang dirancang khusus untuk persiapan UTBK SNBT.
+            </li>
+            <li>
+              <strong>Lokasi & Durasi:</strong>
+              <br />
+              Lokasi: Depok & Yogyakarta {""}
+              <br />
+              Durasi: 4 minggu (1 bulan sebelum UTBK).
+            </li>
+            <li>
+              <strong>Pilihan Sistem Pembelajaran:</strong> Belajar Kelompok 1
+              kelas terdiri dari 5–6 siswa Belajar Privat One on One Tutoring (1
+              siswa – 1 guru).
+            </li>
+            <li>
+              <strong>Sistem Belajar:</strong> Intensif belajar 5 sesi per hari
+              (Senin–Sabtu), Hari Minggu Free untuk Konsultasi Progress Belajar
+              & Temu Orangtua.
+            </li>
+            <li>
+              <strong>Fasilitas lengkap:</strong>
+              <ul>
+                <li>Makan + Snack</li>
+                <li>Free Laundry</li>
+                <li>Bahan ajar lengkap</li>
+                <li>Drilling Latihan Soal</li>
+                <li>Tryout Online UTBK setiap minggu</li>
+                <li>Monitoring progres belajar mingguan</li>
+                <li>Free Biaya Pendaftaran UTBK</li>
+                <li>Antar jemput ke Lokasi Ujian UTBK</li>
+              </ul>
+            </li>
+          </ul>
+          <p>S&K berlaku</p>
+        </>
+      ),
+    },
+  ];
 
   return (
     <div className="program-belajar-container">
       <h1 className="program-belajar-title">Program Belajar LPS</h1>
 
       <div className="program-list">
-        {/* Privat Offline */}
-        <div className="program-item">
-          <button
-            className="program-title-button"
-            onMouseEnter={() => handleMouseEnter(0)} // Gunakan onMouseEnter
-            onMouseLeave={() => handleMouseLeave(0)} // Tambahkan onMouseLeave untuk menutup
-          >
-            🏠 Privat Offline
-            <span className={`arrow ${activeIndex.includes(0) ? "open" : ""}`}>
-              ▼
-            </span>
-          </button>
-          <AnimatePresence>
-            {activeIndex.includes(0) && (
-              <motion.div
-                className="program-details"
-                initial={{ opacity: 0, height: 0, overflow: "hidden" }}
-                animate={{ opacity: 1, height: "auto" }}
-                exit={{ opacity: 0, height: 0, overflow: "hidden" }}
-                transition={{ duration: 0.3, ease: "easeInOut" }}>
-                <p>Berlaku untuk semua jenjang pendidikan dan kebutuhan.</p>
-                <ul>
-                  <li>
-                    <strong>Lesprivat Offline:</strong> Guru privat datang ke
-                    rumah.
-                  </li>
-                  <li>
-                    <strong>Area Jangkauan:</strong> Jabodetabek dan sekitarnya.
-                  </li>
-                  <li>
-                    <strong>Jenjang Pendidikan:</strong> Tersedia untuk semua
-                    tingkat pendidikan, mulai dari TK hingga SMA.
-                  </li>
-                  <li>
-                    <strong>Bidang Studi:</strong> Mata pelajaran lengkap
-                    termasuk Matematika, Bahasa Indonesia, Bahasa Inggris, dan
-                    Sains.
-                  </li>
-                  <li>
-                    <strong>Jadwal Fleksibel:</strong> Sesi dapat disesuaikan
-                    dengan waktu siswa dan guru.
-                  </li>
-                  <li>
-                    <strong>Konsultasi Awal:</strong> Sesi konsultasi gratis
-                    untuk mendiskusikan kebutuhan dan tujuan belajar siswa.
-                  </li>
-                  <li>
-                    <strong>Metode Pengajaran:</strong> Pendekatan belajar yang
-                    interaktif dan menyenangkan, disesuaikan dengan gaya belajar
-                    siswa.
-                  </li>
-                </ul>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
-
-        {/* Privat Online */}
-        <div className="program-item">
-          <button
-            className="program-title-button"
-            onMouseEnter={() => handleMouseEnter(1)} // Gunakan onMouseEnter
-            onMouseLeave={() => handleMouseLeave(1)} // Tambahkan onMouseLeave untuk menutup
-          >
-            💻 Privat Online
-            <span className={`arrow ${activeIndex.includes(1) ? "open" : ""}`}>
-              ▼
-            </span>
-          </button>
-          <AnimatePresence>
-            {activeIndex.includes(1) && (
-              <motion.div
-                className="program-details"
-                initial={{ opacity: 0, height: 0, overflow: "hidden" }}
-                animate={{ opacity: 1, height: "auto" }}
-                exit={{ opacity: 0, height: 0, overflow: "hidden" }}
-                transition={{ duration: 0.3, ease: "easeInOut" }}>
-                <p>Berlaku untuk semua jenjang pendidikan dan kebutuhan.</p>
-                <ul>
-                  <li>
-                    <strong>Lesprivat Online:</strong> Belajar via Zoom/Google
-                    Meet dengan jadwal yang fleksibel.
-                  </li>
-                  <li>
-                    <strong>Area Jangkauan:</strong> Seluruh wilayah Indonesia,
-                    memungkinkan pembelajaran dari mana saja.
-                  </li>
-                  <li>
-                    <strong>Fasilitas:</strong> Materi dan soal latihan yang
-                    dapat diakses secara digital, serta rekaman sesi untuk
-                    referensi belajar ulang.
-                  </li>
-                  <li>
-                    <strong>Pilihan Tutor:</strong> Pilihan tutor sesuai
-                    preferensi jenjang pendidikan dan bidang studi.
-                  </li>
-                  <li>
-                    <strong>Durasi Sesi:</strong> Sesi belajar berdurasi 1-2
-                    jam, disesuaikan dengan kebutuhan siswa.
-                  </li>
-                  <li>
-                    <strong>Program Tambahan:</strong> Konsultasi akademik
-                    mingguan untuk mengevaluasi perkembangan belajar.
-                  </li>
-                </ul>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
-
-        {/* Supercamp */}
-        <div className="program-item">
-          <button
-            className="program-title-button"
-            onMouseEnter={() => handleMouseEnter(2)} // Gunakan onMouseEnter
-            onMouseLeave={() => handleMouseLeave(2)} // Tambahkan onMouseLeave untuk menutup
-          >
-            🏕️ Supercamp
-            <span className={`arrow ${activeIndex.includes(2) ? "open" : ""}`}>
-              ▼
-            </span>
-          </button>
-          <AnimatePresence>
-            {activeIndex.includes(2) && (
-              <motion.div
-                className="program-details"
-                initial={{ opacity: 0, height: 0, overflow: "hidden" }}
-                animate={{ opacity: 1, height: "auto" }}
-                exit={{ opacity: 0, height: 0, overflow: "hidden" }}
-                transition={{ duration: 0.3, ease: "easeInOut" }}>
-                <p>Program Spesialis Bimbel Karantina Masuk PTN.</p>
-                <ul>
-                  <li>
-                    <strong>Supercamp:</strong> Siswa menginap di apartemen.
-                  </li>
-                  <li>
-                    <strong>Sistem Belajar:</strong> One-on-one tutoring.
-                  </li>
-                  <li>
-                    <strong>Waktu Pelaksanaan:</strong> 1 bulan menjelang UTBK.
-                  </li>
-                </ul>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
+        {programsData.map((program) => (
+          <div className="program-item" key={program.id}>
+            <button
+              className="program-title-button"
+              onClick={() => handleToggleClick(program.id)} // Menggunakan onClick
+            >
+              {program.title}
+              <span
+                className={`arrow ${activeIndex === program.id ? "open" : ""}`}>
+                ▼
+              </span>
+            </button>
+            <AnimatePresence>
+              {activeIndex === program.id && ( // Cek apakah index cocok dengan activeIndex
+                <motion.div
+                  className="program-details"
+                  initial={{ opacity: 0, height: 0, overflow: "hidden" }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0, overflow: "hidden" }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}>
+                  {program.details}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+        ))}
       </div>
     </div>
   );

@@ -11,7 +11,7 @@
   color: #ff6500;
   margin-bottom: 2rem;
   text-align: center;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 .materi-description {
   font-size: 1rem;
@@ -38,10 +38,10 @@
 
 .materi-subtitle {
   font-size: 1.2rem;
-  color: #ff8000;
+  color: #333;
   margin-bottom: 1rem;
-  font-weight: 500;
-  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  font-family: "Nunito", sans-serif;
 }
 
 .materi-overview {

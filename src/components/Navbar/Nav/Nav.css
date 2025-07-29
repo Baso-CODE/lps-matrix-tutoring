@@ -91,7 +91,7 @@
   transition: background-color 0.3s ease, transform 0.2s ease;
   cursor: pointer;
   outline: none;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Nunito", sans-serif;
   display: inline-flex; /* Tambahkan ini */
   align-items: center; /* Tambahkan ini */
   gap: 8px; /* Tambahkan ini */

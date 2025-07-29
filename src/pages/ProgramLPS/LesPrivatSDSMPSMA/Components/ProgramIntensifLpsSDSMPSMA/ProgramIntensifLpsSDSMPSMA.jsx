@@ -18,8 +18,8 @@ const ProgramIntensifLpsSDSMPSMA = () => {
         dan membantu menentukan Paket Belajar yang sesuai.
       </p>
       <p className="program-description__sd_smp_sma">
-        LPS Matrix menawarkan fleksibilitas waktu belajar, sehingga siswa dapat
-        memilih jadwal belajar yang paling sesuai dengan aktivitas mereka.
+        LPS Education menawarkan fleksibilitas waktu belajar, sehingga siswa
+        dapat memilih jadwal belajar yang paling sesuai dengan aktivitas mereka.
         Setiap sesi dalam program ini dilengkapi dengan bahan ajar yang telah
         disesuaikan untuk memaksimalkan pemahaman siswa dalam persiapan ujian.
         Dengan dukungan dari pengajar berpengalaman, siswa diharapkan mampu

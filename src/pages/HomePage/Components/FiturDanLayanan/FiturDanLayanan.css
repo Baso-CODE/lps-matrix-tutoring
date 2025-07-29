@@ -6,10 +6,10 @@
 
 .fitur-title {
   font-size: 1.4rem;
-  color: #ff6500;
+  color: var(--color-orange-default);
   font-weight: 600;
   margin-bottom: 2rem;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 
 .fitur-item {
@@ -19,7 +19,6 @@
   margin-bottom: 2rem;
 }
 
-/* Specific layout for "Les Privat Masuk PTN" with image on the right */
 .image-right {
   flex-direction: row-reverse;
 }
@@ -37,17 +36,19 @@
 }
 
 .fitur-subtitle {
-  font-size: 1.2rem;
-  color: #ff8000;
-  font-weight: 500;
+  font-size: 1.3rem;
+  /* Menggunakan warna oranye gelap untuk subjudul agar ada sedikit hierarki dari judul utama */
+  color: var(--color-orange-dark);
+  font-weight: 700;
   margin-bottom: 0.5rem;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 
 .fitur-description {
   font-size: 1rem;
   font-weight: 400;
-  color: #343131;
+  /* Menggunakan abu-abu gelap untuk deskripsi */
+  color: var(--color-gray-dark);
   margin-bottom: 1rem;
   line-height: normal;
   font-family: "Nunito", sans-serif;
@@ -57,24 +58,32 @@
   list-style-type: none;
   padding: 0;
   font-family: "Nunito", sans-serif;
-  color: #343131;
+  /* Menggunakan abu-abu gelap untuk teks daftar */
+  color: var(--color-gray-dark);
 }
 
 .fitur-list li {
   font-size: 1rem;
   line-height: normal;
-
-  padding-left: 1rem; /* Add space for the checkmark */
+  padding-left: 1.2rem; /* Add space for the checkmark */
   position: relative;
+  margin-bottom: 5px;
 }
 
 /* Add the green checkmark before each list item */
 .fitur-list li::before {
-  content: "✓ "; /* Green checkmark */
-  color: #4caf50; /* Green color */
+  content: "•";
+  color: var(--color-accent-green);
   font-weight: bold;
+  /* margin-right: 5px; */
   position: absolute;
   left: 0;
+}
+
+.fitur-item.image-right .fitur-list {
+  column-count: 2;
+  column-gap: 30px;
+  break-inside: avoid-column;
 }
 
 @media (max-width: 768px) {

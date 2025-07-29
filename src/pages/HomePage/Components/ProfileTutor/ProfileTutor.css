@@ -8,13 +8,13 @@
 }
 
 .profile-title {
-  font-size: 1.4rem; /* Ukuran font judul */
-  font-weight: 600; /* Membuat judul menjadi tebal */
-  margin-bottom: 15px; /* Spasi di bawah judul */
-  text-align: center; /* Mengatur teks judul rata kiri */
-  line-height: normal; /* Jarak antar garis teks */
-  color: #ff6500; /* Warna teks judul */
-  font-family: "Open Sans", sans-serif;
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  text-align: center;
+  line-height: normal;
+  color: var(--color-gray-darker); /* Abu-abu sangat gelap untuk judul utama */
+  font-family: "Nunito", sans-serif;
 }
 
 .tutor-image {
@@ -23,11 +23,10 @@
   margin-bottom: 15px;
 }
 
-/* Gaya khusus untuk panah navigasi */
-
 /* Custom dot style */
 .custom-dot-list-style .react-multi-carousel-dot button {
-  background-color: #333333; /* Warna dot default */
+  /* Warna dot saat tidak aktif, menggunakan abu-abu sedang */
+  background-color: var(--color-gray-medium);
   width: 11px;
   height: 11px;
   border-radius: 50%;
@@ -35,13 +34,14 @@
 }
 
 .custom-dot-list-style .react-multi-carousel-dot--active button {
-  background-color: #d2b04c; /* Warna dot saat aktif */
+  /* Warna dot saat aktif, menggunakan oranye utama */
+  background-color: var(--color-orange-default);
 }
 
 .centered__profiletutor {
   font-size: 1rem;
-  font-family: "Open Sans", sans-serif;
-  color: #343131;
+  font-family: "Nunito", sans-serif;
+  color: var(--color-gray-dark); /* Abu-abu gelap untuk teks paragraf */
   margin-bottom: 20px;
   max-width: 800px;
   margin-left: auto;
@@ -54,15 +54,24 @@
   .centered__profiletutor {
     font-size: 0.95rem;
   }
+  .profile-title {
+    font-size: 1.7rem; /* Ukuran lebih kecil untuk tablet */
+  }
 }
 
 @media (max-width: 768px) {
   .centered__profiletutor {
     font-size: 0.9rem;
   }
+  .profile-title {
+    font-size: 1.6rem; /* Ukuran lebih kecil untuk tablet */
+  }
 }
 @media (max-width: 480px) {
   .centered__profiletutor {
     font-size: 0.85rem;
+  }
+  .profile-title {
+    font-size: 1.5rem; /* Ukuran lebih kecil untuk ponsel */
   }
 }

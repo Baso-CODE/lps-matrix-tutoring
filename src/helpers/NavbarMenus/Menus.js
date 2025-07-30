@@ -8,7 +8,7 @@ import {
   University,
   UserCog,
   Users,
-} from "lucide-react"; // Import the necessary icons
+} from "lucide-react";
 
 export const Menus = [
   {
@@ -19,7 +19,7 @@ export const Menus = [
     name: "Program",
     subMenu: [
       {
-        name: "Les Privat UTBK 2025",
+        name: "Les Privat UTBK 2026",
         desc: "Les untuk Persiapan UTBK",
         icon: BookCheck, // Ikon buku untuk program UTBK
         link: "/les-privat-utbk-terbaik",

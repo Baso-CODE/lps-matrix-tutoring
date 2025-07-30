@@ -103,14 +103,21 @@ const ProgramBelajarLps = () => {
               Durasi: 4 minggu (1 bulan sebelum UTBK).
             </li>
             <li>
-              <strong>Pilihan Sistem Pembelajaran:</strong> Belajar Kelompok 1
-              kelas terdiri dari 5–6 siswa Belajar Privat One on One Tutoring (1
-              siswa – 1 guru).
+              <strong>Pilihan Sistem Pembelajaran:</strong>
+              <ul>
+                <li>Belajar Kelompok 1 kelas terdiri dari 5–6 siswa</li>
+                <li>Belajar Privat One on One Tutoring (1 siswa – 1 guru).</li>
+              </ul>
             </li>
             <li>
-              <strong>Sistem Belajar:</strong> Intensif belajar 5 sesi per hari
-              (Senin–Sabtu), Hari Minggu Free untuk Konsultasi Progress Belajar
-              & Temu Orangtua.
+              <strong>Sistem Belajar:</strong>
+              <ul>
+                <li>Intensif belajar 5 sesi per hari (Senin–Sabtu)</li>
+                <li>
+                  Hari Minggu untuk Konsultasi Progress Belajar & siswa bertemu
+                  keluarga
+                </li>
+              </ul>
             </li>
             <li>
               <strong>Fasilitas lengkap:</strong>

@@ -5,9 +5,9 @@
 }
 
 .about__us_header h1 {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Nunito", sans-serif;
   font-weight: 700;
-  color: #ff6500;
+  color: var(--color-gray-darker);
 
   font-size: 1.8rem;
   margin-bottom: 10px;
@@ -30,10 +30,10 @@
   font-size: 2rem;
   text-align: start;
   font-size: 1.6rem;
-  color: #ff8000;
+  color: var(--color-gray-darker);
   margin-bottom: 10px;
   margin-top: 10vh;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 
 /* Additional Description Styling */
@@ -42,9 +42,10 @@
   color: #3a4a3f;
   text-align: start;
   font-weight: 400;
-
+  margin-top: 20px;
   line-height: normal;
   font-family: "Nunito", sans-serif;
+  margin-bottom: 20px;
 }
 
 /* Responsif untuk layar lebih kecil */
@@ -73,7 +74,7 @@
 }
 @media (max-width: 480px) {
   .additional-description-about__us {
-    font-size: 0.82rem;
+    font-size: 0.9rem;
   }
   .about__us_header h1 {
     font-size: 1.4rem;

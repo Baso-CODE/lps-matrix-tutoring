@@ -39,8 +39,8 @@
 
 .about__us-description h2 {
   font-size: 1.6rem;
-  color: #ff8000;
-  font-family: "Open Sans", sans-serif;
+  color: var(--color-gray-darker);
+  font-family: "Nunito", sans-serif;
   font-weight: 600;
   margin-bottom: 1rem;
 }
@@ -52,12 +52,12 @@
   }
 }
 .about__us-description p {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #3a4a3f;
   text-align: start;
   font-weight: 400;
-
-  line-height: normal;
+  margin-top: 10px;
+  line-height: 22px;
   font-family: "Nunito", sans-serif;
 }
 

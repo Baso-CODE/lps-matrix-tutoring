@@ -7,7 +7,7 @@ const GaleriBelajarLps = () => {
         <h2>Gallery Belajar Siswa LPS</h2>
       </div>
       <p className="additional-description-about__us">
-        Di LPS Matrix, kami percaya bahwa proses belajar yang interaktif dan
+        Di LPS Education, kami percaya bahwa proses belajar yang interaktif dan
         didampingi oleh mentor berkualitas adalah kunci kesuksesan siswa dalam
         meraih impian akademisnya. Melalui galeri ini, kami memperlihatkan
         momen-momen berharga di mana siswa kami terlibat dalam pembelajaran yang

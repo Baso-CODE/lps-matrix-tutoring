@@ -1,18 +1,18 @@
+/* Container */
 .container-solusi-sukses {
   max-width: 100%;
   margin-bottom: 10vh;
   margin-top: 10vh;
   overflow: hidden;
-
   text-align: center;
 }
 
 .solusi-title {
   font-size: 1.4rem;
-  font-weight: 600;
-  color: #ff6500;
+  font-weight: 700;
+  color: var(--color-gray-darker); /* Oranye utama untuk judul */
   margin-bottom: 2rem;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 
 .card-container-solusi-sukses-ptn {
@@ -23,19 +23,24 @@
 }
 
 .color-d2b04c {
-  color: #1e3e62;
+  /* Mengubah warna dari biru ke oranye utama */
+  color: var(--color-orange-default);
 }
 .color-d2b04c-description {
-  color: #1e3e62;
+  /* Mengubah warna dari biru ke oranye utama, konsisten dengan .color-d2b04c */
+  color: var(--color-orange-default);
   font-weight: bold;
 }
 .card-solusi-sukses-ptn {
   flex: 1;
   max-width: 300px;
-  background-color: #ffffff;
+  background-color: var(
+    --color-gray-lightest
+  ); /* Latar belakang kartu putih keabu-abuan */
   border-radius: 8px;
+  border: 2px solid var(--color-orange-default);
   padding: 1.5rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow tetap menggunakan RGBA */
 }
 
 .card-header-solusi-sukses-ptn {
@@ -43,7 +48,7 @@
   align-items: center;
   gap: 0.5rem;
   margin-bottom: 1rem;
-  justify-content: center;
+  /* justify-content: center; */
 }
 
 .card-icon-solusi-sukses-ptn {
@@ -53,23 +58,24 @@
 }
 .card-title-solusi-sukes-ptn {
   font-size: 1.2rem;
-  color: #ff8000;
+  color: var(--color-orange-default); /* Oranye utama untuk judul kartu */
   margin: 0;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 
 .card-description-solusi-sukses-ptn {
-  font-size: 1rem;
-  font-weight: normal;
-  color: #555;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--color-gray-dark); /* Abu-abu gelap untuk deskripsi kartu */
   line-height: normal;
+  text-align: start;
   font-family: "Nunito", sans-serif;
 }
 
 .extra-description {
   margin-top: 2rem;
   font-size: 1rem;
-  color: #555;
+  color: var(--color-gray-dark); /* Abu-abu gelap untuk teks ekstra */
   line-height: normal;
   padding: 0 1rem; /* Padding for smaller screens */
   font-family: "Nunito", sans-serif;
@@ -80,7 +86,7 @@
 
 .quote-mark {
   font-size: 1.4rem; /* Ukuran tanda kutip lebih besar */
-  color: #333; /* Warna tanda kutip sedikit lebih gelap */
+  color: var(--color-gray-darker); /* Abu-abu sangat gelap untuk tanda kutip */
   font-weight: bold;
 }
 

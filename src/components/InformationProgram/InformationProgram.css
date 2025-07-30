@@ -1,0 +1,168 @@
+.additional-info {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+}
+
+.additional-info-title {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Nunito", sans-serif;
+  color: var(--color-gray-darker);
+  margin-bottom: 12px;
+}
+
+.additional-info-fact,
+.additional-info-advice {
+  font-size: 1rem;
+  color: #343131;
+  line-height: normal;
+  font-family: "Nunito", sans-serif;
+  margin-bottom: 8px;
+}
+
+.information-container {
+  /* padding: 20px; */
+  margin-top: 3vh;
+  margin-bottom: 40px;
+}
+
+.information-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  font-family: "Nunito", sans-serif;
+  margin-bottom: 1rem;
+  color: var(--color-gray-darker);
+  text-align: center;
+}
+
+.information-item {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+  align-items: center;
+  gap: 20px; /* Add space between text and image */
+}
+
+.information-text {
+  flex: 1;
+  max-width: 50%;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+
+.information-subtitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  font-family: "Nunito", sans-serif;
+  color: #333;
+}
+
+.information-description {
+  font-size: 1rem;
+  color: #343131;
+  line-height: normal;
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+  margin-bottom: 1rem;
+}
+
+.information-image-container {
+  flex: 1;
+  max-width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 20px;
+  box-sizing: border-box;
+}
+
+.information-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
+/* Style for reversed layout */
+.information-item.reverse {
+  flex-direction: row-reverse; /* Flip the order of image and text */
+  gap: 20px; /* Ensure spacing between reversed items */
+}
+
+/* Responsive design adjustments */
+@media (max-width: 1024px) {
+  .information-title {
+    font-size: 1.4rem;
+  }
+  .information-item {
+    flex-direction: column;
+    gap: 16px; /* Reduce gap on smaller screens */
+  }
+  .information-item.reverse {
+    flex-direction: column;
+  }
+  .information-text,
+  .information-image-container {
+    max-width: 100%;
+    padding: 0;
+  }
+  .information-subtitle {
+    font-size: 1.1rem;
+  }
+  .information-description {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 760px) {
+  .information-title {
+    font-size: 1.3rem;
+  }
+  .information-subtitle {
+    font-size: 1rem;
+  }
+  .information-description {
+    font-size: 0.9rem;
+  }
+  .additional-info-fact {
+    font-size: 0.9rem;
+  }
+}
+/* Styling untuk pesan "Tidak ada informasi tersedia" */
+.no-data-message {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Font yang mudah dibaca */
+  font-size: 1.1em; /* Ukuran teks sedikit lebih besar */
+  color: #666; /* Warna teks abu-abu yang lembut */
+  text-align: center; /* Teks di tengah */
+  padding: 40px 20px; /* Padding di atas dan bawah */
+  background-color: #f8f8f8; /* Latar belakang abu-abu muda */
+  border: 1px dashed #ddd; /* Border putus-putus */
+  border-radius: 8px; /* Sudut sedikit melengkung */
+  margin-top: 50px; /* Jarak dari elemen di atasnya */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Sedikit bayangan untuk kedalaman */
+}
+
+/* Opsional: Efek hover jika Anda ingin menambahkan interaksi (meskipun ini hanya pesan) */
+.no-data-message:hover {
+  background-color: #f0f0f0;
+  border-color: #ccc;
+}
+
+/* Media Queries untuk Responsivitas (opsional, tapi disarankan) */
+@media (max-width: 768px) {
+  .no-data-message {
+    font-size: 1em; /* Kecilkan ukuran font di layar kecil */
+    padding: 30px 15px;
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .no-data-message {
+    font-size: 0.9em; /* Lebih kecil lagi untuk ponsel */
+    padding: 20px 10px;
+    margin-top: 20px;
+  }
+}

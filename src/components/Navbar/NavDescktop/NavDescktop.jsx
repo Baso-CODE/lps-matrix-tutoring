@@ -71,8 +71,6 @@ export default function NavDescktop({ menu }) {
                   <p className="menu-heading">{menu?.subMenuHeading?.[i]}</p>
                 )}
                 <Link to={submenu.link} className="menu-content">
-                  {" "}
-                  {/* Link untuk submenu */}
                   <div className="icon-box">
                     {submenu.icon && <submenu.icon />}
                   </div>

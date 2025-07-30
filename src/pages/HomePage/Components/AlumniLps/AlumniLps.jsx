@@ -6,7 +6,7 @@ const AlumniLps = () => {
         <h2>Ikuti jejak Alumni LPS</h2>
       </div>
       <p className="additional-description-about__us">
-        LPS Jakarta adalah lembaga les pivat spesialis masuk PTN Favorit yang
+        LPS Education adalah lembaga les pivat spesialis masuk PTN Favorit yang
         dikelola oleh “Excellent Team”. Dengan tagline{" "}
         <span className="color-d2b04c-description">
           “Your Learning Partner for Success”

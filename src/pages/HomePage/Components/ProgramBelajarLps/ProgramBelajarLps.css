@@ -1,22 +1,22 @@
-/* ProgramBelajarLps.css */
-
 .program-belajar-container {
   padding: 3rem 1rem;
   text-align: center;
-  background-color: #f3f7ec;
+
+  background-color: var(--color-gray-lightest);
   border-radius: 20px;
+  margin-bottom: 40px;
 }
 
 .program-belajar-title {
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: #ff6500;
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--color-gray-darker);
   margin-bottom: 2rem;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 
 .program-list {
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -31,8 +31,10 @@
   width: 100%;
   padding: 0.75rem 1rem;
   font-size: 1.1rem;
-  background-color: #1e3e62;
-  color: #ffffff;
+  /* Mengubah background dari biru ke oranye default */
+  background-color: var(--color-orange-default);
+  /* Mengubah warna teks ke abu-abu sangat terang */
+  color: var(--color-gray-lightest);
   border: none;
   border-radius: 6px;
   text-align: left;
@@ -40,12 +42,12 @@
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Nunito", sans-serif;
   transition: background-color 0.3s;
 }
 
 .program-title-button:hover {
-  background-color: #ff9d3d;
+  background-color: var(--color-orange-dark);
 }
 
 .arrow {
@@ -57,20 +59,21 @@
 }
 
 .program-details {
-  background-color: #f1f1f1;
+  background-color: var(--color-gray-lighter);
   padding: 1rem;
   font-size: 1rem;
   border-radius: 0 0 8px 8px;
   margin-top: 0.5rem;
-
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .program-details p {
   margin-bottom: 0.5rem;
   font-size: 1rem;
-  color: #555;
-  font-family: "Open Sans", sans-serif;
+
+  color: var(--color-gray-darker);
+  font-weight: 600;
+  font-family: "Nunito", sans-serif;
 }
 
 .program-details ul {
@@ -78,10 +81,18 @@
   padding-left: 1.5rem;
   margin: 0;
   font-size: 0.9rem;
-  color: #666;
+
+  color: var(--color-gray-medium);
 }
 
 .program-details li {
   font-family: "Nunito", sans-serif;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem;
+  color: var(--color-gray-dark);
+}
+
+@media (max-width: 768px) {
+  .program-belajar-title {
+    font-size: 1.5rem;
+  }
 }

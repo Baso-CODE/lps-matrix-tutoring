@@ -4,7 +4,7 @@ import "./MateriUjianSNBT.css";
 const MateriUjianSNBT = () => {
   return (
     <div className="container-materi-snbt">
-      <h1 className="main-title">Materi Ujian SNBT</h1>
+      {/* <h1 className="main-title">Materi Ujian SNBT</h1> */}
 
       <div className="materi-item">
         <div className="materi-title">1. Tes Potensi Skolastik (TPS)</div>
@@ -13,7 +13,10 @@ const MateriUjianSNBT = () => {
           kemampuan analitis, dan pemahaman umum yang dibutuhkan dalam dunia
           akademik. TPS mencakup kemampuan bernalar, pemecahan masalah, dan
           keterampilan berpikir kritis yang penting untuk keberhasilan di
-          perguruan tinggi.
+          perguruan tinggi. Dari 7 subtest UTBK, 4 di antaranya yang masuk ke
+          dalam Komponen Tes Potensi Skolastik, yaitu Penalaran Umum,
+          Pengetahuan dan Pemahaman Umum, Pengetahuan Kuantitatif, Pemahaman
+          Bacaan dan Menulis.
         </p>
       </div>
 

@@ -8,10 +8,9 @@
 
 .cara-belajar-title {
   font-size: 1.4rem;
-  color: #ff6500;
+  color: #333;
   margin-bottom: 2rem;
-  font-family: "Open Sans", sans-serif;
-  font-weight: 600;
+  font-family: "Nunito", sans-serif;
 }
 
 /* List fitur */
@@ -25,7 +24,7 @@
 /* Item fitur */
 .feature-item {
   display: flex;
-  align-items: center; /* Vertikal center */
+  align-items: start; /* Vertikal center */
   justify-content: start; /* Horizontal center */
 
   background-color: #f9f9f9; /* Latar belakang yang lembut */
@@ -48,17 +47,18 @@
 }
 
 .feature-title {
-  font-size: 1.2rem; /* Ukuran font judul */
-  color: #ff8000; /* Warna judul */
+  font-size: 1.1rem; /* Ukuran font judul */
+  color: #343131; /* Warna judul */
   margin: 0; /* Menghilangkan margin */
-  font-family: "Open Sans", sans-serif;
-  font-weight: 500;
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  margin-bottom: 5px;
 }
 
 .feature-description {
-  font-size: 1rem; /* Ukuran font deskripsi */
+  font-size: 0.9rem; /* Ukuran font deskripsi */
   color: #343131; /* Warna deskripsi */
-  font-weight: normal;
+  font-weight: 400;
   line-height: normal; /* Jarak antar baris */
   font-family: "Nunito", sans-serif;
 }
@@ -67,7 +67,7 @@
 @media (max-width: 768px) {
   .feature-item {
     flex-direction: column; /* Menumpuk gambar dan teks */
-    text-align: center; /* Rata tengah */
+    text-align: start; /* Rata tengah */
   }
 
   .feature-image {
@@ -114,6 +114,7 @@
 
   .feature-title {
     font-size: 1.2rem; /* Reduced for smaller screens */
+    margin-bottom: 14px;
   }
 
   .feature-description {

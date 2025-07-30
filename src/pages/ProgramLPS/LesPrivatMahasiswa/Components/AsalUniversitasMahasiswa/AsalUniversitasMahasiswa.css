@@ -1,16 +1,25 @@
 .asal-universitas-container {
-  color: #ffffff;
+  /* Latar belakang lebih terang untuk kesan clean */
+  background-color: var(
+    --color-gray-lightest
+  ); /* Putih keabu-abuan sangat terang */
   text-align: center;
   margin-top: 10vh;
   margin-bottom: 10vh;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Nunito", sans-serif;
+
+  padding: 5vh 20px; /* Padding tetap, bagus untuk ruang */
+  border-radius: 10px; /* Sedikit lengkungan, tidak terlalu tajam, tidak terlalu bulat */
+  /* Box-shadow lebih tipis dan halus untuk kesan clean */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--color-gray-lighter); /* Tambah border tipis untuk definisi */
 }
 
 .asal-universitas-title {
   font-size: 1.8rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  color: #ff6500;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--color-gray-dark); /* Oranye utama untuk judul tetap konsisten */
 }
 
 .asal-universitas-list {
@@ -18,87 +27,101 @@
   padding: 0;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.5rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem; /* Jarak antar item tetap 1rem */
 }
 
 .asal-universitas-item {
-  background-color: #25496f;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
+  /* Latar belakang item putih/sangat terang, border oranye untuk definisi */
+  background-color: #ffffff; /* Putih bersih */
+  color: var(
+    --color-gray-dark
+  ); /* Teks abu-abu gelap agar terbaca di latar terang */
+  border: 1px solid var(--color-gray-lighter); /* Border halus */
+  padding: 0.8rem 1.2rem;
+  border-radius: 8px;
   font-family: "Nunito", sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 50px; /* Atur tinggi minimum */
-  min-width: 150px; /* Atur lebar minimum */
+  min-height: 55px;
   text-align: center;
   font-size: 1rem;
+  transition: all 0.3s ease; /* Transisi untuk semua properti yang berubah */
+  cursor: pointer;
+}
+
+.asal-universitas-item:hover {
+  background-color: var(
+    --color-orange-lighter
+  ); /* Oranye sangat terang saat hover */
+  color: var(--color-orange-darker); /* Teks menjadi oranye sangat gelap */
+  border-color: var(
+    --color-orange-default
+  ); /* Border berubah jadi oranye utama */
+  transform: translateY(-2px); /* Efek naik sangat sedikit */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Bayangan sedikit lebih menonjol saat hover */
+}
+
+.asal-universitas-note {
+  margin-top: 2rem;
+  font-size: 1rem;
+  color: var(
+    --color-gray-medium
+  ); /* Abu-abu sedang untuk catatan, lebih soft */
+  font-style: italic;
+  font-weight: 500;
 }
 
 /* Aturan responsif */
+@media (max-width: 1024px) {
+  .asal-universitas-title {
+    font-size: 1.75rem;
+  }
+  .asal-universitas-list {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 600px;
+  }
+  .asal-universitas-item {
+    font-size: 0.95rem;
+    padding: 0.7rem 1rem;
+  }
+}
+
 @media (max-width: 768px) {
   .asal-universitas-list {
     grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+  }
+  .asal-universitas-title {
+    font-size: 1.5rem;
+  }
+  .asal-universitas-item {
+    font-size: 0.85rem;
+    min-height: 45px;
+  }
+  .asal-universitas-container {
+    padding: 3vh 15px;
+    margin-left: 15px;
+    margin-right: 15px;
   }
 }
 
 @media (max-width: 480px) {
   .asal-universitas-list {
     grid-template-columns: 1fr;
+    gap: 0.6rem;
   }
-
   .asal-universitas-title {
-    font-size: 1.4rem;
+    font-size: 1.25rem;
   }
-}
-
-.asal-universitas-note {
-  margin-top: 1.5rem;
-  font-size: 1rem;
-  color: #3a4a3f;
-  font-style: italic;
-  font-weight: 500;
-}
-
-/* Responsif */
-@media (max-width: 1024px) {
-  /* Tablet landscape */
-  .asal-universitas-title {
-    font-size: 1.75rem; /* Title lebih kecil */
-  }
-
   .asal-universitas-item {
-    font-size: 1rem; /* Item lebih kecil */
+    font-size: 0.8rem;
+    min-height: 40px;
+    padding: 0.2rem 12px;
   }
-}
-
-@media (max-width: 768px) {
-  /* Tablet portrait */
-  .asal-universitas-list {
-    grid-template-columns: repeat(2, 1fr); /* Ubah menjadi 2 kolom */
-  }
-
-  .asal-universitas-title {
-    font-size: 1.4rem; /* Title lebih kecil */
-  }
-
-  .asal-universitas-item {
-    font-size: 0.9rem; /* Item lebih kecil */
-  }
-}
-
-@media (max-width: 480px) {
-  /* Ponsel */
-  .asal-universitas-list {
-    grid-template-columns: 1fr; /* Ubah menjadi 1 kolom */
-  }
-
-  .asal-universitas-title {
-    font-size: 1.25rem; /* Title lebih kecil */
-  }
-
-  .asal-universitas-item {
-    font-size: 0.85rem; /* Item lebih kecil */
+  .asal-universitas-note {
+    font-size: 0.85rem;
+    margin-top: 1.5rem;
   }
 }

@@ -29,30 +29,32 @@ const AsalUniversitasMahasiswa = () => {
   ];
 
   return (
-    <div className="asal-universitas-container">
-      <h1 className="asal-universitas-title">
-        Asal Universitas Peserta Les Privat Mahasiswa
-      </h1>
-      <ul className="asal-universitas-list">
-        {universities.map((university, index) => (
-          <li key={index} className="asal-universitas-item">
-            {university}
-          </li>
-        ))}
-      </ul>
-      <p className="asal-universitas-note">
-        Layanan Les Privat Online untuk Seluruh Wilayah di Indonesia
-      </p>
+    <div>
+      <div className="asal-universitas-container">
+        <h1 className="asal-universitas-title">
+          Asal Universitas Peserta Les Privat Mahasiswa
+        </h1>
+        <ul className="asal-universitas-list">
+          {universities.map((university, index) => (
+            <li key={index} className="asal-universitas-item">
+              {university}
+            </li>
+          ))}
+        </ul>
+        <p className="asal-universitas-note">
+          Layanan Les Privat Online untuk Seluruh Wilayah di Indonesia
+        </p>
+      </div>
       <h3 className="program-mahasiswa-title-h3">Bimbel Online Mahasiswa</h3>
 
       <p className="additional-description-mahasiswa">
         Program{" "}
         <span className="color-d2b04c-description">
-          Bimbel Online Mahasiswa by LPS Matrix
+          Bimbel Online Mahasiswa by LPS Education
         </span>{" "}
         adalah kegiatan les privat yang dilaksanakan secara virtual (online)
         menggunakan Zoom, Skype, Google Meet dan aplikasi lain yang siswa
-        miliki. Peserta bimbel online by LPS Matrix tidak hanya berasal dari
+        miliki. Peserta bimbel online by LPS Education tidak hanya berasal dari
         Jabodetabek, tetapi juga dari berbagai kota di Indonesia seperti Padang,
         Aceh, Pekanbaru, Semarang, Bandung, Makasar, Surabaya, Malang, Bali, dan
         daerah lainnya di Indonesia. Meski belajar secara online, pembelajaran
@@ -67,7 +69,7 @@ const AsalUniversitasMahasiswa = () => {
         rutinitasnya tetap bisa belajar dengan menyesuaikan waktu luang yang
         dimiliki. Ayo daftarkan dirimu sekarang juga di Program Les Privat
         Mahasiswa by{" "}
-        <span className="color-d2b04c-description">LPS Matrix</span> .
+        <span className="color-d2b04c-description">LPS Education</span> .
       </p>
     </div>
   );

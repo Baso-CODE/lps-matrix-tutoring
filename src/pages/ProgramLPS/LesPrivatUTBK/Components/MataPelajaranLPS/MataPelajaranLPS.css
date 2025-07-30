@@ -1,52 +1,127 @@
 .mata-pelajaran-container {
   text-align: center;
-  margin: 4vh 0;
 }
 
 .mata-pelajaran-title {
-  font-size: 1.4rem;
-  color: #ff6500;
-  margin-bottom: 1.5rem;
-  font-weight: 600;
-  font-family: "Open Sans", sans-serif;
+  font-size: 1.5rem; /* Ukuran font lebih besar untuk judul */
+  color: var(
+    --color-gray-dark
+  ); /* Gunakan variabel warna oranye gelap, fallback jika tidak ada */
+  font-weight: 700; /* Lebih tebal */
+  margin-bottom: 2.5rem; /* Jarak bawah yang lebih besar */
+  font-family: "Nunito", sans-serif;
 }
 
 .mata-pelajaran-list {
   display: grid;
+  /* Atur jarak antar item */
   gap: 1rem;
-  list-style-type: disc;
-  padding-left: 1.5rem; /* Spasi untuk bullet point */
+  list-style-type: none; /* Hapus bullet default */
+  padding: 0; /* Hapus padding default */
   font-family: "Nunito", sans-serif;
-  font-size: 1rem;
-  margin: 0 auto; /* Center alignment */
+  margin: 0 auto; /* Pusatkan daftar */
+  /* max-width: 900px; */ /* Opsional: batasi lebar daftar agar tidak terlalu melebar */
 }
 
 .mata-pelajaran-item {
-  text-align: left; /* Text alignment for the list items */
-  color: #000; /* Default text color */
+  background-color: #f7f7f7; /* Latar belakang abu-abu muda */
+  border: 1px solid #e0e0e0; /* Border tipis */
+  border-radius: 8px; /* Sudut membulat */
+  padding: 0.8rem 1.2rem; /* Padding di dalam setiap item */
+  text-align: left; /* Rata kiri teks */
+  color: var(--color-gray-dark, #333); /* Warna teks gelap */
+  font-size: 1rem; /* Ukuran font standar */
+  font-weight: 600; /* Sedikit lebih tebal */
+  transition: all 0.2s ease-in-out; /* Transisi halus untuk efek hover */
+  cursor: pointer; /* Tunjukkan bahwa item bisa diklik */
+
+  display: flex; /* Gunakan flexbox untuk ikon dan teks */
+  align-items: center; /* Pusatkan vertikal */
 }
 
-.mata-pelajaran-list li::marker {
-  color: #28a745; /* Warna hijau untuk bulatan */
+/* Kustomisasi bullet point dengan pseudo-element */
+.mata-pelajaran-item::before {
+  content: "✓"; /* Menggunakan tanda centang sebagai ikon */
+  color: var(--color-accent-green, #28a745); /* Warna hijau untuk centang */
+  font-weight: bold;
+  margin-right: 0.8rem; /* Jarak antara ikon dan teks */
+  font-size: 1.2rem; /* Ukuran ikon */
+  /* Pastikan ikon tidak terpotong atau terlalu kecil */
+  line-height: 1; /* Rata vertikal dengan teks */
+}
+
+.mata-pelajaran-item:hover {
+  background-color: var(
+    --color-orange-default,
+    #ff8c00
+  ); /* Warna oranye saat hover */
+  color: #ffffff; /* Warna teks putih saat hover */
+  transform: translateY(-3px); /* Sedikit naik saat hover */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Bayangan saat hover */
+}
+
+/* Pastikan warna ikon tetap hijau saat hover pada item */
+.mata-pelajaran-item:hover::before {
+  color: #ffffff; /* Ubah warna centang menjadi putih saat hover */
 }
 
 /* Grid columns for desktop (3 columns) */
 @media (min-width: 1025px) {
   .mata-pelajaran-list {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(280px, 1fr)
+    ); /* Kolom adaptif */
   }
 }
 
 /* Grid columns for tablet (2 columns) */
 @media (max-width: 1024px) {
   .mata-pelajaran-list {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(250px, 1fr)
+    ); /* Kolom adaptif */
+    max-width: 700px; /* Batasi lebar daftar di tablet */
+  }
+}
+
+/* Grid columns for smaller tablets/large mobile (2 columns) */
+@media (max-width: 768px) {
+  .mata-pelajaran-list {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(200px, 1fr)
+    ); /* Kolom adaptif */
+    gap: 0.8rem; /* Kurangi jarak */
+    max-width: 500px; /* Batasi lebar daftar */
+  }
+  .mata-pelajaran-title {
+    font-size: 1.5rem; /* Sesuaikan ukuran judul */
+  }
+  .mata-pelajaran-item {
+    padding: 0.7rem 1rem; /* Kurangi padding */
+    font-size: 0.95rem;
   }
 }
 
 /* Grid columns for mobile (1 column) */
-@media (max-width: 768px) {
+@media (max-width: 576px) {
   .mata-pelajaran-list {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Satu kolom di mobile */
+    max-width: 300px; /* Batasi lebar daftar di mobile */
+    padding: 0 10px; /* Tambahkan padding agar tidak menempel ke sisi */
+  }
+  .mata-pelajaran-title {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+  }
+  .mata-pelajaran-item {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.9rem;
+  }
+  .mata-pelajaran-item::before {
+    font-size: 1.1rem;
+    margin-right: 0.6rem;
   }
 }

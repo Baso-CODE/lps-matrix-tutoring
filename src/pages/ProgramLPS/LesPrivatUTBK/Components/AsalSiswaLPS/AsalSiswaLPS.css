@@ -6,11 +6,11 @@
 
 .asal-siswa-title {
   font-size: 1.4rem;
-  color: #ff6500;
+  color: #333;
   font-weight: 600;
   margin-bottom: 20px;
   text-align: center;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 
 .asal-siswa-list {

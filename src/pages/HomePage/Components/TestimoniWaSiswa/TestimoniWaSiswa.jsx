@@ -1,36 +1,50 @@
+import { Link } from "react-router-dom";
+// import { handleCTAClickLogic } from "../../../../helpers/HandleCtaClick";
+import { selectContactCsData } from "../../../../lib/features/contactCsSlice";
+import { useAppSelector } from "../../../../lib/hooks";
 import "./TestimoniWaSiswa.css";
 const TestimoniWaSiswa = () => {
+  const contactData = useAppSelector(selectContactCsData);
+
+  // const handleCTAClick = (e) => {
+  //   const targetUrl = contactData?.link_cta || "https://wa.me/6285887562039";
+  //   handleCTAClickLogic(targetUrl, e);
+  // };
+
   return (
-    <div className="alumni-lps-container">
+    <div className="container-testimoni-wa">
       <div className="alumni-lps-header">
-        <h2>Testimoni</h2>
+        <h2>Testimonials</h2>
       </div>
       <p className="additional-description-about__us">
-        Di <span className="color-d2b04c-description">LPS Matrix</span>,
-        kepuasan dan keberhasilan siswa selalu menjadi prioritas kami.{" "}
+        Prioritas utama{" "}
+        <span className="color-d2b04c-description">LPS Education</span>
+        {""} adalah memastikan kepuasan dan keberhasilan setiap siswa. Untuk
+        membuktikannya, {""}
         <span className="color-d2b04c-description">
-          Melalui testimoni WhatsApp ini
+          kami hadirkan testimoni-testimoni langsung via WhatsApp
         </span>
-        , Anda dapat melihat pengalaman nyata dari siswa dan orang tua yang
-        merasakan manfaat langsung dari metode belajar kami yang efektif dan
-        bimbingan intensif dari tutor berkualitas. Didampingi oleh mahasiswa dan
-        alum ni dari UI, ITB, UGM, STAN, STIS, dan PTN terkemuka lainnya, kami
-        bangga menjadi bagian dari perjalanan akademis mereka dalam mencapai PTN
-        favorit di seluruh Indonesia.
+        . Di sini, Anda akan menemukan bukti nyata bagaimana metode belajar kami
+        yang teruji efektif, didukung oleh bimbingan intensif dari tutor-tutor
+        berkualitas, telah mengubah perjalanan akademis mereka. Bersama
+        mahasiswa dan alumni terbaik dari UI, ITB, UGM, IPB, UNJ serta PTN
+        unggulan lainnya, kami berdedikasi membimbing para siswa hingga berhasil
+        masuk ke PTN impian mereka di seluruh penjuru Indonesia.
       </p>
-
-      <img
-        loading="lazy"
-        className="desktop-image-testimoni"
-        src="/images/TESTIMONI.webp"
-        alt="Bimbel Les Privat ONLINE dan Les Privat Datang ke Rumah untuk Program SBMPTN UTBK SNBT Simak UI UTUL UGM. Guru Privat Masuk UI ITB UGM dan Kedokteran di PTN Favorit."
-      />
-      <img
-        loading="lazy"
-        src="/images/TESTIMONI-HP.webp"
-        className="mobile-image-testimoni"
-        alt="Bimbel Les Privat ONLINE dan Les Privat Datang ke Rumah untuk Program SBMPTN UTBK SNBT Simak UI UTUL UGM. Guru Privat Masuk UI ITB UGM dan Kedokteran di PTN Favorit."
-      />
+      <Link to={contactData?.link_cta}>
+        <img
+          loading="lazy"
+          className="desktop-image-testimoni"
+          src="/images/TESTIMONI.webp"
+          alt="Bimbel Les Privat ONLINE dan Les Privat Datang ke Rumah untuk Program SBMPTN UTBK SNBT Simak UI UTUL UGM. Guru Privat Masuk UI ITB UGM dan Kedokteran di PTN Favorit."
+        />
+        <img
+          loading="lazy"
+          src="/images/TESTIMONI-HP.webp"
+          className="mobile-image-testimoni"
+          alt="Bimbel Les Privat ONLINE dan Les Privat Datang ke Rumah untuk Program SBMPTN UTBK SNBT Simak UI UTUL UGM. Guru Privat Masuk UI ITB UGM dan Kedokteran di PTN Favorit."
+        />
+      </Link>
     </div>
   );
 };

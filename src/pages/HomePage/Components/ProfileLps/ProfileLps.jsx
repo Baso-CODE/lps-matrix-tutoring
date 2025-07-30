@@ -1,20 +1,27 @@
 import { Link } from "react-router-dom";
-import "./ProfileLps.css";
 import { selectContactCsData } from "../../../../lib/features/contactCsSlice";
 import { useAppSelector } from "../../../../lib/hooks";
+import "./ProfileLps.css";
 const ProfileLps = () => {
   const contactData = useAppSelector(selectContactCsData);
   const finalUrl = contactData?.link_cta;
+
+  // const handleCTAClick = (e) => {
+  //   const targetUrl = contactData?.link_cta || "https://wa.me/6285887562039";
+  //   handleCTAClickLogic(targetUrl, e);
+  // };
   return (
     <div className="container-halaman-hero-home">
       <div className="content-hero-home">
         <div className="isi-content-hero-home">
-          <h1 className="title-halaman-hero-home" data-aos="fade-right">
-            Profile LPS
-          </h1>
+          <div className="logo-profile-lps__container">
+            <h1 className="title-halaman-hero-home" data-aos="fade-right">
+              Bimbel Spesialis Masuk FK & PTN Favorit
+            </h1>
+          </div>
           <div>
             <p className="child-paragraf-hero-home" data-aos="zoom-in">
-              LPS Premium adalah Lembaga Penyedia Jasa Guru Les Privat
+              LPS Education adalah Lembaga Penyedia Jasa Guru Les Privat
               Profesional, Berpengalaman dan Bimbingan Belajar Spesialis
               Persiapan Masuk PTN yang berdiri sejak tahun 2010 dan sudah
               memiliki Izin Usaha. Layanan Bimbel Les Privat SBMPTN (UTBK SNBT)
@@ -31,13 +38,10 @@ const ProfileLps = () => {
               IUP UGM dan Les Privat Ujian Mandiri PTN.
             </p>
           </div>
-          {/* Added a second button */}
-          {/* Added a second button */}
           <Link
-            data-aos="fade-up"
-            className="btn-daftar-sekarang"
             to={finalUrl}
-            target="_blank">
+            data-aos="fade-up"
+            className="btn-daftar-sekarang">
             Daftar Sekarang
             <img
               src="/images/daftar-sekarang.png"
@@ -59,10 +63,10 @@ const ProfileLps = () => {
           height="1075"
         /> */}
         <img
-          loading="lazy"
+          loading="eager"
           data-aos="fade-left"
           className="rumah-adat-hero-home"
-          src="/images/HERO.png" // Path to your video file
+          src="/images/HERO.webp" // Path to your video file
           alt="Video Profil LPS"
           // width="1880"
 

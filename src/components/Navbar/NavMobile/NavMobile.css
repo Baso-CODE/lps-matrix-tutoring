@@ -42,7 +42,7 @@
   border-radius: 8px;
   color: #f1f1f1;
   cursor: pointer;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Nunito", sans-serif;
   transition: background-color 0.2s ease-in-out;
 }
 
@@ -90,7 +90,7 @@
   padding: 8px 16px; /* Ruang di dalam sub-menu item link */
   border-radius: 8px; /* Menambahkan sudut melengkung */
   transition: background-color 0.2s ease-in-out; /* Transisi saat hover */
-  font-family: "Open Sans", sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 
 .sub-menu-item-link:hover {

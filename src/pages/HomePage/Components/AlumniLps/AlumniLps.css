@@ -1,14 +1,9 @@
-/* Container Styling */
-.alumni-lps-container {
-  margin: 5vh auto;
-}
-
 /* Header Styling */
 .alumni-lps-header h2 {
   text-align: start;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Nunito", sans-serif;
   font-weight: 700;
-  color: #ff6500;
+  color: #333;
   font-size: 1.4rem;
   margin-bottom: 15px;
 }
@@ -19,14 +14,11 @@
 
   height: auto;
   border-radius: 8px;
-
-  margin-top: 20px;
 }
 
 .desktop-image-testimoni {
   display: block;
   width: 100%;
-
   height: auto;
   border-radius: 8px;
 }

@@ -1,64 +1,66 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import "./GaleryBelajarSiswa.css";
+import { getGalleryBelajarByKet } from "../../api/galleryBelajar/getGalleryBelajarByKet";
 
 const GaleryBelajarSiswa = () => {
   const [currentMode, setCurrentMode] = useState("offline");
   const [previewImage, setPreviewImage] = useState("");
   const [thumbnails, setThumbnails] = useState([]);
 
-  // Data gambar offline dan online
-  const images = {
-    offline: [
-      "/images/galler-belajar/rumah1.webp",
-      "/images/galler-belajar/rumah2.webp",
-      "/images/galler-belajar/rumah3.webp",
-      "/images/galler-belajar/rumah4.webp",
-    ],
-    online: [
-      "/images/galler-belajar/online1.webp",
-      "/images/galler-belajar/online2.webp",
-      "/images/galler-belajar/online3.webp",
-      "/images/galler-belajar/online4.webp",
-    ],
-  };
+  const fetchGalleryData = useCallback(async (keterangan) => {
+    try {
+      const response = await getGalleryBelajarByKet(keterangan);
+      const galleryItems = response.data || [];
 
-  // Set gambar awal untuk preview dan thumbnails
+      if (galleryItems.length > 0) {
+        setPreviewImage(galleryItems[0].link_image);
+        setThumbnails(galleryItems.slice(1).map((item) => item.link_image));
+      } else {
+        setPreviewImage("");
+        setThumbnails([]);
+      }
+    } catch (err) {
+      console.error("Error fetching gallery data:", err);
+      setPreviewImage("");
+      setThumbnails([]);
+    }
+  }, []);
+
+  useEffect(() => {
+    fetchGalleryData(currentMode);
+  }, [currentMode, fetchGalleryData]);
+
   const handleModeChange = (mode) => {
     setCurrentMode(mode);
-    setPreviewImage(images[mode][0]);
-    setThumbnails(images[mode].slice(1));
   };
 
-  // Handle klik gambar kecil
-  const handlePreviewChange = (img, index) => {
-    const newThumbnails = [...thumbnails];
-    newThumbnails[index] = previewImage; // Ganti thumbnail dengan gambar preview sebelumnya
-    setPreviewImage(img); // Ganti preview dengan gambar thumbnail yang diklik
-    setThumbnails(newThumbnails); // Update thumbnail array
+  // Handle klik gambar kecil (thumbnail)
+  const handlePreviewChange = (img) => {
+    const clickedIndex = thumbnails.findIndex((thumbnail) => thumbnail === img);
+    if (clickedIndex !== -1) {
+      const newThumbnails = [...thumbnails];
+      newThumbnails[clickedIndex] = previewImage;
+      setPreviewImage(img);
+      setThumbnails(newThumbnails);
+    }
   };
-
-  // Inisialisasi gambar awal
-  React.useEffect(() => {
-    handleModeChange("offline");
-  }, []);
 
   return (
     <div>
       <div className="gallery_belajar_lps-container">
         <div className="alumni-lps-header">
-          <h2>Gallery Belajar Siswa LPS</h2>
+          <h2>Gallery Belajar Siswa LPS Education</h2>
         </div>
         <p className="additional-description-about__us">
-          Di LPS Matrix, kami percaya bahwa proses belajar yang interaktif dan
-          didampingi oleh mentor berkualitas adalah kunci kesuksesan siswa dalam
-          meraih impian akademisnya. Melalui galeri ini, kami memperlihatkan
-          momen-momen berharga di mana siswa kami terlibat dalam pembelajaran
-          yang penuh semangat dan bimbingan intensif dari para tutor terbaik.
-          Dengan mentor yang terdiri dari mahasiswa dan alumni UI, ITB, UGM,
-          STAN, STIS, serta kampus ternama lainnya, LPS berkomitmen untuk
-          menjadi mitra belajar yang mendukung siswa mencapai PTN favorit mereka
-          di seluruh Indonesia.
+          Di LPS Education, kami percaya bahwa proses belajar yang interaktif
+          dan didampingi oleh mentor berkualitas adalah kunci kesuksesan siswa
+          dalam meraih impian akademisnya. Melalui galeri ini, kami
+          memperlihatkan momen-momen berharga di mana siswa kami terlibat dalam
+          pembelajaran yang penuh semangat dan bimbingan intensif dari para
+          tutor terbaik. Dengan mentor yang terdiri dari mahasiswa dan alumni
+          UI, ITB, UGM, STAN, STIS, serta kampus ternama lainnya, LPS Education
+          berkomitmen untuk menjadi mitra belajar yang mendukung siswa mencapai
+          PTN favorit mereka di seluruh Indonesia.
         </p>
       </div>
       <div className="galery-container">
@@ -84,7 +86,7 @@ const GaleryBelajarSiswa = () => {
             <img
               loading="lazy"
               src={previewImage}
-              alt={`Gambar utama untuk mode ${currentMode}, menampilkan kegiatan siswa di LPS Matrix yang sedang belajar dengan bimbingan tutor profesional, di mana siswa mendapatkan perhatian penuh untuk memastikan pemahaman maksimal dan kemajuan akademis yang signifikan.`}
+              alt={`Gambar utama untuk mode ${currentMode}, menampilkan kegiatan siswa di LPS Education yang sedang belajar dengan bimbingan tutor profesional, di mana siswa mendapatkan perhatian penuh untuk memastikan pemahaman maksimal dan kemajuan akademis yang signifikan.`}
             />
           </div>
           <div className="thumbnail-container">
@@ -95,7 +97,7 @@ const GaleryBelajarSiswa = () => {
                 src={img}
                 alt={`Thumbnail ${
                   index + 1
-                } yang menunjukkan kegiatan siswa di mode ${currentMode}. Gambar ini menggambarkan suasana pembelajaran di LPS Matrix, baik secara offline maupun online, di mana siswa terlibat aktif dalam pembelajaran bersama mentor dari kampus ternama seperti UI, ITB, dan UGM.`}
+                } yang menunjukkan kegiatan siswa di mode ${currentMode}. Gambar ini menggambarkan suasana pembelajaran di LPS Education, baik secara offline maupun online, di mana siswa terlibat aktif dalam pembelajaran bersama mentor dari kampus ternama seperti UI, ITB, dan UGM.`}
                 className="thumbnail"
                 onClick={() => handlePreviewChange(img, index)}
               />

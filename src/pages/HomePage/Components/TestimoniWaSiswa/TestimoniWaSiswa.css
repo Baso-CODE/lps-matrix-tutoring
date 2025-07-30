@@ -1,3 +1,30 @@
 .container-testimoni-wa {
-  height: 60vh;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+}
+
+.mobile-image-testimoni {
+  display: none;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.desktop-image-testimoni {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .desktop-image-testimoni {
+    display: none; /* Sembunyikan gambar desktop */
+  }
+
+  .mobile-image-testimoni {
+    display: block; /* Tampilkan gambar mobile */
+    width: 100%; /* Pastikan gambar responsif */
+    height: auto;
+  }
 }

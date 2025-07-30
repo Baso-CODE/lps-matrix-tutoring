@@ -2,80 +2,98 @@
 
 .container-keunggulan-lps {
   padding: 3rem 1rem;
-  background-color: #1e3e62; /* Warna latar belakang yang lembut */
+  background-color: var(--color-gray-lightest);
   text-align: center;
-
   margin-bottom: 40px;
   border-radius: 20px;
-  /* Negative margin to overlap previous content */
-  margin-top: -50px; /* Nilai negatif untuk mendekatkan */
-  z-index: 1; /* Pastikan tetap terlihat di atas */
-  position: relative; /* Untuk memastikan z-index bekerja */
+  margin-top: 50px;
+  z-index: 1;
+  position: relative;
 }
 
 .title {
-  font-size: 1.4rem;
-  color: #fcfaee; /* Warna teks judul */
+  font-size: 1.5rem;
+  color: var(--color-gray-darker);
   margin-bottom: 2rem;
-  font-weight: 500;
-  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  font-family: "Nunito", sans-serif;
 }
 
 .keunggulan-list {
-  list-style-type: none;
+  list-style-type: none; /* Tetap none karena kita akan membuat custom bullet */
   padding: 0;
   margin: 0;
   text-align: left;
   max-width: 1000px;
   margin: auto;
+  margin-bottom: 0;
 }
 
 .keunggulan-list li {
   display: flex;
-  align-items: flex-start; /* Pastikan teks sejajar dengan ikon */
-  gap: 5px; /* Memberikan jarak antara ceklis dan teks */
+  align-items: flex-start;
+  gap: 10px; /* Tingkatkan jarak sedikit antara bullet dan teks */
   font-size: 0.95rem;
-  color: #ffffff;
-  padding: 0.5rem;
+  color: var(--color-gray-dark);
+  padding: 0.5rem 0; /* Tambahkan padding vertikal antar item list */
   font-family: "Nunito", sans-serif;
+  line-height: 1.6; /* Untuk keterbacaan yang lebih baik */
 }
 
+/* Kustom Bullet menggunakan ::before */
 .keunggulan-list li::before {
-  content: "✓"; /* Simbol ceklis */
-  color: #4caf50; /* Warna ceklis */
+  content: "•";
+  color: #28a745;
   font-weight: bold;
-  flex-shrink: 0; /* Jangan biarkan ikon mengecil */
+  font-size: 1.2rem;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-right: 5px;
 }
 
 /* Responsif untuk layar tablet */
 @media (max-width: 1024px) {
   .title {
-    font-size: 1.7rem; /* Ukuran lebih kecil untuk tablet */
+    font-size: 1.7rem;
   }
-
   .keunggulan-list li {
-    font-size: 0.95rem; /* Menyesuaikan untuk tablet */
+    font-size: 0.95rem;
+    padding: 0.4rem 0;
+  }
+  .keunggulan-list li::before {
+    font-size: 1.1rem;
   }
 }
 
 /* Responsif untuk layar kecil */
 @media (max-width: 768px) {
   .title {
-    font-size: 1.4rem; /* Ukuran lebih kecil untuk layar kecil */
+    font-size: 1.4rem;
   }
-
   .keunggulan-list li {
-    font-size: 0.9rem; /* Menyesuaikan agar tetap mudah dibaca */
+    font-size: 0.9rem;
+    padding: 0.3rem 0;
+  }
+  .keunggulan-list li::before {
+    font-size: 1rem;
   }
 }
 
 /* Responsif untuk layar sangat kecil */
 @media (max-width: 480px) {
   .title {
-    font-size: 1.3rem; /* Ukuran lebih kecil untuk ponsel */
+    font-size: 1.3rem;
   }
-
   .keunggulan-list li {
-    font-size: 0.85rem; /* Ukuran font yang sesuai untuk ponsel */
+    font-size: 0.9rem;
+    padding: 0.2rem 0;
+    gap: 8px;
+  }
+  .keunggulan-list li::before {
+    font-size: 0.9rem;
+    margin-right: 3px;
+  }
+  .container-keunggulan-lps {
+    padding: 2rem 1rem;
   }
 }

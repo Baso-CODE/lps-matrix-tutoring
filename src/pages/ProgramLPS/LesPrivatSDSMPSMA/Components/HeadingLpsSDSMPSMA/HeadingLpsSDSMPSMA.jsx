@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
-import "./HeadingLpsSDSMPSMA.css";
 import { getJumbotronProgram } from "../../../../../api/jumbotron/getJumbotronProgram";
+import { selectContactCsData } from "../../../../../lib/features/contactCsSlice";
+import { useAppSelector } from "../../../../../lib/hooks";
+import "./HeadingLpsSDSMPSMA.css";
 const HeadingLpsSDSMPSMA = () => {
   const [jumbotron, setJumbotron] = useState(null);
-
+  const contactData = useAppSelector(selectContactCsData);
+  const finalUrl = contactData?.link_cta;
   useEffect(() => {
     const fetchJumbotron = async () => {
       try {
@@ -15,6 +18,10 @@ const HeadingLpsSDSMPSMA = () => {
     };
     fetchJumbotron();
   }, []);
+  // const handleCTAClick = (e) => {
+  //   const targetUrl = contactData?.link_cta || "https://wa.me/6285887562039";
+  //   handleCTAClickLogic(targetUrl, e);
+  // };
   return (
     <div className="container-halaman__sd_smp_sma">
       <div className="content-hero-home__sd_smp_sma">
@@ -22,7 +29,7 @@ const HeadingLpsSDSMPSMA = () => {
           loading="lazy"
           data-aos="zoom-out"
           className="rumah-adat-hero__sd_smp_sma"
-          src={jumbotron.link_image || "/images/program/SD,SMP,SMA.webp"}
+          src={jumbotron?.link_image || "/images/program/SD,SMP,SMA.webp"}
           alt="Bimbel Les Privat ONLINE dan Les Privat Datang ke Rumah untuk Program SBMPTN UTBK SNBT Simak UI UTUL UGM. Guru Privat Masuk UI ITB UGM dan Kedokteran di PTN Favorit."
         />
         <div className="isi-content-hero__sd_smp_sma">
@@ -56,6 +63,14 @@ const HeadingLpsSDSMPSMA = () => {
               bisa diterima di SMP terbaiik.
             </p>
           </div>
+
+          <button
+            className="btn-learn-more__sd_smp_sma"
+            onClick={() =>
+              window.open(finalUrl, "_blank", "noopener,noreferrer")
+            }>
+            Konsultasi Sekarang
+          </button>
         </div>
       </div>
     </div>

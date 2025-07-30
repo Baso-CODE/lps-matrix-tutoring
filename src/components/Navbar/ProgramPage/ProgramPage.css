@@ -1,0 +1,104 @@
+.program-page-container {
+  padding: 16px; /* padding: 4 dari Tailwind */
+  padding-top: 80px; /* pt-16 dari Tailwind */
+  padding-bottom: 80px; /* pb-20 dari Tailwind untuk menghindari navbar bawah */
+  color: #4a5568; /* text-gray-700 dari Tailwind */
+}
+
+.program-page-title {
+  font-size: 2.25rem; /* text-3xl dari Tailwind */
+  font-weight: bold; /* font-bold dari Tailwind */
+  margin-bottom: 24px; /* mb-6 dari Tailwind */
+  text-align: center; /* text-center dari Tailwind */
+  color: #2d3748; /* text-gray-800 dari Tailwind */
+}
+
+.program-page-description {
+  text-align: center; /* text-center dari Tailwind */
+  color: #4a5568; /* text-gray-600 dari Tailwind */
+  margin-bottom: 32px; /* mb-8 dari Tailwind */
+}
+
+.program-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* grid-cols-1 dari Tailwind */
+  gap: 24px; /* gap-6 dari Tailwind */
+}
+
+/* Responsive grid */
+@media (min-width: 640px) {
+  /* sm: dari Tailwind */
+  .program-cards-grid {
+    grid-template-columns: repeat(2, 1fr); /* sm:grid-cols-2 */
+  }
+}
+
+@media (min-width: 768px) {
+  /* md: dari Tailwind */
+  .program-cards-grid {
+    grid-template-columns: repeat(2, 1fr); /* md:grid-cols-2 */
+  }
+}
+
+@media (min-width: 1024px) {
+  /* lg: dari Tailwind */
+  .program-cards-grid {
+    grid-template-columns: repeat(3, 1fr); /* lg:grid-cols-3 */
+  }
+}
+
+.program-card-link {
+  text-decoration: none; /* Hapus garis bawah link */
+}
+
+.program-card {
+  display: block; /* Agar link memenuhi kartu */
+  padding: 20px; /* p-5 dari Tailwind */
+  background-color: #ffffff; /* bg-white dari Tailwind */
+  border-radius: 8px; /* rounded-lg dari Tailwind */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-md dari Tailwind */
+  transition: all 0.3s ease; /* transition-shadow duration-300 transform */
+}
+
+.program-card:hover {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15); /* hover:shadow-lg dari Tailwind */
+  transform: translateY(-4px); /* hover:-translate-y-1 dari Tailwind */
+}
+
+.program-card-icon-wrapper {
+  display: flex; /* Untuk menata ikon */
+  align-items: center;
+  margin-bottom: 12px; /* mb-3 dari Tailwind */
+}
+
+.program-card-icon {
+  width: 32px; /* w-8 dari Tailwind */
+  height: 32px; /* h-8 dari Tailwind */
+  color: #3b82f6; /* text-blue-600 dari Tailwind */
+  margin-right: 12px; /* mr-3 dari Tailwind */
+  flex-shrink: 0; /* Pastikan ikon tidak menyusut */
+}
+
+.program-card-title {
+  font-size: 1.25rem; /* text-xl dari Tailwind */
+  font-weight: 600; /* font-semibold dari Tailwind */
+  color: #2d3748; /* text-gray-800 dari Tailwind */
+  margin: 0; /* Pastikan tidak ada margin default */
+}
+
+.program-card-description {
+  color: #4a5568; /* text-gray-600 dari Tailwind */
+  font-size: 0.875rem; /* text-sm dari Tailwind */
+  margin-top: 8px; /* Jarak dari judul */
+}
+
+/* Fallback styling for no program found */
+.program-page-container.fallback {
+  min-height: calc(
+    100vh - 160px
+  ); /* Sesuaikan tinggi agar konten berada di tengah */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

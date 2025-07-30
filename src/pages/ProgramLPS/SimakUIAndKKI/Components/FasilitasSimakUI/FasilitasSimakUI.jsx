@@ -45,15 +45,15 @@ const FasilitasSimakUI = () => {
           </ul>
         </div>
 
-        {/* Card 3: Schedulling */}
+        {/* Card 3: Scheduling */}
         <div className="fasilitas-simak-ui-card">
           <img
             loading="lazy"
-            src="/images/icon/fasilitas/schedulling.webp"
+            src="/images/icon/fasilitas/Scheduling.webp"
             alt="Icon Fasilitas"
             className="fasilitas-icon"
           />
-          <h2 className="fasilitas-title">Schedulling</h2>
+          <h2 className="fasilitas-title">Scheduling</h2>
           <ul className="fasilitas-list">
             <li>Penjadwalan dapat disesuaikan dengan waktu siswa.</li>
             <li>Durasi belajar setiap sesinya adalah 2 jam.</li>

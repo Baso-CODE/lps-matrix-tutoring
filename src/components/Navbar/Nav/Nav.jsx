@@ -1,15 +1,12 @@
 import { useEffect, useState } from "react";
 import NavDescktop from "../NavDescktop/NavDescktop";
-import NavMobile from "../NavMobile/NavMobile";
 
 import { Link } from "react-router-dom";
 import { Menus } from "../../../helpers/NavbarMenus/Menus";
 import "./Nav.css";
-import { selectContactCsData } from "../../../lib/features/contactCsSlice";
-import { useAppSelector } from "../../../lib/hooks";
 
 const Nav = () => {
-  const contactData = useAppSelector(selectContactCsData);
+  // const contactData = useAppSelector(selectContactCsData);
   const [isScrolled, setIsScrolled] = useState(false);
 
   const handleScroll = () => {
@@ -24,6 +21,13 @@ const Nav = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  // const fixedWhatsappUrl =
+  //   "https://api.whatsapp.com/send?phone=6285887562039&text=Halo%20Kak%20Rosa,%20saya%20tertarik%20dengan%20program%20belajar%20di%20LPS%20Education.%0A%0A%F0%9F%93%96%20Les%20Privat%20SD%20SMP%20SMA%20SIMAK%20UI%20OSN%20MAHASISWA%20CPNS%20%7C%20LPS%20EDUCATION%E2%9C%A8%0Ahttps%3A%2F%2Fapps.lesprivatmasukptn.com";
+
+  // const handleFreeKonsultasiClick = (e) => {
+  //   handleCTAClickLogic(fixedWhatsappUrl, e, true);
+  // };
 
   return (
     <nav>
@@ -48,11 +52,10 @@ const Nav = () => {
 
           <div className="auth-menu">
             <a
-              href={contactData?.link_cta}
+              href="https://api.whatsapp.com/send?phone=6285887562039&text=Halo%20Kak%20Rosa,%20saya%20tertarik%20dengan%20program%20belajar%20di%20LPS%20Education.%0A%0A%F0%9F%93%96%20Les%20Privat%20SD%20SMP%20SMA%20SIMAK%20UI%20OSN%20MAHASISWA%20CPNS%20%7C%20LPS%20EDUCATION%E2%9C%A8%0Ahttps%3A%2F%2Fapps.lesprivatmasukptn.com"
+              // onClick={handleFreeKonsultasiClick}
               aria-label="sign-in"
-              className="sign-in-button"
-              target="_blank"
-              rel="noopener noreferrer">
+              className="sign-in-button">
               Free Konsultasi
               <img
                 src="/images/daftar-sekarang.png"
@@ -60,9 +63,9 @@ const Nav = () => {
                 className="button-icon-nav"
               />
             </a>
-            <div className="mobile-menu">
+            {/* <div className="mobile-menu">
               <NavMobile Menus={Menus} />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

@@ -10,15 +10,15 @@
 .title-paket-induk__osn {
   font-size: 1.4rem;
   margin-bottom: 1rem;
-  color: #ff6500;
+  color: var(--color-orange-default); /* Oranye utama untuk judul induk */
   font-weight: 700;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 
 .description-paket-belajar__osn {
   font-size: 0.9rem;
   text-align: start;
-  color: #343131;
+  color: var(--color-gray-dark); /* Abu-abu gelap untuk deskripsi */
   font-weight: 400;
   margin-bottom: 2rem;
   font-family: "Nunito", sans-serif;
@@ -32,7 +32,9 @@
 }
 
 .paket-card__osn {
-  background-color: #ffffff;
+  background-color: var(
+    --color-gray-lightest
+  ); /* Latar belakang kartu putih keabu-abuan */
   border-radius: 8px;
   padding: 1.5rem;
   width: 100%;
@@ -43,26 +45,28 @@
 .paket-icon__osn {
   font-size: 2rem;
   margin-bottom: 0.5rem;
+  /* Jika ikon adalah SVG atau bisa diwarnai, bisa tambahkan warna di sini.
+     Misalnya: color: var(--color-orange-default); */
 }
 
 .paket-title__osn {
   font-size: 1.4rem;
-  color: #ff8000;
+  color: var(--color-orange-dark); /* Oranye gelap untuk judul paket */
   margin-bottom: 0.5rem;
   font-weight: bold;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 
 .paket-sesi__osn {
   font-size: 1rem;
-  color: #555;
+  color: var(--color-gray-medium); /* Abu-abu sedang untuk teks sesi */
   margin-bottom: 1rem;
   font-family: "Nunito", sans-serif;
 }
 
 .call-button {
-  background-color: #1e3e62;
-  color: #fff;
+  background-color: var(--color-orange-default); /* Oranye utama untuk tombol */
+  color: var(--color-gray-lightest); /* Putih keabu-abuan untuk teks tombol */
   border: none;
   width: 100%;
   padding: 0.5rem 1rem;
@@ -73,7 +77,9 @@
 }
 
 .call-button:hover {
-  background-color: #112743;
+  background-color: var(
+    --color-orange-dark
+  ); /* Oranye gelap untuk hover tombol */
 }
 
 /* Responsive adjustments */

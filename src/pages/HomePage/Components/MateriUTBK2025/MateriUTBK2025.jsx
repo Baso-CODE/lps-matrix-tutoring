@@ -4,6 +4,15 @@ const MateriUTBK2025 = () => {
   return (
     <div className="container-materi-utbk">
       <h1 className="materi-title">Materi UTBK SNBT 2025</h1>
+      {/* Additional Description about Materi UTBK */}
+      <p className="materi-overview">
+        Materi UTBK SNBT terdiri dari beberapa bagian utama yang dirancang untuk
+        mengukur berbagai kemampuan akademis dan kognitif siswa. Melalui Tes
+        Potensi Skolastik (TPS) dan Tes Literasi, peserta akan dinilai dalam
+        aspek penalaran umum, kemampuan matematika, pemahaman bacaan, serta
+        literasi dalam bahasa Indonesia dan bahasa Inggris. Ini semua bertujuan
+        untuk memastikan kesiapan siswa menghadapi pendidikan tinggi.
+      </p>
       <div className="materi-columns">
         {/* Left Column: Tes Potensi Skolastik (TPS) */}
         <div className="materi-section">
@@ -38,15 +47,6 @@ const MateriUTBK2025 = () => {
           </ul>
         </div>
       </div>
-      {/* Additional Description about Materi UTBK */}
-      <p className="materi-overview">
-        Materi UTBK SNBT terdiri dari beberapa bagian utama yang dirancang untuk
-        mengukur berbagai kemampuan akademis dan kognitif siswa. Melalui Tes
-        Potensi Skolastik (TPS) dan Tes Literasi, peserta akan dinilai dalam
-        aspek penalaran umum, kemampuan matematika, pemahaman bacaan, serta
-        literasi dalam bahasa Indonesia dan bahasa Inggris. Ini semua bertujuan
-        untuk memastikan kesiapan siswa menghadapi pendidikan tinggi.
-      </p>
     </div>
   );
 };

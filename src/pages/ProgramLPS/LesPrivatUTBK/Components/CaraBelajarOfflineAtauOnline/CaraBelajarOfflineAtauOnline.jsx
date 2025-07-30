@@ -32,12 +32,12 @@ const CaraBelajarOfflineAtauOnline = () => {
         "Dirancang untuk siswa yang ingin sukses di ujian seleksi PTN, program ini menawarkan materi pelajaran yang lengkap dan teknik penyelesaian soal yang efektif. Melalui latihan soal yang intensif dan panduan belajar khusus, siswa akan lebih percaya diri dan siap menghadapi ujian.",
       image: "/images/pilihan/tervaforit.webp",
     },
-    {
-      title: "Taat Prokes Selama Mengajar",
-      description:
-        "Demi memastikan keamanan dan kenyamanan seluruh pihak, guru kami senantiasa menerapkan protokol kesehatan ketat selama sesi belajar berlangsung. Dari menggunakan masker hingga menjaga jarak aman, komitmen kami pada kesehatan membantu memberikan lingkungan belajar yang tenang dan aman.",
-      image: "/images/pilihan/prokes.webp",
-    },
+    // {
+    //   title: "Taat Prokes Selama Mengajar",
+    //   description:
+    //     "Demi memastikan keamanan dan kenyamanan seluruh pihak, guru kami senantiasa menerapkan protokol kesehatan ketat selama sesi belajar berlangsung. Dari menggunakan masker hingga menjaga jarak aman, komitmen kami pada kesehatan membantu memberikan lingkungan belajar yang tenang dan aman.",
+    //   image: "/images/pilihan/prokes.webp",
+    // },
   ];
 
   return (

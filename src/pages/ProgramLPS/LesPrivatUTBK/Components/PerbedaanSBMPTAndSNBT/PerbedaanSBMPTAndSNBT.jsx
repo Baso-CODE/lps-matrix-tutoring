@@ -22,7 +22,10 @@ const PerbedaanSBMPTAndSNBT = () => {
                 Juga mempertimbangkan portofolio dan prestasi non-akademik (jika
                 ada).
               </li>
-              <li>Menggunakan nilai Tes Kemampuan Akademik (TKA).</li>
+              <li>
+                Menggunakan nilai Tes Kemampuan Akademik (TKA) sebagai instrumen
+                tambahan untuk penilaian.
+              </li>
             </ol>
           </div>
         </Tilt>

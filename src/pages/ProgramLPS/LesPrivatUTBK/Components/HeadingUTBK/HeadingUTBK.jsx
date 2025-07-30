@@ -58,8 +58,8 @@ const HeadingUTBK = () => {
 
             <p className="child-paragraf-hero__sd_smp_sma">
               Tujuan program ini adalah memastikan siswa dapat meraih hasil
-              akademik terbaik dan lolos ke perguruan tinggi impian mereka
-              melalui pendampingan yang fokus dan strategis.
+              terbaik dan lolos ke perguruan tinggi impian mereka melalui
+              pendampingan yang fokus dan strategis.
             </p>
           </div>
 

@@ -24,9 +24,9 @@ const FiturDanLayanan = () => {
             <li>Les Privat SD</li>
             <li>Les Privat SMP</li>
             <li>Les Privat SMA</li>
-            <li>Les Privat TKA(Tes Kemampuan Akademik)</li>
+            <li>Les Privat TKA (Tes Kemampuan Akademik)</li>
             <li>Les Privat Mahasiswa</li>
-            <li>Les Privat Olimpiade(Nasional dan Internasional)</li>
+            <li>Les Privat Olimpiade (Nasional dan Internasional)</li>
             <li>Les Privat TOEFL/IELTS</li>
           </ul>
         </div>

@@ -1,0 +1,101 @@
+/* Indicator Section (List of signs) */
+.needs-indicator-section {
+  background-color: #f9f9f9;
+  border-left: 5px solid #ff6500;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.indicator-title {
+  font-size: 1.4rem;
+  color: var(--color-gray-darker);
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-family: "Nunito", sans-serif;
+  text-align: left; /* Pastikan judul rata kiri */
+}
+
+.indicator-list {
+  list-style-type: none; /* Hapus bullet default */
+  padding: 0;
+  margin: 0;
+}
+
+.indicator-list li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  font-family: "Nunito", sans-serif;
+}
+
+.indicator-list li::before {
+  content: "👉";
+  position: absolute;
+  left: 0;
+  color: #ff6500;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* --- Gaya baru untuk wrapper kolom --- */
+.subject-columns-wrapper {
+  display: flex; /* Default ke flex-column untuk 1 kolom atau jika tidak dibagi */
+  flex-direction: column;
+  align-items: flex-start; /* Rata kiri daftar */
+  gap: 10px; /* Jarak antar ul jika 1 kolom */
+  margin-top: 15px; /* Jarak dari judul */
+}
+
+/* Terapkan grid hanya jika class 'split-columns' ada */
+.subject-columns-wrapper.split-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 kolom */
+  gap: 30px; /* Jarak antar kolom */
+  align-items: start; /* Rata atas item dalam grid */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .needs-indicator-section {
+    padding: 15px;
+    margin: 20px auto;
+  }
+  .indicator-title {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+  .indicator-list li {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+  }
+  .indicator-list li::before {
+    font-size: 0.95rem;
+  }
+
+  /* Di mobile, selalu kembali ke 1 kolom */
+  .subject-columns-wrapper.split-columns {
+    grid-template-columns: 1fr; /* Pastikan 1 kolom di mobile */
+    display: flex; /* Pastikan flex untuk 1 kolom */
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .needs-indicator-section {
+    padding: 10px;
+  }
+  .indicator-title {
+    font-size: 1rem;
+  }
+  .indicator-list li {
+    font-size: 0.85rem;
+    padding-left: 20px;
+  }
+  .indicator-list li::before {
+    font-size: 0.9rem;
+  }
+}

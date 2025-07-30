@@ -3,7 +3,7 @@ import "./GaleryBelajarSiswa.css";
 import { getGalleryBelajarByKet } from "../../api/galleryBelajar/getGalleryBelajarByKet";
 
 const GaleryBelajarSiswa = () => {
-  const [currentMode, setCurrentMode] = useState("online");
+  const [currentMode, setCurrentMode] = useState("offline");
   const [previewImage, setPreviewImage] = useState("");
   const [thumbnails, setThumbnails] = useState([]);
 
@@ -49,7 +49,7 @@ const GaleryBelajarSiswa = () => {
     <div>
       <div className="gallery_belajar_lps-container">
         <div className="alumni-lps-header">
-          <h2>Gallery Belajar Siswa LPS</h2>
+          <h2>Gallery Belajar Siswa LPS Education</h2>
         </div>
         <p className="additional-description-about__us">
           Di LPS Education, kami percaya bahwa proses belajar yang interaktif
@@ -58,7 +58,7 @@ const GaleryBelajarSiswa = () => {
           memperlihatkan momen-momen berharga di mana siswa kami terlibat dalam
           pembelajaran yang penuh semangat dan bimbingan intensif dari para
           tutor terbaik. Dengan mentor yang terdiri dari mahasiswa dan alumni
-          UI, ITB, UGM, STAN, STIS, serta kampus ternama lainnya, LPS
+          UI, ITB, UGM, STAN, STIS, serta kampus ternama lainnya, LPS Education
           berkomitmen untuk menjadi mitra belajar yang mendukung siswa mencapai
           PTN favorit mereka di seluruh Indonesia.
         </p>
@@ -67,17 +67,17 @@ const GaleryBelajarSiswa = () => {
         <div className="button-container">
           <button
             className={`mode-button ${
-              currentMode === "online" ? "active" : ""
-            }`}
-            onClick={() => handleModeChange("online")}>
-            Online
-          </button>
-          <button
-            className={`mode-button ${
               currentMode === "offline" ? "active" : ""
             }`}
             onClick={() => handleModeChange("offline")}>
             Offline
+          </button>
+          <button
+            className={`mode-button ${
+              currentMode === "online" ? "active" : ""
+            }`}
+            onClick={() => handleModeChange("online")}>
+            Online
           </button>
         </div>
 

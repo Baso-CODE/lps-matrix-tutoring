@@ -1,8 +1,9 @@
+/* eslint-disable react/prop-types */
 import { useCallback, useEffect, useState } from "react";
 import "./GaleryBelajarSiswa.css";
 import { getGalleryBelajarByKet } from "../../api/galleryBelajar/getGalleryBelajarByKet";
 
-const GaleryBelajarSiswa = () => {
+const GaleryBelajarSiswa = ({ title, description }) => {
   const [currentMode, setCurrentMode] = useState("offline");
   const [previewImage, setPreviewImage] = useState("");
   const [thumbnails, setThumbnails] = useState([]);
@@ -49,18 +50,20 @@ const GaleryBelajarSiswa = () => {
     <div>
       <div className="gallery_belajar_lps-container">
         <div className="alumni-lps-header">
-          <h2>Gallery Belajar Siswa LPS Education</h2>
+          <h2>{title || `Gallery Belajar Siswa LPS Education`}</h2>
         </div>
         <p className="additional-description-about__us">
-          Di LPS Education, kami percaya bahwa proses belajar yang interaktif
+          {description ||
+            `Di LPS Education, kami percaya bahwa proses belajar yang interaktif
           dan didampingi oleh mentor berkualitas adalah kunci kesuksesan siswa
-          dalam meraih impian akademisnya. Melalui galeri ini, kami
+          dalam meraih capaian dan target belajar, Melalui galeri ini, kami
           memperlihatkan momen-momen berharga di mana siswa kami terlibat dalam
           pembelajaran yang penuh semangat dan bimbingan intensif dari para
           tutor terbaik. Dengan mentor yang terdiri dari mahasiswa dan alumni
-          UI, ITB, UGM, STAN, STIS, serta kampus ternama lainnya, LPS Education
-          berkomitmen untuk menjadi mitra belajar yang mendukung siswa mencapai
-          PTN favorit mereka di seluruh Indonesia.
+          UI, ITB, UGM, Unpad, STAN, STIS, serta kampus ternama lainnya, LPS
+          Education berkomitmen untuk menjadi mitra belajar yang mendukung siswa
+          agar berhasil dalam Ujian SKD CPNS yang diikutinya.
+          `}
         </p>
       </div>
       <div className="galery-container">

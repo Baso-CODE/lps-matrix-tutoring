@@ -1,10 +1,14 @@
 import { Helmet } from "react-helmet";
 import { useParams } from "react-router-dom";
-import AlumniLpsNew from "../../../../components/AlumniLpsNew/AlumniLpsNew";
 import GaleryBelajarSiswa from "../../../../components/GaleryBelajarSiswa/GaleryBelajarSiswa";
 import Slider from "../../../../components/Slider/Slider";
 import TestimoniWaSlider from "../../../../components/TestimoniWaSlider/TestimoniWaSlider";
 import UnivPengajarLps from "../../../../components/UnivPengajarLps/UnivPengajarLps";
+import {
+  galleryBelajarCPNSData,
+  testimonialWaCPNSData,
+  testimoniWaSliderData,
+} from "../../../../helpers/DummyData/CPNS/cpnsDammyData";
 import ProfileTutor from "../../../HomePage/Components/ProfileTutor/ProfileTutor";
 import TestimoniWaSiswa from "../../../HomePage/Components/TestimoniWaSiswa/TestimoniWaSiswa";
 import VisiEndMisiLps from "../../../HomePage/Components/VisiEndMisiLps/VisiEndMisiLps";
@@ -168,12 +172,20 @@ const LesPrivatCPNSSlug = () => {
         <VisiEndMisiLps />
         <ProfileTutor />
         <UnivPengajarLps />
-        <AlumniLpsNew />
-        <GaleryBelajarSiswa />
-        <TestimoniWaSlider />
+        {/* <AlumniLpsNew /> */}
+        <GaleryBelajarSiswa description={galleryBelajarCPNSData.description} />
+        <TestimoniWaSlider
+          description={testimoniWaSliderData.description}
+          title={testimoniWaSliderData.title}
+        />
         <AsalSiswaLPS />
         <SuccesStoryCPNS />
-        <TestimoniWaSiswa />
+        <TestimoniWaSiswa
+          title={testimonialWaCPNSData.title}
+          description={testimonialWaCPNSData.description}
+          imageDesktop={testimonialWaCPNSData.imageDesktop}
+          imageMobile={testimonialWaCPNSData.imageMobile}
+        />
       </div>
     </>
   );

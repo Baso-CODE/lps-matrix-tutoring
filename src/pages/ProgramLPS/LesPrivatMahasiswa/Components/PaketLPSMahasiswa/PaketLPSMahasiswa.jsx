@@ -31,7 +31,7 @@ const PaketLPSMahasiswa = () => {
   };
   return (
     <div className="paket-belajar-container__osn">
-      <h2 className="title-paket-induk__osn">Paket LPS Mahasiswa</h2>
+      <h2 className="title-paket-induk__osn">Paket LPS Education Mahasiswa</h2>
       <p className="description-paket-belajar__osn">
         PAKET didasarkan pada jumlah sesi yang akan diambil oleh siswa. Siswa
         dapat memilih komposisi sesi berdasarkan pada prioritas berapa lama

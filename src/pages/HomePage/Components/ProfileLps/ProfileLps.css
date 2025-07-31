@@ -1,8 +1,6 @@
-/* Main Container for the entire Hero section */
 .container-halaman-hero-home {
   margin-top: 28px;
   min-height: 50vh;
-  /* background-color: var(--color-orange-lighter); /* Contoh jika ingin background oranye sangat terang */
   align-items: center;
   overflow: hidden;
   display: flex;
@@ -10,21 +8,18 @@
   border-radius: 10px;
 }
 
-/* Wrapper to constrain content width */
 .content-hero-home {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* min-height: 120vh; */
 }
 
 .title-halaman-hero-home {
   font-size: 3rem;
   font-weight: bold;
-
   line-height: 2.9rem;
   text-align: left;
-  color: var(--color-orange-default); /* Primary: Oranye khas Anda */
+  color: var(--color-orange-default);
   font-family: "Playfair Display", serif;
 }
 
@@ -36,25 +31,31 @@
 }
 
 .logo-profile__lps {
-  width: 100%; /* Ukuran logo yang sesuai */
-  height: auto; /* Tinggi otomatis untuk menjaga proporsi */
-  margin-bottom: 10px; /* Jarak antara logo dan judul */
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
 }
 
 .title-halaman-hero-home-1e3e62 {
-  /* Class ini sebelumnya menggunakan warna biru. Sekarang akan diubah ke abu-abu sangat gelap */
-  color: var(--color-gray-darker); /* Abu-abu sangat gelap untuk kontras */
+  color: var(--color-gray-darker);
 }
 
 .isi-content-hero-home {
   flex: 0 0 60%;
-  /* margin-right: 5px; */
+}
+
+.image-hero-wrapper {
+  flex: 0 0 40%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .rumah-adat-hero-home {
-  flex: 0 0 40%;
-  width: 40%;
+  width: 100%;
   height: auto;
+  display: block;
 }
 
 .btn-daftar-sekarang,
@@ -65,7 +66,7 @@
   gap: 8px;
   margin-top: 20px;
   padding: 12px 24px;
-  background-color: var(--color-orange-default); /* Primary: Oranye utama */
+  background-color: var(--color-orange-default);
   color: var(--color-gray-lightest);
   text-decoration: none;
   border: none;
@@ -84,9 +85,7 @@
 
 .btn-daftar-sekarang:hover,
 .btn-learn-more:hover {
-  background-color: var(
-    --color-orange-dark
-  ); /* Oranye lebih gelap untuk hover */
+  background-color: var(--color-orange-dark);
 }
 
 .btn-learn-more {
@@ -107,7 +106,19 @@
 }
 
 .highlight-yellow {
-  color: var(--color-orange-default); /* Konsisten dengan oranye primary */
+  color: var(--color-orange-default);
+}
+
+/* Gradient di bawah gambar */
+.shadow-bottom-image-profile-lps {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 150px;
+
+  background: linear-gradient(to top, #f9f9f9, transparent);
+  pointer-events: none;
 }
 
 /* Media query for mobile devices */
@@ -121,8 +132,14 @@
     margin-top: 5vh;
   }
   .title-halaman-hero-home {
-    font-size: 28px; /* Ukuran font lebih kecil untuk layar kecil */
+    font-size: 28px;
   }
+
+  .image-hero-wrapper {
+    flex: 0 0 100%;
+    width: 100%;
+  }
+
   .rumah-adat-hero-home {
     width: 100%;
     height: auto;
@@ -131,6 +148,7 @@
   .isi-content-hero-home {
     margin-right: 0;
     margin-bottom: 20px;
+    flex: 0 0 100%;
   }
 
   .btn-daftar-sekarang,
@@ -138,6 +156,10 @@
     width: 100%;
     text-align: center;
     margin-left: 0;
+  }
+
+  .shadow-bottom-image-profile-lps {
+    height: 80px;
   }
 }
 
@@ -156,20 +178,6 @@
   }
 
   .title-halaman-hero-home {
-    font-size: 36px; /* Ukuran font lebih kecil untuk tablet */
-  }
-
-  .isi-content-hero-home {
-    flex: 0 0 100%; /* Isi konten mengambil seluruh lebar */
-    margin-right: 0; /* Menghapus margin kanan */
-  }
-
-  .rumah-adat-hero-home {
-    width: 100%; /* Rumah adat mengambil seluruh lebar */
-    height: auto; /* Tinggi otomatis untuk gambar */
-  }
-  .logo-profile__lps {
-    width: 100%; /* Ukuran logo yang sesuai untuk tablet */
-    height: auto; /* Tinggi otomatis untuk menjaga proporsi */
+    font-size: 36px;
   }
 }

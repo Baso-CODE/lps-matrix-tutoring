@@ -1,4 +1,4 @@
-import "./FasilitasSimakUI.css";
+import "./FasilitasSimakUI.css"; // Import file CSS
 
 const FasilitasSimakUI = () => {
   return (
@@ -49,18 +49,32 @@ const FasilitasSimakUI = () => {
         <div className="fasilitas-simak-ui-card">
           <img
             loading="lazy"
-            src="/images/icon/fasilitas/Scheduling.webp"
+            src="/images/icon/fasilitas/schedulling.webp"
             alt="Icon Fasilitas"
             className="fasilitas-icon"
           />
           <h2 className="fasilitas-title">Scheduling</h2>
           <ul className="fasilitas-list">
-            <li>Penjadwalan dapat disesuaikan dengan waktu siswa.</li>
-            <li>Durasi belajar setiap sesinya adalah 2 jam.</li>
-            <li>Frekuensi belajar dapat direncanakan bersama.</li>
+            <li>Penjadwalan dihandle langsung oleh admin Scheduling.</li>
             <li>
-              Fokus kami : Efektivitas Kegiatan Belajar Ketercapaian Target
-              Belajar.
+              Jadwal belajar dapat disesuaikan dengan ketersediaan waktu siswa.
+            </li>
+            <li>
+              Perubahan atau cancel jadwal bisa langsung dikomunikasikan dengan
+              admin Scheduling.
+            </li>
+            <li>Durasi belajar setiap sesinya adalah 1,5 - 2 jam.</li>
+            <li>
+              Frekuensi belajar (jumlah sesi pertemuan) dapat direncanakan
+              bersama.
+            </li>
+            <li>
+              Pergantian guru jika merasa kurang cocok bisa dikomunikasikan
+              dengan admin Scheduling
+            </li>
+            <li>
+              Fokus kami: efektivitas kegiatan belajar dan ketercapaian target
+              belajar.
             </li>
           </ul>
         </div>
@@ -75,17 +89,33 @@ const FasilitasSimakUI = () => {
           />
           <h2 className="fasilitas-title">Lokasi Belajar</h2>
           <ul className="fasilitas-list">
-            <li>Cabang di seluruh Indonesia</li>
+            <li>
+              <strong>Privat Offline:</strong>
+            </li>
+            <ul>
+              <li>Belajar dengan sistem tatap muka langsung</li>
+              <li>Guru privat datang ke rumah</li>
+              <li>Sistem belajar One on One Tutoring (Privat 1 siswa)</li>
+              <li>
+                Area jangkauan: Jakarta, Bogor, Depok, Tangerang, Tangsel,
+                Bekasi, dan sekitarnya.
+              </li>
+            </ul>
 
             <li>
-              Siswa luar JABODETABEK dilaksanakan menggunakan metode les privat
-              online via aplikasi Zoom atau video call lainnya yang dapat
-              menjangkau seluruh Indonesia
+              <strong>Privat Online:</strong>
             </li>
-            <li>
-              Siswa JABODETABEK dilaksanakan di rumah siswa atau privat online
-              dengan aplikasi video call
-            </li>
+            <ul>
+              <li>
+                Belajar dengan guru privat secara Online menggunakan Zoom,
+                Google Meet atau aplikasi lain,
+              </li>
+
+              <li>Sistem belajar One on One Tutoring (Privat 1 siswa)</li>
+              <li>
+                Area Jangkauan: seluruh wilayah di Indonesia dan Luar Negeri.
+              </li>
+            </ul>
           </ul>
         </div>
       </div>

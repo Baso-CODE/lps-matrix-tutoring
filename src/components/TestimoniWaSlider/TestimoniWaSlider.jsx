@@ -1,10 +1,12 @@
+/* eslint-disable react/prop-types */
+
 import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
 import { useEffect, useState } from "react";
 import { getTestimoniWa } from "../../api/testimoniWa/getTestimoniWa";
 import "./TestimoniWaSlider.css";
 
-const TestimoniWaSlider = () => {
+const TestimoniWaSlider = ({ title, description }) => {
   const [dataTestimoniWa, setDataTestimoniWa] = useState([]);
 
   useEffect(() => {
@@ -34,11 +36,16 @@ const TestimoniWaSlider = () => {
   );
   return (
     <div className="testimonial-slider-container">
-      <h2>Mereka Sudah Membuktikan, Didampingi Sampai Berhasil</h2>
+      <h2>
+        {title ||
+          `Mereka Sudah Membuktikan, Didampingi Sampai Berhasil
+        `}
+      </h2>
       <p className="centered__profiletutor">
-        Lihatlah bagaimana siswa-siswi kami meraih impian mereka. Testimoni
+        {description ||
+          `Lihatlah bagaimana siswa-siswi kami meraih impian mereka. Testimoni
         nyata ini adalah bukti komitmen kami dalam membimbing menuju PTN
-        favorit!
+        favorit!`}
       </p>
       <div className="embla" ref={emblaRef}>
         <div className="embla__container">
@@ -57,5 +64,9 @@ const TestimoniWaSlider = () => {
     </div>
   );
 };
+// TestimoniWaSlider.propTypes = {
+//   title: PropTypes.string,
+//   description: PropTypes.string,
+// };
 
 export default TestimoniWaSlider;

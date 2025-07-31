@@ -7,7 +7,7 @@
 
 /* Judul */
 .testimonial-slider-container h2 {
-  font-size: 1.7rem;
+  font-size: 1.4rem;
   color: var(--color-gray-darker);
   margin-bottom: 20px;
   font-family: "Nunito", sans-serif;
@@ -56,7 +56,7 @@
     padding-left: 5px; /* Padding kiri */
   }
   .testimonial-slider-container h2 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 }
 

@@ -57,9 +57,9 @@
 .success-story-cpns-content {
   display: flex;
   flex-direction: column;
-  gap: 8vw;
+  gap: 3vw;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   padding: 20px 0;
 }
 
@@ -73,7 +73,7 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  max-width: 500px;
+  max-width: 640px;
 }
 
 .success-story-cpns-subtitle {
@@ -94,7 +94,7 @@
 
 @media (min-width: 992px) {
   .success-story-cpns-subtitle {
-    font-size: 32px;
+    font-size: 1.4rem;
   }
 }
 
@@ -120,7 +120,7 @@
 
 @media (min-width: 992px) {
   .success-story-cpns-description {
-    font-size: 18px;
+    font-size: 1rem;
   }
 }
 

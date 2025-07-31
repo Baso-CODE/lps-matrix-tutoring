@@ -5,6 +5,10 @@ import GaleryBelajarSiswa from "../../../../components/GaleryBelajarSiswa/Galery
 import Slider from "../../../../components/Slider/Slider";
 import TestimoniWaSlider from "../../../../components/TestimoniWaSlider/TestimoniWaSlider";
 import UnivPengajarLps from "../../../../components/UnivPengajarLps/UnivPengajarLps";
+import {
+  galleryBelajarSiswaSimakUI,
+  successStoryWaSliderSimakUI,
+} from "../../../../helpers/DummyData/SIMAK-UI/simak-ui_dummyData";
 import FiturDanLayanan from "../../../HomePage/Components/FiturDanLayanan/FiturDanLayanan";
 import ProfileTutor from "../../../HomePage/Components/ProfileTutor/ProfileTutor";
 import ProgramBelajarLps from "../../../HomePage/Components/ProgramBelajarLps/ProgramBelajarLps";
@@ -164,8 +168,13 @@ const SimakUIAndKKISLug = () => {
         <ProfileTutor />
         <UnivPengajarLps />
         <AlumniLpsNew />
-        <GaleryBelajarSiswa />
-        <TestimoniWaSlider />
+        <GaleryBelajarSiswa
+          description={galleryBelajarSiswaSimakUI.description}
+        />
+        <TestimoniWaSlider
+          title={successStoryWaSliderSimakUI.title}
+          description={successStoryWaSliderSimakUI.description}
+        />
         <SuccessStory />
         <TestimoniWaSiswa />
       </div>

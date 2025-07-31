@@ -28,9 +28,9 @@ const ProgramIntensifCPNS = () => {
         dan mengetahui jenis – jenis soal yang muncul pada tes SKD CPNS. Jika
         anda membutuhkan layanan Tryout CPNS Online maka LPS Education dapat
         menjadi rekomendasi tempat belajar terbaik. Siswa Les Privat CPNS 2025
-        di LPS difasilitasi Asesmen dan Tryout Online CPNS sehingga progress
-        belajar akan lebih terukur dan siswa bisa mengetahui kekurangannya di
-        materi apa saja.
+        di LPS Education difasilitasi Asesmen dan Tryout Online CPNS sehingga
+        progress belajar akan lebih terukur dan siswa bisa mengetahui
+        kekurangannya di materi apa saja.
       </p>
     </div>
   );

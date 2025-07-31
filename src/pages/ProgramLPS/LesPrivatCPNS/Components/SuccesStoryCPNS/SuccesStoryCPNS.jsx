@@ -34,12 +34,14 @@ const SuccesStoryCPNS = () => {
         <div className="success-story-cpns-content">
           {/* Bagian Kiri: Title dan Deskripsi */}
           <div className="success-story-cpns-left">
-            <h3 className="success-story-cpns-subtitle">Success Stories ...</h3>
+            <h3 className="success-story-cpns-subtitle">
+              Success Stories CPNS & Kedinasan
+            </h3>
             <p className="success-story-cpns-description">
-              LPS Education telah membantu banyak siswa meraih kesuksesan
-              dirancang untuk memberikan dampak positif dan signifikan dalam
-              perkembangan akademik dan pribadi setiap siswa. melalui pendekatan
-              pendidikan yang inovatif.
+              LPS Education telah membantu banyak siswa dalam meraih kesuksesan
+              dan merancang program untuk memberikan dampak positif dan
+              signifikan dalam perkembangan akademik dan pribadi setiap siswa
+              melalui pendekatan pendidikan yang inovatif.
             </p>
             <p className="success-story-cpns-description">
               Dari bimbingan intensif hingga program pengembangan keterampilan,

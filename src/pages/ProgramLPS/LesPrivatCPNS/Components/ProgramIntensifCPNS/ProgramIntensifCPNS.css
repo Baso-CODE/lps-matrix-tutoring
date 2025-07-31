@@ -6,7 +6,7 @@
 }
 
 .program-title-cpns {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   color: var(
     --color-gray-darker
   ); /* Menggunakan abu-abu sangat gelap untuk judul program */
@@ -29,7 +29,7 @@
 /* For larger tablets and small desktops */
 @media (max-width: 1024px) {
   .program-title-cpns {
-    font-size: 1.4rem; /* Slightly smaller for tablets */
+    font-size: 1.3rem; /* Slightly smaller for tablets */
   }
 
   .program-description-cpns {
@@ -40,7 +40,7 @@
 /* For smaller tablets and larger phones */
 @media (max-width: 768px) {
   .program-title-cpns {
-    font-size: 1.4rem; /* Adjusted for smaller tablets */
+    font-size: 1.2rem; /* Adjusted for smaller tablets */
   }
 
   .program-description-cpns {
@@ -51,7 +51,7 @@
 /* For small mobile screens */
 @media (max-width: 500px) {
   .program-title-cpns {
-    font-size: 1.3rem; /* Smaller size for mobile */
+    font-size: 1.2rem; /* Smaller size for mobile */
   }
 
   .program-description-cpns {

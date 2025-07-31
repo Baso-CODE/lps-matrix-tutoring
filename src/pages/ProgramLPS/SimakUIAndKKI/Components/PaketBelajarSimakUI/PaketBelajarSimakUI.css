@@ -8,7 +8,7 @@
 }
 
 .title-paket-induk {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   margin-bottom: 1rem;
   font-weight: 600;
   color: #ff6500;
@@ -131,7 +131,7 @@
 
 @media (max-width: 1024px) {
   .title-paket-induk {
-    font-size: 1.4rem; /* Desktop font size */
+    font-size: 1.3rem;
   }
   .description-paket-belajar-simak-ui {
     font-size: 1.125rem;

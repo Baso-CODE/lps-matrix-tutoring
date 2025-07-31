@@ -26,10 +26,10 @@
 }
 
 .title-halaman-hero__mahasiswa {
-  font-size: 1.7rem;
+  font-size: 1.4rem;
   font-weight: 700;
-  margin-bottom: 15px;
-  text-align: center;
+  margin-bottom: 5px;
+  text-align: start;
   line-height: normal;
   color: var(--color-gray-darker);
   font-family: "Nunito", sans-serif;
@@ -64,9 +64,8 @@
 
 /* Title Styling */
 .program-mahasiswa-title-h3 {
-  margin-top: 4vh;
   margin-bottom: 1vh;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: #333;
   text-align: start;
   font-weight: 700;
@@ -88,7 +87,7 @@
 /* Responsif untuk layar lebih kecil */
 @media (max-width: 1024px) {
   .title-halaman-hero__mahasiswa {
-    font-size: 2rem; /* Ukuran judul lebih kecil */
+    font-size: 1.3rem; /* Ukuran judul lebih kecil */
   }
 
   .child-paragraf-hero__mahasiswa {
@@ -105,7 +104,7 @@
 
 @media (max-width: 768px) {
   .title-halaman-hero__mahasiswa {
-    font-size: 1.75rem; /* Ukuran judul lebih kecil */
+    font-size: 1.2rem; /* Ukuran judul lebih kecil */
   }
 
   .child-paragraf-hero__mahasiswa {
@@ -116,7 +115,7 @@
     font-size: 0.875rem; /* Ukuran tombol lebih kecil */
   }
   .program-mahasiswa-title-h3 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
   .additional-description-mahasiswa {
     font-size: 0.9rem;
@@ -125,7 +124,7 @@
 
 @media (max-width: 480px) {
   .title-halaman-hero__mahasiswa {
-    font-size: 1.4rem; /* Ukuran judul paling kecil */
+    font-size: 1.2rem; /* Ukuran judul paling kecil */
   }
 
   .child-paragraf-hero__mahasiswa {

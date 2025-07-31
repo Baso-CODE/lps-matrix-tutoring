@@ -12,13 +12,13 @@
   text-align: start;
   font-family: "Nunito", sans-serif;
   font-weight: 700;
-  color: var(--color-gray-darker); /* Abu-abu sangat gelap untuk judul */
-  font-size: 1.7rem;
+  color: var(--color-gray-darker); 
+  font-size: 1.4rem;
   margin-bottom: 15px;
 }
 
 .color-d2b04c-description {
-  color: var(--color-orange-default); /* Oranye utama, konsisten dengan palet */
+  color: var(--color-orange-default); 
   font-weight: bold;
 }
 

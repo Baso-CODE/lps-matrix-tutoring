@@ -3,19 +3,20 @@
 .heading-cpns-container {
   text-align: center;
   margin-top: 10vh;
-  margin-bottom: 10vh;
+  /* margin-bottom: 10vh; */
 }
 
 .heading-title-cpns {
-  font-size: 2rem; /* Default desktop size */
-  color: var(--color-gray-darker); /* Oranye utama untuk judul */
+  font-size: 1.4rem;
+  color: var(--color-gray-darker);
   margin-bottom: 1rem;
+  text-align: start;
   font-family: "Nunito", sans-serif;
 }
 
 .heading-description-bottom-cpns {
-  font-size: 1rem; /* Default desktop size */
-  color: var(--color-gray-dark); /* Abu-abu gelap untuk deskripsi bawah */
+  font-size: 1rem;
+  color: var(--color-gray-dark);
   line-height: normal;
   text-align: start;
   margin-bottom: 1.5rem;
@@ -23,8 +24,8 @@
 }
 
 .heading-description-cpns {
-  font-size: 1rem; /* Default desktop size */
-  color: var(--color-gray-dark); /* Abu-abu gelap untuk deskripsi utama */
+  font-size: 1rem;
+  color: var(--color-gray-dark);
   text-align: start;
   font-weight: 400;
   margin-left: auto;

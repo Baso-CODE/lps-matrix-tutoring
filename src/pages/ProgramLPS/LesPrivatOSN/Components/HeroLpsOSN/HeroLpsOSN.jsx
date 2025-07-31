@@ -41,12 +41,15 @@ const HeroLpsOSN = () => {
           </h1>
           <div>
             <p className="child-paragraf-hero__sd_smp_sma">
-              Program <strong>Les Privat OSN, ISO, IMO</strong> dari LPS
-              dirancang khusus untuk siswa yang ingin meraih prestasi luar biasa
-              di ajang Olimpiade Sains Nasional (OSN) serta kompetisi
-              internasional seperti International Science Olympiad (ISO) dan
-              International Mathematical Olympiad (IMO). Program ini tersedia
-              dalam format{" "}
+              Program{" "}
+              <span className="color-d2b04c-description">
+                Les Privat OSN, ISO, IMO
+              </span>{" "}
+              dari LPS Education dirancang khusus untuk siswa yang ingin meraih
+              prestasi luar biasa di ajang Olimpiade Sains Nasional (OSN) serta
+              kompetisi internasional seperti International Science Olympiad
+              (ISO) dan International Mathematical Olympiad (IMO). Program ini
+              tersedia dalam format{" "}
               <span className="color-d2b04c-description">online</span> dan{" "}
               <span className="color-d2b04c-description">offline</span>,
               memberikan fleksibilitas sesuai kebutuhan siswa.
@@ -59,7 +62,7 @@ const HeroLpsOSN = () => {
               berkala oleh
               <span className="color-d2b04c-description">
                 {" "}
-                Tim Akademik LPS{" "}
+                Tim Akademik LPS Education{" "}
               </span>
               , yang selalu siap memberikan rekomendasi terbaik.
             </p>

@@ -52,29 +52,30 @@ const MataPelajaranLPSNew = () => {
   const secondHalfSubjects = shouldSplitIntoColumns ? subjects.slice(half) : [];
 
   return (
-    <div className="needs-indicator-section">
+    <div className="">
       <h3 className="indicator-title">
-        Mata Pelajaran yang ada di LPS Education untuk persiapan UTBK SNBT 2026:
+        Berdasarkan mata pelajaran yang dibutuhkan oleh para siswa, LPS
+        Education siap untuk mendampingi belajar untuk mata pelajaran:
       </h3>
-
-      {/* Wrapper untuk kolom, hanya menerapkan gaya grid jika diperlukan */}
-      <div
-        className={`subject-columns-wrapper ${
-          shouldSplitIntoColumns ? "split-columns" : ""
-        }`}>
-        <ul className="indicator-list">
-          {firstHalfSubjects.map((subject, index) => (
-            <li key={`first-${index}`}>{subject}</li>
-          ))}
-        </ul>
-        {/* Render daftar kedua hanya jika daftar dibagi */}
-        {shouldSplitIntoColumns && (
+      <div className="needs-indicator-section">
+        <div
+          className={`subject-columns-wrapper ${
+            shouldSplitIntoColumns ? "split-columns" : ""
+          }`}>
           <ul className="indicator-list">
-            {secondHalfSubjects.map((subject, index) => (
-              <li key={`second-${index}`}>{subject}</li>
+            {firstHalfSubjects.map((subject, index) => (
+              <li key={`first-${index}`}>{subject}</li>
             ))}
           </ul>
-        )}
+          {/* Render daftar kedua hanya jika daftar dibagi */}
+          {shouldSplitIntoColumns && (
+            <ul className="indicator-list">
+              {secondHalfSubjects.map((subject, index) => (
+                <li key={`second-${index}`}>{subject}</li>
+              ))}
+            </ul>
+          )}
+        </div>
       </div>
     </div>
   );

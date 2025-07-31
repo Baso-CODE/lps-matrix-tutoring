@@ -17,6 +17,7 @@ import MateriUjianSNBT from "./Components/MateriUjianSNBT/MateriUjianSNBT";
 import PerbedaanSBMPTAndSNBT from "./Components/PerbedaanSBMPTAndSNBT/PerbedaanSBMPTAndSNBT";
 import TigaJalurMasukPTN from "./Components/TigaJalurMasukPTN/TigaJalurMasukPTN";
 import "./LesPrivatUTBK.css";
+import { galleryBelajarSiswaUTBK } from "../../../helpers/DummyData/UTBK/utbk_dummyData";
 
 const LesPrivatUTBK = () => {
   const baseUrl = "https://apps.lesprivatmasukptn.com";
@@ -144,7 +145,7 @@ const LesPrivatUTBK = () => {
         <SolusiSuksesMasukPTN />
         <CaraBelajarOfflineAtauOnline />
         <AlumniLpsNew />
-        <GaleryBelajarSiswa />
+        <GaleryBelajarSiswa description={galleryBelajarSiswaUTBK.description} />
         <TestimoniWaSlider />
         <SuccessStory />
         <TestimoniWaSiswa />

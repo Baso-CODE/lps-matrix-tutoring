@@ -17,11 +17,11 @@ const ProgramIntensiOSN = () => {
         Setiap program belajar disesuaikan dengan kebutuhan spesifik siswa,
         berdasarkan bidang olimpiade yang ingin ditekuni dan ujian yang akan
         diambil. Kami mengadakan diskusi mendalam bersama antara orang tua dan
-        Konsultan Akademik LPS untuk memahami minat dan tujuan siswa dalam
-        mengikuti olimpiade. Dengan pemahaman tersebut, kami membantu dalam
-        memilih Paket Belajar yang tepat, baik dalam bentuk sesi reguler maupun
-        intensif, agar siswa dapat mengembangkan pemahaman yang lebih mendalam
-        dan keahlian khusus yang diperlukan dalam kompetisi olimpiade.
+        Konsultan Akademik LPS Education untuk memahami minat dan tujuan siswa
+        dalam mengikuti olimpiade. Dengan pemahaman tersebut, kami membantu
+        dalam memilih Paket Belajar yang tepat, baik dalam bentuk sesi reguler
+        maupun intensif, agar siswa dapat mengembangkan pemahaman yang lebih
+        mendalam dan keahlian khusus yang diperlukan dalam kompetisi olimpiade.
       </p>
     </div>
   );

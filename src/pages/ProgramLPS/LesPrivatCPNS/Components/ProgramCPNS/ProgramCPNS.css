@@ -7,7 +7,7 @@
 }
 
 .main-title-cpns {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   text-align: start;
   margin-bottom: 1rem;
   font-weight: 700;
@@ -64,7 +64,7 @@
 /* Responsif untuk layar tablet */
 @media (max-width: 1024px) {
   .main-title-cpns {
-    font-size: 1.3rem; /* Menyesuaikan ukuran judul utama */
+    font-size: 1.2rem; /* Menyesuaikan ukuran judul utama */
   }
 
   .section-title-cpns {
@@ -79,7 +79,7 @@
 /* Responsif untuk layar kecil */
 @media (max-width: 768px) {
   .main-title-cpns {
-    font-size: 1.2rem; /* Lebih kecil untuk layar kecil */
+    font-size: 1.1rem; /* Lebih kecil untuk layar kecil */
   }
 
   .section-title-cpns {
@@ -97,7 +97,7 @@
 /* Responsif untuk layar sangat kecil */
 @media (max-width: 480px) {
   .main-title-cpns {
-    font-size: 1.2rem; /* Menyesuaikan ukuran pada layar ponsel kecil */
+    font-size: 1.1rem; /* Menyesuaikan ukuran pada layar ponsel kecil */
   }
 
   .section-title-cpns {

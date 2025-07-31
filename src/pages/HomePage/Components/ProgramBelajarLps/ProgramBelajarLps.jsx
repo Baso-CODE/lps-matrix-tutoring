@@ -141,7 +141,7 @@ const ProgramBelajarLps = () => {
 
   return (
     <div className="program-belajar-container">
-      <h1 className="program-belajar-title">Program Belajar LPS</h1>
+      <h1 className="program-belajar-title">Program Belajar LPS Education</h1>
 
       <div className="program-list">
         {programsData.map((program) => (

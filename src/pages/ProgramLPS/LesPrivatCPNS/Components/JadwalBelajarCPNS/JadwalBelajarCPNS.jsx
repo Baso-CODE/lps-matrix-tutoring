@@ -6,7 +6,7 @@ const JadwalBelajarCPNS = () => {
       <h1 className="jadwal-title">Jadwal Belajar Siswa Les Privat CPNS</h1>
       <ul className="jadwal-list">
         <li>Jadwal belajar disesuaikan dengan permintaan siswa/orangtua</li>
-        <li>Durasi belajar per sesi maksimal 2 jam (120 menit)</li>
+        <li>Durasi Belajar per sesi pertemuan adalah 1,5 - 2 jam</li>
         <li>Terdapat Admin Khusus Penjadwalan untuk mengatur jadwal siswa</li>
         <li>
           Frekuensi belajar bisa disesuaikan dengan paket sesi yang diambil

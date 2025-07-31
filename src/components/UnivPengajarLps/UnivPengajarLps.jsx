@@ -19,11 +19,11 @@ const UnivPengajarLps = () => {
         <span className="quote-mark">&rdquo;</span>
       </p> */}
       <p className="centered__pengajarLps">
-        Pengajar LPS adalah dosen, asisten dosen, guru, mahasiswa berprestasi
-        dan alumni UI, UGM, ITB, IPB, STAN, STIS, UNJ, UIN dan berbagai
-        Perguruan Tinggi terbaik lainnya yang telah memiliki pengalaman,
-        diseleksi, dilatih dan diarahkan mengajar sesuai dengan spesialisasi
-        dalam bidang ilmu yang dikuasai.
+        Pengajar LPS Education adalah dosen, asisten dosen, guru, mahasiswa
+        berprestasi dan alumni UI, UGM, ITB, IPB, STAN, STIS, UNJ, UIN dan
+        berbagai Perguruan Tinggi terbaik lainnya yang telah memiliki
+        pengalaman, diseleksi, dilatih dan diarahkan mengajar sesuai dengan
+        spesialisasi dalam bidang ilmu yang dikuasai.
       </p>
       <div className="centered__Univ_pengajarLps">
         <img

@@ -86,14 +86,17 @@ const ProgramSimakUI = () => {
         layanan Les Privat Simak UI untuk S2 dan S3.
       </p>
 
+      <h4 className="program-simak-ui-title-h4">
+        Berikut Layanan Program Privat Khusus Persiapan SIMAK UI yang tersedia:
+      </h4>
       {/* Program List Section */}
       <ul className="program-simak-ui-list">
         <li>Les Privat SIMAK UI S1 dan Vokasi</li>
-        <li>Les Privat Simak UI S1 KKI</li>
-        <li>Les Privat Simak UI S2</li>
+        <li>Les Privat Simak UI S1 KKI (Kelas Khusus Internasional) </li>
+        <li>Les Privat Simak UI S2 (Magister)</li>
         <li>Les Privat Simak UI Profesi</li>
-        <li>Les Privat Simak UI S3</li>
-        <li>Les Privat Simak UI Spesialis</li>
+        <li>Les Privat Simak UI S3 (Doctor)</li>
+        <li>Les Privat Simak UI Spesialis (PPDS)</li>
         <li>Les Privat Simak UI Spesialis 2</li>
       </ul>
 

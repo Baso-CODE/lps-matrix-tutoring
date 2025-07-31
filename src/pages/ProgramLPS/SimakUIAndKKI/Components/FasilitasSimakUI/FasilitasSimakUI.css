@@ -3,6 +3,7 @@
   margin-bottom: 2vh;
   margin-top: 2vh;
   overflow: hidden;
+  padding: 20px 15px;
 }
 
 /* Card Container Styling */
@@ -65,7 +66,18 @@
   text-align: start; /* Pastikan teks rata kiri */
   color: #343131;
   font-size: 1rem;
-  display: list-item; /* Gunakan mode list-item */
+  display: list-item;
+  position: relative;
+}
+.li-no-content {
+  font-weight: 400;
+  border-radius: 8px;
+  margin-bottom: 0.4rem;
+  text-align: start; /* Pastikan teks rata kiri */
+  color: #343131;
+  font-size: 1rem;
+  display: none;
+  list-style: none;
   position: relative;
 }
 
@@ -76,6 +88,24 @@
 
 .fasilitas-list li:last-child {
   border-bottom: none;
+}
+
+.fasilitas-list ul li {
+  padding-left: 1rem;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+}
+
+.fasilitas-list ul li::before {
+  content: "-";
+  color: #343131;
+  font-weight: bold;
+  font-size: 1rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  line-height: inherit;
 }
 
 /* Responsive Styling */

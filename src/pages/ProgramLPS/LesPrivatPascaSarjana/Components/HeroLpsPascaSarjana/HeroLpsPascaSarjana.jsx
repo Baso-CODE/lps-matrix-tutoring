@@ -41,9 +41,9 @@ const HeroLpsPascaSarjana = () => {
       {/* Description Section */}
       <p className="program-simak-ui-description">
         <span className="color-d2b04c-description">LPS Education</span> membuka
-        LPS membuka program Les Privat Simak UI S2 yang ditujukan untuk siswa
-        yang akan mengikuti Seleksi Masuk Universitas Indonesia untuk Program
-        Pasca Sajarna. Berikut merupakan Program Khusus Simak UI
+        LPS Education membuka program Les Privat Simak UI S2 yang ditujukan
+        untuk siswa yang akan mengikuti Seleksi Masuk Universitas Indonesia
+        untuk Program Pasca Sajarna. Berikut merupakan Program Khusus Simak UI
       </p>
       {/* Program List Section */}
       <ul className="program-simak-ui-list">
@@ -70,6 +70,7 @@ const HeroLpsPascaSarjana = () => {
         tutor-tutor yang sangat berpengalaman untuk program Seleksi Masuk
         Universitas Indonesia.
       </p>
+      <br />
       <p className="additional-description">
         Program belajar difokuskan pada pendalaman konsep dasar materi dan
         peningkatan keterampilan penyelesaian soal-soal Simak UI S2 yaitu TPA
@@ -77,6 +78,7 @@ const HeroLpsPascaSarjana = () => {
         {""}
         <span className="color-d2b04c-description">LPS Education.</span>
       </p>
+      <br />
       <p className="additional-description">
         Kami akan memberikan rekomendasi yang dibutuhkan sesuai dengan progress
         belajar siswa. Target Program Super Intensif Simak UI adalah

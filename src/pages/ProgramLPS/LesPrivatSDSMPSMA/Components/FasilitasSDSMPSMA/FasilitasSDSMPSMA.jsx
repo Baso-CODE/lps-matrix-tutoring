@@ -1,6 +1,4 @@
-import "./FasilitasSimakUI.css"; // Import file CSS
-
-const FasilitasSimakUI = () => {
+const FasilitasSDSMPSMA = () => {
   return (
     <div className="fasilitas-simak-ui-container">
       {/* Card Container */}
@@ -18,12 +16,10 @@ const FasilitasSimakUI = () => {
             <li>Mapping kebutuhan belajar siswa</li>
             <li>Kegiatan belajar privat terprogram & intensif</li>
             <li>Pengajar yang berkualitas dari UI & PTN Terbaik</li>
-            <li>Modul Belajar Prediktif</li>
             <li>Bimbingan dan arahan strategi belajar efektif</li>
             <li>Progress report & evaluasi belajar secara berkala</li>
           </ul>
         </div>
-
         {/* Card 2: Target Belajar */}
         <div className="fasilitas-simak-ui-card">
           <img
@@ -35,13 +31,29 @@ const FasilitasSimakUI = () => {
           <h2 className="fasilitas-title">Target Belajar</h2>
           <ul className="fasilitas-list">
             <li>
-              Implementasi efektif model belajar berdasarkan hasil dari mapping
-              kebutuhan siswa
+              Implementasi model belajar yang efektif berdasarkan hasil dari
+              pemetaan kebutuhan dan kemampuan siswa.
             </li>
-            <li>Penguasaan strategi belajar efektif Simak UI</li>
-            <li>Peningkatan kemampuan mengerjakan soal secara cepat & tepat</li>
-            <li>Siswa siap menghadapi Simak UI</li>
-            <li>Siswa sukses masuk UI sesuai dengan jurusan yang diinginkan</li>
+            <li>
+              Penguasaan strategi belajar untuk memaksimalkan pemahaman dan
+              performa akademik.
+            </li>
+            <li>
+              {" "}
+              Peningkatan kemampuan dalam mengerjakan soal-soal secara cepat,
+              tepat, dan terstruktur.
+            </li>
+            <li>
+              Siswa siap menghadapi PR, Ulangan Harian, Ujian Tengah dan Akhir
+              Semester, Ujian Kenaikan Kelas, TKA, dan Ujian masuk jenjang
+              berikutnya.
+            </li>
+            <li>Siswa sukses mencapai target akademik, seperti:</li>
+            <ul>
+              <li>Nilai rapor yang optimal</li>
+              <li>Masuk ke Sekolah Impian</li>
+              <li>Meraih Prestasi Akademik yang memuaskan</li>
+            </ul>
           </ul>
         </div>
 
@@ -78,7 +90,6 @@ const FasilitasSimakUI = () => {
             </li>
           </ul>
         </div>
-
         {/* Card 4: Lokasi Belajar */}
         <div className="fasilitas-simak-ui-card">
           <img
@@ -90,7 +101,7 @@ const FasilitasSimakUI = () => {
           <h2 className="fasilitas-title">Lokasi Belajar</h2>
           <ul className="fasilitas-list">
             <li>
-              <strong>Privat Offline:</strong>
+              <strong> Privat Offline: </strong>
             </li>
             <ul>
               <li>Belajar dengan sistem tatap muka langsung</li>
@@ -110,7 +121,6 @@ const FasilitasSimakUI = () => {
                 Belajar dengan guru privat secara Online menggunakan Zoom,
                 Google Meet atau aplikasi lain,
               </li>
-
               <li>Sistem belajar One on One Tutoring (Privat 1 siswa)</li>
               <li>
                 Area Jangkauan: seluruh wilayah di Indonesia dan Luar Negeri.
@@ -123,4 +133,4 @@ const FasilitasSimakUI = () => {
   );
 };
 
-export default FasilitasSimakUI;
+export default FasilitasSDSMPSMA;

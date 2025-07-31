@@ -51,7 +51,9 @@ const HeadingUTBK = () => {
               secara online. Program ini dirancang untuk meningkatkan
               keterampilan mengerjakan soal dan pemahaman materi esensial,
               didukung evaluasi berkala oleh{" "}
-              <span className="color-d2b04c-description">Tim Akademik LPS</span>{" "}
+              <span className="color-d2b04c-description">
+                Tim Akademik LPS Education
+              </span>{" "}
               yang akan memberikan rekomendasi untuk mendukung kemajuan belajar
               siswa.
             </p>

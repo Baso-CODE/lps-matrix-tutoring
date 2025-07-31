@@ -7,24 +7,24 @@ const ProgramIntensifLpsSDSMPSMA = () => {
         Program Intensif Les Privat SD SMP SMA
       </h2>
       <p className="program-description__sd_smp_sma">
-        Program Intensif terdiri atas : Persiapan Ujian Sekolah{" "}
-        <span className="color-d2b04c-description">
-          SD, US SMP, US SMA, UTS, UAS, UKK, Ulangan Harian dan peningkatan
-          nilai akademik raport
-        </span>{" "}
-        siswa. Program Belajar untuk setiap siswa disesuaikan berdasarkan
-        preferensi kebutuhan siswa. Diksusi bersama antara orangtua dan
-        Konsultan Akademik LPS dibutuhkan untuk menggali kebutuhan belajar siswa
-        dan membantu menentukan Paket Belajar yang sesuai.
+        Program Intensif Privat SD SMP SMA siap mendampingi siswa belajar mata
+        pelajaran Akademik Sekolah, PR dan tugas sekolah, persiapan Ulangan
+        Harian, Ujian Tengah Semester, UAS, Ujian Kenaikan Kelas, Ujian Sekolah,
+        persiapan Tes Kemampuan Akademik (TKA), maupun untuk Ujian Masuk Sekolah
+        Favorit atau Unggulan.
+      </p>
+      <p className="program-description__sd_smp_sma">
+        Program Belajar untuk setiap siswa disesuaikan berdasarkan preferensi
+        kebutuhan siswa. Diskusi bersama antara orangtua dan Konsultan Akademik
+        dan Program dibutuhkan untuk menggali kebutuhan belajar siswa dan
+        membantu menentukan Paket Belajar yang sesuai.
       </p>
       <p className="program-description__sd_smp_sma">
         LPS Education menawarkan fleksibilitas waktu belajar, sehingga siswa
         dapat memilih jadwal belajar yang paling sesuai dengan aktivitas mereka.
-        Setiap sesi dalam program ini dilengkapi dengan bahan ajar yang telah
-        disesuaikan untuk memaksimalkan pemahaman siswa dalam persiapan ujian.
-        Dengan dukungan dari pengajar berpengalaman, siswa diharapkan mampu
-        meningkatkan kemampuan akademik mereka secara optimal dan meraih hasil
-        yang maksimal.
+        Dengan dukungan dari guru les privat berpengalaman dan berkompeten,
+        siswa diharapkan mampu meningkatkan kemampuan akademik mereka secara
+        optimal dan meraih hasil yang maksimal.
       </p>
     </div>
   );

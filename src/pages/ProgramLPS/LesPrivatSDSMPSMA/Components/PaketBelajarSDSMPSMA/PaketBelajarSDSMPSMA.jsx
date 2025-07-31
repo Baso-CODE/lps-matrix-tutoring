@@ -30,14 +30,14 @@ const PaketBelajarSDSMPSMA = () => {
   };
   return (
     <div className="paket-belajar-container__sd_smp_sma">
-      <h2 className="title-paket-induk__osn">Paket Belajar LPS SD SMP SMA</h2>
+      <h2 className="title-paket-induk__osn">Paket Sesi Belajar SD SMP SMA</h2>
       <p className="description-paket-belajar__osn">
         PAKET didasarkan pada jumlah sesi yang akan diambil oleh siswa. Siswa
-        dapat memilih komposisi sesi berdasarkan pada prioritas Ujian Masuk PTN
-        yang akan diambil. Apakah fokus pada Simak UI saja, atau ada kombinasi
-        sesi dengan Ujian lainnya. Program dapat disesuaikan dan Anda dapat
-        berkonsultasi lebih detail untuk mendapatkan arahan dan rekomendasi sesi
-        terbaik.
+        dapat memilih komposisi sesi berdasarkan prioritas kebutuhan belajarnya.
+        Apakah fokus pada Akademik Sekolah, atau ada kombinasi sesi dengan
+        persiapan Ujian seperti TKA, persiapan masuk Sekolah Unggulan atau PTN
+        Impian. Program dapat disesuaikan dan Anda dapat berkonsultasi lebih
+        detail untuk mendapatkan arahan dan rekomendasi sesi terbaik.
       </p>
 
       <div className="paket-cards__sd_smp_sma">

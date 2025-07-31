@@ -17,6 +17,10 @@ import OsnWinnerBenefits from "./Components/OsnWinnerBenefits/OsnWinnerBenefits"
 import PaketBelajarOSN from "./Components/PaketBelajarOSN/PaketBelajarOSN";
 import ProgramIntensiOSN from "./Components/ProgramIntensiOSN/ProgramIntensiOSN";
 import "./LesPrivatOSN.css";
+import {
+  galleryBelajarOSNData,
+  successStoryWaSliderOSN,
+} from "../../../helpers/DummyData/OSN/osn_dummy_data";
 
 const LesPrivatOSN = () => {
   // --- PERUBAHAN UTAMA DI SINI ---
@@ -149,8 +153,14 @@ const LesPrivatOSN = () => {
         <ProfileTutor />
         <UnivPengajarLps />
         <AlumniLpsNew />
-        <GaleryBelajarSiswa />
-        <TestimoniWaSlider />
+        <GaleryBelajarSiswa
+          title={galleryBelajarOSNData.title}
+          description={galleryBelajarOSNData.description}
+        />
+        <TestimoniWaSlider
+          description={successStoryWaSliderOSN.description}
+          title={successStoryWaSliderOSN.title}
+        />
         <SuccessStory />
         <TestimoniWaSiswa />
       </div>

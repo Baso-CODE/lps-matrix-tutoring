@@ -13,10 +13,11 @@ import TestimoniWaSiswa from "../../../HomePage/Components/TestimoniWaSiswa/Test
 import VisiEndMisiLps from "../../../HomePage/Components/VisiEndMisiLps/VisiEndMisiLps";
 import CaraBelajarOfflineAtauOnline from "../Components/CaraBelajarOfflineAtauOnline/CaraBelajarOfflineAtauOnline";
 import HeadingUTBK from "../Components/HeadingUTBK/HeadingUTBK";
-import MataPelajaranLPS from "../Components/MataPelajaranLPS/MataPelajaranLPS";
+import MataPelajaranLPSNew from "../Components/MataPelajaranLPSNew/MataPelajaranLPSNew";
 import MateriUjianSNBT from "../Components/MateriUjianSNBT/MateriUjianSNBT";
 import PerbedaanSBMPTAndSNBT from "../Components/PerbedaanSBMPTAndSNBT/PerbedaanSBMPTAndSNBT";
 import TigaJalurMasukPTN from "../Components/TigaJalurMasukPTN/TigaJalurMasukPTN";
+import { galleryBelajarSiswaUTBK } from "../../../../helpers/DummyData/UTBK/utbk_dummyData";
 
 const LesPrivatUTBKSlug = () => {
   const { slug } = useParams();
@@ -155,8 +156,8 @@ const LesPrivatUTBKSlug = () => {
       </Helmet>
       <div className="container-all">
         <HeadingUTBK />
-        <MataPelajaranLPS />
         <TigaJalurMasukPTN />
+        <MataPelajaranLPSNew />
         <PerbedaanSBMPTAndSNBT />
         <MateriUjianSNBT />
         {/* <InformationProgram programType={"utbk"} /> */}
@@ -168,7 +169,7 @@ const LesPrivatUTBKSlug = () => {
         <SolusiSuksesMasukPTN />
         <CaraBelajarOfflineAtauOnline />
         <AlumniLpsNew />
-        <GaleryBelajarSiswa />
+        <GaleryBelajarSiswa description={galleryBelajarSiswaUTBK.description} />
         <TestimoniWaSlider />
         <SuccessStory />
         <TestimoniWaSiswa />

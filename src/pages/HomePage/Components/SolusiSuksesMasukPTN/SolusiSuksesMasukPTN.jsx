@@ -61,8 +61,8 @@ const SolusiSuksesMasukPTN = () => {
           </div>
           <p className="card-description-solusi-sukses-ptn">
             Kami memastikan melayani sesuai dengan SOP perusahaan. Tim LPS
-            selalu berupaya 100% dalam memberikan layanan. Kami senantiasa
-            responsif dan siap memberikan yang terbaik untuk Anda.
+            Education selalu berupaya 100% dalam memberikan layanan. Kami
+            senantiasa responsif dan siap memberikan yang terbaik untuk Anda.
           </p>
         </div>
       </div>

@@ -41,7 +41,7 @@
 }
 
 .jadwal-title {
-  font-size: 1.7rem;
+  font-size: 1.3rem;
   font-weight: 700;
   color: var(--color-gray-darker);
   text-align: center;
@@ -97,7 +97,7 @@
     padding: 1.5rem;
   }
   .jadwal-title {
-    font-size: 1.4rem; /* Ukuran lebih kecil untuk layar kecil */
+    font-size: 1.2rem; /* Ukuran lebih kecil untuk layar kecil */
   }
   .jadwal-list li {
     font-size: 0.9rem; /* Ukuran list lebih kecil untuk layar kecil */
@@ -115,7 +115,7 @@
     border-radius: 8px; /* Kembalikan ke 8px untuk layar sangat kecil */
   }
   .jadwal-title {
-    font-size: 1.3rem; /* Ukuran lebih kecil untuk layar sangat kecil */
+    font-size: 1.2rem; /* Ukuran lebih kecil untuk layar sangat kecil */
     margin-bottom: 1rem;
   }
   .jadwal-list li {

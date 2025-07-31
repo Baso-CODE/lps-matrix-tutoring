@@ -15,6 +15,10 @@ import ProgramBelajarLps from "../../HomePage/Components/ProgramBelajarLps/Progr
 import SuccessStory from "../../HomePage/Components/SuccessStory/SuccessStory";
 import TestimoniWaSiswa from "../../HomePage/Components/TestimoniWaSiswa/TestimoniWaSiswa";
 import VisiEndMisiLps from "../../HomePage/Components/VisiEndMisiLps/VisiEndMisiLps";
+import {
+  galleryBelajarSiswaSimakUI,
+  successStoryWaSliderSimakUI,
+} from "../../../helpers/DummyData/SIMAK-UI/simak-ui_dummyData";
 
 const SimakUIAndKKI = () => {
   const baseUrl = "https://apps.lesprivatmasukptn.com";
@@ -141,8 +145,13 @@ const SimakUIAndKKI = () => {
         <ProfileTutor />
         <UnivPengajarLps />
         <AlumniLpsNew />
-        <GaleryBelajarSiswa />
-        <TestimoniWaSlider />
+        <GaleryBelajarSiswa
+          description={galleryBelajarSiswaSimakUI.description}
+        />
+        <TestimoniWaSlider
+          title={successStoryWaSliderSimakUI.title}
+          description={successStoryWaSliderSimakUI.description}
+        />
         <SuccessStory />
         <TestimoniWaSiswa />
       </div>

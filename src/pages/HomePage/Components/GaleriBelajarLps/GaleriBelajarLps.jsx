@@ -4,7 +4,7 @@ const GaleriBelajarLps = () => {
   return (
     <div className="alumni-lps-container">
       <div className="alumni-lps-header">
-        <h2>Gallery Belajar Siswa LPS</h2>
+        <h2>Gallery Belajar Siswa LPS Education</h2>
       </div>
       <p className="additional-description-about__us">
         Di LPS Education, kami percaya bahwa proses belajar yang interaktif dan
@@ -13,9 +13,9 @@ const GaleriBelajarLps = () => {
         momen-momen berharga di mana siswa kami terlibat dalam pembelajaran yang
         penuh semangat dan bimbingan intensif dari para tutor terbaik. Dengan
         mentor yang terdiri dari mahasiswa dan alumni UI, ITB, UGM, STAN, STIS,
-        serta kampus ternama lainnya, LPS berkomitmen untuk menjadi mitra
-        belajar yang mendukung siswa mencapai PTN favorit mereka di seluruh
-        Indonesia.
+        serta kampus ternama lainnya, LPS Education berkomitmen untuk menjadi
+        mitra belajar yang mendukung siswa mencapai PTN favorit mereka di
+        seluruh Indonesia.
       </p>
 
       <img

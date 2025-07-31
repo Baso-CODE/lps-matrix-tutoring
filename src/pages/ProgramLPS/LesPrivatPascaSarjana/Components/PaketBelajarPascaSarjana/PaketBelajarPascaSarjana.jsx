@@ -32,14 +32,16 @@ const PaketBelajarPascaSarjana = () => {
 
   return (
     <div className="paket-belajar-container__osn">
-      <h2 className="title-paket-induk__osn">Paket LPS Pasca Sarjana</h2>
+      <h2 className="title-paket-induk__osn">
+        Paket LPS Education Pasca Sarjana
+      </h2>
       <p className="description-paket-belajar__osn">
-        Program LPS Pasca Sarjana dirancang khusus untuk mendukung mahasiswa
-        dalam menjalani studi pasca sarjana dengan lebih optimal. Program ini
-        mencakup berbagai materi dan sesi yang terstruktur untuk membantu
-        mahasiswa mendalami bidang studi pilihan mereka, mengembangkan kemampuan
-        riset, dan mempersiapkan diri menghadapi tantangan akademik dan
-        profesional di tingkat lanjut. Setiap paket menawarkan fleksibilitas
+        Program LPS Education Pasca Sarjana dirancang khusus untuk mendukung
+        mahasiswa dalam menjalani studi pasca sarjana dengan lebih optimal.
+        Program ini mencakup berbagai materi dan sesi yang terstruktur untuk
+        membantu mahasiswa mendalami bidang studi pilihan mereka, mengembangkan
+        kemampuan riset, dan mempersiapkan diri menghadapi tantangan akademik
+        dan profesional di tingkat lanjut. Setiap paket menawarkan fleksibilitas
         sesuai kebutuhan individu, memungkinkan intensitas belajar yang sesuai
         untuk mencapai tujuan akademis yang diinginkan. Dengan dukungan tutor
         berpengalaman dan kurikulum yang komprehensif, mahasiswa akan

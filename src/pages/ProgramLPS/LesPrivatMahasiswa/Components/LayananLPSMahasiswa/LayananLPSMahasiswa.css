@@ -1,40 +1,40 @@
 /* List Styling */
+.container-layanan-lps-mahasiswa {
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+}
 .program-simak-ui-list__mahasiswa {
-  list-style-type: none; /* Hapus marker default karena kita akan menggunakan grid */
-  padding-left: 0; /* Hapus padding kiri default UL, kita akan atur sendiri */
-  margin: 0; /* Pastikan tidak ada margin default */
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
   font-size: 1rem;
   color: #343131;
   font-family: "Nunito", sans-serif;
 
   /* --- GRID LAYOUT UNTUK DESKTOP --- */
   display: grid; /* Aktifkan Grid */
-  grid-template-columns: repeat(2, 1fr); /* 2 kolom dengan lebar yang sama */
-  gap: 10px 20px; /* Jarak antar baris dan antar kolom */
-  /* --- AKHIR GRID LAYOUT UNTUK DESKTOP --- */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 20px;
 
-  /* Pastikan tidak ada max-height di sini yang membatasi desktop/tablet */
-  overflow-y: visible; /* Pastikan tidak ada scroll di desktop/tablet secara default */
+  overflow-y: visible;
 }
 
 .program-simak-ui-list__mahasiswa li {
   padding: 0.1rem 0;
-  position: relative; /* Diperlukan untuk marker kustom */
-  padding-left: 1.5rem; /* Ruang untuk marker kustom */
+  position: relative;
+  padding-left: 1.5rem;
   font-size: 0.9rem;
 }
 
 /* Custom marker styling */
 .program-simak-ui-list__mahasiswa li::before {
-  content: "•"; /* Gunakan pseudo-element untuk marker kustom */
-  color: #1e3e62; /* Ubah warna titik */
-  font-size: 1.2rem; /* Ubah ukuran titik jika perlu */
+  content: "•";
+  color: #1e3e62;
+  font-size: 1.2rem;
   position: absolute;
   left: 0;
-  top: 0.1rem; /* Sesuaikan posisi vertikal marker */
+  top: 0.1rem;
 }
-
-/* --- MEDIA QUERIES UNTUK RESPONSIVE --- */
 
 /* Tablet: Tetap 2 kolom */
 @media (min-width: 768px) and (max-width: 1024px) {

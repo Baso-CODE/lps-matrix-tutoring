@@ -1,5 +1,4 @@
 import { Helmet } from "react-helmet-async";
-import AlumniLpsNew from "../../../components/AlumniLpsNew/AlumniLpsNew";
 import GaleryBelajarSiswa from "../../../components/GaleryBelajarSiswa/GaleryBelajarSiswa";
 import Slider from "../../../components/Slider/Slider";
 import TestimoniWaSlider from "../../../components/TestimoniWaSlider/TestimoniWaSlider";
@@ -19,6 +18,11 @@ import ProgramCPNS from "./Components/ProgramCPNS/ProgramCPNS";
 import ProgramIntensifCPNS from "./Components/ProgramIntensifCPNS/ProgramIntensifCPNS";
 import SuccesStoryCPNS from "./Components/SuccesStoryCPNS/SuccesStoryCPNS";
 import "./LesPrivatCPNS.css";
+import {
+  galleryBelajarCPNSData,
+  testimonialWaCPNSData,
+  testimoniWaSliderData,
+} from "../../../helpers/DummyData/CPNS/cpnsDammyData";
 
 const LesPrivatCPNS = () => {
   const baseUrl = "https://apps.lesprivatmasukptn.com";
@@ -141,12 +145,20 @@ const LesPrivatCPNS = () => {
         <VisiEndMisiLps />
         <ProfileTutor />
         <UnivPengajarLps />
-        <AlumniLpsNew />
-        <GaleryBelajarSiswa />
-        <TestimoniWaSlider />
+        {/* <AlumniLpsNew /> */}
+        <GaleryBelajarSiswa description={galleryBelajarCPNSData.description} />
+        <TestimoniWaSlider
+          description={testimoniWaSliderData.description}
+          title={testimoniWaSliderData.title}
+        />
         <AsalSiswaLPS />
         <SuccesStoryCPNS />
-        <TestimoniWaSiswa />
+        <TestimoniWaSiswa
+          title={testimonialWaCPNSData.title}
+          description={testimonialWaCPNSData.description}
+          imageDesktop={testimonialWaCPNSData.imageDesktop}
+          imageMobile={testimonialWaCPNSData.imageMobile}
+        />
       </div>
     </>
   );

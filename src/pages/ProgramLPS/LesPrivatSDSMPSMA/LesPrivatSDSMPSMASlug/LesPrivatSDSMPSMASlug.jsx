@@ -4,13 +4,14 @@ import AlumniLpsNew from "../../../../components/AlumniLpsNew/AlumniLpsNew";
 import Slider from "../../../../components/Slider/Slider";
 import TestimoniWaSlider from "../../../../components/TestimoniWaSlider/TestimoniWaSlider";
 import UnivPengajarLps from "../../../../components/UnivPengajarLps/UnivPengajarLps";
+import { testimoniWaSliderDataSDSMPSMA } from "../../../../helpers/DummyData/SDSMPSMA/sdsmpsma_dummyData";
 import FiturDanLayanan from "../../../HomePage/Components/FiturDanLayanan/FiturDanLayanan";
 import KeunggulanEndAlasanMemilih from "../../../HomePage/Components/KeunggulanEndAlasanMemilih/KeunggulanEndAlasanMemilih";
 import ProfileTutor from "../../../HomePage/Components/ProfileTutor/ProfileTutor";
 import ProgramBelajarLps from "../../../HomePage/Components/ProgramBelajarLps/ProgramBelajarLps";
 import TestimoniWaSiswa from "../../../HomePage/Components/TestimoniWaSiswa/TestimoniWaSiswa";
 import VisiEndMisiLps from "../../../HomePage/Components/VisiEndMisiLps/VisiEndMisiLps";
-import FasilitasSimakUI from "../../SimakUIAndKKI/Components/FasilitasSimakUI/FasilitasSimakUI";
+import FasilitasSDSMPSMA from "../Components/FasilitasSDSMPSMA/FasilitasSDSMPSMA";
 import HeadingLpsSDSMPSMA from "../Components/HeadingLpsSDSMPSMA/HeadingLpsSDSMPSMA";
 import PaketBelajarSDSMPSMA from "../Components/PaketBelajarSDSMPSMA/PaketBelajarSDSMPSMA";
 import ProgramIntensifLpsSDSMPSMA from "../Components/ProgramIntensifLpsSDSMPSMA/ProgramIntensifLpsSDSMPSMA";
@@ -151,7 +152,7 @@ const LesPrivatSDSMPSMASlug = () => {
 
       <div className="container-all">
         <HeadingLpsSDSMPSMA />
-        <FasilitasSimakUI />
+        <FasilitasSDSMPSMA />
         <ProgramIntensifLpsSDSMPSMA />
         <PaketBelajarSDSMPSMA />
         {/* <PaketSesiSDSMPSMA /> */}
@@ -163,7 +164,10 @@ const LesPrivatSDSMPSMASlug = () => {
         <ProfileTutor />
         <UnivPengajarLps />
         <AlumniLpsNew />
-        <TestimoniWaSlider />
+        <TestimoniWaSlider
+          title={testimoniWaSliderDataSDSMPSMA.title}
+          description={testimoniWaSliderDataSDSMPSMA.description}
+        />
         <TestimoniWaSiswa />
       </div>
     </>

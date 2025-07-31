@@ -38,29 +38,42 @@ const HeadingLpsSDSMPSMA = () => {
           </h1>
           <div>
             <p className="child-paragraf-hero__sd_smp_sma">
-              Program Super Intensif{" "}
-              <span className="color-d2b04c-description">SD SMP SMA </span>
-              merupakan suatu bentuk program belajar privat yang dilaksanakan di
-              rumah siswa dan secara ONLINE. Program ini disusun secara
-              sistematis dan didukung dengan tutor-tutor yang sangat
+              <span className="color-d2b04c-description">
+                Program Intensif Privat SD SMP SMA
+              </span>{" "}
+              merupakan suatu bentuk program belajar fokus Akademik Sekolah SD
+              SMP SMA dan persiapan Ujian dengan sistem belajar{" "}
+              <span className="color-d2b04c-description">
+                Privat Offline (guru datang ke rumah)
+              </span>{" "}
+              dan{" "}
+              <span className="color-d2b04c-description">Privat Online</span>.
+              Program ini disusun secara sistematis dan didukung dengan guru les
               berpengalaman dan berkompeten mengajar siswa SD SMP SMA.
             </p>
             <p className="child-paragraf-hero__sd_smp_sma">
               Program belajar difokuskan pada pendalaman konsep dasar materi dan
-              peningkatan keterampilan penyelesaian mengerjakan soal, baik PR,
-              ulangan maupun Ujian Skolah. Progress belajar akan dimonitoring
-              dan dievaluasi oleh{" "}
+              peningkatan keterampilan penyelesaian mengerjakan soal, baik{" "}
               <span className="color-d2b04c-description">
-                {" "}
-                Tim Akademik LPS
+                PR, Ulangan, Ujian Tengah Semester dan Akhir Semester, Ujian
+                Kenaikan Kelas, Ujian Sekolah
               </span>
-              .
+              , maupun untuk persiapan{" "}
+              <span className="color-d2b04c-description">
+                TKA (Tes Kemampuan Akademik)
+              </span>
+              . Selain itu, kami juga memiliki Program Privat Persiapan Ujian
+              Masuk SD SMP SMA Sekolah Unggulan. Progress belajar siswa akan
+              dimonitoring dan dievaluasi oleh Tim Akademik LPS Education.
             </p>
             <p className="child-paragraf-hero__sd_smp_sma">
               Kami akan memberikan rekomendasi yang dibutuhkan sesuai dengan
-              progress belajar siswa. Target Program Super Intensif adalah
-              mendampingi siswa mencapai prestasi Akademik yang memuaskan dan
-              bisa diterima di SMP terbaiik.
+              progress belajar siswa. Target Program{" "}
+              <span className="color-d2b04c-description">
+                Intensif Privat SD SMP SMA
+              </span>
+              adalah mendampingi siswa mencapai prestasi Akademik yang memuaskan
+              dan bisa diterima di sekolah impian.
             </p>
           </div>
 

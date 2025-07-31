@@ -14,20 +14,28 @@
 
 /* Title Styling */
 .program-simak-ui-title {
-  font-size: 1.7rem;
+  font-size: 1.4rem;
   color: var(--color-gray-darker);
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   font-family: "Nunito", sans-serif;
 }
 /* Title Styling */
 .program-simak-ui-title-h3 {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   color: #333;
   font-weight: 700;
   margin-top: 3rem;
-  margin-bottom: 1rem;
-
+  margin-bottom: 0.5rem;
+  font-family: "Nunito", sans-serif;
+}
+/* Title Styling */
+.program-simak-ui-title-h4 {
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: 700;
+  margin-top: 3rem;
+  margin-bottom: 0.5rem;
   font-family: "Nunito", sans-serif;
 }
 
@@ -43,9 +51,9 @@
 
 /* List Styling */
 .program-simak-ui-list {
-  list-style-type: disc; /* Mengatur titik bulat sebagai marker default */
-  padding-left: 1.5rem; /* Memberikan jarak kiri untuk daftar */
-  font-size: 1rem;
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  font-size: 0.9rem;
   color: #343131;
   margin-left: 1rem;
   font-family: "Nunito", sans-serif;

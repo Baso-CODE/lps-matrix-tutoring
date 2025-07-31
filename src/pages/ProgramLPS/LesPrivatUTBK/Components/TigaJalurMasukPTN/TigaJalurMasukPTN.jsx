@@ -55,6 +55,7 @@ const TigaJalurMasukPTN = () => {
         Gorontalo, Mamuju, Palu, Manado, Kendari, Makasar, Ternate, Ambon,
         Manokwari, Jayapura dan daerah lain.
       </p>
+      <br />
       <p className="additional-description">
         Selain Program{" "}
         <span className="color-d2b04c-description"> Les Privat SNBT</span> dan

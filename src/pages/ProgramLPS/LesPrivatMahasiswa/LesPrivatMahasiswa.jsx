@@ -132,8 +132,8 @@ const LesPrivatMahasiswa = () => {
 
       <div className="container-all">
         <HeroLPSMahasiswa />
-        <Slider />
         <LayananLPSMahasiswa />
+        <Slider />
         <FasilitasSimakUI />
         <PaketLPSMahasiswa />
         <AsalUniversitasMahasiswa />

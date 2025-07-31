@@ -3,7 +3,7 @@ const ApaAjaYgDiPeroleh = () => {
   return (
     <div className="jadwal-container">
       <h2 className="jadwal-title">
-        Kemudahan yang Diperoleh Siswa LPS – Les Privat CPNS:
+        Kemudahan yang Diperoleh Siswa LPS Education – Les Privat CPNS:
       </h2>
       <ul className="jadwal-list">
         <li>Asesmen awal untuk mengukur basic kemampuan siswa</li>
@@ -15,7 +15,7 @@ const ApaAjaYgDiPeroleh = () => {
         </li>
         <li>Tersedia dua program, yaitu Les Privat Offline dan Online</li>
         <li>Modul Bahan Belajar CPNS Prediktif dan Lengkap</li>
-        <li>Tutoring Daily Report</li>
+        {/* <li>Tutoring Daily Report</li> */}
         <li>Laporan Progress Belajar dan Evaluasi Berkala</li>
         <li>Jadwal Belajar Fleksibel</li>
         <li>Komunikasi les dengan admin khusus penjadwalan</li>

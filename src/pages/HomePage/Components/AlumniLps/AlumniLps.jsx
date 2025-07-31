@@ -3,7 +3,7 @@ const AlumniLps = () => {
   return (
     <div className="alumni-lps-container">
       <div className="alumni-lps-header">
-        <h2>Ikuti jejak Alumni LPS</h2>
+        <h2>Ikuti jejak Alumni LPS Education</h2>
       </div>
       <p className="additional-description-about__us">
         LPS Education adalah lembaga les pivat spesialis masuk PTN Favorit yang

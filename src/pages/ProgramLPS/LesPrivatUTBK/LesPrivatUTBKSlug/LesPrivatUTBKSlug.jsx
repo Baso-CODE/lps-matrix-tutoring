@@ -2,29 +2,44 @@ import { Helmet } from "react-helmet-async";
 import { useParams } from "react-router-dom";
 import AlumniLpsNew from "../../../../components/AlumniLpsNew/AlumniLpsNew";
 import GaleryBelajarSiswa from "../../../../components/GaleryBelajarSiswa/GaleryBelajarSiswa";
+import HeadingLPSProgramDynamic from "../../../../components/HeadingLPSProgramDynamic/HeadingLPSProgramDynamic";
 import Slider from "../../../../components/Slider/Slider";
+import SliderTestimoniSiswa from "../../../../components/SliderTestimoniSiswa/SliderTestimoniSiswa";
 import TestimoniWaSlider from "../../../../components/TestimoniWaSlider/TestimoniWaSlider";
 import UnivPengajarLps from "../../../../components/UnivPengajarLps/UnivPengajarLps";
+import VideoKarantina from "../../../../components/VideoKarantina/VideoKarantina";
+import { galleryBelajarSiswaUTBK } from "../../../../helpers/DummyData/UTBK/utbk_dummyData";
 import KeunggulanEndAlasanMemilih from "../../../HomePage/Components/KeunggulanEndAlasanMemilih/KeunggulanEndAlasanMemilih";
 import ProfileTutor from "../../../HomePage/Components/ProfileTutor/ProfileTutor";
 import SolusiSuksesMasukPTN from "../../../HomePage/Components/SolusiSuksesMasukPTN/SolusiSuksesMasukPTN";
 import SuccessStory from "../../../HomePage/Components/SuccessStory/SuccessStory";
 import TestimoniWaSiswa from "../../../HomePage/Components/TestimoniWaSiswa/TestimoniWaSiswa";
 import VisiEndMisiLps from "../../../HomePage/Components/VisiEndMisiLps/VisiEndMisiLps";
+import AllAlumniLpsImage from "../../../ListSiswaLPS/AllAlumniLps/AllAlumniLpsImage";
+import ListSiswaLPS from "../../../ListSiswaLPS/ListSiswaLPS";
 import CaraBelajarOfflineAtauOnline from "../Components/CaraBelajarOfflineAtauOnline/CaraBelajarOfflineAtauOnline";
-import HeadingUTBK from "../Components/HeadingUTBK/HeadingUTBK";
 import MataPelajaranLPSNew from "../Components/MataPelajaranLPSNew/MataPelajaranLPSNew";
 import MateriUjianSNBT from "../Components/MateriUjianSNBT/MateriUjianSNBT";
 import PerbedaanSBMPTAndSNBT from "../Components/PerbedaanSBMPTAndSNBT/PerbedaanSBMPTAndSNBT";
 import TigaJalurMasukPTN from "../Components/TigaJalurMasukPTN/TigaJalurMasukPTN";
-import { galleryBelajarSiswaUTBK } from "../../../../helpers/DummyData/UTBK/utbk_dummyData";
-import AllAlumniLpsImage from "../../../ListSiswaLPS/AllAlumniLps/AllAlumniLpsImage";
-import ListSiswaLPS from "../../../ListSiswaLPS/ListSiswaLPS";
-import SliderTestimoniSiswa from "../../../../components/SliderTestimoniSiswa/SliderTestimoniSiswa";
-import VideoKarantina from "../../../../components/VideoKarantina/VideoKarantina";
 
 const LesPrivatUTBKSlug = () => {
   const { slug } = useParams();
+
+  const utbkImages = [
+    "/images/program/program-LPS-SUPERCAMP-UTBK-SNBT.png",
+    "/images/program/program-LPS-UTBK-SNBT.png",
+  ];
+
+  const utbkDefaultProgramName = "Les Privat Persiapan UTBK SNBT";
+
+  const utbkDescription = [
+    // Paragraf 1
+    `Program <span class='color-highlight'>Super Intensif UTBK SNBT</span> menawarkan pembelajaran privat yang berfokus pada pemahaman mendalam konsep dasar dan latihan intensif untuk kesiapan UTBK. Dengan bimbingan tutor berpengalaman, kami hadir di rumah atau secara online. Program ini dirancang untuk meningkatkan keterampilan mengerjakan soal dan pemahaman materi esensial, didukung evaluasi berkala oleh <span class='color-highlight'>Tim Akademik LPS Education</span> yang akan memberikan rekomendasi untuk mendukung kemajuan belajar siswa.`,
+
+    // Paragraf 2
+    `Tujuan program ini adalah memastikan siswa dapat meraih hasil terbaik dan lolos ke perguruan tinggi impian mereka melalui pendampingan yang fokus dan strategis.`,
+  ];
 
   const formatSlugToTitle = (textSlug) => {
     return textSlug
@@ -242,7 +257,13 @@ const LesPrivatUTBKSlug = () => {
         </script>
       </Helmet>
       <div className="container-all">
-        <HeadingUTBK city={dynamicLocationName} />
+        <HeadingLPSProgramDynamic
+          defaultProgramName={utbkDefaultProgramName}
+          imageUrls={utbkImages}
+          descriptionParagraphs={utbkDescription}
+          programName="Bimbel & Les Privat UTBK SNBT"
+          city={dynamicLocationName}
+        />
         <TigaJalurMasukPTN />
         <MataPelajaranLPSNew />
         <PerbedaanSBMPTAndSNBT />

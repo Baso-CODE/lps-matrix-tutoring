@@ -2,7 +2,9 @@ import { Helmet } from "react-helmet-async";
 import { useParams } from "react-router-dom";
 import AlumniLpsNew from "../../../../components/AlumniLpsNew/AlumniLpsNew";
 import GaleryBelajarSiswa from "../../../../components/GaleryBelajarSiswa/GaleryBelajarSiswa";
+import HeadingLPSProgramDynamic from "../../../../components/HeadingLPSProgramDynamic/HeadingLPSProgramDynamic";
 import Slider from "../../../../components/Slider/Slider";
+import SliderTestimoniSiswa from "../../../../components/SliderTestimoniSiswa/SliderTestimoniSiswa";
 import TestimoniWaSlider from "../../../../components/TestimoniWaSlider/TestimoniWaSlider";
 import UnivPengajarLps from "../../../../components/UnivPengajarLps/UnivPengajarLps";
 import {
@@ -12,17 +14,34 @@ import {
 import ProfileTutor from "../../../HomePage/Components/ProfileTutor/ProfileTutor";
 import TestimoniWaSiswa from "../../../HomePage/Components/TestimoniWaSiswa/TestimoniWaSiswa";
 import VisiEndMisiLps from "../../../HomePage/Components/VisiEndMisiLps/VisiEndMisiLps";
-import AsalUniversitasMahasiswa from "../Components/AsalUniversitasMahasiswa/AsalUniversitasMahasiswa";
-import FasilitasMahasiswa from "../Components/FasilitasMahasiswa/FasilitasMahasiswa";
-import HeroLPSMahasiswa from "../Components/HeroLPSMahasiswa/HeroLPSMahasiswa";
-import LayananLPSMahasiswa from "../Components/LayananLPSMahasiswa/LayananLPSMahasiswa";
-import PaketLPSMahasiswa from "../Components/PaketLPSMahasiswa/PaketLPSMahasiswa";
 import AllAlumniLpsImage from "../../../ListSiswaLPS/AllAlumniLps/AllAlumniLpsImage";
 import ListSiswaLPS from "../../../ListSiswaLPS/ListSiswaLPS";
-import SliderTestimoniSiswa from "../../../../components/SliderTestimoniSiswa/SliderTestimoniSiswa";
+import AsalUniversitasMahasiswa from "../Components/AsalUniversitasMahasiswa/AsalUniversitasMahasiswa";
+import FasilitasMahasiswa from "../Components/FasilitasMahasiswa/FasilitasMahasiswa";
+import LayananLPSMahasiswa from "../Components/LayananLPSMahasiswa/LayananLPSMahasiswa";
+import PaketLPSMahasiswa from "../Components/PaketLPSMahasiswa/PaketLPSMahasiswa";
 
 const LesPrivatMahasiswaSlug = () => {
   const { slug } = useParams();
+
+  const mahasiswaImages = [
+    "/images/program/program-LPS-MAHASISWA.png",
+    "/images/program/program-LPS-KELAS-INTERNASIONAL.png",
+  ];
+  const mahasiswaDefaultProgramName = "Program Les Privat Mahasiswa";
+  const mahasiswaProgramNameDisplay =
+    "Program Les Privat Mahasiswa - Privat Offline dan Online";
+
+  const mahasiswaDescription = [
+    // Paragraf 1
+    `Program Les Privat Mahasiswa adalah suatu bentuk program belajar fokus Intensif belajar Mata Kuliah Jurusan dan Universitas dengan sistem belajar <span class='color-highlight'>Privat Offline (guru datang ke rumah)</span> dan <span class='color-highlight'>Privat Online</span>.`,
+
+    // Paragraf 2
+    `Tim Pengajar Les Privat Mahasiswa adalah alumni - alumni terbaik dari UI, ITB, UGM, Unpad, IPB, STAN, STIS, dan perguruan tinggi lainnya yang berpengalaman dan berkompeten di bidangnya, serta telah melalui serangkaian proses seleksi ketat.`,
+
+    // Paragraf 3
+    `Pendaftar Program Les Privat Mahasiswa juga bisa menuliskan kriteria pengajar yang diinginkan, misalnya harus dari Universitas dan Jurusan yang sama, atau pernah menjadi Asisten Dosen, dan sebagainya.`,
+  ];
 
   const formatSlugToTitle = (textSlug) => {
     return textSlug
@@ -161,7 +180,13 @@ const LesPrivatMahasiswaSlug = () => {
       </Helmet>
 
       <div className="container-all">
-        <HeroLPSMahasiswa city={dynamicLocationName} />
+        <HeadingLPSProgramDynamic
+          city={dynamicLocationName}
+          defaultProgramName={mahasiswaDefaultProgramName}
+          imageUrls={mahasiswaImages}
+          descriptionParagraphs={mahasiswaDescription}
+          programName={mahasiswaProgramNameDisplay}
+        />
         <LayananLPSMahasiswa />
         <Slider />
         <FasilitasMahasiswa />

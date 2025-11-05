@@ -2,8 +2,10 @@ import { Helmet } from "react-helmet-async";
 import { useParams } from "react-router-dom";
 import AlumniLpsNew from "../../../../components/AlumniLpsNew/AlumniLpsNew";
 import Slider from "../../../../components/Slider/Slider";
+import SliderTestimoniSiswa from "../../../../components/SliderTestimoniSiswa/SliderTestimoniSiswa";
 import TestimoniWaSlider from "../../../../components/TestimoniWaSlider/TestimoniWaSlider";
 import UnivPengajarLps from "../../../../components/UnivPengajarLps/UnivPengajarLps";
+import VideoKarantina from "../../../../components/VideoKarantina/VideoKarantina";
 import { testimoniWaSliderDataSDSMPSMA } from "../../../../helpers/DummyData/SDSMPSMA/sdsmpsma_dummyData";
 import FiturDanLayanan from "../../../HomePage/Components/FiturDanLayanan/FiturDanLayanan";
 import KeunggulanEndAlasanMemilih from "../../../HomePage/Components/KeunggulanEndAlasanMemilih/KeunggulanEndAlasanMemilih";
@@ -11,18 +13,29 @@ import ProfileTutor from "../../../HomePage/Components/ProfileTutor/ProfileTutor
 import ProgramBelajarLps from "../../../HomePage/Components/ProgramBelajarLps/ProgramBelajarLps";
 import TestimoniWaSiswa from "../../../HomePage/Components/TestimoniWaSiswa/TestimoniWaSiswa";
 import VisiEndMisiLps from "../../../HomePage/Components/VisiEndMisiLps/VisiEndMisiLps";
-import FasilitasSDSMPSMA from "../Components/FasilitasSDSMPSMA/FasilitasSDSMPSMA";
-import HeadingLpsSDSMPSMA from "../Components/HeadingLpsSDSMPSMA/HeadingLpsSDSMPSMA";
-import PaketBelajarSDSMPSMA from "../Components/PaketBelajarSDSMPSMA/PaketBelajarSDSMPSMA";
-import ProgramIntensifLpsSDSMPSMA from "../Components/ProgramIntensifLpsSDSMPSMA/ProgramIntensifLpsSDSMPSMA";
 import AllAlumniLpsImage from "../../../ListSiswaLPS/AllAlumniLps/AllAlumniLpsImage";
 import ListSiswaLPS from "../../../ListSiswaLPS/ListSiswaLPS";
-import SliderTestimoniSiswa from "../../../../components/SliderTestimoniSiswa/SliderTestimoniSiswa";
-import VideoKarantina from "../../../../components/VideoKarantina/VideoKarantina";
+import FasilitasSDSMPSMA from "../Components/FasilitasSDSMPSMA/FasilitasSDSMPSMA";
+import PaketBelajarSDSMPSMA from "../Components/PaketBelajarSDSMPSMA/PaketBelajarSDSMPSMA";
+import ProgramIntensifLpsSDSMPSMA from "../Components/ProgramIntensifLpsSDSMPSMA/ProgramIntensifLpsSDSMPSMA";
+import HeadingLPSProgramDynamic from "../../../../components/HeadingLPSProgramDynamic/HeadingLPSProgramDynamic";
 
 const LesPrivatSDSMPSMASlug = () => {
   const { slug } = useParams();
 
+  const sdsmpSmaImages = [
+    "/images/program/program-LPS-SD.png",
+    "/images/program/program-LPS-SMP.png",
+    "/images/program/program-LPS-SMA.png",
+  ];
+
+  const sdsmpSmaDescription = [
+    `<span class='color-highlight'>Program Intensif Privat SD SMP SMA</span> adalah program belajar fokus Akademik Sekolah dan persiapan Ujian dengan sistem belajar <span class='color-highlight'>Privat Offline (guru datang ke rumah)</span> dan <span class='color-highlight'>Privat Online</span>. Program ini didukung dengan guru les berpengalaman dan berkompeten mengajar siswa SD SMP SMA.`,
+
+    `Program belajar ini difokuskan pada pendalaman konsep dan peningkatan keterampilan pengerjaan soal untuk <span class='color-highlight'>PR, Ulangan, Ujian Semester, Ujian Kenaikan Kelas, dan Ujian Sekolah</span>, serta persiapan <span class='color-highlight'>TKA (Tes Kemampuan Akademik)</span> dan Ujian Masuk Sekolah Unggulan. Progress belajar siswa akan dimonitoring dan dievaluasi oleh Tim Akademik LPS Education.`,
+
+    `Target utama Program <span class='color-highlight'>Intensif Privat SD SMP SMA</span> adalah mendampingi siswa mencapai prestasi Akademik yang memuaskan dan bisa diterima di sekolah impian. Kami memberikan rekomendasi yang dibutuhkan sesuai dengan progres belajar siswa.`,
+  ];
   const formatSlugToTitle = (textSlug) => {
     return textSlug
       ? textSlug
@@ -155,7 +168,13 @@ const LesPrivatSDSMPSMASlug = () => {
       </Helmet>
 
       <div className="container-all">
-        <HeadingLpsSDSMPSMA city={dynamicLocationName} />
+        <HeadingLPSProgramDynamic
+          defaultProgramName="Les Privat SD SMP SMA"
+          imageUrls={sdsmpSmaImages}
+          descriptionParagraphs={sdsmpSmaDescription}
+          programName="Les Privat SD SMP SMA"
+          city={dynamicLocationName}
+        />
         <FasilitasSDSMPSMA />
         <ProgramIntensifLpsSDSMPSMA />
         <PaketBelajarSDSMPSMA />

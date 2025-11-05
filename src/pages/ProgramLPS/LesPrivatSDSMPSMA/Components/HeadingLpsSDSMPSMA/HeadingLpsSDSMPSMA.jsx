@@ -30,10 +30,6 @@ const HeadingLpsSDSMPSMA = ({ city: cityProp }) => {
     };
     fetchJumbotron();
   }, []);
-  // const handleCTAClick = (e) => {
-  //   const targetUrl = contactData?.link_cta || "https://wa.me/6285887562039";
-  //   handleCTAClickLogic(targetUrl, e);
-  // };
 
   const altText = `Les Privat SD, SMP, dan SMA bersama LPS Education${
     city ? " di " + city : ""

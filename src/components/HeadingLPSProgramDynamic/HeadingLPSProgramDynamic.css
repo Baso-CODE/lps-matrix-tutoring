@@ -1,0 +1,158 @@
+.container-halaman-program {
+  margin-top: 4vh;
+  display: flex;
+  overflow: hidden;
+  padding-left: 2px;
+  padding-right: 2px;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-hero-home-program {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  height: auto;
+}
+
+/* SLIDER IMAGE STYLES */
+.image-slider-container {
+  width: 100%;
+
+  margin-bottom: 20px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.program-hero-image {
+  width: 100%;
+  height: auto;
+
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.program-image-slider .slick-list,
+.program-image-slider .slick-track {
+  height: 100%; /* Pastikan slider mengambil tinggi penuh */
+}
+
+.isi-content-hero-program {
+  text-align: center;
+  width: 100%;
+}
+
+.title-halaman-hero-program {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-align: start;
+  text-transform: uppercase;
+  line-height: 1.2;
+  color: var(--color-gray-darker);
+  font-family: "Poppins", sans-serif;
+}
+
+.child-paragraf-hero-program {
+  font-size: 1rem;
+  color: #343131;
+  line-height: 1.6;
+  font-weight: 400;
+  text-align: start;
+  font-family: "Nunito", sans-serif;
+}
+
+.btn-learn-more-program {
+  padding: 12px 24px;
+  background-color: var(--color-orange-default);
+  color: #fcfaee;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: "Nunito", sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-learn-more-program:hover {
+  background-color: #69733f;
+}
+
+/* --- Responsif --- */
+
+/* Tablet and below: Perubahan tata letak/font */
+@media (max-width: 1024px) {
+  .title-halaman-hero-program {
+    font-size: 1.6rem;
+  }
+  .child-paragraf-hero-program {
+    font-size: 0.95rem;
+  }
+  .image-slider-container {
+    max-height: 350px;
+  }
+  .program-hero-image {
+    max-height: 350px;
+  }
+  .btn-learn-more-program {
+    width: 70%;
+    margin-left: 0;
+  }
+}
+
+/* Tablet kecil/Ponsel besar */
+@media (max-width: 768px) {
+  .title-halaman-hero-program {
+    font-size: 1.4rem;
+  }
+  .child-paragraf-hero-program {
+    font-size: 0.9rem;
+  }
+  .image-slider-container {
+    max-height: 300px;
+    border-radius: 10px;
+  }
+  .program-hero-image {
+    max-height: 300px;
+    border-radius: 10px;
+  }
+  .btn-learn-more-program {
+    width: 80%;
+  }
+}
+
+/* Ponsel */
+@media (max-width: 480px) {
+  .container-halaman-program {
+    margin-top: 8vh;
+  }
+  .title-halaman-hero-program {
+    font-size: 1.2rem;
+  }
+  .child-paragraf-hero-program {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  .image-slider-container {
+    max-height: 250px;
+  }
+  .program-hero-image {
+    max-height: 250px;
+  }
+  .btn-learn-more-program {
+    width: 100%;
+  }
+}
+
+/* Perilaku tombol di Desktop */
+@media (min-width: 1024px) {
+  .btn-learn-more-program {
+    visibility: hidden;
+  }
+}

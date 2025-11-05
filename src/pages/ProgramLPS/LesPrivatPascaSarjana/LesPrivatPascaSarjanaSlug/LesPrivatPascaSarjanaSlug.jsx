@@ -1,7 +1,9 @@
 import { Helmet } from "react-helmet-async";
 import { useParams } from "react-router-dom";
 import GaleryBelajarSiswa from "../../../../components/GaleryBelajarSiswa/GaleryBelajarSiswa";
+import HeadingLPSProgramDynamic from "../../../../components/HeadingLPSProgramDynamic/HeadingLPSProgramDynamic";
 import Slider from "../../../../components/Slider/Slider";
+import SliderTestimoniSiswa from "../../../../components/SliderTestimoniSiswa/SliderTestimoniSiswa";
 import TestimoniWaSlider from "../../../../components/TestimoniWaSlider/TestimoniWaSlider";
 import UnivPengajarLps from "../../../../components/UnivPengajarLps/UnivPengajarLps";
 import { testimoniWaSliderPascaSarjanaData } from "../../../../helpers/DummyData/Pascasarjana/pascasarjanaDammyData";
@@ -9,15 +11,29 @@ import ProfileTutor from "../../../HomePage/Components/ProfileTutor/ProfileTutor
 import SuccessStory from "../../../HomePage/Components/SuccessStory/SuccessStory";
 import TestimoniWaSiswa from "../../../HomePage/Components/TestimoniWaSiswa/TestimoniWaSiswa";
 import VisiEndMisiLps from "../../../HomePage/Components/VisiEndMisiLps/VisiEndMisiLps";
-import FasilitasPascaSarjana from "../Components/FasilitasPascaSarjana";
-import HeroLpsPascaSarjana from "../Components/HeroLpsPascaSarjana/HeroLpsPascaSarjana";
-import PaketBelajarPascaSarjana from "../Components/PaketBelajarPascaSarjana/PaketBelajarPascaSarjana";
-import ProgramIntensiPascaSarjana from "../Components/ProgramIntensiPascaSarjana/ProgramIntensiPascaSarjana";
 import AllAlumniLpsImage from "../../../ListSiswaLPS/AllAlumniLps/AllAlumniLpsImage";
 import ListSiswaLPS from "../../../ListSiswaLPS/ListSiswaLPS";
-import SliderTestimoniSiswa from "../../../../components/SliderTestimoniSiswa/SliderTestimoniSiswa";
+import FasilitasPascaSarjana from "../Components/FasilitasPascaSarjana";
+import PaketBelajarPascaSarjana from "../Components/PaketBelajarPascaSarjana/PaketBelajarPascaSarjana";
+import ProgramIntensiPascaSarjana from "../Components/ProgramIntensiPascaSarjana/ProgramIntensiPascaSarjana";
 const LesPrivatPascaSarjanaSlug = () => {
   const { slug } = useParams();
+
+  const pascaSarjanaImages = [
+    "/images/program/program-LPS-UJIAN-MASUK-PASCASARJANA-S2-S3.png",
+  ];
+
+  const pascaSarjanaDefaultProgramName =
+    "Les Privat Ujian Masuk Pascasarjana (S2/S3)";
+  const pascaSarjanaProgramNameDisplay =
+    "Super Intensif Privat Ujian Masuk Simak UI S2/S3 & Pascasarjana PTN Favorit";
+
+  const pascaSarjanaDescription = [
+    `Menghadapi ujian masuk Pascasarjana seperti <span class='color-highlight'>SIMAK UI S2/S3</span> dan seleksi Pascasarjana universitas lainnya membutuhkan strategi belajar yang tepat, pemahaman materi yang mendalam, serta pendampingan belajar secara intensif.`,
+    `<span class='color-highlight'>LPS Education</span> memiliki Layanan Program Les Privat Persiapan Ujian Masuk Pascasarjana S2/S3 untuk berbagai Perguruan Tinggi di antaranya UI, UGM, ITB, Unpad, UNJ, Unair, dan lainnya. Kami hadir sebagai pendamping belajar Anda agar sukses meraih impian melanjutkan studi ke jenjang yang lebih tinggi.`,
+    `Layanan kami mencakup Les Privat Simak UI S2/S3/Profesi/Spesialis, Les Privat SMUP Unpad Pascasarjana, Les Privat SM ITB Pascasarjana, Les Privat UM UGM Pascasarjana, dan ujian masuk Pascasarjana PTN lainnya.`,
+    `Program belajar difokuskan pada pendalaman konsep dasar materi dan peningkatan keterampilan penyelesaian soal-soal Ujian Masuk Pascasarjana S2/S3, yaitu <span class='color-highlight'>TPA dan Bahasa Inggris</span>. Kami menjamin jadwal belajar fleksibel dan tutor yang kompeten.`,
+  ];
 
   const formatSlugToTitle = (textSlug) => {
     return textSlug
@@ -153,16 +169,20 @@ const LesPrivatPascaSarjanaSlug = () => {
         </script>
       </Helmet>
       <div className="container-all">
-        <HeroLpsPascaSarjana city={dynamicLocationName} />
+        <HeadingLPSProgramDynamic
+          city={dynamicLocationName}
+          defaultProgramName={pascaSarjanaDefaultProgramName}
+          imageUrls={pascaSarjanaImages}
+          descriptionParagraphs={pascaSarjanaDescription}
+          programName={pascaSarjanaProgramNameDisplay}
+        />
         <Slider />
         <FasilitasPascaSarjana />
         <PaketBelajarPascaSarjana />
         <ProgramIntensiPascaSarjana />
-        {/* <InformationProgram programType={"lesprivat-pascasarjana"} /> */}
         <VisiEndMisiLps />
         <ProfileTutor />
         <UnivPengajarLps />
-        {/* <AlumniLpsNew /> */}
         <GaleryBelajarSiswa />
         <TestimoniWaSlider
           cityProp={dynamicLocationName}

@@ -117,45 +117,128 @@ const LesPrivatUTBKSlug = () => {
         <meta name="twitter:description" content={twitterDescription} />
         <meta name="twitter:image" content={ogImage} />
 
-        {/* Schema Markup (JSON-LD) - BreadcrumbList */}
         <script type="application/ld+json">
           {`
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "@id": "${canonicalUrl}#breadcrumb",
+          "itemListElement": [
             {
-              "@context": "https://schema.org",
-              "@graph": [
-                {
-                  "@type": "BreadcrumbList",
-                  "@id": "${canonicalUrl}#breadcrumb",
-                  "itemListElement": [
-                    {
-                      "@type": "ListItem",
-                      "position": "1",
-                      "item": {
-                        "@id": "${baseUrl}",
-                        "name": "Home"
-                      }
-                    },
-                    {
-                      "@type": "ListItem",
-                      "position": "2",
-                      "item": {
-                        "@id": "${baseUrl}/les-privat-utbk-terbaik",
-                        "name": "Bimbel & Les Privat UTBK SNBT"
-                      }
-                    },
-                    {
-                      "@type": "ListItem",
-                      "position": "3",
-                      "item": {
-                        "@id": "${canonicalUrl}",
-                        "name": "${pageTitle.replace(/<\/?[^>]+(>|$)/g, "")}"
-                      }
-                    }
-                  ]
-                }
-              ]
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@id": "${baseUrl}",
+                "name": "Home"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@id": "${baseUrl}/les-privat-utbk-terbaik", 
+                "name": "Bimbel & Les Privat UTBK SNBT" 
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "item": {
+                "@id": "${canonicalUrl}",
+                "name": "${pageTitle.replace(/<\/?[^>]+(>|$)/g, "")}" 
+              }
             }
-          `}
+          ]
+        },
+
+        {
+          "@type": "EducationalOrganization",
+          "@id": "${canonicalUrl}#organization",
+          "name": "LPS Education",
+          "description": "LPS Education menyediakan Bimbel & Les Privat UTBK SNBT terbaik di **${dynamicLocationName}** untuk memastikan siswa lolos PTN favorit. Kami fokus pada materi TPS, penalaran, dan literasi.",
+          "url": "${canonicalUrl}",
+          "areaServed": "${dynamicLocationName}", 
+          "sameAs": [
+            "${baseUrl}",
+            "https://www.instagram.com/lps.privatsbmptn/, 
+            "https://www.tiktok.com/@lesprivatsbmptn.com?_r=1&_t=ZS-918OcGnyuIS" 
+          ],
+          "brand": {
+            "@type": "Brand",
+            "name": "LPS Education",
+            "logo": "${baseUrl}/images/LOGO2.webp"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+62-858-8756-2039", 
+            "contactType": "Customer Service",
+            "areaServed": "ID",
+            "availableLanguage": ["Indonesian"]
+          },
+          
+          "keywords": "${articleTags.join(", ")}"
+        },
+
+        {
+         
+          "@type": "WebPage",
+          "@id": "${canonicalUrl}#webpage",
+          "url": "${canonicalUrl}",
+          "name": "${pageTitle.replace(/<\/?[^>]+(>|$)/g, "")}",
+          "inLanguage": "id-ID",
+          "description": "${descriptionContent}",
+          "isPartOf": { "@id": "${baseUrl}" },
+          "about": { "@id": "${canonicalUrl}#organization" },
+          "mainEntity": {
+            "@type": "Service",
+            "name": "Bimbel & Les Privat UTBK SNBT di ${dynamicLocationName}",
+            "provider": { "@id": "${canonicalUrl}#organization" },
+            "serviceType": "Bimbingan Belajar Ujian Masuk Perguruan Tinggi Negeri",
+            "areaServed": "${dynamicLocationName}",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "IDR",
+              "availability": "https://schema.org/InStock",
+              "url": "${canonicalUrl}"
+            }
+          }
+        },
+
+        {
+          "@type": "FAQPage",
+          "@id": "${canonicalUrl}#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Apa perbedaan Bimbel dan Les Privat UTBK SNBT yang ditawarkan LPS Education di ${dynamicLocationName}?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Bimbel adalah bimbingan dalam kelas kecil (kelompok), sedangkan Les Privat adalah bimbingan 1-on-1 yang lebih personal, fleksibel, dan fokus pada kelemahan spesifik siswa. Keduanya dijamin dibimbing oleh guru berpengalaman."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Apakah LPS Education menjamin kelulusan siswa ke PTN Favorit?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "LPS Education berkomitmen memberikan program terbaik, materi terstruktur, dan bimbingan tutor ahli. Kami memberikan garansi pengulangan program untuk beberapa skema, namun kelulusan sangat bergantung pada usaha dan kedisiplinan siswa."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Bagaimana LPS Education menyusun jadwal belajar UTBK SNBT?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Jadwal disusun secara fleksibel dan personal. Kami akan menyesuaikan ketersediaan waktu siswa dan tutor, memastikan sesi belajar tidak mengganggu aktivitas sekolah atau kegiatan lainnya."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  `}
         </script>
       </Helmet>
       <div className="container-all">

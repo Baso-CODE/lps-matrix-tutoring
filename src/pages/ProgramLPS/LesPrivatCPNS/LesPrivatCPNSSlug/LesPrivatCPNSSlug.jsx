@@ -94,7 +94,6 @@ const LesPrivatCPNSSlug = () => {
           name="robots"
           content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"
         />
-
         {/* Open Graph Meta Tags (for social media sharing) */}
         <meta property="og:locale" content="id_ID" />
         <meta property="og:type" content="article" />
@@ -112,52 +111,132 @@ const LesPrivatCPNSSlug = () => {
           <meta key={tag} property="og:article:tag" content={tag} />
         ))}
         <meta property="article:section" content="CPNS" />
-
         {/* Twitter Card Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={twitterTitle} />
         <meta name="twitter:description" content={twitterDescription} />
         <meta name="twitter:image" content={ogImage} />
 
-        {/* Schema Markup (JSON-LD) - BreadcrumbList */}
         <script type="application/ld+json">
           {`
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "@id": "${canonicalUrl}#breadcrumb",
+          "itemListElement": [
             {
-              "@context": "https://schema.org",
-              "@graph": [
-                {
-                  "@type": "BreadcrumbList",
-                  "@id": "${canonicalUrl}#breadcrumb",
-                  "itemListElement": [
-                    {
-                      "@type": "ListItem",
-                      "position": "1",
-                      "item": {
-                        "@id": "${baseUrl}",
-                        "name": "Home"
-                      }
-                    },
-                    {
-                      "@type": "ListItem",
-                      "position": "2",
-                      "item": {
-                        "@id": "${baseUrl}/bimbel-persiapan-cpns-terbaik", 
-                        "name": "Bimbel & Les Privat CPNS"
-                      }
-                    },
-                    {
-                      "@type": "ListItem",
-                      "position": "3",
-                      "item": {
-                        "@id": "${canonicalUrl}",
-                        "name": "${pageTitle.replace(/<\/?[^>]+(>|$)/g, "")}"
-                      }
-                    }
-                  ]
-                }
-              ]
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@id": "${baseUrl}",
+                "name": "Home"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@id": "${baseUrl}/bimbel-persiapan-cpns-terbaik", 
+                "name": "Bimbel & Les Privat CPNS" 
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "item": {
+                "@id": "${canonicalUrl}",
+                "name": "${pageTitle.replace(/<\/?[^>]+(>|$)/g, "")}" 
+              }
             }
-          `}
+          ]
+        },
+
+        {
+          "@type": "EducationalOrganization",
+          "@id": "${canonicalUrl}#organization",
+          "name": "LPS Education",
+          "description": "LPS Education menyediakan Bimbel & Les Privat CPNS terbaik di **${dynamicLocationName}** dengan fokus pada materi TWK, TIU, dan TKP. Solusi komprehensif untuk lolos seleksi CASN/CPNS.",
+          "url": "${canonicalUrl}",
+          "areaServed": "${dynamicLocationName}", 
+          "sameAs": [
+            "${baseUrl}",
+            "https://www.instagram.com/lps.privatsbmptn/", 
+            "https://www.tiktok.com/@lesprivatsbmptn.com?_r=1&_t=ZS-918OcGnyuIS" 
+          ],
+          "brand": {
+            "@type": "Brand",
+            "name": "LPS Education",
+            "logo": "${baseUrl}/images/LOGO2.webp" 
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+62-858-8756-2039",  
+            "contactType": "Customer Service",
+            "areaServed": "ID",
+            "availableLanguage": ["Indonesian"]
+          },
+          "keywords": "${articleTags.join(", ")}"
+        },
+
+        {
+          "@type": "WebPage",
+          "@id": "${canonicalUrl}#webpage",
+          "url": "${canonicalUrl}",
+          "name": "${pageTitle.replace(/<\/?[^>]+(>|$)/g, "")}",
+          "inLanguage": "id-ID",
+          "description": "${descriptionContent}",
+          "isPartOf": { "@id": "${baseUrl}" },
+          "about": { "@id": "${canonicalUrl}#organization" },
+          "mainEntity": {
+            "@type": "Service",
+            "name": "Bimbel & Les Privat Persiapan CPNS (TWK TIU TKP) di ${dynamicLocationName}",
+            "provider": { "@id": "${canonicalUrl}#organization" },
+            "serviceType": "Bimbingan Belajar Ujian Seleksi CPNS / CASN",
+            "areaServed": "${dynamicLocationName}",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "IDR",
+              "availability": "https://schema.org/InStock",
+              "url": "${canonicalUrl}"
+            }
+          }
+        },
+
+        {
+          "@type": "FAQPage",
+          "@id": "${canonicalUrl}#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Materi apa saja yang diajarkan dalam Bimbel CPNS LPS Education di ${dynamicLocationName}?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Program kami fokus pada Tes Karakteristik Pribadi (TKP), Tes Intelegensi Umum (TIU), dan Tes Wawasan Kebangsaan (TWK) yang merupakan materi inti dalam Seleksi Kompetensi Dasar (SKD) CPNS."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Apakah Les Privat CPNS LPS Education menggunakan sistem CAT?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Ya, kami menggunakan simulasi dan Try Out berbasis Computer Assisted Test (CAT) untuk membiasakan siswa dengan format ujian CPNS yang sebenarnya, melatih kecepatan dan akurasi mereka."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Berapa lama idealnya waktu persiapan CPNS?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Persiapan yang ideal adalah minimal 3 hingga 6 bulan sebelum tanggal ujian. Ini memberikan waktu yang cukup untuk menguasai semua materi TWK, TIU, dan TKP, serta melakukan Try Out secara berkala."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  `}
         </script>
       </Helmet>
       <div className="container-all">

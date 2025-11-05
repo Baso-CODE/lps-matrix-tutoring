@@ -14,6 +14,6 @@ export const testimonialWaCPNSData = {
   title: "Testimonials CPNS LPS Education",
   description:
     "Prioritas utama LPS Education adalah memastikan kepuasan dan keberhasilan setiap siswa dalam meraih kelulusan Ujian SKD CPNS. Untuk membuktikannya, kami hadirkan testimoni-testimoni langsung via WhatsApp. Di sini, Kamu akan menemukan bukti nyata bagaimana metode belajar kami yang teruji efektif, didukung oleh bimbingan intensif dari tutor-tutor berkualitas, telah mengubah perjalanan para calon ASN. Bersama Tim Pengajar terbaik dari UI, ITB, UGM, Unpad, STAN, STIS, serta kampus ternama lainnya, kami berdedikasi membimbing para siswa hingga berhasil lulus Ujian SKD CPNS.",
-  imageDesktop: "/images/TESTIMONI.webp",
-  imageMobile: "/images/TESTIMONI-HP.webp",
+  imageDesktop: "/images/TESTIMONI-CPNS.webp",
+  imageMobile: "/images/TESTIMONI-CPNS.webp",
 };

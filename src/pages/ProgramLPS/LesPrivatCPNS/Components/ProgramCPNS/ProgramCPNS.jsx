@@ -13,7 +13,7 @@ const ProgramCPNS = () => {
       </div>
       <h1 className="main-title-cpns">Program Les Privat CPNS</h1>
       <div className="program-section">
-        <h2 className="section-title-cpns">
+        <h2 className="section-title-cpns-v2">
           1. Les Privat Offline (Guru Les Privat Datang ke Rumah Siswa)
         </h2>
         <p className="section-description">
@@ -26,8 +26,9 @@ const ProgramCPNS = () => {
           mengajar.
         </p>
       </div>
+      <br />
       <div className="program-section">
-        <h2 className="section-title-cpns">
+        <h2 className="section-title-cpns-v2">
           2. Les Privat Online (Guru dan Siswa Belajar Bersama menggunakan
           Aplikasi Zoom atau Google Meet)
         </h2>

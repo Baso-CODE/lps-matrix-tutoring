@@ -2,23 +2,23 @@
 .alumni-lps-container {
   margin-top: 10vh;
   margin-bottom: 10vh;
-  max-width: 1200px;
   margin-left: 0;
   overflow: hidden;
   margin-right: 0;
 }
 
 .alumni-lps-header h2 {
-  text-align: start;
-  font-family: "Nunito", sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
   font-weight: 700;
-  color: var(--color-gray-darker); 
+  color: var(--color-gray-darker);
   font-size: 1.4rem;
   margin-bottom: 15px;
 }
 
 .color-d2b04c-description {
-  color: var(--color-orange-default); 
+  color: var(--color-orange-default);
   font-weight: bold;
 }
 
@@ -128,7 +128,7 @@
 /* Mobile Layout (1 column) */
 @media (max-width: 767px) {
   .alumni-lps-header h2 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     text-align: center;
   }
 

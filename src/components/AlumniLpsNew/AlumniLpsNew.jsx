@@ -1,14 +1,25 @@
 import { useEffect, useState } from "react";
 import "./AlumniLpsNew.css";
 import { getAllAlumniLps } from "../../api/alumniLPS/getAllAlumniLPS"; // Pastikan path benar
+import { useLocation } from "react-router-dom";
+import PropTypes from "prop-types";
 
-const AlumniLpsNew = () => {
+const AlumniLpsNew = ({ city: cityProp }) => {
   const [alumniLps, setDataAlumniLps] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [paginationInfo, setPaginationInfo] = useState({}); // Untuk menyimpan totalPages, nextPage, etc.
   const [loading, setLoading] = useState(true); // State loading
   const [error, setError] = useState(null); // State error
   const itemsPerPage = 6;
+
+  const location = useLocation();
+  const path = location.pathname;
+
+  let city = cityProp || "";
+  if (!city && path.includes("/di/")) {
+    city = path.split("/di/")[1];
+    city = city.charAt(0).toUpperCase() + city.slice(1);
+  }
 
   const fetchDataAlumniLps = async (page) => {
     setLoading(true);
@@ -87,14 +98,23 @@ const AlumniLpsNew = () => {
       {!loading && !error && alumniLps.length > 0 ? (
         <>
           <div className="alumnilPS-images-grid">
-            {alumniLps.map((alumni) => (
-              <img
-                key={alumni.id}
-                loading="lazy"
-                src={alumni.link_image}
-                alt={`Alumni ${alumni.name} jurusan ${alumni.jurusan}`}
-              />
-            ))}
+            {alumniLps.map((alumni) => {
+              const altText = `Alumni ${alumni.name} jurusan ${
+                alumni.jurusan
+              } yang berhasil bersama program Bimbel & Les Privat UTBK, SIMAK UI, UTUL UGM, TKA, CPNS, Pascasarjana, Mahasiswa, dan OSN${
+                city ? " di " + city : ""
+              } bersama LPS Education. Dibimbing oleh Guru Privat UI, ITB, UGM, dan Kedokteran PTN Favorit.`;
+
+              return (
+                <img
+                  key={alumni.id}
+                  loading="lazy"
+                  src={alumni.link_image}
+                  alt={altText}
+                  className="alumni-single-image"
+                />
+              );
+            })}
           </div>
 
           {/* Pagination Controls */}
@@ -104,14 +124,14 @@ const AlumniLpsNew = () => {
                 onClick={() => goToPage(paginationInfo.prevPage)}
                 disabled={!paginationInfo.prevPage}
                 className="pagination-button">
-                <img src="/images/left.gif" alt="forward button" />
+                <img src="/images/left.webp" alt="forward button" />
               </button>
               {renderPageNumbers()}
               <button
                 onClick={() => goToPage(paginationInfo.nextPage)}
                 disabled={!paginationInfo.nextPage}
                 className="pagination-button">
-                <img src="/images/right.gif" alt="next button" />
+                <img src="/images/right.webp" alt="next button" />
               </button>
             </div>
           )}
@@ -126,6 +146,9 @@ const AlumniLpsNew = () => {
       )}
     </div>
   );
+};
+AlumniLpsNew.propTypes = {
+  city: PropTypes.string,
 };
 
 export default AlumniLpsNew;

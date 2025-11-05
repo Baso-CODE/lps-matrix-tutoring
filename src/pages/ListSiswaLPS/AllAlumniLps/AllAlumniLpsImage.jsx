@@ -1,6 +1,18 @@
+import { useLocation } from "react-router-dom";
 import "./AllAlumniLpsImage.css";
+import PropTypes from "prop-types";
 
-const AllAlumniLpsImage = () => {
+const AllAlumniLpsImage = ({ city: cityProp }) => {
+  const location = useLocation();
+  const path = location.pathname;
+
+  // Tentukan city
+  let city = cityProp || "";
+  if (!city && path.includes("/di/")) {
+    city = path.split("/di/")[1];
+    city = city.charAt(0).toUpperCase() + city.slice(1);
+  }
+
   const dataAlumni = [
     {
       image: "/images/alumni-lps/all-alumni-lps-education-1.webp",
@@ -18,27 +30,13 @@ const AllAlumniLpsImage = () => {
       image: "/images/alumni-lps/all-alumni-lps-education-4.webp",
       id: 4,
     },
-    // Anda bisa menambahkan lebih banyak gambar di sini
-    // {
-    //   image: "/images/alumni-lps/all-alumni-lps-education-5.webp",
-    //   id: 5,
-    // },
-    // {
-    //   image: "/images/alumni-lps/all-alumni-lps-education-6.webp",
-    //   id: 6,
-    // },
   ];
 
   return (
     <section className="alumni-image-section">
-      {" "}
-      {/* Menggunakan section sebagai kontainer utama */}
       <div className="alumni-image-container">
-        {" "}
-        {/* Kontainer untuk konten */}
         <div className="alumni-image-header">
           <h2 className="alumni-image-title">Galeri Alumni LPS Education</h2>{" "}
-          {/* Judul yang lebih deskriptif */}
           <p className="alumni-image-subtitle">
             Lihatlah bukti nyata keberhasilan siswa-siswi kami yang telah meraih
             impian mereka di PTN favorit.
@@ -46,22 +44,30 @@ const AllAlumniLpsImage = () => {
         </div>
         {/* Image Gallery Grid */}
         <div className="alumni-image-grid">
-          {dataAlumni.map((alumni) => (
-            <div key={alumni.id} className="alumni-image-card">
-              {" "}
-              {/* Wrapper untuk setiap gambar */}
-              <img
-                loading="lazy"
-                src={alumni.image}
-                alt="Bimbel Les Privat ONLINE dan Les Privat Datang ke Rumah untuk Program SBMPTN UTBK SNBT Simak UI UTUL UGM. Guru Privat Masuk UI ITB UGM dan Kedokteran di PTN Favorit."
-                className="alumni-single-image"
-              />
-            </div>
-          ))}
+          {dataAlumni.map((alumni) => {
+            const altText = `Alumni LPS Education yang berhasil bersama program Bimbel & Les Privat ${
+              city ? "di " + city + " " : ""
+            }untuk UTBK, SIMAK UI, CPNS, TKA, Pascasarjana, Mahasiswa, hingga OSN. Dibimbing oleh Guru Privat UI, ITB, UGM, dan Kedokteran PTN Favorit.`;
+
+            return (
+              <div key={alumni.id} className="alumni-image-card">
+                <img
+                  loading="lazy"
+                  src={alumni.image}
+                  alt={altText}
+                  className="alumni-single-image"
+                />
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
   );
+};
+
+AllAlumniLpsImage.propTypes = {
+  city: PropTypes.string,
 };
 
 export default AllAlumniLpsImage;

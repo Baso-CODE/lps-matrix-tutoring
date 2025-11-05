@@ -47,9 +47,10 @@
 
 .main-title-list-student {
   text-align: start;
+  text-transform: uppercase;
+  font-size: 1.4rem;
   color: var(--color-gray-darker);
-
-  font-family: "Nunito", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 .child-title-list-student {
   font-family: "Nunito", sans-serif;
@@ -89,7 +90,7 @@
     font-size: 14px;
   }
   .main-title-list-student {
-    font-size: 23px;
+    font-size: 1.3rem;
   }
   .child-title-list-student {
     font-size: 13px;

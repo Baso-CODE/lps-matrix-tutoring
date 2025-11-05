@@ -3,11 +3,26 @@ import { getJumbotronProgram } from "../../../../../api/jumbotron/getJumbotronPr
 import { selectContactCsData } from "../../../../../lib/features/contactCsSlice";
 import { useAppSelector } from "../../../../../lib/hooks";
 import "./HeadingUTBK.css";
+import { useLocation } from "react-router-dom";
+import PropTypes from "prop-types";
 
-const HeadingUTBK = () => {
+const HeadingUTBK = ({ city: cityProp }) => {
   const contactData = useAppSelector(selectContactCsData);
   const finalUrl = contactData?.link_cta;
   const [jumbotron, setJumbotron] = useState(false);
+
+  const location = useLocation();
+  const path = location.pathname;
+
+  let city = cityProp || "";
+  if (!city && path.includes("/di/")) {
+    city = path.split("/di/")[1];
+    city = city.charAt(0).toUpperCase() + city.slice(1);
+  }
+
+  const altText = `Bimbel & Les Privat UTBK, SIMAK UI, UTUL UGM bersama LPS Education${
+    city ? " di " + city : ""
+  }. Les Privat Datang ke Rumah & Online dengan Guru Privat UI, ITB, UGM, dan Kedokteran PTN Favorit.`;
 
   useEffect(() => {
     const fetchJumbotron = async () => {
@@ -21,10 +36,6 @@ const HeadingUTBK = () => {
     fetchJumbotron();
   }, []);
 
-  // const handleCTAClick = (e) => {
-  //   const targetUrl = contactData?.link_cta || "https://wa.me/6285887562039";
-  //   handleCTAClickLogic(targetUrl, e);
-  // };
   return (
     <div className="container-halaman__sd_smp_sma">
       <div className="content-hero-home__sd_smp_sma">
@@ -33,11 +44,12 @@ const HeadingUTBK = () => {
           data-aos="zoom-in-up"
           className="rumah-adat-hero__sd_smp_sma"
           src={jumbotron.link_image || "/images/program/UTBK.webp"}
-          alt="Bimbel Les Privat ONLINE dan Les Privat Datang ke Rumah untuk Program SBMPTN UTBK SNBT Simak UI UTUL UGM. Guru Privat Masuk UI ITB UGM dan Kedokteran di PTN Favorit."
+          alt={altText}
         />
         <div className="isi-content-hero__sd_smp_sma">
           <h1 className="title-halaman-hero__sd_smp_sma">
-            Les Privat Persiapan UTBK SNBT (ONLINE & OFFLINE)
+            Les Privat Persiapan UTBK SNBT (ONLINE & OFFLINE){" "}
+            {city ? `di ${city}` : ""} – LPS Education
           </h1>
           <div>
             <p className="child-paragraf-hero__sd_smp_sma">
@@ -57,7 +69,7 @@ const HeadingUTBK = () => {
               yang akan memberikan rekomendasi untuk mendukung kemajuan belajar
               siswa.
             </p>
-
+            <br />
             <p className="child-paragraf-hero__sd_smp_sma">
               Tujuan program ini adalah memastikan siswa dapat meraih hasil
               terbaik dan lolos ke perguruan tinggi impian mereka melalui
@@ -78,4 +90,7 @@ const HeadingUTBK = () => {
   );
 };
 
+HeadingUTBK.propTypes = {
+  city: PropTypes.string,
+};
 export default HeadingUTBK;

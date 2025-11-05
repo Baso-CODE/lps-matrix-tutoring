@@ -12,7 +12,7 @@ const PerbedaanSBMPTAndSNBT = () => {
             <div className="imagePerbedaan">
               <img src="/images/icon/SNBP.webp" alt="SNBP" loading="lazy" />
             </div>
-            <h2 className="card-title-perbedaan">SNBP</h2>
+            {/* <h2 className="card-title-perbedaan">SNBP</h2> */}
             <ol className="card-list-perbedaan">
               <li>
                 Seleksi berdasarkan nilai rapor dan prestasi akademik lainnya.
@@ -36,7 +36,7 @@ const PerbedaanSBMPTAndSNBT = () => {
             <div className="imagePerbedaan">
               <img src="/images/icon/SNBT.webp" alt="SNBT" loading="lazy" />
             </div>
-            <h2 className="card-title-perbedaan">SNBT</h2>
+            {/* <h2 className="card-title-perbedaan">SNBT</h2> */}
             <ol className="card-list-perbedaan">
               <li>
                 Seleksi berdasarkan hasil Ujian Tulis Berbasis Komputer (UTBK).

@@ -1,0 +1,163 @@
+/* Container Styling */
+.tka-header-container {
+  margin-top: 10vh;
+}
+
+/* Image Styling */
+.tka-header-image {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  margin-bottom: 1.5rem;
+}
+
+/* Title Styling */
+.tka-header-title {
+  font-size: 1.4rem;
+  color: var(--color-gray-darker);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  font-family: "Poppins", sans-serif;
+}
+/* Title Styling */
+.tka-header-title-h2 {
+  font-size: 1.2rem;
+  color: #333333;
+  font-weight: 700;
+
+  margin-bottom: 0.5rem;
+  font-family: "Nunito", sans-serif;
+}
+/* Title Styling */
+.tka-header-title-h3 {
+  font-size: 1.1rem;
+  color: #333333;
+  font-weight: 700;
+  font-family: "Nunito", sans-serif;
+}
+
+/* Description Styling */
+.tka-header-description {
+  font-size: 0.95rem;
+  color: #343131;
+  font-weight: 400;
+  line-height: normal;
+
+  font-family: "Nunito", sans-serif;
+}
+
+/* List Styling */
+.tka-header-list {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  font-size: 0.9rem;
+  color: #343131;
+  margin-left: 0.3rem;
+  font-family: "Nunito", sans-serif;
+}
+/* List Styling */
+.tka-header-list-number {
+  list-style-type: decimal;
+  padding-left: 1.5rem;
+  font-size: 1rem;
+  color: #343131;
+
+  font-family: "Nunito", sans-serif;
+}
+
+.tka-header-list li {
+  padding: 0.1rem 0;
+}
+
+/* Custom marker styling */
+.tka-header-list li::marker {
+  color: #1e3e62; /* Ubah warna titik */
+  font-size: 1.2rem; /* Ubah ukuran titik jika perlu */
+}
+
+.additional-description_simak-ui {
+  font-size: 1rem;
+  color: #343131;
+  text-align: start;
+  font-weight: 400;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: normal;
+  font-family: "Nunito", sans-serif;
+}
+
+/* Responsif untuk layar tablet */
+@media (max-width: 1024px) {
+  .tka-header-list li::marker {
+    color: #1e3e62; /* Warna titik untuk layar lebih kecil */
+  }
+  .tka-header-title {
+    font-size: 1.3rem; /* Ukuran judul lebih kecil */
+  }
+
+  .tka-header-title-h2 {
+    font-size: 1.2rem; /* Ukuran sub-judul lebih kecil */
+  }
+
+  .tka-header-description {
+    font-size: 0.95rem; /* Ukuran deskripsi lebih kecil */
+  }
+
+  .tka-header-list {
+    font-size: 0.95rem; /* Ukuran daftar lebih kecil */
+  }
+  .additional-description_simak-ui {
+    font-size: 0.9rem; /* Ukuran lebih kecil untuk tablet */
+    line-height: normal;
+    margin-top: 1.5rem; /* Mengurangi jarak margin atas */
+  }
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+  .tka-header-title {
+    font-size: 1.2rem; /* Ukuran judul lebih kecil */
+  }
+  .additional-description_simak-ui {
+    font-size: 0.85rem; /* Ukuran lebih kecil untuk ponsel */
+    line-height: normal;
+
+    margin-top: 1rem; /* Jarak margin atas lebih kecil */
+  }
+
+  .tka-header-title-h2 {
+    font-size: 1.1rem; /* Ukuran sub-judul lebih kecil */
+  }
+
+  .tka-header-description {
+    font-size: 0.9rem; /* Ukuran deskripsi lebih kecil */
+  }
+
+  .tka-header-list {
+    font-size: 0.9rem; /* Ukuran daftar lebih kecil */
+  }
+}
+
+/* Responsif untuk layar sangat kecil */
+@media (max-width: 480px) {
+  .tka-header-title {
+    font-size: 1.2rem; /* Ukuran judul paling kecil */
+  }
+
+  .tka-header-title-h2 {
+    font-size: 1.1rem; /* Ukuran sub-judul paling kecil */
+  }
+
+  .tka-header-description {
+    font-size: 0.85rem; /* Ukuran deskripsi paling kecil */
+  }
+
+  .tka-header-list {
+    font-size: 0.85rem; /* Ukuran daftar paling kecil */
+  }
+  .additional-description_simak-ui {
+    font-size: 0.8rem; /* Ukuran terkecil untuk layar kecil */
+    line-height: normal;
+    margin-top: 0.5rem; /* Jarak margin atas lebih kecil */
+  }
+}

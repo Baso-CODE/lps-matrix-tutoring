@@ -19,11 +19,15 @@ import {
   galleryBelajarSiswaSimakUI,
   successStoryWaSliderSimakUI,
 } from "../../../helpers/DummyData/SIMAK-UI/simak-ui_dummyData";
+import AllAlumniLpsImage from "../../ListSiswaLPS/AllAlumniLps/AllAlumniLpsImage";
+import ListSiswaLPS from "../../ListSiswaLPS/ListSiswaLPS";
+import SliderTestimoniSiswa from "../../../components/SliderTestimoniSiswa/SliderTestimoniSiswa";
+import VideoKarantina from "../../../components/VideoKarantina/VideoKarantina";
 
 const SimakUIAndKKI = () => {
   const baseUrl = "https://apps.lesprivatmasukptn.com";
 
-  const canonicalUrl = `${baseUrl}/bimbel-les-privat-simak-ui-utul-ugm`;
+  const canonicalUrl = `${baseUrl}/bimbel-persiapan-masuk-ui-kki-terbaik`;
 
   const ogImage =
     "https://apps.lesprivatmasukptn.com/images/program/SIMAK-UI.webp";
@@ -142,6 +146,7 @@ const SimakUIAndKKI = () => {
         <VisiEndMisiLps />
         <ProgramBelajarLps />
         <FiturDanLayanan />
+        <VideoKarantina />
         <ProfileTutor />
         <UnivPengajarLps />
         <AlumniLpsNew />
@@ -154,6 +159,9 @@ const SimakUIAndKKI = () => {
         />
         <SuccessStory />
         <TestimoniWaSiswa />
+        <AllAlumniLpsImage />
+        <ListSiswaLPS />
+        <SliderTestimoniSiswa />
       </div>
     </>
   );

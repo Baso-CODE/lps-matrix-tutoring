@@ -47,6 +47,7 @@ const PaketBelajarCPNS = () => {
         dan jadwal belajar Anda untuk memaksimalkan peluang Anda menjadi bagian
         dari Aparatur Sipil Negara.
       </p>
+      <br />
 
       <div className="paket-cards__osn">
         {packages.map((pkg, index) => (

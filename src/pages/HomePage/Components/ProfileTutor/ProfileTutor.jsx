@@ -3,9 +3,20 @@ import "react-multi-carousel/lib/styles.css";
 import "./ProfileTutor.css";
 import { useEffect, useState } from "react";
 import { getProfileTutor } from "../../../../api/profileTutor/profileTutor";
+import { useLocation } from "react-router-dom";
+import PropTypes from "prop-types";
 
-const ProfileTutor = () => {
+const ProfileTutor = ({ city: cityProp }) => {
   const [dataProfileTutor, setDataProfileTutor] = useState([]);
+
+  const location = useLocation();
+  const path = location.pathname;
+
+  let city = cityProp || "";
+  if (!city && path.includes("/di/")) {
+    city = path.split("/di/")[1];
+    city = city.charAt(0).toUpperCase() + city.slice(1);
+  }
 
   useEffect(() => {
     const fetchData = async () => {
@@ -60,14 +71,22 @@ const ProfileTutor = () => {
         itemClass="carousel-item-padding-40-px">
         {dataProfileTutor.map((tutor, index) => (
           <div key={index} className="carousel-item">
-            <img
-              loading="lazy"
-              src={tutor.link_image}
-              alt={`Bimbel Les Privat ONLINE dan Les Privat Datang ke Rumah untuk Program SBMPTN UTBK SNBT Simak UI UTUL UGM. Guru Privat Masuk UI ITB UGM dan Kedokteran di PTN Favorit. ${
-                index + 1
-              }`}
-              className="tutor-image"
-            />
+            {(() => {
+              const altText = `Tutor ${
+                tutor.name || "LPS Education"
+              } untuk program Bimbel & Les Privat UTBK, SIMAK UI, UTUL UGM, TKA, CPNS, Pascasarjana, Mahasiswa, dan OSN${
+                city ? " di " + city : ""
+              }. Guru Privat dari UI, ITB, UGM, dan Kedokteran PTN Favorit.`;
+
+              return (
+                <img
+                  loading="lazy"
+                  src={tutor.link_image}
+                  alt={altText}
+                  className="tutor-image"
+                />
+              );
+            })()}
           </div>
         ))}
       </Carousel>
@@ -75,4 +94,7 @@ const ProfileTutor = () => {
   );
 };
 
+ProfileTutor.propTypes = {
+  city: PropTypes.string,
+};
 export default ProfileTutor;

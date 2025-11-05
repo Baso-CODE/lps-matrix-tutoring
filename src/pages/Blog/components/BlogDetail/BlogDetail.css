@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap");
+
+.blog-detail-container {
+  display: flex;
+  justify-content: center;
+  padding: 4% 12%;
+  font-family: "Poppins", sans-serif;
+}
+@media (max-width: 1024px) {
+  .blog-detail-container {
+    padding: 4% 4%;
+  }
+}
+.container-blog {
+  padding-left: 5%;
+  padding-top: 8%;
+  padding-bottom: 3%;
+  padding-right: 5%;
+}
+
+@media (max-width: 768px) {
+  .container-blog {
+    padding-left: 5%;
+    padding-top: 20%;
+    padding-bottom: 3%;
+    padding-right: 5%;
+  }
+}
+.blog-detail-wrapper {
+  width: 100%;
+}
+
+.cover-image {
+  width: 100%;
+  /* border-radius: 1rem; */
+  height: auto;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.article-content-wrapper {
+  padding: 0;
+}
+
+.article-header {
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.article-title {
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  color: #1f2937;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.article-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.meta-item {
+  margin-right: 0.75rem;
+}
+
+.meta-value {
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.meta-value-category {
+  font-weight: 600;
+  color: #4f46e5;
+}
+
+.meta-separator {
+  margin-right: 0.75rem;
+  color: #cbd5e1;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.tag-item {
+  background-color: #eef2ff;
+  color: #4f46e5;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  text-transform: uppercase;
+}
+
+/* Styling konten artikel */
+.article-body {
+  line-height: 1.6;
+  font-size: 1rem;
+  color: #374151;
+  font-family: "Poppins", sans-serif;
+}
+
+.article-body h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-top: 2.5rem;
+  /* margin-bottom: 1rem; */
+}
+
+.article-body h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-top: 2.5rem;
+  /* margin-bottom: 1rem; */
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.article-body hr {
+  border: none;
+  border-top: 3px solid #eef2ff;
+  margin: 3rem 0;
+}
+
+.article-body h3 {
+  font-size: 1.25rem;
+
+  color: #1f2937;
+  margin-top: 2rem;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 1rem;
+}
+
+.article-body p {
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+  font-size: 0.9rem;
+}
+
+.article-body ul,
+.article-body ol {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.article-body ul li {
+  font-size: 0.9rem;
+}
+
+.article-body ol li {
+  font-size: 0.9rem;
+}
+/* 
+.article-body ul {
+  list-style-type: "-";
+} */
+
+.article-body img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+.article-body em {
+  display: block;
+  font-size: 0.9rem;
+  text-align: center;
+  color: #6b7280;
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .blog-detail-container {
+    padding: 2rem 5%;
+  }
+
+  .article-title {
+    font-size: 1.6rem;
+  }
+
+  .article-body h1 {
+    font-size: 1.4rem;
+  }
+  .article-body h2 {
+    font-size: 1.3rem;
+  }
+  .article-body h3 {
+    font-size: 1.15rem;
+  }
+}
+
+/* Styling umum untuk code block */
+.article-body pre {
+  border-radius: 0.75rem; /* rounded */
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+}
+
+/* Styling untuk inline code */
+.article-body code {
+  border-radius: 0.4rem;
+  font-size: 0.85rem;
+  font-family: "Fira Code", monospace;
+}

@@ -1,13 +1,27 @@
+/* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 import { getJumbotronProgram } from "../../../../../api/jumbotron/getJumbotronProgram";
 import { selectContactCsData } from "../../../../../lib/features/contactCsSlice";
 import { useAppSelector } from "../../../../../lib/hooks";
 import "./HeadingCPNS.css";
+import { useLocation } from "react-router-dom";
 
-const HeadingCPNS = () => {
+const HeadingCPNS = ({ lokasi }) => {
   const [jumbotron, setJumbotron] = useState(null);
   const contactData = useAppSelector(selectContactCsData);
   const finalUrl = contactData?.link_cta;
+
+  const location = useLocation();
+  const path = location.pathname;
+  let city = lokasi || "";
+  if (!city && path.includes("/di/")) {
+    city = path.split("/di/")[1];
+    city = city.charAt(0).toUpperCase() + city.slice(1);
+  }
+
+  const altText = `Bimbel & Les Privat CPNS bersama LPS Education${
+    city ? " di " + city : ""
+  }. Les Privat Datang ke Rumah & Online dengan Tutor Berpengalaman untuk Lolos Tes Seleksi CPNS.`;
 
   useEffect(() => {
     const fetchJumbotron = async () => {
@@ -29,11 +43,15 @@ const HeadingCPNS = () => {
       <img
         loading="lazy"
         src={jumbotron?.link_image || "/images/program/CPNS.webp"}
-        alt="Bimbel Les Privat ONLINE dan Les Privat Datang ke Rumah untuk Program SBMPTN UTBK SNBT Simak UI UTUL UGM. Guru Privat Masuk UI ITB UGM dan Kedokteran di PTN Favorit."
+        alt={altText}
         className="heading-image"
       />
-      <h1 className="heading-title-cpns">
-        Guru Les Privat CPNS Terbaik dan Berkompeten – LPS Education
+      <h1 className="program-simak-ui-title">
+        Guru Les Privat CPNS Terbaik dan Berkompeten{" "}
+        <span className="color-d2b04c-description">
+          {lokasi ? `di ${lokasi}` : ""}
+        </span>{" "}
+        – LPS Education
       </h1>
       <p className="heading-description-cpns">
         Menjadi PNS adalah impian dari jutaan peserta Tes CPNS. Setiap tahun,
@@ -41,6 +59,7 @@ const HeadingCPNS = () => {
         diharapkan memiliki kompetensi yang mumpuni untuk bisa tembus tes CPNS,
         utamanya pada tahap ujian akademik SKD CPNS TWK, TIU dan TKP.
       </p>
+      <br />
       <p className="heading-description-bottom-cpns">
         Bagi Anda yang sedang mencari{" "}
         <span className="color-d2b04c-description">
@@ -53,6 +72,7 @@ const HeadingCPNS = () => {
         program, yaitu program offline (les privat ke rumah) dan les privat
         online (belajar secara online menggunakan Zoom).
       </p>
+      <br />
       <p className="heading-description-bottom-cpns">
         Guru privat CPNS kami adalah tutor – tutor terbaik di bidangnya yang
         sudah memenuhi standar dan berkompeten dalam mengajari materi soal –
@@ -60,6 +80,7 @@ const HeadingCPNS = () => {
         berupa pembekalan materi dan latihan soal sebelum menghadapi tes
         sehingga Anda akan lebih siap dalam menghadapi tes CPNS.
       </p>
+      <br />
       <p className="heading-description-bottom-cpns">
         <span className="color-d2b04c-description"> LPS Education</span> adalah
         lembaga penyedia layanan guru les privat ke rumah area Jabodetabek dan
@@ -71,6 +92,7 @@ const HeadingCPNS = () => {
         yang siap membantu menggali kebutuhan siswa serta arahan belajar yang
         tepat agar hasil sesuai target yang diinginkan siswa.
       </p>
+      <br />
       <button
         className="btn-learn-more__sd_smp_sma"
         onClick={() => window.open(finalUrl, "_blank", "noopener,noreferrer")}>

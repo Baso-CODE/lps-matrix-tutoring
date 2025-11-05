@@ -18,6 +18,10 @@ import MateriUjianSNBT from "../Components/MateriUjianSNBT/MateriUjianSNBT";
 import PerbedaanSBMPTAndSNBT from "../Components/PerbedaanSBMPTAndSNBT/PerbedaanSBMPTAndSNBT";
 import TigaJalurMasukPTN from "../Components/TigaJalurMasukPTN/TigaJalurMasukPTN";
 import { galleryBelajarSiswaUTBK } from "../../../../helpers/DummyData/UTBK/utbk_dummyData";
+import AllAlumniLpsImage from "../../../ListSiswaLPS/AllAlumniLps/AllAlumniLpsImage";
+import ListSiswaLPS from "../../../ListSiswaLPS/ListSiswaLPS";
+import SliderTestimoniSiswa from "../../../../components/SliderTestimoniSiswa/SliderTestimoniSiswa";
+import VideoKarantina from "../../../../components/VideoKarantina/VideoKarantina";
 
 const LesPrivatUTBKSlug = () => {
   const { slug } = useParams();
@@ -155,24 +159,27 @@ const LesPrivatUTBKSlug = () => {
         </script>
       </Helmet>
       <div className="container-all">
-        <HeadingUTBK />
+        <HeadingUTBK city={dynamicLocationName} />
         <TigaJalurMasukPTN />
         <MataPelajaranLPSNew />
         <PerbedaanSBMPTAndSNBT />
         <MateriUjianSNBT />
-        {/* <InformationProgram programType={"utbk"} /> */}
         <Slider />
         <VisiEndMisiLps />
-        <ProfileTutor />
+        <VideoKarantina />
+        <ProfileTutor city={dynamicLocationName} />
         <UnivPengajarLps />
         <KeunggulanEndAlasanMemilih />
         <SolusiSuksesMasukPTN />
         <CaraBelajarOfflineAtauOnline />
-        <AlumniLpsNew />
+        <AlumniLpsNew city={dynamicLocationName} />
         <GaleryBelajarSiswa description={galleryBelajarSiswaUTBK.description} />
-        <TestimoniWaSlider />
-        <SuccessStory />
-        <TestimoniWaSiswa />
+        <TestimoniWaSlider cityProp={dynamicLocationName} />
+        <SuccessStory city={dynamicLocationName} />
+        <TestimoniWaSiswa cityProp={dynamicLocationName} />
+        <AllAlumniLpsImage city={dynamicLocationName} />
+        <ListSiswaLPS />
+        <SliderTestimoniSiswa city={dynamicLocationName} />
       </div>
     </>
   );

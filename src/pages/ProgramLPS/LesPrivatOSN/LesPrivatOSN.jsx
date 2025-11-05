@@ -4,23 +4,26 @@ import GaleryBelajarSiswa from "../../../components/GaleryBelajarSiswa/GaleryBel
 import Slider from "../../../components/Slider/Slider";
 import TestimoniWaSlider from "../../../components/TestimoniWaSlider/TestimoniWaSlider";
 import UnivPengajarLps from "../../../components/UnivPengajarLps/UnivPengajarLps";
+import {
+  galleryBelajarOSNData,
+  successStoryWaSliderOSN,
+} from "../../../helpers/DummyData/OSN/osn_dummy_data";
 import FiturDanLayanan from "../../HomePage/Components/FiturDanLayanan/FiturDanLayanan";
 import ProfileTutor from "../../HomePage/Components/ProfileTutor/ProfileTutor";
 import ProgramBelajarLps from "../../HomePage/Components/ProgramBelajarLps/ProgramBelajarLps";
 import SuccessStory from "../../HomePage/Components/SuccessStory/SuccessStory";
 import TestimoniWaSiswa from "../../HomePage/Components/TestimoniWaSiswa/TestimoniWaSiswa";
 import VisiEndMisiLps from "../../HomePage/Components/VisiEndMisiLps/VisiEndMisiLps";
-import FasilitasSimakUI from "../SimakUIAndKKI/Components/FasilitasSimakUI/FasilitasSimakUI";
+import FasilitasOSN from "./Components/FasilitasOSN";
 import HeroLpsOSN from "./Components/HeroLpsOSN/HeroLpsOSN";
 import OsnCurriculumOverview from "./Components/OsnCurriculumOverview/OsnCurriculumOverview";
 import OsnWinnerBenefits from "./Components/OsnWinnerBenefits/OsnWinnerBenefits";
 import PaketBelajarOSN from "./Components/PaketBelajarOSN/PaketBelajarOSN";
 import ProgramIntensiOSN from "./Components/ProgramIntensiOSN/ProgramIntensiOSN";
 import "./LesPrivatOSN.css";
-import {
-  galleryBelajarOSNData,
-  successStoryWaSliderOSN,
-} from "../../../helpers/DummyData/OSN/osn_dummy_data";
+import AllAlumniLpsImage from "../../ListSiswaLPS/AllAlumniLps/AllAlumniLpsImage";
+import ListSiswaLPS from "../../ListSiswaLPS/ListSiswaLPS";
+import SliderTestimoniSiswa from "../../../components/SliderTestimoniSiswa/SliderTestimoniSiswa";
 
 const LesPrivatOSN = () => {
   // --- PERUBAHAN UTAMA DI SINI ---
@@ -141,7 +144,7 @@ const LesPrivatOSN = () => {
         <HeroLpsOSN />
         <ProgramIntensiOSN />
         <Slider />
-        <FasilitasSimakUI />
+        <FasilitasOSN />
         <PaketBelajarOSN />
         {/* <PaketSesiOSN /> */}
         <OsnCurriculumOverview />
@@ -163,6 +166,9 @@ const LesPrivatOSN = () => {
         />
         <SuccessStory />
         <TestimoniWaSiswa />
+        <AllAlumniLpsImage />
+        <ListSiswaLPS />
+        <SliderTestimoniSiswa />
       </div>
     </>
   );

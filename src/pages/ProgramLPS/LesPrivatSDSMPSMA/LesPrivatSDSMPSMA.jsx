@@ -14,6 +14,10 @@ import HeadingLpsSDSMPSMA from "./Components/HeadingLpsSDSMPSMA/HeadingLpsSDSMPS
 import PaketBelajarSDSMPSMA from "./Components/PaketBelajarSDSMPSMA/PaketBelajarSDSMPSMA";
 import ProgramIntensifLpsSDSMPSMA from "./Components/ProgramIntensifLpsSDSMPSMA/ProgramIntensifLpsSDSMPSMA";
 import { testimoniWaSliderDataSDSMPSMA } from "../../../helpers/DummyData/SDSMPSMA/sdsmpsma_dummyData";
+import AllAlumniLpsImage from "../../ListSiswaLPS/AllAlumniLps/AllAlumniLpsImage";
+import ListSiswaLPS from "../../ListSiswaLPS/ListSiswaLPS";
+import SliderTestimoniSiswa from "../../../components/SliderTestimoniSiswa/SliderTestimoniSiswa";
+import VideoKarantina from "../../../components/VideoKarantina/VideoKarantina";
 
 const LesPrivatSDSMPSMA = () => {
   const baseUrl = "https://apps.lesprivatmasukptn.com";
@@ -140,6 +144,7 @@ const LesPrivatSDSMPSMA = () => {
         <ProgramBelajarLps />
         <FiturDanLayanan />
         <KeunggulanEndAlasanMemilih />
+        <VideoKarantina />
         <ProfileTutor />
         <UnivPengajarLps />
         <AlumniLpsNew />
@@ -148,6 +153,9 @@ const LesPrivatSDSMPSMA = () => {
           description={testimoniWaSliderDataSDSMPSMA.description}
         />
         <TestimoniWaSiswa />
+        <AllAlumniLpsImage />
+        <ListSiswaLPS />
+        <SliderTestimoniSiswa />
       </div>
     </>
   );

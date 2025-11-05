@@ -1,5 +1,6 @@
 .container-testimoni-wa {
-  margin-top: 5vh;
+  margin-top: 8vh;
+  padding-top: 3%;
   margin-bottom: 5vh;
 }
 
@@ -10,11 +11,30 @@
   border-radius: 8px;
 }
 
+.title-testimoni-wa-siswa-single-image {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  text-transform: none;
+  color: var(--color-gray-darker);
+}
 .desktop-image-testimoni {
   display: block;
   width: 100%;
   height: auto;
   border-radius: 8px;
+}
+
+.additional-description-about__testimoni-siswa {
+  font-size: 1rem;
+  color: #3a4a3f;
+  text-align: start;
+  font-weight: 400;
+  /* margin-top: 20px; */
+  line-height: normal;
+  font-family: "Nunito", sans-serif;
+  margin-bottom: 20px;
 }
 
 @media (max-width: 768px) {
@@ -26,5 +46,8 @@
     display: block; /* Tampilkan gambar mobile */
     width: 100%; /* Pastikan gambar responsif */
     height: auto;
+  }
+  .title-testimoni-wa-siswa-single-image {
+    font-size: 1.3rem;
   }
 }

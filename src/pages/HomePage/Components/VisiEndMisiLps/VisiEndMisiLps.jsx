@@ -7,7 +7,7 @@ const VisiEndMisiLps = () => {
   return (
     <div className="visi-misi-container">
       <div className="visi-misi-lps-title-container">
-        <h1 className="visi-misi-title">Visi dan Misi LPS Education</h1>
+        <h2 className="visi-misi-title">Visi dan Misi LPS Education</h2>
         <img
           src="/images/visi-misi-lps-logo.webp"
           alt="Visi Misi LPS Education Logo"

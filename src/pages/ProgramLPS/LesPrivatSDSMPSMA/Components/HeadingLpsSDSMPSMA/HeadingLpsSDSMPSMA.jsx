@@ -3,10 +3,22 @@ import { getJumbotronProgram } from "../../../../../api/jumbotron/getJumbotronPr
 import { selectContactCsData } from "../../../../../lib/features/contactCsSlice";
 import { useAppSelector } from "../../../../../lib/hooks";
 import "./HeadingLpsSDSMPSMA.css";
-const HeadingLpsSDSMPSMA = () => {
+import { useLocation } from "react-router-dom";
+import PropTypes from "prop-types";
+const HeadingLpsSDSMPSMA = ({ city: cityProp }) => {
   const [jumbotron, setJumbotron] = useState(null);
   const contactData = useAppSelector(selectContactCsData);
   const finalUrl = contactData?.link_cta;
+
+  const location = useLocation();
+  const path = location.pathname;
+
+  let city = cityProp || "";
+  if (!city && path.includes("/di/")) {
+    city = path.split("/di/")[1];
+    city = city.charAt(0).toUpperCase() + city.slice(1);
+  }
+
   useEffect(() => {
     const fetchJumbotron = async () => {
       try {
@@ -22,6 +34,11 @@ const HeadingLpsSDSMPSMA = () => {
   //   const targetUrl = contactData?.link_cta || "https://wa.me/6285887562039";
   //   handleCTAClickLogic(targetUrl, e);
   // };
+
+  const altText = `Les Privat SD, SMP, dan SMA bersama LPS Education${
+    city ? " di " + city : ""
+  }. Program belajar semua mata pelajaran dengan Guru Privat Berpengalaman dari UI, ITB, UGM, dan PTN Favorit untuk mendukung prestasi akademik siswa.`;
+
   return (
     <div className="container-halaman__sd_smp_sma">
       <div className="content-hero-home__sd_smp_sma">
@@ -30,11 +47,15 @@ const HeadingLpsSDSMPSMA = () => {
           data-aos="zoom-out"
           className="rumah-adat-hero__sd_smp_sma"
           src={jumbotron?.link_image || "/images/program/SD,SMP,SMA.webp"}
-          alt="Bimbel Les Privat ONLINE dan Les Privat Datang ke Rumah untuk Program SBMPTN UTBK SNBT Simak UI UTUL UGM. Guru Privat Masuk UI ITB UGM dan Kedokteran di PTN Favorit."
+          alt={altText}
         />
         <div className="isi-content-hero__sd_smp_sma">
           <h1 className="title-halaman-hero__sd_smp_sma">
-            Les Privat SD SMP SMA (ONLINE & OFFLINE)
+            Les Privat SD SMP SMA (ONLINE & OFFLINE){" "}
+            <span className="color-d2b04c-description">
+              {city ? `di ${city}` : ""}
+            </span>{" "}
+            – LPS Education
           </h1>
           <div>
             <p className="child-paragraf-hero__sd_smp_sma">
@@ -51,6 +72,7 @@ const HeadingLpsSDSMPSMA = () => {
               Program ini disusun secara sistematis dan didukung dengan guru les
               berpengalaman dan berkompeten mengajar siswa SD SMP SMA.
             </p>
+            <br />
             <p className="child-paragraf-hero__sd_smp_sma">
               Program belajar difokuskan pada pendalaman konsep dasar materi dan
               peningkatan keterampilan penyelesaian mengerjakan soal, baik{" "}
@@ -66,6 +88,7 @@ const HeadingLpsSDSMPSMA = () => {
               Masuk SD SMP SMA Sekolah Unggulan. Progress belajar siswa akan
               dimonitoring dan dievaluasi oleh Tim Akademik LPS Education.
             </p>
+            <br />
             <p className="child-paragraf-hero__sd_smp_sma">
               Kami akan memberikan rekomendasi yang dibutuhkan sesuai dengan
               progress belajar siswa. Target Program{" "}
@@ -88,6 +111,9 @@ const HeadingLpsSDSMPSMA = () => {
       </div>
     </div>
   );
+};
+HeadingLpsSDSMPSMA.propTypes = {
+  city: PropTypes.string,
 };
 
 export default HeadingLpsSDSMPSMA;

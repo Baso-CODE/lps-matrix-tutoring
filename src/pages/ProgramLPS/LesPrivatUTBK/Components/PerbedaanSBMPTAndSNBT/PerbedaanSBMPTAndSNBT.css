@@ -9,9 +9,10 @@
 
 .title-perbedaan {
   font-size: 1.5rem;
-  color: #333;
+  text-transform: uppercase;
+  color: var(--color-gray-darker);
   /* margin-bottom: 2rem; */
-  font-family: "Nunito", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .card-container-perbedaan {
@@ -48,12 +49,13 @@
 .imagePerbedaan img {
   width: 7rem;
   height: 7rem;
+  margin-bottom: 1rem;
   object-fit: contain;
 }
 
 .card-title-perbedaan {
   font-size: 1.2rem;
-  color: #ff8000;
+  color: var(--color-gray-darker);
 
   font-family: "Nunito", sans-serif;
 }
@@ -84,6 +86,9 @@
 
 /* Responsif untuk tablet */
 @media (max-width: 1024px) {
+  .card-perbedaan {
+    min-height: 24vh;
+  }
   .title-perbedaan {
     font-size: 1.3rem; /* Ukuran lebih kecil untuk tablet */
   }

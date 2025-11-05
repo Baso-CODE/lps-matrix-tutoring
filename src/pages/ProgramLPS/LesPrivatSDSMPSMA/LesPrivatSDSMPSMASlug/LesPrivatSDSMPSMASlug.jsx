@@ -15,6 +15,10 @@ import FasilitasSDSMPSMA from "../Components/FasilitasSDSMPSMA/FasilitasSDSMPSMA
 import HeadingLpsSDSMPSMA from "../Components/HeadingLpsSDSMPSMA/HeadingLpsSDSMPSMA";
 import PaketBelajarSDSMPSMA from "../Components/PaketBelajarSDSMPSMA/PaketBelajarSDSMPSMA";
 import ProgramIntensifLpsSDSMPSMA from "../Components/ProgramIntensifLpsSDSMPSMA/ProgramIntensifLpsSDSMPSMA";
+import AllAlumniLpsImage from "../../../ListSiswaLPS/AllAlumniLps/AllAlumniLpsImage";
+import ListSiswaLPS from "../../../ListSiswaLPS/ListSiswaLPS";
+import SliderTestimoniSiswa from "../../../../components/SliderTestimoniSiswa/SliderTestimoniSiswa";
+import VideoKarantina from "../../../../components/VideoKarantina/VideoKarantina";
 
 const LesPrivatSDSMPSMASlug = () => {
   const { slug } = useParams();
@@ -151,7 +155,7 @@ const LesPrivatSDSMPSMASlug = () => {
       </Helmet>
 
       <div className="container-all">
-        <HeadingLpsSDSMPSMA />
+        <HeadingLpsSDSMPSMA city={dynamicLocationName} />
         <FasilitasSDSMPSMA />
         <ProgramIntensifLpsSDSMPSMA />
         <PaketBelajarSDSMPSMA />
@@ -161,14 +165,19 @@ const LesPrivatSDSMPSMASlug = () => {
         <ProgramBelajarLps />
         <FiturDanLayanan />
         <KeunggulanEndAlasanMemilih />
-        <ProfileTutor />
+        <VideoKarantina />
+        <ProfileTutor city={dynamicLocationName} />
         <UnivPengajarLps />
-        <AlumniLpsNew />
+        <AlumniLpsNew city={dynamicLocationName} />
         <TestimoniWaSlider
+          cityProp={dynamicLocationName}
           title={testimoniWaSliderDataSDSMPSMA.title}
           description={testimoniWaSliderDataSDSMPSMA.description}
         />
-        <TestimoniWaSiswa />
+        <TestimoniWaSiswa cityProp={dynamicLocationName} />
+        <AllAlumniLpsImage city={dynamicLocationName} />
+        <ListSiswaLPS />
+        <SliderTestimoniSiswa city={dynamicLocationName} />
       </div>
     </>
   );

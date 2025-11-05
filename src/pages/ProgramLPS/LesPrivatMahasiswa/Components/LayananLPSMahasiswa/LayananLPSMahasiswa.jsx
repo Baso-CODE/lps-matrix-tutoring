@@ -3,23 +3,16 @@ import "./LayananLPSMahasiswa.css";
 const LayananLPSMahasiswa = () => {
   return (
     <div className="container-layanan-lps-mahasiswa">
-      <h3 className="program-mahasiswa-title-h3">
-        Layanan Les Privat Mahasiswa
-      </h3>
+      <h2 className="program-title-cpns">
+        Program Les Privat Mahasiswa - Belajar Mata Kuliah Sesuai Kebutuhan
+      </h2>
       <p className="additional-description-mahasiswa">
-        LPS Education melayani permintaan guru les privat datang ke rumah dan
-        privat online untuk mahasiswa. Berikut beberapa materi kuliah yang dapat
-        kami upayakan tutornya:
+        Berdasarkan mata kuliah yang dibutuhkan oleh para siswa Privat yang
+        mengambil Program Les Privat Mahasiswa di LPS Education, kami siap untuk
+        mendampingi belajar untuk mata kuliah:
       </p>
-
+      <br />
       <ul className="program-simak-ui-list__mahasiswa">
-        <li>Les Privat SIMAK UI S1 dan Vokasi</li>
-        <li>Les Privat Simak UI S1 KKI</li>
-        <li>Les Privat Simak UI S2</li>
-        <li>Les Privat Simak UI Profesi</li>
-        <li>Les Privat Simak UI S3</li>
-        <li>Les Privat Simak UI Spesialis</li>
-        <li>Les Privat Simak UI Spesialis 2</li>
         <li>Les Privat Kalkulus</li>
         <li>Les Privat Statistik</li>
         <li>Les Privat Statistik Bisnis</li>
@@ -29,7 +22,7 @@ const LayananLPSMahasiswa = () => {
         <li>Les Privat Kimia Organik</li>
         <li>Les Privat Biologi Dasar</li>
         <li>Les Privat Aljabar Linier</li>
-        <li>Les Privat Matematika Teknik (Mathematic For Engineering)</li>
+        <li>Les Privat Matematika Teknik</li>
         <li>Les Privat Algoritma & Pemrograman</li>
         <li>Les Privat Matematika Diskrit</li>
         <li>Les Privat Ilmu Biomedik Dasar</li>
@@ -40,7 +33,7 @@ const LayananLPSMahasiswa = () => {
         <li>Les Privat Analisis Laporan Keuangan</li>
         <li>Les Privat Akuntansi Jasa Dagang</li>
         <li>Les Privat Financial Management</li>
-        <li>Les Privat Akuntansi Dasar</li>
+        <li>Les Privat Pengantar Akuntansi</li>
         <li>Les Privat Ekonomi Makro Mikro</li>
         <li>Les Privat Economy Managerial & Financial Corporate</li>
         <li>Les Privat Managerial Accounting</li>
@@ -53,10 +46,8 @@ const LayananLPSMahasiswa = () => {
         <li>Les Privat Audit dan Perpajakan</li>
         <li>Les Privat Ekonometrika</li>
         <li>Les Privat Anatomi & Histologi</li>
-        <li>Les Privat Sastra Korea</li>
-        <li>Les Privat Sastra Jepang</li>
-        <li>Les Privat Sastra Jerman</li>
-        <li>Les Privat Sastra Prancis</li>
+        <li>Les Privat Coding</li>
+        <li>dan mata kuliah lainnya akan kami upayakan pengajarnya.</li>
       </ul>
     </div>
   );

@@ -1,0 +1,66 @@
+.container-blog {
+  padding-left: 5%;
+  padding-top: 8%;
+  padding-bottom: 3%;
+  padding-right: 5%;
+}
+
+@media (max-width: 768px) {
+  .container-blog {
+    padding-left: 5%;
+    padding-top: 20%;
+    padding-bottom: 3%;
+    padding-right: 5%;
+  }
+}
+
+.hero-section {
+  background-color: #ff6501;
+
+  border-radius: 2rem;
+  justify-content: center;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  padding: 4rem 1rem 4rem;
+  text-align: center;
+  align-items: center;
+  min-height: 40vh;
+}
+
+.hero-content {
+  max-width: 56rem;
+  margin: 0 auto;
+  padding-bottom: 2rem;
+}
+
+.hero-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+}
+
+.hero-subtitle {
+  font-size: 1.125rem;
+  color: #f2f2f2;
+  font-family: "Nunito", sans-serif;
+  max-width: 42rem;
+  margin: 1rem auto 0;
+}
+
+.main-content-container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 1rem 1.5rem 2rem;
+  margin-top: -4rem;
+  position: relative;
+  z-index: 10;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    margin-top: 14%;
+  }
+}

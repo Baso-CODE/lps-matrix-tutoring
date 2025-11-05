@@ -26,22 +26,23 @@
 
 /* Title Styling */
 .success-story-title {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
   font-weight: 700;
   color: var(--color-gray-darker);
-  font-family: "Nunito", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 @media (min-width: 1024px) {
   .success-story-title {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 }
 
 /* Description Text */
 .success-story-description {
   display: none;
-  max-width: 40rem;
+  max-width: 78%;
   color: var(--color-gray-dark);
   font-family: "Nunito", sans-serif;
   font-weight: 500;
@@ -101,7 +102,8 @@
   display: grid;
   gap: 1.3rem;
   margin-top: 2rem;
-  grid-template-columns: repeat(3, 1fr); /* Default: 2 columns */
+  margin-bottom: 2rem;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 /* Display 1 column on small screens, 2 columns on medium and larger screens */

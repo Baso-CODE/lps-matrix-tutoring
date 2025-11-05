@@ -8,7 +8,7 @@ const PromoFloating = () => {
           <div className="btn-float-promo">
             <img
               loading="eager"
-              src="/images/DISKON_100.000.png"
+              src="/images/DISKON_100.000.webp"
               alt="Klik untuk langsung terhubung dengan tim Les Privat Masuk PTN!"
               className="icon-promo-float"
             />

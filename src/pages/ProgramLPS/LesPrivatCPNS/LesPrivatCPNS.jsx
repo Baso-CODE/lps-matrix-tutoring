@@ -23,10 +23,13 @@ import {
   testimonialWaCPNSData,
   testimoniWaSliderData,
 } from "../../../helpers/DummyData/CPNS/cpnsDammyData";
+import AllAlumniLpsImage from "../../ListSiswaLPS/AllAlumniLps/AllAlumniLpsImage";
+import ListSiswaLPS from "../../ListSiswaLPS/ListSiswaLPS";
+import SliderTestimoniSiswa from "../../../components/SliderTestimoniSiswa/SliderTestimoniSiswa";
 
 const LesPrivatCPNS = () => {
   const baseUrl = "https://apps.lesprivatmasukptn.com";
-  const canonicalUrl = `${baseUrl}/bimbel-persiapan-cpns-terbaik`;
+  const canonicalUrl = `${baseUrl}/bimbel-persiapan-cpns`;
 
   const ogImage = "https://apps.lesprivatmasukptn.com/images/program/CPNS.webp";
 
@@ -140,12 +143,10 @@ const LesPrivatCPNS = () => {
         <PaketBelajarCPNS />
         <ProgramCPNS />
         <ApaAjaYgDiPeroleh />
-        {/* <InformationProgram programType={"cpns"} /> */}
         <JadwalBelajarCPNS />
         <VisiEndMisiLps />
         <ProfileTutor />
         <UnivPengajarLps />
-        {/* <AlumniLpsNew /> */}
         <GaleryBelajarSiswa description={galleryBelajarCPNSData.description} />
         <TestimoniWaSlider
           description={testimoniWaSliderData.description}
@@ -159,6 +160,9 @@ const LesPrivatCPNS = () => {
           imageDesktop={testimonialWaCPNSData.imageDesktop}
           imageMobile={testimonialWaCPNSData.imageMobile}
         />
+        <AllAlumniLpsImage />
+        <ListSiswaLPS />
+        <SliderTestimoniSiswa />
       </div>
     </>
   );

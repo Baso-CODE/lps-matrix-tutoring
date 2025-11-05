@@ -38,15 +38,18 @@ const PaketBelajarOSN = () => {
         Paket Belajar OSN dirancang khusus untuk membantu siswa mempersiapkan
         diri menghadapi kompetisi sains dan matematika, baik tingkat nasional
         seperti OSN (Olimpiade Sains Nasional) maupun internasional seperti ISO
-        (International Science Olympiads) dan IMO (International Mathematical
-        Olympiad). Setiap paket menawarkan berbagai sesi yang dapat disesuaikan
-        sesuai kebutuhan siswa, sehingga fokus dan intensitas belajar dapat
-        diatur berdasarkan bidang olimpiade yang diinginkan dan tujuan kompetisi
-        yang hendak dicapai. Dengan bimbingan profesional dan kurikulum yang
+        (International Science Olympiads), IMO (International Mathematical
+        Olympiad) dan SEAMO (South East Asia Mathematical Olympiad).
+      </p>
+      <p className="description-paket-belajar__osn">
+        Setiap paket menawarkan berbagai sesi yang dapat disesuaikan sesuai
+        kebutuhan siswa, sehingga fokus dan intensitas belajar dapat diatur
+        berdasarkan bidang olimpiade yang diinginkan dan tujuan kompetisi yang
+        hendak dicapai. Dengan bimbingan profesional dan kurikulum yang
         mendalam, siswa akan didukung secara optimal dalam mencapai prestasi
         tertinggi.
       </p>
-
+      <br />
       <div className="paket-cards__osn">
         {packages.map((pkg, index) => (
           <div className="paket-card__osn" key={index}>

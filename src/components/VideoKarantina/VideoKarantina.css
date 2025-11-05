@@ -1,0 +1,84 @@
+.video-section {
+  margin: 0 auto;
+
+  text-align: center;
+  background: #f9fafc;
+}
+
+.video-header {
+  margin-bottom: 40px;
+}
+
+.video-title {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--color-gray-darker);
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 15px;
+}
+
+.video-description {
+  font-size: 0.95rem;
+  color: #3a4a3f;
+  line-height: 1.6;
+  max-width: 800px;
+  font-family: "Nunito", sans-serif;
+  margin: 0 auto;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  justify-content: center;
+  align-items: start;
+}
+
+.video-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.15);
+}
+
+.youtube-frame {
+  width: 100%;
+  height: 280px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.video-subtitle {
+  font-size: 1.1rem;
+  color: var(--color-orange-dark);
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 8px;
+}
+
+.video-text {
+  color: #3a4a3f;
+  font-size: 0.9rem;
+  font-family: "Nunito", sans-serif;
+  line-height: 1.5;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .youtube-frame {
+    height: 220px;
+  }
+  .video-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .video-title {
+    font-size: 1.2rem;
+  }
+}

@@ -17,25 +17,25 @@
   font-size: 1.4rem;
   color: var(--color-gray-darker);
   font-weight: 700;
+  text-align: start;
   margin-bottom: 0.5rem;
-  font-family: "Nunito", sans-serif;
+  font-family: "Poppins", sans-serif;
+}
+/* Title Styling */
+.program-simak-ui-title-h2 {
+  font-size: 1.2rem;
+  color: #333;
+  font-weight: 600;
+  border-left: 4px solid #ff6500;
+  padding-left: 0.3rem;
+  margin-bottom: 0.5rem;
+  font-family: "Poppins", sans-serif;
 }
 /* Title Styling */
 .program-simak-ui-title-h3 {
-  font-size: 1.2rem;
-  color: #333;
-  font-weight: 700;
-  margin-top: 3rem;
-  margin-bottom: 0.5rem;
-  font-family: "Nunito", sans-serif;
-}
-/* Title Styling */
-.program-simak-ui-title-h4 {
   font-size: 1.1rem;
   color: #333;
   font-weight: 700;
-  margin-top: 3rem;
-  margin-bottom: 0.5rem;
   font-family: "Nunito", sans-serif;
 }
 
@@ -45,7 +45,7 @@
   color: #343131;
   font-weight: 400;
   line-height: normal;
-  margin-bottom: 1.5rem;
+
   font-family: "Nunito", sans-serif;
 }
 
@@ -55,7 +55,7 @@
   padding-left: 1.5rem;
   font-size: 0.9rem;
   color: #343131;
-  margin-left: 1rem;
+  margin-left: 0.3rem;
   font-family: "Nunito", sans-serif;
 }
 
@@ -86,11 +86,11 @@
     color: #1e3e62; /* Warna titik untuk layar lebih kecil */
   }
   .program-simak-ui-title {
-    font-size: 1.6rem; /* Ukuran judul lebih kecil */
+    font-size: 1.3rem; /* Ukuran judul lebih kecil */
   }
 
-  .program-simak-ui-title-h3 {
-    font-size: 1.4rem; /* Ukuran sub-judul lebih kecil */
+  .program-simak-ui-title-h2 {
+    font-size: 1.2rem; /* Ukuran sub-judul lebih kecil */
   }
 
   .program-simak-ui-description {
@@ -110,7 +110,7 @@
 /* Responsif untuk layar kecil */
 @media (max-width: 768px) {
   .program-simak-ui-title {
-    font-size: 1.4rem; /* Ukuran judul lebih kecil */
+    font-size: 1.2rem; /* Ukuran judul lebih kecil */
   }
   .additional-description_simak-ui {
     font-size: 0.85rem; /* Ukuran lebih kecil untuk ponsel */
@@ -119,8 +119,8 @@
     margin-top: 1rem; /* Jarak margin atas lebih kecil */
   }
 
-  .program-simak-ui-title-h3 {
-    font-size: 1.2rem; /* Ukuran sub-judul lebih kecil */
+  .program-simak-ui-title-h2 {
+    font-size: 1.1rem; /* Ukuran sub-judul lebih kecil */
   }
 
   .program-simak-ui-description {
@@ -135,10 +135,10 @@
 /* Responsif untuk layar sangat kecil */
 @media (max-width: 480px) {
   .program-simak-ui-title {
-    font-size: 1.3rem; /* Ukuran judul paling kecil */
+    font-size: 1.2rem; /* Ukuran judul paling kecil */
   }
 
-  .program-simak-ui-title-h3 {
+  .program-simak-ui-title-h2 {
     font-size: 1.1rem; /* Ukuran sub-judul paling kecil */
   }
 

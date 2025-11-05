@@ -39,7 +39,7 @@ const PaketBelajarSDSMPSMA = () => {
         Impian. Program dapat disesuaikan dan Anda dapat berkonsultasi lebih
         detail untuk mendapatkan arahan dan rekomendasi sesi terbaik.
       </p>
-
+      <br />
       <div className="paket-cards__sd_smp_sma">
         {packages.map((pkg, index) => (
           <div className="paket-card__sd_smp_sma" key={index}>

@@ -10,13 +10,14 @@ import Nav from "./components/Navbar/Nav/Nav";
 import ProgramModal from "./components/Navbar/ProgramModal/ProgramModal";
 import StoriesModal from "./components/Navbar/StoriesModal/StoriesModal";
 import PromoFloating from "./components/PromoFloating/PromoFloating";
-import LoadingSpinner from "./helpers/LoadingSpinner/LoadingSpinner";
 import { Menus } from "./helpers/NavbarMenus/Menus";
 import ScrollToTopButton from "./helpers/ScrollToTopButton/ScrollToTopButton";
 import ToTop from "./helpers/ToTop";
 import { fetchContactCs } from "./lib/features/contactCsSlice";
 import { useAppDispatch } from "./lib/hooks";
 import AboutPage from "./pages/AboutPage/AboutPage";
+import BlogPage from "./pages/Blog/BlogPage";
+import BlogDetail from "./pages/Blog/components/BlogDetail/BlogDetail";
 import HomePage from "./pages/HomePage/HomePage";
 import ListSiswaPage from "./pages/ListSiswaLPS/ListSiswaPage";
 import LesPrivatCPNS from "./pages/ProgramLPS/LesPrivatCPNS/LesPrivatCPNS";
@@ -33,8 +34,12 @@ import LesPrivatUTBK from "./pages/ProgramLPS/LesPrivatUTBK/LesPrivatUTBK";
 import LesPrivatUTBKSlug from "./pages/ProgramLPS/LesPrivatUTBK/LesPrivatUTBKSlug/LesPrivatUTBKSlug";
 import SimakUIAndKKI from "./pages/ProgramLPS/SimakUIAndKKI/SimakUIAndKKI";
 import SimakUIAndKKISLug from "./pages/ProgramLPS/SimakUIAndKKI/SimakUIAndKKISLug/SimakUIAndKKISLug";
+import LesPrivatTKA from "./pages/ProgramLPS/LesPrivatTKA/LesPrivatTKA";
 import SuccessStoriesPage from "./pages/SuccesStoriesPage/SuccessStoriesPage";
 import TestimonyPage from "./pages/TestimonyPage/TestimonyPage";
+import LesPrivatTKASlug from "./pages/ProgramLPS/LesPrivatTKA/LesPrivatTKASlug";
+import PageLinkTree from "./pages/PageLinkTree/PageLinkTree";
+import LoadingSpinner from "./helpers/LoadingSpinner/LoadingSpinner";
 
 const programSubMenuData =
   Menus.find((menu) => menu.name === "Program")?.subMenu || [];
@@ -43,10 +48,11 @@ const storiesSubMenuData =
   Menus.find((menu) => menu.name === "Stories")?.subMenu || [];
 
 function App() {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const location = useLocation();
 
   const dispatch = useAppDispatch();
+  const isLinksPage = location.pathname === "/links";
 
   useEffect(() => {
     dispatch(fetchContactCs());
@@ -59,16 +65,21 @@ function App() {
     });
 
     const handlePageChange = () => {
-      setLoading(true);
-      const timer = setTimeout(() => {
-        setLoading(false);
-      }, 1000);
+      if (!isLinksPage) {
+        setLoading(true);
 
-      return () => clearTimeout(timer);
+        const timer = setTimeout(() => {
+          setLoading(false);
+        }, 1000);
+
+        return () => clearTimeout(timer);
+      } else {
+        setLoading(false);
+      }
     };
 
     handlePageChange();
-  }, [location]);
+  }, [location, isLinksPage]);
 
   const [showProgramModal, setShowProgramModal] = useState(false);
   const handleOpenProgramModal = () => {
@@ -87,95 +98,141 @@ function App() {
     setShowStoriesModal(false);
   };
 
+  const isBlogDetailPage =
+    location.pathname.startsWith("/blog/") &&
+    location.pathname.split("/").length > 2;
+
+  const shouldShowGlobalComponents = !isBlogDetailPage && !isLinksPage;
   return (
     <>
-      <ToTop />
-      <ScrollToTopButton />
-      <Nav />
       {loading && <LoadingSpinner />}
-      <Routes>
-        <Route path="/" element={<HomePage />}></Route>
-        <Route path="*" element={<HomePage />}></Route>
-        <Route path="/about-us" element={<AboutPage />}></Route>
-        <Route path="/testimoni-lps" element={<TestimonyPage />}></Route>
-        <Route
-          path="/success-stories-lps"
-          element={<SuccessStoriesPage />}></Route>
-        <Route path="/list-siswa-lps" element={<ListSiswaPage />}></Route>
 
-        {/* program utbk */}
-        <Route
-          path="/les-privat-utbk-terbaik"
-          element={<LesPrivatUTBK />}></Route>
-        <Route
-          path="/les-privat-utbk-terbaik-di/:slug"
-          element={<LesPrivatUTBKSlug />}></Route>
+      {!loading && (
+        <>
+          {shouldShowGlobalComponents && (
+            <>
+              {/* Komponen Global */}
+              <ToTop />
+              <ScrollToTopButton />
+              <Nav />
+              <FloatingCTA />
+              <PromoFloating />
+              <BottomNavigationBar
+                onProgramClick={handleOpenProgramModal}
+                onStoriesClick={handleOpenStoriesModal}
+              />
+              <ToTop />
+              <ScrollToTopButton />
+              {/* <FooterNew /> */}
+            </>
+          )}
 
-        {/* progcontainer-simakUi-KKI-pageram CPNS */}
-        <Route
-          path="/bimbel-persiapan-cpns-terbaik"
-          element={<LesPrivatCPNS />}></Route>
-        <Route
-          path="/bimbel-persiapan-cpns-terbaik-di/:slug"
-          element={<LesPrivatCPNSSlug />}></Route>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/links" element={<PageLinkTree />} />
+            <Route path="*" element={<HomePage />} />
 
-        {/* program Simak UI & KKI */}
-        <Route
-          path="/bimbel-persiapan-masuk-ui-kki-terbaik"
-          element={<SimakUIAndKKI />}></Route>
-        <Route
-          path="/bimbel-persiapan-masuk-ui-kki-terbaik-di/:slug"
-          element={<SimakUIAndKKISLug />}></Route>
+            {/* BLOG */}
+            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/blog/:slug" element={<BlogDetail />} />
 
-        {/* program les privat mahasiswa */}
-        <Route
-          path="/les-privat-mahasiswa-terbaik"
-          element={<LesPrivatMahasiswa />}></Route>
-        <Route
-          path="/les-privat-mahasiswa-terbaik-di/:slug"
-          element={<LesPrivatMahasiswaSlug />}></Route>
+            <Route path="/about-us" element={<AboutPage />} />
+            <Route path="/testimoni-lps" element={<TestimonyPage />} />
+            <Route
+              path="/success-stories-lps"
+              element={<SuccessStoriesPage />}
+            />
+            <Route path="/list-siswa-lps" element={<ListSiswaPage />} />
 
-        {/* program les privat sd smp sma */}
-        <Route
-          path="/les-privat-sd-smp-sma-terbaik"
-          element={<LesPrivatSDSMPSMA />}></Route>
-        <Route
-          path="/les-privat-sd-smp-sma-terbaik-di/:slug"
-          element={<LesPrivatSDSMPSMASlug />}></Route>
+            {/* program utbk */}
+            <Route
+              path="/les-privat-utbk-terbaik"
+              element={<LesPrivatUTBK />}
+            />
+            <Route
+              path="/les-privat-utbk-terbaik-di/:slug"
+              element={<LesPrivatUTBKSlug />}
+            />
 
-        {/* program les privat pascasarjana */}
-        <Route
-          path="/les-privat-pascasarjana-terbaik"
-          element={<LesPrivatPascaSarjana />}></Route>
-        <Route
-          path="/les-privat-pascasarjana-terbaik-di/:slug"
-          element={<LesPrivatPascaSarjanaSlug />}></Route>
+            {/* program CPNS */}
+            <Route
+              path="/bimbel-persiapan-cpns-terbaik"
+              element={<LesPrivatCPNS />}
+            />
+            <Route
+              path="/bimbel-persiapan-cpns-terbaik-di/:slug"
+              element={<LesPrivatCPNSSlug />}
+            />
 
-        {/* program les privat osn */}
-        <Route
-          path="/les-privat-osn-terbaik"
-          element={<LesPrivatOSN />}></Route>
-        <Route
-          path="/les-privat-osn-terbaik-di/:slug"
-          element={<LesPrivatOSNSlug />}></Route>
-      </Routes>
-      <BottomNavigationBar
-        onProgramClick={handleOpenProgramModal}
-        onStoriesClick={handleOpenStoriesModal}
-      />
-      <FloatingCTA />
-      <PromoFloating />
-      <FooterNew />
-      <ProgramModal
-        isOpen={showProgramModal}
-        onClose={handleCloseProgramModal}
-        programSubMenu={programSubMenuData}
-      />
-      <StoriesModal // Modal BARU untuk Stories
-        isOpen={showStoriesModal}
-        onClose={handleCloseStoriesModal}
-        storiesSubMenu={storiesSubMenuData} // Meneruskan data sub-menu stories
-      />
+            {/* program Simak UI & KKI */}
+            <Route
+              path="/bimbel-persiapan-masuk-ui-kki-terbaik"
+              element={<SimakUIAndKKI />}
+            />
+            <Route
+              path="/bimbel-persiapan-masuk-ui-kki-terbaik-di/:slug"
+              element={<SimakUIAndKKISLug />}
+            />
+
+            {/* program les privat mahasiswa */}
+            <Route
+              path="/les-privat-mahasiswa-terbaik"
+              element={<LesPrivatMahasiswa />}
+            />
+            <Route
+              path="/les-privat-mahasiswa-terbaik-di/:slug"
+              element={<LesPrivatMahasiswaSlug />}
+            />
+
+            {/* program les privat sd smp sma */}
+            <Route
+              path="/les-privat-sd-smp-sma-terbaik"
+              element={<LesPrivatSDSMPSMA />}
+            />
+            <Route
+              path="/les-privat-sd-smp-sma-terbaik-di/:slug"
+              element={<LesPrivatSDSMPSMASlug />}
+            />
+
+            {/* program les privat pascasarjana */}
+            <Route
+              path="/les-privat-pascasarjana-terbaik"
+              element={<LesPrivatPascaSarjana />}
+            />
+            <Route
+              path="/les-privat-pascasarjana-terbaik-di/:slug"
+              element={<LesPrivatPascaSarjanaSlug />}
+            />
+            {/* program les privat tes kemampuan akademik */}
+            <Route
+              path="/les-privat-tes-kemampuan-akademik"
+              element={<LesPrivatTKA />}
+            />
+            <Route
+              path="/les-privat-tes-kemampuan-akademik-di/:slug"
+              element={<LesPrivatTKASlug />}
+            />
+
+            {/* program les privat osn */}
+            <Route path="/les-privat-osn-terbaik" element={<LesPrivatOSN />} />
+            <Route
+              path="/les-privat-osn-terbaik-di/:slug"
+              element={<LesPrivatOSNSlug />}
+            />
+          </Routes>
+          {shouldShowGlobalComponents && <FooterNew />}
+          <ProgramModal
+            isOpen={showProgramModal}
+            onClose={handleCloseProgramModal}
+            programSubMenu={programSubMenuData}
+          />
+          <StoriesModal // Modal BARU untuk Stories
+            isOpen={showStoriesModal}
+            onClose={handleCloseStoriesModal}
+            storiesSubMenu={storiesSubMenuData}
+          />
+        </>
+      )}
     </>
   );
 }

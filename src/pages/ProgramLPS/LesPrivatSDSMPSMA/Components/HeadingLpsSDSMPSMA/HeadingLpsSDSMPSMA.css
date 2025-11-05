@@ -1,6 +1,5 @@
 .container-halaman__sd_smp_sma {
   margin-top: 10vh;
-
   display: flex;
   overflow: hidden;
   align-items: center;
@@ -29,20 +28,20 @@
 
 .title-halaman-hero__sd_smp_sma {
   font-size: 1.4rem;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 10px;
   text-align: start;
-
+  text-transform: uppercase;
   line-height: normal;
   color: var(--color-gray-darker);
-  font-family: "Nunito", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .child-paragraf-hero__sd_smp_sma {
   font-size: 1rem;
   color: #343131;
   line-height: normal;
-  margin-bottom: 20px;
+
   font-weight: 400;
   text-align: start;
   font-family: "Nunito", sans-serif;
@@ -52,6 +51,8 @@
   padding: 12px 24px;
   background-color: var(--color-orange-default);
   color: #fcfaee;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
   border: none;
   border-radius: 5px;
   font-size: 16px;
@@ -72,7 +73,7 @@
   }
 
   .title-halaman-hero__sd_smp_sma {
-    font-size: 28px;
+    font-size: 1.3rem;
   }
 
   .btn-learn-more__sd_smp_sma {
@@ -90,7 +91,7 @@
 /* Ukuran font untuk tablet */
 @media (max-width: 1024px) {
   .title-halaman-hero__sd_smp_sma {
-    font-size: 30px; /* Ukuran lebih kecil untuk tablet */
+    font-size: 1.3rem; /* Ukuran lebih kecil untuk tablet */
   }
   .child-paragraf-hero__sd_smp_sma {
     font-size: 0.9rem;
@@ -100,7 +101,7 @@
 /* Ukuran font untuk ponsel */
 @media (max-width: 768px) {
   .title-halaman-hero__sd_smp_sma {
-    font-size: 28px; /* Ukuran lebih kecil untuk ponsel */
+    font-size: 1.2rem; /* Ukuran lebih kecil untuk ponsel */
   }
   .child-paragraf-hero__sd_smp_sma {
     font-size: 1rem;
@@ -115,7 +116,7 @@
 /* Ukuran font untuk layar sangat kecil */
 @media (max-width: 480px) {
   .title-halaman-hero__sd_smp_sma {
-    font-size: 22px; /* Ukuran terkecil untuk layar kecil */
+    font-size: 1.2rem;
   }
   .child-paragraf-hero__sd_smp_sma {
     font-size: 0.9rem; /* Smaller font for mobile */

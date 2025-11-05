@@ -1,19 +1,22 @@
 import { Helmet } from "react-helmet-async";
 import "./LesPrivatPascaSarjana.css";
 
-import AlumniLpsNew from "../../../components/AlumniLpsNew/AlumniLpsNew";
 import GaleryBelajarSiswa from "../../../components/GaleryBelajarSiswa/GaleryBelajarSiswa";
 import Slider from "../../../components/Slider/Slider";
 import TestimoniWaSlider from "../../../components/TestimoniWaSlider/TestimoniWaSlider";
 import UnivPengajarLps from "../../../components/UnivPengajarLps/UnivPengajarLps";
+import { testimoniWaSliderPascaSarjanaData } from "../../../helpers/DummyData/Pascasarjana/pascasarjanaDammyData";
 import ProfileTutor from "../../HomePage/Components/ProfileTutor/ProfileTutor";
 import SuccessStory from "../../HomePage/Components/SuccessStory/SuccessStory";
 import TestimoniWaSiswa from "../../HomePage/Components/TestimoniWaSiswa/TestimoniWaSiswa";
 import VisiEndMisiLps from "../../HomePage/Components/VisiEndMisiLps/VisiEndMisiLps";
-import FasilitasSimakUI from "../SimakUIAndKKI/Components/FasilitasSimakUI/FasilitasSimakUI";
+import FasilitasPascaSarjana from "./Components/FasilitasPascaSarjana";
 import HeroLpsPascaSarjana from "./Components/HeroLpsPascaSarjana/HeroLpsPascaSarjana";
 import PaketBelajarPascaSarjana from "./Components/PaketBelajarPascaSarjana/PaketBelajarPascaSarjana";
 import ProgramIntensiPascaSarjana from "./Components/ProgramIntensiPascaSarjana/ProgramIntensiPascaSarjana";
+import AllAlumniLpsImage from "../../ListSiswaLPS/AllAlumniLps/AllAlumniLpsImage";
+import ListSiswaLPS from "../../ListSiswaLPS/ListSiswaLPS";
+import SliderTestimoniSiswa from "../../../components/SliderTestimoniSiswa/SliderTestimoniSiswa";
 
 const LesPrivatPascaSarjana = () => {
   const baseUrl = "https://apps.lesprivatmasukptn.com";
@@ -129,18 +132,24 @@ const LesPrivatPascaSarjana = () => {
       <div className="container-all">
         <HeroLpsPascaSarjana />
         <Slider />
-        <FasilitasSimakUI />
+        <FasilitasPascaSarjana />
         <PaketBelajarPascaSarjana />
         <ProgramIntensiPascaSarjana />
         {/* <InformationProgram programType={"lesprivat-pascasarjana"} /> */}
         <VisiEndMisiLps />
         <ProfileTutor />
         <UnivPengajarLps />
-        <AlumniLpsNew />
+        {/* <AlumniLpsNew /> */}
         <GaleryBelajarSiswa />
-        <TestimoniWaSlider />
+        <TestimoniWaSlider
+          title={testimoniWaSliderPascaSarjanaData.title}
+          description={testimoniWaSliderPascaSarjanaData.description}
+        />
         <SuccessStory />
         <TestimoniWaSiswa />
+        <AllAlumniLpsImage />
+        <ListSiswaLPS />
+        <SliderTestimoniSiswa />
       </div>
     </>
   );

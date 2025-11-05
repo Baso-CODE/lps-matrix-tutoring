@@ -1,0 +1,148 @@
+.centered-content_program-tka {
+  width: 100%;
+  margin-top: 5%;
+  margin-bottom: 20px;
+}
+
+.centered-content_program-tka h2 {
+  font-size: 1.2rem;
+  color: #333333;
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  line-height: 1.4;
+  border-left: 4px solid #ff6500;
+  padding-left: 0.3rem;
+}
+
+.centered-content_program-tka h3 {
+  font-size: 1.1rem;
+  color: #333333;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.centered-content_program-tka h4 {
+  font-size: 1.02rem;
+  color: #444444;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.centered-content_program-tka p {
+  font-size: 0.95rem;
+  color: #343131;
+  line-height: 1.6;
+  font-weight: 400;
+  font-family: "Nunito", sans-serif;
+  margin-bottom: 0.5rem;
+}
+
+.centered-content_program-tka ul {
+  /* margin-left: 1.2rem; */
+  margin-bottom: 1rem;
+  list-style-type: disc;
+}
+
+.centered-content_program-tka li {
+  margin-bottom: 0.3rem;
+  color: #555555;
+  gap: 0.3rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-family: "Nunito", sans-serif;
+}
+
+/* --- Checklist style --- */
+.centered-content_program-tka .checklist {
+  list-style: none; /* hilangkan bullet bawaan */
+  margin: 0;
+  padding: 0;
+}
+
+.centered-content_program-tka .checklist li {
+  position: relative;
+  padding-left: 1.6rem; /* kasih ruang buat icon ceklis */
+  margin-bottom: 0.4rem;
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.5;
+  font-family: "Nunito", sans-serif;
+}
+
+.centered-content_program-tka .checklist li::before {
+  content: "✔"; /* ceklis manual */
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #0077ff; /* biru biar standout */
+  font-weight: bold;
+}
+
+/* --- Numbered list style --- */
+.centered-content_program-tka .numbered-list {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+  list-style-type: decimal;
+}
+
+.centered-content_program-tka .numbered-list li {
+  margin-bottom: 0.4rem;
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-family: "Nunito", sans-serif;
+}
+
+.les-privat-sd-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  display: block;
+}
+.subject-list-les-private-tka {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.subject-list-les-private-tka-item {
+  display: flex;
+  align-items: center;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  color: #4f4f4f;
+}
+
+.subject-list-les-private-tka-icon {
+  margin-right: 0px;
+  color: #4caf50;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .centered-content_program-tka h2 {
+    font-size: 1.1rem;
+  }
+
+  .centered-content_program-tka h3 {
+    font-size: 1rem;
+  }
+
+  .centered-content_program-tka h4 {
+    font-size: 0.95rem;
+  }
+
+  .centered-content_program-tka p,
+  .centered-content_program-tka li {
+    font-size: 0.9rem;
+  }
+}

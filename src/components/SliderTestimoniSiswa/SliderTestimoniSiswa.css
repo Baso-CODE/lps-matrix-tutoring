@@ -1,0 +1,126 @@
+.testimoni_wa__section {
+  text-align: center;
+  margin-bottom: 4rem;
+  padding-top: 4%;
+  padding-bottom: 4rem;
+}
+
+.testimoni_wa__title {
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: var(--color-gray-darker);
+}
+
+.highlight__title {
+  position: relative;
+  display: inline-block;
+  color: var(--color-orange-default);
+  line-height: 1.2;
+}
+
+.testimoni_wa__description {
+  font-size: 1rem;
+  color: #444444;
+  font-family: "Nunito", sans-serif;
+  margin-bottom: 30px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.highlight__title svg {
+  position: absolute;
+  bottom: -8px; /* atur jarak garis dari teks */
+  left: 0;
+  width: 100%;
+  height: 26px;
+  pointer-events: none;
+} /* Animasi coretan pakai stroke-dasharray */
+.underline__svg path {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  transition: stroke-dashoffset 3s ease-in-out; /* dibuat lambat */
+}
+
+.animate-stroke path {
+  stroke-dashoffset: 0; /* mulai animasi */
+}
+
+/* styling kartu */
+.testimoni_wa__card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.testimoni_wa__card:hover {
+  transform: translateY(-8px);
+}
+
+.testimoni_wa__image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.testimoni_wa__nama {
+  margin-top: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #444;
+  font-family: "Nunito", sans-serif;
+}
+/* atur posisi pagination agak ke bawah */
+.swiper-pagination {
+  position: relative; /* biar tidak nabrak card */
+  margin-top: 30px; /* geser ke bawah */
+}
+
+/* ubah warna bullet pagination */
+.swiper-pagination-bullet {
+  background: #ccc; /* warna default bullet */
+  opacity: 1;
+  font-size: 2rem;
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+.swiper-pagination-bullet-active {
+  background: #ff5a5f; /* warna bullet aktif */
+}
+
+/* Ubah warna tombol navigation */
+.swiper-button-prev,
+.swiper-button-next {
+  color: #ff5a5f; /* contoh merah */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect */
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  color: #1e90ff; /* contoh biru saat hover */
+  transform: scale(1.2);
+}
+
+/* Bisa juga atur ukuran */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-weight: 800;
+  font-size: 26px; /* default 20px, kamu bisa besarin */
+}
+
+@media (max-width: 768px) {
+  .testimoni_wa__title {
+    font-size: 1.3rem;
+  }
+  .testimoni_wa__description {
+    font-size: 0.9rem;
+  }
+}

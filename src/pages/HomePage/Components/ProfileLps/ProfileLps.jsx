@@ -58,7 +58,7 @@ const ProfileLps = () => {
             alt="Video Profil LPS"
           />
           {/* Gradient diletakkan di dalam wrapper yang sama dengan gambar */}
-          <div className="shadow-bottom-image-profile-lps"></div>
+          {/* <div className="shadow-bottom-image-profile-lps"></div> */}
         </div>
       </div>
     </div>

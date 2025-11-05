@@ -1,9 +1,10 @@
 /* Header Styling */
 .alumni-lps-header h2 {
   text-align: start;
-  font-family: "Nunito", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 700;
   color: #333;
+  text-transform: uppercase;
   font-size: 1.4rem;
   margin-bottom: 15px;
 }
@@ -33,7 +34,7 @@
 /* Media Queries for Responsive Design */
 @media (max-width: 768px) {
   .alumni-lps-header h2 {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 
   .alumni-lps-container img {

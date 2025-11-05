@@ -45,6 +45,40 @@
   height: 100%;
 }
 
+.slider-placeholder {
+  /* Harus mencakup seluruh lebar container embla */
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  /* Gaya Visual */
+  background-color: #f0f4f8; /* Warna latar belakang lembut */
+  color: #6c757d;
+  min-height: 250px; /* Tinggi minimum yang masuk akal untuk desktop */
+  border-radius: 10px;
+  margin: 10px 5px; /* Sesuaikan dengan margin slider normal */
+  padding: 20px;
+}
+
+.slider-placeholder p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+}
+
+/* Penyesuaian untuk tampilan mobile */
+@media (max-width: 768px) {
+  .slider-placeholder {
+    min-height: 150px; /* Tinggi yang lebih kecil untuk mobile */
+    margin: 5px 5px; /* Margin yang lebih kecil untuk mobile */
+    min-width: calc(100% - 10px); /* Sesuaikan agar lebar full */
+  }
+}
+
 @media (max-width: 768px) {
   .desktop-only {
     display: none;

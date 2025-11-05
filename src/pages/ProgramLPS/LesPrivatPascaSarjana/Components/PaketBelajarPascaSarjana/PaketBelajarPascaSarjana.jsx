@@ -33,22 +33,23 @@ const PaketBelajarPascaSarjana = () => {
   return (
     <div className="paket-belajar-container__osn">
       <h2 className="title-paket-induk__osn">
-        Paket LPS Education Pasca Sarjana
+        Paket Sesi Belajar Privat Intensif Ujian Masuk Pascasarjana
       </h2>
       <p className="description-paket-belajar__osn">
-        Program LPS Education Pasca Sarjana dirancang khusus untuk mendukung
-        mahasiswa dalam menjalani studi pasca sarjana dengan lebih optimal.
-        Program ini mencakup berbagai materi dan sesi yang terstruktur untuk
-        membantu mahasiswa mendalami bidang studi pilihan mereka, mengembangkan
-        kemampuan riset, dan mempersiapkan diri menghadapi tantangan akademik
-        dan profesional di tingkat lanjut. Setiap paket menawarkan fleksibilitas
-        sesuai kebutuhan individu, memungkinkan intensitas belajar yang sesuai
-        untuk mencapai tujuan akademis yang diinginkan. Dengan dukungan tutor
-        berpengalaman dan kurikulum yang komprehensif, mahasiswa akan
-        mendapatkan bimbingan yang maksimal untuk meraih kesuksesan di tingkat
-        pasca sarjana.
+        Program Privat Intensif Pascasarjana dirancang khusus untuk membimbing
+        siswa yang akan mengikuti Ujian Masuk Jenjang Profesi/S2/S3 maupun PPDS.
+        Layanan ini mencakup belajar materi dan soal-soal TPA dan Bahasa Inggris
+        yang biasanya diujikan pada Ujian Masuk Pascasarjana.
       </p>
-
+      <br />
+      <p className="description-paket-belajar__osn">
+        Setiap paket sesi belajar menawarkan fleksibilitas sesuai kebutuhan
+        individu, memungkinkan intensitas belajar yang sesuai untuk mencapai
+        tujuan akademis yang diinginkan. Dengan dukungan tutor berpengalaman dan
+        berkompeten, mahasiswa akan mendapatkan bimbingan yang maksimal untuk
+        meraih kesuksesan di Ujian Masuk Pascasarjana yang diikuti.
+      </p>
+      <br />
       <div className="paket-cards__osn">
         {packages.map((pkg, index) => (
           <div className="paket-card" key={index}>

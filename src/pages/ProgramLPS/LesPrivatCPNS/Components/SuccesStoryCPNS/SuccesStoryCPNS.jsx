@@ -3,13 +3,18 @@ import "swiper/css";
 import "swiper/css/effect-cards";
 import { EffectCards } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import PropTypes from "prop-types";
 
 import { useEffect, useState } from "react";
 import { getSuccesStoryCPNS } from "../../../../../api/succesStoryCpns/getSuccesStoryCPNS";
 import "./SuccesStoryCPNS.css";
+import { useLocation } from "react-router-dom";
 
-const SuccesStoryCPNS = () => {
+const SuccesStoryCPNS = ({ city: cityProp }) => {
   const [succesStories, setSuccessStories] = useState([]);
+
+  const location = useLocation();
+  const path = location.pathname;
 
   useEffect(() => {
     async function fetchSuccessStories() {
@@ -17,11 +22,17 @@ const SuccesStoryCPNS = () => {
         const result = await getSuccesStoryCPNS();
         setSuccessStories(result.data);
       } catch (error) {
-        console.log("Failed to fetch success stories", error);
+        console.error("Failed to fetch success stories", error);
       }
     }
     fetchSuccessStories();
   }, []);
+
+  let city = cityProp || "";
+  if (!city && path.includes("/di/")) {
+    city = path.split("/di/")[1];
+    city = city.charAt(0).toUpperCase() + city.slice(1);
+  }
 
   return (
     <div className="success-story-cpns-container">
@@ -34,9 +45,9 @@ const SuccesStoryCPNS = () => {
         <div className="success-story-cpns-content">
           {/* Bagian Kiri: Title dan Deskripsi */}
           <div className="success-story-cpns-left">
-            <h3 className="success-story-cpns-subtitle">
+            <h2 className="success-story-cpns-subtitle">
               Success Stories CPNS & Kedinasan
-            </h3>
+            </h2>
             <p className="success-story-cpns-description">
               LPS Education telah membantu banyak siswa dalam meraih kesuksesan
               dan merancang program untuk memberikan dampak positif dan
@@ -65,24 +76,35 @@ const SuccesStoryCPNS = () => {
               grabCursor={true}
               modules={[EffectCards]}
               className="success-story-cpns-swiper">
-              {succesStories.map((story, index) => (
-                <SwiperSlide
-                  key={index}
-                  className="success-story-cpns-swiper-slide">
-                  <img
-                    loading="lazy"
-                    src={story.link_image}
-                    alt={`Succes story Siswa OSN Edumatirix Indonesia atas nama ${story.participantName}`}
-                    className="success-story-cpns-swiper-image"
-                  />
-                </SwiperSlide>
-              ))}
+              {succesStories.map((story, index) => {
+                const altText = `Testimoni siswa ${
+                  story.name || "LPS"
+                } mengenai Bimbel & Les Privat CPNS bersama LPS Education${
+                  city ? " di " + city : ""
+                }. Program persiapan Tes CPNS dengan bimbingan tutor berpengalaman dan strategi lolos seleksi ASN.`;
+
+                return (
+                  <SwiperSlide
+                    key={index}
+                    className="success-story-cpns-swiper-slide">
+                    <img
+                      loading="lazy"
+                      src={story.link_image}
+                      alt={altText}
+                      className="success-story-cpns-swiper-image"
+                    />
+                  </SwiperSlide>
+                );
+              })}
             </Swiper>
           </div>
         </div>
       </div>
     </div>
   );
+};
+SuccesStoryCPNS.propTypes = {
+  city: PropTypes.string,
 };
 
 export default SuccesStoryCPNS;

@@ -3,11 +3,26 @@ import { getJumbotronProgram } from "../../../../../api/jumbotron/getJumbotronPr
 import { selectContactCsData } from "../../../../../lib/features/contactCsSlice";
 import { useAppSelector } from "../../../../../lib/hooks";
 import "./ProgramSimakUI.css";
+import { useLocation } from "react-router-dom";
+import PropTypes from "prop-types";
 
-const ProgramSimakUI = () => {
+const ProgramSimakUI = ({ city: cityProp }) => {
   const [jumbotron, setJumbotron] = useState(null);
   const contactData = useAppSelector(selectContactCsData);
   const finalUrl = contactData?.link_cta;
+
+  const location = useLocation();
+  const path = location.pathname;
+
+  let city = cityProp || "";
+  if (!city && path.includes("/di/")) {
+    city = path.split("/di/")[1];
+    city = city.charAt(0).toUpperCase() + city.slice(1);
+  }
+
+  const altText = `Bimbel & Les Privat UTBK, SIMAK UI, UTUL UGM bersama LPS Education${
+    city ? " di " + city : ""
+  }. Les Privat Datang ke Rumah & Online dengan Guru Privat UI, ITB, UGM, dan Kedokteran PTN Favorit.`;
 
   useEffect(() => {
     const fetchJumbotron = async () => {
@@ -31,14 +46,18 @@ const ProgramSimakUI = () => {
       {/* Image Section */}
       <img
         loading="lazy"
-        src={jumbotron?.link_image || "/images/program/SIMAK-UI.webp"} // Ganti dengan URL atau path gambar yang sesuai
-        alt="Bimbel Les Privat ONLINE dan Les Privat Datang ke Rumah untuk Program SBMPTN UTBK SNBT Simak UI UTUL UGM. Guru Privat Masuk UI ITB UGM dan Kedokteran di PTN Favorit."
+        src={jumbotron?.link_image || "/images/program/SIMAK-UI.webp"}
+        alt={altText}
         className="program-simak-ui-image"
       />
       {/* Les privat Matrix */}
-      <h1 className="program-simak-ui-title">
-        Bimbingan Belajar Intensif Les Privat Simak UI dan KKI
-      </h1>
+      <h2 className="program-simak-ui-title">
+        Bimbingan Belajar Intensif Les Privat Simak UI dan KKI{" "}
+        <span className="color-d2b04c-description">
+          {city ? `di ${city}` : ""}
+        </span>{" "}
+        – LPS Education
+      </h2>
       {/* Description 1 */}
       <p className="additional-description_simak-ui">
         Program{" "}
@@ -70,9 +89,10 @@ const ProgramSimakUI = () => {
         belajar siswa. Target Program Super Intensif Simak UI adalah
         mengantarkan siswa Sukses Masuk UI sesuai jurusan yang diinginkan.
       </p>
+      <br />
 
       {/* Title Section */}
-      <h2 className="program-simak-ui-title-h3">
+      <h2 className="program-simak-ui-title-h2">
         Program Les Privat Simak UI dan KKI
       </h2>
 
@@ -85,10 +105,10 @@ const ProgramSimakUI = () => {
         Internasional UI (KKI). Selain jenjang S1 dan Vokasi, kami juga memiliki
         layanan Les Privat Simak UI untuk S2 dan S3.
       </p>
-
-      <h4 className="program-simak-ui-title-h4">
+      <br />
+      <h3 className="program-simak-ui-title-h3">
         Berikut Layanan Program Privat Khusus Persiapan SIMAK UI yang tersedia:
-      </h4>
+      </h3>
       {/* Program List Section */}
       <ul className="program-simak-ui-list">
         <li>Les Privat SIMAK UI S1 dan Vokasi</li>
@@ -107,6 +127,10 @@ const ProgramSimakUI = () => {
       </button>
     </div>
   );
+};
+
+ProgramSimakUI.propTypes = {
+  city: PropTypes.string,
 };
 
 export default ProgramSimakUI;

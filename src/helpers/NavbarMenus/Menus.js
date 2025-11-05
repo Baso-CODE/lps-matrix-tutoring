@@ -2,6 +2,7 @@ import {
   BookCheck,
   BookOpenText,
   Briefcase,
+  CalendarPlus2,
   GraduationCap,
   Medal,
   School,
@@ -61,9 +62,15 @@ export const Menus = [
         link: "/les-privat-osn-terbaik",
       },
       {
+        name: "Bimbel TKA",
+        desc: "Bimbel Untuk Persiapan TKA",
+        icon: CalendarPlus2,
+        link: "/les-privat-tes-kemampuan-akademik",
+      },
+      {
         name: "Bimbel Karantina PTN",
         desc: "Bimbel Untuk Persiapan PTN",
-        icon: Users, // Ikon topi kelulusan untuk program PTN
+        icon: Users,
         link: "https://supercampmatrix.co.id/",
       },
     ],
@@ -71,7 +78,7 @@ export const Menus = [
   },
   {
     name: "About Us",
-    link: "/about-us", // Link untuk About Us
+    link: "/about-us",
   },
   {
     name: "Stories",
@@ -96,5 +103,9 @@ export const Menus = [
       },
     ],
     gridCols: 1,
+  },
+  {
+    name: "Blog",
+    link: "/blog",
   },
 ];

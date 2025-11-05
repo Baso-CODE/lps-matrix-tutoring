@@ -3,10 +3,21 @@ import { getJumbotronProgram } from "../../../../../api/jumbotron/getJumbotronPr
 import { selectContactCsData } from "../../../../../lib/features/contactCsSlice";
 import { useAppSelector } from "../../../../../lib/hooks";
 import "./HeroLpsOSN.css";
-const HeroLpsOSN = () => {
+import { useLocation } from "react-router-dom";
+import PropTypes from "prop-types";
+const HeroLpsOSN = ({ city: cityProp }) => {
   const contactData = useAppSelector(selectContactCsData);
   const finalUrl = contactData?.link_cta;
   const [jumbotron, setJumbotron] = useState(null);
+
+  const location = useLocation();
+  const path = location.pathname;
+
+  let city = cityProp || "";
+  if (!city && path.includes("/di/")) {
+    city = path.split("/di/")[1];
+    city = city.charAt(0).toUpperCase() + city.slice(1);
+  }
 
   useEffect(() => {
     const fetchJumbotron = async () => {
@@ -24,6 +35,9 @@ const HeroLpsOSN = () => {
   //   const targetUrl = contactData?.link_cta || "https://wa.me/6285887562039";
   //   handleCTAClickLogic(targetUrl, e);
   // };
+  const altText = `Les Privat OSN (Olimpiade Sains Nasional) bersama LPS Education${
+    city ? " di " + city : ""
+  }. Program bimbingan intensif Matematika, Fisika, Kimia, Biologi, dan bidang OSN lainnya dengan Tutor Berpengalaman dari UI, ITB, UGM, dan PTN Favorit.`;
 
   return (
     <div className="container-halaman__sd_smp_sma">
@@ -33,48 +47,46 @@ const HeroLpsOSN = () => {
           data-aos="fade-out"
           className="rumah-adat-hero__mahasiswa"
           src={jumbotron?.link_image || "/images/program/OSN.webp"}
-          alt="Bimbel Les Privat ONLINE dan Les Privat Datang ke Rumah untuk Program SBMPTN UTBK SNBT Simak UI UTUL UGM. Guru Privat Masuk UI ITB UGM dan Kedokteran di PTN Favorit."
+          alt={altText}
         />
         <div className="isi-content-hero__sd_smp_sma">
           <h1 className="title-halaman-hero__sd_smp_sma">
-            Les Privat OSN, ISO, IMO (ONLINE & OFFLINE)
+            Les Privat OSN, ISO, IMO, SEAMO (ONLINE & OFFLINE){" "}
+            {city ? `di ${city}` : ""} – LPS Education
           </h1>
           <div>
             <p className="child-paragraf-hero__sd_smp_sma">
-              Program{" "}
-              <span className="color-d2b04c-description">
-                Les Privat OSN, ISO, IMO
-              </span>{" "}
-              dari LPS Education dirancang khusus untuk siswa yang ingin meraih
-              prestasi luar biasa di ajang Olimpiade Sains Nasional (OSN) serta
-              kompetisi internasional seperti International Science Olympiad
-              (ISO) dan International Mathematical Olympiad (IMO). Program ini
+              <span className="color-d2b04c-description">LPS Education</span> -
+              Program Les Privat OSN, ISO, IMO dirancang khusus untuk siswa yang
+              ingin meraih prestasi luar biasa di ajang Olimpiade Sains Nasional
+              (OSN) serta kompetisi internasional seperti International Science
+              Olympiad (ISO), International Mathematical Olympiad (IMO), dan
+              SEAMO (South East Asia Mathematical Olympiad). Program ini
               tersedia dalam format{" "}
-              <span className="color-d2b04c-description">online</span> dan{" "}
-              <span className="color-d2b04c-description">offline</span>,
+              <span className="color-d2b04c-description">Privat Offline</span>{" "}
+              dan{" "}
+              <span className="color-d2b04c-description">Privat Online</span>,
               memberikan fleksibilitas sesuai kebutuhan siswa.
             </p>
+            <br />
             <p className="child-paragraf-hero__sd_smp_sma">
-              Dengan tutor yang berpengalaman memenangkan kompetisi Olimpiade di
-              tingkat nasional maupun internasional, program ini memastikan
-              pendalaman konsep dasar, penyelesaian soal-soal tingkat tinggi,
-              dan bimbingan intensif. Progress belajar siswa dipantau secara
-              berkala oleh
-              <span className="color-d2b04c-description">
-                {" "}
-                Tim Akademik LPS Education{" "}
-              </span>
-              , yang selalu siap memberikan rekomendasi terbaik.
+              Dengan guru les privat yang berpengalaman mendampingi siswa
+              persiapan Olimpiade di tingkat nasional maupun internasional,
+              program ini memastikan pendalaman konsep dasar, penyelesaian
+              soal-soal tingkat tinggi, dan bimbingan intensif. Progress belajar
+              siswa dipantau secara berkala oleh Tim Akademik , yang selalu siap
+              memberikan rekomendasi terbaik.
             </p>
+            <br />
             <p className="child-paragraf-hero__sd_smp_sma">
               Target utama kami adalah mendukung siswa dalam meraih medali
-              bergengsi pada ajang Olimpiade Sains. Selain itu, program ini
-              dirancang secara komprehensif untuk mempersiapkan siswa agar dapat
-              diterima di sekolah impian maupun perguruan tinggi favorit. Fokus
-              utama kami terletak pada penguasaan materi yang mendalam dan
-              pencapaian prestasi akademik yang luar biasa. Bergabunglah dengan
-              program <strong>Super Intensif OSN</strong> dan wujudkan potensi
-              terbaik Anda di bidang akademik!
+              bergengsi pada ajang Olimpiade. Fokus utama kami terletak pada
+              penguasaan materi yang mendalam dan pencapaian prestasi akademik
+              yang luar biasa. Bergabunglah dengan{" "}
+              <span className="color-d2b04c-description">
+                Program Super Intensif Privat OSN dan Olimpiade Internasional
+              </span>{" "}
+              serta wujudkan potensi terbaik Anda di bidang akademik!
             </p>
           </div>
           <button
@@ -88,6 +100,9 @@ const HeroLpsOSN = () => {
       </div>
     </div>
   );
+};
+HeroLpsOSN.propTypes = {
+  city: PropTypes.string,
 };
 
 export default HeroLpsOSN;

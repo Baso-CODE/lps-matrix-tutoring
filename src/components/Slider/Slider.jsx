@@ -9,11 +9,7 @@ import { getSliderDescktop } from "../../api/slider/getSliderDescktop";
 import { getSliderMobile } from "../../api/slider/getSliderMobile";
 const Slider = () => {
   const [desktopSliders, setDesktopSliders] = useState([]);
-
   const [mobileSliders, setMobileSliders] = useState([]);
-
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   // Embla hook with Autoplay plugin
   const [emblaRefDesktop, emblaApiDesktop] = useEmblaCarousel({ loop: true }, [
@@ -25,8 +21,6 @@ const Slider = () => {
 
   useEffect(() => {
     const fetchSliders = async () => {
-      setLoading(true);
-      setError(null);
       try {
         const desktopResult = await getSliderDescktop();
         const mobileResult = await getSliderMobile();
@@ -39,9 +33,6 @@ const Slider = () => {
         }
       } catch (err) {
         console.error("Error fetching slider data:", err);
-        setError(err.message || "Failed to load sliders.");
-      } finally {
-        setLoading(false);
       }
     };
 
@@ -62,14 +53,6 @@ const Slider = () => {
     []
   );
 
-  if (loading) {
-    return <div className="loading-sliders">Loading sliders...</div>;
-  }
-
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
-
   return (
     <React.Fragment>
       {/* Slider for desktop */}
@@ -88,7 +71,9 @@ const Slider = () => {
                 </div>
               ))
             ) : (
-              <div>No desktop sliders available.</div>
+              <div className="slider-placeholder">
+                <p>Banner tidak tersedia.</p>
+              </div>
             )}
           </div>
         </div>
@@ -110,7 +95,9 @@ const Slider = () => {
                 </div>
               ))
             ) : (
-              <div>No mobile sliders available.</div>
+              <div className="slider-placeholder mobile-size">
+                <p>Banner tidak tersedia.</p>
+              </div>
             )}
           </div>
         </div>

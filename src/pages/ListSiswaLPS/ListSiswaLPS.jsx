@@ -6,7 +6,7 @@ const ListSiswaLPS = () => {
   return (
     <React.Fragment>
       <div className="parent-table-student">
-        <h1 className="main-title-list-student">ALumni LPS Education</h1>
+        <h2 className="main-title-list-student">ALumni LPS Education</h2>
         <p className="child-title-list-student">
           Terbukti membantu siswa lolos Kedokteran dan PTN Favorit, Sekarang
           saatnya untuk Kamu!

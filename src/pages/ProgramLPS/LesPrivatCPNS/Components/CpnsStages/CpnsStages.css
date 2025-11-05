@@ -11,11 +11,12 @@
 }
 
 .cpns-stages-title {
-  font-size: 1.7rem;
+  font-size: 1.4rem;
   color: var(--color-dark-blue);
   margin-bottom: 15px;
+  text-transform: uppercase;
   font-weight: 700;
-  font-family: "Nunito", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .cpns-stages-title span {
@@ -120,7 +121,7 @@
     gap: 25px; /* Sesuaikan gap untuk tablet */
   }
   .cpns-stages-title {
-    font-size: 1.7rem; /* Sedikit lebih kecil untuk tablet */
+    font-size: 1.3rem; /* Sedikit lebih kecil untuk tablet */
   }
   .cpns-stages-subtitle {
     font-size: 1rem; /* Sedikit lebih kecil untuk tablet */
@@ -134,7 +135,7 @@
     padding: 60px 0;
   }
   .cpns-stages-title {
-    font-size: 1.5rem; /* Lebih kecil lagi untuk mobile */
+    font-size: 1.2rem; /* Lebih kecil lagi untuk mobile */
   }
   .cpns-stages-subtitle {
     font-size: 0.9rem; /* Lebih kecil lagi untuk mobile */

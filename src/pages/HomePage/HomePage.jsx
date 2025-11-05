@@ -4,7 +4,7 @@ import Slider from "../../components/Slider/Slider";
 import UnivPengajarLps from "../../components/UnivPengajarLps/UnivPengajarLps";
 import FiturDanLayanan from "./Components/FiturDanLayanan/FiturDanLayanan";
 import KeunggulanEndAlasanMemilih from "./Components/KeunggulanEndAlasanMemilih/KeunggulanEndAlasanMemilih";
-import MateriUTBK2025 from "./Components/MateriUTBK2025/MateriUTBK2025";
+import MateriUTBK2026 from "./Components/MateriUTBK2026/MateriUTBK2026";
 import ProfileLps from "./Components/ProfileLps/ProfileLps";
 import ProfileTutor from "./Components/ProfileTutor/ProfileTutor";
 import ProgramBelajarLps from "./Components/ProgramBelajarLps/ProgramBelajarLps";
@@ -16,6 +16,10 @@ import AlumniLpsNew from "../../components/AlumniLpsNew/AlumniLpsNew";
 import TestimoniWaSlider from "../../components/TestimoniWaSlider/TestimoniWaSlider";
 import VisiEndMisiLps from "./Components/VisiEndMisiLps/VisiEndMisiLps";
 import "./HomePage.css";
+import AllAlumniLpsImage from "../ListSiswaLPS/AllAlumniLps/AllAlumniLpsImage";
+import ListSiswaLPS from "../ListSiswaLPS/ListSiswaLPS";
+import SliderTestimoniSiswa from "../../components/SliderTestimoniSiswa/SliderTestimoniSiswa";
+import VideoKarantina from "../../components/VideoKarantina/VideoKarantina";
 const HomePage = () => {
   return (
     <>
@@ -69,14 +73,18 @@ const HomePage = () => {
         <VisiEndMisiLps />
         <ProgramBelajarLps />
         <FiturDanLayanan />
+        <VideoKarantina />
         <ProfileTutor />
         <UnivPengajarLps />
         <AlumniLpsNew />
         <GaleryBelajarSiswa />
         <TestimoniWaSlider />
         <SuccessStory />
-        <MateriUTBK2025 />
+        <MateriUTBK2026 />
         <TestimoniWaSiswa />
+        <AllAlumniLpsImage />
+        <ListSiswaLPS />
+        <SliderTestimoniSiswa />
       </div>
     </>
   );

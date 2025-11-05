@@ -45,16 +45,16 @@ const AsalUniversitasMahasiswa = () => {
           Layanan Les Privat Online untuk Seluruh Wilayah di Indonesia
         </p>
       </div>
-      <h3 className="program-mahasiswa-title-h3">Bimbel Online Mahasiswa</h3>
+      <h2 className="program-mahasiswa-title-h2">Bimbel Online Mahasiswa</h2>
 
       <p className="additional-description-mahasiswa">
         Program{" "}
         <span className="color-d2b04c-description">
-          Bimbel Online Mahasiswa by LPS Education
+          Bimbel Online Mahasiswa - LPS Education
         </span>{" "}
         adalah kegiatan les privat yang dilaksanakan secara virtual (online)
         menggunakan Zoom, Skype, Google Meet dan aplikasi lain yang siswa
-        miliki. Peserta bimbel online by LPS Education tidak hanya berasal dari
+        miliki. Peserta bimbel online - LPS Education tidak hanya berasal dari
         Jabodetabek, tetapi juga dari berbagai kota di Indonesia seperti Padang,
         Aceh, Pekanbaru, Semarang, Bandung, Makasar, Surabaya, Malang, Bali, dan
         daerah lainnya di Indonesia. Meski belajar secara online, pembelajaran
@@ -68,7 +68,7 @@ const AsalUniversitasMahasiswa = () => {
         fleksibel mengikuti permintaan siswa, maka peserta les yang sibuk dengan
         rutinitasnya tetap bisa belajar dengan menyesuaikan waktu luang yang
         dimiliki. Ayo daftarkan dirimu sekarang juga di Program Les Privat
-        Mahasiswa by{" "}
+        Mahasiswa -{" "}
         <span className="color-d2b04c-description">LPS Education</span> .
       </p>
     </div>

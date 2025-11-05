@@ -1,7 +1,16 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import PropTypes from "prop-types";
 import "./SuccessStory.css";
 
-const SuccessStory = () => {
+const SuccessStory = ({ city: cityProp }) => {
+  const location = useLocation();
+  const path = location.pathname;
+
+  let city = cityProp || "";
+  if (!city && path.includes("/di/")) {
+    city = path.split("/di/")[1];
+    city = city.charAt(0).toUpperCase() + city.slice(1);
+  }
   const successStories = [
     { image: "/images/success-story/testimoni-1.webp" },
     { image: "/images/success-story/testimoni-2.webp" },
@@ -38,18 +47,30 @@ const SuccessStory = () => {
       </p>
       {/* Image Gallery */}
       <div className="success-story-gallery">
-        {successStories.map((item, index) => (
-          <img
-            loading="lazy"
-            src={item.image}
-            alt="Bimbel Les Privat ONLINE dan Les Privat Datang ke Rumah untuk Program SBMPTN UTBK SNBT Simak UI UTUL UGM. Guru Privat Masuk UI ITB UGM dan Kedokteran di PTN Favorit."
-            key={index}
-            className="success-story-image"
-          />
-        ))}
+        {successStories.map((item, index) => {
+          const altText = `Testimoni ${
+            index + 1
+          } Bimbel & Les Privat UTBK, SIMAK UI, UTUL UGM bersama LPS Education${
+            city ? " di " + city : ""
+          }. Guru Privat UI, ITB, UGM, Kedokteran PTN Favorit.`;
+
+          return (
+            <img
+              loading="lazy"
+              src={item.image}
+              alt={altText}
+              key={index}
+              className="success-story-image"
+            />
+          );
+        })}
       </div>
     </div>
   );
+};
+
+SuccessStory.propTypes = {
+  city: PropTypes.string,
 };
 
 export default SuccessStory;

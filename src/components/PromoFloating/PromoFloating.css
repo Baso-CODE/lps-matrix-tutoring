@@ -1,7 +1,7 @@
 /* FLOAT WA */
 .box-float-promo-main {
   position: fixed;
-  bottom: 17%;
+  bottom: 20%;
   right: 3%;
   z-index: 999;
   display: grid;
@@ -10,8 +10,8 @@
 }
 
 .icon-promo-float {
-  width: 170px; /* Atur ukuran lebar gambar sesuai keinginan Anda */
-  height: auto; /* Atur ukuran tinggi gambar sesuai keinginan Anda */
+  width: 170px;
+  height: auto;
 }
 
 /* RESPONSIVE */

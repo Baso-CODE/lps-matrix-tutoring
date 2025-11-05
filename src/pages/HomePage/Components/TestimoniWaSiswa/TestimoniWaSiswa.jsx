@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import { selectContactCsData } from "../../../../lib/features/contactCsSlice";
 import { useAppSelector } from "../../../../lib/hooks";
@@ -19,6 +19,7 @@ const TestimoniWaSiswa = ({
   description,
   imageDesktop,
   imageMobile,
+  cityProp,
 }) => {
   const finalTitle = title || defaultTestimonialData.title;
   const finalDescription = description || defaultTestimonialData.description;
@@ -27,12 +28,24 @@ const TestimoniWaSiswa = ({
 
   const contactData = useAppSelector(selectContactCsData);
 
+  const location = useLocation();
+  const path = location.pathname;
+
+  let city = cityProp || "";
+  if (!city && path.includes("/di/")) {
+    city = path.split("/di/")[1];
+    city = city.charAt(0).toUpperCase() + city.slice(1);
+  }
+
+  // Tentukan alt text dinamis
+  const altText = `Testimoni Orang Tua${
+    city ? " di " + city : ""
+  } bersama LPS Education. Program Bimbel & Les Privat UTBK, SIMAK UI, UTUL UGM, TKA, CPNS, Pascasarjana, Mahasiswa, dan OSN.`;
+
   return (
     <div className="container-testimoni-wa">
-      <div className="alumni-lps-header">
-        <h2>{finalTitle}</h2>
-      </div>
-      <p className="additional-description-about__us">
+      <h2 className="title-testimoni-wa-siswa-single-image">{finalTitle}</h2>
+      <p className="additional-description-about__testimoni-siswa">
         {formatDescriptionWithHighlight(finalDescription)}{" "}
       </p>
       <Link to={contactData?.link_cta || "#"}>
@@ -40,13 +53,13 @@ const TestimoniWaSiswa = ({
           loading="lazy"
           className="desktop-image-testimoni"
           src={finalImageDesktop}
-          alt={finalTitle || "Testimoni"}
+          alt={altText}
         />
         <img
           loading="lazy"
           src={finalImageMobile}
           className="mobile-image-testimoni"
-          alt={finalTitle || "Testimoni"}
+          alt={altText}
         />
       </Link>
     </div>
@@ -57,6 +70,7 @@ TestimoniWaSiswa.propTypes = {
   description: PropTypes.string,
   imageDesktop: PropTypes.string,
   imageMobile: PropTypes.string,
+  cityProp: PropTypes.string,
 };
 
 export default TestimoniWaSiswa;

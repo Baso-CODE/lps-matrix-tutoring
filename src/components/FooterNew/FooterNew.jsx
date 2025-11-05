@@ -44,7 +44,6 @@ const FooterNew = () => {
       <div className="new-footer">
         <div className="new-footer-section">
           <h3>LPS Education</h3>
-
           <h4>Bimbel Spesialis Masuk Fk & PTN Favorit</h4>
           <ul>
             <li>- Privat Offline</li>
@@ -121,7 +120,7 @@ const FooterNew = () => {
                 </li>
                 <li>
                   <a href="/les-privat-utbk-terbaik">
-                    Les Privat UTBK & SNBT 2025
+                    Les Privat UTBK & SNBT 2026
                   </a>
                 </li>
                 <li>

@@ -10,7 +10,8 @@
   font-size: 1.4rem;
   color: var(--color-gray-darker);
   margin-bottom: 20px;
-  font-family: "Nunito", sans-serif;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
   font-weight: 700;
 }
 

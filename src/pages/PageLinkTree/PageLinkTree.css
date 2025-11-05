@@ -1,0 +1,156 @@
+/* src/PageLinkTree.css */
+
+.home-page-container {
+  background-color: #ff6500;
+  color: white;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Header section styling */
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.logo-linktree {
+  width: 10rem;
+  height: auto;
+}
+
+.subtitle {
+  font-size: 0.9em;
+  font-family: "Nunito", sans-serif;
+  margin: 10px auto;
+}
+
+.social-media {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.social-icon {
+  background-color: white;
+  color: #333333;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* Main content and sections */
+.main-content {
+  width: 100%;
+  font-family: "Nunito", sans-serif;
+  max-width: 800px;
+}
+
+.section {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Menggabungkan style untuk semua item yang mirip */
+.promo-item,
+.consultation-item,
+.program-item {
+  /* Reset default button/link styles */
+  appearance: none;
+  border: none;
+  background-color: white;
+  text-align: left;
+  cursor: pointer;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  width: 100%;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 1em;
+  color: black;
+  font-weight: bold;
+  text-decoration: none; /* Menghilangkan underline pada link */
+
+  /* Flexbox untuk layout konten di dalamnya */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .program-item span,
+  .promo-item span,
+  .address-item span {
+    font-size: 0.85rem;
+  }
+  .section-title {
+    font-size: 1rem;
+  }
+}
+
+.address-item {
+  /* Reset default button/link styles */
+  appearance: none;
+  border: none;
+  background-color: white;
+  text-align: left;
+  cursor: pointer;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 1em;
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.promo-item span,
+.consultation-item span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Styling tambahan untuk item konsultasi, program, dan alamat */
+.consultation-item .item-content,
+.program-item .item-content,
+.address-item .item-content {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.consultation-item .item-text,
+.program-item .item-text,
+.address-item .item-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.consultation-item .item-text p,
+.address-item .item-text p {
+  margin: 0;
+  font-size: 0.9em;
+  font-weight: normal;
+}

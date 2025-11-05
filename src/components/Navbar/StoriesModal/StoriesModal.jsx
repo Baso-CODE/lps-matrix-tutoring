@@ -46,7 +46,7 @@ const StoriesModal = ({ isOpen, onClose, storiesSubMenu }) => {
               onClick={handleClose}>
               <item.icon className="program-modal-icon" />
               <div className="program-modal-text-content">
-                <h3 className="program-modal-item-name">{item.name}</h3>
+                <h2 className="program-modal-item-name">{item.name}</h2>
                 <p className="program-modal-item-desc">{item.desc}</p>
               </div>
             </a>

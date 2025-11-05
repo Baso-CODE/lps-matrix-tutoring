@@ -71,9 +71,9 @@ const AsalSiswaLPS = () => {
 
   return (
     <div className="asal-siswa-container">
-      <h3 className="asal-siswa-title">
+      <h2 className="asal-siswa-title">
         Siswa Kami berasal dari berbagai daerah di Indonesia
-      </h3>
+      </h2>
       <ul className="asal-siswa-list">
         {cities.map((city, index) => (
           <li key={index} className="asal-siswa-item">

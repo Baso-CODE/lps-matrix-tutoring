@@ -24,17 +24,18 @@
 }
 
 .visi-misi-title {
-  font-size: 1.7rem;
+  font-size: 1.4rem;
   color: var(--color-gray-darker);
-  font-weight: 800;
-  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
 }
 
 .card-container {
   display: grid;
   gap: 1rem;
   padding-bottom: 4vh;
-  padding-top: 4vh;
+
   justify-content: center;
 
   grid-template-columns: 1fr;
@@ -98,6 +99,12 @@
   text-align: center;
 }
 
+@media (max-width: 1024px) {
+  .card-content {
+    text-align: start;
+  }
+}
+
 /* Media Queries for fine-tuning */
 @media (max-width: 768px) {
   .card-content {
@@ -117,7 +124,7 @@
 
 @media (max-width: 480px) {
   .visi-misi-title {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 
   .card-content {

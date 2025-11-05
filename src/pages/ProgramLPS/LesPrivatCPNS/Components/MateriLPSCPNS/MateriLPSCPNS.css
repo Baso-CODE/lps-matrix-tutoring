@@ -8,12 +8,13 @@
 }
 
 .materi-title-cpns {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   text-align: center;
+  text-transform: uppercase;
   color: var(--color-gray-darker);
-  font-weight: bold;
+  font-weight: 700;
   margin-bottom: 2rem;
-  font-family: "Nunito", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .card-group-cpns {
@@ -82,7 +83,7 @@
 /* Responsif untuk tampilan tablet dan mobile */
 @media (max-width: 1024px) {
   .materi-title-cpns {
-    font-size: 1.6rem; /* Slightly smaller on tablets */
+    font-size: 1.3rem; /* Slightly smaller on tablets */
   }
 
   .card-title-cpns {
@@ -106,7 +107,7 @@
   }
 
   .materi-title-cpns {
-    font-size: 1.4rem; /* Smaller for smaller tablets */
+    font-size: 1.2rem; /* Smaller for smaller tablets */
   }
 
   .card-title-cpns {
@@ -120,7 +121,7 @@
 
 @media (max-width: 500px) {
   .materi-title-cpns {
-    font-size: 1.3rem; /* Smaller size for mobile screens */
+    font-size: 1.2rem; /* Smaller size for mobile screens */
   }
 
   .card-title-cpns {

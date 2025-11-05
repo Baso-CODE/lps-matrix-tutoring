@@ -1,9 +1,9 @@
-import "./MateriUTBK2025.css";
+import "./MateriUTBK2026.css";
 
-const MateriUTBK2025 = () => {
+const MateriUTBK2026 = () => {
   return (
     <div className="container-materi-utbk">
-      <h1 className="materi-title">Materi UTBK SNBT 2025</h1>
+      <h1 className="materi-title">Materi UTBK SNBT 2026</h1>
       {/* Additional Description about Materi UTBK */}
       <p className="materi-overview">
         Materi UTBK SNBT terdiri dari beberapa bagian utama yang dirancang untuk
@@ -51,4 +51,4 @@ const MateriUTBK2025 = () => {
   );
 };
 
-export default MateriUTBK2025;
+export default MateriUTBK2026;

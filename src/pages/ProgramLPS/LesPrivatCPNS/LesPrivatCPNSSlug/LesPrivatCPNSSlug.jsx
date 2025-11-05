@@ -23,6 +23,9 @@ import PaketBelajarCPNS from "../Components/PaketBelajarCPNS/PaketBelajarCPNS";
 import ProgramCPNS from "../Components/ProgramCPNS/ProgramCPNS";
 import ProgramIntensifCPNS from "../Components/ProgramIntensifCPNS/ProgramIntensifCPNS";
 import SuccesStoryCPNS from "../Components/SuccesStoryCPNS/SuccesStoryCPNS";
+import AllAlumniLpsImage from "../../../ListSiswaLPS/AllAlumniLps/AllAlumniLpsImage";
+import ListSiswaLPS from "../../../ListSiswaLPS/ListSiswaLPS";
+import SliderTestimoniSiswa from "../../../../components/SliderTestimoniSiswa/SliderTestimoniSiswa";
 
 const LesPrivatCPNSSlug = () => {
   const { slug } = useParams();
@@ -158,7 +161,7 @@ const LesPrivatCPNSSlug = () => {
         </script>
       </Helmet>
       <div className="container-all">
-        <HeadingCPNS />
+        <HeadingCPNS lokasi={dynamicLocationName} />
         <ProgramIntensifCPNS />
         <MateriLPSCPNS />
         <BenefitLolosCPNS />
@@ -167,25 +170,28 @@ const LesPrivatCPNSSlug = () => {
         <PaketBelajarCPNS />
         <ProgramCPNS />
         <ApaAjaYgDiPeroleh />
-        {/* <InformationProgram programType={"cpns"} /> */}
         <JadwalBelajarCPNS />
         <VisiEndMisiLps />
-        <ProfileTutor />
+        <ProfileTutor city={dynamicLocationName} />
         <UnivPengajarLps />
-        {/* <AlumniLpsNew /> */}
         <GaleryBelajarSiswa description={galleryBelajarCPNSData.description} />
         <TestimoniWaSlider
+          cityProp={dynamicLocationName}
           description={testimoniWaSliderData.description}
           title={testimoniWaSliderData.title}
         />
         <AsalSiswaLPS />
-        <SuccesStoryCPNS />
+        <SuccesStoryCPNS city={dynamicLocationName} />
         <TestimoniWaSiswa
+          cityProp={dynamicLocationName}
           title={testimonialWaCPNSData.title}
           description={testimonialWaCPNSData.description}
           imageDesktop={testimonialWaCPNSData.imageDesktop}
           imageMobile={testimonialWaCPNSData.imageMobile}
         />
+        <AllAlumniLpsImage city={dynamicLocationName} />
+        <ListSiswaLPS />
+        <SliderTestimoniSiswa city={dynamicLocationName} />
       </div>
     </>
   );

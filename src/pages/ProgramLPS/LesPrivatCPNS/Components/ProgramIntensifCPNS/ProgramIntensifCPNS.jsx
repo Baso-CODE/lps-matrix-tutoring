@@ -12,6 +12,7 @@ const ProgramIntensifCPNS = () => {
         dalam 3 jenis Tes, yaitu 30 soal TWK (Tes Wawasan Kebangsaaan), 35 soal
         TIU (Tes Intelegensi Umum) dan 45 soal TKP (Tes Karakteristik Pribadi).
       </p>
+      <br />
       <p className="program-description-cpns">
         Selain hasil dari Tes SKD CPNS, untuk bisa lolos tes CPNS tersebut siswa
         juga perlu memperhatikan administrasi pendaftarannya terlebih dahulu.
@@ -20,6 +21,7 @@ const ProgramIntensifCPNS = () => {
         memiliki kesempatan untuk mengikuti tes SKB CPNS yang disesuaikan dengan
         posisi atau jabatan yang diambil.
       </p>
+      <br />
       <p className="program-description-cpns">
         Dalam persiapan tes SKD CPNS, peserta disarankan untuk terlebih dahulu
         mengikuti Tryout – Tryout CPNS agar menunjang proses pembelajaran
@@ -27,7 +29,7 @@ const ProgramIntensifCPNS = () => {
         baik yang tersedia gratis atau berbayar, maka siswa akan lebih terlatih
         dan mengetahui jenis – jenis soal yang muncul pada tes SKD CPNS. Jika
         anda membutuhkan layanan Tryout CPNS Online maka LPS Education dapat
-        menjadi rekomendasi tempat belajar terbaik. Siswa Les Privat CPNS 2025
+        menjadi rekomendasi tempat belajar terbaik. Siswa Les Privat CPNS 2026
         di LPS Education difasilitasi Asesmen dan Tryout Online CPNS sehingga
         progress belajar akan lebih terukur dan siswa bisa mengetahui
         kekurangannya di materi apa saja.

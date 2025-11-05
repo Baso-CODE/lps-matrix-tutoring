@@ -140,26 +140,30 @@ const ProgramBelajarLps = () => {
   ];
 
   return (
-    <div className="program-belajar-container">
-      <h1 className="program-belajar-title">Program Belajar LPS Education</h1>
+    <div className="program-belajar-container-v2">
+      <h1 className="program-belajar-title-v2">
+        Program Belajar LPS Education
+      </h1>
 
-      <div className="program-list">
+      <div className="program-list-v2">
         {programsData.map((program) => (
-          <div className="program-item" key={program.id}>
+          <div className="program-item-v2" key={program.id}>
             <button
-              className="program-title-button"
+              className="program-title-button-v2"
               onClick={() => handleToggleClick(program.id)} // Menggunakan onClick
             >
               {program.title}
               <span
-                className={`arrow ${activeIndex === program.id ? "open" : ""}`}>
+                className={`arrow-v2 ${
+                  activeIndex === program.id ? "open-v2" : ""
+                }`}>
                 ▼
               </span>
             </button>
             <AnimatePresence>
               {activeIndex === program.id && ( // Cek apakah index cocok dengan activeIndex
                 <motion.div
-                  className="program-details"
+                  className="program-details-v2"
                   initial={{ opacity: 0, height: 0, overflow: "hidden" }}
                   animate={{ opacity: 1, height: "auto" }}
                   exit={{ opacity: 0, height: 0, overflow: "hidden" }}

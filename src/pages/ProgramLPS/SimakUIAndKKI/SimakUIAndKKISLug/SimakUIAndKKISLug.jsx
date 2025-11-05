@@ -18,6 +18,10 @@ import VisiEndMisiLps from "../../../HomePage/Components/VisiEndMisiLps/VisiEndM
 import FasilitasSimakUI from "../Components/FasilitasSimakUI/FasilitasSimakUI";
 import PaketBelajarSimakUI from "../Components/PaketBelajarSimakUI/PaketBelajarSimakUI";
 import ProgramSimakUI from "../Components/ProgramSimakUI/ProgramSimakUI";
+import AllAlumniLpsImage from "../../../ListSiswaLPS/AllAlumniLps/AllAlumniLpsImage";
+import ListSiswaLPS from "../../../ListSiswaLPS/ListSiswaLPS";
+import SliderTestimoniSiswa from "../../../../components/SliderTestimoniSiswa/SliderTestimoniSiswa";
+import VideoKarantina from "../../../../components/VideoKarantina/VideoKarantina";
 
 const SimakUIAndKKISLug = () => {
   const { slug } = useParams();
@@ -156,7 +160,7 @@ const SimakUIAndKKISLug = () => {
       </Helmet>
 
       <div className="container-all">
-        <ProgramSimakUI />
+        <ProgramSimakUI city={dynamicLocationName} />
         <FasilitasSimakUI />
         <PaketBelajarSimakUI />
         {/* <ProgramBelajarSIMAKUI /> */}
@@ -165,18 +169,23 @@ const SimakUIAndKKISLug = () => {
         <VisiEndMisiLps />
         <ProgramBelajarLps />
         <FiturDanLayanan />
-        <ProfileTutor />
+        <VideoKarantina />
+        <ProfileTutor city={dynamicLocationName} />
         <UnivPengajarLps />
-        <AlumniLpsNew />
+        <AlumniLpsNew city={dynamicLocationName} />
         <GaleryBelajarSiswa
           description={galleryBelajarSiswaSimakUI.description}
         />
         <TestimoniWaSlider
+          cityProp={dynamicLocationName}
           title={successStoryWaSliderSimakUI.title}
           description={successStoryWaSliderSimakUI.description}
         />
-        <SuccessStory />
-        <TestimoniWaSiswa />
+        <SuccessStory city={dynamicLocationName} />
+        <TestimoniWaSiswa cityProp={dynamicLocationName} />
+        <AllAlumniLpsImage city={dynamicLocationName} />
+        <ListSiswaLPS />
+        <SliderTestimoniSiswa city={dynamicLocationName} />
       </div>
     </>
   );

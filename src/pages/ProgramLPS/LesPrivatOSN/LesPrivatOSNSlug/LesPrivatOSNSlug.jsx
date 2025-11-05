@@ -15,12 +15,15 @@ import ProgramBelajarLps from "../../../HomePage/Components/ProgramBelajarLps/Pr
 import SuccessStory from "../../../HomePage/Components/SuccessStory/SuccessStory";
 import TestimoniWaSiswa from "../../../HomePage/Components/TestimoniWaSiswa/TestimoniWaSiswa";
 import VisiEndMisiLps from "../../../HomePage/Components/VisiEndMisiLps/VisiEndMisiLps";
-import FasilitasSimakUI from "../../SimakUIAndKKI/Components/FasilitasSimakUI/FasilitasSimakUI";
+import FasilitasOSN from "../Components/FasilitasOSN";
 import HeroLpsOSN from "../Components/HeroLpsOSN/HeroLpsOSN";
 import OsnCurriculumOverview from "../Components/OsnCurriculumOverview/OsnCurriculumOverview";
 import OsnWinnerBenefits from "../Components/OsnWinnerBenefits/OsnWinnerBenefits";
 import PaketBelajarOSN from "../Components/PaketBelajarOSN/PaketBelajarOSN";
 import ProgramIntensiOSN from "../Components/ProgramIntensiOSN/ProgramIntensiOSN";
+import AllAlumniLpsImage from "../../../ListSiswaLPS/AllAlumniLps/AllAlumniLpsImage";
+import ListSiswaLPS from "../../../ListSiswaLPS/ListSiswaLPS";
+import SliderTestimoniSiswa from "../../../../components/SliderTestimoniSiswa/SliderTestimoniSiswa";
 
 const LesPrivatOSNSlug = () => {
   const { slug } = useParams();
@@ -161,10 +164,10 @@ const LesPrivatOSNSlug = () => {
       </Helmet>
 
       <div className="container-all">
-        <HeroLpsOSN />
+        <HeroLpsOSN city={dynamicLocationName} />
         <ProgramIntensiOSN />
         <Slider />
-        <FasilitasSimakUI />
+        <FasilitasOSN />
         <PaketBelajarOSN />
         {/* <PaketSesiOSN /> */}
         <OsnCurriculumOverview />
@@ -173,19 +176,23 @@ const LesPrivatOSNSlug = () => {
         <VisiEndMisiLps />
         <ProgramBelajarLps />
         <FiturDanLayanan />
-        <ProfileTutor />
+        <ProfileTutor city={dynamicLocationName} />
         <UnivPengajarLps />
-        <AlumniLpsNew />
+        <AlumniLpsNew city={dynamicLocationName} />
         <GaleryBelajarSiswa
           title={galleryBelajarOSNData.title}
           description={galleryBelajarOSNData.description}
         />
         <TestimoniWaSlider
+          cityProp={dynamicLocationName}
           description={successStoryWaSliderOSN.description}
           title={successStoryWaSliderOSN.title}
         />
-        <SuccessStory />
-        <TestimoniWaSiswa />
+        <SuccessStory city={dynamicLocationName} />
+        <TestimoniWaSiswa cityProp={dynamicLocationName} />
+        <AllAlumniLpsImage city={dynamicLocationName} />
+        <ListSiswaLPS />
+        <SliderTestimoniSiswa city={dynamicLocationName} />
       </div>
     </>
   );

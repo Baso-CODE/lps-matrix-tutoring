@@ -31,18 +31,18 @@ const subjects = [
       "Pembelajaran mendalam tentang sel, genetika, ekologi, fisiologi, dan taksonomi untuk persiapan komprehensif.",
   },
   {
-    id: "computer",
-    name: "Olimpiade Komputer (Informatika)",
-    icon: "/images/osn-curiculum/informatika.webp", // Ganti dengan path ikon yang sesuai
+    id: "ips",
+    name: "Ilmu Pengetahuan Sosial (IPS)",
+    icon: "/images/osn-curiculum/pengetahuan-sosial.webp",
     description:
-      "Meliputi algoritma, struktur data, pemrograman kompetitif, dan teori komputasi.",
+      "Studi tentang masyarakat manusia, termasuk sejarah, geografi, ekonomi, sosiologi, dan antropologi.",
   },
   {
-    id: "astronomy",
-    name: "Olimpiade Astronomi",
-    icon: "/images/osn-curiculum/astronomi.webp", // Ganti dengan path ikon yang sesuai
+    id: "ipa",
+    name: "Ilmu Pengetahuan Alam (IPA)",
+    icon: "/images/osn-curiculum/pengetahuan-alam.webp",
     description:
-      "Studi tentang tata surya, bintang, galaksi, kosmologi, dan teknik observasi.",
+      "Studi tentang alam dan lingkungan sekitar, meliputi biologi, fisika, kimia, dan ilmu bumi.",
   },
 ];
 const OsnCurriculumOverview = () => {

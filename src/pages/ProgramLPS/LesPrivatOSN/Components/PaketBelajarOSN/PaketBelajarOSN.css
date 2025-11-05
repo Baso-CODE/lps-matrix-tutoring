@@ -8,19 +8,20 @@
 }
 
 .title-paket-induk__osn {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   margin-bottom: 1rem;
   color: #333;
+  text-transform: uppercase;
   font-weight: 700;
-  font-family: "Nunito", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .description-paket-belajar__osn {
   font-size: 0.9rem;
-  text-align: start;
+  text-align: center;
   color: #343131;
   font-weight: 400;
-  margin-bottom: 2rem;
+
   font-family: "Nunito", sans-serif;
 }
 
@@ -151,8 +152,8 @@
 /* Responsif untuk Ponsel Kecil (≤ 30rem) */
 @media (max-width: 480px) {
   .title-paket-induk__osn {
-    font-size: 1.3rem; /* Ukuran terkecil */
-    text-align: start;
+    font-size: 1.2rem; /* Ukuran terkecil */
+    text-align: center;
   }
   .description-paket-belajar__osn {
     font-size: 0.9rem;

@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState, useEffect } from "react";
-import { Home, BookOpen, Info, Award } from "lucide-react";
+import { Home, BookOpen, Info, Award, BookAIcon } from "lucide-react";
 import { useLocation, Link } from "react-router-dom";
 
 import "./BottomNavigationBar.css";
@@ -21,6 +21,12 @@ const bottomNavItems = [
     icon: Award,
     type: "modal",
     modalType: "stories",
+  },
+  {
+    name: "Blog",
+    link: "/blog",
+    icon: BookAIcon,
+    type: "link",
   },
 ];
 

@@ -39,7 +39,7 @@ const PaketLPSMahasiswa = () => {
         berkonsultasi lebih detail untuk mendapatkan arahan dan rekomendasi sesi
         terbaik.
       </p>
-
+      <br />
       <div className="paket-cards__osn">
         {packages.map((pkg, index) => (
           <div className="paket-card__sd_smp_sma" key={index}>

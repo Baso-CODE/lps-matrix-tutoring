@@ -13,12 +13,14 @@ const ProgramIntensifLpsSDSMPSMA = () => {
         persiapan Tes Kemampuan Akademik (TKA), maupun untuk Ujian Masuk Sekolah
         Favorit atau Unggulan.
       </p>
+      <br />
       <p className="program-description__sd_smp_sma">
         Program Belajar untuk setiap siswa disesuaikan berdasarkan preferensi
         kebutuhan siswa. Diskusi bersama antara orangtua dan Konsultan Akademik
         dan Program dibutuhkan untuk menggali kebutuhan belajar siswa dan
         membantu menentukan Paket Belajar yang sesuai.
       </p>
+      <br />
       <p className="program-description__sd_smp_sma">
         LPS Education menawarkan fleksibilitas waktu belajar, sehingga siswa
         dapat memilih jadwal belajar yang paling sesuai dengan aktivitas mereka.

@@ -1,4 +1,4 @@
-/* ProgramCPNS.css */
+Program Les Privat CPNS/* ProgramCPNS.css */
 
 .program-container {
   margin-top: 10vh;
@@ -11,10 +11,11 @@
   text-align: start;
   margin-bottom: 1rem;
   font-weight: 700;
-
+  text-transform: uppercase;
+  border-left: 4px solid #ff6500;
+  padding-left: 0.3rem;
   color: var(--color-gray-darker);
-  font-family: "Nunito", sans-serif;
-  border-bottom: #343131 1px solid;
+  font-family: "Poppins", sans-serif;
 }
 
 .image-container {
@@ -30,16 +31,26 @@
   border-radius: 8px;
 }
 
-.program-section {
+/* .program-section {
   margin-bottom: 2rem;
-}
+} */
 
 .section-title-cpns {
   font-size: 1rem;
+
   color: var(--color-gray-darker);
-  font-family: "Nunito", sans-serif;
+  font-family: "Poppins", sans-serif;
   margin-bottom: 0.5rem;
-  font-weight: 600;
+  font-weight: 700;
+  border-left: 4px solid #ff6500;
+  padding-left: 0.3rem;
+}
+.section-title-cpns-v2 {
+  font-size: 1rem;
+  color: var(--color-gray-darker);
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
 }
 
 .section-description {
@@ -47,7 +58,14 @@
   color: #343131;
   line-height: normal;
   text-align: start;
-
+  font-family: "Nunito", sans-serif;
+}
+.section-description-paket {
+  font-size: 1rem;
+  color: #343131;
+  line-height: normal;
+  text-align: start;
+  font-weight: 700;
   font-family: "Nunito", sans-serif;
 }
 
@@ -90,6 +108,9 @@
     font-size: 0.9rem; /* Lebih kecil untuk deskripsi */
   }
   .package-list {
+    font-size: 0.9rem;
+  }
+  .section-title-cpns-v2 {
     font-size: 0.9rem;
   }
 }

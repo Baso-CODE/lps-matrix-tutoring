@@ -4,9 +4,9 @@ import "./TigaJalurMasukPTN.css";
 const TigaJalurMasukPTN = () => {
   return (
     <div className="container-tiga-jalur">
-      <h1 className="title-tiga-jalur">
+      <h2 className="title-tiga-jalur">
         Tiga Jalur Masuk Universitas Negeri (PTN)
-      </h1>
+      </h2>
       <div className="card-container-tiga-jalur">
         {/* Card 1: SNBP */}
         <div className="card-tiga-jalur">

@@ -5,15 +5,21 @@ import Slider from "../../../components/Slider/Slider";
 import TestimoniWaSlider from "../../../components/TestimoniWaSlider/TestimoniWaSlider";
 import UnivPengajarLps from "../../../components/UnivPengajarLps/UnivPengajarLps";
 import ProfileTutor from "../../HomePage/Components/ProfileTutor/ProfileTutor";
-import SuccessStory from "../../HomePage/Components/SuccessStory/SuccessStory";
 import TestimoniWaSiswa from "../../HomePage/Components/TestimoniWaSiswa/TestimoniWaSiswa";
 import VisiEndMisiLps from "../../HomePage/Components/VisiEndMisiLps/VisiEndMisiLps";
-import FasilitasSimakUI from "../SimakUIAndKKI/Components/FasilitasSimakUI/FasilitasSimakUI";
 import AsalUniversitasMahasiswa from "./Components/AsalUniversitasMahasiswa/AsalUniversitasMahasiswa";
+import FasilitasMahasiswa from "./Components/FasilitasMahasiswa/FasilitasMahasiswa";
 import HeroLPSMahasiswa from "./Components/HeroLPSMahasiswa/HeroLPSMahasiswa";
 import LayananLPSMahasiswa from "./Components/LayananLPSMahasiswa/LayananLPSMahasiswa";
 import PaketLPSMahasiswa from "./Components/PaketLPSMahasiswa/PaketLPSMahasiswa";
 import "./LesPrivatMahasiswa.css";
+import {
+  galleryBelajarMahasiswaData,
+  testimoniWaSliderMahasiswaData,
+} from "../../../helpers/DummyData/Mahasiswa/mahasiswa_dummyData";
+import AllAlumniLpsImage from "../../ListSiswaLPS/AllAlumniLps/AllAlumniLpsImage";
+import ListSiswaLPS from "../../ListSiswaLPS/ListSiswaLPS";
+import SliderTestimoniSiswa from "../../../components/SliderTestimoniSiswa/SliderTestimoniSiswa";
 
 const LesPrivatMahasiswa = () => {
   const baseUrl = "https://apps.lesprivatmasukptn.com";
@@ -134,7 +140,7 @@ const LesPrivatMahasiswa = () => {
         <HeroLPSMahasiswa />
         <LayananLPSMahasiswa />
         <Slider />
-        <FasilitasSimakUI />
+        <FasilitasMahasiswa />
         <PaketLPSMahasiswa />
         <AsalUniversitasMahasiswa />
         {/* <InformationProgram programType={"lesprivat-pascasarjana"} /> */}
@@ -142,10 +148,19 @@ const LesPrivatMahasiswa = () => {
         <ProfileTutor />
         <UnivPengajarLps />
         <AlumniLpsNew />
-        <GaleryBelajarSiswa />
-        <TestimoniWaSlider />
-        <SuccessStory />
+        <GaleryBelajarSiswa
+          title={galleryBelajarMahasiswaData.title}
+          description={galleryBelajarMahasiswaData.description}
+        />
+        <TestimoniWaSlider
+          title={testimoniWaSliderMahasiswaData.title}
+          description={testimoniWaSliderMahasiswaData.description}
+        />
+        {/* <SuccessStory /> */}
         <TestimoniWaSiswa />
+        <AllAlumniLpsImage />
+        <ListSiswaLPS />
+        <SliderTestimoniSiswa />
       </div>
     </>
   );

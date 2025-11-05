@@ -18,6 +18,10 @@ import PerbedaanSBMPTAndSNBT from "./Components/PerbedaanSBMPTAndSNBT/PerbedaanS
 import TigaJalurMasukPTN from "./Components/TigaJalurMasukPTN/TigaJalurMasukPTN";
 import "./LesPrivatUTBK.css";
 import { galleryBelajarSiswaUTBK } from "../../../helpers/DummyData/UTBK/utbk_dummyData";
+import AllAlumniLpsImage from "../../ListSiswaLPS/AllAlumniLps/AllAlumniLpsImage";
+import ListSiswaLPS from "../../ListSiswaLPS/ListSiswaLPS";
+import SliderTestimoniSiswa from "../../../components/SliderTestimoniSiswa/SliderTestimoniSiswa";
+import VideoKarantina from "../../../components/VideoKarantina/VideoKarantina";
 
 const LesPrivatUTBK = () => {
   const baseUrl = "https://apps.lesprivatmasukptn.com";
@@ -136,9 +140,9 @@ const LesPrivatUTBK = () => {
         <MataPelajaranLPSNew />
         <PerbedaanSBMPTAndSNBT />
         <MateriUjianSNBT />
-        {/* <InformationProgram programType={"utbk"} /> */}
         <Slider />
         <VisiEndMisiLps />
+        <VideoKarantina />
         <ProfileTutor />
         <UnivPengajarLps />
         <KeunggulanEndAlasanMemilih />
@@ -149,6 +153,9 @@ const LesPrivatUTBK = () => {
         <TestimoniWaSlider />
         <SuccessStory />
         <TestimoniWaSiswa />
+        <AllAlumniLpsImage />
+        <ListSiswaLPS />
+        <SliderTestimoniSiswa />
       </div>
     </>
   );

@@ -5,9 +5,24 @@ import useEmblaCarousel from "embla-carousel-react";
 import { useEffect, useState } from "react";
 import { getTestimoniWa } from "../../api/testimoniWa/getTestimoniWa";
 import "./TestimoniWaSlider.css";
+import { useLocation } from "react-router-dom";
 
-const TestimoniWaSlider = ({ title, description }) => {
+const TestimoniWaSlider = ({ title, description, cityProp }) => {
   const [dataTestimoniWa, setDataTestimoniWa] = useState([]);
+
+  const location = useLocation();
+  const path = location.pathname;
+
+  // Tentukan city
+  let city = cityProp || "";
+  if (!city && path.includes("/di/")) {
+    city = path.split("/di/")[1];
+    city = city.charAt(0).toUpperCase() + city.slice(1);
+  }
+
+  const altText = `Testimoni Siswa ${
+    city ? " di " + city : ""
+  } bersama LPS Education. Program Bimbel & Les Privat UTBK, SIMAK UI, UTUL UGM, TKA, CPNS, Pascasarjana, Mahasiswa, dan OSN.`;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -54,7 +69,7 @@ const TestimoniWaSlider = ({ title, description }) => {
               <img
                 loading="lazy"
                 src={image.link_image}
-                alt={`Testimoni Orang Tua ${image.name}`}
+                alt={altText}
                 className="testimonial-image"
               />
             </div>

@@ -2,33 +2,40 @@ const ProgramIntensiPascaSarjana = () => {
   return (
     <div className="program-section">
       <h2 className="section-title-cpns">
-        Paket Sesi Les Privat Pasca Sarjana
+        Paket Sesi Belajar Intensif Jangka Pendek
       </h2>
+
       <p className="section-description">
-        Program Les Privat Pasca Sarjana dirancang untuk membantu mahasiswa yang
-        ingin menghadapi ujian seleksi pasca sarjana dengan lebih intensif dan
-        terstruktur. Setiap sesi disusun sesuai kebutuhan mahasiswa untuk
-        mendalami materi ujian, baik melalui sesi belajar mandiri atau dengan
-        tutor berpengalaman yang siap mendukung di setiap langkah.
+        Program Privat Intensif Ujian Masuk Pascasarjana Jangka Pendek
+        diperuntukkan bagi Anda yang akan mengikuti ujian masuk S2/S3 dalam
+        waktu dekat sehingga membutuhkan program dengan sesi belajar yang lebih
+        intensif dan jumlah sesi yang lebih sedikit. Setiap sesi disusun sesuai
+        dengan kebutuhan mahasiswa untuk mendalami materi dan tipe soal ujian
+        masuk Pascasarjana dengan pendampingan tutor berpengalaman yang siap
+        mendukung di setiap langkah.
+      </p>
+      <br />
+      <p className="section-description-paket">
+        Paket Sesi Belajar Jangka Pendek untuk Persiapan Ujian Masuk
+        Pascasarjana meliputi:
       </p>
       <ul className="package-list">
-        <li>Intesif SIMAK S2 UI Paket 100 Sesi</li>
-        <li>Intesif SIMAK S2 UI Paket 150 Sesi</li>
-        <li>Intesif SIMAK S2 UI Paket 200 Sesi</li>
+        <li>Intesif Ujian Masuk Pascasarjana 5 sesi pertemuan</li>
+        <li>Intensif Ujian Masuk Pascasarjana 10 sesi pertemuan</li>
+        <li>Intensif Ujian Masuk Pascasarjana 15 sesi pertemuan</li>
       </ul>
       <p className="section-description">
-        {" "}
-        Setiap paket sesi dilengkapi dengan materi yang relevan dan latihan soal
-        terkini untuk memastikan kesiapan penuh dalam menghadapi ujian. Tutor
-        akan memberikan panduan yang sesuai dengan perkembangan mahasiswa dalam
-        memahami materi secara mendalam.
+        Selain sesi pembelajaran, mahasiswa akan diberikan latihan soal yang
+        terstruktur atau simulasi ujian yang dirancang untuk mengenalkan pola
+        soal dan meningkatkan kepercayaan diri.
       </p>
       <p className="section-description">
-        Selain sesi pembelajaran, mahasiswa akan diberikan latihan soal yang
-        terstruktur dan simulasi ujian yang dirancang untuk mengenalkan pola
-        soal dan meningkatkan kepercayaan diri. Laporan perkembangan rutin akan
-        diberikan untuk membantu memantau kemajuan dan memberikan masukan untuk
-        peningkatan hasil belajar.
+        Laporan perkembangan belajar akan diberikan untuk membantu memantau
+        kemajuan dan memberikan masukan untuk peningkatan hasil belajar.
+      </p>
+      <p className="section-description">
+        Dengan minimal mengambil Paket 10 sesi Pertemuan, siswa akan mendapatkan
+        Modul Bahan Belajar TPA S2/S3.
       </p>
     </div>
   );

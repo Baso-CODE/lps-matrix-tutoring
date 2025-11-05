@@ -39,6 +39,7 @@ const PaketBelajarSimakUI = () => {
         berkonsultasi lebih detail untuk mendapatkan arahan dan rekomendasi sesi
         terbaik.
       </p>
+      <br />
 
       <div className="paket-cards">
         {packages.map((pkg, index) => (

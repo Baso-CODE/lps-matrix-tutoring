@@ -8,7 +8,8 @@
 }
 
 .title-paket-induk__osn {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
+  text-transform: uppercase;
   margin-bottom: 1rem;
   color: var(--color-orange-default); /* Oranye utama untuk judul induk */
   font-weight: 700;
@@ -17,10 +18,10 @@
 
 .description-paket-belajar__osn {
   font-size: 0.9rem;
-  text-align: start;
+  text-align: center;
   color: var(--color-gray-dark); /* Abu-abu gelap untuk deskripsi */
   font-weight: 400;
-  margin-bottom: 2rem;
+
   font-family: "Nunito", sans-serif;
 }
 
@@ -162,8 +163,8 @@
 /* Responsif untuk Ponsel Kecil (≤ 30rem) */
 @media (max-width: 480px) {
   .title-paket-induk__osn {
-    font-size: 1.3rem; /* Ukuran terkecil */
-    text-align: start;
+    font-size: 1.2rem; /* Ukuran terkecil */
+    text-align: center;
   }
   .description-paket-belajar__osn {
     font-size: 0.85rem;

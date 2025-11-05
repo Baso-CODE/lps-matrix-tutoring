@@ -5,15 +5,21 @@ import GaleryBelajarSiswa from "../../../../components/GaleryBelajarSiswa/Galery
 import Slider from "../../../../components/Slider/Slider";
 import TestimoniWaSlider from "../../../../components/TestimoniWaSlider/TestimoniWaSlider";
 import UnivPengajarLps from "../../../../components/UnivPengajarLps/UnivPengajarLps";
+import {
+  galleryBelajarMahasiswaData,
+  testimoniWaSliderMahasiswaData,
+} from "../../../../helpers/DummyData/Mahasiswa/mahasiswa_dummyData";
 import ProfileTutor from "../../../HomePage/Components/ProfileTutor/ProfileTutor";
-import SuccessStory from "../../../HomePage/Components/SuccessStory/SuccessStory";
 import TestimoniWaSiswa from "../../../HomePage/Components/TestimoniWaSiswa/TestimoniWaSiswa";
 import VisiEndMisiLps from "../../../HomePage/Components/VisiEndMisiLps/VisiEndMisiLps";
-import FasilitasSimakUI from "../../SimakUIAndKKI/Components/FasilitasSimakUI/FasilitasSimakUI";
 import AsalUniversitasMahasiswa from "../Components/AsalUniversitasMahasiswa/AsalUniversitasMahasiswa";
+import FasilitasMahasiswa from "../Components/FasilitasMahasiswa/FasilitasMahasiswa";
 import HeroLPSMahasiswa from "../Components/HeroLPSMahasiswa/HeroLPSMahasiswa";
 import LayananLPSMahasiswa from "../Components/LayananLPSMahasiswa/LayananLPSMahasiswa";
 import PaketLPSMahasiswa from "../Components/PaketLPSMahasiswa/PaketLPSMahasiswa";
+import AllAlumniLpsImage from "../../../ListSiswaLPS/AllAlumniLps/AllAlumniLpsImage";
+import ListSiswaLPS from "../../../ListSiswaLPS/ListSiswaLPS";
+import SliderTestimoniSiswa from "../../../../components/SliderTestimoniSiswa/SliderTestimoniSiswa";
 
 const LesPrivatMahasiswaSlug = () => {
   const { slug } = useParams();
@@ -155,21 +161,31 @@ const LesPrivatMahasiswaSlug = () => {
       </Helmet>
 
       <div className="container-all">
-        <HeroLPSMahasiswa />
+        <HeroLPSMahasiswa city={dynamicLocationName} />
         <LayananLPSMahasiswa />
         <Slider />
-        <FasilitasSimakUI />
+        <FasilitasMahasiswa />
         <PaketLPSMahasiswa />
         <AsalUniversitasMahasiswa />
         {/* <InformationProgram programType={"lesprivat-pascasarjana"} /> */}
         <VisiEndMisiLps />
-        <ProfileTutor />
+        <ProfileTutor city={dynamicLocationName} />
         <UnivPengajarLps />
-        <AlumniLpsNew />
-        <GaleryBelajarSiswa />
-        <TestimoniWaSlider />
-        <SuccessStory />
-        <TestimoniWaSiswa />
+        <AlumniLpsNew city={dynamicLocationName} />
+        <GaleryBelajarSiswa
+          title={galleryBelajarMahasiswaData.title}
+          description={galleryBelajarMahasiswaData.description}
+        />
+        <TestimoniWaSlider
+          cityProp={dynamicLocationName}
+          title={testimoniWaSliderMahasiswaData.title}
+          description={testimoniWaSliderMahasiswaData.description}
+        />
+        {/* <SuccessStory /> */}
+        <TestimoniWaSiswa cityProp={dynamicLocationName} />
+        <AllAlumniLpsImage city={dynamicLocationName} />
+        <ListSiswaLPS />
+        <SliderTestimoniSiswa city={dynamicLocationName} />
       </div>
     </>
   );

@@ -13,11 +13,12 @@
 }
 
 .osn-curriculum-overview-title {
-  font-size: 1.7rem;
+  font-size: 1.4rem;
   color: var(--color-dark-blue); /* Warna judul gelap */
   margin-bottom: 15px;
+  text-transform: uppercase;
   font-weight: 700;
-  font-family: "Nunito", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .osn-curriculum-overview-title span {
@@ -92,7 +93,7 @@
 }
 
 .subject-name {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: var(--color-orange-dark); /* Warna nama subjek */
   font-weight: 700;
   margin-bottom: 10px;
@@ -110,13 +111,13 @@
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .osn-curriculum-overview-title {
-    font-size: 2rem;
+    font-size: 1.2rem;
   }
   .osn-curriculum-overview-subtitle {
     font-size: 1rem;
   }
   .subject-name {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
 }
 
@@ -125,7 +126,7 @@
     padding: 60px 0;
   }
   .osn-curriculum-overview-title {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
   .subject-card {
     padding: 25px;

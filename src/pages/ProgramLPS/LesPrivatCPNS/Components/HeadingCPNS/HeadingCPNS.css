@@ -19,7 +19,7 @@
   color: var(--color-gray-dark);
   line-height: normal;
   text-align: start;
-  margin-bottom: 1.5rem;
+
   font-family: "Nunito", sans-serif;
 }
 
@@ -30,7 +30,7 @@
   font-weight: 400;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 10px;
+
   line-height: normal;
   font-family: "Nunito", sans-serif;
 }

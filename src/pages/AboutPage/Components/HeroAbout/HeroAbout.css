@@ -5,11 +5,11 @@
 }
 
 .about__us_header h1 {
-  font-family: "Nunito", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 700;
   color: var(--color-gray-darker);
-
-  font-size: 1.8rem;
+  text-transform: uppercase;
+  font-size: 1.5rem;
   margin-bottom: 10px;
 }
 
@@ -27,20 +27,21 @@
 }
 
 .sekilas__lps_jakarta {
-  font-size: 2rem;
-  text-align: start;
+  text-align: center;
+  text-transform: uppercase;
   font-size: 1.6rem;
   color: var(--color-gray-darker);
   margin-bottom: 10px;
   margin-top: 10vh;
-  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
 }
 
 /* Additional Description Styling */
 .additional-description-about__us {
   font-size: 1rem;
   color: #3a4a3f;
-  text-align: start;
+  text-align: center;
   font-weight: 400;
   /* margin-top: 20px; */
   line-height: normal;

@@ -38,9 +38,10 @@
 }
 
 .about__us-description h2 {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
+  text-transform: uppercase;
   color: var(--color-gray-darker);
-  font-family: "Nunito", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 600;
   margin-bottom: 1rem;
 }

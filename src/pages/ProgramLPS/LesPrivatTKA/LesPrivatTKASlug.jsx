@@ -124,42 +124,126 @@ const LesPrivatTKASlug = () => {
         {/* Schema Markup (JSON-LD) - BreadcrumbList */}
         <script type="application/ld+json">
           {`
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "@id": "${canonicalUrl}#breadcrumb",
+          "itemListElement": [
             {
-              "@context": "https://schema.org",
-              "@graph": [
-                {
-                  "@type": "BreadcrumbList",
-                  "@id": "${canonicalUrl}#breadcrumb",
-                  "itemListElement": [
-                    {
-                      "@type": "ListItem",
-                      "position": "1",
-                      "item": {
-                        "@id": "${baseUrl}",
-                        "name": "Home"
-                      }
-                    },
-                    {
-                      "@type": "ListItem",
-                      "position": "2",
-                      "item": {
-                        "@id": "${baseUrl}/les-privat-tes-kemampuan-akademik",
-                        "name": "${pageTitle.replace(/<\/?[^>]+(>|$)/g, "")}"
-                      }
-                    }
-                    {
-                      "@type": "ListItem",
-                      "position": "3",
-                      "item": {
-                        "@id": "${canonicalUrl}",
-                        "name": "${pageTitle.replace(/<\/?[^>]+(>|$)/g, "")}"
-                      }
-                    }
-                  ]
-                }
-              ]
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@id": "${baseUrl}",
+                "name": "Home"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                // Nama yang lebih singkat untuk link utama TKA
+                "@id": "${baseUrl}/les-privat-tes-kemampuan-akademik",
+                "name": "Les Privat TKA"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "item": {
+                "@id": "${canonicalUrl}",
+                // Nama yang spesifik dengan lokasi dinamis
+                "name": "Les Privat TKA di ${dynamicLocationName}"
+              }
             }
-          `}
+          ]
+        },
+
+        {
+          "@type": "EducationalOrganization",
+          "@id": "${canonicalUrl}#organization",
+          "name": "LPS Education",
+          "description": "LPS Education menyediakan Les Privat Tes Kemampuan Akademik (TKA) terbaik di ${dynamicLocationName} untuk SD, SMP, dan SMA. Fokus pada literasi, numerasi, dan penalaran.",
+          "url": "${canonicalUrl}",
+          "areaServed": "${dynamicLocationName}", 
+          "sameAs": [
+            "${baseUrl}",
+            "https://www.instagram.com/lps.privatsbmptn/", 
+            "https://www.tiktok.com/@lesprivatsbmptn.com?_r=1&_t=ZS-918OcGnyuIS" 
+          ],
+          "brand": {
+            "@type": "Brand",
+            "name": "LPS Education",
+            "logo": "${baseUrl}/images/LOGO2.webp" 
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+62-858-8756-2039", 
+            "contactType": "Customer Service",
+            "areaServed": "ID",
+            "availableLanguage": ["Indonesian"]
+          },
+          "keywords": "${articleTags.join(", ")}"
+        },
+
+        {
+          "@type": "WebPage",
+          "@id": "${canonicalUrl}#webpage",
+          "url": "${canonicalUrl}",
+          "name": "${pageTitle.replace(/<\/?[^>]+(>|$)/g, "")}", 
+          "inLanguage": "id-ID",
+          "description": "${descriptionContent}",
+          "isPartOf": { "@id": "${baseUrl}" },
+          "about": { "@id": "${canonicalUrl}#organization" },
+          "mainEntity": {
+            "@type": "Service",
+            "name": "Les Privat Tes Kemampuan Akademik (TKA) di ${dynamicLocationName}",
+            "provider": { "@id": "${canonicalUrl}#organization" },
+            "serviceType": "Bimbingan Belajar Ujian TKA",
+            "areaServed": "${dynamicLocationName}",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "IDR",
+              "availability": "https://schema.org/InStock",
+              "url": "${canonicalUrl}"
+            }
+          }
+        },
+
+        {
+          "@type": "FAQPage",
+          "@id": "${canonicalUrl}#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Apa itu Tes Kemampuan Akademik (TKA) yang dimaksud?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "TKA adalah tes yang diluncurkan Kemdikbudristek untuk mengukur literasi membaca, numerasi, penalaran, dan keterampilan berpikir kritis siswa di akhir jenjang SD, SMP, dan SMA/SMK."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Materi apa saja yang diajarkan dalam Les Privat TKA LPS Education?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Materi yang diajarkan meliputi Bahasa Indonesia dan Matematika (untuk semua jenjang), serta tambahan Bahasa Inggris dan dua mata pelajaran pilihan untuk jenjang SMA/SMK."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Mengapa hasil TKA penting untuk siswa?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Meskipun opsional, hasil TKA dapat menjadi nilai tambah dan bahan pertimbangan penting dalam seleksi masuk jenjang pendidikan selanjutnya (seperti SMP/SMA unggulan) atau seleksi perguruan tinggi melalui jalur SNBP."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  `}
         </script>
       </Helmet>
       <div className="container-all">

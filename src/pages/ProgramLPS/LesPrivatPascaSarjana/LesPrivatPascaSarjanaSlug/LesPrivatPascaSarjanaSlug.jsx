@@ -157,7 +157,6 @@ const LesPrivatPascaSarjanaSlug = () => {
               "position": 3,
               "item": {
                 "@id": "${canonicalUrl}",
-                // Menggunakan dynamicLocationName untuk Breadcrumb agar lebih ringkas & relevan
                 "name": "Les Privat Pascasarjana di ${dynamicLocationName}"
               }
             }

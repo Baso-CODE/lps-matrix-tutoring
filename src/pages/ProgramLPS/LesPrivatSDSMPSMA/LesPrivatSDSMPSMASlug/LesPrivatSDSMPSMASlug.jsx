@@ -126,44 +126,126 @@ const LesPrivatSDSMPSMASlug = () => {
         <meta name="twitter:description" content={twitterDescription} />
         <meta name="twitter:image" content={ogImage} />
 
-        {/* Schema Markup (JSON-LD) - BreadcrumbList */}
         <script type="application/ld+json">
           {`
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "@id": "${canonicalUrl}#breadcrumb",
+          "itemListElement": [
             {
-              "@context": "https://schema.org",
-              "@graph": [
-                {
-                  "@type": "BreadcrumbList",
-                  "@id": "${canonicalUrl}#breadcrumb",
-                  "itemListElement": [
-                    {
-                      "@type": "ListItem",
-                      "position": "1",
-                      "item": {
-                        "@id": "${baseUrl}",
-                        "name": "Home"
-                      }
-                    },
-                    {
-                      "@type": "ListItem",
-                      "position": "2",
-                      "item": {
-                        "@id": "${baseUrl}/les-privat-sd-smp-sma-terbaik",
-                      }
-                    },
-                    {
-                      "@type": "ListItem",
-                      "position": "3",
-                      "item": {
-                        "@id": "${canonicalUrl}",
-                        "name": "${pageTitle.replace(/<\/?[^>]+(>|$)/g, "")}"
-                      }
-                    }
-                  ]
-                }
-              ]
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@id": "${baseUrl}",
+                "name": "Home"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@id": "${baseUrl}/les-privat-sd-smp-sma-terbaik",
+                "name": "Les Privat SD, SMP, SMA"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "item": {
+                "@id": "${canonicalUrl}",
+                "name": "Les Privat SD, SMP, SMA di ${dynamicLocationName}"
+              }
             }
-          `}
+          ]
+        },
+
+        {
+          "@type": "EducationalOrganization",
+          "@id": "${canonicalUrl}#organization",
+          "name": "LPS Education",
+          "description": "LPS Education menyediakan Les Privat Intensif Akademik untuk SD, SMP, dan SMA terbaik di ${dynamicLocationName}. Fokus pada peningkatan nilai sekolah, persiapan ujian (PTS/PAS), dan Ujian Sekolah.",
+          "url": "${canonicalUrl}",
+          "areaServed": "${dynamicLocationName}", 
+          "sameAs": [
+            "${baseUrl}",
+            "https://www.instagram.com/lps.privatsbmptn/", 
+            "https://www.tiktok.com/@lesprivatsbmptn.com?_r=1&_t=ZS-918OcGnyuIS" 
+          ],
+          "brand": {
+            "@type": "Brand",
+            "name": "LPS Education",
+            "logo": "${baseUrl}/images/LOGO2.webp" 
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+62-858-8756-2039",
+            "contactType": "Customer Service",
+            "areaServed": "ID",
+            "availableLanguage": ["Indonesian"]
+          },
+          "keywords": "${articleTags.join(", ")}"
+        },
+
+        {
+          "@type": "WebPage",
+          "@id": "${canonicalUrl}#webpage",
+          "url": "${canonicalUrl}",
+          "name": "${pageTitle.replace(/<\/?[^>]+(>|$)/g, "")}", 
+          "inLanguage": "id-ID",
+          "description": "${descriptionContent}",
+          "isPartOf": { "@id": "${baseUrl}" },
+          "about": { "@id": "${canonicalUrl}#organization" },
+          "mainEntity": {
+            "@type": "Service",
+            "name": "Les Privat Akademik SD, SMP, SMA di ${dynamicLocationName}",
+            "provider": { "@id": "${canonicalUrl}#organization" },
+            "serviceType": "Bimbingan Belajar Akademik Sekolah",
+            "areaServed": "${dynamicLocationName}",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "IDR",
+              "availability": "https://schema.org/InStock",
+              "url": "${canonicalUrl}"
+            }
+          }
+        },
+
+        {
+          "@type": "FAQPage",
+          "@id": "${canonicalUrl}#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Apa fokus utama Program Les Privat SD, SMP, SMA LPS Education?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Fokus utama kami adalah pendalaman materi akademik sekolah, membantu pengerjaan PR, dan persiapan menyeluruh untuk Ulangan Harian, Ujian Tengah Semester (PTS), Ujian Akhir Semester (PAS), hingga Ujian Sekolah."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Mata pelajaran apa saja yang dicakup dalam program ini?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Kami mencakup semua mata pelajaran kurikulum Sekolah, termasuk Matematika, IPA (Fisika, Kimia, Biologi), Bahasa Inggris, Bahasa Indonesia, Ilmu Pengetahuan Sosial (IPS), dan mata pelajaran wajib lainnya sesuai jenjang SD, SMP, dan SMA."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Apakah program ini juga melayani persiapan ujian masuk sekolah unggulan?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Ya, selain fokus pada akademik sekolah, program kami juga dirancang untuk membantu siswa mempersiapkan diri menghadapi Tes Kemampuan Akademik (TKA) dan ujian masuk untuk sekolah-sekolah unggulan atau favorit."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  `}
         </script>
       </Helmet>
 
@@ -178,7 +260,6 @@ const LesPrivatSDSMPSMASlug = () => {
         <FasilitasSDSMPSMA />
         <ProgramIntensifLpsSDSMPSMA />
         <PaketBelajarSDSMPSMA />
-        {/* <PaketSesiSDSMPSMA /> */}
         <Slider />
         <VisiEndMisiLps />
         <ProgramBelajarLps />

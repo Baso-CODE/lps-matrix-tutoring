@@ -24,9 +24,14 @@ import PaketLPSMahasiswa from "../Components/PaketLPSMahasiswa/PaketLPSMahasiswa
 const LesPrivatMahasiswaSlug = () => {
   const { slug } = useParams();
 
-  const mahasiswaImages = [
+  const mahasiswaImagesDescktop = [
     "/images/program/program-LPS-MAHASISWA.png",
     "/images/program/program-LPS-KELAS-INTERNASIONAL.png",
+  ];
+
+  const mahasiswaImagesMobile = [
+    "/images/program/program-LPS-MAHASISWA-mobile.png",
+    "/images/program/program-LPS-KELAS-INTERNASIONAL-mobile.png",
   ];
   const mahasiswaDefaultProgramName = "Program Les Privat Mahasiswa";
   const mahasiswaProgramNameDisplay =
@@ -264,7 +269,8 @@ const LesPrivatMahasiswaSlug = () => {
         <HeadingLPSProgramDynamic
           city={dynamicLocationName}
           defaultProgramName={mahasiswaDefaultProgramName}
-          imageUrls={mahasiswaImages}
+          imageUrlsDesktop={mahasiswaImagesDescktop}
+          imageUrlsMobile={mahasiswaImagesMobile}
           descriptionParagraphs={mahasiswaDescription}
           programName={mahasiswaProgramNameDisplay}
         />

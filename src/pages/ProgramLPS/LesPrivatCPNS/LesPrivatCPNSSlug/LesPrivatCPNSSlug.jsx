@@ -1,7 +1,9 @@
 import { Helmet } from "react-helmet";
 import { useParams } from "react-router-dom";
 import GaleryBelajarSiswa from "../../../../components/GaleryBelajarSiswa/GaleryBelajarSiswa";
+import HeadingLPSProgramDynamic from "../../../../components/HeadingLPSProgramDynamic/HeadingLPSProgramDynamic";
 import Slider from "../../../../components/Slider/Slider";
+import SliderTestimoniSiswa from "../../../../components/SliderTestimoniSiswa/SliderTestimoniSiswa";
 import TestimoniWaSlider from "../../../../components/TestimoniWaSlider/TestimoniWaSlider";
 import UnivPengajarLps from "../../../../components/UnivPengajarLps/UnivPengajarLps";
 import {
@@ -12,23 +14,48 @@ import {
 import ProfileTutor from "../../../HomePage/Components/ProfileTutor/ProfileTutor";
 import TestimoniWaSiswa from "../../../HomePage/Components/TestimoniWaSiswa/TestimoniWaSiswa";
 import VisiEndMisiLps from "../../../HomePage/Components/VisiEndMisiLps/VisiEndMisiLps";
+import AllAlumniLpsImage from "../../../ListSiswaLPS/AllAlumniLps/AllAlumniLpsImage";
+import ListSiswaLPS from "../../../ListSiswaLPS/ListSiswaLPS";
 import AsalSiswaLPS from "../../LesPrivatUTBK/Components/AsalSiswaLPS/AsalSiswaLPS";
 import ApaAjaYgDiPeroleh from "../Components/ApaAjaYgDiPeroleh/ApaAjaYgDiPeroleh";
 import BenefitLolosCPNS from "../Components/BenefitLolosCPNS/BenefitLolosCPNS";
 import CpnsStages from "../Components/CpnsStages/CpnsStages";
-import HeadingCPNS from "../Components/HeadingCPNS/HeadingCPNS";
 import JadwalBelajarCPNS from "../Components/JadwalBelajarCPNS/JadwalBelajarCPNS";
 import MateriLPSCPNS from "../Components/MateriLPSCPNS/MateriLPSCPNS";
 import PaketBelajarCPNS from "../Components/PaketBelajarCPNS/PaketBelajarCPNS";
 import ProgramCPNS from "../Components/ProgramCPNS/ProgramCPNS";
 import ProgramIntensifCPNS from "../Components/ProgramIntensifCPNS/ProgramIntensifCPNS";
 import SuccesStoryCPNS from "../Components/SuccesStoryCPNS/SuccesStoryCPNS";
-import AllAlumniLpsImage from "../../../ListSiswaLPS/AllAlumniLps/AllAlumniLpsImage";
-import ListSiswaLPS from "../../../ListSiswaLPS/ListSiswaLPS";
-import SliderTestimoniSiswa from "../../../../components/SliderTestimoniSiswa/SliderTestimoniSiswa";
 
 const LesPrivatCPNSSlug = () => {
   const { slug } = useParams();
+
+  const cpnsImagesDesktop = [
+    "/images/program/program-LPS-CPNS.png",
+    "/images/program/program-LPS-SEKOLAH KEDINASAN.png",
+  ];
+  const cpnsImagesMobile = [
+    "/images/program/program-LPS-CPNS-mobile.png",
+    "/images/program/program-LPS-SEKOLAH-KEDINASAN-mobile.png",
+  ];
+
+  const cpnsDefaultProgramName = "Guru Les Privat CPNS Terbaik";
+  const cpnsProgramNameDisplay =
+    "Les Privat Persiapan CPNS (SKD TWK, TIU, TKP)";
+
+  const cpnsDescription = [
+    // Paragraf 1
+    `Menjadi PNS adalah impian dari jutaan peserta Tes CPNS. Oleh karena itu, para peserta diharapkan memiliki kompetensi yang mumpuni untuk bisa tembus tes CPNS, utamanya pada tahap ujian akademik SKD CPNS <span class='color-highlight'>TWK, TIU, dan TKP</span>.`,
+
+    // Paragraf 2
+    `Bagi Anda yang sedang mencari <span class='color-highlight'>les privat CPNS offline</span> (guru les privat ke rumah) maupun les privat online persiapan SKD CPNS, Anda berada di halaman yang tepat. <span class='color-highlight'>LPS Education</span> memiliki ribuan guru les privat yang tersebar di Jabodetabek. Kami membuka dua program: Offline (ke rumah) dan Online (menggunakan Zoom).`,
+
+    // Paragraf 3
+    `Guru privat CPNS kami adalah tutor terbaik di bidangnya yang sudah memenuhi standar dan berkompeten dalam mengajari materi soal – soal CPNS. Layanan privat berupa pembekalan materi dan latihan soal sebelum menghadapi tes sehingga Anda akan lebih siap dalam menghadapi tes CPNS.`,
+
+    // Paragraf 4
+    `<span class='color-highlight'>LPS Education</span> adalah lembaga penyedia layanan guru les privat ke rumah area Jabodetabek dan les privat Online untuk seluruh Indonesia. Selain program <span class='color-highlight'>les privat CPNS</span>, kami memiliki banyak program unggulan lainnya. Kami senantiasa memberikan layanan privat terbaik agar hasil sesuai target yang diinginkan siswa/peserta.`,
+  ];
 
   const formatSlugToTitle = (textSlug) => {
     return textSlug
@@ -240,7 +267,14 @@ const LesPrivatCPNSSlug = () => {
         </script>
       </Helmet>
       <div className="container-all">
-        <HeadingCPNS lokasi={dynamicLocationName} />
+        <HeadingLPSProgramDynamic
+          defaultProgramName={cpnsDefaultProgramName}
+          imageUrlsDesktop={cpnsImagesDesktop}
+          imageUrlsMobile={cpnsImagesMobile}
+          descriptionParagraphs={cpnsDescription}
+          programName={cpnsProgramNameDisplay}
+          city={dynamicLocationName}
+        />
         <ProgramIntensifCPNS />
         <MateriLPSCPNS />
         <BenefitLolosCPNS />

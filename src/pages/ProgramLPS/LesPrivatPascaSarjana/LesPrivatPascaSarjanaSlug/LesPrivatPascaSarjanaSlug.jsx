@@ -19,10 +19,13 @@ import ProgramIntensiPascaSarjana from "../Components/ProgramIntensiPascaSarjana
 const LesPrivatPascaSarjanaSlug = () => {
   const { slug } = useParams();
 
-  const pascaSarjanaImages = [
+  const pascaSarjanaImagesDescktop = [
     "/images/program/program-LPS-UJIAN-MASUK-PASCASARJANA-S2-S3.png",
   ];
 
+  const pascaSarjanaImagesMobile = [
+    "/images/program/program-LPS-UJIAN-MASUK-PASCASARJANA-S2-S3-mobile.png",
+  ];
   const pascaSarjanaDefaultProgramName =
     "Les Privat Ujian Masuk Pascasarjana (S2/S3)";
   const pascaSarjanaProgramNameDisplay =
@@ -253,7 +256,8 @@ const LesPrivatPascaSarjanaSlug = () => {
         <HeadingLPSProgramDynamic
           city={dynamicLocationName}
           defaultProgramName={pascaSarjanaDefaultProgramName}
-          imageUrls={pascaSarjanaImages}
+          imageUrlsDesktop={pascaSarjanaImagesDescktop}
+          imageUrlsMobile={pascaSarjanaImagesMobile}
           descriptionParagraphs={pascaSarjanaDescription}
           programName={pascaSarjanaProgramNameDisplay}
         />

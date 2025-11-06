@@ -27,7 +27,12 @@ import ListSiswaLPS from "../../ListSiswaLPS/ListSiswaLPS";
 const SimakUIAndKKI = () => {
   const baseUrl = "https://apps.lesprivatmasukptn.com";
 
-  const simakUIImages = ["/images/program/program-LPS-SIMAK-UI-KKI.png"];
+  const simakUIImagesDescktop = [
+    "/images/program/program-LPS-SIMAK-UI-KKI.png",
+  ];
+  const simakUIImagesMobile = [
+    "/images/program/program-LPS-SIMAK-UI-KKI-mobile.png",
+  ];
 
   const simakUIDefaultProgramName =
     "Bimbingan Belajar Intensif Les Privat Simak UI";
@@ -156,15 +161,14 @@ const SimakUIAndKKI = () => {
       <div className="container-all">
         <HeadingLPSProgramDynamic
           defaultProgramName={simakUIDefaultProgramName}
-          imageUrls={simakUIImages}
+          imageUrlsDesktop={simakUIImagesDescktop}
+          imageUrlsMobile={simakUIImagesMobile}
           descriptionParagraphs={simakUIDescription}
           programName={simakUIProgramNameDisplay}
         />
         <FasilitasSimakUI />
         <PaketBelajarSimakUI />
-        {/* <ProgramBelajarSIMAKUI /> */}
         <Slider />
-        {/* <InformationProgram programType={"simak-ui"} /> */}
         <VisiEndMisiLps />
         <ProgramBelajarLps />
         <FiturDanLayanan />

@@ -21,7 +21,9 @@ import StudentChallenge from "./Components/StudentChallenge/StudentChallenge";
 const LesPrivatTKASlug = () => {
   const { slug } = useParams();
 
-  const tkaImages = ["/images/program/program-LPS-TKA.png"];
+  const tkaImagesDescktop = ["/images/program/program-LPS-TKA.png"];
+
+  const tkaImagesMobile = ["/images/program/program-LPS-TKA-mobile.png"];
 
   const tkaDefaultProgramName =
     "Les Privat Persiapan Tes Kemampuan Akademik (TKA)";
@@ -250,7 +252,8 @@ const LesPrivatTKASlug = () => {
         <HeadingLPSProgramDynamic
           city={dynamicLocationName}
           defaultProgramName={tkaDefaultProgramName}
-          imageUrls={tkaImages}
+          imageUrlsDesktop={tkaImagesDescktop}
+          imageUrlsMobile={tkaImagesMobile}
           descriptionParagraphs={tkaDescription}
           programName={tkaProgramNameDisplay}
         />

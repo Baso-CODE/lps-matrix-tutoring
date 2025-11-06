@@ -20,10 +20,16 @@ import PaketBelajarSDSMPSMA from "./Components/PaketBelajarSDSMPSMA/PaketBelajar
 import ProgramIntensifLpsSDSMPSMA from "./Components/ProgramIntensifLpsSDSMPSMA/ProgramIntensifLpsSDSMPSMA";
 
 const LesPrivatSDSMPSMA = () => {
-  const sdsmpSmaImages = [
+  const sdsmpsmaImagesDescktop = [
     "/images/program/program-LPS-SD.png",
     "/images/program/program-LPS-SMP.png",
     "/images/program/program-LPS-SMA.png",
+  ];
+
+  const sdsmpsmaImagesMobile = [
+    "/images/program/program-LPS-SD-mobile.png",
+    "/images/program/program-LPS-SMP-mobile.png",
+    "/images/program/program-LPS-SMA-mobile.png",
   ];
 
   const sdsmpSmaDescription = [
@@ -149,7 +155,8 @@ const LesPrivatSDSMPSMA = () => {
       <div className="container-all">
         <HeadingLPSProgramDynamic
           defaultProgramName="Les Privat SD SMP SMA"
-          imageUrls={sdsmpSmaImages}
+          imageUrlsDesktop={sdsmpsmaImagesDescktop}
+          imageUrlsMobile={sdsmpsmaImagesMobile}
           descriptionParagraphs={sdsmpSmaDescription}
           programName="Les Privat SD SMP SMA"
         />

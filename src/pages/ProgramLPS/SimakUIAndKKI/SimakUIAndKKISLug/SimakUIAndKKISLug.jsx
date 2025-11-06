@@ -26,8 +26,12 @@ import PaketBelajarSimakUI from "../Components/PaketBelajarSimakUI/PaketBelajarS
 const SimakUIAndKKISLug = () => {
   const { slug } = useParams();
 
-  const simakUIImages = ["/images/program/program-LPS-SIMAK-UI-KKI.png"];
-
+  const simakUIImagesDescktop = [
+    "/images/program/program-LPS-SIMAK-UI-KKI.png",
+  ];
+  const simakUIImagesMobile = [
+    "/images/program/program-LPS-SIMAK-UI-KKI-mobile.png",
+  ];
   const simakUIDefaultProgramName =
     "Bimbingan Belajar Intensif Les Privat Simak UI";
   const simakUIProgramNameDisplay =
@@ -259,7 +263,8 @@ const SimakUIAndKKISLug = () => {
         <HeadingLPSProgramDynamic
           city={dynamicLocationName}
           defaultProgramName={simakUIDefaultProgramName}
-          imageUrls={simakUIImages}
+          imageUrlsDesktop={simakUIImagesDescktop}
+          imageUrlsMobile={simakUIImagesMobile}
           descriptionParagraphs={simakUIDescription}
           programName={simakUIProgramNameDisplay}
         />

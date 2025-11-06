@@ -21,8 +21,12 @@ import ProgramIntensiPascaSarjana from "./Components/ProgramIntensiPascaSarjana/
 const LesPrivatPascaSarjana = () => {
   const baseUrl = "https://apps.lesprivatmasukptn.com";
 
-  const pascaSarjanaImages = [
+  const pascaSarjanaImagesDescktop = [
     "/images/program/program-LPS-UJIAN-MASUK-PASCASARJANA-S2-S3.png",
+  ];
+
+  const pascaSarjanaImagesMobile = [
+    "/images/program/program-LPS-UJIAN-MASUK-PASCASARJANA-S2-S3-mobile.png",
   ];
 
   const pascaSarjanaDefaultProgramName =
@@ -147,7 +151,8 @@ const LesPrivatPascaSarjana = () => {
       <div className="container-all">
         <HeadingLPSProgramDynamic
           defaultProgramName={pascaSarjanaDefaultProgramName}
-          imageUrls={pascaSarjanaImages}
+          imageUrlsDesktop={pascaSarjanaImagesDescktop}
+          imageUrlsMobile={pascaSarjanaImagesMobile}
           descriptionParagraphs={pascaSarjanaDescription}
           programName={pascaSarjanaProgramNameDisplay}
         />

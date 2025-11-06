@@ -26,11 +26,15 @@ import TigaJalurMasukPTN from "../Components/TigaJalurMasukPTN/TigaJalurMasukPTN
 const LesPrivatUTBKSlug = () => {
   const { slug } = useParams();
 
-  const utbkImages = [
+  const utbkImagesDescktop = [
     "/images/program/program-LPS-SUPERCAMP-UTBK-SNBT.png",
     "/images/program/program-LPS-UTBK-SNBT.png",
   ];
 
+  const utbkImagesMobile = [
+    "/images/program/program-LPS-SUPERCAMP-UTBK-SNBT-mobile.png",
+    "/images/program/program-LPS-UTBK-SNBT-mobile.png",
+  ];
   const utbkDefaultProgramName = "Les Privat Persiapan UTBK SNBT";
 
   const utbkDescription = [
@@ -259,7 +263,8 @@ const LesPrivatUTBKSlug = () => {
       <div className="container-all">
         <HeadingLPSProgramDynamic
           defaultProgramName={utbkDefaultProgramName}
-          imageUrls={utbkImages}
+          imageUrlsDesktop={utbkImagesDescktop}
+          imageUrlsMobile={utbkImagesMobile}
           descriptionParagraphs={utbkDescription}
           programName="Bimbel & Les Privat UTBK SNBT"
           city={dynamicLocationName}

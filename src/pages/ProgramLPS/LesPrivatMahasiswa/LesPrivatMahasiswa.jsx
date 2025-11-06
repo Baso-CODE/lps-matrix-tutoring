@@ -24,9 +24,14 @@ import "./LesPrivatMahasiswa.css";
 const LesPrivatMahasiswa = () => {
   const baseUrl = "https://apps.lesprivatmasukptn.com";
 
-  const mahasiswaImages = [
+  const mahasiswaImagesDescktop = [
     "/images/program/program-LPS-MAHASISWA.png",
     "/images/program/program-LPS-KELAS-INTERNASIONAL.png",
+  ];
+
+  const mahasiswaImagesMobile = [
+    "/images/program/program-LPS-MAHASISWA-mobile.png",
+    "/images/program/program-LPS-KELAS-INTERNASIONAL-mobile.png",
   ];
   const mahasiswaDefaultProgramName = "Program Les Privat Mahasiswa";
   const mahasiswaProgramNameDisplay =
@@ -158,7 +163,8 @@ const LesPrivatMahasiswa = () => {
       <div className="container-all">
         <HeadingLPSProgramDynamic
           defaultProgramName={mahasiswaDefaultProgramName}
-          imageUrls={mahasiswaImages}
+          imageUrlsDesktop={mahasiswaImagesDescktop}
+          imageUrlsMobile={mahasiswaImagesMobile}
           descriptionParagraphs={mahasiswaDescription}
           programName={mahasiswaProgramNameDisplay}
         />

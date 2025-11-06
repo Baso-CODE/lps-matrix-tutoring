@@ -137,45 +137,126 @@ const LesPrivatMahasiswaSlug = () => {
         <meta name="twitter:description" content={twitterDescription} />
         <meta name="twitter:image" content={ogImage} />
 
-        {/* Schema Markup (JSON-LD) - BreadcrumbList */}
         <script type="application/ld+json">
           {`
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "@id": "${canonicalUrl}#breadcrumb",
+          "itemListElement": [
             {
-              "@context": "https://schema.org",
-              "@graph": [
-                {
-                  "@type": "BreadcrumbList",
-                  "@id": "${canonicalUrl}#breadcrumb",
-                  "itemListElement": [
-                    {
-                      "@type": "ListItem",
-                      "position": "1",
-                      "item": {
-                        "@id": "${baseUrl}",
-                        "name": "Home"
-                      }
-                    },
-                    {
-                      "@type": "ListItem",
-                      "position": "2",
-                      "item": {
-                        "@id": "${baseUrl}/les-privat-mahasiswa-terbaik", 
-                        "name": "Les Privat Mahasiswa"
-                      }
-                    },
-                    {
-                      "@type": "ListItem",
-                      "position": "3",
-                      "item": {
-                        "@id": "${canonicalUrl}",
-                        "name": "${pageTitle.replace(/<\/?[^>]+(>|$)/g, "")}"
-                      }
-                    }
-                  ]
-                }
-              ]
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@id": "${baseUrl}",
+                "name": "Home"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@id": "${baseUrl}/les-privat-mahasiswa-terbaik", 
+                "name": "Les Privat Mahasiswa" 
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "item": {
+                "@id": "${canonicalUrl}",
+                "name": "Les Privat Mahasiswa di ${dynamicLocationName}" 
+              }
             }
-          `}
+          ]
+        },
+
+        {
+          "@type": "EducationalOrganization",
+          "@id": "${canonicalUrl}#organization",
+          "name": "LPS Education",
+          "description": "LPS Education menyediakan Les Privat Mahasiswa terbaik di ${dynamicLocationName}. Bimbingan mata kuliah jurusan (Kedokteran, Teknik, dll.) untuk meningkatkan IPK.",
+          "url": "${canonicalUrl}",
+          "areaServed": "${dynamicLocationName}", 
+          "sameAs": [
+            "${baseUrl}",
+            "https://www.instagram.com/lps.privatsbmptn/", 
+            "https://www.tiktok.com/@lesprivatsbmptn.com?_r=1&_t=ZS-918OcGnyuIS" 
+          ],
+          "brand": {
+            "@type": "Brand",
+            "name": "LPS Education",
+            "logo": "${baseUrl}/images/LOGO2.webp" 
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+62-858-8756-2039",
+            "contactType": "Customer Service",
+            "areaServed": "ID",
+            "availableLanguage": ["Indonesian"]
+          },
+          "keywords": "${articleTags.join(", ")}"
+        },
+
+        {
+          "@type": "WebPage",
+          "@id": "${canonicalUrl}#webpage",
+          "url": "${canonicalUrl}",
+          "name": "${pageTitle.replace(/<\/?[^>]+(>|$)/g, "")}",
+          "inLanguage": "id-ID",
+          "description": "${descriptionContent}",
+          "isPartOf": { "@id": "${baseUrl}" },
+          "about": { "@id": "${canonicalUrl}#organization" },
+          "mainEntity": {
+            "@type": "Service",
+            "name": "Les Privat Mahasiswa (Mata Kuliah Jurusan) di ${dynamicLocationName}",
+            "provider": { "@id": "${canonicalUrl}#organization" },
+            "serviceType": "Bimbingan Belajar Akademik Universitas",
+            "areaServed": "${dynamicLocationName}",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "IDR",
+              "availability": "https://schema.org/InStock",
+              "url": "${canonicalUrl}"
+            }
+          }
+        },
+
+        {
+          "@type": "FAQPage",
+          "@id": "${canonicalUrl}#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Mata kuliah apa saja yang bisa dileskan untuk mahasiswa di ${dynamicLocationName}?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "LPS Education melayani les privat untuk berbagai mata kuliah, termasuk Kalkulus, Statistika, Fisika Dasar, Kimia Dasar, Akuntansi, Teknik, Kedokteran, dan mata kuliah spesifik jurusan lainnya."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Apakah tutor Les Privat Mahasiswa LPS Education berasal dari PTN terkemuka?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Ya, tim pengajar kami adalah alumni dan mahasiswa berprestasi dari PTN ternama seperti UI, ITB, UGM, Unpad, IPB, dan lain-lain, yang berkompeten di bidang mata kuliah masing-masing."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Berapa lama durasi belajar privat untuk mahasiswa?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Durasi belajar sangat fleksibel. Biasanya per sesi adalah 90 atau 120 menit, dan jumlah sesi per minggu disesuaikan dengan kebutuhan mahasiswa, jadwal ujian, serta tingkat kesulitan mata kuliah."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  `}
         </script>
       </Helmet>
 

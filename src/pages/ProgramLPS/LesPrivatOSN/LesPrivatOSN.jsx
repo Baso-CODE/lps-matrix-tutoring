@@ -1,7 +1,9 @@
 import { Helmet } from "react-helmet-async";
 import AlumniLpsNew from "../../../components/AlumniLpsNew/AlumniLpsNew";
 import GaleryBelajarSiswa from "../../../components/GaleryBelajarSiswa/GaleryBelajarSiswa";
+import HeadingLPSProgramDynamic from "../../../components/HeadingLPSProgramDynamic/HeadingLPSProgramDynamic";
 import Slider from "../../../components/Slider/Slider";
+import SliderTestimoniSiswa from "../../../components/SliderTestimoniSiswa/SliderTestimoniSiswa";
 import TestimoniWaSlider from "../../../components/TestimoniWaSlider/TestimoniWaSlider";
 import UnivPengajarLps from "../../../components/UnivPengajarLps/UnivPengajarLps";
 import {
@@ -14,19 +16,27 @@ import ProgramBelajarLps from "../../HomePage/Components/ProgramBelajarLps/Progr
 import SuccessStory from "../../HomePage/Components/SuccessStory/SuccessStory";
 import TestimoniWaSiswa from "../../HomePage/Components/TestimoniWaSiswa/TestimoniWaSiswa";
 import VisiEndMisiLps from "../../HomePage/Components/VisiEndMisiLps/VisiEndMisiLps";
+import AllAlumniLpsImage from "../../ListSiswaLPS/AllAlumniLps/AllAlumniLpsImage";
+import ListSiswaLPS from "../../ListSiswaLPS/ListSiswaLPS";
 import FasilitasOSN from "./Components/FasilitasOSN";
-import HeroLpsOSN from "./Components/HeroLpsOSN/HeroLpsOSN";
 import OsnCurriculumOverview from "./Components/OsnCurriculumOverview/OsnCurriculumOverview";
 import OsnWinnerBenefits from "./Components/OsnWinnerBenefits/OsnWinnerBenefits";
 import PaketBelajarOSN from "./Components/PaketBelajarOSN/PaketBelajarOSN";
 import ProgramIntensiOSN from "./Components/ProgramIntensiOSN/ProgramIntensiOSN";
 import "./LesPrivatOSN.css";
-import AllAlumniLpsImage from "../../ListSiswaLPS/AllAlumniLps/AllAlumniLpsImage";
-import ListSiswaLPS from "../../ListSiswaLPS/ListSiswaLPS";
-import SliderTestimoniSiswa from "../../../components/SliderTestimoniSiswa/SliderTestimoniSiswa";
 
 const LesPrivatOSN = () => {
-  // --- PERUBAHAN UTAMA DI SINI ---
+  const osnImages = ["/images/program/program-LPS-OLIMPIADE.png"];
+
+  const osnDefaultProgramName = "Les Privat OSN, ISO, IMO, SEAMO";
+  const osnProgramNameDisplay =
+    "Les Privat OSN, ISO, IMO, SEAMO (ONLINE & OFFLINE)";
+
+  const osnDescription = [
+    `<span class='color-highlight'>LPS Education</span> - Program Les Privat OSN, ISO, IMO dirancang khusus untuk siswa yang ingin meraih prestasi luar biasa di ajang <span class='color-highlight'>Olimpiade Sains Nasional (OSN)</span> serta kompetisi internasional seperti ISO, IMO, dan SEAMO. Program ini tersedia dalam format <span class='color-highlight'>Privat Offline</span> dan <span class='color-highlight'>Privat Online</span>.`,
+    `Dengan guru les privat yang berpengalaman mendampingi siswa persiapan Olimpiade di tingkat nasional maupun internasional, program ini memastikan <span class='color-highlight'>pendalaman konsep dasar</span>, penyelesaian soal-soal tingkat tinggi, dan bimbingan intensif. Progress belajar siswa dipantau secara berkala oleh Tim Akademik.`,
+    `Target utama kami adalah mendukung siswa dalam meraih medali bergengsi pada ajang Olimpiade. Fokus utama kami terletak pada penguasaan materi yang mendalam dan pencapaian prestasi akademik yang luar biasa. Wujudkan potensi terbaik Anda di bidang akademik dengan <span class='color-highlight'>Program Super Intensif Privat OSN dan Olimpiade Internasional</span>.`,
+  ];
   const baseUrl = "https://apps.lesprivatmasukptn.com";
   const canonicalUrl = `${baseUrl}/les-privat-osn-terbaik`;
 
@@ -71,7 +81,6 @@ const LesPrivatOSN = () => {
   return (
     <>
       <Helmet>
-        {/* Basic SEO Meta Tags */}
         <title>{pageTitle}</title>
         <meta name="description" content={descriptionContent} />
         <meta
@@ -83,14 +92,12 @@ const LesPrivatOSN = () => {
           name="robots"
           content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"
         />
-        {/* Open Graph Meta Tags (for social media sharing) */}
         <meta property="og:locale" content="id_ID" />
         <meta property="og:type" content="article" />
         <meta property="og:title" content={ogTitle} />
         <meta property="og:description" content={ogDescription} />
         <meta property="og:url" content={canonicalUrl} />
-        <meta property="og:site_name" content="LPS Education" />{" "}
-        {/* Diperbarui */}
+        <meta property="og:site_name" content="LPS Education" />
         <meta property="og:image" content={ogImage} />
         <meta property="og:image:secure_url" content={ogImage} />
         <meta property="og:image:width" content="800" />
@@ -101,12 +108,10 @@ const LesPrivatOSN = () => {
           <meta key={tag} property="og:article:tag" content={tag} />
         ))}
         <meta property="article:section" content="Olimpiade" />
-        {/* Twitter Card Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={twitterTitle} />
         <meta name="twitter:description" content={twitterDescription} />
         <meta name="twitter:image" content={ogImage} />
-        {/* Schema Markup (JSON-LD) - BreadcrumbList */}
         <script type="application/ld+json">
           {`
             {
@@ -141,15 +146,18 @@ const LesPrivatOSN = () => {
       </Helmet>
 
       <div className="container-all">
-        <HeroLpsOSN />
+        <HeadingLPSProgramDynamic
+          defaultProgramName={osnDefaultProgramName}
+          imageUrls={osnImages}
+          descriptionParagraphs={osnDescription}
+          programName={osnProgramNameDisplay}
+        />
         <ProgramIntensiOSN />
         <Slider />
         <FasilitasOSN />
         <PaketBelajarOSN />
-        {/* <PaketSesiOSN /> */}
         <OsnCurriculumOverview />
         <OsnWinnerBenefits />
-        {/* <InformationProgram programType={"osn"} /> */}
         <VisiEndMisiLps />
         <ProgramBelajarLps />
         <FiturDanLayanan />

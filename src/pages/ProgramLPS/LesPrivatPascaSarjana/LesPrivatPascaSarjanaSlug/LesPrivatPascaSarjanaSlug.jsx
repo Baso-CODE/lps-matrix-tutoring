@@ -127,45 +127,127 @@ const LesPrivatPascaSarjanaSlug = () => {
         <meta name="twitter:description" content={twitterDescription} />
         <meta name="twitter:image" content={ogImage} />
 
-        {/* Schema Markup (JSON-LD) - BreadcrumbList */}
         <script type="application/ld+json">
           {`
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "@id": "${canonicalUrl}#breadcrumb",
+          "itemListElement": [
             {
-              "@context": "https://schema.org",
-              "@graph": [
-                {
-                  "@type": "BreadcrumbList",
-                  "@id": "${canonicalUrl}#breadcrumb",
-                  "itemListElement": [
-                    {
-                      "@type": "ListItem",
-                      "position": "1",
-                      "item": {
-                        "@id": "${baseUrl}",
-                        "name": "Home"
-                      }
-                    },
-                    {
-                      "@type": "ListItem",
-                      "position": "2",
-                      "item": {
-                        "@id": "${baseUrl}/les-privat-pascasarjana-terbaik", 
-                        "name": "Les Privat Pasca Sarjana"
-                      }
-                    },
-                    {
-                      "@type": "ListItem",
-                      "position": "3",
-                      "item": {
-                        "@id": "${canonicalUrl}",
-                        "name": "${pageTitle.replace(/<\/?[^>]+(>|$)/g, "")}"
-                      }
-                    }
-                  ]
-                }
-              ]
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@id": "${baseUrl}",
+                "name": "Home"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@id": "${baseUrl}/les-privat-pascasarjana-terbaik", 
+                "name": "Les Privat Pascasarjana"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "item": {
+                "@id": "${canonicalUrl}",
+                // Menggunakan dynamicLocationName untuk Breadcrumb agar lebih ringkas & relevan
+                "name": "Les Privat Pascasarjana di ${dynamicLocationName}"
+              }
             }
-          `}
+          ]
+        },
+
+        {
+          "@type": "EducationalOrganization",
+          "@id": "${canonicalUrl}#organization",
+          "name": "LPS Education",
+          "description": "LPS Education menyediakan Les Privat Pascasarjana (S2/S3) terbaik di ${dynamicLocationName}. Fokus pada persiapan ujian TPA dan Bahasa Inggris untuk SIMAK UI S2/S3, UGM, ITB, dan PTN lainnya.",
+          "url": "${canonicalUrl}",
+          "areaServed": "${dynamicLocationName}", 
+          "sameAs": [
+            "${baseUrl}",
+            "https://www.instagram.com/lps.privatsbmptn/", 
+            "https://www.tiktok.com/@lesprivatsbmptn.com?_r=1&_t=ZS-918OcGnyuIS" 
+          ],
+          "brand": {
+            "@type": "Brand",
+            "name": "LPS Education",
+            "logo": "${baseUrl}/images/LOGO2.webp" 
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+62-858-8756-2039", 
+            "contactType": "Customer Service",
+            "areaServed": "ID",
+            "availableLanguage": ["Indonesian"]
+          },
+          "keywords": "${articleTags.join(", ")}"
+        },
+
+        {
+          "@type": "WebPage",
+          "@id": "${canonicalUrl}#webpage",
+          "url": "${canonicalUrl}",
+          "name": "${pageTitle.replace(/<\/?[^>]+(>|$)/g, "")}", 
+          "inLanguage": "id-ID",
+          "description": "${descriptionContent}",
+          "isPartOf": { "@id": "${baseUrl}" },
+          "about": { "@id": "${canonicalUrl}#organization" },
+          "mainEntity": {
+            "@type": "Service",
+            "name": "Les Privat Ujian Masuk Pascasarjana (S2/S3) di ${dynamicLocationName}",
+            "provider": { "@id": "${canonicalUrl}#organization" },
+            "serviceType": "Bimbingan Belajar Ujian Seleksi Pascasarjana",
+            "areaServed": "${dynamicLocationName}",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "IDR",
+              "availability": "https://schema.org/InStock",
+              "url": "${canonicalUrl}"
+            }
+          }
+        },
+
+        {
+          "@type": "FAQPage",
+          "@id": "${canonicalUrl}#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Materi ujian masuk Pascasarjana apa saja yang diajarkan LPS Education?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Kami fokus pada materi inti ujian Pascasarjana, yaitu Tes Potensi Akademik (TPA) atau Tes Kemampuan Dasar Akademik (TKDA) dan Bahasa Inggris (seperti TOEFL/IELTS/EAP) yang dipersyaratkan oleh UI, UGM, ITB, dan PTN lainnya."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Apakah Les Privat Pascasarjana melayani semua jenjang (S2, S3, Profesi, Spesialis)?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Ya, kami melayani persiapan intensif untuk jenjang Magister (S2), Doktor (S3), Profesi, dan Spesialis (PPDS), termasuk ujian SIMAK UI S2/S3/Spesialis dan seleksi Pascasarjana PTN favorit lainnya."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Sistem belajar apa yang digunakan untuk Les Privat Pascasarjana?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Kami menawarkan sistem belajar Privat Offline (guru datang ke rumah/tempat lain yang disepakati) dan Privat Online melalui platform digital, memberikan fleksibilitas penuh bagi calon mahasiswa Pascasarjana."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  `}
         </script>
       </Helmet>
       <div className="container-all">

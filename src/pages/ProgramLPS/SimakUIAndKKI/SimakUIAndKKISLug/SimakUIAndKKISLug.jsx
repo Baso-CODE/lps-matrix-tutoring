@@ -2,9 +2,12 @@ import { Helmet } from "react-helmet-async";
 import { useParams } from "react-router-dom";
 import AlumniLpsNew from "../../../../components/AlumniLpsNew/AlumniLpsNew";
 import GaleryBelajarSiswa from "../../../../components/GaleryBelajarSiswa/GaleryBelajarSiswa";
+import HeadingLPSProgramDynamic from "../../../../components/HeadingLPSProgramDynamic/HeadingLPSProgramDynamic";
 import Slider from "../../../../components/Slider/Slider";
+import SliderTestimoniSiswa from "../../../../components/SliderTestimoniSiswa/SliderTestimoniSiswa";
 import TestimoniWaSlider from "../../../../components/TestimoniWaSlider/TestimoniWaSlider";
 import UnivPengajarLps from "../../../../components/UnivPengajarLps/UnivPengajarLps";
+import VideoKarantina from "../../../../components/VideoKarantina/VideoKarantina";
 import {
   galleryBelajarSiswaSimakUI,
   successStoryWaSliderSimakUI,
@@ -15,16 +18,30 @@ import ProgramBelajarLps from "../../../HomePage/Components/ProgramBelajarLps/Pr
 import SuccessStory from "../../../HomePage/Components/SuccessStory/SuccessStory";
 import TestimoniWaSiswa from "../../../HomePage/Components/TestimoniWaSiswa/TestimoniWaSiswa";
 import VisiEndMisiLps from "../../../HomePage/Components/VisiEndMisiLps/VisiEndMisiLps";
-import FasilitasSimakUI from "../Components/FasilitasSimakUI/FasilitasSimakUI";
-import PaketBelajarSimakUI from "../Components/PaketBelajarSimakUI/PaketBelajarSimakUI";
-import ProgramSimakUI from "../Components/ProgramSimakUI/ProgramSimakUI";
 import AllAlumniLpsImage from "../../../ListSiswaLPS/AllAlumniLps/AllAlumniLpsImage";
 import ListSiswaLPS from "../../../ListSiswaLPS/ListSiswaLPS";
-import SliderTestimoniSiswa from "../../../../components/SliderTestimoniSiswa/SliderTestimoniSiswa";
-import VideoKarantina from "../../../../components/VideoKarantina/VideoKarantina";
+import FasilitasSimakUI from "../Components/FasilitasSimakUI/FasilitasSimakUI";
+import PaketBelajarSimakUI from "../Components/PaketBelajarSimakUI/PaketBelajarSimakUI";
 
 const SimakUIAndKKISLug = () => {
   const { slug } = useParams();
+
+  const simakUIImages = ["/images/program/program-LPS-SIMAK-UI-KKI.png"];
+
+  const simakUIDefaultProgramName =
+    "Bimbingan Belajar Intensif Les Privat Simak UI";
+  const simakUIProgramNameDisplay =
+    "Bimbingan Belajar Intensif Les Privat Simak UI dan KKI";
+  const simakUIDescription = [
+    // Paragraf 1 (Definisi Program)
+    `Program <span class='color-highlight'>Super Intensif Privat Simak UI</span> merupakan suatu bentuk program belajar fokus Intensif Persiapan Ujian Simak UI dengan sistem belajar <span class='color-highlight'>Privat Offline</span> (guru datang ke rumah) dan <span class='color-highlight'>Privat Online</span>. Program ini disusun secara sistematis dan didukung dengan guru les privat berpengalaman untuk program Seleksi Masuk Universitas Indonesia. Program belajar difokuskan pada pendalaman konsep dasar materi dan peningkatan keterampilan penyelesaian soal-soal Simak UI.`,
+
+    // Paragraf 2 & 3 (Monitoring dan Target, digabung)
+    `Progress belajar akan dimonitoring oleh Tim Akademik LPS Education. Kami akan memberikan rekomendasi yang dibutuhkan sesuai dengan progres belajar siswa. Target Program Super Intensif Simak UI adalah mengantarkan siswa <span class='color-highlight'>Sukses Masuk UI sesuai jurusan yang diinginkan</span>.`,
+
+    // Paragraf 4 (Jenis Layanan SIMAK UI yang dicakup)
+    `<span class='color-highlight'>LPS Education</span> memiliki Layanan Intensif Les Privat Simak UI dan KKI yang ditujukan untuk siswa SMA dan alumni untuk jenjang Sarjana Reguler, Vokasi (D3/D4), dan S1 Kelas Internasional UI (KKI). Selain itu, kami juga memiliki layanan Les Privat Simak UI untuk <span class='color-highlight'>S2 dan S3 (Pascasarjana)</span>.`,
+  ];
 
   const formatSlugToTitle = (textSlug) => {
     return textSlug
@@ -239,7 +256,13 @@ const SimakUIAndKKISLug = () => {
       </Helmet>
 
       <div className="container-all">
-        <ProgramSimakUI city={dynamicLocationName} />
+        <HeadingLPSProgramDynamic
+          city={dynamicLocationName}
+          defaultProgramName={simakUIDefaultProgramName}
+          imageUrls={simakUIImages}
+          descriptionParagraphs={simakUIDescription}
+          programName={simakUIProgramNameDisplay}
+        />
         <FasilitasSimakUI />
         <PaketBelajarSimakUI />
         {/* <ProgramBelajarSIMAKUI /> */}

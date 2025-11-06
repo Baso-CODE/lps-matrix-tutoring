@@ -1,10 +1,12 @@
 import { Helmet } from "react-helmet-async";
 import AlumniLpsNew from "../../../components/AlumniLpsNew/AlumniLpsNew";
 import GaleryBelajarSiswa from "../../../components/GaleryBelajarSiswa/GaleryBelajarSiswa";
+import HeadingLPSProgramDynamic from "../../../components/HeadingLPSProgramDynamic/HeadingLPSProgramDynamic";
 import Slider from "../../../components/Slider/Slider";
 import SliderTestimoniSiswa from "../../../components/SliderTestimoniSiswa/SliderTestimoniSiswa";
 import TestimoniWaSlider from "../../../components/TestimoniWaSlider/TestimoniWaSlider";
 import UnivPengajarLps from "../../../components/UnivPengajarLps/UnivPengajarLps";
+import VideoKarantina from "../../../components/VideoKarantina/VideoKarantina";
 import KeunggulanEndAlasanMemilih from "../../HomePage/Components/KeunggulanEndAlasanMemilih/KeunggulanEndAlasanMemilih";
 import ProfileTutor from "../../HomePage/Components/ProfileTutor/ProfileTutor";
 import SuccessStory from "../../HomePage/Components/SuccessStory/SuccessStory";
@@ -14,12 +16,25 @@ import AllAlumniLpsImage from "../../ListSiswaLPS/AllAlumniLps/AllAlumniLpsImage
 import ListSiswaLPS from "../../ListSiswaLPS/ListSiswaLPS";
 import ProgramTKA from "./Components/ProgramTKA/ProgramTKA";
 import StudentChallenge from "./Components/StudentChallenge/StudentChallenge";
-import TKAHeader from "./Components/TKAHeader/TKAHeader";
 import "./LesPrivatTKA.css";
-import VideoKarantina from "../../../components/VideoKarantina/VideoKarantina";
 
 const LesPrivatTKA = () => {
   const baseUrl = "https://apps.lesprivatmasukptn.com";
+
+  const tkaImages = ["/images/program/program-LPS-TKA.png"];
+
+  const tkaDefaultProgramName =
+    "Les Privat Persiapan Tes Kemampuan Akademik (TKA)";
+  const tkaProgramNameDisplay =
+    "Siap Hadapi TKA dengan Percaya Diri Bersama LPS Education";
+
+  const tkaDescription = [
+    `Persiapan Intensif <span class='color-highlight'>Tes Kemampuan Akademik (TKA)</span> untuk Siswa SD, SMP, dan SMA/SMK. Program <span class='color-highlight'>Privat Offline</span> tersedia di Jabodetabek dan <span class='color-highlight'>Privat Online</span> untuk seluruh Indonesia.`,
+    `TKA dirancang untuk mengukur <span class='color-highlight'>literasi membaca, numerasi, penalaran, dan keterampilan berpikir kritis</span> siswa secara objektif. Berbeda dengan ujian sekolah biasa yang sering hanya menguji hafalan, TKA hadir untuk melihat sejauh mana siswa bisa memahami konsep, menganalisis informasi, dan memecahkan masalah nyata.`,
+    `Meskipun TKA bersifat opsional (tidak wajib), hasil TKA dapat digunakan sebagai <span class='color-highlight'>nilai tambah (bahan pertimbangan)</span> dalam seleksi jenjang pendidikan selanjutnya, seperti masuk SMP/SMA unggulan, SMK favorit, maupun <span class='color-highlight'>seleksi perguruan tinggi jalur SNBP</span>.`,
+    `Materi Ujian TKA mencakup <span class='color-highlight'>Bahasa Indonesia dan Matematika</span> untuk jenjang SD/SMP, serta tambahan <span class='color-highlight'>Bahasa Inggris dan 2 mata pelajaran pilihan</span> untuk SMA/SMK. Soal TKA menuntut siswa terbiasa berpikir logis, kritis, dan sistematis.`,
+  ];
+
   const canonicalUrl = `${baseUrl}/les-privat-tes-kemampuan-akademik`;
   const ogImage =
     "https://apps.lesprivatmasukptn.com/images/program/SIMAK-UI.webp";
@@ -129,7 +144,12 @@ const LesPrivatTKA = () => {
         </script>
       </Helmet>
       <div className="container-all">
-        <TKAHeader />
+        <HeadingLPSProgramDynamic
+          defaultProgramName={tkaDefaultProgramName}
+          imageUrls={tkaImages}
+          descriptionParagraphs={tkaDescription}
+          programName={tkaProgramNameDisplay}
+        />
         <StudentChallenge />
         <ProgramTKA />
         <Slider />

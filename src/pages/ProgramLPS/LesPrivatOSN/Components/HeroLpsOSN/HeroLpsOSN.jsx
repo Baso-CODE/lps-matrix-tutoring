@@ -31,10 +31,6 @@ const HeroLpsOSN = ({ city: cityProp }) => {
     fetchJumbotron();
   }, []);
 
-  // const handleCTAClick = (e) => {
-  //   const targetUrl = contactData?.link_cta || "https://wa.me/6285887562039";
-  //   handleCTAClickLogic(targetUrl, e);
-  // };
   const altText = `Les Privat OSN (Olimpiade Sains Nasional) bersama LPS Education${
     city ? " di " + city : ""
   }. Program bimbingan intensif Matematika, Fisika, Kimia, Biologi, dan bidang OSN lainnya dengan Tutor Berpengalaman dari UI, ITB, UGM, dan PTN Favorit.`;

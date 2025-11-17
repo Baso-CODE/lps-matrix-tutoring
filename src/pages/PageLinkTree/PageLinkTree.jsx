@@ -36,10 +36,10 @@ const PageLinkTree = () => {
   };
 
   const messageTemplate =
-    "Halo Kak, mohon info terkait program di Bimbel LPS. Saya dapat info dari sosial media @lps.privatsbmptn.";
+    "Halo Kak, mohon info terkait program di Bimbel LPS. Saya dapat info dari sosial media @bimbellps.";
 
   const programMessageTemplate = (programName) =>
-    `Halo Kak, mohon info program ${programName}. Saya dapat informasi dari akun sosial media @lps.privatsbmptn`;
+    `Halo Kak, mohon info program ${programName}. Saya dapat informasi dari akun sosial media @bimbellps`;
 
   return (
     <div className="home-page-container">
@@ -51,7 +51,7 @@ const PageLinkTree = () => {
         </p>
         <div className="social-media" data-aos="fade-down" data-aos-delay="200">
           <a
-            href="https://www.instagram.com/lps.privatsbmptn/"
+            href="https://www.instagram.com/bimbellps?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
             target="_blank"
             rel="noopener noreferrer"
             className="social-icon">
@@ -85,7 +85,7 @@ const PageLinkTree = () => {
             onClick={() =>
               openWhatsApp(
                 "6285774023474",
-                "Halo Kak, saya lihat di sosial media @lps.privatsbmptn dan saya ingin Free Assessment Test dong."
+                "Halo Kak, saya lihat di sosial media @bimbellps dan saya ingin Free Assessment Test dong."
               )
             }>
             <span>✨ Free Assessment Test</span>
@@ -97,8 +97,8 @@ const PageLinkTree = () => {
             data-aos-delay="200"
             onClick={() =>
               openWhatsApp(
-                "6285774023474",
-                "Halo Kak, saya lihat di sosial media @lps.privatsbmptn dan saya ingin tau lebih banyak tentang Diskon Rp500 ribu dong."
+                "6282258689993",
+                "Halo Kak, saya lihat di sosial media @bimbellps dan saya ingin tau lebih banyak tentang Diskon Rp500 ribu dong."
               )
             }>
             <span>💰 Diskon Rp500 ribu Untuk Semua Program</span>
@@ -126,11 +126,11 @@ const PageLinkTree = () => {
             className="consultation-item"
             data-aos="fade-up"
             data-aos-delay="200"
-            onClick={() => openWhatsApp("6285887562039", messageTemplate)}>
+            onClick={() => openWhatsApp("6282258689993", messageTemplate)}>
             <div className="item-content">
               <MessageCircleMore size={20} />
               <div className="item-text">
-                <span>Hubungi Kak Rosa</span>
+                <span>Hubungi Kak Nia</span>
               </div>
             </div>
             <ChevronRight size={20} />
@@ -209,7 +209,7 @@ const PageLinkTree = () => {
             data-aos-delay="400"
             onClick={() =>
               openWhatsApp(
-                "6285887562039",
+                "6282258689993",
                 programMessageTemplate("Intensif Privat UM PTN")
               )
             }>
@@ -225,7 +225,7 @@ const PageLinkTree = () => {
             data-aos-delay="500"
             onClick={() =>
               openWhatsApp(
-                "6285887562039",
+                "6282258689993",
                 programMessageTemplate("Intensif Privat Pascasarjana")
               )
             }>
@@ -241,7 +241,7 @@ const PageLinkTree = () => {
             data-aos-delay="600"
             onClick={() =>
               openWhatsApp(
-                "6285887562039",
+                "6282258689993",
                 programMessageTemplate("Intensif Privat Sekolah Kedinasan")
               )
             }>
@@ -279,7 +279,7 @@ const PageLinkTree = () => {
             }>
             <div className="item-content">
               <Shield size={20} />
-              <span>Intensif Privat Akademik Sekolah</span>
+              <span>Intensif Privat Akademik Sekolah SD SMP SMA & TKA</span>
             </div>
             <ChevronRight size={20} />
           </button>

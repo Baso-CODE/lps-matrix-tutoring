@@ -11,8 +11,16 @@ const FooterNew = () => {
       phone: "6282258689993",
     },
     {
-      name: "Kak Rosa",
-      phone: "6285887562039",
+      name: "Kak Ayu",
+      phone: "6285774023474",
+    },
+    {
+      name: "Kak Fina",
+      phone: "6281311778441",
+    },
+    {
+      name: "Kak Lia",
+      phone: "6282134093567",
     },
   ];
 
@@ -43,13 +51,17 @@ const FooterNew = () => {
     <footer className="container-footer">
       <div className="new-footer">
         <div className="new-footer-section">
-          <h3>LPS Education</h3>
-          <h4>Bimbel Spesialis Masuk Fk & PTN Favorit</h4>
+          <h3>Our Office</h3>
+          <h4>
+            Bimbel Masuk FK, PTN, Kedinasan Akademik SD SMP SMA TKA Mahasiswa
+            Olimpiade LPDP & CPNS
+          </h4>
           <ul>
-            <li>- Privat Offline</li>
+            <li>- Guru Kerumah</li>
             <li>- Privat Online</li>
-            <li>- Supercamp</li>
+            <li>- Supercamp Masuk FK & PTN</li>
           </ul>
+          <br />
 
           <h4>OFFICE</h4>
           <p className="new-footer-section-alamat">
@@ -60,7 +72,15 @@ const FooterNew = () => {
           <h4>TELEPON KANTOR:</h4>
           <p className="new-footer-section-alamat">021-2761-2993</p>
 
-          <h4>KONSULTASI PROGRAM:</h4>
+          <h4>Jam kunjugan visit:</h4>
+          <p className="new-footer-section-alamat">
+            Senin sd Jumat: 09.00 – 16.00 WIB
+            <br />
+            Sabtu: 09.00 – 13.00 WIB
+          </p>
+          <br />
+
+          <h4>Hubungi Kami:</h4>
           <ul>
             {admins.map((admin, index) => (
               <li key={index}>
@@ -73,18 +93,29 @@ const FooterNew = () => {
               </li>
             ))}
           </ul>
+
+          <h4>Layanan Call dan Pesan WhatsApp buka 24 jam setiap hari</h4>
         </div>
         <div className="new-footer-section">
-          <h3>Spesialis Masuk FK & PTN</h3>
+          <h3>Company Profile</h3>
           <p className="new-footer-section-description">
-            LPS Education (ONLINE & OFFLINE) adalah lembaga les privat khusus
-            masuk PTN Favorit (UI ITB UGM IPB Unpad & PTN terbaik lainnya).
-            Program belajar didesain secara sistematis, terstruktur, terukur dan
-            teruji.
+            LPS Education (ONLINE & OFFLINE) adalah Bimbel Peningkatan Prestasi
+            Akademik Sekolah dan Persiapan Masuk PTN Favorit (UI ITB UGM IPB
+            Unpad & PTN terbaik lainnya) Kelas Regular dan KKI/IUP. Didirikan
+            oleh Alumni Universitas Indonesia yang telah berpengalaman lebih
+            dari 15 tahun dalam layanan bimbel, les privat dan kerjasama
+            homeschooling.
           </p>
           <p className="new-footer-section-description">
-            Pembelajaran Tematik berdasar Statistik Soal yang diujikan. Kami
-            siap membantu meraih Jurusan Impian di PTN Favorit. Pastikan pilih
+            Program belajar didesain secara sistematis, terstruktur, terukur dan
+            teruji. Pembelajaran Tematik berdasar Statistik Soal yang diujikan.
+            Kami siap membantu meraih Prestasi Akademik dan Sukes Masuk PTN
+            Favorit.
+          </p>
+          <p className="new-footer-section-description">
+            Kami juga memiliki Program Unggulan seperti Les Privat Akademik SD,
+            SMP, SMA, TKA, Privat Mahasiswa, TOEFL/IELTS, CPNS, Kedinasan, dan
+            Les Privat Olimpiade (Nasional/Internasional). Pastikan pilih
             partner terbaik untuk kesuksesan dan masa depanmu.
           </p>
         </div>
@@ -158,6 +189,7 @@ const FooterNew = () => {
           </ul>
         </div>
         <div className="new-footer-section">
+          <h3>Chat Us Now</h3>
           <a href={contactData?.link_cta}>
             <img
               loading="lazy"

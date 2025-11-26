@@ -101,7 +101,10 @@ const PageLinkTree = () => {
                 "Halo Kak, saya lihat di sosial media @bimbellps dan saya ingin tau lebih banyak tentang Diskon Rp500 ribu dong."
               )
             }>
-            <span>💰 Diskon Rp500 ribu Untuk Semua Program</span>
+            <span>
+              💰 Diskon Rp100rb - 500rb untuk Semua Program Privat Offline (s&k
+              berlaku)
+            </span>
             <ChevronRight size={20} />
           </button>
         </section>

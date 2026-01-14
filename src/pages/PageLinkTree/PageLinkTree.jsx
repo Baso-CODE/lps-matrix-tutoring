@@ -1,5 +1,4 @@
 // src/PageLinkTree.jsx
-import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css"; // Impor file CSS AOS
 import {
@@ -18,8 +17,9 @@ import {
   PencilRuler,
   Shield,
 } from "lucide-react";
-import "./PageLinkTree.css";
+import { useEffect } from "react";
 import { PiTiktokLogo } from "react-icons/pi";
+import "./PageLinkTree.css";
 
 const PageLinkTree = () => {
   useEffect(() => {
@@ -112,19 +112,23 @@ const PageLinkTree = () => {
         {/* KONSULTASI */}
         <section className="section" data-aos="fade-up">
           <h2 className="section-title">Konsultasi Sekarang</h2>
+
+          {/* Admin Alfina */}
           <button
             className="consultation-item"
             data-aos="fade-up"
-            data-aos-delay="100"
-            onClick={() => openWhatsApp("6285774023474", messageTemplate)}>
+            data-aos-delay="300"
+            onClick={() => openWhatsApp("6281311778441", messageTemplate)}>
             <div className="item-content">
               <MessageCircleMore size={20} />
               <div className="item-text">
-                <span>Hubungi Kak Ayu</span>
+                <span>Hubungi Kak Fina</span>
               </div>
             </div>
             <ChevronRight size={20} />
           </button>
+
+          {/* Admin Nia */}
           <button
             className="consultation-item"
             data-aos="fade-up"
@@ -138,15 +142,17 @@ const PageLinkTree = () => {
             </div>
             <ChevronRight size={20} />
           </button>
+
+          {/* Admin Ayu */}
           <button
             className="consultation-item"
             data-aos="fade-up"
-            data-aos-delay="300"
-            onClick={() => openWhatsApp("6281311778441", messageTemplate)}>
+            data-aos-delay="100"
+            onClick={() => openWhatsApp("6285774023474", messageTemplate)}>
             <div className="item-content">
               <MessageCircleMore size={20} />
               <div className="item-text">
-                <span>Hubungi Kak Alfi</span>
+                <span>Hubungi Kak Ayu</span>
               </div>
             </div>
             <ChevronRight size={20} />

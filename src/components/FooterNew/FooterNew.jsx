@@ -69,8 +69,8 @@ const FooterNew = () => {
             Pendidikan UI)
           </p>
 
-          <h4>TELEPON KANTOR:</h4>
-          <p className="new-footer-section-alamat">021-2761-2993</p>
+          {/* <h4>TELEPON KANTOR:</h4>
+          <p className="new-footer-section-alamat">021-2761-2993</p> */}
 
           <h4>Jam kunjugan visit:</h4>
           <p className="new-footer-section-alamat">

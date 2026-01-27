@@ -38,7 +38,7 @@ const FooterNew = () => {
   // Function untuk membuat URL WhatsApp
   const generateWhatsAppUrl = (phone, name) => {
     const baseUrl = `https://api.whatsapp.com/send?phone=${phone}&text=Halo%20${encodeURIComponent(
-      name
+      name,
     )}%20https://apps.lesprivatmasukptn.com/,%20saya%20ingin%20bertanya%20program%20belajar%20untuk:%0A`;
 
     const message = `Kelas : \nMapel : \nKurikulum : \nWilayah : `.trim();

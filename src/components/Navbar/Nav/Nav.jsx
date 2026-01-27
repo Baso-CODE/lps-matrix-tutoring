@@ -22,13 +22,6 @@ const Nav = () => {
     };
   }, []);
 
-  // const fixedWhatsappUrl =
-  //   "https://api.whatsapp.com/send?phone=6285887562039&text=Halo%20Kak%20Rosa,%20saya%20tertarik%20dengan%20program%20belajar%20di%20LPS%20Education.%0A%0A%F0%9F%93%96%20Les%20Privat%20SD%20SMP%20SMA%20SIMAK%20UI%20OSN%20MAHASISWA%20CPNS%20%7C%20LPS%20EDUCATION%E2%9C%A8%0Ahttps%3A%2F%2Fapps.lesprivatmasukptn.com";
-
-  // const handleFreeKonsultasiClick = (e) => {
-  //   handleCTAClickLogic(fixedWhatsappUrl, e, true);
-  // };
-
   return (
     <nav>
       <div className={`header-container ${isScrolled ? "scrolled" : ""}`}>
@@ -52,8 +45,7 @@ const Nav = () => {
 
           <div className="auth-menu">
             <a
-              href="https://api.whatsapp.com/send?phone=6285887562039&text=Halo%20Kak%20Rosa,%20saya%20tertarik%20dengan%20program%20belajar%20di%20LPS%20Education.%0A%0A%F0%9F%93%96%20Les%20Privat%20SD%20SMP%20SMA%20SIMAK%20UI%20OSN%20MAHASISWA%20CPNS%20%7C%20LPS%20EDUCATION%E2%9C%A8%0Ahttps%3A%2F%2Fapps.lesprivatmasukptn.com"
-              // onClick={handleFreeKonsultasiClick}
+              href="https://api.whatsapp.com/send?phone=6281311778441&text=Halo%20Kak%20Fina,%20saya%20tertarik%20dengan%20program%20belajar%20di%20LPS%20Education.%0A%0A%F0%9F%93%96%20Les%20Privat%20SD%20SMP%20SMA%20SIMAK%20UI%20OSN%20MAHASISWA%20CPNS%20%7C%20LPS%20EDUCATION%E2%9C%A8%0Ahttps%3A%2F%2Fapps.lesprivatmasukptn.com"
               aria-label="sign-in"
               className="sign-in-button">
               Free Konsultasi

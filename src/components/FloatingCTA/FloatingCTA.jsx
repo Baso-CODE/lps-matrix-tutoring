@@ -14,7 +14,7 @@ const FloatingCTA = () => {
       try {
         const response = await getAllContactCS();
         const sortedData = response.data.sort(
-          (a, b) => a.display_order - b.display_order
+          (a, b) => a.display_order - b.display_order,
         );
         setDataContact(sortedData);
       } catch (error) {
@@ -36,7 +36,7 @@ const FloatingCTA = () => {
       <div className="box-float-main">
         <div className="main-parent-wa">
           <label htmlFor="" className="label-cta">
-            Chat With Us
+            Klik Untuk Konsultasi!
           </label>
           <button className="btn-float-wa" onClick={handleOpenModal}>
             <span className="parent-icon-wa relative">

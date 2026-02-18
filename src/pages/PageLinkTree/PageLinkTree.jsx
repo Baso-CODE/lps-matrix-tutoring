@@ -38,8 +38,14 @@ const PageLinkTree = () => {
   const messageTemplate =
     "Halo Kak, mohon info terkait program di Bimbel LPS. Saya dapat info dari sosial media @bimbellps.";
 
+  const messageAdminOnlineClassUTBK =
+    "Halo Kak Rosa, mohon info terkait Program Online Class UTBK SNBT 2026. Saya dapat info dari sosial media @bimbellps.";
+
   const programMessageTemplate = (programName) =>
     `Halo Kak, mohon info program ${programName}. Saya dapat informasi dari akun sosial media @bimbellps`;
+
+  const programMessageTemplateForAdminOnlineClass = () =>
+    `Halo Kak, mohon info program Online Class UTBK SNBT 2026. Saya dapat informasi dari akun sosial media @bimbellps`;
 
   return (
     <div className="home-page-container">
@@ -85,7 +91,7 @@ const PageLinkTree = () => {
             onClick={() =>
               openWhatsApp(
                 "6285774023474",
-                "Halo Kak, saya lihat di sosial media @bimbellps dan saya ingin Free Assessment Test dong."
+                "Halo Kak, saya lihat di sosial media @bimbellps dan saya ingin Free Assessment Test dong.",
               )
             }>
             <span>✨ Free Assessment Test</span>
@@ -98,7 +104,7 @@ const PageLinkTree = () => {
             onClick={() =>
               openWhatsApp(
                 "6282258689993",
-                "Halo Kak, saya lihat di sosial media @bimbellps dan saya ingin tau lebih banyak tentang Diskon Rp500 ribu dong."
+                "Halo Kak, saya lihat di sosial media @bimbellps dan saya ingin tau lebih banyak tentang Diskon Rp500 ribu dong.",
               )
             }>
             <span>
@@ -157,6 +163,23 @@ const PageLinkTree = () => {
             </div>
             <ChevronRight size={20} />
           </button>
+
+          {/* Hubungi Admin Online Class UTBK */}
+          <button
+            className="consultation-item"
+            data-aos="fade-up"
+            data-aos-delay="100"
+            onClick={() =>
+              openWhatsApp("628139906077", messageAdminOnlineClassUTBK)
+            }>
+            <div className="item-content">
+              <MessageCircleMore size={20} />
+              <div className="item-text">
+                <span>Hubungi Admin Online Class UTBK</span>
+              </div>
+            </div>
+            <ChevronRight size={20} />
+          </button>
         </section>
 
         {/* DAFTAR PROGRAM */}
@@ -170,8 +193,8 @@ const PageLinkTree = () => {
               openWhatsApp(
                 "6285774023474",
                 programMessageTemplate(
-                  "Intensif Karantina Supercamp UTBK SNBT & Kedokteran"
-                )
+                  "Intensif Karantina Supercamp UTBK SNBT & Kedokteran",
+                ),
               )
             }>
             <div className="item-content">
@@ -187,7 +210,7 @@ const PageLinkTree = () => {
             onClick={() =>
               openWhatsApp(
                 "6285774023474",
-                programMessageTemplate("Intensif Privat UTBK SNBT")
+                programMessageTemplate("Intensif Privat UTBK SNBT"),
               )
             }>
             <div className="item-content">
@@ -199,11 +222,29 @@ const PageLinkTree = () => {
           <button
             className="program-item"
             data-aos="fade-up"
+            data-aos-delay="200"
+            onClick={() =>
+              openWhatsApp(
+                "628139906077",
+                programMessageTemplateForAdminOnlineClass(
+                  "Kelas Online UTBK SNBT 2026 (Online Class)",
+                ),
+              )
+            }>
+            <div className="item-content">
+              <ClipboardCheck size={20} />
+              <span>Kelas Online UTBK SNBT 2026 (Online Class)</span>
+            </div>
+            <ChevronRight size={20} />
+          </button>
+          <button
+            className="program-item"
+            data-aos="fade-up"
             data-aos-delay="300"
             onClick={() =>
               openWhatsApp(
                 "6285774023474",
-                programMessageTemplate("Intensif Privat Simak UI/KKI")
+                programMessageTemplate("Intensif Privat Simak UI/KKI"),
               )
             }>
             <div className="item-content">
@@ -219,7 +260,7 @@ const PageLinkTree = () => {
             onClick={() =>
               openWhatsApp(
                 "6282258689993",
-                programMessageTemplate("Intensif Privat UM PTN")
+                programMessageTemplate("Intensif Privat UM PTN"),
               )
             }>
             <div className="item-content">
@@ -235,7 +276,7 @@ const PageLinkTree = () => {
             onClick={() =>
               openWhatsApp(
                 "6282258689993",
-                programMessageTemplate("Intensif Privat Pascasarjana")
+                programMessageTemplate("Intensif Privat Pascasarjana"),
               )
             }>
             <div className="item-content">
@@ -251,7 +292,7 @@ const PageLinkTree = () => {
             onClick={() =>
               openWhatsApp(
                 "6282258689993",
-                programMessageTemplate("Intensif Privat Sekolah Kedinasan")
+                programMessageTemplate("Intensif Privat Sekolah Kedinasan"),
               )
             }>
             <div className="item-content">
@@ -267,7 +308,7 @@ const PageLinkTree = () => {
             onClick={() =>
               openWhatsApp(
                 "6281311778441",
-                programMessageTemplate("Intensif Privat CPNS")
+                programMessageTemplate("Intensif Privat CPNS"),
               )
             }>
             <div className="item-content">
@@ -283,7 +324,7 @@ const PageLinkTree = () => {
             onClick={() =>
               openWhatsApp(
                 "6281311778441",
-                programMessageTemplate("Intensif Privat Akademik Sekolah")
+                programMessageTemplate("Intensif Privat Akademik Sekolah"),
               )
             }>
             <div className="item-content">
@@ -299,7 +340,7 @@ const PageLinkTree = () => {
             onClick={() =>
               openWhatsApp(
                 "6281311778441",
-                programMessageTemplate("Intensif Privat Mahasiswa")
+                programMessageTemplate("Intensif Privat Mahasiswa"),
               )
             }>
             <div className="item-content">

@@ -39,7 +39,7 @@ const ProfileLps = () => {
             to={finalUrl}
             data-aos="fade-up"
             className="btn-daftar-sekarang">
-            Daftar Sekarang
+            Konsultasi Sekarang!
             <img
               src="/images/daftar-sekarang.png"
               alt=""
@@ -48,17 +48,17 @@ const ProfileLps = () => {
           </Link>
         </div>
 
-        {/* Menggunakan div wrapper untuk gambar dan gradient */}
         <div className="image-hero-wrapper">
           <img
             loading="eager"
             data-aos="fade-left"
             className="rumah-adat-hero-home"
-            src="/images/HERO.webp"
+            src="/images/jumbotron_bimbel_lps.webp"
             alt="Video Profil LPS"
           />
-          {/* Gradient diletakkan di dalam wrapper yang sama dengan gambar */}
-          {/* <div className="shadow-bottom-image-profile-lps"></div> */}
+
+          {/* AKTIFKAN KEMBALI DIV INI */}
+          <div className="shadow-bottom-image-profile-lps"></div>
         </div>
       </div>
     </div>

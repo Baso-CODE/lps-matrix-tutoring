@@ -9,7 +9,7 @@ import BottomNavigationBar from "./components/Navbar/BottomNavigationBar/BottomN
 import Nav from "./components/Navbar/Nav/Nav";
 import ProgramModal from "./components/Navbar/ProgramModal/ProgramModal";
 import StoriesModal from "./components/Navbar/StoriesModal/StoriesModal";
-import PromoFloating from "./components/PromoFloating/PromoFloating";
+import LoadingSpinner from "./helpers/LoadingSpinner/LoadingSpinner";
 import { Menus } from "./helpers/NavbarMenus/Menus";
 import ScrollToTopButton from "./helpers/ScrollToTopButton/ScrollToTopButton";
 import ToTop from "./helpers/ToTop";
@@ -20,6 +20,7 @@ import BlogPage from "./pages/Blog/BlogPage";
 import BlogDetail from "./pages/Blog/components/BlogDetail/BlogDetail";
 import HomePage from "./pages/HomePage/HomePage";
 import ListSiswaPage from "./pages/ListSiswaLPS/ListSiswaPage";
+import PageLinkTree from "./pages/PageLinkTree/PageLinkTree";
 import LesPrivatCPNS from "./pages/ProgramLPS/LesPrivatCPNS/LesPrivatCPNS";
 import LesPrivatCPNSSlug from "./pages/ProgramLPS/LesPrivatCPNS/LesPrivatCPNSSlug/LesPrivatCPNSSlug";
 import LesPrivatMahasiswa from "./pages/ProgramLPS/LesPrivatMahasiswa/LesPrivatMahasiswa";
@@ -30,16 +31,14 @@ import LesPrivatPascaSarjana from "./pages/ProgramLPS/LesPrivatPascaSarjana/LesP
 import LesPrivatPascaSarjanaSlug from "./pages/ProgramLPS/LesPrivatPascaSarjana/LesPrivatPascaSarjanaSlug/LesPrivatPascaSarjanaSlug";
 import LesPrivatSDSMPSMA from "./pages/ProgramLPS/LesPrivatSDSMPSMA/LesPrivatSDSMPSMA";
 import LesPrivatSDSMPSMASlug from "./pages/ProgramLPS/LesPrivatSDSMPSMA/LesPrivatSDSMPSMASlug/LesPrivatSDSMPSMASlug";
+import LesPrivatTKA from "./pages/ProgramLPS/LesPrivatTKA/LesPrivatTKA";
+import LesPrivatTKASlug from "./pages/ProgramLPS/LesPrivatTKA/LesPrivatTKASlug";
 import LesPrivatUTBK from "./pages/ProgramLPS/LesPrivatUTBK/LesPrivatUTBK";
 import LesPrivatUTBKSlug from "./pages/ProgramLPS/LesPrivatUTBK/LesPrivatUTBKSlug/LesPrivatUTBKSlug";
 import SimakUIAndKKI from "./pages/ProgramLPS/SimakUIAndKKI/SimakUIAndKKI";
 import SimakUIAndKKISLug from "./pages/ProgramLPS/SimakUIAndKKI/SimakUIAndKKISLug/SimakUIAndKKISLug";
-import LesPrivatTKA from "./pages/ProgramLPS/LesPrivatTKA/LesPrivatTKA";
 import SuccessStoriesPage from "./pages/SuccesStoriesPage/SuccessStoriesPage";
 import TestimonyPage from "./pages/TestimonyPage/TestimonyPage";
-import LesPrivatTKASlug from "./pages/ProgramLPS/LesPrivatTKA/LesPrivatTKASlug";
-import PageLinkTree from "./pages/PageLinkTree/PageLinkTree";
-import LoadingSpinner from "./helpers/LoadingSpinner/LoadingSpinner";
 
 const programSubMenuData =
   Menus.find((menu) => menu.name === "Program")?.subMenu || [];
@@ -116,7 +115,7 @@ function App() {
               <ScrollToTopButton />
               <Nav />
               <FloatingCTA />
-              <PromoFloating />
+              {/* <PromoFloating /> */}
               <BottomNavigationBar
                 onProgramClick={handleOpenProgramModal}
                 onStoriesClick={handleOpenStoriesModal}

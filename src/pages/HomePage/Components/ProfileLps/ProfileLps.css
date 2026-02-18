@@ -44,12 +44,35 @@
   flex: 0 0 60%;
 }
 
+/* Update atau ganti selector ini di ProfileLps.css */
 .image-hero-wrapper {
   flex: 0 0 40%;
-  position: relative;
+  position: relative; /* Wajib agar shadow memposisikan diri terhadap ini */
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.shadow-bottom-image-profile-lps {
+  position: absolute;
+  bottom: -2px; /* Sedikit offset ke bawah untuk memastikan tidak ada celah */
+  left: 0;
+  right: 0;
+  height: 100px; /* Atur ketinggian gradient sesuai kebutuhan */
+
+  /* Ganti #ffffff dengan warna background section di bawahnya jika bukan putih */
+  background: linear-gradient(to top, #ffffff 10%, transparent 100%);
+
+  pointer-events: none; /* Agar tidak menghalangi klik jika ada link */
+  z-index: 10;
+}
+
+/* Tambahkan ini untuk mobile agar gradient tetap proporsional */
+@media (max-width: 820px) {
+  .shadow-bottom-image-profile-lps {
+    height: 60px;
+    bottom: -1px;
+  }
 }
 
 .rumah-adat-hero-home {
@@ -107,18 +130,6 @@
 
 .highlight-yellow {
   color: var(--color-orange-default);
-}
-
-/* Gradient di bawah gambar */
-.shadow-bottom-image-profile-lps {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 150px;
-
-  background: linear-gradient(to top, #f9f9f9, transparent);
-  pointer-events: none;
 }
 
 /* Media query for mobile devices */

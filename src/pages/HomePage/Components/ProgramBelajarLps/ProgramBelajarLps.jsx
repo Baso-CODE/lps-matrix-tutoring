@@ -1,5 +1,5 @@
+import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import "./ProgramBelajarLps.css";
 
 const ProgramBelajarLps = () => {
@@ -146,34 +146,48 @@ const ProgramBelajarLps = () => {
       </h1>
 
       <div className="program-list-v2">
-        {programsData.map((program) => (
-          <div className="program-item-v2" key={program.id}>
-            <button
-              className="program-title-button-v2"
-              onClick={() => handleToggleClick(program.id)} // Menggunakan onClick
-            >
-              {program.title}
-              <span
-                className={`arrow-v2 ${
-                  activeIndex === program.id ? "open-v2" : ""
+        {programsData.map((program) => {
+          const isOpen = activeIndex === program.id;
+          const buttonId = `program-button-${program.id}`;
+          const panelId = `program-panel-${program.id}`;
+
+          return (
+            <div className="program-item-v2" key={program.id}>
+              <button
+                id={buttonId}
+                className="program-title-button-v2"
+                onClick={() => handleToggleClick(program.id)}
+                aria-expanded={isOpen}
+                aria-controls={panelId}
+                aria-label={`${program.title} ${
+                  isOpen ? "ditutup" : "dibuka"
                 }`}>
-                ▼
-              </span>
-            </button>
-            <AnimatePresence>
-              {activeIndex === program.id && ( // Cek apakah index cocok dengan activeIndex
-                <motion.div
-                  className="program-details-v2"
-                  initial={{ opacity: 0, height: 0, overflow: "hidden" }}
-                  animate={{ opacity: 1, height: "auto" }}
-                  exit={{ opacity: 0, height: 0, overflow: "hidden" }}
-                  transition={{ duration: 0.3, ease: "easeInOut" }}>
-                  {program.details}
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-        ))}
+                {program.title}
+                <span
+                  className={`arrow-v2 ${isOpen ? "open-v2" : ""}`}
+                  aria-hidden="true">
+                  ▼
+                </span>
+              </button>
+
+              <AnimatePresence>
+                {isOpen && (
+                  <motion.div
+                    id={panelId}
+                    role="region"
+                    aria-labelledby={buttonId}
+                    className="program-details-v2"
+                    initial={{ opacity: 0, height: 0, overflow: "hidden" }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0, overflow: "hidden" }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}>
+                    {program.details}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

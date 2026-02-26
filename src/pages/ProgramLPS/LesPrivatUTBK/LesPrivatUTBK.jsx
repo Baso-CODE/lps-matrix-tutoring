@@ -28,14 +28,10 @@ const LesPrivatUTBK = () => {
   const canonicalUrl = `${baseUrl}/les-privat-utbk-terbaik`;
   const ogImage = "https://apps.lesprivatmasukptn.com/images/program/UTBK.webp";
 
-  const utbkImagesDescktop = [
-    "/images/program/program-LPS-SUPERCAMP-UTBK-SNBT.png",
-    "/images/program/program-LPS-UTBK-SNBT.png",
-  ];
+  const utbkImagesDescktop = ["/images/program/program-LPS-UTBK-SNBT.webp"];
 
   const utbkImagesMobile = [
-    "/images/program/program-LPS-SUPERCAMP-UTBK-SNBT-mobile.png",
-    "/images/program/program-LPS-UTBK-SNBT-mobile.png",
+    "/images/program/program-LPS-UTBK-SNBT-mobile.webp",
   ];
 
   const utbkDefaultProgramName = "Les Privat Persiapan UTBK SNBT";

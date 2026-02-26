@@ -25,13 +25,13 @@ const LesPrivatMahasiswa = () => {
   const baseUrl = "https://apps.lesprivatmasukptn.com";
 
   const mahasiswaImagesDescktop = [
-    "/images/program/program-LPS-MAHASISWA.png",
-    "/images/program/program-LPS-KELAS-INTERNASIONAL.png",
+    "/images/program/program-LPS-MAHASISWA.webp",
+    "/images/program/program-LPS-KELAS-INTERNASIONAL.webp",
   ];
 
   const mahasiswaImagesMobile = [
-    "/images/program/program-LPS-MAHASISWA-mobile.png",
-    "/images/program/program-LPS-KELAS-INTERNASIONAL-mobile.png",
+    "/images/program/program-LPS-MAHASISWA-mobile.webp",
+    "/images/program/program-LPS-KELAS-INTERNASIONAL-mobile.webp",
   ];
   const mahasiswaDefaultProgramName = "Program Les Privat Mahasiswa";
   const mahasiswaProgramNameDisplay =

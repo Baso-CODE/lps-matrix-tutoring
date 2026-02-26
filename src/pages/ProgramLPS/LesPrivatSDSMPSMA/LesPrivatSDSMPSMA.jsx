@@ -21,15 +21,15 @@ import ProgramIntensifLpsSDSMPSMA from "./Components/ProgramIntensifLpsSDSMPSMA/
 
 const LesPrivatSDSMPSMA = () => {
   const sdsmpsmaImagesDescktop = [
-    "/images/program/program-LPS-SD.png",
-    "/images/program/program-LPS-SMP.png",
-    "/images/program/program-LPS-SMA.png",
+    "/images/program/program-LPS-SD.webp",
+    "/images/program/program-LPS-SMP.webp",
+    "/images/program/program-LPS-SMA.webp",
   ];
 
   const sdsmpsmaImagesMobile = [
-    "/images/program/program-LPS-SD-mobile.png",
-    "/images/program/program-LPS-SMP-mobile.png",
-    "/images/program/program-LPS-SMA-mobile.png",
+    "/images/program/program-LPS-SD-mobile.webp",
+    "/images/program/program-LPS-SMP-mobile.webp",
+    "/images/program/program-LPS-SMA-mobile.webp",
   ];
 
   const sdsmpSmaDescription = [

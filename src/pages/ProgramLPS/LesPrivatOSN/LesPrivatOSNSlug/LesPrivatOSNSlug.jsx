@@ -28,8 +28,8 @@ import ProgramIntensiOSN from "../Components/ProgramIntensiOSN/ProgramIntensiOSN
 const LesPrivatOSNSlug = () => {
   const { slug } = useParams();
 
-  const osnImagesDescktop = ["/images/program/program-LPS-OLIMPIADE.png"];
-  const osnImagesMobile = ["/images/program/program-LPS-OLIMPIADE-mobile.png"];
+  const osnImagesDescktop = ["/images/program/program-LPS-OLIMPIADE.webp"];
+  const osnImagesMobile = ["/images/program/program-LPS-OLIMPIADE-mobile.webp"];
 
   const osnDefaultProgramName = "Les Privat OSN, ISO, IMO, SEAMO";
   const osnProgramNameDisplay =

@@ -9,7 +9,6 @@ import BottomNavigationBar from "./components/Navbar/BottomNavigationBar/BottomN
 import Nav from "./components/Navbar/Nav/Nav";
 import ProgramModal from "./components/Navbar/ProgramModal/ProgramModal";
 import StoriesModal from "./components/Navbar/StoriesModal/StoriesModal";
-import LoadingSpinner from "./helpers/LoadingSpinner/LoadingSpinner";
 import { Menus } from "./helpers/NavbarMenus/Menus";
 import ScrollToTopButton from "./helpers/ScrollToTopButton/ScrollToTopButton";
 import ToTop from "./helpers/ToTop";
@@ -47,7 +46,6 @@ const storiesSubMenuData =
   Menus.find((menu) => menu.name === "Stories")?.subMenu || [];
 
 function App() {
-  const [loading, setLoading] = useState(true);
   const location = useLocation();
 
   const dispatch = useAppDispatch();
@@ -62,22 +60,6 @@ function App() {
       duration: 1400,
       once: true,
     });
-
-    const handlePageChange = () => {
-      if (!isLinksPage) {
-        setLoading(true);
-
-        const timer = setTimeout(() => {
-          setLoading(false);
-        }, 1000);
-
-        return () => clearTimeout(timer);
-      } else {
-        setLoading(false);
-      }
-    };
-
-    handlePageChange();
   }, [location, isLinksPage]);
 
   const [showProgramModal, setShowProgramModal] = useState(false);
@@ -104,28 +86,22 @@ function App() {
   const shouldShowGlobalComponents = !isBlogDetailPage && !isLinksPage;
   return (
     <>
-      {loading && <LoadingSpinner />}
-
-      {!loading && (
-        <>
-          {shouldShowGlobalComponents && (
-            <>
-              {/* Komponen Global */}
-              <ToTop />
-              <ScrollToTopButton />
-              <Nav />
-              <FloatingCTA />
-              {/* <PromoFloating /> */}
-              <BottomNavigationBar
-                onProgramClick={handleOpenProgramModal}
-                onStoriesClick={handleOpenStoriesModal}
-              />
-              <ToTop />
-              <ScrollToTopButton />
-              {/* <FooterNew /> */}
-            </>
-          )}
-
+      <>
+        {shouldShowGlobalComponents && (
+          <>
+            <Nav />
+            <FloatingCTA />
+            {/* <PromoFloating /> */}
+            <BottomNavigationBar
+              onProgramClick={handleOpenProgramModal}
+              onStoriesClick={handleOpenStoriesModal}
+            />
+            <ToTop />
+            <ScrollToTopButton />
+            {/* <FooterNew /> */}
+          </>
+        )}
+        <main>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/links" element={<PageLinkTree />} />
@@ -219,19 +195,20 @@ function App() {
               element={<LesPrivatOSNSlug />}
             />
           </Routes>
-          {shouldShowGlobalComponents && <FooterNew />}
-          <ProgramModal
-            isOpen={showProgramModal}
-            onClose={handleCloseProgramModal}
-            programSubMenu={programSubMenuData}
-          />
-          <StoriesModal // Modal BARU untuk Stories
-            isOpen={showStoriesModal}
-            onClose={handleCloseStoriesModal}
-            storiesSubMenu={storiesSubMenuData}
-          />
-        </>
-      )}
+        </main>
+
+        {shouldShowGlobalComponents && <FooterNew />}
+        <ProgramModal
+          isOpen={showProgramModal}
+          onClose={handleCloseProgramModal}
+          programSubMenu={programSubMenuData}
+        />
+        <StoriesModal // Modal BARU untuk Stories
+          isOpen={showStoriesModal}
+          onClose={handleCloseStoriesModal}
+          storiesSubMenu={storiesSubMenuData}
+        />
+      </>
     </>
   );
 }

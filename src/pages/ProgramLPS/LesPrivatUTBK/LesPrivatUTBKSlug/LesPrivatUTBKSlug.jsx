@@ -27,13 +27,13 @@ const LesPrivatUTBKSlug = () => {
   const { slug } = useParams();
 
   const utbkImagesDescktop = [
-    "/images/program/program-LPS-SUPERCAMP-UTBK-SNBT.png",
-    "/images/program/program-LPS-UTBK-SNBT.png",
+    "/images/program/program-LPS-SUPERCAMP-UTBK-SNBT.webp",
+    "/images/program/program-LPS-UTBK-SNBT.webp",
   ];
 
   const utbkImagesMobile = [
-    "/images/program/program-LPS-SUPERCAMP-UTBK-SNBT-mobile.png",
-    "/images/program/program-LPS-UTBK-SNBT-mobile.png",
+    "/images/program/program-LPS-SUPERCAMP-UTBK-SNBT-mobile.webp",
+    "/images/program/program-LPS-UTBK-SNBT-mobile.webp",
   ];
   const utbkDefaultProgramName = "Les Privat Persiapan UTBK SNBT";
 

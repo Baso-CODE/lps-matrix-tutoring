@@ -21,9 +21,9 @@ import "./LesPrivatTKA.css";
 const LesPrivatTKA = () => {
   const baseUrl = "https://apps.lesprivatmasukptn.com";
 
-  const tkaImagesDescktop = ["/images/program/program-LPS-TKA.png"];
+  const tkaImagesDescktop = ["/images/program/program-LPS-TKA.webp"];
 
-  const tkaImagesMobile = ["/images/program/program-LPS-TKA-mobile.png"];
+  const tkaImagesMobile = ["/images/program/program-LPS-TKA-mobile.webp"];
 
   const tkaDefaultProgramName =
     "Les Privat Persiapan Tes Kemampuan Akademik (TKA)";

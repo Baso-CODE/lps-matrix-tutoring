@@ -27,10 +27,10 @@ const SimakUIAndKKISLug = () => {
   const { slug } = useParams();
 
   const simakUIImagesDescktop = [
-    "/images/program/program-LPS-SIMAK-UI-KKI.png",
+    "/images/program/program-LPS-SIMAK-UI-KKI.webp",
   ];
   const simakUIImagesMobile = [
-    "/images/program/program-LPS-SIMAK-UI-KKI-mobile.png",
+    "/images/program/program-LPS-SIMAK-UI-KKI-mobile.webp",
   ];
   const simakUIDefaultProgramName =
     "Bimbingan Belajar Intensif Les Privat Simak UI";

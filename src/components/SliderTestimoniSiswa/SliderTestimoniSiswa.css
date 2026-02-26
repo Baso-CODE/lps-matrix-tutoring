@@ -99,7 +99,9 @@
 .swiper-button-prev,
 .swiper-button-next {
   color: #ff5a5f; /* contoh merah */
-  transition: color 0.3s ease, transform 0.3s ease;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
 }
 
 /* Hover effect */

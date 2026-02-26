@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import GaleryBelajarSiswa from "../../../components/GaleryBelajarSiswa/GaleryBelajarSiswa";
+import HeadingLPSProgramDynamic from "../../../components/HeadingLPSProgramDynamic/HeadingLPSProgramDynamic";
 import Slider from "../../../components/Slider/Slider";
 import SliderTestimoniSiswa from "../../../components/SliderTestimoniSiswa/SliderTestimoniSiswa";
 import TestimoniWaSlider from "../../../components/TestimoniWaSlider/TestimoniWaSlider";
@@ -25,19 +26,18 @@ import ProgramCPNS from "./Components/ProgramCPNS/ProgramCPNS";
 import ProgramIntensifCPNS from "./Components/ProgramIntensifCPNS/ProgramIntensifCPNS";
 import SuccesStoryCPNS from "./Components/SuccesStoryCPNS/SuccesStoryCPNS";
 import "./LesPrivatCPNS.css";
-import HeadingLPSProgramDynamic from "../../../components/HeadingLPSProgramDynamic/HeadingLPSProgramDynamic";
 
 const LesPrivatCPNS = () => {
   const baseUrl = "https://apps.lesprivatmasukptn.com";
   const canonicalUrl = `${baseUrl}/bimbel-persiapan-cpns`;
 
   const cpnsImagesDesktop = [
-    "/images/program/program-LPS-CPNS.png",
-    "/images/program/program-LPS-SEKOLAH KEDINASAN.png",
+    "/images/program/program-LPS-CPNS.webp",
+    "/images/program/program-LPS-SEKOLAH KEDINASAN.webp",
   ];
   const cpnsImagesMobile = [
-    "/images/program/program-LPS-CPNS-mobile.png",
-    "/images/program/program-LPS-SEKOLAH-KEDINASAN-mobile.png",
+    "/images/program/program-LPS-CPNS-mobile.webp",
+    "/images/program/program-LPS-SEKOLAH-KEDINASAN-mobile.webp",
   ];
 
   const cpnsDefaultProgramName = "Guru Les Privat CPNS Terbaik";

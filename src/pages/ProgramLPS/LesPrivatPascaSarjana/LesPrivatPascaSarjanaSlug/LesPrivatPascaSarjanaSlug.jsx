@@ -20,11 +20,11 @@ const LesPrivatPascaSarjanaSlug = () => {
   const { slug } = useParams();
 
   const pascaSarjanaImagesDescktop = [
-    "/images/program/program-LPS-UJIAN-MASUK-PASCASARJANA-S2-S3.png",
+    "/images/program/program-LPS-UJIAN-MASUK-PASCASARJANA-S2-S3.webp",
   ];
 
   const pascaSarjanaImagesMobile = [
-    "/images/program/program-LPS-UJIAN-MASUK-PASCASARJANA-S2-S3-mobile.png",
+    "/images/program/program-LPS-UJIAN-MASUK-PASCASARJANA-S2-S3-mobile.webp",
   ];
   const pascaSarjanaDefaultProgramName =
     "Les Privat Ujian Masuk Pascasarjana (S2/S3)";

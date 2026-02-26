@@ -18,7 +18,7 @@
   margin-bottom: 15px;
   text-transform: uppercase;
   font-weight: 700;
-  font-family: "Poppins", sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 
 .osn-curriculum-overview-title span {
@@ -50,7 +50,10 @@
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
   text-align: center;
   /* Tambahkan 'filter' ke properti transition */
-  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease-in-out;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    filter 0.3s ease-in-out;
   display: flex;
   flex-direction: column;
   align-items: center;

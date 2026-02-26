@@ -50,11 +50,13 @@ const ProfileLps = () => {
 
         <div className="image-hero-wrapper">
           <img
-            loading="eager"
-            data-aos="fade-left"
-            className="rumah-adat-hero-home"
             src="/images/jumbotron_bimbel_lps.webp"
+            className="rumah-adat-hero-home"
             alt="Video Profil LPS"
+            loading="eager"
+            fetchPriority="high"
+            width="600"
+            height="800"
           />
 
           {/* AKTIFKAN KEMBALI DIV INI */}

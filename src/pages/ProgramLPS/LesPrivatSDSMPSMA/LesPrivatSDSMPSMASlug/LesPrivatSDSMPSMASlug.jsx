@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import { useParams } from "react-router-dom";
 import AlumniLpsNew from "../../../../components/AlumniLpsNew/AlumniLpsNew";
+import HeadingLPSProgramDynamic from "../../../../components/HeadingLPSProgramDynamic/HeadingLPSProgramDynamic";
 import Slider from "../../../../components/Slider/Slider";
 import SliderTestimoniSiswa from "../../../../components/SliderTestimoniSiswa/SliderTestimoniSiswa";
 import TestimoniWaSlider from "../../../../components/TestimoniWaSlider/TestimoniWaSlider";
@@ -18,21 +19,20 @@ import ListSiswaLPS from "../../../ListSiswaLPS/ListSiswaLPS";
 import FasilitasSDSMPSMA from "../Components/FasilitasSDSMPSMA/FasilitasSDSMPSMA";
 import PaketBelajarSDSMPSMA from "../Components/PaketBelajarSDSMPSMA/PaketBelajarSDSMPSMA";
 import ProgramIntensifLpsSDSMPSMA from "../Components/ProgramIntensifLpsSDSMPSMA/ProgramIntensifLpsSDSMPSMA";
-import HeadingLPSProgramDynamic from "../../../../components/HeadingLPSProgramDynamic/HeadingLPSProgramDynamic";
 
 const LesPrivatSDSMPSMASlug = () => {
   const { slug } = useParams();
 
   const sdsmpsmaImagesDescktop = [
-    "/images/program/program-LPS-SD.png",
-    "/images/program/program-LPS-SMP.png",
-    "/images/program/program-LPS-SMA.png",
+    "/images/program/program-LPS-SD.webp",
+    "/images/program/program-LPS-SMP.webp",
+    "/images/program/program-LPS-SMA.webp",
   ];
 
   const sdsmpsmaImagesMobile = [
-    "/images/program/program-LPS-SD-mobile.png",
-    "/images/program/program-LPS-SMP-mobile.png",
-    "/images/program/program-LPS-SMA-mobile.png",
+    "/images/program/program-LPS-SD-mobile.webp",
+    "/images/program/program-LPS-SMP-mobile.webp",
+    "/images/program/program-LPS-SMA-mobile.webp",
   ];
 
   const sdsmpSmaDescription = [

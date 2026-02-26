@@ -28,10 +28,10 @@ const SimakUIAndKKI = () => {
   const baseUrl = "https://apps.lesprivatmasukptn.com";
 
   const simakUIImagesDescktop = [
-    "/images/program/program-LPS-SIMAK-UI-KKI.png",
+    "/images/program/program-LPS-SIMAK-UI-KKI.webp",
   ];
   const simakUIImagesMobile = [
-    "/images/program/program-LPS-SIMAK-UI-KKI-mobile.png",
+    "/images/program/program-LPS-SIMAK-UI-KKI-mobile.webp",
   ];
 
   const simakUIDefaultProgramName =

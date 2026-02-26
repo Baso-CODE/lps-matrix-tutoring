@@ -36,15 +36,14 @@ const ScrollToTopButton = () => {
 
   return (
     <>
-      {" "}
-      {/* Gunakan Fragment jika tidak ada div pembungkus yang diperlukan */}
       {isVisible && (
         <button
           type="button"
           onClick={scrollToTop}
-          // Gunakan className dari CSS biasa
-          className="scroll-to-top-button">
-          <FiArrowUp size={24} /> {/* Ikon panah ke atas */}
+          className="scroll-to-top-button"
+          aria-label="Kembali ke bagian atas halaman"
+          title="Kembali ke atas">
+          <FiArrowUp size={24} aria-hidden="true" />
         </button>
       )}
     </>

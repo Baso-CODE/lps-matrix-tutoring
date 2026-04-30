@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
@@ -6,7 +7,6 @@ import "slick-carousel/slick/slick.css";
 import { selectContactCsData } from "../../lib/features/contactCsSlice";
 import { useAppSelector } from "../../lib/hooks";
 import "./HeadingLPSProgramDynamic.css";
-import { useEffect, useState } from "react";
 
 const HeadingLPSProgramDynamic = ({
   programName,
@@ -31,7 +31,6 @@ const HeadingLPSProgramDynamic = ({
 
   useEffect(() => {
     const handleResize = () => {
-      // Atur breakpoint di sini (misalnya 768px)
       setIsMobile(window.innerWidth <= 768);
     };
 
@@ -52,8 +51,8 @@ const HeadingLPSProgramDynamic = ({
       ? imageUrlsMobile
       : ["/images/program/default-mobile.webp"]
     : imageUrlsDesktop && imageUrlsDesktop.length > 0
-    ? imageUrlsDesktop
-    : ["/images/program/default.webp"];
+      ? imageUrlsDesktop
+      : ["/images/program/default.webp"];
 
   const isMultipleImages = images.length > 1;
 

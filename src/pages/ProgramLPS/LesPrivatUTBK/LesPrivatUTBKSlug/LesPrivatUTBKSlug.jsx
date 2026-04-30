@@ -26,10 +26,7 @@ import TigaJalurMasukPTN from "../Components/TigaJalurMasukPTN/TigaJalurMasukPTN
 const LesPrivatUTBKSlug = () => {
   const { slug } = useParams();
 
-  const utbkImagesDescktop = [
-    "/images/program/program-LPS-SUPERCAMP-UTBK-SNBT.webp",
-    "/images/program/program-LPS-UTBK-SNBT.webp",
-  ];
+  const utbkImagesDescktop = ["/images/program/program-LPS-UTBK-SNBT.webp"];
 
   const utbkImagesMobile = [
     "/images/program/program-LPS-SUPERCAMP-UTBK-SNBT-mobile.webp",

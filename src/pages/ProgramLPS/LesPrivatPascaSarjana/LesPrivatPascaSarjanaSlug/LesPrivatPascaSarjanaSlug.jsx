@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { useParams } from "react-router-dom";
+import FomoTicker from "../../../../components/FomoTicker/FomoTicker";
 import GaleryBelajarSiswa from "../../../../components/GaleryBelajarSiswa/GaleryBelajarSiswa";
 import HeadingLPSProgramDynamic from "../../../../components/HeadingLPSProgramDynamic/HeadingLPSProgramDynamic";
 import Slider from "../../../../components/Slider/Slider";
@@ -278,7 +279,11 @@ const LesPrivatPascaSarjanaSlug = () => {
         <TestimoniWaSiswa cityProp={dynamicLocationName} />
         <AllAlumniLpsImage city={dynamicLocationName} />
         <ListSiswaLPS />
-        <SliderTestimoniSiswa city={dynamicLocationName} />
+        <SliderTestimoniSiswa city={dynamicLocationName} />{" "}
+        <FomoTicker
+          namaWilayah={dynamicLocationName}
+          namaProgram={"Pascasarjana"}
+        />
       </div>
     </>
   );

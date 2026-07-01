@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import { useParams } from "react-router-dom";
 import AlumniLpsNew from "../../../../components/AlumniLpsNew/AlumniLpsNew";
+import FomoTicker from "../../../../components/FomoTicker/FomoTicker";
 import GaleryBelajarSiswa from "../../../../components/GaleryBelajarSiswa/GaleryBelajarSiswa";
 import HeadingLPSProgramDynamic from "../../../../components/HeadingLPSProgramDynamic/HeadingLPSProgramDynamic";
 import Slider from "../../../../components/Slider/Slider";
@@ -286,6 +287,10 @@ const LesPrivatUTBKSlug = () => {
         <AllAlumniLpsImage city={dynamicLocationName} />
         <ListSiswaLPS />
         <SliderTestimoniSiswa city={dynamicLocationName} />
+        <FomoTicker
+          namaWilayah={dynamicLocationName}
+          namaProgram={"UTBK SNBT"}
+        />
       </div>
     </>
   );

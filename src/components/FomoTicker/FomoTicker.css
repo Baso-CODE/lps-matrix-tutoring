@@ -1,0 +1,123 @@
+/* FomoTicker.css */
+.fomo-ticker-container {
+  position: fixed;
+  bottom: 176px;
+  left: 16px;
+  z-index: 50;
+  font-family: "Poppins", sans-serif;
+  pointer-events: none;
+}
+
+@media (min-width: 768px) {
+  .fomo-ticker-container {
+    bottom: 102px;
+    left: 24px;
+  }
+}
+
+.fomo-card {
+  pointer-events: auto;
+  width: 300px;
+  background: white;
+  border-radius: 12px;
+  box-shadow:
+    0 10px 25px -5px rgba(0, 0, 0, 0.1),
+    0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #f3f4f6;
+  padding: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .fomo-card {
+    width: 340px;
+  }
+}
+
+.indicator-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+}
+
+.indicator-alert {
+  background-color: #ef4444;
+}
+.indicator-registration {
+  background-color: #2563eb;
+}
+
+.fomo-content-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.icon-wrapper {
+  flex-shrink: 0;
+  margin-top: 4px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-alert {
+  background-color: #fee2e2;
+  color: #ef4444;
+}
+.icon-registration {
+  background-color: #dcfce7;
+  color: #16a34a;
+}
+
+.fomo-text-content {
+  flex: 1;
+  min-width: 0;
+  padding-right: 16px;
+}
+
+.fomo-title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fomo-message {
+  font-size: 0.8125rem;
+  color: #4b5563;
+  margin: 4px 0 0 0;
+  line-height: 1.25;
+}
+
+.fomo-time {
+  font-size: 0.6875rem;
+  color: #9ca3af;
+  margin: 8px 0 0 0;
+  font-weight: 500;
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+  padding: 4px;
+  transition: color 0.2s;
+}
+
+.close-btn:hover {
+  color: #4b5563;
+}

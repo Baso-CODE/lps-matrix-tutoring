@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import "./SuccessStory.css";
 import { getSuccessStory } from "../../../../api/successStory/getSuccessStory";
+import "./SuccessStory.css";
 
 const SuccessStory = () => {
   const [dataSuccessStory, setDataSuccessStory] = useState([]);

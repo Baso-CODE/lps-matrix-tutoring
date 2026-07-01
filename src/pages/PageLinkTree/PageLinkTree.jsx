@@ -38,8 +38,8 @@ const PageLinkTree = () => {
   const messageTemplate =
     "Halo Kak, mohon info terkait program di Bimbel LPS. Saya dapat info dari sosial media @bimbellps.";
 
-  const messageAdminOnlineClassUTBK =
-    "Halo Kak Rosa, mohon info terkait Program Online Class UTBK SNBT 2026. Saya dapat info dari sosial media @bimbellps.";
+  // const messageAdminOnlineClassUTBK =
+  //   "Halo Kak Rosa, mohon info terkait Program Online Class UTBK SNBT 2026. Saya dapat info dari sosial media @bimbellps.";
 
   const programMessageTemplate = (programName) =>
     `Halo Kak, mohon info program ${programName}. Saya dapat informasi dari akun sosial media @bimbellps`;
@@ -165,7 +165,7 @@ const PageLinkTree = () => {
           </button>
 
           {/* Hubungi Admin Online Class UTBK */}
-          <button
+          {/* <button
             className="consultation-item"
             data-aos="fade-up"
             data-aos-delay="100"
@@ -179,7 +179,7 @@ const PageLinkTree = () => {
               </div>
             </div>
             <ChevronRight size={20} />
-          </button>
+          </button> */}
         </section>
 
         {/* DAFTAR PROGRAM */}

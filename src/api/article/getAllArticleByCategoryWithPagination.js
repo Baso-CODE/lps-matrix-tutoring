@@ -1,12 +1,12 @@
-import { baseUrlTesting } from "../../utils/config";
+import { baseUrl } from "../../utils/config";
 
 export async function getAllArticleByCategoryWithPagination(
   page = 1,
   limit = 6,
-  categoryId = null
+  categoryId = null,
 ) {
   try {
-    let url = `${baseUrlTesting}/articles/all/category?page=${page}&limit=${limit}`;
+    let url = `${baseUrl}/articles/all/category?page=${page}&limit=${limit}`;
     if (categoryId) {
       url += `&categoryId=${categoryId}`;
     }

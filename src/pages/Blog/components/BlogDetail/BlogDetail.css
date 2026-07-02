@@ -1,14 +1,16 @@
 .blog-detail-container {
   display: flex;
   justify-content: center;
-  padding: 4% 12%;
+  padding: 4% 8%;
   font-family: "Nunito", sans-serif;
 }
+
 @media (max-width: 1024px) {
   .blog-detail-container {
     padding: 4% 4%;
   }
 }
+
 .container-blog {
   padding-left: 5%;
   padding-top: 8%;
@@ -24,26 +26,27 @@
     padding-right: 5%;
   }
 }
+
 .blog-detail-wrapper {
   width: 100%;
 }
 
 .cover-image {
   width: 100%;
-  /* border-radius: 1rem; */
   height: auto;
   object-fit: cover;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .article-content-wrapper {
   padding: 0;
 }
 
+/* ===== ARTICLE HEADER (FULL WIDTH) ===== */
 .article-header {
   border-bottom: 1px solid #e2e8f0;
   padding-bottom: 1.5rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .article-title {
@@ -51,8 +54,8 @@
   font-family: "Nunito", sans-serif;
   font-weight: 800;
   color: #1f2937;
-  line-height: 1.2;
-  margin: 0;
+  line-height: 1;
+  margin: 0 0 1rem 0;
 }
 
 .article-meta {
@@ -61,7 +64,6 @@
   align-items: center;
   font-size: 0.875rem;
   color: #6b7280;
-  margin-top: 0.5rem;
   margin-bottom: 1rem;
 }
 
@@ -89,6 +91,7 @@
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-top: 1rem;
+  margin-bottom: 0;
 }
 
 .tag-item {
@@ -101,117 +104,306 @@
   text-transform: uppercase;
 }
 
-/* Styling konten artikel */
-.article-body {
+.article-description {
+  font-size: 1rem;
   line-height: 1.6;
+  color: #4b5563;
+  margin-top: 1rem;
+  margin-bottom: 0;
+  font-style: italic;
+}
+
+/* ===== ARTICLE BODY (2 COLUMN UNTUK DESKTOP) ===== */
+.article-body {
+  line-height: 1.4;
   font-size: 1rem;
   color: #374151;
   font-family: "Nunito", sans-serif;
+
+  /* CSS Columns untuk text flow */
+  column-count: 2;
+  column-gap: 2rem;
+  column-rule: 1px solid #e5e7eb;
 }
 
-.article-body h1 {
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: #1f2937;
-  margin-top: 2.5rem;
-  /* margin-bottom: 1rem; */
-}
-
+/* Break large elements across columns */
+.article-body h1,
 .article-body h2 {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #1f2937;
-  margin-top: 2.5rem;
-  /* margin-bottom: 1rem; */
-  position: relative;
-  padding-bottom: 0.5rem;
-}
-
-.article-body hr {
-  border: none;
-  border-top: 3px solid #eef2ff;
-  margin: 3rem 0;
-}
-
-.article-body h3 {
-  font-size: 1.25rem;
-
-  color: #1f2937;
-  margin-top: 2rem;
-  font-family: "Nunito", sans-serif;
-  margin-bottom: 1rem;
-}
-
-.article-body p {
-  margin-bottom: 1.5rem;
-  line-height: 1.4;
-  font-size: 0.9rem;
+  break-inside: avoid;
+  break-after: avoid;
 }
 
 .article-body ul,
 .article-body ol {
+  break-inside: avoid;
+}
+
+@media (max-width: 1024px) {
+  .article-body {
+    column-count: 1;
+    column-gap: 0;
+    column-rule: none;
+  }
+}
+
+/* ===== HEADING STYLING ===== */
+.article-body h1,
+.article-body-heading.heading-level-1 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #1f2937;
+  margin-top: 2.5rem;
   margin-bottom: 1.5rem;
-  padding-left: 1.5rem;
-  font-size: 0.9rem;
+  line-height: 1.2;
 }
 
-.article-body ul li {
-  font-size: 0.9rem;
+.article-body h2,
+.article-body-heading.heading-level-2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  position: relative;
+  padding-bottom: 0.75rem;
+  border-bottom: 3px solid #eef2ff;
 }
 
-.article-body ol li {
-  font-size: 0.9rem;
+.article-body h3,
+.article-body-heading.heading-level-3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
 }
-/* 
-.article-body ul {
-  list-style-type: "-";
-} */
 
+.article-body h4,
+.article-body-heading.heading-level-4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ===== PARAGRAPH STYLING ===== */
+.article-body p,
+.article-body-paragraph {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+  font-size: 1rem;
+  color: #374151;
+  text-align: justify;
+}
+
+.article-body p:last-child,
+.article-body-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+/* ===== LIST STYLING ===== */
+.article-body ul,
+.article-body ol,
+.article-body-list {
+  margin-bottom: 1rem;
+  padding-left: 2rem;
+  font-size: 1rem;
+}
+
+.article-body li,
+.article-body-list-item {
+  margin-bottom: 0.1rem;
+  line-height: 1.8;
+}
+
+.article-body ul li::marker {
+  color: #4f46e5;
+  font-weight: 600;
+}
+
+.article-body ol li::marker {
+  color: #4f46e5;
+  font-weight: 600;
+}
+
+/* ===== BLOCKQUOTE STYLING ===== */
+.article-body blockquote {
+  border-left: 4px solid #4f46e5;
+  padding: 1rem 1.5rem;
+  background-color: #f3f4f6;
+  margin: 1.5rem 0;
+  border-radius: 0.5rem;
+  color: #1f2937;
+  font-style: italic;
+  break-inside: avoid;
+}
+
+/* ===== CODE STYLING ===== */
+.article-body pre {
+  background-color: #1f2937;
+  color: #f3f4f6;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+  font-family: "Courier New", monospace;
+  line-height: 1.5;
+  break-inside: avoid;
+}
+
+.article-body code {
+  background-color: #f3f4f6;
+  color: #4f46e5;
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.3rem;
+  font-size: 0.9rem;
+  font-family: "Courier New", monospace;
+}
+
+.article-body pre code {
+  background-color: transparent;
+  color: #f3f4f6;
+  padding: 0;
+  border-radius: 0;
+}
+
+/* ===== IMAGE STYLING ===== */
 .article-body img {
   max-width: 100%;
   height: auto;
   border-radius: 0.5rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  break-inside: avoid;
 }
 
+/* ===== EMPHASIS STYLING ===== */
 .article-body em {
   display: block;
   font-size: 0.9rem;
   text-align: center;
   color: #6b7280;
-  margin-top: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  font-style: italic;
 }
 
+.article-body strong {
+  font-weight: 700;
+  color: #1f2937;
+}
+
+/* ===== TABLE STYLING ===== */
+.article-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  break-inside: avoid;
+}
+
+.article-body th {
+  background-color: #4f46e5;
+  color: #ffffff;
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+.article-body td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.article-body tr:last-child td {
+  border-bottom: none;
+}
+
+.article-body tr:hover {
+  background-color: #f9fafb;
+}
+
+/* ===== HR STYLING ===== */
+.article-body hr {
+  border: none;
+  border-top: 2px solid #e5e7eb;
+  margin: 2rem 0;
+  break-inside: avoid;
+}
+
+/* ===== LOADING & ERROR STATES ===== */
+.blog-detail-loading,
+.blog-detail-error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  font-family: "Nunito", sans-serif;
+  font-size: 1rem;
+}
+
+.blog-detail-error {
+  color: #dc2626;
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
 @media (max-width: 768px) {
   .blog-detail-container {
     padding: 2rem 5%;
   }
 
+  .article-header {
+    margin-bottom: 1.5rem;
+  }
+
   .article-title {
-    font-size: 1.6rem;
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
   }
 
   .article-body h1 {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
   }
+
   .article-body h2 {
-    font-size: 1.3rem;
+    font-size: 1.35rem;
+    margin-top: 1.75rem;
+    margin-bottom: 0.75rem;
   }
+
   .article-body h3 {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
   }
-}
 
-/* Styling umum untuk code block */
-.article-body pre {
-  border-radius: 0.75rem; /* rounded */
-  overflow-x: auto;
-  margin: 1.5rem 0;
-  font-size: 0.9rem;
-}
+  .article-body h4 {
+    font-size: 1rem;
+  }
 
-/* Styling untuk inline code */
-.article-body code {
-  border-radius: 0.4rem;
-  font-size: 0.85rem;
-  font-family: "Nunito", sans-serif;
+  .article-body p {
+    font-size: 0.95rem;
+    text-align: left;
+  }
+
+  .article-body ul,
+  .article-body ol {
+    padding-left: 1.5rem;
+  }
+
+  .article-meta {
+    font-size: 0.75rem;
+  }
+
+  .article-description {
+    font-size: 0.95rem;
+  }
+
+  .cover-image {
+    margin-bottom: 1.5rem;
+  }
 }

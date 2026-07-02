@@ -1,5 +1,3 @@
-// src/pages/Blog/components/BlogDetail/BlogDetail.jsx
-
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import ReactMarkdown from "react-markdown";
@@ -20,16 +18,13 @@ const BlogDetail = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Fallback image jika tidak ada cover image
   const FALLBACK_IMAGE = "/images/no-image-article.webp";
   const SITE_URL = "https://apps.lesprivatmasukptn.com";
 
-  // Function untuk handle image error
   const handleImageError = (e) => {
     e.target.src = FALLBACK_IMAGE;
   };
 
-  // Function untuk render structured content (TipTap format)
   const renderStructuredContent = (contentArray) => {
     return contentArray.map((block, index) => {
       switch (block.type) {
@@ -43,14 +38,12 @@ const BlogDetail = () => {
             </HeadingTag>
           );
         }
-
         case "paragraph":
           return (
             <p key={index} className="article-body-paragraph">
               {block.content}
             </p>
           );
-
         case "list":
           return (
             <ul key={index} className="article-body-list">
@@ -61,7 +54,6 @@ const BlogDetail = () => {
               ))}
             </ul>
           );
-
         default:
           return null;
       }
@@ -89,7 +81,6 @@ const BlogDetail = () => {
       setLoading(true);
       setError(null);
 
-      // Get article by slug dari data lokal
       const article = getArticleBySlug(slug);
 
       if (article) {
@@ -121,24 +112,15 @@ const BlogDetail = () => {
     }
   }, [slug]);
 
-  if (loading) {
-    return <div className="blog-detail-loading">Loading...</div>;
-  }
-
-  if (error) {
-    return <div className="blog-detail-error">{error}</div>;
-  }
-
-  if (!data) {
+  if (loading) return <div className="blog-detail-loading">Loading...</div>;
+  if (error) return <div className="blog-detail-error">{error}</div>;
+  if (!data)
     return <div className="blog-detail-error">Artikel tidak ditemukan.</div>;
-  }
 
-  // Generate meta description
   const metaDescription = data?.description || extractPlainText(data?.content);
   const articleUrl = `${SITE_URL}/blog/${data?.slug}`;
   const imageUrl = data?.coverImage || `${SITE_URL}${FALLBACK_IMAGE}`;
 
-  // Schema markup untuk Article (JSON-LD)
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -147,27 +129,17 @@ const BlogDetail = () => {
     image: imageUrl,
     datePublished: data?.publishedAt,
     dateModified: data?.publishedAt,
-    author: {
-      "@type": "Person",
-      name: data?.author,
-    },
+    author: { "@type": "Person", name: data?.author },
     publisher: {
       "@type": "Organization",
       name: "LPS Education",
-      logo: {
-        "@type": "ImageObject",
-        url: `${SITE_URL}/logo.png`,
-      },
+      logo: { "@type": "ImageObject", url: `${SITE_URL}/logo.png` },
     },
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": articleUrl,
-    },
+    mainEntityOfPage: { "@type": "WebPage", "@id": articleUrl },
     articleSection: data?.categoriesarticle?.name,
     keywords: data?.tags?.map((tag) => tag.name).join(", "),
   };
 
-  // Schema markup untuk Organization (JSON-LD)
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -177,7 +149,7 @@ const BlogDetail = () => {
     description:
       "Les Privat Terbaik untuk Persiapan UTBK, CPNS, dan Ujian Lainnya",
     sameAs: [
-      "https://www.facebook.com/lpsmatrix", // Update dengan social media Anda
+      "https://www.facebook.com/lpsmatrix",
       "https://www.instagram.com/lpsmatrix",
       "https://www.youtube.com/@lpsmatrix",
     ],
@@ -185,9 +157,7 @@ const BlogDetail = () => {
 
   return (
     <>
-      {/* Meta Tags untuk SEO */}
       <Helmet>
-        {/* Basic Meta Tags */}
         <title>{data?.title} | LPS Education Blog</title>
         <meta name="description" content={metaDescription} />
         <meta
@@ -197,7 +167,6 @@ const BlogDetail = () => {
         <meta name="author" content={data?.author} />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        {/* Open Graph Tags (untuk social media sharing) */}
         <meta property="og:type" content="article" />
         <meta property="og:title" content={data?.title} />
         <meta property="og:description" content={metaDescription} />
@@ -205,13 +174,11 @@ const BlogDetail = () => {
         <meta property="og:url" content={articleUrl} />
         <meta property="og:site_name" content="LPS Education" />
 
-        {/* Twitter Card Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={data?.title} />
         <meta name="twitter:description" content={metaDescription} />
         <meta name="twitter:image" content={imageUrl} />
 
-        {/* Article Meta Tags */}
         <meta property="article:published_time" content={data?.publishedAt} />
         <meta property="article:modified_time" content={data?.publishedAt} />
         <meta property="article:author" content={data?.author} />
@@ -223,10 +190,8 @@ const BlogDetail = () => {
           <meta key={tag.id} property="article:tag" content={tag.name} />
         ))}
 
-        {/* Canonical URL (penting untuk avoid duplicate content) */}
         <link rel="canonical" href={articleUrl} />
 
-        {/* JSON-LD Schema Markup */}
         <script type="application/ld+json">
           {JSON.stringify(articleSchema)}
         </script>
@@ -235,9 +200,7 @@ const BlogDetail = () => {
         </script>
       </Helmet>
 
-      {/* Main Content */}
       <div>
-        {/* Cover Image dengan Fallback */}
         <img
           src={data?.coverImage || FALLBACK_IMAGE}
           alt={data?.title}
@@ -247,11 +210,9 @@ const BlogDetail = () => {
 
         <div className="blog-detail-container">
           <div className="blog-detail-wrapper">
-            {/* Breadcrumbs */}
             <Breadcrumbs articleTitle={data?.title} />
 
             <div className="article-content-wrapper">
-              {/* Article Header */}
               <div className="article-header">
                 <h1 className="article-title">{data?.title}</h1>
 
@@ -275,7 +236,6 @@ const BlogDetail = () => {
                   </span>
                 </div>
 
-                {/* Tags */}
                 <div className="tag-list">
                   {data?.tags && data?.tags.length > 0
                     ? data?.tags.map((tag, index) => (
@@ -288,19 +248,15 @@ const BlogDetail = () => {
                     : null}
                 </div>
 
-                {/* Description */}
                 {data?.description && (
                   <p className="article-description">{data?.description}</p>
                 )}
               </div>
 
-              {/* Article Body - Render Structured Content atau Markdown */}
               <div className="article-body">
                 {Array.isArray(data?.content) ? (
-                  // Render structured content (TipTap format)
                   renderStructuredContent(data?.content)
                 ) : typeof data?.content === "string" ? (
-                  // Render markdown
                   <ReactMarkdown remarkPlugins={[remarkGfm]}>
                     {data?.content || ""}
                   </ReactMarkdown>

@@ -37,7 +37,7 @@ export const simakUIArticles = [
       {
         type: "paragraph",
         content:
-          "SIMAK UI terkenal sebagai salah satu ujian masuk PTN yang paling challenging di Indonesia. Soalnya tidak hanya difficult tapi juga tricky, dirancang untuk identify siswa yang truly understand konsep, bukan yang hanya hafal. Tingkat kompetisi tinggi karena UI adalah PTN favorit dan top talent dari seluruh Indonesia compete untuk masuk.",
+          "SIMAK UI terkenal sebagai salah satu ujian masuk PTN yang paling challenging di Indonesia. Soalnya tidak hanya difficult tapi juga tricky, dirancang untuk identify siswa yang truly understand konsep, bukan yang hanya hafal. Tingkat kompetisi yang tinggi karena UI adalah PTN favorit dan top talent dari seluruh Indonesia compete untuk masuk.",
       },
       {
         type: "heading",
@@ -97,7 +97,7 @@ export const simakUIArticles = [
       {
         type: "paragraph",
         content:
-          "Rata-rata 2 menit per soal (110 menit ÷ 55 soal). Ini sangat tight, memerlukan extreme efficiency. Tidak ada waktu untuk overthink atau double-check setiap soal.",
+          "Rata-rata 2 menit per soal (110 menit ÷ 55 soal). Ini sangat tight, memerlukan efficiency waktu yang baik. Tidak ada waktu untuk overthink atau double-check setiap soal.",
       },
       {
         type: "heading",
@@ -217,8 +217,8 @@ export const simakUIArticles = [
         type: "list",
         items: [
           "Download past year papers dari situs SIMAK UI atau search online",
-          "These adalah gold standard untuk understand actual question difficulty dan pattern",
-          "Analyze: tipe soal apa yang paling sering keluar? Topik apa yang paling ditest?",
+          "Ini adalah gold standard untuk understand actual question difficulty dan pattern",
+          "Analyze: tipe soal apa yang paling sering keluar? Topik apa yang paling sering ditest?",
         ],
       },
       {
@@ -334,7 +334,7 @@ export const simakUIArticles = [
       {
         type: "paragraph",
         content:
-          "Sebelum diving ke technical strategies, mindset yang tepat adalah crucial. SIMAK UI adalah test of not just knowledge tapi juga logical thinking, stress management, dan decision-making under time pressure.",
+          "Sebelum diving ke technical strategies, mindset yang tepat dalam persiapan Simak UI adalah crucial. SIMAK UI adalah test of not just knowledge tapi juga logical thinking, stress management, dan decision-making under time pressure.",
       },
       {
         type: "heading",
@@ -344,7 +344,7 @@ export const simakUIArticles = [
       {
         type: "list",
         items: [
-          "Soal Sulit adalah NORMAL: Soal SIMAK UI memang designed untuk be challenging. Jangan panic jika menemukan soal sulit",
+          "Soal Sulit adalah NORMAL: Soal SIMAK UI memang designed untuk be challenging. Jangan panic jika nanti menemukan soal sulit",
           "Tidak Perlu Perfect: Target bukan 100% score tapi 70-80% score sudah cukup untuk lolos",
           "Time Constraint adalah Given: Jangan overthink. Cukup 'baik' dalam waktu cepat lebih baik daripada 'sempurna' tapi kehabisan waktu",
           "Process over Result: Focus pada problem-solving process, bukan pada kekhawatiran tentang hasil akhir",
@@ -591,9 +591,9 @@ export const simakUIArticles = [
       {
         type: "list",
         items: [
-          "Jangan panic - semua orang dalam situasi same",
+          "Jangan panic - semua orang dalam situasi yang sama",
           "Quickly fill soal yang belum dijawab dengan educated guess",
-          "Prioritize: soal yang Anda confident tapi belum answer",
+          "Prioritize: soal yang Anda confident tapi belum ada jawabannya",
           "Better to guess daripada leave blank",
         ],
       },
@@ -663,7 +663,7 @@ export const simakUIArticles = [
         type: "list",
         items: [
           "Skip dan lanjut - jangan waste 5+ menit pada satu soal",
-          "Remember: bukan semua orang bisa jawab soal paling sulit - itu ok",
+          "Remember: tidak semua orang bisa jawab soal yang paling sulit - itu ok",
           "If time allows, kembali ke soal ini di akhir",
         ],
       },

@@ -50,11 +50,11 @@
 }
 
 .article-title {
-  font-size: clamp(2rem, 5vw, 2.5rem);
+  font-size: clamp(1.4rem, 5vw, 1.8rem);
   font-family: "Nunito", sans-serif;
   font-weight: 800;
   color: #1f2937;
-  line-height: 1.2; /* Diubah sedikit ke 1.2 agar spasi antar baris lebih proporsional saat teks panjang */
+  line-height: 1.2;
   margin: 0 0 1rem 0;
 }
 
@@ -149,7 +149,7 @@
 /* ===== HEADING STYLING ===== */
 .article-body h1,
 .article-body-heading.heading-level-1 {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 800;
   color: #1f2937;
   margin-top: 2.5rem;

@@ -6,6 +6,7 @@ import "./FloatingCTA.css";
 
 const FloatingCTA = () => {
   const [dataContact, setDataContact] = useState([]);
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [unreadMessages, setUnreadMessages] = useState(0);
 

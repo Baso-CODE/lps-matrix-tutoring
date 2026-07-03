@@ -9,6 +9,7 @@ import {
   getCategoryNameById,
 } from "../../../../data/article";
 import { formatDate } from "../../../../utils/formatDate/formatDate";
+import BlogCTA from "../BlogCTA/BlogCTA";
 import Breadcrumbs from "../Breadcrumbs/Breadcrumbs";
 import "./BlogDetail.css";
 
@@ -262,6 +263,8 @@ const BlogDetail = () => {
                   </ReactMarkdown>
                 ) : null}
               </div>
+
+              <BlogCTA />
             </div>
           </div>
         </div>

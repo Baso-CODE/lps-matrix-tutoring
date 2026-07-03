@@ -325,7 +325,7 @@ export const mahasiswaArticles = [
       {
         type: "paragraph",
         content:
-          "Mahasiswa modern menghadapi paradox: lebih banyak resources untuk belajar (internet, libraries, online courses) namun actual learning outcomes sering kali suboptimal. Mengapa? Karena masalahnya bukan kekurangan resource, tapi ineffective time management dan learning strategy. Banyak mahasiswa belajar tanpa tujuan yang jelas, tanpa sistem, dan tanpa regular review.",
+          "Mahasiswa modern saat ini menghadapi paradox: lebih banyak resources untuk belajar (internet, libraries, online courses) namun actual learning outcomes sering kali suboptimal. Mengapa? Karena masalahnya bukan kekurangan resource, tapi ineffective time management dan learning strategy. Banyak mahasiswa belajar tanpa tujuan yang jelas, tanpa sistem, dan tanpa regular review.",
       },
       {
         type: "list",
@@ -371,7 +371,7 @@ export const mahasiswaArticles = [
       {
         type: "paragraph",
         content:
-          "Key benefit time blocking: predictability. Teman tahu Anda tidak available pukul 09:00-12:00 untuk jajan, diri Anda tahu akan fokus belajar di saat itu. Ini menciptakan rhythm dan habit yang sustainable.",
+          "Key benefit time blocking: predictability. Teman Anda tahu kalau Anda tidak available pukul 09:00-12:00 untuk jajan dan lainnya, karena tahu Anda akan fokus belajar di saat itu. Ini menciptakan ritme dan habit yang sustainable.",
       },
       {
         type: "heading",

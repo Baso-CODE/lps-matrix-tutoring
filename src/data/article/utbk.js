@@ -16,7 +16,7 @@ export const utbkArticles = [
       { id: 4, name: "Seleksi Masuk" },
       { id: 5, name: "Strategi Sukses" },
     ],
-    coverImage: "https://via.placeholder.com/1200x630?text=Manfaat+Les+UTBK",
+    coverImage: "/images/article/manfaat-lesprivat-lps-utbk.webp",
     publishedAt: "2024-01-15T10:30:00Z",
     content: [
       {
@@ -312,7 +312,7 @@ export const utbkArticles = [
       { id: 4, name: "Persiapan" },
       { id: 5, name: "Test Strategy" },
     ],
-    coverImage: "https://via.placeholder.com/1200x630?text=Strategi+UTBK",
+    coverImage: "",
     publishedAt: "2024-02-10T14:45:00Z",
     content: [
       {

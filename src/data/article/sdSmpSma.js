@@ -16,7 +16,7 @@ export const sdSmpSmaArticles = [
       { id: 4, name: "Les Privat" },
       { id: 5, name: "Akademik" },
     ],
-    coverImage: "https://via.placeholder.com/1200x630?text=Les+SD+SMP+SMA",
+    coverImage: "/images/article/membangun-pondasi-pendidikan-sd-smp-sma.webp",
     publishedAt: "2024-01-22T09:30:00Z",
     content: [
       {
@@ -359,7 +359,7 @@ export const sdSmpSmaArticles = [
       { id: 4, name: "Pilihan" },
       { id: 5, name: "Education" },
     ],
-    coverImage: "https://via.placeholder.com/1200x630?text=Panduan+Memilih+Les",
+    coverImage: "",
     publishedAt: "2024-02-12T15:20:00Z",
     content: [
       {

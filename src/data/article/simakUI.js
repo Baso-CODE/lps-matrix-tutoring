@@ -16,7 +16,7 @@ export const simakUIArticles = [
       { id: 4, name: "UI" },
       { id: 5, name: "Persiapan Kompetitif" },
     ],
-    coverImage: "https://via.placeholder.com/1200x630?text=Persiapan+SIMAK+UI",
+    coverImage: "/images/article/panduan-persiapan-simak-ui.webp",
     publishedAt: "2024-01-25T08:15:00Z",
     content: [
       {
@@ -318,7 +318,7 @@ export const simakUIArticles = [
       { id: 4, name: "Teknik Mengerjakan" },
       { id: 5, name: "Time Management" },
     ],
-    coverImage: "https://via.placeholder.com/1200x630?text=Strategi+SIMAK+UI",
+    coverImage: "",
     publishedAt: "2024-02-20T13:45:00Z",
     content: [
       {

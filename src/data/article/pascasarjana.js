@@ -16,7 +16,7 @@ export const pascasarjanaArticles = [
       { id: 4, name: "Research" },
       { id: 5, name: "Academic Excellence" },
     ],
-    coverImage: "https://via.placeholder.com/1200x630?text=Les+Pascasarjana",
+    coverImage: "",
     publishedAt: "2024-01-28T11:00:00Z",
     content: [
       {
@@ -346,7 +346,7 @@ export const pascasarjanaArticles = [
       { id: 4, name: "Research" },
       { id: 5, name: "Writing Guide" },
     ],
-    coverImage: "https://via.placeholder.com/1200x630?text=Strategi+Thesis",
+    coverImage: "/images/article/strategi-thesis-pascasarjana.webp",
     publishedAt: "2024-02-18T13:15:00Z",
     content: [
       {

@@ -16,7 +16,7 @@ export const cpnsArticles = [
       { id: 4, name: "PNS" },
       { id: 5, name: "Karir Pemerintah" },
     ],
-    coverImage: "https://via.placeholder.com/1200x630?text=Persiapan+CPNS",
+    coverImage: "",
     publishedAt: "2024-01-20T09:00:00Z",
     content: [
       {
@@ -347,7 +347,7 @@ export const cpnsArticles = [
       { id: 4, name: "Tips Sukses" },
       { id: 5, name: "Manajemen Waktu" },
     ],
-    coverImage: "https://via.placeholder.com/1200x630?text=Strategi+SKD+CPNS",
+    coverImage: " /images/article/strategi-cpns.webp",
     publishedAt: "2024-02-15T11:20:00Z",
     content: [
       {

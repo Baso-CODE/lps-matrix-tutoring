@@ -17,7 +17,7 @@ export const tkaArticles = [
       { id: 4, name: "Kemampuan Akademik" },
       { id: 5, name: "Seleksi Masuk" },
     ],
-    coverImage: "https://via.placeholder.com/1200x630?text=TKA",
+    coverImage: "",
     publishedAt: "2024-02-01T09:00:00Z",
     content: [
       {
@@ -352,7 +352,7 @@ export const tkaArticles = [
       { id: 4, name: "Teknik Efisien" },
       { id: 5, name: "Speed dan Accuracy" },
     ],
-    coverImage: "https://via.placeholder.com/1200x630?text=Strategi+TKA",
+    coverImage: "/images/article/strategi-menjawab-soal-tka.webp",
     publishedAt: "2024-02-25T16:30:00Z",
     content: [
       {

@@ -1,132 +1,282 @@
 /* src/pages/Blog/components/BlogCTA/BlogCTA.css */
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
+
+/* ─── Shell ─────────────────────────────────────────────── */
 .blog-cta {
-  /* Menggunakan gradasi dari #ff8c33 ke #ff6500 agar lebih lembut */
-  background: linear-gradient(135deg, #ff8c33 0%, #ff6500 100%);
-  padding: 50px 40px;
-  margin: 40px 0;
-  border-radius: 12px;
-  box-shadow: 0 10px 40px rgba(255, 101, 0, 0.2);
-  text-align: center; /* Membuat semua teks berada di tengah */
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  position: relative;
+  padding: 56px 40px;
+  margin: 48px 0;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #f8f8f8;
+  border: 1px solid #ebebeb;
+  isolation: isolate;
 }
 
+/* Subtle orange glow corners */
+.blog-cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      ellipse 60% 70% at 95% 50%,
+      rgba(255, 101, 0, 0.1) 0%,
+      transparent 65%
+    ),
+    radial-gradient(
+      ellipse 50% 55% at 5% 50%,
+      rgba(255, 140, 51, 0.08) 0%,
+      transparent 65%
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Decorative blur blob */
+.blog-cta::after {
+  content: "";
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: rgba(255, 101, 0, 0.07);
+  bottom: -60px;
+  right: -50px;
+  filter: blur(55px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─── Wrapper ────────────────────────────────────────────── */
 .cta-wrapper {
-  max-width: 720px;
+  position: relative;
+  z-index: 1;
+  max-width: 620px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* Content Side */
+/* ─── Eyebrow pill ───────────────────────────────────────── */
+.cta-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(255, 101, 0, 0.09);
+  border: 1px solid rgba(255, 101, 0, 0.25);
+  border-radius: 100px;
+  padding: 5px 15px;
+  margin-bottom: 22px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #d94f00;
+}
+
+.cta-eyebrow-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ff6500;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(0.6);
+  }
+}
+
+/* ─── Content ────────────────────────────────────────────── */
 .cta-content {
-  color: white;
   width: 100%;
+  text-align: center;
 }
 
 .cta-title {
   font-size: 2rem;
-  font-weight: 700;
-  margin: 0 0 15px 0;
-  line-height: 1.3;
+  font-weight: 800;
+  margin: 0 0 14px;
+  line-height: 1.22;
+  letter-spacing: -0.03em;
+  color: #111111;
+}
+
+.cta-title-accent {
+  color: #ff6500;
 }
 
 .cta-text {
-  font-size: 1.05rem;
-  line-height: 1.6;
-  margin: 0 auto 25px auto;
-  opacity: 0.95;
-  max-width: 600px; /* Menjaga agar paragraf tidak terlalu melebar */
+  font-size: 0.97rem;
+  line-height: 1.7;
+  margin: 0 auto 28px;
+  max-width: 510px;
+  color: #666666;
+  font-weight: 400;
 }
 
-/* Features List */
+/* ─── Feature Pills ──────────────────────────────────────── */
 .cta-features {
   list-style: none;
   padding: 0;
-  margin: 0 auto 30px auto;
+  margin: 0 auto 32px;
   display: flex;
-  flex-direction: column;
-  align-items: center; /* Membuat list item sejajar di tengah */
-  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 9px;
 }
 
 .cta-features li {
-  font-size: 1rem;
-  line-height: 1.5;
-  margin: 0;
-}
-
-/* Buttons */
-.cta-buttons {
-  display: flex;
-  justify-content: center; /* Tombol berada persis di tengah */
-  gap: 15px;
-}
-
-.btn {
   display: inline-flex;
   align-items: center;
+  gap: 7px;
+  padding: 7px 14px;
+  border-radius: 100px;
+  background: #ffffff;
+  border: 1px solid #e8e8e8;
+  font-size: 0.86rem;
+  font-weight: 500;
+  color: #333333;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.cta-features li::before {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: rgba(255, 101, 0, 0.12);
+  border: 1.5px solid #ff6500;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 8l2.5 2.5L12 5.5' stroke='%23ff6500' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-size: cover;
+  flex-shrink: 0;
+}
+
+/* ─── Button ─────────────────────────────────────────────── */
+.cta-buttons {
+  display: flex;
   justify-content: center;
-  gap: 8px;
-  padding: 12px 32px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.95rem;
-  transition: all 0.3s ease;
-  border: none;
-  cursor: pointer;
 }
 
 .btn-primary {
-  background-color: white;
-  color: #ff6500; /* Warna teks menyesuaikan tema oranye */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 32px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #ff7a2b 0%, #ff5500 100%);
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  border: none;
+  cursor: pointer;
+  box-shadow:
+    0 4px 16px rgba(255, 101, 0, 0.28),
+    0 1px 3px rgba(255, 101, 0, 0.18);
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Shimmer sweep on hover */
+.btn-primary::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 35%,
+    rgba(255, 255, 255, 0.17) 50%,
+    transparent 65%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.45s ease;
 }
 
 .btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
-  background-color: #fcfcfc;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(255, 101, 0, 0.35);
 }
 
-/* Responsive */
+.btn-primary:hover::after {
+  transform: translateX(100%);
+}
+
+.btn-arrow {
+  display: inline-flex;
+  transition: transform 0.22s ease;
+}
+
+.btn-primary:hover .btn-arrow {
+  transform: translateX(4px);
+}
+
+/* ─── Responsive ─────────────────────────────────────────── */
 @media (max-width: 768px) {
   .blog-cta {
-    padding: 40px 24px;
+    padding: 44px 24px;
   }
+
   .cta-title {
-    font-size: 1.6rem;
+    font-size: 1.65rem;
   }
-  .cta-text {
-    font-size: 1rem;
-  }
-  .cta-features li {
-    font-size: 0.95rem;
-  }
-  .cta-buttons {
+
+  .cta-features {
     flex-direction: column;
     align-items: center;
   }
-  .btn {
-    width: 100%;
-    max-width: 300px;
+
+  .cta-features li {
+    width: fit-content;
   }
 }
 
 @media (max-width: 480px) {
   .blog-cta {
-    padding: 30px 16px;
-    border-radius: 10px;
+    padding: 36px 16px;
+    border-radius: 14px;
+    margin: 32px 0;
   }
+
   .cta-title {
     font-size: 1.4rem;
+    letter-spacing: -0.02em;
   }
+
   .cta-text {
     font-size: 0.92rem;
   }
-  .btn {
-    padding: 10px 20px;
-    font-size: 0.9rem;
-    max-width: 100%;
+
+  .btn-primary {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta-eyebrow-dot {
+    animation: none;
+  }
+  .btn-primary,
+  .btn-primary::after,
+  .btn-arrow {
+    transition: none;
   }
 }

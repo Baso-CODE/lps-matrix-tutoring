@@ -16,7 +16,7 @@ export const osnArticles = [
       { id: 4, name: "Persiapan Kompetisi" },
       { id: 5, name: "Strategi Belajar" },
     ],
-    coverImage: "https://via.placeholder.com/1200x630?text=Persiapan+OSN",
+    coverImage: "/images/article/persiapan-osn-strategi-jitu-meraih-emas.webp",
     publishedAt: "2024-01-30T10:45:00Z",
     content: [
       {
@@ -334,7 +334,7 @@ export const osnArticles = [
       { id: 4, name: "Kompetisi" },
       { id: 5, name: "Persiapan Global" },
     ],
-    coverImage: "https://via.placeholder.com/1200x630?text=IMO+ISO",
+    coverImage: "",
     publishedAt: "2024-02-22T14:00:00Z",
     content: `# IMO dan ISO: Kompetisi Olimpiade Internasional dan Persiapannya
 

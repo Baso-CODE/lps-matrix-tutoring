@@ -16,7 +16,7 @@ export const mahasiswaArticles = [
       { id: 4, name: "GPA" },
       { id: 5, name: "Mata Kuliah" },
     ],
-    coverImage: "https://via.placeholder.com/1200x630?text=Les+Mahasiswa",
+    coverImage: "",
     publishedAt: "2024-01-18T10:00:00Z",
     content: [
       {
@@ -308,7 +308,7 @@ export const mahasiswaArticles = [
       { id: 4, name: "Teknik Belajar" },
       { id: 5, name: "Efisiensi" },
     ],
-    coverImage: "https://via.placeholder.com/1200x630?text=Strategi+Belajar",
+    coverImage: "/images/article/strategi-belajar-efektif-mahasiswa.webp",
     publishedAt: "2024-02-08T14:30:00Z",
     content: [
       {

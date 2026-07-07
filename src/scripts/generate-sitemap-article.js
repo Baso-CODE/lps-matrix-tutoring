@@ -2,11 +2,13 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { allArticles } from "../data/article/index.js";
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 function generateArticleSitemap() {
-  const baseUrl = "https://apps.lesprivatmasukptn.com/blog";
+  const siteUrl = "https://apps.lesprivatmasukptn.com";
+  const baseUrl = `${siteUrl}/blog`;
 
   const sitemapRows = allArticles
     .map((article) => {
@@ -17,9 +19,27 @@ function generateArticleSitemap() {
         .replace(/"/g, "&quot;")
         .replace(/'/g, "&apos;");
 
-      const safeCoverImage = article.coverImage
-        ? article.coverImage.replace(/&/g, "&amp;")
-        : "";
+      // 1. Ambil dan bersihkan whitespace di string image jika ada
+      let imageUrl = (article.coverImage || "").trim();
+
+      // 2. Cek apakah path gambar merupakan relative path (diawali / atau tidak punya http)
+      if (
+        imageUrl &&
+        !imageUrl.startsWith("http://") &&
+        !imageUrl.startsWith("https://")
+      ) {
+        // Pastikan tidak ada double slash jika string di data sudah diawali '/'
+        const formatPath = imageUrl.startsWith("/") ? imageUrl : `/${imageUrl}`;
+        imageUrl = `${siteUrl}${formatPath}`;
+      }
+
+      // 3. Escape karakter khusus pada URL gambar hasil konversi
+      const safeCoverImage = imageUrl
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&apos;");
 
       return `
     <url>

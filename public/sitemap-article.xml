@@ -12,7 +12,7 @@
         <priority>0.8</priority>
         
         <image:image>
-            <image:loc>https://via.placeholder.com/1200x630?text=Manfaat+Les+UTBK</image:loc>
+            <image:loc>https://apps.lesprivatmasukptn.com/images/article/manfaat-lesprivat-lps-utbk.webp</image:loc>
             <image:title>Manfaat Les Privat UTBK di LPS untuk Hasil Maksimal</image:title>
         </image:image>
     </url>
@@ -22,10 +22,6 @@
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         
-        <image:image>
-            <image:loc>https://via.placeholder.com/1200x630?text=Strategi+UTBK</image:loc>
-            <image:title>Strategi Jitu Lolos UTBK Bersama LPS Matrix: Dari Preparation hingga Test Day</image:title>
-        </image:image>
     </url>
     <url>
         <loc>https://apps.lesprivatmasukptn.com/blog/persiapan-cpns-intensif-rahasia-lulus</loc>
@@ -33,10 +29,6 @@
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         
-        <image:image>
-            <image:loc>https://via.placeholder.com/1200x630?text=Persiapan+CPNS</image:loc>
-            <image:title>Persiapan CPNS Intensif: Rahasia Lulus Tes Seleksi</image:title>
-        </image:image>
     </url>
     <url>
         <loc>https://apps.lesprivatmasukptn.com/blog/strategi-tes-skd-cpns-percaya-diri</loc>
@@ -45,7 +37,7 @@
         <priority>0.8</priority>
         
         <image:image>
-            <image:loc>https://via.placeholder.com/1200x630?text=Strategi+SKD+CPNS</image:loc>
+            <image:loc>https://apps.lesprivatmasukptn.com/images/article/strategi-cpns.webp</image:loc>
             <image:title>Strategi Menghadapi Tes SKD CPNS dengan Percaya Diri</image:title>
         </image:image>
     </url>
@@ -56,7 +48,7 @@
         <priority>0.8</priority>
         
         <image:image>
-            <image:loc>https://via.placeholder.com/1200x630?text=Persiapan+SIMAK+UI</image:loc>
+            <image:loc>https://apps.lesprivatmasukptn.com/images/article/panduan-persiapan-simak-ui.webp</image:loc>
             <image:title>Persiapan SIMAK UI: Panduan Lengkap Lolos Seleksi Masuk UI</image:title>
         </image:image>
     </url>
@@ -66,10 +58,6 @@
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         
-        <image:image>
-            <image:loc>https://via.placeholder.com/1200x630?text=Strategi+SIMAK+UI</image:loc>
-            <image:title>Strategi Menjawab Soal SIMAK UI: Teknik dan Mindset Winning</image:title>
-        </image:image>
     </url>
     <url>
         <loc>https://apps.lesprivatmasukptn.com/blog/les-privat-mahasiswa-nilai-akademik</loc>
@@ -77,10 +65,6 @@
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         
-        <image:image>
-            <image:loc>https://via.placeholder.com/1200x630?text=Les+Mahasiswa</image:loc>
-            <image:title>Les Privat Mahasiswa: Solusi Terbaik untuk Nilai Akademik Sempurna</image:title>
-        </image:image>
     </url>
     <url>
         <loc>https://apps.lesprivatmasukptn.com/blog/strategi-belajar-mahasiswa-manajemen-waktu</loc>
@@ -89,7 +73,7 @@
         <priority>0.8</priority>
         
         <image:image>
-            <image:loc>https://via.placeholder.com/1200x630?text=Strategi+Belajar</image:loc>
+            <image:loc>https://apps.lesprivatmasukptn.com/images/article/strategi-belajar-efektif-mahasiswa.webp</image:loc>
             <image:title>Strategi Belajar Efektif untuk Mahasiswa: Manajemen Waktu dan Produktivitas</image:title>
         </image:image>
     </url>
@@ -100,7 +84,7 @@
         <priority>0.8</priority>
         
         <image:image>
-            <image:loc>https://via.placeholder.com/1200x630?text=Les+SD+SMP+SMA</image:loc>
+            <image:loc>https://apps.lesprivatmasukptn.com/images/article/membangun-pondasi-pendidikan-sd-smp-sma.webp</image:loc>
             <image:title>Les Privat SD SMP SMA: Membangun Fondasi Pendidikan yang Kuat</image:title>
         </image:image>
     </url>
@@ -110,10 +94,6 @@
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         
-        <image:image>
-            <image:loc>https://via.placeholder.com/1200x630?text=Panduan+Memilih+Les</image:loc>
-            <image:title>Cara Memilih Les Privat yang Tepat untuk Anak: Panduan Orang Tua</image:title>
-        </image:image>
     </url>
     <url>
         <loc>https://apps.lesprivatmasukptn.com/blog/les-privat-pascasarjana-raih-gelar-master</loc>
@@ -121,10 +101,6 @@
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         
-        <image:image>
-            <image:loc>https://via.placeholder.com/1200x630?text=Les+Pascasarjana</image:loc>
-            <image:title>Les Privat Pascasarjana: Raih Gelar Master dengan Strategi Tepat</image:title>
-        </image:image>
     </url>
     <url>
         <loc>https://apps.lesprivatmasukptn.com/blog/strategi-menulis-thesis-pascasarjana-excellent</loc>
@@ -133,7 +109,7 @@
         <priority>0.8</priority>
         
         <image:image>
-            <image:loc>https://via.placeholder.com/1200x630?text=Strategi+Thesis</image:loc>
+            <image:loc>https://apps.lesprivatmasukptn.com/images/article/strategi-thesis-pascasarjana.webp</image:loc>
             <image:title>Strategi Menulis Thesis Pascasarjana yang Excellent dan Tepat Waktu</image:title>
         </image:image>
     </url>
@@ -144,7 +120,7 @@
         <priority>0.8</priority>
         
         <image:image>
-            <image:loc>https://via.placeholder.com/1200x630?text=Persiapan+OSN</image:loc>
+            <image:loc>https://apps.lesprivatmasukptn.com/images/article/persiapan-osn-strategi-jitu-meraih-emas.webp</image:loc>
             <image:title>Persiapan OSN: Strategi Jitu Meraih Medali Emas Olimpiade Sains</image:title>
         </image:image>
     </url>
@@ -154,10 +130,6 @@
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         
-        <image:image>
-            <image:loc>https://via.placeholder.com/1200x630?text=IMO+ISO</image:loc>
-            <image:title>IMO dan ISO: Kompetisi Olimpiade Internasional dan Persiapannya</image:title>
-        </image:image>
     </url>
     <url>
         <loc>https://apps.lesprivatmasukptn.com/blog/tes-kemampuan-akademik-tka-panduan-persiapan</loc>
@@ -165,10 +137,6 @@
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         
-        <image:image>
-            <image:loc>https://via.placeholder.com/1200x630?text=TKA</image:loc>
-            <image:title>Tes Kemampuan Akademik (TKA): Panduan Persiapan dan Strategi Sukses</image:title>
-        </image:image>
     </url>
     <url>
         <loc>https://apps.lesprivatmasukptn.com/blog/strategi-menjawab-soal-tka-tips-trik</loc>
@@ -177,7 +145,7 @@
         <priority>0.8</priority>
         
         <image:image>
-            <image:loc>https://via.placeholder.com/1200x630?text=Strategi+TKA</image:loc>
+            <image:loc>https://apps.lesprivatmasukptn.com/images/article/strategi-menjawab-soal-tka.webp</image:loc>
             <image:title>Strategi Menjawab Soal TKA: Tips dan Trik Proven dari Expert</image:title>
         </image:image>
     </url>

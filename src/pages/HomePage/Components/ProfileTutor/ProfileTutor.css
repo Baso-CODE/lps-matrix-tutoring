@@ -2,9 +2,8 @@
   margin-top: 12vh;
   margin-bottom: 12vh;
   text-align: center;
-  margin-left: 0;
   overflow: hidden;
-  margin-right: 0;
+  padding: 0 20px;
 }
 
 .profile-title {
@@ -14,49 +13,100 @@
   margin-bottom: 15px;
   text-align: center;
   line-height: normal;
-  color: var(--color-gray-darker); /* Abu-abu sangat gelap untuk judul utama */
+  color: var(--color-gray-darker);
   font-family: "Poppins", sans-serif;
-}
-
-.tutor-image {
-  width: 100%;
-  height: auto;
-  margin-bottom: 15px;
-}
-
-/* Custom dot style */
-.custom-dot-list-style .react-multi-carousel-dot button {
-  /* Warna dot saat tidak aktif, menggunakan abu-abu sedang */
-  background-color: var(--color-gray-medium);
-  width: 11px;
-  height: 11px;
-  border-radius: 50%;
-  border: none;
-}
-
-.custom-dot-list-style .react-multi-carousel-dot--active button {
-  /* Warna dot saat aktif, menggunakan oranye utama */
-  background-color: var(--color-orange-default);
 }
 
 .centered__profiletutor {
   font-size: 1rem;
   font-family: "Nunito", sans-serif;
-  color: var(--color-gray-dark); /* Abu-abu gelap untuk teks paragraf */
-  margin-bottom: 20px;
+  color: var(--color-gray-dark);
+  margin-bottom: 40px;
   max-width: 800px;
   margin-left: auto;
-  opacity: 0.98;
   margin-right: auto;
+  opacity: 0.98;
   font-weight: 500;
+  line-height: 1.6;
 }
 
+/* Item dari carousel */
+.carousel-item {
+  padding: 10px 15px;
+}
+
+/* Kontainer utama kartu tutor dengan border oranye kiri kanan */
+.tutor-card {
+  /* border-left: 3px solid #e67e22; 
+  border-right: 3px solid #e67e22; */
+  padding: 0 10px;
+  text-align: left;
+}
+
+/* Wrapper gambar untuk mengatur kelengkungan bawah khas (seperti di mockup) */
+.tutor-image-wrapper {
+  width: 100%;
+  border-bottom-right-radius: 40px; /* Membuat potongan melengkung di sudut kanan bawah */
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.tutor-image {
+  width: 100%;
+  height: fit-content;
+  object-fit: cover;
+  object-position: center top; /* Fokus potongan ke area wajah atas */
+  display: block;
+}
+
+/* Styling Teks Nama dan Greeting */
+.tutor-name {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #333;
+  margin: 0 0 5px 0;
+}
+
+.tutor-greeting {
+  font-family: "Nunito", sans-serif;
+  font-size: 0.95rem;
+  color: #666;
+  margin: 0;
+}
+
+/* Custom dot style */
+.custom-dot-list-style {
+  margin-top: 20px;
+  position: relative !important;
+}
+
+.custom-dot-list-style .react-multi-carousel-dot button {
+  background-color: #ccc;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  margin: 0 4px;
+}
+
+.custom-dot-list-style .react-multi-carousel-dot--active button {
+  background-color: #e67e22;
+}
+
+/* Responsivitas */
 @media (max-width: 1024px) {
   .centered__profiletutor {
     font-size: 0.95rem;
   }
   .profile-title {
-    font-size: 1.7rem; /* Ukuran lebih kecil untuk tablet */
+    font-size: 1.3rem;
+  }
+  .tutor-image {
+    height: 240px;
+  }
+  .tutor-name {
+    font-size: 1.25rem;
   }
 }
 
@@ -64,15 +114,25 @@
   .centered__profiletutor {
     font-size: 0.9rem;
   }
-  .profile-title {
-    font-size: 1.6rem; /* Ukuran lebih kecil untuk tablet */
+  .tutor-image {
+    height: 220px;
+  }
+  .tutor-name {
+    font-size: 1.2rem;
   }
 }
+
 @media (max-width: 480px) {
   .centered__profiletutor {
     font-size: 0.85rem;
   }
-  .profile-title {
-    font-size: 1.5rem; /* Ukuran lebih kecil untuk ponsel */
+  .tutor-image {
+    height: 200px;
+  }
+  .carousel-item {
+    padding: 10px 5px;
+  }
+  .tutor-name {
+    font-size: 1.1rem;
   }
 }

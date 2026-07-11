@@ -1,10 +1,10 @@
+import PropTypes from "prop-types";
+import { useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import "./ProfileTutor.css";
-import { useEffect, useState } from "react";
-import { getProfileTutor } from "../../../../api/profileTutor/profileTutor";
 import { useLocation } from "react-router-dom";
-import PropTypes from "prop-types";
+import { getProfileTutorDummy } from "../../../../api/profileTutor/getProfileTutorDummy";
+import "./ProfileTutor.css";
 
 const ProfileTutor = ({ city: cityProp }) => {
   const [dataProfileTutor, setDataProfileTutor] = useState([]);
@@ -20,13 +20,12 @@ const ProfileTutor = ({ city: cityProp }) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await getProfileTutor();
+      const result = await getProfileTutorDummy();
       setDataProfileTutor(result.data);
     };
     fetchData();
   }, []);
 
-  // Setting responsive breakpoints
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -69,26 +68,30 @@ const ProfileTutor = ({ city: cityProp }) => {
         containerClass="carousel-container"
         removeArrowOnDeviceType={["tablet", "mobile"]}
         itemClass="carousel-item-padding-40-px">
-        {dataProfileTutor.map((tutor, index) => (
-          <div key={index} className="carousel-item">
-            {(() => {
-              const altText = `Tutor ${
-                tutor.name || "LPS Education"
-              } untuk program Bimbel & Les Privat UTBK, SIMAK UI, UTUL UGM, TKA, CPNS, Pascasarjana, Mahasiswa, dan OSN${
-                city ? " di " + city : ""
-              }. Guru Privat dari UI, ITB, UGM, dan Kedokteran PTN Favorit.`;
+        {dataProfileTutor.map((tutor, index) => {
+          const altText = `Tutor ${
+            tutor.name || "LPS Education"
+          } untuk program Bimbel & Les Privat UTBK, SIMAK UI, UTUL UGM, TKA, CPNS, Pascasarjana, Mahasiswa, dan OSN${
+            city ? " di " + city : ""
+          }. Guru Privat dari UI, ITB, UGM, dan Kedokteran PTN Favorit.`;
 
-              return (
-                <img
-                  loading="lazy"
-                  src={tutor.link_image}
-                  alt={altText}
-                  className="tutor-image"
-                />
-              );
-            })()}
-          </div>
-        ))}
+          return (
+            <div key={index} className="carousel-item">
+              <div className="tutor-card">
+                <div className="tutor-image-wrapper">
+                  <img
+                    loading="lazy"
+                    src={tutor.link_image}
+                    alt={altText}
+                    className="tutor-image"
+                  />
+                </div>
+                {/* <h3 className="tutor-name">Kak {tutor.name}</h3>
+                <p className="tutor-greeting">Halo Saya Kak {tutor.name}...</p> */}
+              </div>
+            </div>
+          );
+        })}
       </Carousel>
     </div>
   );
@@ -97,4 +100,5 @@ const ProfileTutor = ({ city: cityProp }) => {
 ProfileTutor.propTypes = {
   city: PropTypes.string,
 };
+
 export default ProfileTutor;

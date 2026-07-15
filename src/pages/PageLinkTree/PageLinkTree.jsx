@@ -38,14 +38,11 @@ const PageLinkTree = () => {
   const messageTemplate =
     "Halo Kak, mohon info terkait program di Bimbel LPS. Saya dapat info dari sosial media @bimbellps.";
 
-  // const messageAdminOnlineClassUTBK =
-  //   "Halo Kak Rosa, mohon info terkait Program Online Class UTBK SNBT 2026. Saya dapat info dari sosial media @bimbellps.";
-
   const programMessageTemplate = (programName) =>
     `Halo Kak, mohon info program ${programName}. Saya dapat informasi dari akun sosial media @bimbellps`;
 
   const programMessageTemplateForAdminOnlineClass = () =>
-    `Halo Kak, mohon info program Online Class UTBK SNBT 2026. Saya dapat informasi dari akun sosial media @bimbellps`;
+    `Halo Kak, mohon info program Online Class UTBK SNBT 2027. Saya dapat informasi dari akun sosial media @bimbellps`;
 
   return (
     <div className="home-page-container">
@@ -163,28 +160,105 @@ const PageLinkTree = () => {
             </div>
             <ChevronRight size={20} />
           </button>
-
-          {/* Hubungi Admin Online Class UTBK */}
-          {/* <button
-            className="consultation-item"
-            data-aos="fade-up"
-            data-aos-delay="100"
-            onClick={() =>
-              openWhatsApp("628139906077", messageAdminOnlineClassUTBK)
-            }>
-            <div className="item-content">
-              <MessageCircleMore size={20} />
-              <div className="item-text">
-                <span>Hubungi Admin Online Class UTBK</span>
-              </div>
-            </div>
-            <ChevronRight size={20} />
-          </button> */}
         </section>
 
         {/* DAFTAR PROGRAM */}
         <section className="section" data-aos="fade-up">
           <h2 className="section-title">Daftar Program Bimbel LPS</h2>
+
+          {/* 1 */}
+          <button
+            className="program-item"
+            data-aos="fade-up"
+            data-aos-delay="200"
+            onClick={() =>
+              openWhatsApp(
+                "6285774023474",
+                programMessageTemplate("Intensif Privat UTBK SNBT 2027"),
+              )
+            }>
+            <div className="item-content">
+              <ClipboardCheck size={20} />
+              <span>Intensif Privat UTBK SNBT 2027</span>
+            </div>
+            <ChevronRight size={20} />
+          </button>
+
+          {/* 2 */}
+          <button
+            className="program-item"
+            data-aos="fade-up"
+            data-aos-delay="800"
+            onClick={() =>
+              openWhatsApp(
+                "6281311778441",
+                programMessageTemplate(
+                  "Intensif Privat Akademik Sekolah SD SMP SMA dan TKA",
+                ),
+              )
+            }>
+            <div className="item-content">
+              <Shield size={20} />
+              <span>Intensif Privat Akademik Sekolah SD SMP SMA & TKA</span>
+            </div>
+            <ChevronRight size={20} />
+          </button>
+
+          {/* 3 */}
+          <button
+            className="program-item"
+            data-aos="fade-up"
+            data-aos-delay="700"
+            onClick={() =>
+              openWhatsApp(
+                "6281311778441",
+                programMessageTemplate("Intensif Privat CPNS"),
+              )
+            }>
+            <div className="item-content">
+              <PencilRuler size={20} />
+              <span>Intensif Privat CPNS</span>
+            </div>
+            <ChevronRight size={20} />
+          </button>
+
+          {/* 4 */}
+          <button
+            className="program-item"
+            data-aos="fade-up"
+            data-aos-delay="600"
+            onClick={() =>
+              openWhatsApp(
+                "6282258689993",
+                programMessageTemplate("Intensif Privat Sekolah Kedinasan"),
+              )
+            }>
+            <div className="item-content">
+              <BookOpen size={20} />
+              <span>Intensif Privat Sekolah Kedinasan</span>
+            </div>
+            <ChevronRight size={20} />
+          </button>
+
+          {/* 5 */}
+          <button
+            className="program-item"
+            data-aos="fade-up"
+            data-aos-delay="900"
+            onClick={() =>
+              openWhatsApp(
+                "6281311778441",
+                programMessageTemplate("Intensif Privat Mahasiswa"),
+              )
+            }>
+            <div className="item-content">
+              <Computer size={20} />
+              <span>Intensif Privat Mahasiswa</span>
+            </div>
+            <ChevronRight size={20} />
+          </button>
+
+          {/* 6 */}
           <button
             className="program-item"
             data-aos="fade-up"
@@ -203,40 +277,28 @@ const PageLinkTree = () => {
             </div>
             <ChevronRight size={20} />
           </button>
+
+          {/* 7 */}
           <button
             className="program-item"
             data-aos="fade-up"
             data-aos-delay="200"
             onClick={() =>
               openWhatsApp(
-                "6285774023474",
-                programMessageTemplate("Intensif Privat UTBK SNBT"),
-              )
-            }>
-            <div className="item-content">
-              <ClipboardCheck size={20} />
-              <span>Intensif Privat UTBK SNBT</span>
-            </div>
-            <ChevronRight size={20} />
-          </button>
-          <button
-            className="program-item"
-            data-aos="fade-up"
-            data-aos-delay="200"
-            onClick={() =>
-              openWhatsApp(
-                "628139906077",
+                "6281311748441",
                 programMessageTemplateForAdminOnlineClass(
-                  "Kelas Online UTBK SNBT 2026 (Online Class)",
+                  "Kelas Online UTBK SNBT 2027 (Online Class)",
                 ),
               )
             }>
             <div className="item-content">
               <ClipboardCheck size={20} />
-              <span>Kelas Online UTBK SNBT 2026 (Online Class)</span>
+              <span>Kelas Online UTBK SNBT 2027 (Online Class)</span>
             </div>
             <ChevronRight size={20} />
           </button>
+
+          {/* 8 */}
           <button
             className="program-item"
             data-aos="fade-up"
@@ -253,6 +315,8 @@ const PageLinkTree = () => {
             </div>
             <ChevronRight size={20} />
           </button>
+
+          {/* 9 */}
           <button
             className="program-item"
             data-aos="fade-up"
@@ -269,6 +333,8 @@ const PageLinkTree = () => {
             </div>
             <ChevronRight size={20} />
           </button>
+
+          {/* 10 */}
           <button
             className="program-item"
             data-aos="fade-up"
@@ -282,70 +348,6 @@ const PageLinkTree = () => {
             <div className="item-content">
               <Briefcase size={20} />
               <span>Intensif Privat Pascasarjana</span>
-            </div>
-            <ChevronRight size={20} />
-          </button>
-          <button
-            className="program-item"
-            data-aos="fade-up"
-            data-aos-delay="600"
-            onClick={() =>
-              openWhatsApp(
-                "6282258689993",
-                programMessageTemplate("Intensif Privat Sekolah Kedinasan"),
-              )
-            }>
-            <div className="item-content">
-              <BookOpen size={20} />
-              <span>Intensif Privat Sekolah Kedinasan</span>
-            </div>
-            <ChevronRight size={20} />
-          </button>
-          <button
-            className="program-item"
-            data-aos="fade-up"
-            data-aos-delay="700"
-            onClick={() =>
-              openWhatsApp(
-                "6281311778441",
-                programMessageTemplate("Intensif Privat CPNS"),
-              )
-            }>
-            <div className="item-content">
-              <PencilRuler size={20} />
-              <span>Intensif Privat CPNS</span>
-            </div>
-            <ChevronRight size={20} />
-          </button>
-          <button
-            className="program-item"
-            data-aos="fade-up"
-            data-aos-delay="800"
-            onClick={() =>
-              openWhatsApp(
-                "6281311778441",
-                programMessageTemplate("Intensif Privat Akademik Sekolah"),
-              )
-            }>
-            <div className="item-content">
-              <Shield size={20} />
-              <span>Intensif Privat Akademik Sekolah SD SMP SMA & TKA</span>
-            </div>
-            <ChevronRight size={20} />
-          </button>
-          <button
-            className="program-item"
-            data-aos="fade-up"
-            data-aos-delay="900"
-            onClick={() =>
-              openWhatsApp(
-                "6281311778441",
-                programMessageTemplate("Intensif Privat Mahasiswa"),
-              )
-            }>
-            <div className="item-content">
-              <Computer size={20} />
-              <span>Intensif Privat Mahasiswa</span>
             </div>
             <ChevronRight size={20} />
           </button>

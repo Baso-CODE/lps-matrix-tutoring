@@ -35,7 +35,6 @@
   padding: 10px 15px;
 }
 
-/* Kontainer utama kartu tutor dengan border oranye kiri kanan */
 .tutor-card {
   /* border-left: 3px solid #e67e22; 
   border-right: 3px solid #e67e22; */
@@ -43,10 +42,9 @@
   text-align: left;
 }
 
-/* Wrapper gambar untuk mengatur kelengkungan bawah khas (seperti di mockup) */
 .tutor-image-wrapper {
   width: 100%;
-  border-bottom-right-radius: 40px; /* Membuat potongan melengkung di sudut kanan bawah */
+  border-bottom-right-radius: 40px;
   overflow: hidden;
   margin-bottom: 15px;
 }
@@ -55,7 +53,7 @@
   width: 100%;
   height: fit-content;
   object-fit: cover;
-  object-position: center top; /* Fokus potongan ke area wajah atas */
+  object-position: center top;
   display: block;
 }
 

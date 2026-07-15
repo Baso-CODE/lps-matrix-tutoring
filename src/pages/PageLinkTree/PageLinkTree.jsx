@@ -146,7 +146,7 @@ const PageLinkTree = () => {
             <ChevronRight size={20} />
           </button>
 
-          {/* Admin Ayu */}
+          {/* Admin Fani */}
           <button
             className="consultation-item"
             data-aos="fade-up"
@@ -155,7 +155,7 @@ const PageLinkTree = () => {
             <div className="item-content">
               <MessageCircleMore size={20} />
               <div className="item-text">
-                <span>Hubungi Kak Ayu</span>
+                <span>Hubungi Kak Fani</span>
               </div>
             </div>
             <ChevronRight size={20} />

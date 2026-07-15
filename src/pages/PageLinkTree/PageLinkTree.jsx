@@ -61,7 +61,7 @@ const PageLinkTree = () => {
             <Instagram />
           </a>
           <a
-            href="https://www.tiktok.com/@lesprivatsbmptn.com?_r=1&_t=ZS-918OcGnyuIS"
+            href="https://www.tiktok.com/@bimbellps"
             target="_blank"
             rel="noopener noreferrer"
             className="social-icon">

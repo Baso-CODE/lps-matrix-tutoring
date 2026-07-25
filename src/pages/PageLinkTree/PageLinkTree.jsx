@@ -1,6 +1,5 @@
-// src/PageLinkTree.jsx
 import AOS from "aos";
-import "aos/dist/aos.css"; // Impor file CSS AOS
+import "aos/dist/aos.css";
 import {
   BookA,
   BookOpen,
@@ -18,21 +17,31 @@ import {
   Shield,
 } from "lucide-react";
 import { useEffect } from "react";
-import { PiTiktokLogo } from "react-icons/pi";
 import "./PageLinkTree.css";
+
+const TiktokIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    aria-hidden="true">
+    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z" />
+  </svg>
+);
 
 const PageLinkTree = () => {
   useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: true,
-    });
+    AOS.init({ duration: 1000, once: true });
   }, []);
 
   const openWhatsApp = (phoneNumber, message) => {
     const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-    window.open(whatsappUrl, "_blank");
+    window.open(
+      `https://wa.me/${phoneNumber}?text=${encodedMessage}`,
+      "_blank",
+    );
   };
 
   const messageTemplate =
@@ -47,7 +56,11 @@ const PageLinkTree = () => {
   return (
     <div className="home-page-container">
       <header className="header" data-aos="fade-down">
-        <img src="/images/LOGO2.webp" className="logo-linktree" alt="" />
+        <img
+          src="/images/LOGO2.webp"
+          className="logo-linktree"
+          alt="Logo LPS Education"
+        />
         <p className="subtitle">
           Bimbingan Belajar Spesialis Persiapan Masuk PTN, UTBK-SNBT, Simak
           UI/KKI, IUP UGM, dan Ujian Mandiri PTN.
@@ -57,21 +70,24 @@ const PageLinkTree = () => {
             href="https://www.instagram.com/bimbellps?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
             target="_blank"
             rel="noopener noreferrer"
-            className="social-icon">
+            className="social-icon"
+            aria-label="Instagram LPS Education">
             <Instagram />
           </a>
           <a
             href="https://www.tiktok.com/@bimbellps"
             target="_blank"
             rel="noopener noreferrer"
-            className="social-icon">
-            <PiTiktokLogo />
+            className="social-icon"
+            aria-label="TikTok LPS Education">
+            <TiktokIcon />
           </a>
           <a
             href="https://www.lesprivatsbmptn.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="social-icon">
+            className="social-icon"
+            aria-label="Website LPS Education">
             <Globe />
           </a>
         </div>
@@ -115,8 +131,6 @@ const PageLinkTree = () => {
         {/* KONSULTASI */}
         <section className="section" data-aos="fade-up">
           <h2 className="section-title">Konsultasi Sekarang</h2>
-
-          {/* Admin Alfina */}
           <button
             className="consultation-item"
             data-aos="fade-up"
@@ -130,8 +144,6 @@ const PageLinkTree = () => {
             </div>
             <ChevronRight size={20} />
           </button>
-
-          {/* Admin Nia */}
           <button
             className="consultation-item"
             data-aos="fade-up"
@@ -145,8 +157,6 @@ const PageLinkTree = () => {
             </div>
             <ChevronRight size={20} />
           </button>
-
-          {/* Admin Fani */}
           <button
             className="consultation-item"
             data-aos="fade-up"
@@ -165,8 +175,6 @@ const PageLinkTree = () => {
         {/* DAFTAR PROGRAM */}
         <section className="section" data-aos="fade-up">
           <h2 className="section-title">Daftar Program Bimbel LPS</h2>
-
-          {/* 1 */}
           <button
             className="program-item"
             data-aos="fade-up"
@@ -183,8 +191,6 @@ const PageLinkTree = () => {
             </div>
             <ChevronRight size={20} />
           </button>
-
-          {/* 2 */}
           <button
             className="program-item"
             data-aos="fade-up"
@@ -203,8 +209,6 @@ const PageLinkTree = () => {
             </div>
             <ChevronRight size={20} />
           </button>
-
-          {/* 3 */}
           <button
             className="program-item"
             data-aos="fade-up"
@@ -221,8 +225,6 @@ const PageLinkTree = () => {
             </div>
             <ChevronRight size={20} />
           </button>
-
-          {/* 4 */}
           <button
             className="program-item"
             data-aos="fade-up"
@@ -239,8 +241,6 @@ const PageLinkTree = () => {
             </div>
             <ChevronRight size={20} />
           </button>
-
-          {/* 5 */}
           <button
             className="program-item"
             data-aos="fade-up"
@@ -257,8 +257,6 @@ const PageLinkTree = () => {
             </div>
             <ChevronRight size={20} />
           </button>
-
-          {/* 6 */}
           <button
             className="program-item"
             data-aos="fade-up"
@@ -277,8 +275,6 @@ const PageLinkTree = () => {
             </div>
             <ChevronRight size={20} />
           </button>
-
-          {/* 7 */}
           <button
             className="program-item"
             data-aos="fade-up"
@@ -286,9 +282,7 @@ const PageLinkTree = () => {
             onClick={() =>
               openWhatsApp(
                 "6281311748441",
-                programMessageTemplateForAdminOnlineClass(
-                  "Kelas Online UTBK SNBT 2027 (Online Class)",
-                ),
+                programMessageTemplateForAdminOnlineClass(),
               )
             }>
             <div className="item-content">
@@ -297,8 +291,6 @@ const PageLinkTree = () => {
             </div>
             <ChevronRight size={20} />
           </button>
-
-          {/* 8 */}
           <button
             className="program-item"
             data-aos="fade-up"
@@ -315,8 +307,6 @@ const PageLinkTree = () => {
             </div>
             <ChevronRight size={20} />
           </button>
-
-          {/* 9 */}
           <button
             className="program-item"
             data-aos="fade-up"
@@ -333,8 +323,6 @@ const PageLinkTree = () => {
             </div>
             <ChevronRight size={20} />
           </button>
-
-          {/* 10 */}
           <button
             className="program-item"
             data-aos="fade-up"

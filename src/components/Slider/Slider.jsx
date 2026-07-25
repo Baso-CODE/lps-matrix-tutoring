@@ -1,72 +1,54 @@
-/* eslint-disable no-unused-vars */
-import React, { useCallback, useEffect, useState } from "react";
-import "./Slider.css";
-
 import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
-import "lazysizes";
+import { useEffect, useState } from "react";
 import { getSliderDescktop } from "../../api/slider/getSliderDescktop";
 import { getSliderMobile } from "../../api/slider/getSliderMobile";
+import "./Slider.css";
+
 const Slider = () => {
   const [desktopSliders, setDesktopSliders] = useState([]);
   const [mobileSliders, setMobileSliders] = useState([]);
 
-  // Embla hook with Autoplay plugin
-  const [emblaRefDesktop, emblaApiDesktop] = useEmblaCarousel({ loop: true }, [
+  const [emblaRefDesktop] = useEmblaCarousel({ loop: true }, [
     Autoplay({ delay: 1800, stopOnInteraction: true }),
   ]);
-  const [emblaRefMobile, emblaApiMobile] = useEmblaCarousel({ loop: true }, [
+  const [emblaRefMobile] = useEmblaCarousel({ loop: true }, [
     Autoplay({ delay: 1800, stopOnInteraction: true }),
   ]);
 
   useEffect(() => {
     const fetchSliders = async () => {
       try {
-        const desktopResult = await getSliderDescktop();
-        const mobileResult = await getSliderMobile();
-
-        if (desktopResult.status === 200 && mobileResult.status === 200) {
-          setDesktopSliders(desktopResult.data);
-          setMobileSliders(mobileResult.data);
-        } else {
-          throw new Error("Failed to fetch some slider data.");
-        }
+        const [desktopResult, mobileResult] = await Promise.all([
+          getSliderDescktop(),
+          getSliderMobile(),
+        ]);
+        if (desktopResult.status === 200) setDesktopSliders(desktopResult.data);
+        if (mobileResult.status === 200) setMobileSliders(mobileResult.data);
       } catch (err) {
         console.error("Error fetching slider data:", err);
       }
     };
-
     fetchSliders();
   }, []);
 
-  const lazyLoadImage = useCallback(
-    (src, alt) => (
-      <img
-        loading="lazy"
-        data-src={src}
-        alt={alt}
-        className="lazyload"
-        width="100%"
-        height="auto"
-      />
-    ),
-    []
-  );
-
   return (
-    <React.Fragment>
-      {/* Slider for desktop */}
+    <>
+      {/* Slider desktop */}
       <div className="slider-top desktop-only">
         <div className="embla" ref={emblaRefDesktop}>
           <div className="embla__container">
-            {desktopSliders?.length > 0 ? (
+            {desktopSliders.length > 0 ? (
               desktopSliders.map((promo) => (
                 <div className="embla__slide top-slider" key={promo.id}>
                   <div className="slider">
-                    {lazyLoadImage(
-                      promo.link_image,
-                      `Gambar slider ${promo.id} untuk desktop, menampilkan promo ${promo.keterangan}`
-                    )}
+                    <img
+                      loading="lazy"
+                      src={promo.link_image}
+                      alt={`Gambar slider ${promo.id} untuk desktop, menampilkan promo ${promo.keterangan}`}
+                      width="100%"
+                      height="auto"
+                    />
                   </div>
                 </div>
               ))
@@ -79,18 +61,21 @@ const Slider = () => {
         </div>
       </div>
 
-      {/* Slider for mobile */}
+      {/* Slider mobile */}
       <div className="slider-top-2 mobile-only">
         <div className="embla" ref={emblaRefMobile}>
           <div className="embla__container">
-            {mobileSliders?.length > 0 ? (
+            {mobileSliders.length > 0 ? (
               mobileSliders.map((promo) => (
                 <div className="embla__slide top-slider" key={promo.id}>
                   <div className="slider">
-                    {lazyLoadImage(
-                      promo.link_image,
-                      `Gambar slider ${promo.id} untuk perangkat mobile, menampilkan promo ${promo.keterangan}`
-                    )}
+                    <img
+                      loading="lazy"
+                      src={promo.link_image}
+                      alt={`Gambar slider ${promo.id} untuk perangkat mobile, menampilkan promo ${promo.keterangan}`}
+                      width="100%"
+                      height="auto"
+                    />
                   </div>
                 </div>
               ))
@@ -102,7 +87,8 @@ const Slider = () => {
           </div>
         </div>
       </div>
-    </React.Fragment>
+    </>
   );
 };
+
 export default Slider;

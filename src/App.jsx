@@ -1,6 +1,6 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
 import FloatingCTA from "./components/FloatingCTA/FloatingCTA";
@@ -14,100 +14,125 @@ import ScrollToTopButton from "./helpers/ScrollToTopButton/ScrollToTopButton";
 import ToTop from "./helpers/ToTop";
 import { fetchContactCs } from "./lib/features/contactCsSlice";
 import { useAppDispatch } from "./lib/hooks";
-import AboutPage from "./pages/AboutPage/AboutPage";
-import BlogPage from "./pages/Blog/BlogPage";
-import BlogDetail from "./pages/Blog/components/BlogDetail/BlogDetail";
-import HomePage from "./pages/HomePage/HomePage";
-import ListSiswaPage from "./pages/ListSiswaLPS/ListSiswaPage";
-import PageLinkTree from "./pages/PageLinkTree/PageLinkTree";
-import LesPrivatCPNS from "./pages/ProgramLPS/LesPrivatCPNS/LesPrivatCPNS";
-import LesPrivatCPNSSlug from "./pages/ProgramLPS/LesPrivatCPNS/LesPrivatCPNSSlug/LesPrivatCPNSSlug";
-import LesPrivatMahasiswa from "./pages/ProgramLPS/LesPrivatMahasiswa/LesPrivatMahasiswa";
-import LesPrivatMahasiswaSlug from "./pages/ProgramLPS/LesPrivatMahasiswa/LesPrivatMahasiswaSlug/LesPrivatMahasiswaSlug";
-import LesPrivatOSN from "./pages/ProgramLPS/LesPrivatOSN/LesPrivatOSN";
-import LesPrivatOSNSlug from "./pages/ProgramLPS/LesPrivatOSN/LesPrivatOSNSlug/LesPrivatOSNSlug";
-import LesPrivatPascaSarjana from "./pages/ProgramLPS/LesPrivatPascaSarjana/LesPrivatPascaSarjana";
-import LesPrivatPascaSarjanaSlug from "./pages/ProgramLPS/LesPrivatPascaSarjana/LesPrivatPascaSarjanaSlug/LesPrivatPascaSarjanaSlug";
-import LesPrivatSDSMPSMA from "./pages/ProgramLPS/LesPrivatSDSMPSMA/LesPrivatSDSMPSMA";
-import LesPrivatSDSMPSMASlug from "./pages/ProgramLPS/LesPrivatSDSMPSMA/LesPrivatSDSMPSMASlug/LesPrivatSDSMPSMASlug";
-import LesPrivatTKA from "./pages/ProgramLPS/LesPrivatTKA/LesPrivatTKA";
-import LesPrivatTKASlug from "./pages/ProgramLPS/LesPrivatTKA/LesPrivatTKASlug";
-import LesPrivatUTBK from "./pages/ProgramLPS/LesPrivatUTBK/LesPrivatUTBK";
-import LesPrivatUTBKSlug from "./pages/ProgramLPS/LesPrivatUTBK/LesPrivatUTBKSlug/LesPrivatUTBKSlug";
-import SimakUIAndKKI from "./pages/ProgramLPS/SimakUIAndKKI/SimakUIAndKKI";
-import SimakUIAndKKISLug from "./pages/ProgramLPS/SimakUIAndKKI/SimakUIAndKKISLug/SimakUIAndKKISLug";
-import SuccessStoriesPage from "./pages/SuccesStoriesPage/SuccessStoriesPage";
-import TestimonyPage from "./pages/TestimonyPage/TestimonyPage";
+
+// Lazy load semua halaman
+const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
+const PageLinkTree = lazy(() => import("./pages/PageLinkTree/PageLinkTree"));
+const BlogPage = lazy(() => import("./pages/Blog/BlogPage"));
+const BlogDetail = lazy(
+  () => import("./pages/Blog/components/BlogDetail/BlogDetail"),
+);
+const AboutPage = lazy(() => import("./pages/AboutPage/AboutPage"));
+const TestimonyPage = lazy(() => import("./pages/TestimonyPage/TestimonyPage"));
+const SuccessStoriesPage = lazy(
+  () => import("./pages/SuccesStoriesPage/SuccessStoriesPage"),
+);
+const ListSiswaPage = lazy(() => import("./pages/ListSiswaLPS/ListSiswaPage"));
+const LesPrivatUTBK = lazy(
+  () => import("./pages/ProgramLPS/LesPrivatUTBK/LesPrivatUTBK"),
+);
+const LesPrivatUTBKSlug = lazy(
+  () =>
+    import("./pages/ProgramLPS/LesPrivatUTBK/LesPrivatUTBKSlug/LesPrivatUTBKSlug"),
+);
+const LesPrivatCPNS = lazy(
+  () => import("./pages/ProgramLPS/LesPrivatCPNS/LesPrivatCPNS"),
+);
+const LesPrivatCPNSSlug = lazy(
+  () =>
+    import("./pages/ProgramLPS/LesPrivatCPNS/LesPrivatCPNSSlug/LesPrivatCPNSSlug"),
+);
+const SimakUIAndKKI = lazy(
+  () => import("./pages/ProgramLPS/SimakUIAndKKI/SimakUIAndKKI"),
+);
+const SimakUIAndKKISLug = lazy(
+  () =>
+    import("./pages/ProgramLPS/SimakUIAndKKI/SimakUIAndKKISLug/SimakUIAndKKISLug"),
+);
+const LesPrivatMahasiswa = lazy(
+  () => import("./pages/ProgramLPS/LesPrivatMahasiswa/LesPrivatMahasiswa"),
+);
+const LesPrivatMahasiswaSlug = lazy(
+  () =>
+    import("./pages/ProgramLPS/LesPrivatMahasiswa/LesPrivatMahasiswaSlug/LesPrivatMahasiswaSlug"),
+);
+const LesPrivatSDSMPSMA = lazy(
+  () => import("./pages/ProgramLPS/LesPrivatSDSMPSMA/LesPrivatSDSMPSMA"),
+);
+const LesPrivatSDSMPSMASlug = lazy(
+  () =>
+    import("./pages/ProgramLPS/LesPrivatSDSMPSMA/LesPrivatSDSMPSMASlug/LesPrivatSDSMPSMASlug"),
+);
+const LesPrivatPascaSarjana = lazy(
+  () =>
+    import("./pages/ProgramLPS/LesPrivatPascaSarjana/LesPrivatPascaSarjana"),
+);
+const LesPrivatPascaSarjanaSlug = lazy(
+  () =>
+    import("./pages/ProgramLPS/LesPrivatPascaSarjana/LesPrivatPascaSarjanaSlug/LesPrivatPascaSarjanaSlug"),
+);
+const LesPrivatTKA = lazy(
+  () => import("./pages/ProgramLPS/LesPrivatTKA/LesPrivatTKA"),
+);
+const LesPrivatTKASlug = lazy(
+  () => import("./pages/ProgramLPS/LesPrivatTKA/LesPrivatTKASlug"),
+);
+const LesPrivatOSN = lazy(
+  () => import("./pages/ProgramLPS/LesPrivatOSN/LesPrivatOSN"),
+);
+const LesPrivatOSNSlug = lazy(
+  () =>
+    import("./pages/ProgramLPS/LesPrivatOSN/LesPrivatOSNSlug/LesPrivatOSNSlug"),
+);
 
 const programSubMenuData =
   Menus.find((menu) => menu.name === "Program")?.subMenu || [];
-
 const storiesSubMenuData =
   Menus.find((menu) => menu.name === "Stories")?.subMenu || [];
 
 function App() {
   const location = useLocation();
-
   const dispatch = useAppDispatch();
+
   const isLinksPage = location.pathname === "/links";
+  const isBlogDetailPage =
+    location.pathname.startsWith("/blog/") &&
+    location.pathname.split("/").length > 2;
+  const shouldShowGlobalComponents = !isBlogDetailPage && !isLinksPage;
+
+  const [showProgramModal, setShowProgramModal] = useState(false);
+  const [showStoriesModal, setShowStoriesModal] = useState(false);
 
   useEffect(() => {
     dispatch(fetchContactCs());
   }, [dispatch]);
 
   useEffect(() => {
-    AOS.init({
-      duration: 1400,
-      once: true,
-    });
+    AOS.init({ duration: 1400, once: true });
   }, [location, isLinksPage]);
 
-  const [showProgramModal, setShowProgramModal] = useState(false);
-  const handleOpenProgramModal = () => {
-    setShowProgramModal(true);
-  };
-  const handleCloseProgramModal = () => {
-    setShowProgramModal(false);
-  };
-
-  // State dan handler BARU untuk Stories Modal
-  const [showStoriesModal, setShowStoriesModal] = useState(false);
-  const handleOpenStoriesModal = () => {
-    setShowStoriesModal(true);
-  };
-  const handleCloseStoriesModal = () => {
-    setShowStoriesModal(false);
-  };
-
-  const isBlogDetailPage =
-    location.pathname.startsWith("/blog/") &&
-    location.pathname.split("/").length > 2;
-
-  const shouldShowGlobalComponents = !isBlogDetailPage && !isLinksPage;
   return (
     <>
-      <>
-        {shouldShowGlobalComponents && (
-          <>
-            <Nav />
-            <FloatingCTA />
-            {/* <PromoFloating /> */}
-            <BottomNavigationBar
-              onProgramClick={handleOpenProgramModal}
-              onStoriesClick={handleOpenStoriesModal}
-            />
-            <ToTop />
-            <ScrollToTopButton />
-            {/* <FooterNew /> */}
-          </>
-        )}
-        <main>
+      {shouldShowGlobalComponents && (
+        <>
+          <Nav />
+          <FloatingCTA />
+          <BottomNavigationBar
+            onProgramClick={() => setShowProgramModal(true)}
+            onStoriesClick={() => setShowStoriesModal(true)}
+          />
+          <ToTop />
+          <ScrollToTopButton />
+        </>
+      )}
+
+      <main>
+        <Suspense fallback={null}>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/links" element={<PageLinkTree />} />
             <Route path="*" element={<HomePage />} />
 
-            {/* BLOG */}
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/blog/:slug" element={<BlogDetail />} />
 
@@ -119,7 +144,6 @@ function App() {
             />
             <Route path="/list-siswa-lps" element={<ListSiswaPage />} />
 
-            {/* program utbk */}
             <Route
               path="/les-privat-utbk-terbaik"
               element={<LesPrivatUTBK />}
@@ -129,7 +153,6 @@ function App() {
               element={<LesPrivatUTBKSlug />}
             />
 
-            {/* program CPNS */}
             <Route
               path="/bimbel-persiapan-cpns-terbaik"
               element={<LesPrivatCPNS />}
@@ -139,7 +162,6 @@ function App() {
               element={<LesPrivatCPNSSlug />}
             />
 
-            {/* program Simak UI & KKI */}
             <Route
               path="/bimbel-persiapan-masuk-ui-kki-terbaik"
               element={<SimakUIAndKKI />}
@@ -149,7 +171,6 @@ function App() {
               element={<SimakUIAndKKISLug />}
             />
 
-            {/* program les privat mahasiswa */}
             <Route
               path="/les-privat-mahasiswa-terbaik"
               element={<LesPrivatMahasiswa />}
@@ -159,7 +180,6 @@ function App() {
               element={<LesPrivatMahasiswaSlug />}
             />
 
-            {/* program les privat sd smp sma */}
             <Route
               path="/les-privat-sd-smp-sma-terbaik"
               element={<LesPrivatSDSMPSMA />}
@@ -169,7 +189,6 @@ function App() {
               element={<LesPrivatSDSMPSMASlug />}
             />
 
-            {/* program les privat pascasarjana */}
             <Route
               path="/les-privat-pascasarjana-terbaik"
               element={<LesPrivatPascaSarjana />}
@@ -178,7 +197,7 @@ function App() {
               path="/les-privat-pascasarjana-terbaik-di/:slug"
               element={<LesPrivatPascaSarjanaSlug />}
             />
-            {/* program les privat tes kemampuan akademik */}
+
             <Route
               path="/les-privat-tes-kemampuan-akademik"
               element={<LesPrivatTKA />}
@@ -188,27 +207,27 @@ function App() {
               element={<LesPrivatTKASlug />}
             />
 
-            {/* program les privat osn */}
             <Route path="/les-privat-osn-terbaik" element={<LesPrivatOSN />} />
             <Route
               path="/les-privat-osn-terbaik-di/:slug"
               element={<LesPrivatOSNSlug />}
             />
           </Routes>
-        </main>
+        </Suspense>
+      </main>
 
-        {shouldShowGlobalComponents && <FooterNew />}
-        <ProgramModal
-          isOpen={showProgramModal}
-          onClose={handleCloseProgramModal}
-          programSubMenu={programSubMenuData}
-        />
-        <StoriesModal // Modal BARU untuk Stories
-          isOpen={showStoriesModal}
-          onClose={handleCloseStoriesModal}
-          storiesSubMenu={storiesSubMenuData}
-        />
-      </>
+      {shouldShowGlobalComponents && <FooterNew />}
+
+      <ProgramModal
+        isOpen={showProgramModal}
+        onClose={() => setShowProgramModal(false)}
+        programSubMenu={programSubMenuData}
+      />
+      <StoriesModal
+        isOpen={showStoriesModal}
+        onClose={() => setShowStoriesModal(false)}
+        storiesSubMenu={storiesSubMenuData}
+      />
     </>
   );
 }

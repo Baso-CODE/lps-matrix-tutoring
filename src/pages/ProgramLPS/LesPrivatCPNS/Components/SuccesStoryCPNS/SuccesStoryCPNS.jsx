@@ -1,20 +1,18 @@
-import { PiHandSwipeRightBold } from "react-icons/pi";
-import "swiper/css";
-import "swiper/css/effect-cards";
-import { EffectCards } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
+import useEmblaCarousel from "embla-carousel-react";
+import { MoveRight } from "lucide-react";
 import PropTypes from "prop-types";
-
 import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { getSuccesStoryCPNS } from "../../../../../api/succesStoryCpns/getSuccesStoryCPNS";
 import "./SuccesStoryCPNS.css";
-import { useLocation } from "react-router-dom";
 
 const SuccesStoryCPNS = ({ city: cityProp }) => {
   const [succesStories, setSuccessStories] = useState([]);
 
   const location = useLocation();
   const path = location.pathname;
+
+  const [emblaRef] = useEmblaCarousel({ loop: true, align: "center" });
 
   useEffect(() => {
     async function fetchSuccessStories() {
@@ -37,13 +35,7 @@ const SuccesStoryCPNS = ({ city: cityProp }) => {
   return (
     <div className="success-story-cpns-container">
       <div className="success-story-cpns-wrapper">
-        <div className="success-story-cpns-title-container">
-          {/* <h2 className="success-story-cpns-title">Success Story</h2> */}
-        </div>
-
-        {/* Bagian Deskripsi dan Swiper */}
         <div className="success-story-cpns-content">
-          {/* Bagian Kiri: Title dan Deskripsi */}
           <div className="success-story-cpns-left">
             <h2 className="success-story-cpns-subtitle">
               Success Stories CPNS & Kedinasan
@@ -61,48 +53,40 @@ const SuccesStoryCPNS = ({ city: cityProp }) => {
             </p>
 
             <div className="success-story-cpns-swipe-info">
-              {/* <FaChevronLeft className="text-white text-3xl cursor-pointer" /> */}
               <span className="success-story-cpns-swipe-text">
                 Swipe Card to see more
               </span>
-              <PiHandSwipeRightBold className="success-story-cpns-swipe-icon" />
+              <MoveRight className="success-story-cpns-swipe-icon" />
             </div>
           </div>
 
-          {/* Bagian Kanan: Swiper Cards */}
           <div className="success-story-cpns-swiper-container">
-            <Swiper
-              effect={"cards"}
-              grabCursor={true}
-              modules={[EffectCards]}
-              className="success-story-cpns-swiper">
-              {succesStories.map((story, index) => {
-                const altText = `Testimoni siswa ${
-                  story.name || "LPS"
-                } mengenai Bimbel & Les Privat CPNS bersama LPS Education${
-                  city ? " di " + city : ""
-                }. Program persiapan Tes CPNS dengan bimbingan tutor berpengalaman dan strategi lolos seleksi ASN.`;
-
-                return (
-                  <SwiperSlide
-                    key={index}
-                    className="success-story-cpns-swiper-slide">
-                    <img
-                      loading="lazy"
-                      src={story.link_image}
-                      alt={altText}
-                      className="success-story-cpns-swiper-image"
-                    />
-                  </SwiperSlide>
-                );
-              })}
-            </Swiper>
+            <div className="embla success-story-cpns-swiper" ref={emblaRef}>
+              <div className="embla__container">
+                {succesStories.map((story, index) => {
+                  const altText = `Testimoni siswa ${story.name || "LPS"} mengenai Bimbel & Les Privat CPNS bersama LPS Education${city ? " di " + city : ""}. Program persiapan Tes CPNS dengan bimbingan tutor berpengalaman dan strategi lolos seleksi ASN.`;
+                  return (
+                    <div
+                      key={index}
+                      className="embla__slide success-story-cpns-swiper-slide">
+                      <img
+                        loading="lazy"
+                        src={story.link_image}
+                        alt={altText}
+                        className="success-story-cpns-swiper-image"
+                      />
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   );
 };
+
 SuccesStoryCPNS.propTypes = {
   city: PropTypes.string,
 };

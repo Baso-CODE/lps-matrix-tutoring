@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import { useParams } from "react-router-dom";
 import FomoTicker from "../../../../components/FomoTicker/FomoTicker";
 import GaleryBelajarSiswa from "../../../../components/GaleryBelajarSiswa/GaleryBelajarSiswa";

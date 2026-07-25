@@ -36,15 +36,13 @@
 }
 
 .tutor-card {
-  /* border-left: 3px solid #e67e22; 
-  border-right: 3px solid #e67e22; */
-  padding: 0 10px;
+  /* padding: 0 10px; */
   text-align: left;
 }
 
 .tutor-image-wrapper {
-  width: 100%;
-  border-bottom-right-radius: 40px;
+  width: 90%;
+  /* border-bottom-right-radius: 40px; */
   overflow: hidden;
   margin-bottom: 15px;
 }
@@ -132,5 +130,26 @@
   }
   .tutor-name {
     font-size: 1.1rem;
+  }
+}
+/* ProfileTutor.css - slide width responsive */
+.profile-tutor-lps .embla {
+  overflow: hidden;
+}
+.profile-tutor-lps .embla__container {
+  display: flex;
+}
+.profile-tutor-lps .embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+@media (min-width: 464px) {
+  .profile-tutor-lps .embla__slide {
+    flex: 0 0 50%;
+  }
+}
+@media (min-width: 1024px) {
+  .profile-tutor-lps .embla__slide {
+    flex: 0 0 33.33%;
   }
 }

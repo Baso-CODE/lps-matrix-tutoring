@@ -126,3 +126,8 @@
     font-size: 0.9rem;
   }
 }
+.testimoni_wa__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}

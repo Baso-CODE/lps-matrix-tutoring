@@ -1,5 +1,5 @@
+import { CheckCircle } from "lucide-react";
 import "./ProgramTKA.css";
-import { FaCheckCircle } from "react-icons/fa";
 const ProgramTKA = () => {
   const subjects = [
     "Matematika Lanjutan",
@@ -94,7 +94,7 @@ const ProgramTKA = () => {
         <ul className="subject-list-les-private-tka">
           {subjects.map((subject, index) => (
             <li key={index} className="subject-list-les-private-tka-item">
-              <FaCheckCircle className="subject-list-les-private-tka-icon" />
+              <CheckCircle className="subject-list-les-private-tka-icon" />
               {subject}
             </li>
           ))}

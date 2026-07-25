@@ -1,9 +1,8 @@
+import Autoplay from "embla-carousel-autoplay";
+import useEmblaCarousel from "embla-carousel-react";
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick-theme.css";
-import "slick-carousel/slick/slick.css";
 import { selectContactCsData } from "../../lib/features/contactCsSlice";
 import { useAppSelector } from "../../lib/hooks";
 import "./HeadingLPSProgramDynamic.css";
@@ -30,48 +29,30 @@ const HeadingLPSProgramDynamic = ({
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-
-  if (!city && path.includes("/di/")) {
-    city = path.split("/di/")[1];
-    city = city.charAt(0).toUpperCase() + city.slice(1);
-  }
 
   const finalProgramName =
     programName || defaultProgramName || "Program Les Privat";
 
   const images = isMobile
-    ? imageUrlsMobile && imageUrlsMobile.length > 0
+    ? imageUrlsMobile?.length > 0
       ? imageUrlsMobile
       : ["/images/program/default-mobile.webp"]
-    : imageUrlsDesktop && imageUrlsDesktop.length > 0
+    : imageUrlsDesktop?.length > 0
       ? imageUrlsDesktop
       : ["/images/program/default.webp"];
 
   const isMultipleImages = images.length > 1;
 
-  // Konfigurasi Slider
-  const sliderSettings = {
-    dots: false,
-    infinite: isMultipleImages,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-    autoplay: isMultipleImages,
-    autoplaySpeed: 5000,
-    pauseOnHover: true,
-    swipeToSlide: isMultipleImages,
-    draggable: isMultipleImages,
-    touchMove: isMultipleImages,
-    className: "program-image-slider",
-  };
+  const [emblaRef] = useEmblaCarousel(
+    { loop: isMultipleImages, draggable: isMultipleImages },
+    isMultipleImages
+      ? [Autoplay({ delay: 5000, stopOnInteraction: true })]
+      : [],
+  );
 
   const altText = `Bimbel & Les Privat ${finalProgramName} bersama LPS Education${
     city ? " di " + city : ""
@@ -82,18 +63,20 @@ const HeadingLPSProgramDynamic = ({
       <div className="content-hero-home-program">
         <div className="image-slider-container" data-aos="zoom-out">
           {isMultipleImages ? (
-            <Slider {...sliderSettings}>
-              {images.map((imgUrl, index) => (
-                <div key={index}>
-                  <img
-                    loading="lazy"
-                    className="program-hero-image"
-                    src={imgUrl}
-                    alt={`${altText} Gambar ${index + 1}`}
-                  />
-                </div>
-              ))}
-            </Slider>
+            <div className="embla program-image-slider" ref={emblaRef}>
+              <div className="embla__container">
+                {images.map((imgUrl, index) => (
+                  <div className="embla__slide" key={index}>
+                    <img
+                      loading="lazy"
+                      className="program-hero-image"
+                      src={imgUrl}
+                      alt={`${altText} Gambar ${index + 1}`}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
           ) : (
             <img
               loading="lazy"
@@ -111,8 +94,7 @@ const HeadingLPSProgramDynamic = ({
             – LPS Education
           </h1>
           <div>
-            {/* Teks Deskripsi */}
-            {descriptionParagraphs && descriptionParagraphs.length > 0 ? (
+            {descriptionParagraphs?.length > 0 ? (
               descriptionParagraphs.map((paragraph, index) => (
                 <p
                   key={index}
@@ -125,7 +107,7 @@ const HeadingLPSProgramDynamic = ({
                 <p className="child-paragraf-hero-program">
                   <span className="color-highlight">
                     Program Intensif {finalProgramName}
-                  </span>
+                  </span>{" "}
                   merupakan suatu bentuk program belajar yang fleksibel dan
                   personal, tersedia secara
                   <span className="color-highlight">

@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import UnivPengajarLps from "../../../components/UnivPengajarLps/UnivPengajarLps";
 import FasilitasSimakUI from "./Components/FasilitasSimakUI/FasilitasSimakUI";
 import PaketBelajarSimakUI from "./Components/PaketBelajarSimakUI/PaketBelajarSimakUI";

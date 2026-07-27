@@ -126,7 +126,7 @@ function App() {
         </>
       )}
 
-      <main>
+      <main style={{ minHeight: "100vh" }}>
         <Suspense fallback={null}>
           <Routes>
             <Route path="/" element={<HomePage />} />

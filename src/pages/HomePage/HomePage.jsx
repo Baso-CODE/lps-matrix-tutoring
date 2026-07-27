@@ -1,25 +1,62 @@
+import { lazy, Suspense } from "react";
 import { Helmet } from "react-helmet-async";
-import GaleryBelajarSiswa from "../../components/GaleryBelajarSiswa/GaleryBelajarSiswa";
-import Slider from "../../components/Slider/Slider";
-import UnivPengajarLps from "../../components/UnivPengajarLps/UnivPengajarLps";
-import FiturDanLayanan from "./Components/FiturDanLayanan/FiturDanLayanan";
-import KeunggulanEndAlasanMemilih from "./Components/KeunggulanEndAlasanMemilih/KeunggulanEndAlasanMemilih";
-import MateriUTBK2026 from "./Components/MateriUTBK2026/MateriUTBK2026";
-import ProfileLps from "./Components/ProfileLps/ProfileLps";
-import ProfileTutor from "./Components/ProfileTutor/ProfileTutor";
-import ProgramBelajarLps from "./Components/ProgramBelajarLps/ProgramBelajarLps";
-import SolusiSuksesMasukPTN from "./Components/SolusiSuksesMasukPTN/SolusiSuksesMasukPTN";
-import SuccessStory from "./Components/SuccessStory/SuccessStory";
-import TestimoniWaSiswa from "./Components/TestimoniWaSiswa/TestimoniWaSiswa";
 
-import AlumniLpsNew from "../../components/AlumniLpsNew/AlumniLpsNew";
-import TestimoniWaSlider from "../../components/TestimoniWaSlider/TestimoniWaSlider";
-import VisiEndMisiLps from "./Components/VisiEndMisiLps/VisiEndMisiLps";
+// Above-the-fold: langsung load
+import Slider from "../../components/Slider/Slider";
+import ProfileLps from "./Components/ProfileLps/ProfileLps";
+import SolusiSuksesMasukPTN from "./Components/SolusiSuksesMasukPTN/SolusiSuksesMasukPTN";
+
+// Below-the-fold: lazy load
+const KeunggulanEndAlasanMemilih = lazy(
+  () =>
+    import("./Components/KeunggulanEndAlasanMemilih/KeunggulanEndAlasanMemilih"),
+);
+const VisiEndMisiLps = lazy(
+  () => import("./Components/VisiEndMisiLps/VisiEndMisiLps"),
+);
+const ProgramBelajarLps = lazy(
+  () => import("./Components/ProgramBelajarLps/ProgramBelajarLps"),
+);
+const FiturDanLayanan = lazy(
+  () => import("./Components/FiturDanLayanan/FiturDanLayanan"),
+);
+const VideoKarantina = lazy(
+  () => import("../../components/VideoKarantina/VideoKarantina"),
+);
+const ProfileTutor = lazy(
+  () => import("./Components/ProfileTutor/ProfileTutor"),
+);
+const UnivPengajarLps = lazy(
+  () => import("../../components/UnivPengajarLps/UnivPengajarLps"),
+);
+const AlumniLpsNew = lazy(
+  () => import("../../components/AlumniLpsNew/AlumniLpsNew"),
+);
+const GaleryBelajarSiswa = lazy(
+  () => import("../../components/GaleryBelajarSiswa/GaleryBelajarSiswa"),
+);
+const TestimoniWaSlider = lazy(
+  () => import("../../components/TestimoniWaSlider/TestimoniWaSlider"),
+);
+const SuccessStory = lazy(
+  () => import("./Components/SuccessStory/SuccessStory"),
+);
+const MateriUTBK2026 = lazy(
+  () => import("./Components/MateriUTBK2026/MateriUTBK2026"),
+);
+const TestimoniWaSiswa = lazy(
+  () => import("./Components/TestimoniWaSiswa/TestimoniWaSiswa"),
+);
+const AllAlumniLpsImage = lazy(
+  () => import("../ListSiswaLPS/AllAlumniLps/AllAlumniLpsImage"),
+);
+const ListSiswaLPS = lazy(() => import("../ListSiswaLPS/ListSiswaLPS"));
+const SliderTestimoniSiswa = lazy(
+  () => import("../../components/SliderTestimoniSiswa/SliderTestimoniSiswa"),
+);
+
 import "./HomePage.css";
-import AllAlumniLpsImage from "../ListSiswaLPS/AllAlumniLps/AllAlumniLpsImage";
-import ListSiswaLPS from "../ListSiswaLPS/ListSiswaLPS";
-import SliderTestimoniSiswa from "../../components/SliderTestimoniSiswa/SliderTestimoniSiswa";
-import VideoKarantina from "../../components/VideoKarantina/VideoKarantina";
+
 const HomePage = () => {
   return (
     <>
@@ -38,7 +75,7 @@ const HomePage = () => {
         <meta property="og:type" content="website" />
         <meta
           property="og:title"
-          content="  📚 Les Privat SD SMP SMA SIMAK UI OSN MAHASISWA CPNS | LPS EDUCATION✨"
+          content="📚 Les Privat SD SMP SMA SIMAK UI OSN MAHASISWA CPNS | LPS EDUCATION✨"
         />
         <meta
           property="og:description"
@@ -50,10 +87,10 @@ const HomePage = () => {
         />
         <meta property="og:url" content={window.location.href} />
         <link rel="canonical" href={window.location.href} />
-        <meta name="twitter:card" content="summary_large_image" />{" "}
+        <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="  📚 Les Privat SD SMP SMA SIMAK UI OSN MAHASISWA CPNS | LPS EDUCATION✨"
+          content="📚 Les Privat SD SMP SMA SIMAK UI OSN MAHASISWA CPNS | LPS EDUCATION✨"
         />
         <meta
           name="twitter:description"
@@ -66,25 +103,30 @@ const HomePage = () => {
       </Helmet>
 
       <div className="container-all">
+        {/* Above the fold — langsung render */}
         <ProfileLps />
         <SolusiSuksesMasukPTN />
         <Slider />
-        <KeunggulanEndAlasanMemilih />
-        <VisiEndMisiLps />
-        <ProgramBelajarLps />
-        <FiturDanLayanan />
-        <VideoKarantina />
-        <ProfileTutor />
-        <UnivPengajarLps />
-        <AlumniLpsNew />
-        <GaleryBelajarSiswa />
-        <TestimoniWaSlider />
-        <SuccessStory />
-        <MateriUTBK2026 />
-        <TestimoniWaSiswa />
-        <AllAlumniLpsImage />
-        <ListSiswaLPS />
-        <SliderTestimoniSiswa />
+
+        {/* Below the fold — lazy load */}
+        <Suspense fallback={null}>
+          <KeunggulanEndAlasanMemilih />
+          <VisiEndMisiLps />
+          <ProgramBelajarLps />
+          <FiturDanLayanan />
+          <VideoKarantina />
+          <ProfileTutor />
+          <UnivPengajarLps />
+          <AlumniLpsNew />
+          <GaleryBelajarSiswa />
+          <TestimoniWaSlider />
+          <SuccessStory />
+          <MateriUTBK2026 />
+          <TestimoniWaSiswa />
+          <AllAlumniLpsImage />
+          <ListSiswaLPS />
+          <SliderTestimoniSiswa />
+        </Suspense>
       </div>
     </>
   );

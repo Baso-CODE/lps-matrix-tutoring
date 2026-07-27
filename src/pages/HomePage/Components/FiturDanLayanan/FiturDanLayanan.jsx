@@ -3,15 +3,14 @@ import "./FiturDanLayanan.css";
 const FiturDanLayanan = () => {
   return (
     <div className="fitur-layanan-lps">
-      {/* <h1 className="fitur-title">Fitur dan Layanan LPS</h1> */}
-
-      {/* Les Privat Akademik */}
       <div className="fitur-item">
         <img
           loading="lazy"
-          src="/images/fiturLayanan/AKADEMIK.webp" // ganti dengan path gambar Anda
+          src="/images/fiturLayanan/AKADEMIK.webp"
           alt="Bimbel Les Privat ONLINE dan Les Privat Datang ke Rumah untuk Program SBMPTN UTBK SNBT Simak UI UTUL UGM. Guru Privat Masuk UI ITB UGM dan Kedokteran di PTN Favorit."
           className="fitur-image"
+          width={500}
+          height={500}
         />
         <div className="fitur-content">
           <h2 className="fitur-subtitle">Les Privat Akademik</h2>
@@ -39,6 +38,8 @@ const FiturDanLayanan = () => {
           src="/images/fiturLayanan/MASUK_PTN.webp"
           alt="Bimbel Les Privat ONLINE dan Les Privat Datang ke Rumah untuk Program SBMPTN UTBK SNBT Simak UI UTUL UGM. Guru Privat Masuk UI ITB UGM dan Kedokteran di PTN Favorit."
           className="fitur-image"
+          width={500}
+          height={500}
         />
         <div className="fitur-content">
           <h2 className="fitur-subtitle">Les Privat Masuk PTN</h2>
@@ -79,6 +80,8 @@ const FiturDanLayanan = () => {
           src="/images/fiturLayanan/KEDINASAN.webp"
           alt="Bimbel Les Privat ONLINE dan Les Privat Datang ke Rumah untuk Program SBMPTN UTBK SNBT Simak UI UTUL UGM. Guru Privat Masuk UI ITB UGM dan Kedokteran di PTN Favorit."
           className="fitur-image"
+          width={500}
+          height={500}
         />
         <div className="fitur-content">
           <h2 className="fitur-subtitle">Les Privat Kedinasan</h2>

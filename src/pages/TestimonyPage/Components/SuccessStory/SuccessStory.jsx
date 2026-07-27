@@ -34,6 +34,8 @@ const SuccessStory = () => {
               src={item.link_image}
               alt={`Success Story Image ${item.name}`}
               key={index}
+              width={400}
+              height={400}
               className="success-story-image"
             />
           ))}

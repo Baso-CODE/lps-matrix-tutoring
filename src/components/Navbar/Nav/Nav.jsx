@@ -53,6 +53,8 @@ const Nav = () => {
                 src={"/images/LOGO2.webp"}
                 alt="Bimbel Les Privat ONLINE dan Les Privat Datang ke Rumah untuk Program SBMPTN UTBK SNBT Simak UI UTUL UGM. Guru Privat Masuk UI ITB UGM dan Kedokteran di PTN Favorit."
                 className="logo-nav"
+                width={673}
+                height={371}
               />
             </Link>
           </div>
@@ -75,6 +77,8 @@ const Nav = () => {
               <img
                 src="/images/daftar-sekarang.png"
                 alt="Konsultasi sekarang"
+                width={512}
+                height={512}
                 className="button-icon-nav"
               />
             </a>

@@ -42,7 +42,9 @@ const ProfileLps = () => {
             Konsultasi Sekarang!
             <img
               src="/images/daftar-sekarang.png"
-              alt=""
+              alt="Daftar Sekarang"
+              width={512}
+              height={512}
               className="button-icon-profile-lps"
             />
           </Link>

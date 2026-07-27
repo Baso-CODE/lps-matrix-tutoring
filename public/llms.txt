@@ -1,0 +1,21 @@
+cat > public/llms.txt << 'EOF'
+# LPS Education
+
+Bimbingan belajar spesialis persiapan masuk PTN, UTBK-SNBT, SIMAK UI/KKI, dan Ujian Mandiri PTN.
+
+## Program
+- Les Privat UTBK SNBT
+- Bimbel CPNS & Kedinasan
+- Bimbel SIMAK UI & KKI
+- Les Privat Mahasiswa
+- Les Privat SD SMP SMA
+- Les Privat Pascasarjana
+- Les Privat OSN
+- Bimbel TKA
+
+## Kontak
+Website: https://apps.lesprivatmasukptn.com
+
+## Kebijakan
+Konten di website ini boleh digunakan sebagai referensi informasi pendidikan.
+EOF

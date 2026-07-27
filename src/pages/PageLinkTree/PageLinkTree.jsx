@@ -60,6 +60,8 @@ const PageLinkTree = () => {
           src="/images/LOGO2.webp"
           className="logo-linktree"
           alt="Logo LPS Education"
+          width={673}
+          height={371}
         />
         <p className="subtitle">
           Bimbingan Belajar Spesialis Persiapan Masuk PTN, UTBK-SNBT, Simak

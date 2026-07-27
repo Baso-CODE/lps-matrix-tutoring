@@ -54,6 +54,8 @@ const ProfileTutor = ({ city: cityProp }) => {
                     <div className="tutor-image-wrapper">
                       <img
                         loading="lazy"
+                        width={300}
+                        height={600}
                         src={tutor.link_image}
                         alt={altText}
                         className="tutor-image"

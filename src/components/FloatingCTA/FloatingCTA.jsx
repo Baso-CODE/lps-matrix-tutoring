@@ -6,7 +6,6 @@ import "./FloatingCTA.css";
 
 const FloatingCTA = () => {
   const [dataContact, setDataContact] = useState([]);
-
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [unreadMessages, setUnreadMessages] = useState(0);
 
@@ -14,7 +13,8 @@ const FloatingCTA = () => {
     const fetchData = async () => {
       try {
         const response = await getAllContactCS();
-        const sortedData = response.data.sort(
+        const raw = Array.isArray(response.data) ? response.data : [];
+        const sortedData = raw.sort(
           (a, b) => a.display_order - b.display_order,
         );
         setDataContact(sortedData);
@@ -29,9 +29,6 @@ const FloatingCTA = () => {
     setUnreadMessages(1);
   }, []);
 
-  const handleOpenModal = () => setIsModalOpen(true);
-  const handleCloseModal = () => setIsModalOpen(false);
-
   return (
     <>
       <div className="box-float-main">
@@ -39,7 +36,7 @@ const FloatingCTA = () => {
           <label htmlFor="" className="label-cta">
             Klik Untuk Konsultasi!
           </label>
-          <button className="btn-float-wa" onClick={handleOpenModal}>
+          <button className="btn-float-wa" onClick={() => setIsModalOpen(true)}>
             <span className="parent-icon-wa relative">
               {unreadMessages > 0 && (
                 <span className="notif-badge">{unreadMessages}</span>
@@ -63,7 +60,9 @@ const FloatingCTA = () => {
               exit={{ opacity: 0, y: 20 }}
               transition={{ duration: 0.3 }}
               onClick={(e) => e.stopPropagation()}>
-              <button className="modal-close-btn" onClick={handleCloseModal}>
+              <button
+                className="modal-close-btn"
+                onClick={() => setIsModalOpen(false)}>
                 <CircleX />
               </button>
               <div className="modal-header">
@@ -99,7 +98,7 @@ const FloatingCTA = () => {
                           <span className="contact-name">
                             {contact.nama_cs} - {contact.nomor_hp}
                           </span>
-                          <span className="contact-role">{"Admin"}</span>
+                          <span className="contact-role">Admin</span>
                         </div>
                       </div>
                       <img

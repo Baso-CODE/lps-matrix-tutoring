@@ -19,12 +19,13 @@ const VideoKarantina = () => {
         <div className="video-card">
           <iframe
             className="youtube-frame"
-            src="https://www.youtube.com/embed/-VbHUqZlqco"
+            src="https://www.youtube-nocookie.com/embed/-VbHUqZlqco"
             title="Supercamp UTBK SNBT - Lokasi Depok"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
-            loading="lazy"></iframe>
+            loading="lazy"
+          />
           <h3 className="video-subtitle">Supercamp UTBK SNBT – Depok</h3>
           <p className="video-text">
             Suasana belajar intensif di{" "}
@@ -38,12 +39,13 @@ const VideoKarantina = () => {
         <div className="video-card">
           <iframe
             className="youtube-frame"
-            src="https://www.youtube.com/embed/hJ8F0h2PMXw"
+            src="https://www.youtube-nocookie.com/embed/hJ8F0h2PMXw"
             title="Supercamp UTBK SNBT - Lokasi Jogja"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
-            loading="lazy"></iframe>
+            loading="lazy"
+          />
           <h3 className="video-subtitle">Supercamp UTBK SNBT – Jogja</h3>
           <p className="video-text">
             Dokumentasi kegiatan{" "}

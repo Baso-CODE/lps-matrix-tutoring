@@ -1,26 +1,26 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { getLoopSingleContact } from "../../api/contact/getLoopingSingleContact";
 
-// Initial state
 const initialState = {
   contactCsData: null,
   loading: "idle",
   error: null,
 };
 
-// Async thunk untuk mengambil data contact CS
 export const fetchContactCs = createAsyncThunk(
   "contactCs/fetchContactCs",
   async (_, { rejectWithValue }) => {
     try {
       const response = await getLoopSingleContact();
-      return response.data;
+      // Pastikan selalu return array
+      const data = response.data;
+      return Array.isArray(data) ? data : data ? [data] : [];
     } catch (error) {
       return rejectWithValue(
-        error.response?.data || "Failed to fetch contact CS data"
+        error.response?.data || "Failed to fetch contact CS data",
       );
     }
-  }
+  },
 );
 
 const contactCsSlice = createSlice({
@@ -44,7 +44,10 @@ const contactCsSlice = createSlice({
       })
       .addCase(fetchContactCs.fulfilled, (state, action) => {
         state.loading = "succeeded";
-        state.contactCsData = action.payload;
+        // Double guard di sini juga
+        state.contactCsData = Array.isArray(action.payload)
+          ? action.payload
+          : [];
         state.error = null;
       })
       .addCase(fetchContactCs.rejected, (state, action) => {

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import "./TestimoniWa.css";
 import { getTestimoniWa } from "../../../../api/testimoniWa/getTestimoniWa";
+import "./TestimoniWa.css";
 
 const TestimoniWa = () => {
   const [dataTestimoniWa, setDataTestimoniWa] = useState([]);
@@ -36,6 +36,8 @@ const TestimoniWa = () => {
               src={item.link_image}
               alt="Bimbel Les Privat ONLINE dan Les Privat Datang ke Rumah untuk Program SBMPTN UTBK SNBT Simak UI UTUL UGM. Guru Privat Masuk UI ITB UGM dan Kedokteran di PTN Favorit."
               key={index}
+              width={128}
+              height={128}
               className="success-story-image"
             />
           ))}

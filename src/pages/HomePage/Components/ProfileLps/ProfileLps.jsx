@@ -12,12 +12,12 @@ const ProfileLps = () => {
       <div className="content-hero-home">
         <div className="isi-content-hero-home">
           <div className="logo-profile-lps__container">
-            <h1 className="title-halaman-hero-home" data-aos="fade-right">
+            <h1 className="title-halaman-hero-home">
               Bimbel Spesialis Masuk FK & PTN Favorit
             </h1>
           </div>
           <div>
-            <p className="child-paragraf-hero-home" data-aos="zoom-in">
+            <p className="child-paragraf-hero-home">
               LPS Education adalah Lembaga Penyedia Jasa Guru Les Privat
               Profesional, Berpengalaman dan Bimbingan Belajar Spesialis
               Persiapan Masuk PTN yang berdiri sejak tahun 2010 dan sudah
@@ -25,7 +25,7 @@ const ProfileLps = () => {
               dan layanan privat lainnya dapat menjangkau seluruh daerah di
               Indonesia
             </p>
-            <p className="child-paragraf-hero-home" data-aos="zoom-in">
+            <p className="child-paragraf-hero-home">
               Layanan Privat Offline (guru les privat datang ke rumah) dapat
               menjangkau area Jakarta, Bogor, Depok, Tangerang, Tangsel, Bekasi,
               BSD (Jabodetabek) dan sekitarnya. Sementara itu, Les Privat Online
@@ -35,13 +35,10 @@ const ProfileLps = () => {
               Simak UI/KKI, IUP UGM dan Les Privat Ujian Mandiri PTN.
             </p>
           </div>
-          <Link
-            to={finalUrl}
-            data-aos="fade-up"
-            className="btn-daftar-sekarang">
+          <Link to={finalUrl} className="btn-daftar-sekarang">
             Konsultasi Sekarang!
             <img
-              src="/images/daftar-sekarang.png"
+              src="/images/daftar-sekarang.webp"
               alt="Daftar Sekarang"
               width={512}
               height={512}

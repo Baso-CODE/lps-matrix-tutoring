@@ -126,7 +126,8 @@
 }
 
 .logo-nav {
-  height: 5vh;
+  height: 4vh;
+  width: 6vw;
   padding-bottom: 8px;
   padding-top: 8px;
   will-change: filter;
@@ -145,7 +146,8 @@
     padding-right: 4%;
   }
   .logo-nav {
-    height: 6vh;
+    height: 4vh;
+    width: 6vw;
     padding-top: 6px;
     will-change: filter;
     transition: filter 300ms;
@@ -154,7 +156,8 @@
 
 @media (max-width: 768px) {
   .logo-nav {
-    height: 6vh;
+    height: 4vh;
+    width: 6vw;
     padding-top: 6px;
     will-change: filter;
     transition: filter 300ms;
@@ -162,7 +165,8 @@
 }
 @media (max-width: 480px) {
   .logo-nav {
-    height: 6vh;
+    height: 4vh;
+    width: 6vw;
     padding-top: 6px;
     will-change: filter;
     transition: filter 300ms;

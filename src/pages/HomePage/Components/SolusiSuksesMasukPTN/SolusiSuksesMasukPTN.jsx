@@ -11,7 +11,7 @@ const SolusiSuksesMasukPTN = () => {
 
       <div className="card-container-solusi-sukses-ptn">
         {/* Card 1: Expert Tutor */}
-        <div className="card-solusi-sukses-ptn" data-aos="fade-right">
+        <div className="card-solusi-sukses-ptn">
           <div className="card-header-solusi-sukses-ptn">
             <img
               loading="lazy"
@@ -30,7 +30,7 @@ const SolusiSuksesMasukPTN = () => {
         </div>
 
         {/* Card 2: Smart Method */}
-        <div className="card-solusi-sukses-ptn" data-aos="fade-up">
+        <div className="card-solusi-sukses-ptn">
           <div className="card-header-solusi-sukses-ptn">
             <img
               loading="lazy"
@@ -49,7 +49,7 @@ const SolusiSuksesMasukPTN = () => {
         </div>
 
         {/* Card 3: Exclusive Services */}
-        <div className="card-solusi-sukses-ptn" data-aos="fade-left">
+        <div className="card-solusi-sukses-ptn">
           <div className="card-header-solusi-sukses-ptn">
             <img
               loading="lazy"

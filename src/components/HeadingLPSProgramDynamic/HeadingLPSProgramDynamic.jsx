@@ -61,7 +61,7 @@ const HeadingLPSProgramDynamic = ({
   return (
     <div className="container-halaman-program">
       <div className="content-hero-home-program">
-        <div className="image-slider-container" data-aos="zoom-out">
+        <div className="image-slider-container">
           {isMultipleImages ? (
             <div className="embla program-image-slider" ref={emblaRef}>
               <div className="embla__container">

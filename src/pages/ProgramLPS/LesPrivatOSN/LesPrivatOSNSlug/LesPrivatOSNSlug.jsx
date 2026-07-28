@@ -1,30 +1,66 @@
+import { lazy, Suspense } from "react";
 import { Helmet } from "react-helmet-async";
 import { useParams } from "react-router-dom";
-import AlumniLpsNew from "../../../../components/AlumniLpsNew/AlumniLpsNew";
-import FomoTicker from "../../../../components/FomoTicker/FomoTicker";
-import GaleryBelajarSiswa from "../../../../components/GaleryBelajarSiswa/GaleryBelajarSiswa";
+
+// Above-the-fold: dimuat langsung untuk mengoptimalkan performa FCP & LCP
 import HeadingLPSProgramDynamic from "../../../../components/HeadingLPSProgramDynamic/HeadingLPSProgramDynamic";
 import Slider from "../../../../components/Slider/Slider";
-import SliderTestimoniSiswa from "../../../../components/SliderTestimoniSiswa/SliderTestimoniSiswa";
-import TestimoniWaSlider from "../../../../components/TestimoniWaSlider/TestimoniWaSlider";
-import UnivPengajarLps from "../../../../components/UnivPengajarLps/UnivPengajarLps";
-import {
-  galleryBelajarOSNData,
-  successStoryWaSliderOSN,
-} from "../../../../helpers/DummyData/OSN/osn_dummy_data";
-import FiturDanLayanan from "../../../HomePage/Components/FiturDanLayanan/FiturDanLayanan";
-import ProfileTutor from "../../../HomePage/Components/ProfileTutor/ProfileTutor";
-import ProgramBelajarLps from "../../../HomePage/Components/ProgramBelajarLps/ProgramBelajarLps";
-import SuccessStory from "../../../HomePage/Components/SuccessStory/SuccessStory";
-import TestimoniWaSiswa from "../../../HomePage/Components/TestimoniWaSiswa/TestimoniWaSiswa";
-import VisiEndMisiLps from "../../../HomePage/Components/VisiEndMisiLps/VisiEndMisiLps";
-import AllAlumniLpsImage from "../../../ListSiswaLPS/AllAlumniLps/AllAlumniLpsImage";
-import ListSiswaLPS from "../../../ListSiswaLPS/ListSiswaLPS";
 import FasilitasOSN from "../Components/FasilitasOSN";
 import OsnCurriculumOverview from "../Components/OsnCurriculumOverview/OsnCurriculumOverview";
 import OsnWinnerBenefits from "../Components/OsnWinnerBenefits/OsnWinnerBenefits";
 import PaketBelajarOSN from "../Components/PaketBelajarOSN/PaketBelajarOSN";
 import ProgramIntensiOSN from "../Components/ProgramIntensiOSN/ProgramIntensiOSN";
+
+// Below-the-fold: dimuat secara lazy loading
+const VisiEndMisiLps = lazy(
+  () => import("../../../HomePage/Components/VisiEndMisiLps/VisiEndMisiLps"),
+);
+const ProgramBelajarLps = lazy(
+  () =>
+    import("../../../HomePage/Components/ProgramBelajarLps/ProgramBelajarLps"),
+);
+const FiturDanLayanan = lazy(
+  () => import("../../../HomePage/Components/FiturDanLayanan/FiturDanLayanan"),
+);
+const ProfileTutor = lazy(
+  () => import("../../../HomePage/Components/ProfileTutor/ProfileTutor"),
+);
+const UnivPengajarLps = lazy(
+  () => import("../../../../components/UnivPengajarLps/UnivPengajarLps"),
+);
+const AlumniLpsNew = lazy(
+  () => import("../../../../components/AlumniLpsNew/AlumniLpsNew"),
+);
+const GaleryBelajarSiswa = lazy(
+  () => import("../../../../components/GaleryBelajarSiswa/GaleryBelajarSiswa"),
+);
+const TestimoniWaSlider = lazy(
+  () => import("../../../../components/TestimoniWaSlider/TestimoniWaSlider"),
+);
+const SuccessStory = lazy(
+  () => import("../../../HomePage/Components/SuccessStory/SuccessStory"),
+);
+const TestimoniWaSiswa = lazy(
+  () =>
+    import("../../../HomePage/Components/TestimoniWaSiswa/TestimoniWaSiswa"),
+);
+const AllAlumniLpsImage = lazy(
+  () => import("../../../ListSiswaLPS/AllAlumniLps/AllAlumniLpsImage"),
+);
+const ListSiswaLPS = lazy(() => import("../../../ListSiswaLPS/ListSiswaLPS"));
+const SliderTestimoniSiswa = lazy(
+  () =>
+    import("../../../../components/SliderTestimoniSiswa/SliderTestimoniSiswa"),
+);
+const FomoTicker = lazy(
+  () => import("../../../../components/FomoTicker/FomoTicker"),
+);
+
+// Data Helpers
+import {
+  galleryBelajarOSNData,
+  successStoryWaSliderOSN,
+} from "../../../../helpers/DummyData/OSN/osn_dummy_data";
 
 const LesPrivatOSNSlug = () => {
   const { slug } = useParams();
@@ -53,18 +89,15 @@ const LesPrivatOSNSlug = () => {
 
   const dynamicLocationName = formatSlugToTitle(slug) || "Indonesia";
   const baseUrl = "https://apps.lesprivatmasukptn.com";
-
   const canonicalUrl = `${baseUrl}/les-privat-osn-terbaik-di/${slug}`;
-
   const ogImage = "https://apps.lesprivatmasukptn.com/images/program/OSN.webp";
 
   const pageTitle = `📚 Les Privat Olimpiade OSN ${dynamicLocationName} | LPS Education Terbaik #1`;
   const descriptionContent = `Kursus Les Privat Olimpiade OSN di ${dynamicLocationName} Terbaik ✔️ Dibimbing GURU BERPENGALAMAN ✔️ Peraih Lisensi OSN ✔️ Garansi REPORT CARD ✍️ Daftar? Segera kunjungi situs LPS Education...`;
-  const ogTitle = `Les Privat Olimpiade OSN ${dynamicLocationName} Terbaik - LPS Education`; // Tanpa emoji di OG title
+  const ogTitle = `Les Privat Olimpiade OSN ${dynamicLocationName} Terbaik - LPS Education`;
   const ogDescription = `Persiapkan diri untuk Olimpiade Sains Nasional (OSN) dengan les privat intensif di ${dynamicLocationName}. Pengajar berpengalaman LPS Education siap membimbing siswa SD, SMP, SMA meraih medali.`;
   const twitterTitle = `Les Privat Olimpiade OSN ${dynamicLocationName} | LPS Education`;
   const twitterDescription = `Bimbel les privat OSN (Olimpiade Sains Nasional) untuk siswa SD, SMP, SMA di ${dynamicLocationName}. Tingkatkan kemampuan sains dan raih prestasi bersama LPS Education.`;
-  // --- AKHIR PENYESUAIAN ---
 
   const ogImageAlt = `Les Privat Olimpiade OSN ${dynamicLocationName} LPS Education`;
 
@@ -111,7 +144,7 @@ const LesPrivatOSNSlug = () => {
           content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"
         />
 
-        {/* Open Graph Meta Tags (for social media sharing) */}
+        {/* Open Graph Meta Tags */}
         <meta property="og:locale" content="id_ID" />
         <meta property="og:type" content="article" />
         <meta property="og:title" content={ogTitle} />
@@ -259,6 +292,7 @@ const LesPrivatOSNSlug = () => {
       </Helmet>
 
       <div className="container-all">
+        {/* Above the fold — langsung render */}
         <HeadingLPSProgramDynamic
           city={dynamicLocationName}
           defaultProgramName={osnDefaultProgramName}
@@ -271,34 +305,36 @@ const LesPrivatOSNSlug = () => {
         <Slider />
         <FasilitasOSN />
         <PaketBelajarOSN />
-        {/* <PaketSesiOSN /> */}
         <OsnCurriculumOverview />
         <OsnWinnerBenefits />
-        {/* <InformationProgram programType={"osn"} /> */}
-        <VisiEndMisiLps />
-        <ProgramBelajarLps />
-        <FiturDanLayanan />
-        <ProfileTutor city={dynamicLocationName} />
-        <UnivPengajarLps />
-        <AlumniLpsNew city={dynamicLocationName} />
-        <GaleryBelajarSiswa
-          title={galleryBelajarOSNData.title}
-          description={galleryBelajarOSNData.description}
-        />
-        <TestimoniWaSlider
-          cityProp={dynamicLocationName}
-          description={successStoryWaSliderOSN.description}
-          title={successStoryWaSliderOSN.title}
-        />
-        <SuccessStory city={dynamicLocationName} />
-        <TestimoniWaSiswa cityProp={dynamicLocationName} />
-        <AllAlumniLpsImage city={dynamicLocationName} />
-        <ListSiswaLPS />
-        <SliderTestimoniSiswa city={dynamicLocationName} />
-        <FomoTicker
-          namaWilayah={dynamicLocationName}
-          namaProgram={"OSN ISMO IMO"}
-        />
+
+        {/* Below the fold — lazy load */}
+        <Suspense fallback={null}>
+          <VisiEndMisiLps />
+          <ProgramBelajarLps />
+          <FiturDanLayanan />
+          <ProfileTutor city={dynamicLocationName} />
+          <UnivPengajarLps />
+          <AlumniLpsNew city={dynamicLocationName} />
+          <GaleryBelajarSiswa
+            title={galleryBelajarOSNData.title}
+            description={galleryBelajarOSNData.description}
+          />
+          <TestimoniWaSlider
+            cityProp={dynamicLocationName}
+            description={successStoryWaSliderOSN.description}
+            title={successStoryWaSliderOSN.title}
+          />
+          <SuccessStory city={dynamicLocationName} />
+          <TestimoniWaSiswa cityProp={dynamicLocationName} />
+          <AllAlumniLpsImage city={dynamicLocationName} />
+          <ListSiswaLPS />
+          <SliderTestimoniSiswa city={dynamicLocationName} />
+          <FomoTicker
+            namaWilayah={dynamicLocationName}
+            namaProgram={"OSN ISMO IMO"}
+          />
+        </Suspense>
       </div>
     </>
   );

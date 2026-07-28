@@ -1,25 +1,62 @@
+import { lazy, Suspense } from "react";
 import { Helmet } from "react-helmet-async";
 import { useParams } from "react-router-dom";
-import AlumniLpsNew from "../../../../components/AlumniLpsNew/AlumniLpsNew";
-import FomoTicker from "../../../../components/FomoTicker/FomoTicker";
+
+// Above-the-fold: langsung dimuat untuk mengoptimalkan performa FCP & LCP
 import HeadingLPSProgramDynamic from "../../../../components/HeadingLPSProgramDynamic/HeadingLPSProgramDynamic";
 import Slider from "../../../../components/Slider/Slider";
-import SliderTestimoniSiswa from "../../../../components/SliderTestimoniSiswa/SliderTestimoniSiswa";
-import TestimoniWaSlider from "../../../../components/TestimoniWaSlider/TestimoniWaSlider";
-import UnivPengajarLps from "../../../../components/UnivPengajarLps/UnivPengajarLps";
-import VideoKarantina from "../../../../components/VideoKarantina/VideoKarantina";
-import { testimoniWaSliderDataSDSMPSMA } from "../../../../helpers/DummyData/SDSMPSMA/sdsmpsma_dummyData";
-import FiturDanLayanan from "../../../HomePage/Components/FiturDanLayanan/FiturDanLayanan";
-import KeunggulanEndAlasanMemilih from "../../../HomePage/Components/KeunggulanEndAlasanMemilih/KeunggulanEndAlasanMemilih";
-import ProfileTutor from "../../../HomePage/Components/ProfileTutor/ProfileTutor";
-import ProgramBelajarLps from "../../../HomePage/Components/ProgramBelajarLps/ProgramBelajarLps";
-import TestimoniWaSiswa from "../../../HomePage/Components/TestimoniWaSiswa/TestimoniWaSiswa";
-import VisiEndMisiLps from "../../../HomePage/Components/VisiEndMisiLps/VisiEndMisiLps";
-import AllAlumniLpsImage from "../../../ListSiswaLPS/AllAlumniLps/AllAlumniLpsImage";
-import ListSiswaLPS from "../../../ListSiswaLPS/ListSiswaLPS";
 import FasilitasSDSMPSMA from "../Components/FasilitasSDSMPSMA/FasilitasSDSMPSMA";
 import PaketBelajarSDSMPSMA from "../Components/PaketBelajarSDSMPSMA/PaketBelajarSDSMPSMA";
 import ProgramIntensifLpsSDSMPSMA from "../Components/ProgramIntensifLpsSDSMPSMA/ProgramIntensifLpsSDSMPSMA";
+
+// Below-the-fold: dimuat secara lazy loading
+const VisiEndMisiLps = lazy(
+  () => import("../../../HomePage/Components/VisiEndMisiLps/VisiEndMisiLps"),
+);
+const ProgramBelajarLps = lazy(
+  () =>
+    import("../../../HomePage/Components/ProgramBelajarLps/ProgramBelajarLps"),
+);
+const FiturDanLayanan = lazy(
+  () => import("../../../HomePage/Components/FiturDanLayanan/FiturDanLayanan"),
+);
+const KeunggulanEndAlasanMemilih = lazy(
+  () =>
+    import("../../../HomePage/Components/KeunggulanEndAlasanMemilih/KeunggulanEndAlasanMemilih"),
+);
+const VideoKarantina = lazy(
+  () => import("../../../../components/VideoKarantina/VideoKarantina"),
+);
+const ProfileTutor = lazy(
+  () => import("../../../HomePage/Components/ProfileTutor/ProfileTutor"),
+);
+const UnivPengajarLps = lazy(
+  () => import("../../../../components/UnivPengajarLps/UnivPengajarLps"),
+);
+const AlumniLpsNew = lazy(
+  () => import("../../../../components/AlumniLpsNew/AlumniLpsNew"),
+);
+const TestimoniWaSlider = lazy(
+  () => import("../../../../components/TestimoniWaSlider/TestimoniWaSlider"),
+);
+const TestimoniWaSiswa = lazy(
+  () =>
+    import("../../../HomePage/Components/TestimoniWaSiswa/TestimoniWaSiswa"),
+);
+const AllAlumniLpsImage = lazy(
+  () => import("../../../ListSiswaLPS/AllAlumniLps/AllAlumniLpsImage"),
+);
+const ListSiswaLPS = lazy(() => import("../../../ListSiswaLPS/ListSiswaLPS"));
+const SliderTestimoniSiswa = lazy(
+  () =>
+    import("../../../../components/SliderTestimoniSiswa/SliderTestimoniSiswa"),
+);
+const FomoTicker = lazy(
+  () => import("../../../../components/FomoTicker/FomoTicker"),
+);
+
+// Data Helpers
+import { testimoniWaSliderDataSDSMPSMA } from "../../../../helpers/DummyData/SDSMPSMA/sdsmpsma_dummyData";
 
 const LesPrivatSDSMPSMASlug = () => {
   const { slug } = useParams();
@@ -38,11 +75,10 @@ const LesPrivatSDSMPSMASlug = () => {
 
   const sdsmpSmaDescription = [
     `<span class='color-highlight'>Program Intensif Privat SD SMP SMA</span> adalah program belajar fokus Akademik Sekolah dan persiapan Ujian dengan sistem belajar <span class='color-highlight'>Privat Offline (guru datang ke rumah)</span> dan <span class='color-highlight'>Privat Online</span>. Program ini didukung dengan guru les berpengalaman dan berkompeten mengajar siswa SD SMP SMA.`,
-
     `Program belajar ini difokuskan pada pendalaman konsep dan peningkatan keterampilan pengerjaan soal untuk <span class='color-highlight'>PR, Ulangan, Ujian Semester, Ujian Kenaikan Kelas, dan Ujian Sekolah</span>, serta persiapan <span class='color-highlight'>TKA (Tes Kemampuan Akademik)</span> dan Ujian Masuk Sekolah Unggulan. Progress belajar siswa akan dimonitoring dan dievaluasi oleh Tim Akademik LPS Education.`,
-
     `Target utama Program <span class='color-highlight'>Intensif Privat SD SMP SMA</span> adalah mendampingi siswa mencapai prestasi Akademik yang memuaskan dan bisa diterima di sekolah impian. Kami memberikan rekomendasi yang dibutuhkan sesuai dengan progres belajar siswa.`,
   ];
+
   const formatSlugToTitle = (textSlug) => {
     return textSlug
       ? textSlug
@@ -54,9 +90,7 @@ const LesPrivatSDSMPSMASlug = () => {
 
   const dynamicLocationName = formatSlugToTitle(slug) || "Online";
   const baseUrl = "https://apps.lesprivatmasukptn.com";
-
   const canonicalUrl = `${baseUrl}/les-privat-sd-smp-sma-terbaik-di/${slug}`;
-
   const ogImage =
     "https://apps.lesprivatmasukptn.com/images/program/SD,SMP,SMA.webp";
 
@@ -109,7 +143,7 @@ const LesPrivatSDSMPSMASlug = () => {
           content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"
         />
 
-        {/* Open Graph Meta Tags (for social media sharing) */}
+        {/* Open Graph Meta Tags */}
         <meta property="og:locale" content="id_ID" />
         <meta property="og:type" content="article" />
         <meta property="og:title" content={ogTitle} />
@@ -257,6 +291,7 @@ const LesPrivatSDSMPSMASlug = () => {
       </Helmet>
 
       <div className="container-all">
+        {/* Above the fold — langsung render */}
         <HeadingLPSProgramDynamic
           defaultProgramName="Les Privat SD SMP SMA"
           imageUrlsDesktop={sdsmpsmaImagesDescktop}
@@ -269,27 +304,31 @@ const LesPrivatSDSMPSMASlug = () => {
         <ProgramIntensifLpsSDSMPSMA />
         <PaketBelajarSDSMPSMA />
         <Slider />
-        <VisiEndMisiLps />
-        <ProgramBelajarLps />
-        <FiturDanLayanan />
-        <KeunggulanEndAlasanMemilih />
-        <VideoKarantina />
-        <ProfileTutor city={dynamicLocationName} />
-        <UnivPengajarLps />
-        <AlumniLpsNew city={dynamicLocationName} />
-        <TestimoniWaSlider
-          cityProp={dynamicLocationName}
-          title={testimoniWaSliderDataSDSMPSMA.title}
-          description={testimoniWaSliderDataSDSMPSMA.description}
-        />
-        <TestimoniWaSiswa cityProp={dynamicLocationName} />
-        <AllAlumniLpsImage city={dynamicLocationName} />
-        <ListSiswaLPS />
-        <SliderTestimoniSiswa city={dynamicLocationName} />{" "}
-        <FomoTicker
-          namaWilayah={dynamicLocationName}
-          namaProgram={"SD SMP SMA"}
-        />
+
+        {/* Below the fold — lazy load */}
+        <Suspense fallback={null}>
+          <VisiEndMisiLps />
+          <ProgramBelajarLps />
+          <FiturDanLayanan />
+          <KeunggulanEndAlasanMemilih />
+          <VideoKarantina />
+          <ProfileTutor city={dynamicLocationName} />
+          <UnivPengajarLps />
+          <AlumniLpsNew city={dynamicLocationName} />
+          <TestimoniWaSlider
+            cityProp={dynamicLocationName}
+            title={testimoniWaSliderDataSDSMPSMA.title}
+            description={testimoniWaSliderDataSDSMPSMA.description}
+          />
+          <TestimoniWaSiswa cityProp={dynamicLocationName} />
+          <AllAlumniLpsImage city={dynamicLocationName} />
+          <ListSiswaLPS />
+          <SliderTestimoniSiswa city={dynamicLocationName} />
+          <FomoTicker
+            namaWilayah={dynamicLocationName}
+            namaProgram={"SD SMP SMA"}
+          />
+        </Suspense>
       </div>
     </>
   );

@@ -1,28 +1,66 @@
+import { lazy, Suspense } from "react";
 import { Helmet } from "react-helmet-async";
 import { useParams } from "react-router-dom";
-import AlumniLpsNew from "../../../../components/AlumniLpsNew/AlumniLpsNew";
-import FomoTicker from "../../../../components/FomoTicker/FomoTicker";
-import GaleryBelajarSiswa from "../../../../components/GaleryBelajarSiswa/GaleryBelajarSiswa";
+
+// Above-the-fold: langsung load untuk performa FCP & LCP
 import HeadingLPSProgramDynamic from "../../../../components/HeadingLPSProgramDynamic/HeadingLPSProgramDynamic";
 import Slider from "../../../../components/Slider/Slider";
-import SliderTestimoniSiswa from "../../../../components/SliderTestimoniSiswa/SliderTestimoniSiswa";
-import TestimoniWaSlider from "../../../../components/TestimoniWaSlider/TestimoniWaSlider";
-import UnivPengajarLps from "../../../../components/UnivPengajarLps/UnivPengajarLps";
-import VideoKarantina from "../../../../components/VideoKarantina/VideoKarantina";
+import FasilitasSimakUI from "../Components/FasilitasSimakUI/FasilitasSimakUI";
+import PaketBelajarSimakUI from "../Components/PaketBelajarSimakUI/PaketBelajarSimakUI";
+
+// Below-the-fold: lazy load
+const VisiEndMisiLps = lazy(
+  () => import("../../../HomePage/Components/VisiEndMisiLps/VisiEndMisiLps"),
+);
+const ProgramBelajarLps = lazy(
+  () =>
+    import("../../../HomePage/Components/ProgramBelajarLps/ProgramBelajarLps"),
+);
+const FiturDanLayanan = lazy(
+  () => import("../../../HomePage/Components/FiturDanLayanan/FiturDanLayanan"),
+);
+const VideoKarantina = lazy(
+  () => import("../../../../components/VideoKarantina/VideoKarantina"),
+);
+const ProfileTutor = lazy(
+  () => import("../../../HomePage/Components/ProfileTutor/ProfileTutor"),
+);
+const UnivPengajarLps = lazy(
+  () => import("../../../../components/UnivPengajarLps/UnivPengajarLps"),
+);
+const AlumniLpsNew = lazy(
+  () => import("../../../../components/AlumniLpsNew/AlumniLpsNew"),
+);
+const GaleryBelajarSiswa = lazy(
+  () => import("../../../../components/GaleryBelajarSiswa/GaleryBelajarSiswa"),
+);
+const TestimoniWaSlider = lazy(
+  () => import("../../../../components/TestimoniWaSlider/TestimoniWaSlider"),
+);
+const SuccessStory = lazy(
+  () => import("../../../HomePage/Components/SuccessStory/SuccessStory"),
+);
+const TestimoniWaSiswa = lazy(
+  () =>
+    import("../../../HomePage/Components/TestimoniWaSiswa/TestimoniWaSiswa"),
+);
+const AllAlumniLpsImage = lazy(
+  () => import("../../../ListSiswaLPS/AllAlumniLps/AllAlumniLpsImage"),
+);
+const ListSiswaLPS = lazy(() => import("../../../ListSiswaLPS/ListSiswaLPS"));
+const SliderTestimoniSiswa = lazy(
+  () =>
+    import("../../../../components/SliderTestimoniSiswa/SliderTestimoniSiswa"),
+);
+const FomoTicker = lazy(
+  () => import("../../../../components/FomoTicker/FomoTicker"),
+);
+
+// Data Helpers
 import {
   galleryBelajarSiswaSimakUI,
   successStoryWaSliderSimakUI,
 } from "../../../../helpers/DummyData/SIMAK-UI/simak-ui_dummyData";
-import FiturDanLayanan from "../../../HomePage/Components/FiturDanLayanan/FiturDanLayanan";
-import ProfileTutor from "../../../HomePage/Components/ProfileTutor/ProfileTutor";
-import ProgramBelajarLps from "../../../HomePage/Components/ProgramBelajarLps/ProgramBelajarLps";
-import SuccessStory from "../../../HomePage/Components/SuccessStory/SuccessStory";
-import TestimoniWaSiswa from "../../../HomePage/Components/TestimoniWaSiswa/TestimoniWaSiswa";
-import VisiEndMisiLps from "../../../HomePage/Components/VisiEndMisiLps/VisiEndMisiLps";
-import AllAlumniLpsImage from "../../../ListSiswaLPS/AllAlumniLps/AllAlumniLpsImage";
-import ListSiswaLPS from "../../../ListSiswaLPS/ListSiswaLPS";
-import FasilitasSimakUI from "../Components/FasilitasSimakUI/FasilitasSimakUI";
-import PaketBelajarSimakUI from "../Components/PaketBelajarSimakUI/PaketBelajarSimakUI";
 
 const SimakUIAndKKISLug = () => {
   const { slug } = useParams();
@@ -38,13 +76,8 @@ const SimakUIAndKKISLug = () => {
   const simakUIProgramNameDisplay =
     "Bimbingan Belajar Intensif Les Privat Simak UI dan KKI";
   const simakUIDescription = [
-    // Paragraf 1 (Definisi Program)
     `Program <span class='color-highlight'>Super Intensif Privat Simak UI</span> merupakan suatu bentuk program belajar fokus Intensif Persiapan Ujian Simak UI dengan sistem belajar <span class='color-highlight'>Privat Offline</span> (guru datang ke rumah) dan <span class='color-highlight'>Privat Online</span>. Program ini disusun secara sistematis dan didukung dengan guru les privat berpengalaman untuk program Seleksi Masuk Universitas Indonesia. Program belajar difokuskan pada pendalaman konsep dasar materi dan peningkatan keterampilan penyelesaian soal-soal Simak UI.`,
-
-    // Paragraf 2 & 3 (Monitoring dan Target, digabung)
     `Progress belajar akan dimonitoring oleh Tim Akademik LPS Education. Kami akan memberikan rekomendasi yang dibutuhkan sesuai dengan progres belajar siswa. Target Program Super Intensif Simak UI adalah mengantarkan siswa <span class='color-highlight'>Sukses Masuk UI sesuai jurusan yang diinginkan</span>.`,
-
-    // Paragraf 4 (Jenis Layanan SIMAK UI yang dicakup)
     `<span class='color-highlight'>LPS Education</span> memiliki Layanan Intensif Les Privat Simak UI dan KKI yang ditujukan untuk siswa SMA dan alumni untuk jenjang Sarjana Reguler, Vokasi (D3/D4), dan S1 Kelas Internasional UI (KKI). Selain itu, kami juga memiliki layanan Les Privat Simak UI untuk <span class='color-highlight'>S2 dan S3 (Pascasarjana)</span>.`,
   ];
 
@@ -60,13 +93,10 @@ const SimakUIAndKKISLug = () => {
   const dynamicLocationName = formatSlugToTitle(slug) || "Indonesia";
 
   const baseUrl = "https://apps.lesprivatmasukptn.com";
-  // URL kanonis untuk halaman slug ini
   const canonicalUrl = `${baseUrl}/bimbel-les-privat-simak-ui-utul-ugm-di/${slug}`;
-
   const ogImage =
     "https://apps.lesprivatmasukptn.com/images/program/SIMAK-UI.webp";
 
-  // Judul dan Deskripsi yang Optimal dengan brand "LPS Education" dan lokasi dinamis
   const pageTitle = `🏫 Bimbel & Les Privat SIMAK UI di ${dynamicLocationName} | KKI UI & UTUL UGM - LPS Education`;
   const descriptionContent = `Kursus Bimbel & Les Privat SIMAK UI, KKI UI, dan UTUL UGM (CBT UGM) di ${dynamicLocationName} Terbaik ✔️ Dibimbing GURU PROFESIONAL ✔️ Jaminan Lolos UI & UGM. Daftar? Segera kunjungi situs LPS Education.`;
   const ogTitle = `Bimbel & Les Privat SIMAK UI di ${dynamicLocationName} | KKI UI & UTUL UGM - LPS Education`;
@@ -114,7 +144,7 @@ const SimakUIAndKKISLug = () => {
           name="robots"
           content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"
         />
-        {/* Open Graph Meta Tags (for social media sharing) */}
+        {/* Open Graph Meta Tags */}
         <meta property="og:locale" content="id_ID" />
         <meta property="og:type" content="article" />
         <meta property="og:title" content={ogTitle} />
@@ -261,6 +291,7 @@ const SimakUIAndKKISLug = () => {
       </Helmet>
 
       <div className="container-all">
+        {/* Above the fold — langsung render */}
         <HeadingLPSProgramDynamic
           city={dynamicLocationName}
           defaultProgramName={simakUIDefaultProgramName}
@@ -271,33 +302,35 @@ const SimakUIAndKKISLug = () => {
         />
         <FasilitasSimakUI />
         <PaketBelajarSimakUI />
-        {/* <ProgramBelajarSIMAKUI /> */}
         <Slider />
-        {/* <InformationProgram programType={"simak-ui"} /> */}
-        <VisiEndMisiLps />
-        <ProgramBelajarLps />
-        <FiturDanLayanan />
-        <VideoKarantina />
-        <ProfileTutor city={dynamicLocationName} />
-        <UnivPengajarLps />
-        <AlumniLpsNew city={dynamicLocationName} />
-        <GaleryBelajarSiswa
-          description={galleryBelajarSiswaSimakUI.description}
-        />
-        <TestimoniWaSlider
-          cityProp={dynamicLocationName}
-          title={successStoryWaSliderSimakUI.title}
-          description={successStoryWaSliderSimakUI.description}
-        />
-        <SuccessStory city={dynamicLocationName} />
-        <TestimoniWaSiswa cityProp={dynamicLocationName} />
-        <AllAlumniLpsImage city={dynamicLocationName} />
-        <ListSiswaLPS />
-        <SliderTestimoniSiswa city={dynamicLocationName} />
-        <FomoTicker
-          namaWilayah={dynamicLocationName}
-          namaProgram={"Simak UI & KKI"}
-        />
+
+        {/* Below the fold — lazy load */}
+        <Suspense fallback={null}>
+          <VisiEndMisiLps />
+          <ProgramBelajarLps />
+          <FiturDanLayanan />
+          <VideoKarantina />
+          <ProfileTutor city={dynamicLocationName} />
+          <UnivPengajarLps />
+          <AlumniLpsNew city={dynamicLocationName} />
+          <GaleryBelajarSiswa
+            description={galleryBelajarSiswaSimakUI.description}
+          />
+          <TestimoniWaSlider
+            cityProp={dynamicLocationName}
+            title={successStoryWaSliderSimakUI.title}
+            description={successStoryWaSliderSimakUI.description}
+          />
+          <SuccessStory city={dynamicLocationName} />
+          <TestimoniWaSiswa cityProp={dynamicLocationName} />
+          <AllAlumniLpsImage city={dynamicLocationName} />
+          <ListSiswaLPS />
+          <SliderTestimoniSiswa city={dynamicLocationName} />
+          <FomoTicker
+            namaWilayah={dynamicLocationName}
+            namaProgram={"Simak UI & KKI"}
+          />
+        </Suspense>
       </div>
     </>
   );

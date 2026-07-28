@@ -1,22 +1,52 @@
+import { lazy, Suspense } from "react";
 import { Helmet } from "react-helmet-async";
 import { useParams } from "react-router-dom";
-import FomoTicker from "../../../../components/FomoTicker/FomoTicker";
-import GaleryBelajarSiswa from "../../../../components/GaleryBelajarSiswa/GaleryBelajarSiswa";
+
+// Above-the-fold: dimuat langsung untuk mengoptimalkan performa FCP & LCP
 import HeadingLPSProgramDynamic from "../../../../components/HeadingLPSProgramDynamic/HeadingLPSProgramDynamic";
 import Slider from "../../../../components/Slider/Slider";
-import SliderTestimoniSiswa from "../../../../components/SliderTestimoniSiswa/SliderTestimoniSiswa";
-import TestimoniWaSlider from "../../../../components/TestimoniWaSlider/TestimoniWaSlider";
-import UnivPengajarLps from "../../../../components/UnivPengajarLps/UnivPengajarLps";
-import { testimoniWaSliderPascaSarjanaData } from "../../../../helpers/DummyData/Pascasarjana/pascasarjanaDammyData";
-import ProfileTutor from "../../../HomePage/Components/ProfileTutor/ProfileTutor";
-import SuccessStory from "../../../HomePage/Components/SuccessStory/SuccessStory";
-import TestimoniWaSiswa from "../../../HomePage/Components/TestimoniWaSiswa/TestimoniWaSiswa";
-import VisiEndMisiLps from "../../../HomePage/Components/VisiEndMisiLps/VisiEndMisiLps";
-import AllAlumniLpsImage from "../../../ListSiswaLPS/AllAlumniLps/AllAlumniLpsImage";
-import ListSiswaLPS from "../../../ListSiswaLPS/ListSiswaLPS";
 import FasilitasPascaSarjana from "../Components/FasilitasPascaSarjana";
 import PaketBelajarPascaSarjana from "../Components/PaketBelajarPascaSarjana/PaketBelajarPascaSarjana";
 import ProgramIntensiPascaSarjana from "../Components/ProgramIntensiPascaSarjana/ProgramIntensiPascaSarjana";
+
+// Below-the-fold: dimuat secara lazy loading
+const VisiEndMisiLps = lazy(
+  () => import("../../../HomePage/Components/VisiEndMisiLps/VisiEndMisiLps"),
+);
+const ProfileTutor = lazy(
+  () => import("../../../HomePage/Components/ProfileTutor/ProfileTutor"),
+);
+const UnivPengajarLps = lazy(
+  () => import("../../../../components/UnivPengajarLps/UnivPengajarLps"),
+);
+const GaleryBelajarSiswa = lazy(
+  () => import("../../../../components/GaleryBelajarSiswa/GaleryBelajarSiswa"),
+);
+const TestimoniWaSlider = lazy(
+  () => import("../../../../components/TestimoniWaSlider/TestimoniWaSlider"),
+);
+const SuccessStory = lazy(
+  () => import("../../../HomePage/Components/SuccessStory/SuccessStory"),
+);
+const TestimoniWaSiswa = lazy(
+  () =>
+    import("../../../HomePage/Components/TestimoniWaSiswa/TestimoniWaSiswa"),
+);
+const AllAlumniLpsImage = lazy(
+  () => import("../../../ListSiswaLPS/AllAlumniLps/AllAlumniLpsImage"),
+);
+const ListSiswaLPS = lazy(() => import("../../../ListSiswaLPS/ListSiswaLPS"));
+const SliderTestimoniSiswa = lazy(
+  () =>
+    import("../../../../components/SliderTestimoniSiswa/SliderTestimoniSiswa"),
+);
+const FomoTicker = lazy(
+  () => import("../../../../components/FomoTicker/FomoTicker"),
+);
+
+// Data Helpers
+import { testimoniWaSliderPascaSarjanaData } from "../../../../helpers/DummyData/Pascasarjana/pascasarjanaDammyData";
+
 const LesPrivatPascaSarjanaSlug = () => {
   const { slug } = useParams();
 
@@ -51,10 +81,9 @@ const LesPrivatPascaSarjanaSlug = () => {
   const dynamicLocationName = formatSlugToTitle(slug) || "Online";
 
   const baseUrl = "https://apps.lesprivatmasukptn.com";
-
   const canonicalUrl = `${baseUrl}/les-privat-pascasarjana-terbaik-di/${slug}`;
   const ogImage =
-    "https://apps.lesprivatmasukptn.com/images/program/PASCA-SARJANA.webp"; //
+    "https://apps.lesprivatmasukptn.com/images/program/PASCA-SARJANA.webp";
 
   const pageTitle = `🎓 Les Privat Pasca Sarjana di ${dynamicLocationName} |  Persiapan S2/S3 - LPS Education`;
   const descriptionContent = `Bimbingan Les Privat Pasca Sarjana di ${dynamicLocationName} Terbaik dari LPS Education ✔️ Guru Datang ke Rumah/Online ✔️ Untuk Kedokteran, Akuntansi, Teknik & Jurusan Lain. Tingkatkan IPK, sukses skripsi/tes.`;
@@ -107,7 +136,7 @@ const LesPrivatPascaSarjanaSlug = () => {
           content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"
         />
 
-        {/* Open Graph Meta Tags (for social media sharing) */}
+        {/* Open Graph Meta Tags */}
         <meta property="og:locale" content="id_ID" />
         <meta property="og:type" content="article" />
         <meta property="og:title" content={ogTitle} />
@@ -253,7 +282,9 @@ const LesPrivatPascaSarjanaSlug = () => {
   `}
         </script>
       </Helmet>
+
       <div className="container-all">
+        {/* Above the fold — langsung render */}
         <HeadingLPSProgramDynamic
           city={dynamicLocationName}
           defaultProgramName={pascaSarjanaDefaultProgramName}
@@ -266,24 +297,28 @@ const LesPrivatPascaSarjanaSlug = () => {
         <FasilitasPascaSarjana />
         <PaketBelajarPascaSarjana />
         <ProgramIntensiPascaSarjana />
-        <VisiEndMisiLps />
-        <ProfileTutor />
-        <UnivPengajarLps />
-        <GaleryBelajarSiswa />
-        <TestimoniWaSlider
-          cityProp={dynamicLocationName}
-          title={testimoniWaSliderPascaSarjanaData.title}
-          description={testimoniWaSliderPascaSarjanaData.description}
-        />
-        <SuccessStory city={dynamicLocationName} />
-        <TestimoniWaSiswa cityProp={dynamicLocationName} />
-        <AllAlumniLpsImage city={dynamicLocationName} />
-        <ListSiswaLPS />
-        <SliderTestimoniSiswa city={dynamicLocationName} />{" "}
-        <FomoTicker
-          namaWilayah={dynamicLocationName}
-          namaProgram={"Pascasarjana"}
-        />
+
+        {/* Below the fold — lazy load */}
+        <Suspense fallback={null}>
+          <VisiEndMisiLps />
+          <ProfileTutor />
+          <UnivPengajarLps />
+          <GaleryBelajarSiswa />
+          <TestimoniWaSlider
+            cityProp={dynamicLocationName}
+            title={testimoniWaSliderPascaSarjanaData.title}
+            description={testimoniWaSliderPascaSarjanaData.description}
+          />
+          <SuccessStory city={dynamicLocationName} />
+          <TestimoniWaSiswa cityProp={dynamicLocationName} />
+          <AllAlumniLpsImage city={dynamicLocationName} />
+          <ListSiswaLPS />
+          <SliderTestimoniSiswa city={dynamicLocationName} />
+          <FomoTicker
+            namaWilayah={dynamicLocationName}
+            namaProgram={"Pascasarjana"}
+          />
+        </Suspense>
       </div>
     </>
   );

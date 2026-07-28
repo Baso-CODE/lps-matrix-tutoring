@@ -1,32 +1,73 @@
+import { lazy, Suspense } from "react";
 import { Helmet } from "react-helmet-async";
 import { useParams } from "react-router-dom";
-import FomoTicker from "../../../../components/FomoTicker/FomoTicker";
-import GaleryBelajarSiswa from "../../../../components/GaleryBelajarSiswa/GaleryBelajarSiswa";
+
+// Above-the-fold: langsung load
 import HeadingLPSProgramDynamic from "../../../../components/HeadingLPSProgramDynamic/HeadingLPSProgramDynamic";
 import Slider from "../../../../components/Slider/Slider";
-import SliderTestimoniSiswa from "../../../../components/SliderTestimoniSiswa/SliderTestimoniSiswa";
-import TestimoniWaSlider from "../../../../components/TestimoniWaSlider/TestimoniWaSlider";
-import UnivPengajarLps from "../../../../components/UnivPengajarLps/UnivPengajarLps";
+import ProgramIntensifCPNS from "../Components/ProgramIntensifCPNS/ProgramIntensifCPNS";
+
+// Below-the-fold: lazy load
+const MateriLPSCPNS = lazy(
+  () => import("../Components/MateriLPSCPNS/MateriLPSCPNS"),
+);
+const BenefitLolosCPNS = lazy(
+  () => import("../Components/BenefitLolosCPNS/BenefitLolosCPNS"),
+);
+const CpnsStages = lazy(() => import("../Components/CpnsStages/CpnsStages"));
+const PaketBelajarCPNS = lazy(
+  () => import("../Components/PaketBelajarCPNS/PaketBelajarCPNS"),
+);
+const ProgramCPNS = lazy(() => import("../Components/ProgramCPNS/ProgramCPNS"));
+const ApaAjaYgDiPeroleh = lazy(
+  () => import("../Components/ApaAjaYgDiPeroleh/ApaAjaYgDiPeroleh"),
+);
+const JadwalBelajarCPNS = lazy(
+  () => import("../Components/JadwalBelajarCPNS/JadwalBelajarCPNS"),
+);
+const VisiEndMisiLps = lazy(
+  () => import("../../../HomePage/Components/VisiEndMisiLps/VisiEndMisiLps"),
+);
+const ProfileTutor = lazy(
+  () => import("../../../HomePage/Components/ProfileTutor/ProfileTutor"),
+);
+const UnivPengajarLps = lazy(
+  () => import("../../../../components/UnivPengajarLps/UnivPengajarLps"),
+);
+const GaleryBelajarSiswa = lazy(
+  () => import("../../../../components/GaleryBelajarSiswa/GaleryBelajarSiswa"),
+);
+const TestimoniWaSlider = lazy(
+  () => import("../../../../components/TestimoniWaSlider/TestimoniWaSlider"),
+);
+const AsalSiswaLPS = lazy(
+  () => import("../../LesPrivatUTBK/Components/AsalSiswaLPS/AsalSiswaLPS"),
+);
+const SuccesStoryCPNS = lazy(
+  () => import("../Components/SuccesStoryCPNS/SuccesStoryCPNS"),
+);
+const TestimoniWaSiswa = lazy(
+  () =>
+    import("../../../HomePage/Components/TestimoniWaSiswa/TestimoniWaSiswa"),
+);
+const AllAlumniLpsImage = lazy(
+  () => import("../../../ListSiswaLPS/AllAlumniLps/AllAlumniLpsImage"),
+);
+const ListSiswaLPS = lazy(() => import("../../../ListSiswaLPS/ListSiswaLPS"));
+const SliderTestimoniSiswa = lazy(
+  () =>
+    import("../../../../components/SliderTestimoniSiswa/SliderTestimoniSiswa"),
+);
+const FomoTicker = lazy(
+  () => import("../../../../components/FomoTicker/FomoTicker"),
+);
+
+// Data Helpers
 import {
   galleryBelajarCPNSData,
   testimonialWaCPNSData,
   testimoniWaSliderData,
 } from "../../../../helpers/DummyData/CPNS/cpnsDammyData";
-import ProfileTutor from "../../../HomePage/Components/ProfileTutor/ProfileTutor";
-import TestimoniWaSiswa from "../../../HomePage/Components/TestimoniWaSiswa/TestimoniWaSiswa";
-import VisiEndMisiLps from "../../../HomePage/Components/VisiEndMisiLps/VisiEndMisiLps";
-import AllAlumniLpsImage from "../../../ListSiswaLPS/AllAlumniLps/AllAlumniLpsImage";
-import ListSiswaLPS from "../../../ListSiswaLPS/ListSiswaLPS";
-import AsalSiswaLPS from "../../LesPrivatUTBK/Components/AsalSiswaLPS/AsalSiswaLPS";
-import ApaAjaYgDiPeroleh from "../Components/ApaAjaYgDiPeroleh/ApaAjaYgDiPeroleh";
-import BenefitLolosCPNS from "../Components/BenefitLolosCPNS/BenefitLolosCPNS";
-import CpnsStages from "../Components/CpnsStages/CpnsStages";
-import JadwalBelajarCPNS from "../Components/JadwalBelajarCPNS/JadwalBelajarCPNS";
-import MateriLPSCPNS from "../Components/MateriLPSCPNS/MateriLPSCPNS";
-import PaketBelajarCPNS from "../Components/PaketBelajarCPNS/PaketBelajarCPNS";
-import ProgramCPNS from "../Components/ProgramCPNS/ProgramCPNS";
-import ProgramIntensifCPNS from "../Components/ProgramIntensifCPNS/ProgramIntensifCPNS";
-import SuccesStoryCPNS from "../Components/SuccesStoryCPNS/SuccesStoryCPNS";
 
 const LesPrivatCPNSSlug = () => {
   const { slug } = useParams();
@@ -45,16 +86,9 @@ const LesPrivatCPNSSlug = () => {
     "Les Privat Persiapan CPNS (SKD TWK, TIU, TKP)";
 
   const cpnsDescription = [
-    // Paragraf 1
     `Menjadi PNS adalah impian dari jutaan peserta Tes CPNS. Oleh karena itu, para peserta diharapkan memiliki kompetensi yang mumpuni untuk bisa tembus tes CPNS, utamanya pada tahap ujian akademik SKD CPNS <span class='color-highlight'>TWK, TIU, dan TKP</span>.`,
-
-    // Paragraf 2
     `Bagi Anda yang sedang mencari <span class='color-highlight'>les privat CPNS offline</span> (guru les privat ke rumah) maupun les privat online persiapan SKD CPNS, Anda berada di halaman yang tepat. <span class='color-highlight'>LPS Education</span> memiliki ribuan guru les privat yang tersebar di Jabodetabek. Kami membuka dua program: Offline (ke rumah) dan Online (menggunakan Zoom).`,
-
-    // Paragraf 3
     `Guru privat CPNS kami adalah tutor terbaik di bidangnya yang sudah memenuhi standar dan berkompeten dalam mengajari materi soal – soal CPNS. Layanan privat berupa pembekalan materi dan latihan soal sebelum menghadapi tes sehingga Anda akan lebih siap dalam menghadapi tes CPNS.`,
-
-    // Paragraf 4
     `<span class='color-highlight'>LPS Education</span> adalah lembaga penyedia layanan guru les privat ke rumah area Jabodetabek dan les privat Online untuk seluruh Indonesia. Selain program <span class='color-highlight'>les privat CPNS</span>, kami memiliki banyak program unggulan lainnya. Kami senantiasa memberikan layanan privat terbaik agar hasil sesuai target yang diinginkan siswa/peserta.`,
   ];
 
@@ -68,11 +102,8 @@ const LesPrivatCPNSSlug = () => {
   };
 
   const dynamicLocationName = formatSlugToTitle(slug) || "Indonesia";
-
   const baseUrl = "https://apps.lesprivatmasukptn.com";
-
   const canonicalUrl = `${baseUrl}/bimbel-persiapan-cpns-terbaik-di/${slug}`;
-
   const ogImage = "https://apps.lesprivatmasukptn.com/images/program/CPNS.webp";
 
   const pageTitle = `🎓 Bimbel & Les Privat CPNS ${dynamicLocationName} | TWK TIU TKP Terbaik - LPS Education`;
@@ -81,7 +112,6 @@ const LesPrivatCPNSSlug = () => {
   const ogDescription = `Persiapan CPNS dengan bimbel & les privat intensif di ${dynamicLocationName}. Pengajar berpengalaman LPS Education siap membimbing Anda lolos tes TWK, TIU, TKP. Kelas online & offline tersedia.`;
   const twitterTitle = `Bimbel & Les Privat CPNS ${dynamicLocationName} | LPS Education`;
   const twitterDescription = `Bimbel les privat CPNS untuk persiapan TWK, TIU, TKP di ${dynamicLocationName}. Raih sukses bersama LPS Education. Tersedia online & offline.`;
-
   const ogImageAlt = `Bimbel Les Privat CPNS ${dynamicLocationName} LPS Education`;
 
   const articleTags = [
@@ -122,7 +152,7 @@ const LesPrivatCPNSSlug = () => {
           name="robots"
           content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"
         />
-        {/* Open Graph Meta Tags (for social media sharing) */}
+        {/* Open Graph Meta Tags */}
         <meta property="og:locale" content="id_ID" />
         <meta property="og:type" content="article" />
         <meta property="og:title" content={ogTitle} />
@@ -145,6 +175,7 @@ const LesPrivatCPNSSlug = () => {
         <meta name="twitter:description" content={twitterDescription} />
         <meta name="twitter:image" content={ogImage} />
 
+        {/* Structured Data (Schema JSON-LD) */}
         <script type="application/ld+json">
           {`
     {
@@ -180,7 +211,6 @@ const LesPrivatCPNSSlug = () => {
             }
           ]
         },
-
         {
           "@type": "EducationalOrganization",
           "@id": "${canonicalUrl}#organization",
@@ -207,7 +237,6 @@ const LesPrivatCPNSSlug = () => {
           },
           "keywords": "${articleTags.join(", ")}"
         },
-
         {
           "@type": "WebPage",
           "@id": "${canonicalUrl}#webpage",
@@ -231,7 +260,6 @@ const LesPrivatCPNSSlug = () => {
             }
           }
         },
-
         {
           "@type": "FAQPage",
           "@id": "${canonicalUrl}#faq",
@@ -267,7 +295,9 @@ const LesPrivatCPNSSlug = () => {
   `}
         </script>
       </Helmet>
+
       <div className="container-all">
+        {/* Above the fold — langsung render */}
         <HeadingLPSProgramDynamic
           defaultProgramName={cpnsDefaultProgramName}
           imageUrlsDesktop={cpnsImagesDesktop}
@@ -277,39 +307,45 @@ const LesPrivatCPNSSlug = () => {
           city={dynamicLocationName}
         />
         <ProgramIntensifCPNS />
-        <MateriLPSCPNS />
-        <BenefitLolosCPNS />
-        <CpnsStages />
         <Slider />
-        <PaketBelajarCPNS />
-        <ProgramCPNS />
-        <ApaAjaYgDiPeroleh />
-        <JadwalBelajarCPNS />
-        <VisiEndMisiLps />
-        <ProfileTutor city={dynamicLocationName} />
-        <UnivPengajarLps />
-        <GaleryBelajarSiswa description={galleryBelajarCPNSData.description} />
-        <TestimoniWaSlider
-          cityProp={dynamicLocationName}
-          description={testimoniWaSliderData.description}
-          title={testimoniWaSliderData.title}
-        />
-        <AsalSiswaLPS />
-        <SuccesStoryCPNS city={dynamicLocationName} />
-        <TestimoniWaSiswa
-          cityProp={dynamicLocationName}
-          title={testimonialWaCPNSData.title}
-          description={testimonialWaCPNSData.description}
-          imageDesktop={testimonialWaCPNSData.imageDesktop}
-          imageMobile={testimonialWaCPNSData.imageMobile}
-        />
-        <AllAlumniLpsImage city={dynamicLocationName} />
-        <ListSiswaLPS />
-        <SliderTestimoniSiswa city={dynamicLocationName} />{" "}
-        <FomoTicker
-          namaWilayah={dynamicLocationName}
-          namaProgram={"CPNS & Kedinasan"}
-        />
+
+        {/* Below the fold — lazy load */}
+        <Suspense fallback={null}>
+          <MateriLPSCPNS />
+          <BenefitLolosCPNS />
+          <CpnsStages />
+          <PaketBelajarCPNS />
+          <ProgramCPNS />
+          <ApaAjaYgDiPeroleh />
+          <JadwalBelajarCPNS />
+          <VisiEndMisiLps />
+          <ProfileTutor city={dynamicLocationName} />
+          <UnivPengajarLps />
+          <GaleryBelajarSiswa
+            description={galleryBelajarCPNSData.description}
+          />
+          <TestimoniWaSlider
+            cityProp={dynamicLocationName}
+            description={testimoniWaSliderData.description}
+            title={testimoniWaSliderData.title}
+          />
+          <AsalSiswaLPS />
+          <SuccesStoryCPNS city={dynamicLocationName} />
+          <TestimoniWaSiswa
+            cityProp={dynamicLocationName}
+            title={testimonialWaCPNSData.title}
+            description={testimonialWaCPNSData.description}
+            imageDesktop={testimonialWaCPNSData.imageDesktop}
+            imageMobile={testimonialWaCPNSData.imageMobile}
+          />
+          <AllAlumniLpsImage city={dynamicLocationName} />
+          <ListSiswaLPS />
+          <SliderTestimoniSiswa city={dynamicLocationName} />
+          <FomoTicker
+            namaWilayah={dynamicLocationName}
+            namaProgram={"CPNS & Kedinasan"}
+          />
+        </Suspense>
       </div>
     </>
   );

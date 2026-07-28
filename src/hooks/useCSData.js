@@ -1,45 +1,6 @@
 // src/hooks/useCSData.js
 
-import { useEffect, useState } from "react";
-import { baseUrl } from "../utils/config";
-
-export const useCSData = () => {
-  const [csData, setCSData] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    const fetchCSData = async () => {
-      try {
-        setLoading(true);
-        setError(null);
-        const response = await fetch(`${baseUrl}/contactCs/all`);
-
-        if (!response.ok) {
-          throw new Error(`API error: ${response.status}`);
-        }
-
-        const data = await response.json();
-
-        const activeCS = data
-          .filter((cs) => !cs.isDeleted)
-          .sort((a, b) => (a.display_order || 0) - (b.display_order || 0));
-
-        setCSData(activeCS);
-      } catch (err) {
-        console.error("Failed to fetch CS data:", err);
-        setError(err.message);
-        setCSData(FALLBACK_CS_DATA);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchCSData();
-  }, []);
-
-  return { csData, loading, error };
-};
+import { useState } from "react";
 
 export const FALLBACK_CS_DATA = [
   {
@@ -73,5 +34,15 @@ export const FALLBACK_CS_DATA = [
     isDeleted: false,
   },
 ];
+
+export const useCSData = () => {
+  const [csData] = useState(() => {
+    return FALLBACK_CS_DATA.filter((cs) => !cs.isDeleted).sort(
+      (a, b) => (a.display_order || 0) - (b.display_order || 0),
+    );
+  });
+
+  return { csData, loading: false, error: null };
+};
 
 export default useCSData;

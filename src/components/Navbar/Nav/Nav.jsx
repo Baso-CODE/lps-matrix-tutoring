@@ -11,13 +11,10 @@ import "./Nav.css";
 const Nav = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
-  // Fetch CS data dari API
   const { csData } = useCSData();
 
-  // Get rotating CS (random/weight-based)
   const selectedCS = useRotatingCS(csData);
 
-  // Default fallback jika tidak ada CS data
   const fallbackCS = {
     nama_cs: "Kak Fina",
     nomor_hp: "081311778441",

@@ -1,10 +1,21 @@
-import { Link } from "react-router-dom";
-import { selectContactCsData } from "../../lib/features/contactCsSlice";
-import { useAppSelector } from "../../lib/hooks";
+import useCSData from "../../hooks/useCSData";
+import useRotatingCS from "../../hooks/useRotatingCS";
 import "./FooterNew.css";
+
 const FooterNew = () => {
-  const contactData = useAppSelector(selectContactCsData);
-  // Data admin
+  const { csData } = useCSData();
+  const { selectedCS, rotateToNext } = useRotatingCS(csData);
+
+  const fallbackCS = {
+    nama_cs: "Kak Fina",
+    phone: "6281311778441",
+    link_cta:
+      "https://api.whatsapp.com/send?phone=6281311778441&text=Halo%20Kak%20Fina,%20saya%20tertarik%20dengan%20program%20belajar%20di%20LPS%20Education.",
+  };
+
+  const activeCS = selectedCS || fallbackCS;
+
+  // Data admin untuk list di bawah
   const admins = [
     {
       name: "Kak Lin",
@@ -20,18 +31,7 @@ const FooterNew = () => {
     },
   ];
 
-  // Handler untuk klik banner di footer
-  // const handleBannerCTAClick = (e) => {
-  //   const targetUrl = contactData?.link_cta || "https://wa.me/6285887562039";
-
-  //   handleCTAClickLogic(targetUrl, e, true);
-  // };
-
-  // const handleAdminLinkClick = (url, e) => {
-  //   handleCTAClickLogic(url, e, true);
-  // };
-
-  // Function untuk membuat URL WhatsApp
+  // Function untuk membuat URL WhatsApp pada list admin
   const generateWhatsAppUrl = (phone, name) => {
     const baseUrl = `https://api.whatsapp.com/send?phone=${phone}&text=Halo%20${encodeURIComponent(
       name,
@@ -42,7 +42,13 @@ const FooterNew = () => {
     return `${baseUrl}${encodeURIComponent(message)}`;
   };
 
+  const handleBannerClick = () => {
+    // Geser ke CS berikutnya saat banner diklik
+    rotateToNext();
+  };
+
   const currentYear = new Date().getFullYear();
+
   return (
     <footer className="container-footer">
       <div className="new-footer">
@@ -65,9 +71,6 @@ const FooterNew = () => {
             Pendidikan UI)
           </p>
 
-          {/* <h4>TELEPON KANTOR:</h4>
-          <p className="new-footer-section-alamat">021-2761-2993</p> */}
-
           <h4>Jam kunjugan visit:</h4>
           <p className="new-footer-section-alamat">
             Senin sd Jumat: 09.00 – 16.00 WIB
@@ -80,18 +83,21 @@ const FooterNew = () => {
           <ul>
             {admins.map((admin, index) => (
               <li key={index}>
-                <Link
-                  to={generateWhatsAppUrl(admin.phone, admin.name)}
+                <a
+                  href={generateWhatsAppUrl(admin.phone, admin.name)}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="admin-link">
                   <span className="admin-name">{admin.name}:</span>{" "}
                   {admin.phone}
-                </Link>
+                </a>
               </li>
             ))}
           </ul>
 
           <h4>Layanan Call dan Pesan WhatsApp buka 24 jam setiap hari</h4>
         </div>
+
         <div className="new-footer-section">
           <h3>Company Profile</h3>
           <p className="new-footer-section-description">
@@ -115,6 +121,7 @@ const FooterNew = () => {
             partner terbaik untuk kesuksesan dan masa depanmu.
           </p>
         </div>
+
         <div className="new-footer-section">
           <h3>Navigation</h3>
           <ul className="footer-nav">
@@ -168,7 +175,6 @@ const FooterNew = () => {
                     Les Privat CPNS dan Kedinasan
                   </a>
                 </li>
-
                 <li>
                   <a href="/les-privat-mahasiswa-terbaik">
                     Les Privat Mahasiswa
@@ -184,9 +190,16 @@ const FooterNew = () => {
             </li>
           </ul>
         </div>
+
+        {/* Bagian Chat Us Now dengan Rotasi CS */}
         <div className="new-footer-section">
           <h3>Chat Us Now</h3>
-          <a href={contactData?.link_cta}>
+          <a
+            href={activeCS.link_cta}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={handleBannerClick}
+            title={`Hubungi ${activeCS.nama_cs || "CS"}`}>
             <img
               loading="lazy"
               src="/images/banner.webp"
@@ -196,6 +209,7 @@ const FooterNew = () => {
           </a>
         </div>
       </div>
+
       {/* Bagian Copyright */}
       <div className="new-footer-copyright">
         <p>&copy; {currentYear} LPS Education. All Rights Reserved.</p>

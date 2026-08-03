@@ -30,8 +30,8 @@ const PaketBelajarSimakUI = () => {
   };
   return (
     <div className="paket-belajar-container">
-      <h1 className="title-paket-induk__osn">Paket Belajar SIMAK UI</h1>
-      <p className="description-paket-belajar__osn">
+      <h1 className="title-paket-induk_simak-ui">Paket Belajar SIMAK UI</h1>
+      <p className="description-paket-belajar-simak-ui">
         PAKET didasarkan pada jumlah sesi yang akan diambil oleh siswa. Siswa
         dapat memilih komposisi sesi berdasarkan pada prioritas Ujian Masuk PTN
         yang akan diambil. Apakah fokus pada Simak UI saja, atau ada kombinasi

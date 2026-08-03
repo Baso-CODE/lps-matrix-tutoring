@@ -1,0 +1,83 @@
+/* ProgramIntensiPascaSarjana.css */
+
+.program-section__pasca-sarjana {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 2.5rem 1.5rem;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  border: 1px solid #eaeaea;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-title-cpns__pasca-sarjana {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #333;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+}
+
+.section-description__pasca-sarjana {
+  font-size: 1rem;
+  color: #343131;
+  font-weight: 400;
+  font-family: "Nunito", sans-serif;
+  line-height: 1.7;
+  text-align: justify;
+  margin-bottom: 1rem;
+}
+
+.section-description-paket__pasca-sarjana {
+  font-size: 1.05rem;
+  color: #ff8000;
+  font-weight: 600;
+  font-family: "Nunito", sans-serif;
+  margin-bottom: 0.8rem;
+  text-align: left;
+}
+
+.package-list__pasca-sarjana {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  color: #343131;
+  font-family: "Nunito", sans-serif;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.package-list__pasca-sarjana li {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: #343131;
+}
+
+.package-list__pasca-sarjana li::marker {
+  color: #4caf50;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .program-section__pasca-sarjana {
+    padding: 1.5rem 1rem;
+  }
+  .section-title-cpns__pasca-sarjana {
+    font-size: 1.2rem;
+  }
+  .section-description__pasca-sarjana {
+    font-size: 0.95rem;
+  }
+  .section-description-paket__pasca-sarjana {
+    font-size: 1rem;
+  }
+  .package-list__pasca-sarjana li {
+    font-size: 0.95rem;
+  }
+}

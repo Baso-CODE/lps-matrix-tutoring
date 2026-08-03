@@ -1,9 +1,16 @@
 import { selectContactCsData } from "../../../../../lib/features/contactCsSlice";
 import { useAppSelector } from "../../../../../lib/hooks";
 import "./PaketBelajarSDSMPSMA.css";
+
 const PaketBelajarSDSMPSMA = () => {
   const contactData = useAppSelector(selectContactCsData);
-  const baseUrl = contactData?.link_cta;
+  const baseUrl =
+    Array.isArray(contactData) && contactData.length > 0
+      ? contactData[0]?.link_cta
+      : "https://wa.me/6282258689993?text=";
+
+  console.log("ini adalah data baseUrl:", baseUrl);
+
   const packages = [
     {
       icon: "/images/icon/paket/silver.webp",
@@ -24,14 +31,18 @@ const PaketBelajarSDSMPSMA = () => {
       message: `Paket: Platinum Package%0ASesi: 60 sesi`,
     },
   ];
+
   const handleCallNow = (message) => {
     const finalUrl = `${baseUrl}${message}`;
     window.open(finalUrl, "_blank");
   };
+
   return (
     <div className="paket-belajar-container__sd_smp_sma">
-      <h2 className="title-paket-induk__osn">Paket Sesi Belajar SD SMP SMA</h2>
-      <p className="description-paket-belajar__osn">
+      <h2 className="title-paket-induk__sd_smp_sma">
+        Paket Sesi Belajar SD SMP SMA
+      </h2>
+      <p className="description-paket-belajar__sd_smp_sma">
         PAKET didasarkan pada jumlah sesi yang akan diambil oleh siswa. Siswa
         dapat memilih komposisi sesi berdasarkan prioritas kebutuhan belajarnya.
         Apakah fokus pada Akademik Sekolah, atau ada kombinasi sesi dengan
@@ -46,13 +57,13 @@ const PaketBelajarSDSMPSMA = () => {
             <img
               loading="lazy"
               src={pkg.icon}
-              alt="paket belajar program osn"
-              className="paket-icon"
+              alt="paket belajar program sd smp sma"
+              className="paket-icon__sd_smp_sma"
             />
             <h2 className="paket-title__sd_smp_sma">{pkg.title}</h2>
-            <p className="paket-sesi">{pkg.sessions}</p>
+            <p className="paket-sesi__sd_smp_sma">{pkg.sessions}</p>
             <button
-              className="call-button"
+              className="call-button__sd_smp_sma"
               onClick={() => handleCallNow(pkg.message)}>
               Call Now
             </button>

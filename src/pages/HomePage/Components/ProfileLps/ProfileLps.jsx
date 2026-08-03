@@ -1,11 +1,22 @@
-import { Link } from "react-router-dom";
-import { selectContactCsData } from "../../../../lib/features/contactCsSlice";
-import { useAppSelector } from "../../../../lib/hooks";
+import useCSData from "../../../../hooks/useCSData";
+import { useRotatingCS } from "../../../../hooks/useRotatingCS";
 import "./ProfileLps.css";
 
 const ProfileLps = () => {
-  const contactData = useAppSelector(selectContactCsData);
-  const finalUrl = contactData?.link_cta;
+  const { csData } = useCSData();
+  const { selectedCS, rotateToNext } = useRotatingCS(csData);
+
+  const fallbackCS = {
+    nama_cs: "Kak Fina",
+    link_cta:
+      "https://api.whatsapp.com/send?phone=6281311778441&text=Halo%20Kak%20Fina,%20saya%20tertarik%20dengan%20program%20belajar%20di%20LPS%20Education.%0A%0A%F0%9F%93%96%20Les%20Privat%20SD%20SMP%20SMA%20SIMAK%20UI%20OSN%20MAHASISWA%20CPNS%20%7C%20LPS%20EDUCATION%E2%9C%A8%0Ahttps%3A%2F%2Fapps.lesprivatmasukptn.com",
+  };
+
+  const activeCS = selectedCS || fallbackCS;
+
+  const handleClick = () => {
+    rotateToNext();
+  };
 
   return (
     <div className="container-halaman-hero-home">
@@ -35,7 +46,15 @@ const ProfileLps = () => {
               Simak UI/KKI, IUP UGM dan Les Privat Ujian Mandiri PTN.
             </p>
           </div>
-          <Link to={finalUrl} className="btn-daftar-sekarang">
+
+          <a
+            href={activeCS.link_cta}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="konsultasi-whatsapp"
+            className="btn-daftar-sekarang"
+            title={`Hubungi ${activeCS.nama_cs}`}
+            onClick={handleClick}>
             Konsultasi Sekarang!
             <img
               src="/images/daftar-sekarang.webp"
@@ -44,7 +63,7 @@ const ProfileLps = () => {
               height={512}
               className="button-icon-profile-lps"
             />
-          </Link>
+          </a>
         </div>
 
         <div className="image-hero-wrapper">
@@ -57,8 +76,6 @@ const ProfileLps = () => {
             width="600"
             height="800"
           />
-
-          {/* AKTIFKAN KEMBALI DIV INI */}
           <div className="shadow-bottom-image-profile-lps"></div>
         </div>
       </div>

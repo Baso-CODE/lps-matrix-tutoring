@@ -47,7 +47,7 @@ const Slider = () => {
   ]);
 
   return (
-    <>
+    <div>
       {/* Slider desktop */}
       <div className="slider-top desktop-only">
         <div className="embla" ref={emblaRefDesktop}>
@@ -89,7 +89,7 @@ const Slider = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -4,7 +4,10 @@ import "./PaketBelajarCPNS.css";
 
 const PaketBelajarCPNS = () => {
   const contactData = useAppSelector(selectContactCsData);
-  const baseUrl = contactData?.link_cta;
+  const baseUrl =
+    Array.isArray(contactData) && contactData.length > 0
+      ? contactData[0]?.link_cta
+      : "https://wa.me/6282258689993?text=";
 
   const packages = [
     {
@@ -26,17 +29,18 @@ const PaketBelajarCPNS = () => {
       message: `Paket: Platinum Package%0ASesi: 60 sesi`,
     },
   ];
+
   const handleCallNow = (message) => {
     const finalUrl = `${baseUrl}${message}`;
     window.open(finalUrl, "_blank");
   };
 
   return (
-    <div className="paket-belajar-container__osn">
-      <h1 className="title-paket-induk__osn">
+    <div className="paket-belajar-container__cpns">
+      <h1 className="title-paket-induk__cpns">
         Pilihan Paket Belajar CPNS Terbaik
       </h1>
-      <p className="description-paket-belajar__osn">
+      <p className="description-paket-belajar__cpns">
         Paket Belajar CPNS kami dirancang secara komprehensif untuk membantu
         Anda meraih kesuksesan dalam seleksi Calon Pegawai Negeri Sipil (CPNS).
         Setiap paket menawarkan jumlah sesi yang berbeda, disesuaikan dengan
@@ -49,18 +53,19 @@ const PaketBelajarCPNS = () => {
       </p>
       <br />
 
-      <div className="paket-cards__osn">
+      <div className="paket-cards__cpns">
         {packages.map((pkg, index) => (
-          <div className="paket-card__osn" key={index}>
+          <div className="paket-card__cpns" key={index}>
             <img
+              loading="lazy"
               src={pkg.icon}
               alt="paket belajar program cpns"
-              className="paket-icon"
+              className="paket-icon__cpns"
             />
-            <h2 className="paket-title">{pkg.title}</h2>
-            <p className="paket-sesi__osn">{pkg.sessions}</p>
+            <h2 className="paket-title__cpns">{pkg.title}</h2>
+            <p className="paket-sesi__cpns">{pkg.sessions}</p>
             <button
-              className="call-button"
+              className="call-button__cpns"
               onClick={() => handleCallNow(pkg.message)}>
               Call Now
             </button>

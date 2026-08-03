@@ -12,8 +12,7 @@ const Nav = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const { csData } = useCSData();
-
-  const selectedCS = useRotatingCS(csData);
+  const { selectedCS, rotateToNext } = useRotatingCS(csData);
 
   const fallbackCS = {
     nama_cs: "Kak Fina",
@@ -24,6 +23,11 @@ const Nav = () => {
 
   // Use selected CS atau fallback
   const contactCS = selectedCS || fallbackCS;
+
+  const handleClick = () => {
+    // Geser ke CS berikutnya setiap kali tombol di navbar diklik
+    rotateToNext();
+  };
 
   const handleScroll = () => {
     const scrollTop = window.scrollY;
@@ -67,9 +71,12 @@ const Nav = () => {
           <div className="auth-menu">
             <a
               href={contactCS.link_cta}
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label="konsultasi-whatsapp"
               className="sign-in-button"
-              title={`Hubungi ${contactCS.nama_cs}`}>
+              title={`Hubungi ${contactCS.nama_cs}`}
+              onClick={handleClick}>
               Konsultasi Now
               <img
                 src="/images/daftar-sekarang.webp"

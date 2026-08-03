@@ -17,6 +17,16 @@
   margin-bottom: 15px;
 }
 
+.description-alumni-lps {
+  font-size: 1rem;
+  color: #3a4a3f;
+  text-align: center;
+  font-weight: 400;
+  line-height: normal;
+  font-family: "Nunito", sans-serif;
+  margin-bottom: 20px;
+}
+
 .color-d2b04c-description {
   color: var(--color-orange-default);
   font-weight: bold;

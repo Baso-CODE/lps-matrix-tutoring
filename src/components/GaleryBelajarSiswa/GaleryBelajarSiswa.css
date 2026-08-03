@@ -16,6 +16,16 @@
   padding-bottom: 1vh;
 }
 
+.description-gallery-belajar-lps {
+  font-size: 1rem;
+  color: #3a4a3f;
+  text-align: start;
+  font-weight: 400;
+  line-height: normal;
+  font-family: "Nunito", sans-serif;
+  margin-bottom: 20px;
+}
+
 /* Ukuran tombol default (desktop) */
 .mode-button {
   padding: 1rem 4rem; /* Perbesar padding */
@@ -28,7 +38,9 @@
   /* Mengubah warna teks ke abu-abu sangat terang */
   color: var(--color-gray-darker);
   border: 2px solid var(--color-blue-light);
-  transition: background-color 0.3s, transform 0.2s;
+  transition:
+    background-color 0.3s,
+    transform 0.2s;
 }
 
 .mode-button.active {

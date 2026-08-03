@@ -31,14 +31,8 @@ const LesPrivatCPNS = () => {
   const baseUrl = "https://apps.lesprivatmasukptn.com";
   const canonicalUrl = `${baseUrl}/bimbel-persiapan-cpns`;
 
-  const cpnsImagesDesktop = [
-    "/images/program/program-LPS-CPNS.webp",
-    "/images/program/program-LPS-SEKOLAH KEDINASAN.webp",
-  ];
-  const cpnsImagesMobile = [
-    "/images/program/program-LPS-CPNS-mobile.webp",
-    "/images/program/program-LPS-SEKOLAH-KEDINASAN-mobile.webp",
-  ];
+  const cpnsImagesDesktop = ["/images/program/program-LPS-CPNS.webp"];
+  const cpnsImagesMobile = ["/images/program/program-LPS-CPNS-mobile.webp"];
 
   const cpnsDefaultProgramName = "Guru Les Privat CPNS Terbaik";
   const cpnsProgramNameDisplay =

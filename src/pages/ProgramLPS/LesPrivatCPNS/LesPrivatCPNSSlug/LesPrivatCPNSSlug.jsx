@@ -72,14 +72,8 @@ import {
 const LesPrivatCPNSSlug = () => {
   const { slug } = useParams();
 
-  const cpnsImagesDesktop = [
-    "/images/program/program-LPS-CPNS.webp",
-    "/images/program/program-LPS-SEKOLAH KEDINASAN.webp",
-  ];
-  const cpnsImagesMobile = [
-    "/images/program/program-LPS-CPNS-mobile.webp",
-    "/images/program/program-LPS-SEKOLAH-KEDINASAN-mobile.webp",
-  ];
+  const cpnsImagesDesktop = ["/images/program/program-LPS-CPNS.webp"];
+  const cpnsImagesMobile = ["/images/program/program-LPS-CPNS-mobile.webp"];
 
   const cpnsDefaultProgramName = "Guru Les Privat CPNS Terbaik";
   const cpnsProgramNameDisplay =

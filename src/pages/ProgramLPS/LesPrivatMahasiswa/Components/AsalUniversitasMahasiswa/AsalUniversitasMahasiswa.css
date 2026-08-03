@@ -1,25 +1,21 @@
 .asal-universitas-container {
   /* Latar belakang lebih terang untuk kesan clean */
-  background-color: var(
-    --color-gray-lightest
-  ); /* Putih keabu-abuan sangat terang */
+  background-color: var(--color-gray-lightest);
   text-align: center;
   margin-top: 10vh;
   margin-bottom: 10vh;
   font-family: "Nunito", sans-serif;
-
-  padding: 5vh 20px; /* Padding tetap, bagus untuk ruang */
-  border-radius: 10px; /* Sedikit lengkungan, tidak terlalu tajam, tidak terlalu bulat */
-  /* Box-shadow lebih tipis dan halus untuk kesan clean */
+  padding: 5vh 20px;
+  border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  border: 1px solid var(--color-gray-lighter); /* Tambah border tipis untuk definisi */
+  border: 1px solid var(--color-gray-lighter);
 }
 
 .asal-universitas-title {
   font-size: 1.3rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
-  color: var(--color-gray-dark); /* Oranye utama untuk judul tetap konsisten */
+  color: var(--color-gray-dark);
 }
 
 .asal-universitas-list {
@@ -28,16 +24,13 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1rem; /* Jarak antar item tetap 1rem */
+  gap: 1rem;
 }
 
 .asal-universitas-item {
-  /* Latar belakang item putih/sangat terang, border oranye untuk definisi */
-  background-color: #ffffff; /* Putih bersih */
-  color: var(
-    --color-gray-dark
-  ); /* Teks abu-abu gelap agar terbaca di latar terang */
-  border: 1px solid var(--color-gray-lighter); /* Border halus */
+  background-color: #ffffff;
+  color: var(--color-gray-dark);
+  border: 1px solid var(--color-gray-lighter);
   padding: 0.2rem 1rem;
   border-radius: 8px;
   font-family: "Nunito", sans-serif;
@@ -47,30 +40,50 @@
   min-height: 55px;
   text-align: center;
   font-size: 1rem;
-  transition: all 0.3s ease; /* Transisi untuk semua properti yang berubah */
+  transition: all 0.3s ease;
   cursor: pointer;
 }
 
 .asal-universitas-item:hover {
-  background-color: var(
-    --color-orange-lighter
-  ); /* Oranye sangat terang saat hover */
-  color: var(--color-orange-darker); /* Teks menjadi oranye sangat gelap */
-  border-color: var(
-    --color-orange-default
-  ); /* Border berubah jadi oranye utama */
-  transform: translateY(-2px); /* Efek naik sangat sedikit */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Bayangan sedikit lebih menonjol saat hover */
+  background-color: var(--color-orange-lighter);
+  color: var(--color-orange-darker);
+  border-color: var(--color-orange-default);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .asal-universitas-note {
   margin-top: 2rem;
   font-size: 1rem;
-  color: var(
-    --color-gray-medium
-  ); /* Abu-abu sedang untuk catatan, lebih soft */
+  color: var(--color-gray-medium);
   font-style: italic;
   font-weight: 500;
+}
+
+/* CSS Tambahan untuk Bagian Deskripsi di Bawah */
+.program-mahasiswa-title-h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-gray-dark, #333);
+  margin-top: 3vh;
+  margin-bottom: 1rem;
+  text-align: start;
+  font-family: "Nunito", sans-serif;
+}
+
+.additional-description-mahasiswa {
+  font-size: 1rem;
+  color: #343131;
+  font-weight: 400;
+  font-family: "Nunito", sans-serif;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+.color-d2b04c-description {
+  color: #ff8000;
+  font-weight: 600;
 }
 
 /* Aturan responsif */
@@ -104,6 +117,12 @@
     padding: 3vh 15px;
     margin-left: 15px;
     margin-right: 15px;
+  }
+  .program-mahasiswa-title-h2 {
+    font-size: 1.2rem;
+  }
+  .additional-description-mahasiswa {
+    font-size: 0.95rem;
   }
 }
 

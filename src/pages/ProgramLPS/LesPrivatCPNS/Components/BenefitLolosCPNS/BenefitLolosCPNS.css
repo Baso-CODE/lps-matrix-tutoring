@@ -1,0 +1,140 @@
+/* BenefitLolosCPNS.css */
+
+.cpns-benefit-section {
+  padding: 80px 0;
+
+  text-align: center;
+}
+
+.cpns-benefit-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.cpns-benefit-title {
+  font-size: 1.4rem;
+  color: var(--color-dark-blue, #1e3e62);
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+}
+
+.cpns-benefit-title span {
+  color: var(--color-orange-default, #ff8000);
+}
+
+.cpns-benefit-subtitle {
+  font-size: 1rem;
+  color: var(--color-gray-dark, #555555);
+  font-family: "Nunito", sans-serif;
+  margin-bottom: 50px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.cpns-benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  justify-content: center;
+}
+
+.cpns-benefit-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    filter 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Efek saat hover pada kartu yang tidak aktif */
+.cpns-benefit-card:not(.blurred):hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* Kelas untuk efek blur */
+.cpns-benefit-card.blurred {
+  filter: blur(3px) brightness(0.7);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.cpns-benefit-card:not(.blurred) {
+  border: 2px solid var(--color-orange-default, #ff8000);
+}
+
+.cpns-benefit-icon-wrapper {
+  width: 90px;
+  height: 90px;
+  background-color: var(--color-orange-light, #fff3e0);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.cpns-benefit-icon-wrapper img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.cpns-benefit-card-title {
+  font-size: 1.2rem;
+  color: var(--color-orange-dark, #cc6600);
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-family: "Nunito", sans-serif;
+}
+
+.cpns-benefit-card-description {
+  font-size: 1rem;
+  color: var(--color-gray-medium, #666666);
+  line-height: 1.7;
+  font-family: "Nunito", sans-serif;
+  flex-grow: 1;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .cpns-benefit-title {
+    font-size: 1.2rem;
+  }
+  .cpns-benefit-subtitle {
+    font-size: 1rem;
+  }
+  .cpns-benefit-card-title {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cpns-benefit-section {
+    padding: 60px 0;
+  }
+  .cpns-benefit-title {
+    font-size: 1.2rem;
+  }
+  .cpns-benefit-card {
+    padding: 25px;
+  }
+  .cpns-benefit-icon-wrapper {
+    width: 70px;
+    height: 70px;
+  }
+}

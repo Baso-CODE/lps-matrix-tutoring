@@ -45,6 +45,7 @@ const AsalUniversitasMahasiswa = () => {
           Layanan Les Privat Online untuk Seluruh Wilayah di Indonesia
         </p>
       </div>
+
       <h2 className="program-mahasiswa-title-h2">Bimbel Online Mahasiswa</h2>
 
       <p className="additional-description-mahasiswa">
@@ -69,7 +70,7 @@ const AsalUniversitasMahasiswa = () => {
         rutinitasnya tetap bisa belajar dengan menyesuaikan waktu luang yang
         dimiliki. Ayo daftarkan dirimu sekarang juga di Program Les Privat
         Mahasiswa -{" "}
-        <span className="color-d2b04c-description">LPS Education</span> .
+        <span className="color-d2b04c-description">LPS Education</span>.
       </p>
     </div>
   );

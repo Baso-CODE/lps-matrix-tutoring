@@ -1,5 +1,12 @@
+/* eslint-disable no-unused-vars */
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { getLoopSingleContact } from "../../api/contact/getLoopingSingleContact";
+
+// Data statis contact CS
+const DUMMY_CONTACTS = [
+  { name: "Kak Nia", phone: "6282258689993", role: "Admin" },
+  { name: "Kak Fani", phone: "6285774023474", role: "Admin" },
+  { name: "Kak Fina", phone: "6281311778441", role: "Admin" },
+];
 
 const initialState = {
   contactCsData: null,
@@ -11,14 +18,25 @@ export const fetchContactCs = createAsyncThunk(
   "contactCs/fetchContactCs",
   async (_, { rejectWithValue }) => {
     try {
-      const response = await getLoopSingleContact();
-      // Pastikan selalu return array
-      const data = response.data;
-      return Array.isArray(data) ? data : data ? [data] : [];
+      // Menggunakan domain webapps.lesprivatmasukptn.com untuk redirect WhatsApp
+      // Anda bisa mengambil salah satu kontak secara default atau melakukan rotasi index
+      const randomIndex = Math.floor(Math.random() * DUMMY_CONTACTS.length);
+      const selectedContact = DUMMY_CONTACTS[randomIndex];
+
+      // Format link CTA menggunakan domain webapps.lesprivatmasukptn.com / wa.me
+      // Sesuai format standar: https://wa.me/[nomor]?text= atau melalui webapps domain jika ada endpoint-nya.
+      // Di sini kita arahkan langsung ke wa.me dengan basis nomor dummy.
+      const formattedData = {
+        name: selectedContact.name,
+        phone: selectedContact.phone,
+        role: selectedContact.role,
+        link_cta: `https://wa.me/${selectedContact.phone}?text=`,
+      };
+
+      // Mengembalikan array agar kompatibel dengan pengecekan Array.isArray di komponen
+      return [formattedData];
     } catch (error) {
-      return rejectWithValue(
-        error.response?.data || "Failed to fetch contact CS data",
-      );
+      return rejectWithValue("Failed to load static contact CS data");
     }
   },
 );
@@ -44,10 +62,11 @@ const contactCsSlice = createSlice({
       })
       .addCase(fetchContactCs.fulfilled, (state, action) => {
         state.loading = "succeeded";
-        // Double guard di sini juga
         state.contactCsData = Array.isArray(action.payload)
           ? action.payload
-          : [];
+          : action.payload
+            ? [action.payload]
+            : [];
         state.error = null;
       })
       .addCase(fetchContactCs.rejected, (state, action) => {

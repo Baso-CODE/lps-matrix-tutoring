@@ -54,8 +54,7 @@ const ProfileTutor = ({ city: cityProp }) => {
                     <div className="tutor-image-wrapper">
                       <img
                         loading="lazy"
-                        width={300}
-                        height={600}
+                        /* Atribut height=600 DIHAPUS agar proporsi menyesuaikan asli */
                         src={tutor.link_image}
                         alt={altText}
                         className="tutor-image"

@@ -1,5 +1,3 @@
-// src/hooks/useCSData.js
-
 import { useState } from "react";
 
 export const FALLBACK_CS_DATA = [

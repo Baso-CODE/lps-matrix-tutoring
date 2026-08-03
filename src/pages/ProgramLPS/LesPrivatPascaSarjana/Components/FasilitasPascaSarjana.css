@@ -1,0 +1,125 @@
+/* FasilitasPascaSarjana.css */
+
+.fasilitas-pasca-container {
+  margin-bottom: 5vh;
+  margin-top: 5vh;
+  overflow: hidden;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+}
+
+/* Card Container Styling */
+.fasilitas-pasca-cards {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+  justify-content: center;
+}
+
+/* Card Styling */
+.fasilitas-pasca-card {
+  background-color: #ffffff;
+  border: 2px solid #ff8000;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.fasilitas-pasca-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Icon Styling */
+.fasilitas-pasca-icon {
+  width: 5rem;
+  height: 5rem;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+  object-fit: contain;
+}
+
+/* Title Styling */
+.fasilitas-pasca-title {
+  font-size: 1.4rem;
+  color: #ff8000;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-family: "Nunito", sans-serif;
+}
+
+/* List Styling */
+.fasilitas-pasca-list {
+  list-style-type: disc;
+  padding-left: 1.2rem;
+  color: #343131;
+  font-family: "Nunito", sans-serif;
+  line-height: 1.6;
+  text-align: start;
+}
+
+.fasilitas-pasca-list li {
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  text-align: start;
+  color: #343131;
+  font-size: 1rem;
+  position: relative;
+}
+
+.fasilitas-pasca-list li::marker {
+  color: #4caf50;
+}
+
+/* Sub-list / Nested List Styling */
+.fasilitas-pasca-list ul {
+  list-style-type: none;
+  padding-left: 1rem;
+  margin-top: 0.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.fasilitas-pasca-list ul li {
+  padding-left: 1rem;
+  position: relative;
+  display: block;
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 0.3rem;
+}
+
+.fasilitas-pasca-list ul li::before {
+  content: "-";
+  color: #343131;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* Responsive Grid Adjustments */
+@media (min-width: 768px) {
+  .fasilitas-pasca-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .fasilitas-pasca-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Responsif untuk layar kecil / Ponsel */
+@media (max-width: 768px) {
+  .fasilitas-pasca-title {
+    font-size: 1.2rem;
+  }
+  .fasilitas-pasca-list li {
+    font-size: 0.9rem;
+  }
+  .fasilitas-pasca-list ul li {
+    font-size: 0.85rem;
+  }
+}

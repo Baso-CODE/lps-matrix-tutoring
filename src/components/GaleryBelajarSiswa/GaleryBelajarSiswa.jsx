@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useCallback, useEffect, useState } from "react";
-import "./GaleryBelajarSiswa.css";
 import { getGalleryBelajarByKet } from "../../api/galleryBelajar/getGalleryBelajarByKet";
+import "./GaleryBelajarSiswa.css";
 
 const GaleryBelajarSiswa = ({ title, description }) => {
   const [currentMode, setCurrentMode] = useState("offline");
@@ -52,7 +52,7 @@ const GaleryBelajarSiswa = ({ title, description }) => {
         <div className="alumni-lps-header">
           <h2>{title || `Gallery Belajar Siswa LPS Education`}</h2>
         </div>
-        <p className="additional-description-about__us">
+        <p className="description-gallery-belajar-lps">
           {description ||
             `Di LPS Education, kami percaya bahwa proses belajar yang interaktif
           dan didampingi oleh mentor berkualitas adalah kunci kesuksesan siswa

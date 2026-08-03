@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
-import "./AlumniLpsNew.css";
-import { getAllAlumniLps } from "../../api/alumniLPS/getAllAlumniLPS"; // Pastikan path benar
-import { useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+import { getAllAlumniLps } from "../../api/alumniLPS/getAllAlumniLPS"; // Pastikan path benar
+import "./AlumniLpsNew.css";
 
 const AlumniLpsNew = ({ city: cityProp }) => {
   const [alumniLps, setDataAlumniLps] = useState([]);
@@ -65,7 +65,7 @@ const AlumniLpsNew = ({ city: cityProp }) => {
           onClick={() => goToPage(i)}
           className={`pagination-button ${currentPage === i ? "active" : ""}`}>
           {i}
-        </button>
+        </button>,
       );
     }
     return pageNumbers;
@@ -76,7 +76,7 @@ const AlumniLpsNew = ({ city: cityProp }) => {
       <div className="alumni-lps-header">
         <h2>Ikuti jejak Alumni LPS</h2>
       </div>
-      <p className="additional-description-about__us">
+      <p className="description-alumni-lps">
         LPS Education adalah lembaga les privat spesialis masuk PTN Favorit yang
         dikelola oleh “Excellent Team”. Dengan tagline{" "}
         <span className="color-d2b04c-description">

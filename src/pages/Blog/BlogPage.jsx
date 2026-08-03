@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import Slider from "../../components/Slider/Slider";
+import "./BlogPage.css";
 
 import {
   allArticles,
@@ -105,7 +106,9 @@ const BlogPage = () => {
 
   return (
     <div className="container-blog">
-      <Slider />
+      <div className="container-slider">
+        <Slider />
+      </div>
 
       {/* Category Filter */}
       <MockCategories

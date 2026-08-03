@@ -26,12 +26,10 @@ const LesPrivatMahasiswa = () => {
 
   const mahasiswaImagesDescktop = [
     "/images/program/program-LPS-MAHASISWA.webp",
-    "/images/program/program-LPS-KELAS-INTERNASIONAL.webp",
   ];
 
   const mahasiswaImagesMobile = [
     "/images/program/program-LPS-MAHASISWA-mobile.webp",
-    "/images/program/program-LPS-KELAS-INTERNASIONAL-mobile.webp",
   ];
   const mahasiswaDefaultProgramName = "Program Les Privat Mahasiswa";
   const mahasiswaProgramNameDisplay =

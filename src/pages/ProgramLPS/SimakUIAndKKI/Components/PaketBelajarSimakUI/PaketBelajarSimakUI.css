@@ -7,20 +7,22 @@
   overflow: hidden;
 }
 
-.title-paket-induk {
+.title-paket-induk_simak-ui {
   font-size: 1.3rem;
   margin-bottom: 1rem;
-  font-weight: 600;
-  color: #ff6500;
-  font-family: "Nunito", sans-serif;
+  color: #333;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
 }
 
 .description-paket-belajar-simak-ui {
-  font-size: 1rem;
-  color: #666;
+  font-size: 0.9rem;
+  text-align: center;
+  color: #343131;
+  width: 80%;
+  margin: 0 auto; /* Tambahkan baris ini agar posisinya otomatis di tengah */
   font-weight: 400;
-  text-align: start;
-  margin-bottom: 2rem;
   font-family: "Nunito", sans-serif;
 }
 

@@ -1,18 +1,20 @@
+import "./FasilitasSDSMPSMA.css";
+
 const FasilitasSDSMPSMA = () => {
   return (
-    <div className="fasilitas-simak-ui-container">
+    <div className="fasilitas-sd-smp-sma-container">
       {/* Card Container */}
-      <div className="fasilitas-simak-ui-cards">
+      <div className="fasilitas-sd-smp-sma-cards">
         {/* Card 1: Fasilitas */}
-        <div className="fasilitas-simak-ui-card">
+        <div className="fasilitas-sd-smp-sma-card">
           <img
             src="/images/icon/fasilitas/fasilitas.webp"
             alt="Icon Fasilitas"
-            className="fasilitas-icon"
+            className="fasilitas-sd-smp-sma-icon"
             loading="lazy"
           />
-          <h2 className="fasilitas-title">Fasilitas</h2>
-          <ul className="fasilitas-list">
+          <h2 className="fasilitas-sd-smp-sma-title">Fasilitas</h2>
+          <ul className="fasilitas-sd-smp-sma-list">
             <li>Mapping kebutuhan belajar siswa</li>
             <li>Kegiatan belajar privat terprogram & intensif</li>
             <li>Pengajar yang berkualitas dari UI & PTN Terbaik</li>
@@ -20,16 +22,17 @@ const FasilitasSDSMPSMA = () => {
             <li>Progress report & evaluasi belajar secara berkala</li>
           </ul>
         </div>
+
         {/* Card 2: Target Belajar */}
-        <div className="fasilitas-simak-ui-card">
+        <div className="fasilitas-sd-smp-sma-card">
           <img
             loading="lazy"
             src="/images/icon/fasilitas/target.webp"
-            alt="Icon Fasilitas"
-            className="fasilitas-icon"
+            alt="Icon Target Belajar"
+            className="fasilitas-sd-smp-sma-icon"
           />
-          <h2 className="fasilitas-title">Target Belajar</h2>
-          <ul className="fasilitas-list">
+          <h2 className="fasilitas-sd-smp-sma-title">Target Belajar</h2>
+          <ul className="fasilitas-sd-smp-sma-list">
             <li>
               Implementasi model belajar yang efektif berdasarkan hasil dari
               pemetaan kebutuhan dan kemampuan siswa.
@@ -39,7 +42,6 @@ const FasilitasSDSMPSMA = () => {
               performa akademik.
             </li>
             <li>
-              {" "}
               Peningkatan kemampuan dalam mengerjakan soal-soal secara cepat,
               tepat, dan terstruktur.
             </li>
@@ -48,25 +50,27 @@ const FasilitasSDSMPSMA = () => {
               Semester, Ujian Kenaikan Kelas, TKA, dan Ujian masuk jenjang
               berikutnya.
             </li>
-            <li>Siswa sukses mencapai target akademik, seperti:</li>
-            <ul>
-              <li>Nilai rapor yang optimal</li>
-              <li>Masuk ke Sekolah Impian</li>
-              <li>Meraih Prestasi Akademik yang memuaskan</li>
-            </ul>
+            <li>
+              Siswa sukses mencapai target akademik, seperti:
+              <ul>
+                <li>Nilai rapor yang optimal</li>
+                <li>Masuk ke Sekolah Impian</li>
+                <li>Meraih Prestasi Akademik yang memuaskan</li>
+              </ul>
+            </li>
           </ul>
         </div>
 
         {/* Card 3: Scheduling */}
-        <div className="fasilitas-simak-ui-card">
+        <div className="fasilitas-sd-smp-sma-card">
           <img
             loading="lazy"
             src="/images/icon/fasilitas/schedulling.webp"
-            alt="Icon Fasilitas"
-            className="fasilitas-icon"
+            alt="Icon Scheduling"
+            className="fasilitas-sd-smp-sma-icon"
           />
-          <h2 className="fasilitas-title">Scheduling</h2>
-          <ul className="fasilitas-list">
+          <h2 className="fasilitas-sd-smp-sma-title">Scheduling</h2>
+          <ul className="fasilitas-sd-smp-sma-list">
             <li>Penjadwalan dihandle langsung oleh admin Scheduling.</li>
             <li>
               Jadwal belajar dapat disesuaikan dengan ketersediaan waktu siswa.
@@ -82,7 +86,7 @@ const FasilitasSDSMPSMA = () => {
             </li>
             <li>
               Pergantian guru jika merasa kurang cocok bisa dikomunikasikan
-              dengan admin Scheduling
+              dengan admin Scheduling.
             </li>
             <li>
               Fokus kami: efektivitas kegiatan belajar dan ketercapaian target
@@ -90,42 +94,42 @@ const FasilitasSDSMPSMA = () => {
             </li>
           </ul>
         </div>
+
         {/* Card 4: Lokasi Belajar */}
-        <div className="fasilitas-simak-ui-card">
+        <div className="fasilitas-sd-smp-sma-card">
           <img
             loading="lazy"
             src="/images/icon/fasilitas/location.webp"
-            alt="Icon Fasilitas"
-            className="fasilitas-icon"
+            alt="Icon Lokasi Belajar"
+            className="fasilitas-sd-smp-sma-icon"
           />
-          <h2 className="fasilitas-title">Lokasi Belajar</h2>
-          <ul className="fasilitas-list">
+          <h2 className="fasilitas-sd-smp-sma-title">Lokasi Belajar</h2>
+          <ul className="fasilitas-sd-smp-sma-list">
             <li>
-              <strong> Privat Offline: </strong>
+              <strong>Privat Offline:</strong>
+              <ul>
+                <li>Belajar dengan sistem tatap muka langsung</li>
+                <li>Guru privat datang ke rumah</li>
+                <li>Sistem belajar One on One Tutoring (Privat 1 siswa)</li>
+                <li>
+                  Area jangkauan: Jakarta, Bogor, Depok, Tangerang, Tangsel,
+                  Bekasi, dan sekitarnya.
+                </li>
+              </ul>
             </li>
-            <ul>
-              <li>Belajar dengan sistem tatap muka langsung</li>
-              <li>Guru privat datang ke rumah</li>
-              <li>Sistem belajar One on One Tutoring (Privat 1 siswa)</li>
-              <li>
-                Area jangkauan: Jakarta, Bogor, Depok, Tangerang, Tangsel,
-                Bekasi, dan sekitarnya.
-              </li>
-            </ul>
-
             <li>
               <strong>Privat Online:</strong>
+              <ul>
+                <li>
+                  Belajar dengan guru privat secara Online menggunakan Zoom,
+                  Google Meet atau aplikasi lain.
+                </li>
+                <li>Sistem belajar One on One Tutoring (Privat 1 siswa)</li>
+                <li>
+                  Area Jangkauan: seluruh wilayah di Indonesia dan Luar Negeri.
+                </li>
+              </ul>
             </li>
-            <ul>
-              <li>
-                Belajar dengan guru privat secara Online menggunakan Zoom,
-                Google Meet atau aplikasi lain,
-              </li>
-              <li>Sistem belajar One on One Tutoring (Privat 1 siswa)</li>
-              <li>
-                Area Jangkauan: seluruh wilayah di Indonesia dan Luar Negeri.
-              </li>
-            </ul>
           </ul>
         </div>
       </div>

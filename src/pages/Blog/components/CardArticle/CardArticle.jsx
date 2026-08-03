@@ -15,7 +15,7 @@ const CardArticle = ({ articles }) => {
   };
 
   return (
-    <div>
+    <div className="card-container-all">
       <div className="articles-grid">
         {articles && articles.length > 0 ? (
           articles.map((article) => (

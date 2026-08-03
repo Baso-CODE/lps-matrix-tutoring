@@ -1,26 +1,30 @@
-/* PaketBelajarSimakUI.css */
+/* PaketBelajarSDSMPSMA.css */
 
 .paket-belajar-container__sd_smp_sma {
   text-align: center;
-  margin-top: 10vh;
   overflow: hidden;
-  margin-bottom: 10vh;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
 }
 
 .title-paket-induk__sd_smp_sma {
-  font-size: 1.4rem;
-  font-weight: 500;
+  font-size: 1.3rem;
   margin-bottom: 1rem;
-  color: #ff6500;
-  font-family: "Nunito", sans-serif;
+  color: #333;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
 }
 
 .description-paket-belajar__sd_smp_sma {
   font-size: 0.9rem;
+  text-align: center;
   color: #343131;
-  margin-bottom: 2rem;
-  text-align: start;
+  font-weight: 400;
   font-family: "Nunito", sans-serif;
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto; /* Menjaga agar deskripsi tetap rata tengah jika lebar dibatasi */
 }
 
 .paket-cards__sd_smp_sma {
@@ -40,15 +44,17 @@
 }
 
 .paket-icon__sd_smp_sma {
-  font-size: 2rem;
+  width: 5rem;
+  height: 5rem;
   margin-bottom: 0.5rem;
+  object-fit: contain;
 }
 
 .paket-title__sd_smp_sma {
   font-size: 1.4rem;
   color: #ff8000;
   margin-bottom: 0.5rem;
-  font-weight: 700;
+  font-weight: bold;
   font-family: "Nunito", sans-serif;
 }
 
@@ -59,8 +65,8 @@
   font-family: "Nunito", sans-serif;
 }
 
-.call-button {
-  background-color: #4caf50;
+.call-button__sd_smp_sma {
+  background-color: #1e3e62;
   color: #fff;
   border: none;
   width: 100%;
@@ -71,8 +77,8 @@
   transition: background-color 0.3s;
 }
 
-.call-button:hover {
-  background-color: #d2b04c;
+.call-button__sd_smp_sma:hover {
+  background-color: #112743;
 }
 
 /* Responsive adjustments */
@@ -81,6 +87,7 @@
     width: 100%; /* 2 columns on tablets */
   }
 }
+
 @media (min-width: 768px) {
   .paket-card__sd_smp_sma {
     width: 30%; /* 3 columns on desktops */
@@ -93,15 +100,12 @@
   }
 }
 
-/* @media (min-width: 1200px) {
+@media (min-width: 1200px) {
   .title-paket-induk__sd_smp_sma {
     font-size: 1.4rem;
   }
   .description-paket-belajar__sd_smp_sma {
     font-size: 1rem;
-  }
-  .paket-icon__sd_smp_sma {
-    font-size: 2.5rem;
   }
   .paket-title__sd_smp_sma {
     font-size: 1.4rem;
@@ -109,78 +113,60 @@
   .paket-sesi__sd_smp_sma {
     font-size: 1.125rem;
   }
-  .call-button {
+  .call-button__sd_smp_sma {
     padding: 0.75rem 1.5rem;
   }
-} */
+}
 
 /* Responsif untuk Tablet Landscape (≤ 64rem) */
 @media (max-width: 1024px) {
   .title-paket-induk__sd_smp_sma {
-    font-size: 1.8rem; /* Kurangi ukuran font */
+    font-size: 1.4rem;
   }
-
   .description-paket-belajar__sd_smp_sma {
-    font-size: 0.875rem; /* Kurangi ukuran font */
+    font-size: 0.95rem;
   }
-
-  .paket-icon__sd_smp_sma {
-    font-size: 1.8rem; /* Kurangi ukuran font */
-  }
-
   .paket-title__sd_smp_sma {
-    font-size: 1.4rem; /* Kurangi ukuran font */
+    font-size: 1.3rem;
   }
-
   .paket-sesi__sd_smp_sma {
-    font-size: 0.9375rem; /* Kurangi ukuran font */
+    font-size: 0.95rem;
   }
 }
 
 /* Responsif untuk Tablet Portrait dan Ponsel Lebar (≤ 48rem) */
 @media (max-width: 768px) {
   .title-paket-induk__sd_smp_sma {
-    font-size: 1.4rem; /* Ukuran lebih kecil untuk ponsel */
+    font-size: 1.4rem;
   }
-
   .description-paket-belajar__sd_smp_sma {
-    font-size: 0.8125rem; /* Ukuran lebih kecil */
+    font-size: 0.9rem;
   }
-
-  .paket-icon__sd_smp_sma {
-    font-size: 1.6rem; /* Ukuran lebih kecil */
-  }
-
   .paket-title__sd_smp_sma {
-    font-size: 1.25rem; /* Ukuran lebih kecil */
+    font-size: 1.2rem;
   }
-
   .paket-sesi__sd_smp_sma {
-    font-size: 0.875rem; /* Ukuran lebih kecil */
+    font-size: 0.875rem;
   }
 }
 
 /* Responsif untuk Ponsel Kecil (≤ 30rem) */
 @media (max-width: 480px) {
   .title-paket-induk__sd_smp_sma {
-    font-size: 1.25rem; /* Ukuran terkecil */
-    text-align: center; /* Pusatkan teks */
+    font-size: 1.2rem;
+    text-align: center;
   }
-
   .description-paket-belajar__sd_smp_sma {
-    font-size: 0.85rem; /* Ukuran terkecil */
-    text-align: start; /* Pusatkan teks */
+    font-size: 0.9rem;
   }
-
-  .paket-icon__sd_smp_sma {
-    font-size: 1.4rem; /* Ukuran terkecil */
-  }
-
   .paket-title__sd_smp_sma {
-    font-size: 1.1rem; /* Ukuran terkecil */
+    font-size: 1rem;
   }
-
   .paket-sesi__sd_smp_sma {
-    font-size: 0.8125rem; /* Ukuran terkecil */
+    font-size: 0.8rem;
+  }
+  .call-button__sd_smp_sma {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
   }
 }

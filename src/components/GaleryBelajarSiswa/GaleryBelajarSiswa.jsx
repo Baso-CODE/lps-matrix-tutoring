@@ -1,38 +1,40 @@
 /* eslint-disable react/prop-types */
-import { useCallback, useEffect, useState } from "react";
-import { getGalleryBelajarByKet } from "../../api/galleryBelajar/getGalleryBelajarByKet";
+import { useState } from "react";
 import "./GaleryBelajarSiswa.css";
+
+const GALLERY_DATA = {
+  offline: [
+    "/images/gallery-belajar/les-cpns-offline.webp",
+    "/images/gallery-belajar/les-cpns-pppk-offline.webp",
+    "/images/gallery-belajar/les-utbk-offline-matematika.webp",
+    "/images/gallery-belajar/les-utbk-offline.webp",
+  ],
+  online: [
+    "/images/gallery-belajar/les-privat-online-komputer-cpns.webp",
+    "/images/gallery-belajar/les-privat-online-osn.webp",
+    "/images/gallery-belajar/les-privat-online-sd-smp-sma.webp",
+    "/images/gallery-belajar/les-privat-online-utbk.webp",
+  ],
+};
 
 const GaleryBelajarSiswa = ({ title, description }) => {
   const [currentMode, setCurrentMode] = useState("offline");
-  const [previewImage, setPreviewImage] = useState("");
-  const [thumbnails, setThumbnails] = useState([]);
 
-  const fetchGalleryData = useCallback(async (keterangan) => {
-    try {
-      const response = await getGalleryBelajarByKet(keterangan);
-      const galleryItems = response.data || [];
-
-      if (galleryItems.length > 0) {
-        setPreviewImage(galleryItems[0].link_image);
-        setThumbnails(galleryItems.slice(1).map((item) => item.link_image));
-      } else {
-        setPreviewImage("");
-        setThumbnails([]);
-      }
-    } catch (err) {
-      console.error("Error fetching gallery data:", err);
-      setPreviewImage("");
-      setThumbnails([]);
-    }
-  }, []);
-
-  useEffect(() => {
-    fetchGalleryData(currentMode);
-  }, [currentMode, fetchGalleryData]);
+  // Mengambil data awal berdasarkan mode aktif
+  const initialImages = GALLERY_DATA[currentMode] || [];
+  const [previewImage, setPreviewImage] = useState(initialImages[0] || "");
+  const [thumbnails, setThumbnails] = useState(initialImages.slice(1));
 
   const handleModeChange = (mode) => {
     setCurrentMode(mode);
+    const images = GALLERY_DATA[mode] || [];
+    if (images.length > 0) {
+      setPreviewImage(images[0]);
+      setThumbnails(images.slice(1));
+    } else {
+      setPreviewImage("");
+      setThumbnails([]);
+    }
   };
 
   // Handle klik gambar kecil (thumbnail)
@@ -99,7 +101,7 @@ const GaleryBelajarSiswa = ({ title, description }) => {
                   index + 1
                 } yang menunjukkan kegiatan siswa di mode ${currentMode}. Gambar ini menggambarkan suasana pembelajaran di LPS Education, baik secara offline maupun online, di mana siswa terlibat aktif dalam pembelajaran bersama mentor dari kampus ternama seperti UI, ITB, dan UGM.`}
                 className="thumbnail"
-                onClick={() => handlePreviewChange(img, index)}
+                onClick={() => handlePreviewChange(img)}
               />
             ))}
           </div>

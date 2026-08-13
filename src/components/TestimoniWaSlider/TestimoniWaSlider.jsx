@@ -2,14 +2,46 @@
 
 import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
-import { useEffect, useState } from "react";
-import { getTestimoniWa } from "../../api/testimoniWa/getTestimoniWa";
-import "./TestimoniWaSlider.css";
 import { useLocation } from "react-router-dom";
+import "./TestimoniWaSlider.css";
+
+// Dummy data untuk testimoni WhatsApp
+const DUMMY_TESTIMONI_WA = [
+  {
+    id: 1,
+    link_image: "/images/testimoni-wa/fika-s-haru.png",
+  },
+  {
+    id: 2,
+    link_image: "/images/testimoni-wa/najmina.png",
+  },
+  {
+    id: 3,
+    link_image: "/images/testimoni-wa/najwa.png",
+  },
+  {
+    id: 4,
+    link_image: "/images/testimoni-wa/rana-p-sandy.png",
+  },
+  {
+    id: 5,
+    link_image: "/images/testimoni-wa/sekar-mahasa.png",
+  },
+  {
+    id: 6,
+    link_image: "/images/testimoni-wa/sisca-s-carolina.png",
+  },
+  {
+    id: 7,
+    link_image: "/images/testimoni-wa/vita-s-irna.png",
+  },
+  {
+    id: 8,
+    link_image: "/images/testimoni-wa/zaidan.png",
+  },
+];
 
 const TestimoniWaSlider = ({ title, description, cityProp }) => {
-  const [dataTestimoniWa, setDataTestimoniWa] = useState([]);
-
   const location = useLocation();
   const path = location.pathname;
 
@@ -24,18 +56,6 @@ const TestimoniWaSlider = ({ title, description, cityProp }) => {
     city ? " di " + city : ""
   } bersama LPS Education. Program Bimbel & Les Privat UTBK, SIMAK UI, UTUL UGM, TKA, CPNS, Pascasarjana, Mahasiswa, dan OSN.`;
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const result = await getTestimoniWa();
-        setDataTestimoniWa(result.data);
-      } catch (error) {
-        console.error("error fetching data", error);
-      }
-    };
-    fetchData();
-  }, []);
-
   const [emblaRef] = useEmblaCarousel(
     {
       loop: true,
@@ -47,8 +67,9 @@ const TestimoniWaSlider = ({ title, description, cityProp }) => {
       slidesToScroll: 1,
       slidesToShow: 1,
     },
-    [Autoplay({ delay: 2800, stopOnInteraction: false })]
+    [Autoplay({ delay: 2800, stopOnInteraction: false })],
   );
+
   return (
     <div className="testimonial-slider-container">
       <h2>
@@ -64,8 +85,8 @@ const TestimoniWaSlider = ({ title, description, cityProp }) => {
       </p>
       <div className="embla" ref={emblaRef}>
         <div className="embla__container">
-          {dataTestimoniWa.map((image, index) => (
-            <div className="embla__slide-tesimoni-ortu" key={index}>
+          {DUMMY_TESTIMONI_WA.map((image, index) => (
+            <div className="embla__slide-tesimoni-ortu" key={image.id || index}>
               <img
                 loading="lazy"
                 src={image.link_image}
@@ -79,9 +100,11 @@ const TestimoniWaSlider = ({ title, description, cityProp }) => {
     </div>
   );
 };
+
 // TestimoniWaSlider.propTypes = {
 //   title: PropTypes.string,
 //   description: PropTypes.string,
+//   cityProp: PropTypes.string,
 // };
 
 export default TestimoniWaSlider;

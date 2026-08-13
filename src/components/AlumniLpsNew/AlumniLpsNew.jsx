@@ -1,15 +1,122 @@
 import PropTypes from "prop-types";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useLocation } from "react-router-dom";
-import { getAllAlumniLps } from "../../api/alumniLPS/getAllAlumniLPS"; // Pastikan path benar
 import "./AlumniLpsNew.css";
 
+// Dummy data untuk daftar alumni
+const DUMMY_ALUMNI = [
+  {
+    id: 1,
+    name: "Airyn",
+    jurusan: "Biologi - Universitas Indonesia",
+    link_image: "/images/alumni-lps/airyn.webp",
+  },
+  {
+    id: 2,
+    name: "Allya",
+    jurusan: "PWK - Universitas Dipenogoro",
+    link_image: "/images/alumni-lps/allya.webp",
+  },
+  {
+    id: 3,
+    name: "Alya",
+    jurusan: "Farmasi - Universitas Gadjah Mada",
+    link_image: "/images/alumni-lps/alya.webp",
+  },
+  {
+    id: 4,
+    name: "Amira",
+    jurusan: "Farmasi - Universitas Indonesia",
+    link_image: "/images/alumni-lps/amira.webp",
+  },
+  {
+    id: 5,
+    name: "Anisa",
+    jurusan: "Kedokteran - Universitas Indonesia",
+    link_image: "/images/alumni-lps/anisa.webp",
+  },
+  {
+    id: 6,
+    name: "Bintang",
+    jurusan: "Teknik Mesin - Universitas Diponegoro",
+    link_image: "/images/alumni-lps/bintang.webp",
+  },
+  {
+    id: 7,
+    name: "Davina",
+    jurusan: "Ilmu Komputer - Universitas Padjajaran",
+    link_image: "/images/alumni-lps/davina.webp",
+  },
+  {
+    id: 8,
+    name: "Farros",
+    jurusan: "FRSD - Institut Teknologi Bandung",
+    link_image: "/images/alumni-lps/farros.webp",
+  },
+  {
+    id: 9,
+    name: "Fauzan",
+    jurusan: "Managemen - Universitas Diponegoro",
+    link_image: "/images/alumni-lps/fauzan.webp",
+  },
+  {
+    id: 10,
+    name: "Hafiz",
+    jurusan: "Hukum - Universitas Indonesia",
+    link_image: "/images/alumni-lps/hafiz.webp",
+  },
+  {
+    id: 11,
+    name: "Kaylee",
+    jurusan: "Ilmu Komputer - Universitas Indonesia",
+    link_image: "/images/alumni-lps/kaylee.webp",
+  },
+  {
+    id: 12,
+    name: "Lina",
+    jurusan: "Ekeonimi Internasional - Universitas Indonesia",
+    link_image: "/images/alumni-lps/lina.webp",
+  },
+  {
+    id: 13,
+    name: "Nabila",
+    jurusan: "Kedokteran - Universitas Hasanuddin",
+    link_image: "/images/alumni-lps/nabila.webp",
+  },
+  {
+    id: 14,
+    name: "Nisrina",
+    jurusan: "Farmasi - Universitas Indonesia",
+    link_image: "/images/alumni-lps/nisrina.webp",
+  },
+  {
+    id: 15,
+    name: "Queene",
+    jurusan: "IUP Computer - Universitas Gadjah Mada",
+    link_image: "/images/alumni-lps/quene.webp",
+  },
+  {
+    id: 16,
+    name: "Serena",
+    jurusan: "Hub Inter - Universitas Indonesia",
+    link_image: "/images/alumni-lps/serena.webp",
+  },
+  {
+    id: 17,
+    name: "Syaugi",
+    jurusan: "Kedokteran - Universitas Indonesia",
+    link_image: "/images/alumni-lps/syaugi.webp",
+  },
+  {
+    id: 18,
+    name: "Valida",
+    jurusan: "Akuntansi - Universitas Dipenogoro",
+    link_image: "/images/alumni-lps/valida.webp",
+  },
+];
+
 const AlumniLpsNew = ({ city: cityProp }) => {
-  const [alumniLps, setDataAlumniLps] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [paginationInfo, setPaginationInfo] = useState({}); // Untuk menyimpan totalPages, nextPage, etc.
-  const [loading, setLoading] = useState(true); // State loading
-  const [error, setError] = useState(null); // State error
   const itemsPerPage = 6;
 
   const location = useLocation();
@@ -21,44 +128,31 @@ const AlumniLpsNew = ({ city: cityProp }) => {
     city = city.charAt(0).toUpperCase() + city.slice(1);
   }
 
-  const fetchDataAlumniLps = async (page) => {
-    setLoading(true);
-    setError(null);
-    try {
-      const result = await getAllAlumniLps(page, itemsPerPage);
+  // Kalkulasi data untuk paginasi lokal
+  const totalPages = Math.ceil(DUMMY_ALUMNI.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const currentAlumni = DUMMY_ALUMNI.slice(
+    startIndex,
+    startIndex + itemsPerPage,
+  );
 
-      if (result.status === 200) {
-        setDataAlumniLps(result.data.alumniLps);
-        setPaginationInfo(result.data.pagination);
-      } else {
-        // Tangani kasus ketika result.status bukan 200, misal 404 (No Alumni LPS found)
-        setDataAlumniLps([]);
-        setPaginationInfo({});
-        setError(result.message || "Failed to fetch alumni data.");
-      }
-    } catch (err) {
-      console.error("Error fetching alumni LPS data:", err);
-      setError("Failed to load alumni data. Please try again later.");
-    } finally {
-      setLoading(false);
-    }
+  const paginationInfo = {
+    totalPages,
+    prevPage: currentPage > 1 ? currentPage - 1 : null,
+    nextPage: currentPage < totalPages ? currentPage + 1 : null,
   };
-
-  useEffect(() => {
-    fetchDataAlumniLps(currentPage);
-  }, [currentPage]); // Re-fetch data setiap kali currentPage berubah
 
   // Fungsi untuk mengubah halaman
   const goToPage = (pageNumber) => {
-    if (pageNumber > 0 && pageNumber <= paginationInfo.totalPages) {
+    if (pageNumber > 0 && pageNumber <= totalPages) {
       setCurrentPage(pageNumber);
     }
   };
 
-  // Jika Anda ingin menampilkan tombol nomor halaman
+  // Tombol nomor halaman
   const renderPageNumbers = () => {
     const pageNumbers = [];
-    for (let i = 1; i <= paginationInfo.totalPages; i++) {
+    for (let i = 1; i <= totalPages; i++) {
       pageNumbers.push(
         <button
           key={i}
@@ -92,13 +186,10 @@ const AlumniLpsNew = ({ city: cityProp }) => {
         .
       </p>
 
-      {loading && <p className="loading-message">Memuat data alumni...</p>}
-      {error && <p className="error-message">{error}</p>}
-
-      {!loading && !error && alumniLps.length > 0 ? (
+      {currentAlumni.length > 0 ? (
         <>
           <div className="alumnilPS-images-grid">
-            {alumniLps.map((alumni) => {
+            {currentAlumni.map((alumni) => {
               const altText = `Alumni ${alumni.name} jurusan ${
                 alumni.jurusan
               } yang berhasil bersama program Bimbel & Les Privat UTBK, SIMAK UI, UTUL UGM, TKA, CPNS, Pascasarjana, Mahasiswa, dan OSN${
@@ -118,7 +209,7 @@ const AlumniLpsNew = ({ city: cityProp }) => {
           </div>
 
           {/* Pagination Controls */}
-          {paginationInfo.totalPages > 1 && ( // Tampilkan pagination jika ada lebih dari 1 halaman
+          {totalPages > 1 && (
             <div className="pagination-controls">
               <button
                 onClick={() => goToPage(paginationInfo.prevPage)}
@@ -137,16 +228,12 @@ const AlumniLpsNew = ({ city: cityProp }) => {
           )}
         </>
       ) : (
-        !loading &&
-        !error && (
-          <p className="no-data-message">
-            Tidak ada data alumni yang ditemukan.
-          </p>
-        )
+        <p className="no-data-message">Tidak ada data alumni yang ditemukan.</p>
       )}
     </div>
   );
 };
+
 AlumniLpsNew.propTypes = {
   city: PropTypes.string,
 };

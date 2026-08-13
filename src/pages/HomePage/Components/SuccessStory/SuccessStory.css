@@ -44,7 +44,7 @@
   display: none;
   max-width: 78%;
   color: var(--color-gray-dark);
-  font-family: "Nunito", sans-serif;
+
   font-weight: 500;
 }
 
@@ -64,7 +64,7 @@
   text-decoration: none;
   font-size: 0.875rem;
   font-weight: 600;
-  font-family: "Nunito", sans-serif;
+
   color: var(--color-gray-lightest); /* Putih keabu-abuan untuk teks tombol */
   border: none;
   transition: background-color 0.1s ease;

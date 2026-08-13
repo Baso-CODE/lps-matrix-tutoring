@@ -2,7 +2,6 @@
   display: flex;
   justify-content: center;
   padding: 4% 8%;
-  font-family: "Nunito", sans-serif;
 }
 
 @media (max-width: 1024px) {
@@ -51,7 +50,7 @@
 
 .article-title {
   font-size: clamp(1.4rem, 5vw, 1.8rem);
-  font-family: "Nunito", sans-serif;
+
   font-weight: 800;
   color: #1f2937;
   line-height: 1.2;
@@ -118,7 +117,6 @@
   line-height: 1.4;
   font-size: 1rem;
   color: #374151;
-  font-family: "Nunito", sans-serif;
 
   /* CSS Columns untuk text flow */
   column-count: 2;
@@ -342,7 +340,7 @@
   justify-content: center;
   align-items: center;
   min-height: 50vh;
-  font-family: "Nunito", sans-serif;
+
   font-size: 1rem;
 }
 

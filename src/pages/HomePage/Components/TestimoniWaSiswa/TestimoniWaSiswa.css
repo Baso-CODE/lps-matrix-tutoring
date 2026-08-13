@@ -27,13 +27,13 @@
 }
 
 .additional-description-about__testimoni-siswa {
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: #3a4a3f;
   text-align: start;
   font-weight: 400;
   /* margin-top: 20px; */
   line-height: normal;
-  font-family: "Nunito", sans-serif;
+
   margin-bottom: 20px;
 }
 

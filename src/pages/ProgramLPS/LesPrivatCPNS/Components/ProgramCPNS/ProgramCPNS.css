@@ -54,19 +54,17 @@ Program Les Privat CPNS/* ProgramCPNS.css */
 }
 
 .section-description {
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: #343131;
   line-height: normal;
   text-align: start;
-  font-family: "Nunito", sans-serif;
 }
 .section-description-paket {
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: #343131;
   line-height: normal;
   text-align: start;
   font-weight: 700;
-  font-family: "Nunito", sans-serif;
 }
 
 .package-list {
@@ -76,7 +74,6 @@ Program Les Privat CPNS/* ProgramCPNS.css */
   margin-bottom: 1.5rem;
   color: #555;
   font-size: 1rem;
-  font-family: "Nunito", sans-serif;
 }
 
 /* Responsif untuk layar tablet */
@@ -90,7 +87,7 @@ Program Les Privat CPNS/* ProgramCPNS.css */
   }
 
   .section-description {
-    font-size: 0.95rem; /* Menyesuaikan ukuran deskripsi */
+    font-size: 0.9rem; /* Menyesuaikan ukuran deskripsi */
   }
 }
 

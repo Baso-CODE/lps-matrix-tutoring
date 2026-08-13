@@ -1,15 +1,12 @@
 body {
   margin: 0;
+  font-family: "Poppins", sans-serif;
 }
-/* 
-[data-aos] {
-  margin: 0;
-  padding: 0;
-} */
 
 * {
   margin: 0;
   padding: 0;
+  font-family: "Poppins", sans-serif;
 }
 
 :root {
@@ -33,4 +30,30 @@ body {
 
   /* Biru seperti Logo */
   --color-blue-light: #01339b;
+}
+
+.container-all {
+  padding-left: 12%;
+  padding-right: 12%;
+  padding-top: 70px; /* Padding top aktif khusus desktop */
+}
+
+/* RESPONSIVE */
+@media only screen and (max-width: 1024px) {
+  .container-all {
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 40px; /* Padding top dihilangkan untuk tablet & mobile */
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .parent-promo-home {
+    display: none;
+  }
+  .parent-promo-home-mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }

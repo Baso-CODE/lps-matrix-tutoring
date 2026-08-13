@@ -24,7 +24,7 @@
 }
 
 .visi-misi-title {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   color: var(--color-gray-darker);
   font-weight: 700;
   text-transform: uppercase;
@@ -77,9 +77,9 @@
 }
 
 .card-title {
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: var(--color-orange-dark);
-  font-family: "Nunito", sans-serif;
+
   font-weight: 700;
   margin-bottom: 1rem;
   display: flex;
@@ -95,10 +95,10 @@
 }
 
 .card-content {
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: var(--color-gray-dark);
   line-height: normal;
-  font-family: "Nunito", sans-serif;
+
   text-align: center;
 }
 

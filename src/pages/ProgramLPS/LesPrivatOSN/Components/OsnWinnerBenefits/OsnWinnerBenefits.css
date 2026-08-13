@@ -15,11 +15,10 @@
 }
 
 .osn-winner-benefits-title {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   color: var(--color-dark-blue);
   margin-bottom: 15px;
   font-weight: 700;
-  font-family: "Nunito", sans-serif;
 }
 
 .osn-winner-benefits-title span {
@@ -27,8 +26,7 @@
 }
 
 .osn-winner-benefits-subtitle {
-  font-family: "Nunito", sans-serif;
-  font-size: 1.15rem;
+  font-size: 0.9rem;
   color: var(--color-gray-dark);
   margin-bottom: 50px;
   max-width: 800px;
@@ -86,14 +84,13 @@
   color: var(--color-orange-dark); /* Warna judul manfaat */
   font-weight: 700;
   margin-bottom: 10px;
-  font-family: "Nunito", sans-serif;
 }
 
 .benefit-description {
   font-size: 1rem;
   color: var(--color-gray-medium);
   line-height: 1.7;
-  font-family: "Nunito", sans-serif;
+
   flex-grow: 1;
 }
 
@@ -103,7 +100,7 @@
     font-size: 1.2rem;
   }
   .osn-winner-benefits-subtitle {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
   .benefit-title {
     font-size: 1.1rem;

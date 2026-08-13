@@ -46,7 +46,7 @@
 
 .title-halaman-hero-program {
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 15px;
   text-align: start;
   text-transform: uppercase;
@@ -56,12 +56,11 @@
 }
 
 .child-paragraf-hero-program {
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: #343131;
   line-height: 1.6;
   font-weight: 400;
   text-align: start;
-  font-family: "Nunito", sans-serif;
 }
 
 .btn-learn-more-program {
@@ -74,7 +73,7 @@
   border-radius: 5px;
   font-size: 16px;
   font-weight: bold;
-  font-family: "Nunito", sans-serif;
+
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -132,7 +131,7 @@
     margin-top: 8vh;
   }
   .title-halaman-hero-program {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
   .child-paragraf-hero-program {
     font-size: 0.9rem;

@@ -2,7 +2,7 @@
 
 .program-intensif-container__sd_smp_sma {
   line-height: normal;
-  font-family: "Nunito", sans-serif;
+
   margin-top: 2vh;
 }
 
@@ -21,13 +21,12 @@
 }
 
 .program-description__sd_smp_sma {
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 400;
   color: #343131;
   line-height: normal;
   text-align: start;
   /* margin-bottom: 1.5rem; */
-  font-family: "Nunito", sans-serif;
 }
 
 /* Responsif untuk Tablet Landscape (≤ 64rem) */

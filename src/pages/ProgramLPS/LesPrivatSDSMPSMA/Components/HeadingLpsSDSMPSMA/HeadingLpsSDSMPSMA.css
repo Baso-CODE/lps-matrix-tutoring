@@ -34,7 +34,6 @@
   text-transform: uppercase;
   line-height: normal;
   color: var(--color-gray-darker);
-  font-family: "Nunito", sans-serif;
 }
 
 .child-paragraf-hero__sd_smp_sma {
@@ -44,7 +43,6 @@
 
   font-weight: 400;
   text-align: start;
-  font-family: "Nunito", sans-serif;
 }
 
 .btn-learn-more__sd_smp_sma {
@@ -57,7 +55,7 @@
   border-radius: 5px;
   font-size: 16px;
   font-weight: bold;
-  font-family: "Nunito", sans-serif;
+
   cursor: pointer;
   transition: background-color 0.3s ease;
 }

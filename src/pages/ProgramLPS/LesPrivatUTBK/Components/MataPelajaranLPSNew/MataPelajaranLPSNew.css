@@ -16,7 +16,7 @@
   color: var(--color-gray-darker);
   margin-bottom: 15px;
   font-weight: 700;
-  font-family: "Nunito", sans-serif;
+
   text-align: left; /* Pastikan judul rata kiri */
 }
 
@@ -31,7 +31,6 @@
   padding-left: 25px;
   margin-bottom: 10px;
   font-size: 0.95rem;
-  font-family: "Nunito", sans-serif;
 }
 
 .indicator-list li::before {

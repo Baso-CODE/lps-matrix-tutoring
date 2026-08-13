@@ -10,14 +10,13 @@
   font-weight: 600;
   margin-bottom: 20px;
   text-align: center;
-  font-family: "Nunito", sans-serif;
 }
 
 .asal-siswa-list {
   display: grid;
   grid-template-columns: repeat(1, 1fr); /* Default untuk mobile */
   gap: 10px;
-  font-family: "Nunito", sans-serif;
+
   color: #112743;
   max-height: 300px; /* Tentukan tinggi maksimum */
   overflow-y: auto; /* Aktifkan scroll jika konten melebihi tinggi */

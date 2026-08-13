@@ -1,6 +1,5 @@
 .program-intensif-container-cpns {
   line-height: normal;
-  font-family: "Nunito", sans-serif;
 }
 
 .program-title-cpns {
@@ -18,12 +17,10 @@
 }
 
 .program-description-cpns {
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: var(--color-gray-dark);
   line-height: normal;
   text-align: start;
-
-  font-family: "Nunito", sans-serif;
 }
 
 @media (max-width: 1024px) {

@@ -36,21 +36,20 @@
 .section-title-footer-matrix {
   font-size: 1.125rem;
   font-weight: bold;
-  font-family: "Nunito", sans-serif;
+
   margin-bottom: 0.9rem;
 }
 
 .section-subtitle-footer-matrix {
   font-size: 1rem;
   font-weight: bold;
-  font-family: "Nunito", sans-serif;
+
   margin-bottom: 0.5rem;
 }
 
 .address-footer-matrix,
 .phone-list-footer-matrix,
 .office-hours-footer-matrix {
-  font-family: "Nunito", sans-serif;
   margin-bottom: 0.4rem;
 }
 
@@ -68,7 +67,7 @@
 .phone-list-footer-matrix li a {
   color: white; /* Sesuaikan dengan warna teks sebelumnya */
   text-decoration: none; /* Hilangkan underline */
-  font-family: "Nunito", sans-serif; /* Pertahankan font yang sama */
+  /* Pertahankan font yang sama */
   display: inline-block; /* Agar padding dan margin bekerja dengan baik */
   padding: 0.2rem 0; /* Tambahkan padding sesuai kebutuhan */
   transition: color 0.3s ease; /* Tambahkan transisi untuk efek hover */
@@ -96,7 +95,6 @@
   margin-top: 0.7rem;
   text-align: center;
   font-size: 0.8rem;
-  font-family: "Nunito", sans-serif;
 }
 
 .footer-matrix-image {
@@ -118,6 +116,5 @@
     margin-top: 1rem;
     text-align: center;
     font-size: 0.7rem;
-    font-family: "Nunito", sans-serif;
   }
 }

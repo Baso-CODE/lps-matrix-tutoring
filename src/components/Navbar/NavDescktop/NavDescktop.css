@@ -11,10 +11,11 @@
   padding: 4px 8px;
   border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  transition:
+    background-color 0.2s ease-in-out,
+    color 0.2s ease-in-out;
   text-decoration: none;
   color: white; /* Tambahkan warna font */
-  font-family: "Nunito", sans-serif;
 }
 
 .menu-link:hover {
@@ -188,7 +189,6 @@
   font-weight: 700;
   color: var(--color-orange-default);
   font-size: 14px;
-  font-family: "Nunito", sans-serif;
 }
 
 .submenu-desc {
@@ -196,7 +196,6 @@
   font-weight: 600;
   color: #2d3748;
   line-height: 1rem;
-  font-family: "Nunito", sans-serif;
 }
 
 @media (max-width: 768px) {

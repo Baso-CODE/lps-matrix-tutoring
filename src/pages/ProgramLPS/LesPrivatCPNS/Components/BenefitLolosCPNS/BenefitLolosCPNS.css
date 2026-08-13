@@ -28,7 +28,7 @@
 .cpns-benefit-subtitle {
   font-size: 1rem;
   color: var(--color-gray-dark, #555555);
-  font-family: "Nunito", sans-serif;
+
   margin-bottom: 50px;
   max-width: 700px;
   margin-left: auto;
@@ -95,18 +95,17 @@
 }
 
 .cpns-benefit-card-title {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: var(--color-orange-dark, #cc6600);
   font-weight: 700;
   margin-bottom: 10px;
-  font-family: "Nunito", sans-serif;
 }
 
 .cpns-benefit-card-description {
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: var(--color-gray-medium, #666666);
   line-height: 1.7;
-  font-family: "Nunito", sans-serif;
+
   flex-grow: 1;
 }
 
@@ -119,7 +118,7 @@
     font-size: 1rem;
   }
   .cpns-benefit-card-title {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 }
 

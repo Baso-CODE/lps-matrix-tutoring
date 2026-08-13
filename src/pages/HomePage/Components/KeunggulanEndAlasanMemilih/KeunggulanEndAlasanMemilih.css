@@ -12,7 +12,7 @@
 }
 
 .title {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   color: var(--color-gray-darker);
   margin-bottom: 2rem;
   text-transform: uppercase;
@@ -38,7 +38,7 @@
   font-size: 0.95rem;
   color: var(--color-gray-dark);
   padding: 0.5rem 0; /* Tambahkan padding vertikal antar item list */
-  font-family: "Nunito", sans-serif;
+
   line-height: 1.6; /* Untuk keterbacaan yang lebih baik */
 }
 
@@ -56,7 +56,7 @@
 /* Responsif untuk layar tablet */
 @media (max-width: 1024px) {
   .title {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
   .keunggulan-list li {
     font-size: 0.95rem;
@@ -70,7 +70,7 @@
 /* Responsif untuk layar kecil */
 @media (max-width: 768px) {
   .title {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
   .keunggulan-list li {
     font-size: 0.9rem;
@@ -84,7 +84,7 @@
 /* Responsif untuk layar sangat kecil */
 @media (max-width: 480px) {
   .title {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
   .keunggulan-list li {
     font-size: 0.9rem;

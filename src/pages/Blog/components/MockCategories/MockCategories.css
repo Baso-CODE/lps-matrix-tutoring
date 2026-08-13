@@ -3,7 +3,6 @@
   justify-content: center;
   margin-bottom: 2rem;
   margin-top: 1rem;
-  font-family: "Nunito", sans-serif;
 }
 
 .category-buttons-wrapper {
@@ -21,7 +20,7 @@
 
 .category-button {
   padding: 0.5rem 1rem;
-  font-family: "Nunito", sans-serif;
+
   border-radius: 9999px;
   font-size: 0.875rem;
   font-weight: 600;

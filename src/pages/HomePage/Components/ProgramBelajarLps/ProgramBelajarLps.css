@@ -43,7 +43,7 @@
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
-  font-family: "Nunito", sans-serif;
+
   transition: background-color 0.3s;
 }
 
@@ -74,7 +74,6 @@
 
   color: var(--color-gray-darker);
   font-weight: 600;
-  font-family: "Nunito", sans-serif;
 }
 
 .program-details-v2 ul {
@@ -87,7 +86,6 @@
 }
 
 .program-details-v2 li {
-  font-family: "Nunito", sans-serif;
   margin-bottom: 0.3rem;
   color: var(--color-gray-dark);
 }

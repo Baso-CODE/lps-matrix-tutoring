@@ -1,0 +1,63 @@
+/* ProgramIntensiOSN.css */
+
+.program-intensif-container__osn {
+  line-height: normal;
+
+  margin-top: 2vh;
+}
+
+.program-title__osn {
+  font-size: 1.2rem;
+  color: #333;
+  text-align: start;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  padding: 0;
+  margin: 0;
+  border-left: 4px solid #ff6500;
+  padding-left: 0.3rem;
+  margin-bottom: 1vh;
+}
+
+.program-description__osn {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #343131;
+  line-height: normal;
+  text-align: start;
+}
+
+/* Responsif untuk Tablet Landscape (≤ 1024px) */
+@media (max-width: 1024px) {
+  .program-title__osn {
+    font-size: 1.4rem;
+  }
+
+  .program-description__osn {
+    font-size: 0.9rem;
+  }
+}
+
+/* Responsif untuk Tablet Portrait dan Ponsel Lebar (≤ 768px) */
+@media (max-width: 768px) {
+  .program-title__osn {
+    font-size: 1.25rem;
+  }
+
+  .program-description__osn {
+    font-size: 0.9rem;
+  }
+}
+
+/* Responsif untuk Ponsel Kecil (≤ 480px) */
+@media (max-width: 480px) {
+  .program-title__osn {
+    font-size: 1.2rem;
+    text-align: start;
+  }
+
+  .program-description__osn {
+    font-size: 0.85rem;
+    text-align: start;
+  }
+}

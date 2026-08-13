@@ -96,7 +96,7 @@
   border-radius: 5px;
   font-size: 16px;
   font-weight: bold;
-  font-family: "Nunito", sans-serif;
+
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -115,7 +115,6 @@
   background-color: var(--color-gray-dark);
   color: var(--color-gray-lightest);
   margin-left: 10px;
-  font-family: "Nunito", sans-serif;
 }
 
 /* Style for child-paragraf-hero-home */
@@ -125,7 +124,6 @@
   line-height: 22px;
   margin-bottom: 20px;
   font-weight: 400;
-  font-family: "Nunito", sans-serif;
 }
 
 .highlight-yellow {

@@ -24,7 +24,7 @@
 
 .subtitle {
   font-size: 0.9em;
-  font-family: "Nunito", sans-serif;
+
   margin: 10px auto;
 }
 
@@ -52,7 +52,7 @@
 /* Main content and sections */
 .main-content {
   width: 100%;
-  font-family: "Nunito", sans-serif;
+
   max-width: 800px;
 }
 

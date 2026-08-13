@@ -91,7 +91,7 @@
   display: inline-block;
   background-color: #6366f1;
   color: #ffffff;
-  font-family: "Nunito", sans-serif;
+
   border-radius: 9999px;
   padding: 0.25rem 0.75rem;
   font-size: 0.75rem;
@@ -102,13 +102,13 @@
 }
 .article-date {
   color: #6b7280;
-  font-family: "Nunito", sans-serif;
+
   font-weight: 500;
 }
 
 .article-card-title {
   font-size: 1.25rem;
-  font-family: "Nunito", sans-serif;
+
   font-weight: 700;
   line-height: 1.25;
   display: -webkit-box;
@@ -128,7 +128,7 @@
 .card-tag-item {
   background-color: #eef2ff;
   color: #4f46e5;
-  font-family: "Nunito", sans-serif;
+
   font-size: 0.625rem;
   font-weight: 600;
   padding: 0.125rem 0.5rem;
@@ -144,7 +144,6 @@
   transition-property: color;
   transition-duration: 200ms;
   text-decoration: none;
-  font-family: "Nunito", sans-serif;
 }
 
 .read-more-link:hover {
@@ -160,12 +159,11 @@
   text-align: center;
   padding: 2.5rem;
   color: #6b7280;
-  font-family: "Nunito", sans-serif;
 }
 
 .article-card-description {
   color: #6b7280;
-  font-family: "Nunito", sans-serif;
+
   font-size: 0.875rem; /* 14px */
   font-weight: 400;
   line-height: 1.5;

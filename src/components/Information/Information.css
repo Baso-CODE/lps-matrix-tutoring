@@ -7,7 +7,7 @@
 .additional-info-title {
   font-size: 20px;
   font-weight: bold;
-  font-family: "Nunito", sans-serif;
+
   color: #ff6500;
   margin-bottom: 12px;
 }
@@ -17,7 +17,7 @@
   font-size: 1rem;
   color: #343131;
   line-height: normal;
-  font-family: "Nunito", sans-serif;
+
   margin-bottom: 8px;
 }
 
@@ -29,7 +29,7 @@
 .information-title {
   font-size: 1.4rem;
   font-weight: 600;
-  font-family: "Nunito", sans-serif;
+
   margin-bottom: 1rem;
   color: #ff6500;
   text-align: center;
@@ -54,7 +54,7 @@
   font-size: 1.2rem;
   font-weight: 500;
   margin-bottom: 1rem;
-  font-family: "Nunito", sans-serif;
+
   color: #ff8000;
 }
 
@@ -64,7 +64,7 @@
   color: #343131;
   line-height: normal;
   margin: 0;
-  font-family: "Nunito", sans-serif;
+
   margin-bottom: 1rem;
 }
 
@@ -132,7 +132,8 @@
 }
 /* Styling untuk pesan "Tidak ada informasi tersedia" */
 .no-data-message {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Font yang mudah dibaca */
+  font-family:
+    "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Font yang mudah dibaca */
   font-size: 1.1em; /* Ukuran teks sedikit lebih besar */
   color: #666; /* Warna teks abu-abu yang lembut */
   text-align: center; /* Teks di tengah */

@@ -14,7 +14,7 @@
   text-align: center;
   width: 100%;
   margin-top: 20px;
-  font-family: "Nunito", sans-serif;
+
   font-size: 14px;
   color: #f3f3f3;
   padding-bottom: 20px; /* Default padding-bottom untuk desktop/tablet */
@@ -66,25 +66,23 @@
   margin-bottom: 10px;
   font-size: 18px;
   font-weight: 600;
-  font-family: "Nunito", sans-serif;
+
   color: #f96900;
 }
 .new-footer-section h4 {
   margin: 10px 0 5px;
   font-size: 14px;
-  font-family: "Nunito", sans-serif;
+
   font-weight: normal;
   color: #f3f3f3;
 }
 
 .new-footer-section-alamat {
-  font-family: "Nunito", sans-serif;
   margin: 0 0 8px;
   font-weight: normal;
   font-size: 13px;
 }
 .new-footer-section-description {
-  font-family: "Nunito", sans-serif;
   margin: 0 0 8px;
   font-weight: normal;
   font-size: 14px;
@@ -100,7 +98,6 @@
   font-weight: normal;
   margin: 3px 0;
   font-size: 13px;
-  font-family: "Nunito", sans-serif;
 }
 
 .new-footer-section img {
@@ -120,7 +117,7 @@
   text-decoration: none;
   color: #fff;
   font-size: 14px;
-  font-family: "Nunito", sans-serif;
+
   cursor: pointer;
 }
 

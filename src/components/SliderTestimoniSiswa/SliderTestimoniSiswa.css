@@ -7,7 +7,7 @@
 
 .testimoni_wa__title {
   text-transform: uppercase;
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   font-family: "Poppins", sans-serif;
   font-weight: 800;
   margin-bottom: 20px;
@@ -24,7 +24,7 @@
 .testimoni_wa__description {
   font-size: 1rem;
   color: #444444;
-  font-family: "Nunito", sans-serif;
+
   margin-bottom: 30px;
   max-width: 800px;
   margin-left: auto;
@@ -74,7 +74,6 @@
   font-size: 1rem;
   font-weight: 600;
   color: #444;
-  font-family: "Nunito", sans-serif;
 }
 /* atur posisi pagination agak ke bawah */
 .swiper-pagination {
@@ -120,7 +119,7 @@
 
 @media (max-width: 768px) {
   .testimoni_wa__title {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
   .testimoni_wa__description {
     font-size: 0.9rem;

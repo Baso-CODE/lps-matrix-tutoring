@@ -45,7 +45,7 @@
   font-weight: 700;
   color: var(--color-gray-darker);
   text-align: center;
-  font-family: "Nunito", sans-serif;
+
   margin-bottom: 2rem; /* Tambah jarak bawah */
 }
 
@@ -53,7 +53,6 @@
   color: var(--color-gray-dark);
   font-size: 1.05rem;
   line-height: 1.8;
-  font-family: "Nunito", sans-serif;
 
   list-style: none;
 }

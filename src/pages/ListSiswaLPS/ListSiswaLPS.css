@@ -15,7 +15,6 @@
   border-collapse: collapse;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   background-color: #fff;
-  font-family: "Nunito", sans-serif;
 }
 
 /* Header Row */
@@ -42,24 +41,21 @@
   padding: 12px 15px;
   text-align: left;
   font-size: 0.9rem;
-  font-family: "Nunito", sans-serif;
 }
 
 .main-title-list-student {
   text-align: start;
   text-transform: uppercase;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   color: var(--color-gray-darker);
   font-family: "Poppins", sans-serif;
 }
 .child-title-list-student {
-  font-family: "Nunito", sans-serif;
   font-size: 1.1rem;
   text-align: start;
   margin-bottom: 2rem;
 }
 .child-title-list-student_bottom {
-  font-family: "Nunito", sans-serif;
   font-size: 1.1rem;
   text-align: start;
   width: 100%;
@@ -90,7 +86,7 @@
     font-size: 14px;
   }
   .main-title-list-student {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
   .child-title-list-student {
     font-size: 13px;

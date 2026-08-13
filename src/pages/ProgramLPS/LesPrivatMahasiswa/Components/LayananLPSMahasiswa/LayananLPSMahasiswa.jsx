@@ -3,7 +3,7 @@ import "./LayananLPSMahasiswa.css";
 const LayananLPSMahasiswa = () => {
   return (
     <div className="container-layanan-lps-mahasiswa">
-      <h2 className="program-title-cpns">
+      <h2 className="program-title-mahasiswa">
         Program Les Privat Mahasiswa - Belajar Mata Kuliah Sesuai Kebutuhan
       </h2>
       <p className="additional-description-mahasiswa">

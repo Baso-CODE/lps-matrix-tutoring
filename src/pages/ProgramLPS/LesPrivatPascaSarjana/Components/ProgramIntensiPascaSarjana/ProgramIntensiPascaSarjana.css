@@ -14,7 +14,7 @@
 }
 
 .section-title-cpns__pasca-sarjana {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: #333;
   text-align: center;
@@ -24,10 +24,10 @@
 }
 
 .section-description__pasca-sarjana {
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: #343131;
   font-weight: 400;
-  font-family: "Nunito", sans-serif;
+
   line-height: 1.7;
   text-align: justify;
   margin-bottom: 1rem;
@@ -37,7 +37,7 @@
   font-size: 1.05rem;
   color: #ff8000;
   font-weight: 600;
-  font-family: "Nunito", sans-serif;
+
   margin-bottom: 0.8rem;
   text-align: left;
 }
@@ -46,7 +46,7 @@
   list-style-type: disc;
   padding-left: 1.5rem;
   color: #343131;
-  font-family: "Nunito", sans-serif;
+
   line-height: 1.6;
   margin-bottom: 1.5rem;
   text-align: left;
@@ -55,7 +55,7 @@
 .package-list__pasca-sarjana li {
   font-weight: 500;
   margin-bottom: 0.5rem;
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: #343131;
 }
 
@@ -69,15 +69,15 @@
     padding: 1.5rem 1rem;
   }
   .section-title-cpns__pasca-sarjana {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
   .section-description__pasca-sarjana {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
   .section-description-paket__pasca-sarjana {
     font-size: 1rem;
   }
   .package-list__pasca-sarjana li {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
 }

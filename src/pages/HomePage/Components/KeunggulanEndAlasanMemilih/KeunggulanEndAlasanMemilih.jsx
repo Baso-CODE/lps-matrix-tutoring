@@ -22,7 +22,7 @@ const KeunggulanEndAlasanMemilih = () => {
 
   return (
     <div className="container-keunggulan-lps">
-      <h1 className="title">Keunggulan dan Alasan Memilih LPS Education</h1>
+      <h2 className="title">Keunggulan dan Alasan Memilih LPS Education</h2>
       <ul className="keunggulan-list">
         {keunggulanItems.map((item, index) => (
           <li key={index}>{item}</li>

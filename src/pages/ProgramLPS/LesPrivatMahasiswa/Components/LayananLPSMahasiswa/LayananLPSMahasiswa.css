@@ -1,15 +1,39 @@
-/* List Styling */
+/* Container Styling */
 .container-layanan-lps-mahasiswa {
   margin-top: 5vh;
   margin-bottom: 5vh;
+  line-height: normal;
 }
+
+/* Title Styling (Baru ditambahkan) */
+.program-title-mahasiswa {
+  font-size: 1.2rem;
+  color: #333;
+  text-align: start;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  padding: 0;
+  margin: 0;
+  border-left: 4px solid #ff6500;
+  padding-left: 0.3rem;
+  margin-bottom: 1vh;
+}
+
+.additional-description-mahasiswa {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #343131;
+  line-height: normal;
+  text-align: start;
+}
+
+/* List Styling */
 .program-simak-ui-list__mahasiswa {
   list-style-type: none;
   padding-left: 0;
   margin: 0;
   font-size: 1rem;
   color: #343131;
-  font-family: "Nunito", sans-serif;
 
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -37,14 +61,20 @@
 
 /* Tablet: Tetap 2 kolom */
 @media (min-width: 768px) and (max-width: 1024px) {
+  .program-title-mahasiswa {
+    font-size: 1.4rem;
+  }
   .program-simak-ui-list__mahasiswa {
-    grid-template-columns: repeat(2, 1fr); /* Tetap 2 kolom */
-    gap: 10px 15px; /* Sesuaikan gap untuk tablet */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 15px;
   }
 }
 
 /* Mobile: 1 kolom dengan scroll vertikal */
 @media (max-width: 767px) {
+  .program-title-mahasiswa {
+    font-size: 1.25rem;
+  }
   .program-simak-ui-list__mahasiswa {
     grid-template-columns: 1fr;
     gap: 5px 0;
@@ -70,6 +100,6 @@
     border-radius: 10px;
   }
   .program-simak-ui-list__mahasiswa::-webkit-scrollbar-thumb:hover {
-    background: #0f766e; /* primary-dark Anda */
+    background: #0f766e;
   }
 }

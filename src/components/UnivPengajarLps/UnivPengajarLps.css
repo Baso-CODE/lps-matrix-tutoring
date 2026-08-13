@@ -7,14 +7,13 @@
 
 .centered__pengajarLps {
   font-size: 16px;
-  font-family: "Nunito", sans-serif;
+
   color: #333;
   margin-bottom: 20px;
   max-width: 800px;
   margin-left: auto;
   opacity: 0.98;
   margin-right: auto;
-  font-weight: 600;
 }
 
 .centered__Univ_pengajarLps img {
@@ -44,7 +43,7 @@
 /* Responsif untuk Ponsel Kecil (≤ 30rem) */
 @media (max-width: 480px) {
   .centered__pengajarLps {
-    font-size: 0.8125rem; /* Ukuran terkecil */
+    font-size: 0.8rem; /* Ukuran terkecil */
     max-width: 90%; /* Maksimalkan penggunaan layar kecil */
     margin-left: auto; /* Pastikan teks tetap di tengah */
     margin-right: auto;

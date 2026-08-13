@@ -9,7 +9,6 @@
   ); /* Gunakan variabel warna oranye gelap, fallback jika tidak ada */
   font-weight: 700; /* Lebih tebal */
   margin-bottom: 2.5rem; /* Jarak bawah yang lebih besar */
-  font-family: "Nunito", sans-serif;
 }
 
 .mata-pelajaran-list {
@@ -18,7 +17,7 @@
   gap: 1rem;
   list-style-type: none; /* Hapus bullet default */
   padding: 0; /* Hapus padding default */
-  font-family: "Nunito", sans-serif;
+
   margin: 0 auto; /* Pusatkan daftar */
   /* max-width: 900px; */ /* Opsional: batasi lebar daftar agar tidak terlalu melebar */
 }

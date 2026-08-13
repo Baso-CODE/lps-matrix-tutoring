@@ -10,7 +10,6 @@
   font-size: 1.4rem;
   color: #333;
   margin-bottom: 2rem;
-  font-family: "Nunito", sans-serif;
 }
 
 .card-container-tiga-jalur {
@@ -37,22 +36,20 @@
 }
 
 .card-title-tiga-jalur {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: #ff8000;
   margin-bottom: 1rem;
-  font-family: "Nunito", sans-serif;
 }
 
 .card-description-tiga-jalur {
   font-size: 0.9rem;
   color: #343131;
   line-height: normal;
-  font-family: "Nunito", sans-serif;
 }
 
 /* Additional Description Styling */
 .additional-description {
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: #343131;
   text-align: start;
   font-weight: 400;
@@ -60,7 +57,6 @@
   margin-left: auto;
   margin-right: auto;
   line-height: normal;
-  font-family: "Nunito", sans-serif;
 }
 /* Responsif untuk layar yang lebih kecil */
 @media (max-width: 768px) {

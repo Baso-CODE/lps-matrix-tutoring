@@ -45,7 +45,6 @@
   color: #ff8000;
   font-weight: 600;
   margin-bottom: 1rem;
-  font-family: "Nunito", sans-serif;
 }
 
 /* List Styling */
@@ -54,7 +53,7 @@
   padding: 0 1.5rem; /* Tambahkan padding kiri untuk menyesuaikan posisi */
 
   color: #343131;
-  font-family: "Nunito", sans-serif;
+
   line-height: normal;
   text-align: start;
 }

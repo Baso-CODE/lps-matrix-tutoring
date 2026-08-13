@@ -41,7 +41,7 @@
   font-size: 1.4rem;
   text-transform: uppercase;
   color: var(--color-gray-darker);
-  font-family: "Nunito", sans-serif;
+
   font-weight: 600;
   margin-bottom: 1rem;
 }
@@ -59,7 +59,6 @@
   font-weight: 400;
   margin-top: 10px;
   line-height: 22px;
-  font-family: "Nunito", sans-serif;
 }
 
 @media (max-width: 768px) {

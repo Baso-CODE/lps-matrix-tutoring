@@ -8,13 +8,12 @@
 }
 
 .materi-title-cpns {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   text-align: center;
   text-transform: uppercase;
   color: var(--color-gray-darker);
   font-weight: 700;
   margin-bottom: 2rem;
-  font-family: "Poppins", sans-serif;
 }
 
 .card-group-cpns {
@@ -52,19 +51,17 @@
 }
 
 .card-title-cpns {
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: var(--color-orange-default);
   font-weight: 700;
   margin: 0;
-  font-family: "Nunito", sans-serif;
 }
 
 .card-description-cpns {
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: #343131;
   font-weight: 400;
   line-height: normal;
-  font-family: "Nunito", sans-serif;
 }
 
 /* Responsif untuk tampilan tablet dan mobile */
@@ -129,6 +126,6 @@
   }
 
   .card-description-cpns {
-    font-size: 0.85rem; /* Adjusted for readability */
+    font-size: 0.8rem; /* Adjusted for readability */
   }
 }

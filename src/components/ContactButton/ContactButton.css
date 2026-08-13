@@ -13,7 +13,7 @@
   font-size: 1.2rem;
   color: #f3f7ec;
   font-weight: 500;
-  font-family: "Nunito", sans-serif;
+
   margin-bottom: 10px;
 }
 
@@ -21,14 +21,14 @@
   font-size: 1em;
   color: #555;
   font-weight: normal;
-  font-family: "Nunito", sans-serif;
+
   margin-bottom: 15px;
 }
 
 .contact-info p {
   font-size: 1.1em;
   color: #f3f7ec;
-  font-family: "Nunito", sans-serif;
+
   margin: 5px 0;
   font-style: italic;
 }

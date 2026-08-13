@@ -9,7 +9,7 @@
 
   color: #ff8000;
   text-align: center;
-  font-family: "Nunito", sans-serif;
+
   margin-bottom: 2rem;
 }
 
@@ -18,8 +18,8 @@
 }
 
 .materi-title {
-  font-size: 1.1rem;
-  font-family: "Nunito", sans-serif;
+  font-size: 1rem;
+
   background-color: var(--color-orange-default);
   color: #ffffff;
   padding: 0.4rem 0.6rem;
@@ -32,11 +32,10 @@
 }
 
 .materi-description {
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: #343131;
   line-height: normal;
   font-weight: normal;
-  font-family: "Nunito", sans-serif;
 }
 
 /* For screens up to 1024px (tablet landscape) */

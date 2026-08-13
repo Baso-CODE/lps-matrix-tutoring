@@ -11,7 +11,6 @@
 }
 
 .btn-float-wa {
-  font-family: "Nunito", sans-serif;
   border: 1px solid transparent;
   background-color: #25d366;
   padding: 7px;
@@ -43,7 +42,6 @@
   padding: 8px;
   border-radius: 5px;
   font-weight: 600;
-  font-family: "Nunito", sans-serif;
 }
 
 .notif-badge {
@@ -118,7 +116,6 @@
 
 .modal-title-group {
   text-align: left;
-  font-family: "Nunito", sans-serif;
 }
 
 .modal-title-chat {
@@ -135,7 +132,7 @@
 
 .modal-waiting-time {
   margin: 15px 0;
-  font-family: "Nunito", sans-serif;
+
   font-size: 0.9rem;
   color: #888;
   text-align: left;
@@ -181,7 +178,7 @@
 
 .contact-details {
   display: flex;
-  font-family: "Nunito", sans-serif;
+
   flex-direction: column;
   text-align: left;
 }

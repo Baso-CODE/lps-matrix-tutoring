@@ -26,7 +26,7 @@
   font-size: 28px;
   line-height: normal;
   color: var(--color-gray-darker);
-  font-family: "Nunito", sans-serif;
+
   font-weight: bold;
   font-family: sans-serif; /* Ganti dengan font judul Anda jika ada */
   text-align: center;
@@ -81,7 +81,7 @@
   line-height: normal;
   color: var(--color-gray-darker);
   font-weight: 700;
-  font-family: "Nunito", sans-serif;
+
   text-align: center;
 }
 
@@ -108,7 +108,7 @@
   color: #555;
   font-size: 14px;
   font-weight: 500;
-  font-family: "Nunito", sans-serif;
+
   text-align: start;
 }
 

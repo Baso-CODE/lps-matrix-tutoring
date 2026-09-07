@@ -3,8 +3,8 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 // Data statis contact CS
 const DUMMY_CONTACTS = [
-  { name: "Kak Nia", phone: "6282258689993", role: "Admin" },
-  { name: "Kak Fani", phone: "6285774023474", role: "Admin" },
+  { name: "Kak Fani", phone: "6282258689993", role: "Admin" },
+  { name: "Kak Ririn", phone: "6285774023474", role: "Admin" },
   { name: "Kak Fina", phone: "6281311778441", role: "Admin" },
 ];
 

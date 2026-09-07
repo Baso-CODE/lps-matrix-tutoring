@@ -5,8 +5,8 @@ import "./FloatingCTA.css";
 
 // Data statis contact CS
 const DUMMY_CONTACTS = [
-  { id: 1, name: "Kak Nia", phone: "6282258689993", role: "Admin" },
-  { id: 2, name: "Kak Fani", phone: "6285774023474", role: "Admin" },
+  { id: 1, name: "Kak Fani", phone: "6282258689993", role: "Admin" },
+  { id: 2, name: "Kak Ririn", phone: "6285774023474", role: "Admin" },
   { id: 3, name: "Kak Fina", phone: "6281311778441", role: "Admin" },
 ];
 

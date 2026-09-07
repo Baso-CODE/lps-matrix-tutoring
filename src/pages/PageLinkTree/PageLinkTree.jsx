@@ -154,7 +154,7 @@ const PageLinkTree = () => {
             <div className="item-content">
               <MessageCircleMore size={20} />
               <div className="item-text">
-                <span>Hubungi Kak Nia</span>
+                <span>Hubungi Kak Fani</span>
               </div>
             </div>
             <ChevronRight size={20} />
@@ -167,7 +167,7 @@ const PageLinkTree = () => {
             <div className="item-content">
               <MessageCircleMore size={20} />
               <div className="item-text">
-                <span>Hubungi Kak Fani</span>
+                <span>Hubungi Kak Ririn</span>
               </div>
             </div>
             <ChevronRight size={20} />

@@ -22,7 +22,7 @@ const FooterNew = () => {
       phone: "6282258689993",
     },
     {
-      name: "Kak Fani",
+      name: "Kak Ririn",
       phone: "6285774023474",
     },
     {

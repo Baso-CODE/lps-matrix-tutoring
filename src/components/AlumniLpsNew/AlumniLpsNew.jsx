@@ -3,7 +3,6 @@ import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import "./AlumniLpsNew.css";
 
-// Dummy data untuk daftar alumni
 const DUMMY_ALUMNI = [
   {
     id: 1,
@@ -123,14 +122,16 @@ const AlumniLpsNew = ({ city: cityProp }) => {
   const path = location.pathname;
 
   let city = cityProp || "";
+
   if (!city && path.includes("/di/")) {
     city = path.split("/di/")[1];
     city = city.charAt(0).toUpperCase() + city.slice(1);
   }
 
-  // Kalkulasi data untuk paginasi lokal
   const totalPages = Math.ceil(DUMMY_ALUMNI.length / itemsPerPage);
+
   const startIndex = (currentPage - 1) * itemsPerPage;
+
   const currentAlumni = DUMMY_ALUMNI.slice(
     startIndex,
     startIndex + itemsPerPage,
@@ -142,95 +143,118 @@ const AlumniLpsNew = ({ city: cityProp }) => {
     nextPage: currentPage < totalPages ? currentPage + 1 : null,
   };
 
-  // Fungsi untuk mengubah halaman
   const goToPage = (pageNumber) => {
-    if (pageNumber > 0 && pageNumber <= totalPages) {
+    if (pageNumber && pageNumber > 0 && pageNumber <= totalPages) {
       setCurrentPage(pageNumber);
     }
   };
 
-  // Tombol nomor halaman
   const renderPageNumbers = () => {
     const pageNumbers = [];
+
     for (let i = 1; i <= totalPages; i++) {
       pageNumbers.push(
         <button
           key={i}
+          type="button"
           onClick={() => goToPage(i)}
-          className={`pagination-button ${currentPage === i ? "active" : ""}`}>
-          {i}
+          className={`pagination-button ${currentPage === i ? "active" : ""}`}
+          aria-label={`Halaman ${i}`}
+          aria-current={currentPage === i ? "page" : undefined}>
+          <span className="pagination-specular" aria-hidden="true" />
+          <span className="pagination-number">{i}</span>
         </button>,
       );
     }
+
     return pageNumbers;
   };
 
   return (
-    <div className="alumni-lps-container">
-      <div className="alumni-lps-header">
-        <h2>Ikuti jejak Alumni LPS</h2>
-      </div>
-      <p className="description-alumni-lps">
-        LPS Education adalah lembaga les privat spesialis masuk PTN Favorit yang
-        dikelola oleh “Excellent Team”. Dengan tagline{" "}
-        <span className="color-d2b04c-description">
-          “Your Learning Partner for Success”
-        </span>{" "}
-        kami berupaya menjadi partner terbaik membantu siswa masuk PTN Favorit.
-        Tim Tutor Program Masuk PTN adalah mahasiswa & alumni dari UI, ITB, UGM,
-        Unpad, IPB, UNJ dan PTN Terbaik lainnya.{" "}
-        <span className="color-d2b04c-description">
-          Fokus kami adalah menjadi mitra terbaik siswa dalam meraih PTN Favorit
-          di Indonesia
-        </span>
-        .
-      </p>
+    <section className="alumni-lps-container">
+      <div className="alumni-lps-inner">
+        <div className="alumni-lps-header">
+          <h2>Ikuti Jejak Alumni LPS</h2>
+        </div>
 
-      {currentAlumni.length > 0 ? (
-        <>
-          <div className="alumnilPS-images-grid">
-            {currentAlumni.map((alumni) => {
-              const altText = `Alumni ${alumni.name} jurusan ${
-                alumni.jurusan
-              } yang berhasil bersama program Bimbel & Les Privat UTBK, SIMAK UI, UTUL UGM, TKA, CPNS, Pascasarjana, Mahasiswa, dan OSN${
-                city ? " di " + city : ""
-              } bersama LPS Education. Dibimbing oleh Guru Privat UI, ITB, UGM, dan Kedokteran PTN Favorit.`;
+        <p className="description-alumni-lps">
+          LPS Education adalah lembaga les privat spesialis masuk PTN Favorit
+          yang dikelola oleh “Excellent Team”. Dengan tagline{" "}
+          <span className="color-d2b04c-description">
+            “Your Learning Partner for Success”
+          </span>{" "}
+          kami berupaya menjadi partner terbaik membantu siswa masuk PTN
+          Favorit. Tim Tutor Program Masuk PTN adalah mahasiswa & alumni dari
+          UI, ITB, UGM, Unpad, IPB, UNJ dan PTN Terbaik lainnya.{" "}
+          <span className="color-d2b04c-description">
+            Fokus kami adalah menjadi mitra terbaik siswa dalam meraih PTN
+            Favorit di Indonesia
+          </span>
+          .
+        </p>
 
-              return (
-                <img
-                  key={alumni.id}
-                  loading="lazy"
-                  src={alumni.link_image}
-                  alt={altText}
-                  className="alumni-single-image"
-                />
-              );
-            })}
-          </div>
+        {currentAlumni.length > 0 ? (
+          <>
+            <div className="alumnilPS-images-grid">
+              {currentAlumni.map((alumni) => {
+                const altText = `Alumni ${alumni.name} jurusan ${
+                  alumni.jurusan
+                } yang berhasil bersama program Bimbel & Les Privat UTBK, SIMAK UI, UTUL UGM, TKA, CPNS, Pascasarjana, Mahasiswa, dan OSN${
+                  city ? " di " + city : ""
+                } bersama LPS Education. Dibimbing oleh Guru Privat UI, ITB, UGM, dan Kedokteran PTN Favorit.`;
 
-          {/* Pagination Controls */}
-          {totalPages > 1 && (
-            <div className="pagination-controls">
-              <button
-                onClick={() => goToPage(paginationInfo.prevPage)}
-                disabled={!paginationInfo.prevPage}
-                className="pagination-button">
-                <img src="/images/left.webp" alt="forward button" />
-              </button>
-              {renderPageNumbers()}
-              <button
-                onClick={() => goToPage(paginationInfo.nextPage)}
-                disabled={!paginationInfo.nextPage}
-                className="pagination-button">
-                <img src="/images/right.webp" alt="next button" />
-              </button>
+                return (
+                  <article className="alumni-card-glass" key={alumni.id}>
+                    <span className="alumni-card-specular" aria-hidden="true" />
+
+                    <div className="alumni-image-wrapper">
+                      <img
+                        loading="lazy"
+                        src={alumni.link_image}
+                        alt={altText}
+                        className="alumni-single-image"
+                      />
+                    </div>
+                  </article>
+                );
+              })}
             </div>
-          )}
-        </>
-      ) : (
-        <p className="no-data-message">Tidak ada data alumni yang ditemukan.</p>
-      )}
-    </div>
+
+            {totalPages > 1 && (
+              <div className="pagination-controls">
+                <button
+                  type="button"
+                  onClick={() => goToPage(paginationInfo.prevPage)}
+                  disabled={!paginationInfo.prevPage}
+                  className="pagination-button pagination-arrow"
+                  aria-label="Halaman sebelumnya">
+                  <span className="pagination-specular" aria-hidden="true" />
+
+                  <img src="/images/left.webp" alt="" aria-hidden="true" />
+                </button>
+
+                {renderPageNumbers()}
+
+                <button
+                  type="button"
+                  onClick={() => goToPage(paginationInfo.nextPage)}
+                  disabled={!paginationInfo.nextPage}
+                  className="pagination-button pagination-arrow"
+                  aria-label="Halaman berikutnya">
+                  <span className="pagination-specular" aria-hidden="true" />
+
+                  <img src="/images/right.webp" alt="" aria-hidden="true" />
+                </button>
+              </div>
+            )}
+          </>
+        ) : (
+          <p className="no-data-message">
+            Tidak ada data alumni yang ditemukan.
+          </p>
+        )}
+      </div>
+    </section>
   );
 };
 

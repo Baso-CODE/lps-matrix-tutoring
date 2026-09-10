@@ -98,7 +98,7 @@ const ProgramBelajarLps = () => {
             <li>
               <strong>Lokasi & Durasi:</strong>
               <br />
-              Lokasi: Depok & Yogyakarta {""}
+              Lokasi: Depok & Yogyakarta
               <br />
               Durasi: 4 minggu (1 bulan sebelum UTBK).
             </li>
@@ -140,56 +140,84 @@ const ProgramBelajarLps = () => {
   ];
 
   return (
-    <div className="program-belajar-container-v2">
-      <h1 className="program-belajar-title-v2">
-        Program Belajar LPS Education
-      </h1>
+    <section className="program-belajar-container-v2">
+      <div className="program-belajar-inner-v2">
+        <h2 className="program-belajar-title-v2">
+          Program Belajar LPS Education
+        </h2>
 
-      <div className="program-list-v2">
-        {programsData.map((program) => {
-          const isOpen = activeIndex === program.id;
-          const buttonId = `program-button-${program.id}`;
-          const panelId = `program-panel-${program.id}`;
+        <div className="program-list-v2">
+          {programsData.map((program) => {
+            const isOpen = activeIndex === program.id;
+            const buttonId = `program-button-${program.id}`;
+            const panelId = `program-panel-${program.id}`;
 
-          return (
-            <div className="program-item-v2" key={program.id}>
-              <button
-                id={buttonId}
-                className="program-title-button-v2"
-                onClick={() => handleToggleClick(program.id)}
-                aria-expanded={isOpen}
-                aria-controls={panelId}
-                aria-label={`${program.title} ${
-                  isOpen ? "ditutup" : "dibuka"
-                }`}>
-                {program.title}
-                <span
-                  className={`arrow-v2 ${isOpen ? "open-v2" : ""}`}
-                  aria-hidden="true">
-                  ▼
-                </span>
-              </button>
+            return (
+              <div
+                className={`program-item-v2 ${
+                  isOpen ? "program-item-open-v2" : ""
+                }`}
+                key={program.id}>
+                <button
+                  id={buttonId}
+                  type="button"
+                  className="program-title-button-v2"
+                  onClick={() => handleToggleClick(program.id)}
+                  aria-expanded={isOpen}
+                  aria-controls={panelId}
+                  aria-label={`${program.title} ${
+                    isOpen ? "ditutup" : "dibuka"
+                  }`}>
+                  <span className="program-button-specular-v2" />
 
-              <AnimatePresence>
-                {isOpen && (
-                  <motion.div
-                    id={panelId}
-                    role="region"
-                    aria-labelledby={buttonId}
-                    className="program-details-v2"
-                    initial={{ opacity: 0, height: 0, overflow: "hidden" }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0, overflow: "hidden" }}
-                    transition={{ duration: 0.3, ease: "easeInOut" }}>
-                    {program.details}
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-          );
-        })}
+                  <span className="program-title-text-v2">{program.title}</span>
+
+                  <span
+                    className={`arrow-v2 ${isOpen ? "open-v2" : ""}`}
+                    aria-hidden="true">
+                    ▼
+                  </span>
+                </button>
+
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      id={panelId}
+                      role="region"
+                      aria-labelledby={buttonId}
+                      className="program-details-wrapper-v2"
+                      initial={{
+                        opacity: 0,
+                        height: 0,
+                      }}
+                      animate={{
+                        opacity: 1,
+                        height: "auto",
+                      }}
+                      exit={{
+                        opacity: 0,
+                        height: 0,
+                      }}
+                      transition={{
+                        duration: 0.3,
+                        ease: "easeInOut",
+                      }}>
+                      <div className="program-details-v2">
+                        <span
+                          className="program-details-specular-v2"
+                          aria-hidden="true"
+                        />
+                        {program.details}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            );
+          })}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

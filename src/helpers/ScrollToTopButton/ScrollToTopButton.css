@@ -1,42 +1,219 @@
 /* ScrollToTopButton.css */
 
 .scroll-to-top-button {
+  --scroll-top-bottom: calc(var(--bottom-nav-height, 64px) + 33px);
+  --scroll-top-left: 20px;
+
   position: fixed;
-  /* Posisi di bagian bawah, sesuaikan agar tidak bertabrakan dengan bottom navbar */
-  /* Untuk mobile, bottom navbar memiliki tinggi sekitar 64px (h-16) */
-  /* Kita akan tempatkan tombol di atas bottom navbar */
-  bottom: calc(
-    var(--bottom-nav-height, 64px) + 33px
-  ); /* Default 64px + 20px margin */
-  left: 20px; /* Jarak dari kanan */
-  background-color: var(
-    --color-orange-default
-  ); /* Menggunakan warna oranye default dari palet Anda */
-  color: white;
-  padding: 12px; /* Padding sekitar ikon */
-  border-radius: 50%; /* Bentuk lingkaran */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Efek bayangan */
-  border: none;
-  cursor: pointer;
-  display: flex; /* Untuk menengahkan ikon */
+
+  bottom: var(--scroll-top-bottom);
+  left: var(--scroll-top-left);
+
+  z-index: 999;
+
+  display: inline-flex;
+
+  width: 50px;
+  height: 50px;
+
   align-items: center;
   justify-content: center;
-  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Transisi untuk hover */
-  z-index: 999; /* Pastikan di atas elemen lain */
+
+  padding: 0;
+
+  cursor: pointer;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(255, 255, 255, 0.46);
+  border-radius: 999px;
+
+  color: #ffffff;
+
+  background:
+    radial-gradient(
+      circle at 30% 5%,
+      rgba(255, 255, 255, 0.36) 0%,
+      transparent 42%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.16),
+      rgba(255, 255, 255, 0.04) 48%,
+      transparent 72%
+    ),
+    linear-gradient(
+      135deg,
+      #f56600 0%,
+      var(--color-orange-default) 55%,
+      #ff8a20 100%
+    );
+
+  -webkit-backdrop-filter: blur(18px) saturate(190%);
+  backdrop-filter: blur(18px) saturate(190%);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.48),
+    inset 0 -1px 0 rgba(155, 70, 0, 0.1);
+
+  transition:
+    transform 260ms ease,
+    border-color 260ms ease,
+    filter 260ms ease;
+}
+
+.scroll-to-top-button::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 1px;
+
+  pointer-events: none;
+
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: inherit;
+}
+
+.scroll-to-top-button::after {
+  content: "";
+
+  position: absolute;
+
+  top: 1px;
+  right: 18%;
+  left: 18%;
+
+  height: 1px;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.95),
+    transparent
+  );
+}
+
+.scroll-to-top-button svg {
+  position: relative;
+  z-index: 2;
+
+  width: 21px;
+  height: 21px;
+
+  stroke-width: 2.2;
+
+  transition: transform 260ms ease;
 }
 
 .scroll-to-top-button:hover {
-  background-color: var(
-    --color-orange-dark
-  ); /* Warna oranye sedikit lebih gelap saat hover */
-  transform: translateY(-2px); /* Efek sedikit naik saat hover */
+  transform: translateY(-3px);
+
+  border-color: rgba(255, 255, 255, 0.7);
+
+  filter: saturate(1.08);
 }
 
-/* Responsif untuk desktop/tablet (di mana bottom navbar mungkin tidak ada) */
-@media (min-width: 1024px) {
-  /* Sesuai dengan lg:hidden pada bottom navbar */
+.scroll-to-top-button:hover svg {
+  transform: translateY(-2px);
+}
+
+.scroll-to-top-button:active {
+  transform: scale(0.94);
+}
+
+.scroll-to-top-button:focus {
+  outline: none;
+}
+
+.scroll-to-top-button:focus-visible {
+  outline: 2px solid rgba(255, 101, 0, 0.3);
+  outline-offset: 3px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
   .scroll-to-top-button {
-    bottom: 32px; /* Bottom 32px untuk desktop */
-    left: 10.5%; /* Sesuaikan right dengan XL:right-[10.5%] Anda */
+    --scroll-top-bottom: calc(100px + env(safe-area-inset-bottom, 0px));
+
+    --scroll-top-left: 12px;
+
+    width: 46px;
+    height: 46px;
+  }
+
+  .scroll-to-top-button svg {
+    width: 19px;
+    height: 19px;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+  .scroll-to-top-button {
+    --scroll-top-bottom: calc(110px + env(safe-area-inset-bottom, 0px));
+
+    --scroll-top-left: 10px;
+
+    width: 44px;
+    height: 44px;
+  }
+
+  .scroll-to-top-button svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* =========================
+   VERY SMALL MOBILE
+========================= */
+
+@media (max-width: 360px) {
+  .scroll-to-top-button {
+    --scroll-top-bottom: calc(105px + env(safe-area-inset-bottom, 0px));
+
+    --scroll-top-left: 8px;
+
+    width: 42px;
+    height: 42px;
+  }
+
+  .scroll-to-top-button svg {
+    width: 17px;
+    height: 17px;
+  }
+}
+
+/* =========================
+   DESKTOP
+========================= */
+
+@media (min-width: 1024px) {
+  .scroll-to-top-button {
+    --scroll-top-bottom: 32px;
+    --scroll-top-left: 10.5%;
+
+    width: 48px;
+    height: 48px;
+  }
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-to-top-button,
+  .scroll-to-top-button svg {
+    transition-duration: 1ms;
   }
 }

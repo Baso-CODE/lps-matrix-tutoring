@@ -18,7 +18,7 @@ const FooterNew = () => {
   // Data admin untuk list di bawah
   const admins = [
     {
-      name: "Kak Lin",
+      name: "Kak Fani",
       phone: "6282258689993",
     },
     {

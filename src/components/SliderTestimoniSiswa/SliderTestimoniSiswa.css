@@ -1,132 +1,581 @@
 .testimoni_wa__section {
-  text-align: center;
   margin-bottom: 4rem;
-  padding-top: 4%;
-  padding-bottom: 4rem;
+  text-align: center;
 }
 
+.testimoni_wa__inner {
+  margin: 0 auto;
+}
+
+/* =========================
+   TITLE
+========================= */
+
 .testimoni_wa__title {
-  text-transform: uppercase;
-  font-size: 1.3rem;
-  font-family: "Poppins", sans-serif;
-  font-weight: 800;
-  margin-bottom: 20px;
+  margin: 0 0 20px;
+
   color: var(--color-gray-darker);
+
+  font-family: "Poppins", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+
+  text-transform: uppercase;
 }
 
 .highlight__title {
   position: relative;
   display: inline-block;
+
   color: var(--color-orange-default);
+
   line-height: 1.2;
 }
 
 .testimoni_wa__description {
-  font-size: 1rem;
+  max-width: 800px;
+
+  margin: 0 auto 34px;
+
   color: #444444;
 
-  margin-bottom: 30px;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  font-size: 1rem;
+  line-height: 1.65;
 }
 
 .highlight__title svg {
   position: absolute;
-  bottom: -8px; /* atur jarak garis dari teks */
+
+  bottom: -8px;
   left: 0;
+
   width: 100%;
   height: 26px;
+
   pointer-events: none;
-} /* Animasi coretan pakai stroke-dasharray */
+}
+
 .underline__svg path {
   stroke-dasharray: 500;
   stroke-dashoffset: 500;
-  transition: stroke-dashoffset 3s ease-in-out; /* dibuat lambat */
+
+  transition: stroke-dashoffset 3s ease-in-out;
 }
 
 .animate-stroke path {
-  stroke-dashoffset: 0; /* mulai animasi */
+  stroke-dashoffset: 0;
 }
 
-/* styling kartu */
+/* =========================
+   GRID
+========================= */
+
+.testimoni_wa__grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 20px;
+
+  width: 100%;
+}
+
+.testimoni_wa__grid-item {
+  min-width: 0;
+}
+
+/* =========================
+   LIQUID GLASS CARD
+========================= */
+
 .testimoni_wa__card {
-  background: #ffffff;
-  border-radius: 16px;
-  padding: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease;
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 8px;
+
+  border: 1px solid rgba(205, 218, 235, 0.72);
+  border-radius: 26px;
+
+  background:
+    radial-gradient(
+      ellipse 85% 50% at 16% -8%,
+      rgba(255, 255, 255, 0.98) 0%,
+      rgba(255, 255, 255, 0.5) 42%,
+      transparent 72%
+    ),
+    radial-gradient(
+      ellipse 95% 55% at 90% 110%,
+      rgba(214, 232, 250, 0.15) 0%,
+      rgba(240, 247, 255, 0.05) 50%,
+      transparent 75%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.58) 0%,
+      rgba(255, 255, 255, 0.3) 56%,
+      rgba(247, 251, 255, 0.18) 100%
+    );
+
+  -webkit-backdrop-filter: blur(22px) saturate(180%);
+  backdrop-filter: blur(22px) saturate(180%);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(205, 218, 235, 0.16);
+
+  transition:
+    transform 350ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 350ms ease,
+    background 350ms ease;
+}
+
+.testimoni_wa__card::before {
+  content: "";
+
+  position: absolute;
+  inset: 1px;
+
+  z-index: 2;
+
+  pointer-events: none;
+
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 25px;
+}
+
+.testimoni_wa__card::after {
+  content: "";
+
+  position: absolute;
+
+  right: 10%;
+  bottom: -35px;
+  left: 10%;
+
+  height: 84px;
+
+  pointer-events: none;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    ellipse,
+    rgba(198, 225, 250, 0.16) 0%,
+    rgba(232, 244, 253, 0.06) 52%,
+    transparent 76%
+  );
+
+  filter: blur(15px);
 }
 
 .testimoni_wa__card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-6px);
+
+  border-color: rgba(184, 207, 231, 0.9);
+
+  background:
+    radial-gradient(
+      ellipse 85% 50% at 16% -8%,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0.57) 42%,
+      transparent 72%
+    ),
+    radial-gradient(
+      ellipse 95% 55% at 90% 110%,
+      rgba(207, 229, 250, 0.2) 0%,
+      rgba(240, 247, 255, 0.07) 50%,
+      transparent 75%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.64) 0%,
+      rgba(255, 255, 255, 0.34) 56%,
+      rgba(247, 251, 255, 0.22) 100%
+    );
+}
+
+.testimoni_wa__card-specular {
+  position: absolute;
+
+  top: 0;
+  left: 10%;
+  right: 10%;
+
+  z-index: 5;
+
+  height: 1px;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 1),
+    transparent
+  );
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.testimoni_wa__image-wrapper {
+  position: relative;
+  z-index: 3;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(205, 218, 235, 0.44);
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.testimoni_wa__image-wrapper::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 12%;
+  right: 12%;
+
+  z-index: 4;
+
+  height: 1px;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.95),
+    transparent
+  );
 }
 
 .testimoni_wa__image {
+  position: relative;
+  z-index: 2;
+
+  display: block;
+
   width: 100%;
   height: auto;
+
+  border-radius: 19px;
+
   object-fit: contain;
-  border-radius: 12px;
+
+  transition: transform 400ms cubic-bezier(0.16, 1, 0.3, 1);
 }
+
+.testimoni_wa__card:hover .testimoni_wa__image {
+  transform: scale(1.015);
+}
+
+/* =========================
+   NAME
+========================= */
 
 .testimoni_wa__nama {
-  margin-top: 12px;
+  position: relative;
+  z-index: 3;
+
+  margin: 12px 4px 6px;
+
+  color: #444;
+
+  font-family: "Poppins", sans-serif;
   font-size: 1rem;
   font-weight: 600;
-  color: #444;
-}
-/* atur posisi pagination agak ke bawah */
-.swiper-pagination {
-  position: relative; /* biar tidak nabrak card */
-  margin-top: 30px; /* geser ke bawah */
+
+  text-align: left;
 }
 
-/* ubah warna bullet pagination */
-.swiper-pagination-bullet {
-  background: #ccc; /* warna default bullet */
-  opacity: 1;
-  font-size: 2rem;
-  width: 0.75rem;
-  height: 0.75rem;
+/* =========================
+   LOAD MORE
+========================= */
+
+.testimoni_wa__load-more {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 32px;
 }
 
-.swiper-pagination-bullet-active {
-  background: #ff5a5f; /* warna bullet aktif */
-}
+.testimoni_wa__more-button {
+  position: relative;
 
-/* Ubah warna tombol navigation */
-.swiper-button-prev,
-.swiper-button-next {
-  color: #ff5a5f; /* contoh merah */
+  display: inline-flex;
+
+  min-height: 52px;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  overflow: hidden;
+
+  padding: 6px 7px 6px 20px;
+
+  cursor: pointer;
+
+  border: 1px solid rgba(205, 218, 235, 0.72);
+  border-radius: 999px;
+
+  color: var(--color-gray-darker);
+
+  font-family: "Poppins", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+
+  background:
+    radial-gradient(
+      ellipse 80% 60% at 18% -15%,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0.55) 45%,
+      transparent 74%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.68) 0%,
+      rgba(255, 255, 255, 0.32) 58%,
+      rgba(245, 250, 255, 0.22) 100%
+    );
+
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(205, 218, 235, 0.15);
+
   transition:
-    color 0.3s ease,
-    transform 0.3s ease;
+    transform 280ms ease,
+    border-color 280ms ease,
+    color 280ms ease;
 }
 
-/* Hover effect */
-.swiper-button-prev:hover,
-.swiper-button-next:hover {
-  color: #1e90ff; /* contoh biru saat hover */
-  transform: scale(1.2);
+.testimoni_wa__more-button::before {
+  content: "";
+
+  position: absolute;
+
+  top: -20%;
+  left: -55%;
+
+  width: 28%;
+  height: 140%;
+
+  pointer-events: none;
+
+  opacity: 0;
+
+  transform: skewX(-20deg);
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.75),
+    transparent
+  );
+
+  transition:
+    left 700ms ease,
+    opacity 300ms ease;
 }
 
-/* Bisa juga atur ukuran */
-.swiper-button-prev::after,
-.swiper-button-next::after {
-  font-weight: 800;
-  font-size: 26px; /* default 20px, kamu bisa besarin */
+.testimoni_wa__more-button:hover {
+  transform: translateY(-2px);
+
+  border-color: rgba(255, 101, 0, 0.35);
+
+  color: var(--color-orange-default);
 }
 
-@media (max-width: 768px) {
-  .testimoni_wa__title {
-    font-size: 1.1rem;
+.testimoni_wa__more-button:hover::before {
+  left: 125%;
+  opacity: 1;
+}
+
+.testimoni_wa__more-button:active {
+  transform: scale(0.98);
+}
+
+.testimoni_wa__more-button:focus-visible {
+  outline: 2px solid rgba(255, 101, 0, 0.28);
+  outline-offset: 3px;
+}
+
+.testimoni_wa__button-specular {
+  position: absolute;
+
+  top: 0;
+  left: 12%;
+  right: 12%;
+
+  height: 1px;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 1),
+    transparent
+  );
+}
+
+.testimoni_wa__button-text {
+  position: relative;
+  z-index: 3;
+}
+
+.testimoni_wa__button-icon {
+  position: relative;
+  z-index: 3;
+
+  display: inline-flex;
+
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 999px;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.16),
+      rgba(255, 255, 255, 0.04) 45%,
+      transparent 70%
+    ),
+    linear-gradient(
+      135deg,
+      #f56600 0%,
+      var(--color-orange-default) 55%,
+      #ff8a20 100%
+    );
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -1px 0 rgba(155, 70, 0, 0.08);
+
+  transition: transform 280ms ease;
+}
+
+.testimoni_wa__more-button:hover .testimoni_wa__button-icon {
+  transform: translateY(2px);
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1023px) {
+  .testimoni_wa__section {
   }
+
+  .testimoni_wa__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 14px;
+  }
+
   .testimoni_wa__description {
     font-size: 0.9rem;
   }
 }
-.testimoni_wa__grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .testimoni_wa__section {
+  }
+
+  .testimoni_wa__title {
+    font-size: 1.1rem;
+  }
+
+  .testimoni_wa__description {
+    margin-bottom: 26px;
+
+    font-size: 0.9rem;
+  }
+
+  /*
+   * Mobile tetap GRID.
+   * 1 card per baris.
+   * 6 data pertama langsung tampil vertikal.
+   */
+  .testimoni_wa__grid {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+  }
+
+  .testimoni_wa__card {
+    max-width: 100%;
+
+    padding: 6px;
+
+    border-radius: 22px;
+  }
+
+  .testimoni_wa__card::before {
+    border-radius: 21px;
+  }
+
+  .testimoni_wa__image-wrapper {
+    border-radius: 17px;
+  }
+
+  .testimoni_wa__image {
+    width: 100%;
+
+    border-radius: 16px;
+  }
+
+  .testimoni_wa__nama {
+    margin: 10px 5px 5px;
+
+    font-size: 0.9rem;
+  }
+
+  .testimoni_wa__load-more {
+    margin-top: 25px;
+  }
+
+  .testimoni_wa__more-button {
+    width: 100%;
+    max-width: 310px;
+
+    min-height: 48px;
+
+    padding: 5px 5px 5px 16px;
+
+    font-size: 0.82rem;
+  }
+
+  .testimoni_wa__button-icon {
+    width: 36px;
+    height: 36px;
+  }
 }

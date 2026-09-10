@@ -21,14 +21,25 @@ const KeunggulanEndAlasanMemilih = () => {
   ];
 
   return (
-    <div className="container-keunggulan-lps">
-      <h2 className="title">Keunggulan dan Alasan Memilih LPS Education</h2>
-      <ul className="keunggulan-list">
-        {keunggulanItems.map((item, index) => (
-          <li key={index}>{item}</li>
-        ))}
-      </ul>
-    </div>
+    <section className="container-keunggulan-lps">
+      <div className="keunggulan-glass">
+        <span className="keunggulan-specular" aria-hidden="true" />
+
+        <h2 className="title">Keunggulan dan Alasan Memilih LPS Education</h2>
+
+        <ul className="keunggulan-list">
+          {keunggulanItems.map((item, index) => (
+            <li key={index}>
+              <span className="keunggulan-bullet" aria-hidden="true">
+                ✓
+              </span>
+
+              <span className="keunggulan-text">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
   );
 };
 

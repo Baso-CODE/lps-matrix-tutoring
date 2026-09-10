@@ -21,21 +21,20 @@ const Nav = () => {
       "https://api.whatsapp.com/send?phone=6281311778441&text=Halo%20Kak%20Fina,%20saya%20tertarik%20dengan%20program%20belajar%20di%20LPS%20Education.%0A%0A%F0%9F%93%96%20Les%20Privat%20SD%20SMP%20SMA%20SIMAK%20UI%20OSN%20MAHASISWA%20CPNS%20%7C%20LPS%20EDUCATION%E2%9C%A8%0Ahttps%3A%2F%2Fapps.lesprivatmasukptn.com",
   };
 
-  // Use selected CS atau fallback
   const contactCS = selectedCS || fallbackCS;
 
   const handleClick = () => {
-    // Geser ke CS berikutnya setiap kali tombol di navbar diklik
     rotateToNext();
   };
 
-  const handleScroll = () => {
-    const scrollTop = window.scrollY;
-    setIsScrolled(scrollTop > 0);
-  };
-
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 8);
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -43,15 +42,15 @@ const Nav = () => {
   }, []);
 
   return (
-    <nav>
+    <nav className="main-navbar">
       <div className={`header-container ${isScrolled ? "scrolled" : ""}`}>
         <div className="nav-container">
           {/* Logo */}
           <div className="logo-container">
-            <Link to={"/"}>
+            <Link to="/" aria-label="LPS Education">
               <img
                 loading="eager"
-                src={"/images/LOGO2.webp"}
+                src="/images/LOGO2.webp"
                 alt="Bimbel Les Privat ONLINE dan Les Privat Datang ke Rumah untuk Program SBMPTN UTBK SNBT Simak UI UTUL UGM. Guru Privat Masuk UI ITB UGM dan Kedokteran di PTN Favorit."
                 className="logo-nav"
                 width={673}
@@ -60,31 +59,37 @@ const Nav = () => {
             </Link>
           </div>
 
-          {/* Menu Desktop */}
+          {/* Desktop Menu */}
           <ul className="desktop-menu">
             {Menus.map((menu) => (
               <NavDescktop menu={menu} key={menu.name} />
             ))}
           </ul>
 
-          {/* Auth Menu - Rotating CS Button */}
+          {/* Rotating CS */}
           <div className="auth-menu">
             <a
               href={contactCS.link_cta}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="konsultasi-whatsapp"
+              aria-label={`Konsultasi WhatsApp dengan ${contactCS.nama_cs}`}
               className="sign-in-button"
               title={`Hubungi ${contactCS.nama_cs}`}
               onClick={handleClick}>
-              Konsultasi Now
-              <img
-                src="/images/daftar-sekarang.webp"
-                alt="Konsultasi sekarang"
-                width={512}
-                height={512}
-                className="button-icon-nav"
-              />
+              <span className="sign-in-reflection" aria-hidden="true" />
+
+              <span className="sign-in-text">Konsultasi Now</span>
+
+              <span className="sign-in-icon-wrapper">
+                <img
+                  src="/images/daftar-sekarang.webp"
+                  alt=""
+                  aria-hidden="true"
+                  width={512}
+                  height={512}
+                  className="button-icon-nav"
+                />
+              </span>
             </a>
           </div>
         </div>

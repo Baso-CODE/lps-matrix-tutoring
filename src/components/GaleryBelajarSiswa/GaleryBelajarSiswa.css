@@ -1,180 +1,641 @@
-/* Container Utama */
-.galery-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-}
+/* GaleryBelajarSiswa.css */
 
-/* Tombol Offline dan Online */
-.button-container {
-  display: flex;
-  gap: 1rem;
+.gallery-belajar-section {
+  width: 100%;
 }
 
 .gallery_belajar_lps-container {
+  width: 100%;
   padding-bottom: 1vh;
 }
 
 .description-gallery-belajar-lps {
-  font-size: 0.9rem;
-  color: #3a4a3f;
-  text-align: start;
-  font-weight: 400;
-  line-height: normal;
-
   margin-bottom: 20px;
+
+  color: #3a4a3f;
+
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.6;
+
+  text-align: left;
 }
 
-/* Ukuran tombol default (desktop) */
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.galery-container {
+  display: flex;
+  width: 100%;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 1.5rem;
+}
+
+/* =========================
+   MODE BUTTONS
+========================= */
+
+.button-container {
+  display: inline-flex;
+
+  gap: 10px;
+
+  padding: 6px;
+
+  border: 1px solid rgba(205, 218, 235, 0.65);
+  border-radius: 22px;
+
+  background:
+    radial-gradient(
+      ellipse 80% 70% at 18% -20%,
+      rgba(255, 255, 255, 0.98),
+      rgba(255, 255, 255, 0.45) 48%,
+      transparent 75%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.58),
+      rgba(247, 251, 255, 0.24)
+    );
+
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(205, 218, 235, 0.14);
+}
+
 .mode-button {
-  padding: 1rem 4rem; /* Perbesar padding */
-  font-size: 1.25rem; /* Perbesar ukuran font */
-  /* border: none; */
-  border-radius: 5px; /* Perbesar radius agar lebih menarik */
+  position: relative;
+
+  display: inline-flex;
+
+  min-width: 155px;
+  min-height: 52px;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  overflow: hidden;
+
+  padding: 0.75rem 2rem;
+
   cursor: pointer;
-  /* Mengubah background dari biru ke oranye default */
-  background-color: #ffffff;
-  /* Mengubah warna teks ke abu-abu sangat terang */
+
+  border: 1px solid rgba(205, 218, 235, 0.45);
+  border-radius: 17px;
+
   color: var(--color-gray-darker);
-  border: 2px solid var(--color-blue-light);
+
+  font-size: 1rem;
+  font-weight: 700;
+
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.18)
+  );
+
+  -webkit-backdrop-filter: blur(16px) saturate(175%);
+  backdrop-filter: blur(16px) saturate(175%);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    inset 0 -1px 0 rgba(205, 218, 235, 0.08);
+
   transition:
-    background-color 0.3s,
-    transform 0.2s;
+    transform 280ms ease,
+    border-color 280ms ease,
+    color 280ms ease,
+    background 280ms ease;
 }
 
-.mode-button.active {
-  /* Warna aktif tetap oranye utama */
-  background-color: var(--color-blue-light);
-  /* outline: var(--color-orange-default); */
-  border: 2px solid var(--color-orange-default);
-  color: #ffffff;
+.mode-button::after {
+  content: "";
+
+  position: absolute;
+
+  top: -20%;
+  left: -55%;
+
+  width: 28%;
+  height: 140%;
+
+  pointer-events: none;
+
+  opacity: 0;
+
+  transform: skewX(-20deg);
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.45),
+    transparent
+  );
+
+  transition:
+    left 700ms ease,
+    opacity 300ms ease;
 }
 
 .mode-button:hover {
-  /* Mengubah background hover dari biru gelap ke oranye gelap */
-  background-color: var(--color-orange-dark);
-  transform: scale(1.05); /* Efek hover */
-  color: #ffffff;
+  transform: translateY(-2px);
+
+  border-color: rgba(190, 208, 228, 0.78);
 }
 
-/* Layout Galeri */
+.mode-button:hover::after {
+  left: 125%;
+  opacity: 1;
+}
+
+.mode-button.active {
+  color: #ffffff;
+
+  border-color: rgba(255, 255, 255, 0.42);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.16),
+      rgba(255, 255, 255, 0.04) 42%,
+      transparent 70%
+    ),
+    radial-gradient(
+      circle at 18% -20%,
+      rgba(255, 255, 255, 0.22),
+      transparent 40%
+    ),
+    linear-gradient(
+      135deg,
+      #f56600 0%,
+      var(--color-orange-default) 55%,
+      #ff8b22 100%
+    );
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -1px 0 rgba(160, 70, 0, 0.08);
+}
+
+.mode-button-specular {
+  position: absolute;
+
+  top: 0;
+  left: 12%;
+  right: 12%;
+
+  height: 1px;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.95),
+    transparent
+  );
+}
+
+.mode-button-dot {
+  position: relative;
+  z-index: 3;
+
+  width: 8px;
+  height: 8px;
+
+  flex-shrink: 0;
+
+  border-radius: 999px;
+}
+
+.offline-dot {
+  background: var(--color-orange-default);
+}
+
+.online-dot {
+  background: #18a96b;
+}
+
+.mode-button.active .mode-button-dot {
+  background: #ffffff;
+}
+
+.mode-button-text {
+  position: relative;
+  z-index: 3;
+}
+
+/* =========================
+   GALLERY
+========================= */
+
 .gallery-layout {
   display: flex;
-  gap: 1rem;
-  align-items: flex-start;
+
   width: 100%;
+
+  align-items: stretch;
+
+  gap: 1rem;
 }
 
-/* Gambar Preview */
+/* =========================
+   PREVIEW GLASS
+========================= */
+
+.preview-glass {
+  position: relative;
+
+  display: flex;
+
+  flex: 8;
+
+  min-width: 0;
+
+  overflow: hidden;
+
+  padding: 8px;
+
+  border: 1px solid rgba(205, 218, 235, 0.7);
+  border-radius: 26px;
+
+  background:
+    radial-gradient(
+      ellipse 86% 50% at 16% -8%,
+      rgba(255, 255, 255, 0.98) 0%,
+      rgba(255, 255, 255, 0.48) 42%,
+      transparent 72%
+    ),
+    radial-gradient(
+      ellipse 95% 55% at 90% 110%,
+      rgba(212, 232, 250, 0.16) 0%,
+      rgba(240, 247, 255, 0.06) 50%,
+      transparent 75%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.56),
+      rgba(255, 255, 255, 0.26) 58%,
+      rgba(247, 251, 255, 0.18)
+    );
+
+  -webkit-backdrop-filter: blur(22px) saturate(180%);
+  backdrop-filter: blur(22px) saturate(180%);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(205, 218, 235, 0.16);
+
+  transition:
+    transform 300ms ease,
+    border-color 300ms ease;
+}
+
+.preview-glass::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 1px;
+
+  pointer-events: none;
+
+  border: 1px solid rgba(255, 255, 255, 0.52);
+  border-radius: 25px;
+}
+
+.preview-glass:hover {
+  transform: translateY(-3px);
+
+  border-color: rgba(184, 207, 231, 0.88);
+}
+
+.preview-specular {
+  position: absolute;
+
+  top: 0;
+  left: 9%;
+  right: 9%;
+
+  z-index: 5;
+
+  height: 1px;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 1),
+    transparent
+  );
+}
+
 .preview {
-  flex: 8; /* 70% lebar */
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  border-radius: 19px;
 }
 
 .preview img {
+  display: block;
+
   width: 100%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow tetap menggunakan RGBA */
+  height: 100%;
+
+  border-radius: 19px;
+
+  object-fit: cover;
+
+  transition: transform 450ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Thumbnail Gambar */
+.preview-glass:hover .preview img {
+  transform: scale(1.015);
+}
+
+/* =========================
+   THUMBNAILS
+========================= */
+
 .thumbnail-container {
-  flex: 2; /* 30% lebar */
   display: flex;
+
+  flex: 2;
+
+  min-width: 0;
+
   flex-direction: column;
+
   gap: 1rem;
 }
 
-.thumbnail {
+.thumbnail-glass {
+  position: relative;
+
+  display: block;
+
   width: 100%;
+
+  overflow: hidden;
+
+  padding: 5px;
+
   cursor: pointer;
-  border-radius: 5px;
-  transition: transform 0.3s;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Shadow tetap menggunakan RGBA */
+
+  border: 1px solid rgba(205, 218, 235, 0.62);
+  border-radius: 18px;
+
+  background:
+    radial-gradient(
+      ellipse 85% 55% at 15% -10%,
+      rgba(255, 255, 255, 0.96),
+      rgba(255, 255, 255, 0.42) 45%,
+      transparent 73%
+    ),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.5), rgba(247, 251, 255, 0.2));
+
+  -webkit-backdrop-filter: blur(16px) saturate(175%);
+  backdrop-filter: blur(16px) saturate(175%);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    inset 0 -1px 0 rgba(205, 218, 235, 0.1);
+
+  transition:
+    transform 280ms ease,
+    border-color 280ms ease;
 }
 
-.thumbnail:hover {
-  transform: scale(1.05);
+.thumbnail-glass::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 1px;
+
+  z-index: 2;
+
+  pointer-events: none;
+
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 17px;
 }
 
-/* Responsif untuk layar medium (tablet) */
+.thumbnail-glass:hover {
+  transform: translateY(-3px) scale(1.015);
+
+  border-color: rgba(184, 207, 231, 0.86);
+}
+
+.thumbnail-specular {
+  position: absolute;
+
+  top: 0;
+  left: 12%;
+  right: 12%;
+
+  z-index: 4;
+
+  height: 1px;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.95),
+    transparent
+  );
+}
+
+.thumbnail {
+  position: relative;
+  z-index: 1;
+
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  border-radius: 13px;
+
+  object-fit: cover;
+
+  transition: transform 350ms ease;
+}
+
+.thumbnail-glass:hover .thumbnail {
+  transform: scale(1.025);
+}
+
+/* =========================
+   TABLET
+========================= */
+
 @media (max-width: 1024px) {
   .mode-button {
-    font-size: 1.1rem; /* Sedikit kecil dari ukuran desktop */
-    padding: 0.8rem 1.5rem; /* Sesuaikan padding */
-  }
-}
+    min-width: 130px;
 
-/* Responsif untuk layar kecil (mobile landscape) */
-@media (max-width: 768px) {
-  .mode-button {
+    padding: 0.7rem 1.5rem;
+
     font-size: 1rem;
-    padding: 0.7rem 1.2rem;
-    width: 45%; /* Tambahkan lebar agar proporsional */
-  }
-
-  .button-container {
-    flex-direction: row; /* Atur tombol menjadi kolom */
-    gap: 0.5rem; /* Kurangi jarak antar tombol */
-    justify-content: space-between;
-    width: 100%;
-  }
-  .gallery-layout {
-    flex-direction: column; /* Atur tata letak menjadi kolom */
-    align-items: center; /* Pusatkan konten */
-  }
-
-  .preview {
-    flex: none; /* Reset fleksibilitas */
-    width: 100%; /* Gambar preview memenuhi lebar */
-    margin-bottom: 1rem; /* Jarak dengan thumbnail */
-  }
-
-  .thumbnail-container {
-    flex-direction: row; /* Thumbnail berjajar horizontal */
-    justify-content: center; /* Pusatkan thumbnail */
-    width: 100%;
-  }
-
-  .thumbnail {
-    width: 32%; /* Lebar setiap thumbnail relatif */
-    height: auto; /* Jaga proporsi gambar */
   }
 }
 
-/* Responsif untuk layar sangat kecil (mobile portrait) */
-@media (max-width: 480px) {
-  .mode-button {
-    font-size: 0.9rem; /* Ukuran font lebih kecil */
-    padding: 0.6rem 1rem;
-    width: 100%; /* Tombol memanjang memenuhi layar */
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+  .galery-container {
+    gap: 1.2rem;
   }
 
   .button-container {
-    flex-direction: row; /* Atur tombol menjadi kolom */
-    gap: 0.5rem; /* Kurangi jarak antar tombol */
-    justify-content: space-between;
     width: 100%;
+
+    padding: 5px;
+
+    border-radius: 19px;
   }
+
+  .mode-button {
+    width: 50%;
+    min-width: 0;
+    min-height: 48px;
+
+    padding: 0.65rem 1rem;
+
+    border-radius: 15px;
+
+    font-size: 0.95rem;
+  }
+
   .gallery-layout {
     flex-direction: column;
+
     align-items: center;
   }
 
+  .preview-glass {
+    flex: none;
+
+    padding: 6px;
+
+    border-radius: 22px;
+  }
+
+  .preview-glass::before {
+    border-radius: 21px;
+  }
+
   .preview {
-    width: 100%; /* Pastikan gambar preview memenuhi layar */
-    margin-bottom: 1rem;
+    border-radius: 16px;
+  }
+
+  .preview img {
+    height: auto;
+
+    border-radius: 16px;
   }
 
   .thumbnail-container {
-    flex-direction: row; /* Thumbnail tetap horizontal */
-    justify-content: center;
     width: 100%;
+
+    flex: none;
+
+    flex-direction: row;
+
+    gap: 8px;
+  }
+
+  .thumbnail-glass {
+    width: calc((100% - 16px) / 3);
+
+    padding: 4px;
+
+    border-radius: 15px;
+  }
+
+  .thumbnail-glass::before {
+    border-radius: 14px;
   }
 
   .thumbnail {
-    width: 30%; /* Thumbnail tetap relatif */
-    height: auto;
+    width: 100%;
+
+    border-radius: 11px;
+  }
+
+  .description-gallery-belajar-lps {
+    font-size: 0.9rem;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+  .button-container {
+    gap: 6px;
+  }
+
+  .mode-button {
+    min-height: 44px;
+
+    padding: 0.55rem 0.75rem;
+
+    font-size: 0.88rem;
+  }
+
+  .mode-button-dot {
+    width: 7px;
+    height: 7px;
+  }
+
+  .preview-glass {
+    border-radius: 19px;
+  }
+
+  .preview-glass::before {
+    border-radius: 18px;
+  }
+
+  .preview,
+  .preview img {
+    border-radius: 14px;
+  }
+
+  .thumbnail-glass {
+    border-radius: 13px;
+  }
+
+  .thumbnail-glass::before {
+    border-radius: 12px;
+  }
+
+  .thumbnail {
+    border-radius: 9px;
+  }
+
+  .description-gallery-belajar-lps {
+    font-size: 0.85rem;
   }
 }

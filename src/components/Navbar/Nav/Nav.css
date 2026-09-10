@@ -1,174 +1,508 @@
-/* Header Container */
+/* src/components/Nav/Nav.css */
+
+.main-navbar {
+  position: relative;
+  z-index: 1000;
+}
+
+/* =========================
+   HEADER
+========================= */
+
 .header-container {
   position: fixed;
   top: 0;
-  left: 0;
   right: 0;
-  background-color: transparent;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  left: 0;
   z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 20px;
+
+  background: transparent;
+
   transition:
-    background-color 0.3s ease,
-    backdrop-filter 0.3s ease;
+    padding 300ms ease,
+    background 300ms ease,
+    box-shadow 300ms ease,
+    backdrop-filter 300ms ease;
 }
 
 .header-container.scrolled {
-  background-color: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(10px);
+  padding-top: 7px;
+  padding-bottom: 7px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
 }
 
-/* Navigation Container */
+/* =========================
+   LIQUID GLASS NAV
+========================= */
+
 .nav-container {
+  position: relative;
+  display: flex;
   width: 100%;
-  padding-left: 12%;
-  padding-right: 12%;
-  display: flex;
+  max-width: 1240px;
+  min-height: 68px;
+
+  align-items: center;
   justify-content: space-between;
-  align-items: center;
+
+  gap: 18px;
+
   margin: 0 auto;
-}
-@media (max-width: 820px) {
-  .nav-container {
-    padding-left: 3%;
-    padding-right: 3%;
-    padding-top: 4px;
-  }
+  padding: 7px 12px;
+
+  overflow: visible;
+
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 24px;
+
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.7) 0%,
+    rgba(255, 255, 255, 0.42) 44%,
+    rgba(238, 246, 255, 0.25) 100%
+  );
+
+  -webkit-backdrop-filter: blur(26px) saturate(190%);
+  backdrop-filter: blur(26px) saturate(190%);
+
+  box-shadow:
+    0 12px 36px rgba(20, 45, 80, 0.09),
+    0 3px 10px rgba(20, 45, 80, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.2);
+
+  transition:
+    background 300ms ease,
+    box-shadow 300ms ease,
+    border-color 300ms ease;
 }
 
-/* Logo Container */
+.nav-container::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 8%;
+  right: 8%;
+
+  height: 1px;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 1),
+    transparent
+  );
+}
+
+.nav-container::after {
+  content: "";
+
+  position: absolute;
+  top: 2px;
+  left: 3%;
+
+  width: 28%;
+  height: 45%;
+
+  pointer-events: none;
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.11);
+
+  filter: blur(18px);
+}
+
+.header-container.scrolled .nav-container {
+  border-color: rgba(255, 255, 255, 0.7);
+
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.82) 0%,
+    rgba(255, 255, 255, 0.58) 48%,
+    rgba(238, 247, 255, 0.4) 100%
+  );
+
+  box-shadow:
+    0 14px 40px rgba(20, 45, 80, 0.12),
+    0 3px 12px rgba(20, 45, 80, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+/* =========================
+   LOGO
+========================= */
+
 .logo-container {
+  position: relative;
+  z-index: 5;
+
+  display: flex;
+  flex-shrink: 0;
+
+  align-items: center;
+}
+
+.logo-container a {
   display: flex;
   align-items: center;
-  gap: 12px;
-  z-index: 999;
 }
 
-/* Menu Desktop */
+.logo-nav {
+  display: block;
+
+  width: auto;
+  height: 54px;
+
+  object-fit: contain;
+
+  transition:
+    transform 300ms ease,
+    filter 300ms ease;
+}
+
+.logo-nav:hover {
+  transform: scale(1.02);
+
+  filter: drop-shadow(0 5px 10px rgba(0, 55, 130, 0.12));
+}
+
+/* =========================
+   DESKTOP MENU
+========================= */
+
 .desktop-menu {
+  position: relative;
+  z-index: 10;
+
   display: none;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 2px;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
 }
 
 @media (min-width: 1024px) {
   .desktop-menu {
     display: flex;
-    align-items: center;
-    gap: 8px;
   }
 }
 
-/* Mobile Menu */
-.mobile-menu {
-  display: block;
-}
+/* =========================
+   AUTH / CTA
+========================= */
 
-@media (min-width: 1024px) {
-  .mobile-menu {
-    display: none;
-  }
-}
-
-/* Auth Menu */
 .auth-menu {
+  position: relative;
+  z-index: 5;
+
   display: flex;
+  flex-shrink: 0;
+
   align-items: center;
-  gap: 10px;
 }
 
 .sign-in-button {
-  background-color: #ff6500;
-  color: #ffffff;
-  text-decoration: none;
-  padding: 10px 16px;
-  border-radius: 12px;
-  border: none;
-  font-size: 16px;
-  font-weight: 600;
-  transition:
-    background-color 0.3s ease,
-    transform 0.2s ease;
-  cursor: pointer;
-  outline: none;
+  position: relative;
 
   display: inline-flex;
+  min-height: 48px;
+
   align-items: center;
-  gap: 8px;
+  justify-content: center;
+
+  gap: 9px;
+
+  overflow: hidden;
+
+  padding: 5px 6px 5px 17px;
+
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 999px;
+
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+
+  white-space: nowrap;
+  text-decoration: none;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.18) 0%,
+      rgba(255, 255, 255, 0.04) 42%,
+      transparent 68%
+    ),
+    radial-gradient(
+      circle at 18% -25%,
+      rgba(255, 255, 255, 0.22),
+      transparent 38%
+    ),
+    linear-gradient(135deg, #f56600 0%, #ff7700 52%, #ff8b21 100%);
+
+  -webkit-backdrop-filter: blur(18px) saturate(190%);
+  backdrop-filter: blur(18px) saturate(190%);
+
+  box-shadow:
+    0 9px 22px rgba(176, 73, 0, 0.17),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+
+  transition:
+    transform 280ms ease,
+    box-shadow 280ms ease,
+    border-color 280ms ease;
 }
 
-/* Style untuk ikon WhatsApp */
-.button-icon-nav {
-  width: 24px;
-  height: 24px;
+.sign-in-button::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 13%;
+  right: 13%;
+
+  height: 1px;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.85),
+    transparent
+  );
 }
+
+.sign-in-button::after {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: -65%;
+
+  width: 28%;
+  height: 100%;
+
+  pointer-events: none;
+
+  opacity: 0;
+
+  transform: skewX(-22deg);
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.34),
+    transparent
+  );
+
+  transition:
+    left 700ms ease,
+    opacity 300ms ease;
+}
+
 .sign-in-button:hover {
-  background-color: #b43f3f;
+  transform: translateY(-1px);
+
+  border-color: rgba(255, 255, 255, 0.65);
+
+  box-shadow:
+    0 14px 30px rgba(176, 73, 0, 0.23),
+    inset 0 1px 0 rgba(255, 255, 255, 0.52);
 }
 
-.sign-in-button:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.5);
+.sign-in-button:hover::after {
+  left: 125%;
+  opacity: 1;
 }
 
 .sign-in-button:active {
-  transform: translateY(1px);
+  transform: translateY(0) scale(0.98);
 }
 
-/* Mobile Menu */
-.mobile-menu {
+.sign-in-button:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.95);
+  outline-offset: 3px;
+}
+
+.sign-in-reflection {
+  position: absolute;
+
+  top: -17px;
+  left: 17px;
+
+  width: 70px;
+  height: 30px;
+
+  pointer-events: none;
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.13);
+
+  filter: blur(11px);
+}
+
+.sign-in-text {
+  position: relative;
+  z-index: 3;
+}
+
+.sign-in-icon-wrapper {
+  position: relative;
+  z-index: 3;
+
+  display: flex;
+
+  width: 37px;
+  height: 37px;
+
+  flex-shrink: 0;
+
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.14),
+      rgba(255, 255, 255, 0.02)
+    ),
+    rgba(4, 57, 125, 0.9);
+
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+
+  box-shadow:
+    0 5px 13px rgba(0, 25, 70, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.23);
+}
+
+.button-icon-nav {
   display: block;
+
+  width: 24px;
+  height: 24px;
+
+  object-fit: contain;
 }
 
-@media (min-width: 1024px) {
-  .mobile-menu {
-    display: none;
-  }
-}
+/* =========================
+   RESPONSIVE
+========================= */
 
-.logo-nav {
-  height: 58px;
-  width: auto;
-  padding-bottom: 8px;
-  padding-top: 8px;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo-nav:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo-nav.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@media (max-width: 1024px) {
+@media (max-width: 1180px) and (min-width: 1024px) {
   .nav-container {
-    padding-left: 4%;
-    padding-right: 4%;
+    gap: 8px;
   }
-  .logo-nav {
-    height: 58px;
-    width: auto;
-    padding-top: 6px;
-    will-change: filter;
-    transition: filter 300ms;
+
+  .sign-in-button {
+    padding-left: 13px;
+    font-size: 12px;
+  }
+
+  .sign-in-icon-wrapper {
+    width: 34px;
+    height: 34px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .header-container {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  .nav-container {
+    min-height: 64px;
   }
 }
 
 @media (max-width: 768px) {
+  .header-container {
+    padding: 7px 8px;
+  }
+
+  .nav-container {
+    min-height: 58px;
+
+    padding: 5px 7px;
+
+    border-radius: 20px;
+  }
+
   .logo-nav {
-    height: 48px;
-    width: auto;
-    padding-top: 6px;
-    will-change: filter;
-    transition: filter 300ms;
+    height: 46px;
+  }
+
+  .sign-in-button {
+    min-height: 42px;
+
+    padding: 4px 5px 4px 13px;
+
+    font-size: 12px;
+  }
+
+  .sign-in-icon-wrapper {
+    width: 32px;
+    height: 32px;
+  }
+
+  .button-icon-nav {
+    width: 21px;
+    height: 21px;
   }
 }
+
 @media (max-width: 480px) {
   .logo-nav {
-    height: 4cqb;
-    width: auto;
-    padding-top: 6px;
-    will-change: filter;
-    transition: filter 300ms;
+    height: 40px;
+  }
+
+  .nav-container {
+    gap: 5px;
+  }
+
+  .sign-in-button {
+    padding-left: 11px;
+
+    font-size: 11px;
+  }
+
+  .sign-in-icon-wrapper {
+    width: 30px;
+    height: 30px;
+  }
+
+  .button-icon-nav {
+    width: 19px;
+    height: 19px;
   }
 }

@@ -19,15 +19,21 @@ const ProfileLps = () => {
   };
 
   return (
-    <div className="container-halaman-hero-home">
+    <section className="container-halaman-hero-home">
       <div className="content-hero-home">
         <div className="isi-content-hero-home">
+          <div className="profile-lps-eyebrow">
+            <span className="profile-lps-eyebrow-dot" />
+            Sejak 2010
+          </div>
+
           <div className="logo-profile-lps__container">
             <h1 className="title-halaman-hero-home">
               Bimbel Spesialis Masuk FK & PTN Favorit
             </h1>
           </div>
-          <div>
+
+          <div className="profile-lps-description">
             <p className="child-paragraf-hero-home">
               LPS Education adalah Lembaga Penyedia Jasa Guru Les Privat
               Profesional, Berpengalaman dan Bimbingan Belajar Spesialis
@@ -36,6 +42,7 @@ const ProfileLps = () => {
               dan layanan privat lainnya dapat menjangkau seluruh daerah di
               Indonesia
             </p>
+
             <p className="child-paragraf-hero-home">
               Layanan Privat Offline (guru les privat datang ke rumah) dapat
               menjangkau area Jakarta, Bogor, Depok, Tangerang, Tangsel, Bekasi,
@@ -47,23 +54,36 @@ const ProfileLps = () => {
             </p>
           </div>
 
-          <a
-            href={activeCS.link_cta}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="konsultasi-whatsapp"
-            className="btn-daftar-sekarang"
-            title={`Hubungi ${activeCS.nama_cs}`}
-            onClick={handleClick}>
-            Konsultasi Sekarang!
-            <img
-              src="/images/daftar-sekarang.webp"
-              alt="Daftar Sekarang"
-              width={512}
-              height={512}
-              className="button-icon-profile-lps"
-            />
-          </a>
+          <div className="profile-lps-action">
+            <a
+              href={activeCS.link_cta}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Konsultasi WhatsApp dengan ${activeCS.nama_cs}`}
+              className="btn-daftar-sekarang"
+              title={`Hubungi ${activeCS.nama_cs}`}
+              onClick={handleClick}>
+              <span
+                className="profile-lps-button-specular"
+                aria-hidden="true"
+              />
+
+              <span className="profile-lps-button-text">
+                Konsultasi Sekarang!
+              </span>
+
+              <span className="profile-lps-button-icon-wrapper">
+                <img
+                  src="/images/daftar-sekarang.webp"
+                  alt=""
+                  aria-hidden="true"
+                  width={512}
+                  height={512}
+                  className="button-icon-profile-lps"
+                />
+              </span>
+            </a>
+          </div>
         </div>
 
         <div className="image-hero-wrapper">
@@ -76,10 +96,11 @@ const ProfileLps = () => {
             width="600"
             height="800"
           />
-          <div className="shadow-bottom-image-profile-lps"></div>
+
+          <div className="shadow-bottom-image-profile-lps" />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

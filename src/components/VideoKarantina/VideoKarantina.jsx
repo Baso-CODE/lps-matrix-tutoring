@@ -7,6 +7,7 @@ const VideoKarantina = () => {
         <h2 className="video-title">
           Belajar Menjadi Lebih Seru Bersama LPS Education
         </h2>
+
         <p className="video-description">
           Saksikan bagaimana program <strong>Les Privat & Bimbel OSN</strong>{" "}
           dari membantu siswa di seluruh Indonesia meraih prestasi terbaik! Dua
@@ -16,17 +17,23 @@ const VideoKarantina = () => {
       </div>
 
       <div className="video-grid">
-        <div className="video-card">
-          <iframe
-            className="youtube-frame"
-            src="https://www.youtube-nocookie.com/embed/-VbHUqZlqco"
-            title="Supercamp UTBK SNBT - Lokasi Depok"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            loading="lazy"
-          />
+        <article className="video-card">
+          <span className="video-card-specular" aria-hidden="true" />
+
+          <div className="video-frame-wrapper">
+            <iframe
+              className="youtube-frame"
+              src="https://www.youtube-nocookie.com/embed/-VbHUqZlqco"
+              title="Supercamp UTBK SNBT - Lokasi Depok"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              loading="lazy"
+            />
+          </div>
+
           <h3 className="video-subtitle">Supercamp UTBK SNBT – Depok</h3>
+
           <p className="video-text">
             Suasana belajar intensif di{" "}
             <strong>Supercamp UTBK SNBT Depok</strong>. Program ini dirancang
@@ -34,19 +41,25 @@ const VideoKarantina = () => {
             <strong>UTBK SNBT dan masuk PTN impian</strong> melalui pendalaman
             materi, tryout rutin, dan bimbingan dari mentor berpengalaman.
           </p>
-        </div>
+        </article>
 
-        <div className="video-card">
-          <iframe
-            className="youtube-frame"
-            src="https://www.youtube-nocookie.com/embed/hJ8F0h2PMXw"
-            title="Supercamp UTBK SNBT - Lokasi Jogja"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            loading="lazy"
-          />
+        <article className="video-card">
+          <span className="video-card-specular" aria-hidden="true" />
+
+          <div className="video-frame-wrapper">
+            <iframe
+              className="youtube-frame"
+              src="https://www.youtube-nocookie.com/embed/hJ8F0h2PMXw"
+              title="Supercamp UTBK SNBT - Lokasi Jogja"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              loading="lazy"
+            />
+          </div>
+
           <h3 className="video-subtitle">Supercamp UTBK SNBT – Jogja</h3>
+
           <p className="video-text">
             Dokumentasi kegiatan{" "}
             <strong>Supercamp UTBK SNBT di Yogyakarta</strong>, tempat siswa
@@ -55,7 +68,7 @@ const VideoKarantina = () => {
             <strong>PTN favorit</strong> dengan pembelajaran yang menyenangkan
             dan terarah.
           </p>
-        </div>
+        </article>
       </div>
     </section>
   );

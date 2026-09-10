@@ -1,193 +1,747 @@
 .program-modal-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
 
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7); /* Overlay gelap transparan */
-  display: flex;
-  justify-content: center;
-  align-items: flex-end; /* Awalnya di bawah untuk mobile */
   z-index: 1000;
-  animation: fadeIn 0.5s ease-out; /* Animasi masuk overlay */
+
+  display: flex;
+
+  align-items: flex-end;
+  justify-content: center;
+
+  padding: 10px;
+
+  background: rgba(15, 23, 42, 0.18);
+
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+
+  animation: programModalFadeIn 300ms ease forwards;
 }
 
-/* Animasi keluar untuk overlay */
 .program-modal-overlay.fade-out {
-  animation: fadeOut 0.5s ease-in forwards; /* 'forwards' menjaga state akhir animasi */
+  animation: programModalFadeOut 300ms ease forwards;
 }
+
+/* =========================
+   MODAL
+========================= */
 
 .program-modal-content {
-  background-color: #ffffff;
+  position: relative;
+
   width: 100%;
   max-width: 500px;
-  padding: 24px;
-  border-top-left-radius: 24px;
-  border-top-right-radius: 24px;
-  box-shadow: 0 -8px 20px rgba(0, 0, 0, 0.2);
-  transform: translateY(0%); /* Posisi awal */
-  animation: slideUp 0.5s ease-out; /* Animasi masuk content (mobile) */
-  max-height: 80vh;
+  max-height: min(82vh, 720px);
+
+  overflow-x: hidden;
   overflow-y: auto;
-  position: relative;
+
+  padding: 18px 14px 14px;
+
+  border: 1px solid rgba(205, 218, 235, 0.76);
+  border-radius: 26px;
+
+  background:
+    radial-gradient(
+      ellipse 95% 50% at 15% -10%,
+      rgba(255, 255, 255, 0.98) 0%,
+      rgba(255, 255, 255, 0.56) 43%,
+      transparent 72%
+    ),
+    radial-gradient(
+      ellipse 100% 65% at 95% 110%,
+      rgba(211, 231, 250, 0.18) 0%,
+      rgba(238, 247, 255, 0.07) 48%,
+      transparent 75%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.82) 0%,
+      rgba(255, 255, 255, 0.6) 55%,
+      rgba(247, 251, 255, 0.46) 100%
+    );
+
+  -webkit-backdrop-filter: blur(28px) saturate(185%);
+  backdrop-filter: blur(28px) saturate(185%);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(205, 218, 235, 0.18);
+
+  animation: programModalSlideUp 420ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 101, 0, 0.22) transparent;
 }
 
-/* Animasi keluar untuk content (mobile: slide down) */
-.program-modal-content.slide-down {
-  animation: slideDown 0.5s ease-in forwards; /* 'forwards' menjaga state akhir animasi */
-}
+.program-modal-content::before {
+  content: "";
 
-@media (min-width: 768px) {
-  .program-modal-overlay {
-    align-items: center; /* Pusatkan vertikal di desktop */
-  }
-  .program-modal-content {
-    border-radius: 24px; /* Bulatkan semua sudut di desktop */
-    transform: translateY(0); /* Posisi tengah di desktop */
-    animation: fadeInScale 0.5s ease-out; /* Animasi masuk content (desktop) */
-    align-self: center; /* Pusatkan vertikal di desktop */
-  }
-  /* Animasi keluar untuk content (desktop: fade out and scale down) */
-  .program-modal-content.slide-down {
-    /* Ganti nama class atau buat terpisah jika ingin animasi desktop berbeda */
-    animation: fadeOutScale 0.5s ease-in forwards; /* Gunakan animasi desktop untuk keluar */
-  }
-}
-
-.program-modal-close-button {
   position: absolute;
-  top: 16px;
-  right: 16px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #64748b; /* text-gray-500 */
-  padding: 8px;
+  inset: 1px;
+
+  pointer-events: none;
+
+  border: 1px solid rgba(255, 255, 255, 0.62);
+  border-radius: 25px;
+}
+
+.program-modal-content::after {
+  content: "";
+
+  position: absolute;
+
+  right: 10%;
+  bottom: -50px;
+  left: 10%;
+
+  height: 110px;
+
+  pointer-events: none;
+
   border-radius: 50%;
-  transition: background-color 0.2s;
+
+  background: radial-gradient(
+    ellipse,
+    rgba(194, 224, 250, 0.18) 0%,
+    rgba(232, 244, 253, 0.07) 50%,
+    transparent 75%
+  );
+
+  filter: blur(18px);
 }
 
-.program-modal-close-button:hover {
-  background-color: #f0f4f8; /* abu-abu muda saat hover */
+.program-modal-content::-webkit-scrollbar {
+  width: 4px;
 }
 
-.program-modal-title {
-  font-size: 28px; /* text-3xl */
-  font-weight: bold;
-  color: #2d3748; /* text-gray-800 */
-  margin-bottom: 24px;
+.program-modal-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.program-modal-content::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(255, 101, 0, 0.2);
+}
+
+.program-modal-content.slide-down {
+  animation: programModalSlideDown 300ms ease forwards;
+}
+
+.program-modal-specular {
+  position: absolute;
+
+  top: 0;
+  right: 10%;
+  left: 10%;
+
+  z-index: 6;
+
+  height: 1px;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 1),
+    transparent
+  );
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.program-modal-header {
+  position: relative;
+  z-index: 3;
+
+  padding: 5px 42px 15px;
+
   text-align: center;
 }
 
-.program-modal-list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px; /* gap-3 */
+.program-modal-eyebrow {
+  display: inline-flex;
+
+  margin-bottom: 5px;
+  padding: 4px 9px;
+
+  border: 1px solid rgba(255, 101, 0, 0.16);
+  border-radius: 999px;
+
+  color: var(--color-orange-default);
+
+  font-family: "Poppins", sans-serif;
+  font-size: 0.58rem;
+  font-weight: 700;
+
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+
+  background:
+    radial-gradient(circle at 25% 0%, rgba(255, 255, 255, 1), transparent 60%),
+    linear-gradient(145deg, rgba(255, 248, 242, 0.8), rgba(255, 237, 224, 0.42));
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(255, 101, 0, 0.05);
 }
 
-.program-modal-item {
-  display: flex;
+.program-modal-title {
+  margin: 0 0 4px;
+
+  color: var(--color-gray-darker);
+
+  font-family: "Poppins", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.program-modal-description {
+  margin: 0;
+
+  color: var(--color-gray-dark);
+
+  font-size: 0.7rem;
+  line-height: 1.55;
+}
+
+/* =========================
+   CLOSE
+========================= */
+
+.program-modal-close-button {
+  position: absolute;
+
+  top: 12px;
+  right: 12px;
+
+  z-index: 10;
+
+  display: inline-flex;
+
+  width: 34px;
+  height: 34px;
+
   align-items: center;
-  padding: 16px;
-  background-color: #f8fafc; /* bg-gray-50 */
-  border-radius: 8px;
-  text-decoration: none;
-  color: #4a5568; /* text-gray-700 */
+  justify-content: center;
+
+  padding: 0;
+
+  cursor: pointer;
+
+  border: 1px solid rgba(205, 218, 235, 0.68);
+  border-radius: 999px;
+
+  color: #64748b;
+
+  background:
+    radial-gradient(circle at 30% 0%, rgba(255, 255, 255, 1), transparent 62%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.7), rgba(245, 249, 253, 0.34));
+
+  -webkit-backdrop-filter: blur(16px) saturate(175%);
+  backdrop-filter: blur(16px) saturate(175%);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(205, 218, 235, 0.1);
+
   transition:
-    background-color 0.2s,
-    transform 0.2s,
-    box-shadow 0.2s;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    transform 220ms ease,
+    color 220ms ease,
+    border-color 220ms ease;
+}
+
+.program-modal-close-button:hover {
+  color: var(--color-orange-default);
+
+  border-color: rgba(255, 101, 0, 0.28);
+
+  transform: scale(1.05);
+}
+
+.program-modal-close-button:active {
+  transform: scale(0.94);
+}
+
+.program-modal-close-button:focus-visible {
+  outline: 2px solid rgba(255, 101, 0, 0.25);
+  outline-offset: 2px;
+}
+
+/* =========================
+   LIST
+========================= */
+
+.program-modal-list {
+  position: relative;
+  z-index: 3;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+/* =========================
+   ITEM
+========================= */
+
+.program-modal-item {
+  position: relative;
+
+  display: flex;
+
+  min-height: 58px;
+
+  align-items: center;
+
+  gap: 10px;
+
+  overflow: hidden;
+
+  padding: 8px 10px;
+
+  border: 1px solid rgba(205, 218, 235, 0.56);
+  border-radius: 16px;
+
+  color: var(--color-gray-dark);
+
+  text-decoration: none;
+
+  background:
+    radial-gradient(
+      ellipse 80% 70% at 12% -20%,
+      rgba(255, 255, 255, 0.96),
+      rgba(255, 255, 255, 0.42) 48%,
+      transparent 74%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.52),
+      rgba(247, 251, 255, 0.22)
+    );
+
+  -webkit-backdrop-filter: blur(17px) saturate(175%);
+  backdrop-filter: blur(17px) saturate(175%);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.94),
+    inset 0 -1px 0 rgba(205, 218, 235, 0.08);
+
+  transition:
+    transform 240ms ease,
+    border-color 240ms ease,
+    background 240ms ease;
+}
+
+.program-modal-item::after {
+  content: "";
+
+  position: absolute;
+
+  top: -25%;
+  left: -45%;
+
+  width: 22%;
+  height: 150%;
+
+  pointer-events: none;
+
+  opacity: 0;
+
+  transform: skewX(-18deg);
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.72),
+    transparent
+  );
+
+  transition:
+    left 650ms ease,
+    opacity 240ms ease;
 }
 
 .program-modal-item:hover {
-  background-color: #e2e8f0; /* bg-gray-200 */
   transform: translateY(-2px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  border-color: rgba(255, 101, 0, 0.26);
+
+  background:
+    radial-gradient(
+      ellipse 80% 70% at 12% -20%,
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 0.5) 48%,
+      transparent 74%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.65),
+      rgba(255, 244, 236, 0.26)
+    );
+}
+
+.program-modal-item:hover::after {
+  left: 125%;
+  opacity: 1;
+}
+
+.program-modal-item-specular {
+  position: absolute;
+
+  top: 0;
+  right: 10%;
+  left: 10%;
+
+  height: 1px;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 1),
+    transparent
+  );
+}
+
+/* =========================
+   ICON
+========================= */
+
+.program-modal-icon-wrapper {
+  position: relative;
+  z-index: 3;
+
+  display: inline-flex;
+
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 101, 0, 0.16);
+  border-radius: 12px;
+
+  background:
+    radial-gradient(circle at 30% 0%, rgba(255, 255, 255, 1), transparent 60%),
+    linear-gradient(
+      145deg,
+      rgba(255, 247, 241, 0.84),
+      rgba(255, 230, 212, 0.38)
+    );
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(255, 101, 0, 0.06);
 }
 
 .program-modal-item-icon {
-  width: 24px;
-  height: 24px;
+  width: 18px;
+  height: 18px;
+
   color: var(--color-orange-default);
-  margin-right: 16px;
-  flex-shrink: 0;
+
+  transition: transform 220ms ease;
 }
 
+.program-modal-item:hover .program-modal-item-icon {
+  transform: scale(1.06);
+}
+
+/* =========================
+   TEXT
+========================= */
+
 .program-modal-item-text-wrapper {
+  position: relative;
+  z-index: 3;
+
   display: flex;
+
+  min-width: 0;
+
+  flex: 1;
   flex-direction: column;
+
+  gap: 1px;
 }
 
 .program-modal-item-name {
-  font-weight: 600; /* font-semibold */
-  font-size: 16px; /* text-base */
-  color: #2d3748; /* text-gray-800 */
+  color: var(--color-gray-darker);
+
+  font-family: "Poppins", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.4;
 }
 
 .program-modal-item-desc {
-  font-size: 12px; /* text-xs */
-  color: #64748b; /* text-gray-500 */
-  margin-top: 2px;
+  color: #64748b;
+
+  font-size: 0.64rem;
+  line-height: 1.45;
 }
 
-/* Animasi Masuk */
-@keyframes fadeIn {
+/* =========================
+   ARROW
+========================= */
+
+.program-modal-item-arrow {
+  position: relative;
+  z-index: 3;
+
+  display: inline-flex;
+
+  width: 24px;
+  height: 24px;
+
+  flex-shrink: 0;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(205, 218, 235, 0.48);
+  border-radius: 999px;
+
+  color: #94a3b8;
+
+  font-size: 17px;
+  line-height: 1;
+
+  background: rgba(255, 255, 255, 0.32);
+
+  transition:
+    transform 220ms ease,
+    color 220ms ease,
+    border-color 220ms ease;
+}
+
+.program-modal-item:hover .program-modal-item-arrow {
+  color: var(--color-orange-default);
+
+  border-color: rgba(255, 101, 0, 0.22);
+
+  transform: translateX(2px);
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes programModalFadeIn {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
 }
 
-@keyframes slideUp {
+@keyframes programModalFadeOut {
   from {
-    transform: translateY(100%);
+    opacity: 1;
   }
+
   to {
-    transform: translateY(0%);
+    opacity: 0;
   }
 }
 
-@keyframes fadeInScale {
+@keyframes programModalSlideUp {
   from {
     opacity: 0;
-    transform: scale(0.9);
+
+    transform: translateY(50px) scale(0.98);
   }
+
   to {
     opacity: 1;
+
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes programModalSlideDown {
+  from {
+    opacity: 1;
+
+    transform: translateY(0) scale(1);
+  }
+
+  to {
+    opacity: 0;
+
+    transform: translateY(40px) scale(0.98);
+  }
+}
+
+/* =========================
+   DESKTOP
+========================= */
+
+@media (min-width: 768px) {
+  .program-modal-overlay {
+    align-items: center;
+
+    padding: 20px;
+  }
+
+  .program-modal-content {
+    padding: 20px 16px 16px;
+
+    animation: programModalScaleIn 350ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .program-modal-content.slide-down {
+    animation: programModalScaleOut 300ms ease forwards;
+  }
+}
+
+@keyframes programModalScaleIn {
+  from {
+    opacity: 0;
+
+    transform: scale(0.95) translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes programModalScaleOut {
+  from {
+    opacity: 1;
+
     transform: scale(1);
   }
-}
 
-/* Animasi Keluar Baru */
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
   to {
     opacity: 0;
+
+    transform: scale(0.96);
   }
 }
 
-@keyframes slideDown {
-  from {
-    transform: translateY(0%);
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+  .program-modal-overlay {
+    padding: 7px;
   }
-  to {
-    transform: translateY(100%);
+
+  .program-modal-content {
+    max-height: 84vh;
+
+    padding: 17px 10px 12px;
+
+    border-radius: 23px;
+  }
+
+  .program-modal-content::before {
+    border-radius: 22px;
+  }
+
+  .program-modal-header {
+    padding: 4px 38px 13px;
+  }
+
+  .program-modal-eyebrow {
+    padding: 3px 8px;
+
+    font-size: 0.54rem;
+  }
+
+  .program-modal-title {
+    font-size: 0.95rem;
+  }
+
+  .program-modal-description {
+    font-size: 0.65rem;
+  }
+
+  .program-modal-close-button {
+    top: 10px;
+    right: 10px;
+
+    width: 31px;
+    height: 31px;
+  }
+
+  .program-modal-list {
+    gap: 7px;
+  }
+
+  .program-modal-item {
+    min-height: 54px;
+
+    gap: 9px;
+
+    padding: 7px 8px;
+
+    border-radius: 14px;
+  }
+
+  .program-modal-icon-wrapper {
+    width: 35px;
+    height: 35px;
+
+    border-radius: 11px;
+  }
+
+  .program-modal-item-icon {
+    width: 17px;
+    height: 17px;
+  }
+
+  .program-modal-item-name {
+    font-size: 0.74rem;
+  }
+
+  .program-modal-item-desc {
+    font-size: 0.6rem;
+  }
+
+  .program-modal-item-arrow {
+    width: 22px;
+    height: 22px;
+
+    font-size: 16px;
   }
 }
 
-@keyframes fadeOutScale {
-  from {
-    opacity: 1;
-    transform: scale(1);
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .program-modal-overlay,
+  .program-modal-overlay.fade-out,
+  .program-modal-content,
+  .program-modal-content.slide-down {
+    animation-duration: 1ms;
   }
-  to {
-    opacity: 0;
-    transform: scale(0.9);
+
+  .program-modal-item,
+  .program-modal-close-button,
+  .program-modal-item-icon,
+  .program-modal-item-arrow {
+    transition-duration: 1ms;
   }
 }

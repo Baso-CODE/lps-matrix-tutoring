@@ -30,7 +30,13 @@
   text-transform: uppercase;
   font-weight: 700;
   color: var(--color-gray-darker);
-  font-family: "Poppins", sans-serif;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
 }
 
 @media (min-width: 1024px) {

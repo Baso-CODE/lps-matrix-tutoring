@@ -174,7 +174,13 @@
 
   color: var(--color-orange-default);
 
-  font-family: "Poppins", sans-serif;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
   font-size: 0.58rem;
   font-weight: 700;
 
@@ -195,7 +201,13 @@
 
   color: var(--color-gray-darker);
 
-  font-family: "Poppins", sans-serif;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
   font-size: 1.05rem;
   font-weight: 700;
   line-height: 1.35;
@@ -480,7 +492,13 @@
 .program-modal-item-name {
   color: var(--color-gray-darker);
 
-  font-family: "Poppins", sans-serif;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
   font-size: 0.8rem;
   font-weight: 600;
   line-height: 1.4;

@@ -1,23 +1,44 @@
-body {
-  margin: 0;
-  font-family: "Poppins", sans-serif;
-}
-
 * {
   margin: 0;
   padding: 0;
-  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+
+  font-optical-sizing: auto;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  text-rendering: optimizeLegibility;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
 }
 
 :root {
-  /* Oranye (Dominan - Primary) */
   --color-orange-lighter: #ffeadb;
   --color-orange-light: #ffb77d;
   --color-orange-default: #ff6500;
   --color-orange-dark: #e54d00;
   --color-orange-darker: #993300;
 
-  /* Abu-abu (Netral - Untuk Teks & Latar Belakang) */
   --color-gray-lightest: #f8f8f8;
   --color-gray-lighter: #e0e0e0;
   --color-gray-light: #cccccc;
@@ -25,25 +46,22 @@ body {
   --color-gray-dark: #343131;
   --color-gray-darker: #222222;
 
-  /* Hijau (Aksen - Opsional, untuk Indikator Sukses) */
   --color-accent-green: #10b981;
 
-  /* Biru seperti Logo */
   --color-blue-light: #01339b;
 }
 
 .container-all {
   padding-left: 12%;
   padding-right: 12%;
-  padding-top: 70px; /* Padding top aktif khusus desktop */
+  padding-top: 70px;
 }
 
-/* RESPONSIVE */
 @media only screen and (max-width: 1024px) {
   .container-all {
     padding-left: 3%;
     padding-right: 3%;
-    padding-top: 60px; /* Padding top dihilangkan untuk tablet & mobile */
+    padding-top: 60px;
   }
 }
 
@@ -51,6 +69,7 @@ body {
   .parent-promo-home {
     display: none;
   }
+
   .parent-promo-home-mobile {
     display: flex;
     justify-content: center;

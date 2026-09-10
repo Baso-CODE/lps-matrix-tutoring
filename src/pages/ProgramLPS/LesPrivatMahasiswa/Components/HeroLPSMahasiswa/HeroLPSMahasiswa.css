@@ -70,7 +70,13 @@
   padding-left: 0.3rem;
   font-weight: 700;
   /* margin-bottom: 2px; */
-  font-family: "Poppins", sans-serif;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
 }
 
 .additional-description-mahasiswa {

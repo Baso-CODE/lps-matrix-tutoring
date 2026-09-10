@@ -15,7 +15,13 @@
 .program-belajar-title-v2 {
   margin: 0 0 2rem;
   color: var(--color-gray-darker);
-  font-family: "Poppins", sans-serif;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
   font-size: 1.4rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -65,7 +71,13 @@
 
   color: #ffffff;
 
-  font-family: "Poppins", sans-serif;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
   font-size: 1.05rem;
   font-weight: 700;
 

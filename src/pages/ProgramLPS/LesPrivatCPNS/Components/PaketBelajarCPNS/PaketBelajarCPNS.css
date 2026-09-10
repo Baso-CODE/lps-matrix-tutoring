@@ -14,7 +14,13 @@
   color: #333;
   text-transform: uppercase;
   font-weight: 700;
-  font-family: "Poppins", sans-serif;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
 }
 
 .description-paket-belajar__cpns {

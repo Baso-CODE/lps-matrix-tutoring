@@ -215,7 +215,13 @@
 
   color: var(--color-orange-default);
 
-  font-family: "Poppins", sans-serif;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
   font-size: 0.84rem;
   font-weight: 700;
 

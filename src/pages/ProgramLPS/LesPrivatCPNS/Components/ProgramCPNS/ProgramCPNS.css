@@ -15,7 +15,13 @@ Program Les Privat CPNS/* ProgramCPNS.css */
   border-left: 4px solid #ff6500;
   padding-left: 0.3rem;
   color: var(--color-gray-darker);
-  font-family: "Poppins", sans-serif;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
 }
 
 .image-container {
@@ -39,7 +45,13 @@ Program Les Privat CPNS/* ProgramCPNS.css */
   font-size: 1rem;
 
   color: var(--color-gray-darker);
-  font-family: "Poppins", sans-serif;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
   margin-bottom: 0.5rem;
   font-weight: 700;
   border-left: 4px solid #ff6500;
@@ -48,7 +60,13 @@ Program Les Privat CPNS/* ProgramCPNS.css */
 .section-title-cpns-v2 {
   font-size: 1rem;
   color: var(--color-gray-darker);
-  font-family: "Poppins", sans-serif;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
   margin-bottom: 0.5rem;
   font-weight: 700;
 }

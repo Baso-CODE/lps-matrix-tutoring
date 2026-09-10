@@ -13,7 +13,13 @@
 
   color: #ff6500;
 
-  font-family: "Poppins", sans-serif;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
   font-size: 1.4rem;
   font-weight: 700;
 
@@ -189,7 +195,13 @@
 
   color: var(--color-orange-dark);
 
-  font-family: "Poppins", sans-serif;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
   font-size: 1.2rem;
   font-weight: 700;
 }

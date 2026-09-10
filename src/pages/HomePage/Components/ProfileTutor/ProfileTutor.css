@@ -13,7 +13,13 @@
   text-align: center;
   line-height: normal;
   color: var(--color-gray-darker);
-  font-family: "Poppins", sans-serif;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
 }
 
 .centered__profiletutor {
@@ -51,7 +57,13 @@
 
 /* Styling Teks Nama dan Greeting */
 .tutor-name {
-  font-family: "Poppins", sans-serif;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
   font-size: 1.4rem;
   font-weight: 700;
   color: #333;

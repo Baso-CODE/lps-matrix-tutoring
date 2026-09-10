@@ -54,7 +54,13 @@
 
   color: var(--color-gray-darker);
 
-  font-family: "Poppins", sans-serif;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
   font-size: 0.72rem;
   font-weight: 600;
 
@@ -474,7 +480,13 @@
 
   color: var(--color-gray-darker);
 
-  font-family: "Poppins", sans-serif;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
   font-size: 0.9rem;
   font-weight: 700;
 }
@@ -715,7 +727,13 @@
 .floating-cta-contact-name {
   color: var(--color-gray-darker);
 
-  font-family: "Poppins", sans-serif;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
   font-size: 0.76rem;
   font-weight: 700;
   line-height: 1.35;

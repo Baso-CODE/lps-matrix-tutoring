@@ -16,7 +16,13 @@
   color: var(--color-gray-darker);
   text-transform: uppercase;
   font-weight: 700;
-  font-family: "Poppins", sans-serif;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
 }
 
 .alumni-image-subtitle {

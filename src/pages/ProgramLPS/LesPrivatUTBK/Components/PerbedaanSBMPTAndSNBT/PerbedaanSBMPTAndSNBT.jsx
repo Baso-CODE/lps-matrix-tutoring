@@ -3,56 +3,92 @@ import "./PerbedaanSBMPTAndSNBT.css";
 
 const PerbedaanSBMPTAndSNBT = () => {
   return (
-    <div className="container-perbedaan-sbmptn-snbt">
-      <h1 className="title-perbedaan">Perbedaan SNBP dan SNBT</h1>
+    <section className="container-perbedaan-sbmptn-snbt">
+      <div className="perbedaan-header">
+        <h2 className="title-perbedaan">Perbedaan SNBP dan SNBT</h2>
+      </div>
+
       <div className="card-container-perbedaan">
-        {/* Card 1: SBMPTN */}
-        <Tilt>
-          <div className="card-perbedaan" data-aos="fade-right">
+        <Tilt
+          tiltMaxAngleX={4}
+          tiltMaxAngleY={4}
+          perspective={1200}
+          scale={1.015}
+          transitionSpeed={700}
+          glareEnable={false}
+          className="perbedaan-tilt">
+          <article className="card-perbedaan" data-aos="fade-right">
+            <span className="card-perbedaan-specular" aria-hidden="true" />
+
+            <span className="card-perbedaan-refraction" aria-hidden="true" />
+
             <div className="imagePerbedaan">
+              <span className="image-perbedaan-specular" aria-hidden="true" />
+
               <img src="/images/icon/SNBP.webp" alt="SNBP" loading="lazy" />
             </div>
-            {/* <h2 className="card-title-perbedaan">SNBP</h2> */}
+
+            <div className="perbedaan-card-label">SNBP</div>
+
             <ol className="card-list-perbedaan">
               <li>
                 Seleksi berdasarkan nilai rapor dan prestasi akademik lainnya.
               </li>
+
               <li>Menilai rekam jejak akademik siswa selama di sekolah.</li>
+
               <li>
                 Juga mempertimbangkan portofolio dan prestasi non-akademik (jika
                 ada).
               </li>
+
               <li>
                 Menggunakan nilai Tes Kemampuan Akademik (TKA) sebagai instrumen
                 tambahan untuk penilaian.
               </li>
             </ol>
-          </div>
+          </article>
         </Tilt>
 
-        {/* Card 2: SNBT */}
-        <Tilt>
-          <div className="card-perbedaan" data-aos="fade-left">
+        <Tilt
+          tiltMaxAngleX={4}
+          tiltMaxAngleY={4}
+          perspective={1200}
+          scale={1.015}
+          transitionSpeed={700}
+          glareEnable={false}
+          className="perbedaan-tilt">
+          <article className="card-perbedaan" data-aos="fade-left">
+            <span className="card-perbedaan-specular" aria-hidden="true" />
+
+            <span className="card-perbedaan-refraction" aria-hidden="true" />
+
             <div className="imagePerbedaan">
+              <span className="image-perbedaan-specular" aria-hidden="true" />
+
               <img src="/images/icon/SNBT.webp" alt="SNBT" loading="lazy" />
             </div>
-            {/* <h2 className="card-title-perbedaan">SNBT</h2> */}
+
+            <div className="perbedaan-card-label">SNBT</div>
+
             <ol className="card-list-perbedaan">
               <li>
                 Seleksi berdasarkan hasil Ujian Tulis Berbasis Komputer (UTBK).
               </li>
+
               <li>
                 Materi ujian meliputi Tes Potensi Skolastik (TPS), Literasi, dan
                 Penalaran Matematika.
               </li>
+
               <li>
                 Bertujuan mengukur kemampuan penalaran dan pemecahan masalah.
               </li>
             </ol>
-          </div>
+          </article>
         </Tilt>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -29,9 +29,15 @@ const HeadingLPSProgramDynamic = ({
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   const finalProgramName =
@@ -48,9 +54,17 @@ const HeadingLPSProgramDynamic = ({
   const isMultipleImages = images.length > 1;
 
   const [emblaRef] = useEmblaCarousel(
-    { loop: isMultipleImages, draggable: isMultipleImages },
+    {
+      loop: isMultipleImages,
+      draggable: isMultipleImages,
+    },
     isMultipleImages
-      ? [Autoplay({ delay: 5000, stopOnInteraction: true })]
+      ? [
+          Autoplay({
+            delay: 5000,
+            stopOnInteraction: true,
+          }),
+        ]
       : [],
   );
 
@@ -59,47 +73,66 @@ const HeadingLPSProgramDynamic = ({
   }. Program belajar intensif oleh Guru Profesional dari PTN Favorit.`;
 
   return (
-    <div className="container-halaman-program">
+    <section className="container-halaman-program">
       <div className="content-hero-home-program">
         <div className="image-slider-container">
+          <span className="program-image-glass-specular" aria-hidden="true" />
+
+          <span className="program-image-glass-refraction" aria-hidden="true" />
+
           {isMultipleImages ? (
             <div className="embla program-image-slider" ref={emblaRef}>
               <div className="embla__container">
                 {images.map((imgUrl, index) => (
-                  <div className="embla__slide" key={index}>
-                    <img
-                      loading="lazy"
-                      className="program-hero-image"
-                      src={imgUrl}
-                      alt={`${altText} Gambar ${index + 1}`}
-                    />
+                  <div className="embla__slide" key={`${imgUrl}-${index}`}>
+                    <div className="program-image-inner-frame">
+                      <img
+                        loading={index === 0 ? "eager" : "lazy"}
+                        fetchPriority={index === 0 ? "high" : "auto"}
+                        className="program-hero-image"
+                        src={imgUrl}
+                        alt={`${altText} Gambar ${index + 1}`}
+                      />
+                    </div>
                   </div>
                 ))}
               </div>
             </div>
           ) : (
-            <img
-              loading="lazy"
-              className="program-hero-image"
-              src={images[0]}
-              alt={altText}
-            />
+            <div className="program-image-inner-frame">
+              <img
+                loading="eager"
+                fetchPriority="high"
+                className="program-hero-image"
+                src={images[0]}
+                alt={altText}
+              />
+            </div>
           )}
         </div>
 
         <div className="isi-content-hero-program">
+          <div className="program-hero-eyebrow">
+            <span className="program-hero-eyebrow-dot" />
+
+            <span>Program LPS Education</span>
+          </div>
+
           <h1 className="title-halaman-hero-program">
             {finalProgramName} (ONLINE & OFFLINE){" "}
             <span className="color-highlight">{city ? `di ${city}` : ""}</span>{" "}
             – LPS Education
           </h1>
-          <div>
+
+          <div className="program-hero-description">
             {descriptionParagraphs?.length > 0 ? (
               descriptionParagraphs.map((paragraph, index) => (
                 <p
                   key={index}
                   className="child-paragraf-hero-program"
-                  dangerouslySetInnerHTML={{ __html: paragraph }}
+                  dangerouslySetInnerHTML={{
+                    __html: paragraph,
+                  }}
                 />
               ))
             ) : (
@@ -117,7 +150,7 @@ const HeadingLPSProgramDynamic = ({
                   dan
                   <span className="color-highlight"> Privat Online</span>.
                 </p>
-                <br />
+
                 <p className="child-paragraf-hero-program">
                   Didukung oleh tutor profesional, program ini bertujuan untuk
                   mendampingi Anda mencapai target prestasi akademik dan
@@ -128,15 +161,22 @@ const HeadingLPSProgramDynamic = ({
           </div>
 
           <button
+            type="button"
             className="btn-learn-more-program"
-            onClick={() =>
-              window.open(finalUrl, "_blank", "noopener,noreferrer")
-            }>
-            Konsultasi Sekarang
+            onClick={() => {
+              if (finalUrl) {
+                window.open(finalUrl, "_blank", "noopener,noreferrer");
+              }
+            }}>
+            <span className="program-button-specular" aria-hidden="true" />
+
+            <span>Konsultasi Sekarang</span>
+
+            <span className="program-button-liquid-orb" aria-hidden="true" />
           </button>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -1,124 +1,947 @@
 /* FasilitasSDSMPSMA.css */
 
 .fasilitas-sd-smp-sma-container {
-  margin-bottom: 5vh;
   margin-top: 5vh;
-  overflow: hidden;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  margin-bottom: 5vh;
+
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
-/* Card Container Styling */
+/* =========================
+   GRID
+========================= */
+
 .fasilitas-sd-smp-sma-cards {
   display: grid;
-  gap: 1.5rem;
-  grid-template-columns: 1fr;
-  justify-content: center;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 14px;
 }
 
-/* Card Styling */
+/* =========================
+   MAIN LIQUID GLASS CARD
+========================= */
+
 .fasilitas-sd-smp-sma-card {
-  background-color: #ffffff;
-  border: 2px solid #ff8000;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 1.5rem;
-  text-align: center;
-  transition: transform 0.2s;
+  position: relative;
+
+  min-width: 0;
+
+  overflow: hidden;
+
+  padding: 16px;
+
+  border: 1px solid rgba(205, 218, 235, 0.72);
+  border-radius: 23px;
+
+  text-align: left;
+
+  background:
+    radial-gradient(
+      ellipse 92% 64% at 14% -15%,
+      rgba(255, 255, 255, 0.98) 0%,
+      rgba(255, 255, 255, 0.49) 43%,
+      transparent 73%
+    ),
+    radial-gradient(
+      ellipse 100% 72% at 92% 115%,
+      rgba(197, 224, 249, 0.18) 0%,
+      rgba(234, 246, 255, 0.06) 52%,
+      transparent 77%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.61) 0%,
+      rgba(255, 255, 255, 0.3) 56%,
+      rgba(247, 251, 255, 0.2) 100%
+    );
+
+  -webkit-backdrop-filter: blur(22px) saturate(185%);
+  backdrop-filter: blur(22px) saturate(185%);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(205, 218, 235, 0.13);
+
+  transition:
+    transform 320ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 320ms ease,
+    background 320ms ease;
+}
+
+.fasilitas-sd-smp-sma-card::before {
+  content: "";
+
+  position: absolute;
+  inset: 1px;
+
+  pointer-events: none;
+
+  border: 1px solid rgba(255, 255, 255, 0.56);
+  border-radius: 22px;
+}
+
+.fasilitas-sd-smp-sma-card::after {
+  content: "";
+
+  position: absolute;
+
+  top: -40%;
+  left: -40%;
+
+  width: 20%;
+  height: 180%;
+
+  pointer-events: none;
+
+  opacity: 0;
+
+  transform: skewX(-18deg);
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.75),
+    transparent
+  );
+
+  transition:
+    left 850ms ease,
+    opacity 280ms ease;
 }
 
 .fasilitas-sd-smp-sma-card:hover {
   transform: translateY(-4px);
+
+  border-color: rgba(255, 101, 0, 0.26);
+
+  background:
+    radial-gradient(
+      ellipse 92% 64% at 14% -15%,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0.57) 43%,
+      transparent 73%
+    ),
+    radial-gradient(
+      ellipse 100% 72% at 92% 115%,
+      rgba(193, 222, 248, 0.22) 0%,
+      rgba(234, 246, 255, 0.08) 52%,
+      transparent 77%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.68) 0%,
+      rgba(255, 247, 240, 0.31) 56%,
+      rgba(247, 251, 255, 0.22) 100%
+    );
 }
 
-/* Icon Styling */
+.fasilitas-sd-smp-sma-card:hover::after {
+  left: 125%;
+
+  opacity: 0.9;
+}
+
+/* =========================
+   SPECULAR LIGHT
+========================= */
+
+.fasilitas-sd-smp-sma-card-specular {
+  position: absolute;
+
+  top: 0;
+  right: 9%;
+  left: 9%;
+
+  z-index: 5;
+
+  height: 1px;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 1),
+    transparent
+  );
+}
+
+/* =========================
+   WATER REFRACTION
+========================= */
+
+.fasilitas-sd-smp-sma-card-refraction {
+  position: absolute;
+
+  right: 12%;
+  bottom: -44px;
+  left: 12%;
+
+  height: 105px;
+
+  pointer-events: none;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    ellipse,
+    rgba(183, 218, 247, 0.18) 0%,
+    rgba(226, 241, 253, 0.06) 52%,
+    transparent 76%
+  );
+
+  filter: blur(16px);
+}
+
+/* =========================
+   ICON LIQUID GLASS
+========================= */
+
+.fasilitas-sd-smp-sma-icon-wrapper {
+  position: relative;
+  z-index: 3;
+
+  display: flex;
+
+  width: 82px;
+  height: 82px;
+
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  margin: 0 auto 10px;
+
+  padding: 7px;
+
+  border: 1px solid rgba(205, 218, 235, 0.55);
+  border-radius: 20px;
+
+  background:
+    radial-gradient(
+      circle at 27% 5%,
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 0.43) 42%,
+      transparent 70%
+    ),
+    radial-gradient(
+      circle at 82% 100%,
+      rgba(190, 222, 248, 0.17),
+      transparent 62%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.56),
+      rgba(242, 249, 255, 0.21)
+    );
+
+  -webkit-backdrop-filter: blur(16px) saturate(185%);
+  backdrop-filter: blur(16px) saturate(185%);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(205, 218, 235, 0.08);
+
+  transition:
+    transform 320ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 320ms ease;
+}
+
+.fasilitas-sd-smp-sma-icon-wrapper::before {
+  content: "";
+
+  position: absolute;
+  inset: 1px;
+
+  pointer-events: none;
+
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 18px;
+}
+
+.fasilitas-sd-smp-sma-icon-specular {
+  position: absolute;
+
+  top: 1px;
+  right: 15%;
+  left: 15%;
+
+  height: 1px;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 1),
+    transparent
+  );
+}
+
+.fasilitas-sd-smp-sma-card:hover .fasilitas-sd-smp-sma-icon-wrapper {
+  transform: translateY(-2px) scale(1.03) rotate(-1.5deg);
+
+  border-color: rgba(255, 101, 0, 0.21);
+}
+
 .fasilitas-sd-smp-sma-icon {
-  width: 5rem;
-  height: 5rem;
-  margin-bottom: 0.5rem;
-  display: inline-block;
+  position: relative;
+  z-index: 2;
+
+  display: block;
+
+  width: 62px;
+  height: 62px;
+
+  margin: 0;
+
   object-fit: contain;
 }
 
-/* Title Styling */
-.fasilitas-sd-smp-sma-title {
-  font-size: 1.4rem;
-  color: #ff8000;
+/* =========================
+   NUMBER
+========================= */
+
+.fasilitas-sd-smp-sma-index {
+  position: relative;
+  z-index: 3;
+
+  display: inline-flex;
+
+  min-width: 30px;
+  height: 23px;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 7px;
+  padding: 0 7px;
+
+  border: 1px solid rgba(255, 101, 0, 0.16);
+  border-radius: 999px;
+
+  color: var(--color-orange-default);
+
+  font-size: 0.54rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+
+  background:
+    radial-gradient(circle at 25% 0%, rgba(255, 255, 255, 1), transparent 60%),
+    linear-gradient(
+      145deg,
+      rgba(255, 248, 242, 0.88),
+      rgba(255, 235, 219, 0.38)
+    );
+
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  backdrop-filter: blur(10px) saturate(180%);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(255, 101, 0, 0.05);
 }
 
-/* List Styling */
+/* =========================
+   TITLE
+========================= */
+
+.fasilitas-sd-smp-sma-title {
+  position: relative;
+  z-index: 3;
+
+  margin: 0 0 10px;
+
+  color: var(--color-orange-default);
+
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.4;
+
+  text-align: left;
+}
+
+/* =========================
+   LIST
+========================= */
+
 .fasilitas-sd-smp-sma-list {
-  list-style-type: disc;
-  padding-left: 1.2rem;
-  color: #343131;
+  position: relative;
+  z-index: 3;
 
-  line-height: 1.6;
-  text-align: start;
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+
+  text-align: left;
 }
 
-.fasilitas-sd-smp-sma-list li {
+.fasilitas-sd-smp-sma-list > li {
+  position: relative;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 8px;
+
+  margin: 0;
+  padding: 7px 8px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(205, 218, 235, 0.43);
+  border-radius: 11px;
+
+  color: var(--color-gray-dark);
+
+  font-size: 0.78rem;
   font-weight: 400;
-  margin-bottom: 0.5rem;
-  text-align: start;
-  color: #343131;
-  font-size: 0.9rem;
-  position: relative;
+  line-height: 1.55;
+
+  background:
+    radial-gradient(
+      ellipse 80% 80% at 10% -30%,
+      rgba(255, 255, 255, 0.94),
+      rgba(255, 255, 255, 0.36) 50%,
+      transparent 75%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.46),
+      rgba(247, 251, 255, 0.18)
+    );
+
+  -webkit-backdrop-filter: blur(11px) saturate(170%);
+  backdrop-filter: blur(11px) saturate(170%);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    inset 0 -1px 0 rgba(205, 218, 235, 0.06);
+
+  transition:
+    transform 240ms ease,
+    border-color 240ms ease,
+    background 240ms ease;
 }
 
-.fasilitas-sd-smp-sma-list li::marker {
-  color: #4caf50;
-}
+.fasilitas-sd-smp-sma-list > li::before {
+  content: "";
 
-/* Sub-list / Nested List Styling */
-.fasilitas-sd-smp-sma-list ul {
-  list-style-type: none;
-  padding-left: 1rem;
-  margin-top: 0.3rem;
-  margin-bottom: 0.5rem;
-}
-
-.fasilitas-sd-smp-sma-list ul li {
-  padding-left: 1rem;
-  position: relative;
-  display: block;
-  font-size: 0.95rem;
-  color: #555;
-  margin-bottom: 0.3rem;
-}
-
-.fasilitas-sd-smp-sma-list ul li::before {
-  content: "-";
-  color: #343131;
-  font-weight: bold;
   position: absolute;
-  left: 0;
+
   top: 0;
+  right: 12%;
+  left: 12%;
+
+  height: 1px;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.88),
+    transparent
+  );
 }
 
-/* Responsive Grid Adjustments */
-@media (min-width: 768px) {
-  .fasilitas-sd-smp-sma-cards {
-    grid-template-columns: repeat(2, 1fr);
+.fasilitas-sd-smp-sma-list > li:hover {
+  transform: translateX(3px);
+
+  border-color: rgba(255, 101, 0, 0.2);
+
+  background:
+    radial-gradient(
+      ellipse 80% 80% at 10% -30%,
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 0.44) 50%,
+      transparent 75%
+    ),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.53), rgba(255, 244, 235, 0.2));
+}
+
+/* =========================
+   GREEN CHECK BUBBLE
+========================= */
+
+.fasilitas-sd-smp-sma-check {
+  display: inline-flex;
+
+  width: 21px;
+  height: 21px;
+
+  flex-shrink: 0;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 1px;
+
+  border: 1px solid rgba(16, 185, 129, 0.19);
+  border-radius: 999px;
+
+  color: #159447;
+
+  font-size: 0.57rem;
+  font-weight: 800;
+
+  background:
+    radial-gradient(circle at 30% 0%, rgba(255, 255, 255, 1), transparent 58%),
+    linear-gradient(145deg, rgba(239, 255, 246, 0.92), rgba(216, 248, 229, 0.4));
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(21, 148, 71, 0.05);
+
+  transition: transform 240ms ease;
+}
+
+.fasilitas-sd-smp-sma-list > li:hover .fasilitas-sd-smp-sma-check {
+  transform: scale(1.08) rotate(-4deg);
+}
+
+/* =========================
+   TARGET AKADEMIK
+========================= */
+
+.fasilitas-sd-smp-sma-target-box {
+  position: relative;
+  z-index: 3;
+
+  overflow: hidden;
+
+  margin-top: 9px;
+  padding: 10px;
+
+  border: 1px solid rgba(255, 101, 0, 0.14);
+  border-radius: 15px;
+
+  background:
+    radial-gradient(
+      ellipse 85% 75% at 15% -20%,
+      rgba(255, 255, 255, 0.98),
+      rgba(255, 255, 255, 0.4) 48%,
+      transparent 74%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 249, 244, 0.61),
+      rgba(255, 239, 227, 0.22)
+    );
+
+  -webkit-backdrop-filter: blur(14px) saturate(180%);
+  backdrop-filter: blur(14px) saturate(180%);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(255, 101, 0, 0.05);
+}
+
+.fasilitas-sd-smp-sma-target-specular {
+  position: absolute;
+
+  top: 0;
+  right: 12%;
+  left: 12%;
+
+  height: 1px;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 1),
+    transparent
+  );
+}
+
+.fasilitas-sd-smp-sma-target-title {
+  margin: 0 0 7px;
+
+  color: var(--color-gray-darker);
+
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.fasilitas-sd-smp-sma-sub-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.fasilitas-sd-smp-sma-sub-list li {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  color: var(--color-gray-dark);
+
+  font-size: 0.73rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.fasilitas-sd-smp-sma-sub-check {
+  display: inline-flex;
+
+  width: 18px;
+  height: 18px;
+
+  flex-shrink: 0;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 101, 0, 0.17);
+  border-radius: 999px;
+
+  color: var(--color-orange-default);
+
+  font-size: 0.5rem;
+  font-weight: 800;
+
+  background: rgba(255, 255, 255, 0.52);
+
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+/* =========================
+   LOCATION
+========================= */
+
+.fasilitas-sd-smp-sma-location-grid {
+  position: relative;
+  z-index: 3;
+
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 9px;
+}
+
+.fasilitas-sd-smp-sma-location-card {
+  position: relative;
+
+  min-width: 0;
+
+  overflow: hidden;
+
+  padding: 10px;
+
+  border: 1px solid rgba(205, 218, 235, 0.5);
+  border-radius: 15px;
+
+  background:
+    radial-gradient(
+      ellipse 90% 70% at 15% -15%,
+      rgba(255, 255, 255, 0.96),
+      rgba(255, 255, 255, 0.4) 48%,
+      transparent 74%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.49),
+      rgba(245, 250, 255, 0.19)
+    );
+
+  -webkit-backdrop-filter: blur(14px) saturate(175%);
+  backdrop-filter: blur(14px) saturate(175%);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    inset 0 -1px 0 rgba(205, 218, 235, 0.07);
+}
+
+.fasilitas-sd-smp-sma-location-specular {
+  position: absolute;
+
+  top: 0;
+  right: 12%;
+  left: 12%;
+
+  height: 1px;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 1),
+    transparent
+  );
+}
+
+.fasilitas-sd-smp-sma-location-header {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  margin-bottom: 8px;
+}
+
+.fasilitas-sd-smp-sma-location-header h3 {
+  margin: 0;
+
+  color: var(--color-gray-darker);
+
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.fasilitas-sd-smp-sma-location-dot {
+  width: 7px;
+  height: 7px;
+
+  flex-shrink: 0;
+
+  border-radius: 999px;
+
+  background: var(--color-orange-default);
+
+  box-shadow: 0 0 0 4px rgba(255, 101, 0, 0.07);
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1024px) {
+  .fasilitas-sd-smp-sma-container {
+    margin-top: 4vh;
+    margin-bottom: 4vh;
   }
-}
 
-@media (min-width: 1024px) {
   .fasilitas-sd-smp-sma-cards {
-    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
-}
 
-/* Responsif untuk layar kecil / Ponsel */
-@media (max-width: 768px) {
+  .fasilitas-sd-smp-sma-card {
+    padding: 14px;
+
+    border-radius: 20px;
+  }
+
+  .fasilitas-sd-smp-sma-card::before {
+    border-radius: 19px;
+  }
+
+  .fasilitas-sd-smp-sma-icon-wrapper {
+    width: 75px;
+    height: 75px;
+
+    border-radius: 18px;
+  }
+
+  .fasilitas-sd-smp-sma-icon-wrapper::before {
+    border-radius: 16px;
+  }
+
+  .fasilitas-sd-smp-sma-icon {
+    width: 56px;
+    height: 56px;
+  }
+
   .fasilitas-sd-smp-sma-title {
-    font-size: 1.2rem;
+    font-size: 0.94rem;
   }
-  .fasilitas-sd-smp-sma-list li {
-    font-size: 0.9rem;
+
+  .fasilitas-sd-smp-sma-list > li {
+    font-size: 0.76rem;
   }
-  .fasilitas-sd-smp-sma-list ul li {
-    font-size: 0.85rem;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+  .fasilitas-sd-smp-sma-container {
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .fasilitas-sd-smp-sma-cards {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+  }
+
+  .fasilitas-sd-smp-sma-card {
+    padding: 11px;
+
+    border-radius: 18px;
+  }
+
+  .fasilitas-sd-smp-sma-card::before {
+    border-radius: 17px;
+  }
+
+  .fasilitas-sd-smp-sma-icon-wrapper {
+    width: 70px;
+    height: 70px;
+
+    margin-bottom: 8px;
+
+    border-radius: 16px;
+  }
+
+  .fasilitas-sd-smp-sma-icon-wrapper::before {
+    border-radius: 14px;
+  }
+
+  .fasilitas-sd-smp-sma-icon {
+    width: 52px;
+    height: 52px;
+  }
+
+  .fasilitas-sd-smp-sma-title {
+    margin-bottom: 8px;
+
+    font-size: 0.88rem;
+  }
+
+  .fasilitas-sd-smp-sma-list {
+    gap: 6px;
+  }
+
+  .fasilitas-sd-smp-sma-list > li {
+    padding: 7px;
+
+    font-size: 0.74rem;
+  }
+
+  .fasilitas-sd-smp-sma-location-grid {
+    grid-template-columns: 1fr;
+
+    gap: 7px;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+  .fasilitas-sd-smp-sma-card {
+    padding: 10px;
+
+    border-radius: 17px;
+  }
+
+  .fasilitas-sd-smp-sma-card::before {
+    border-radius: 16px;
+  }
+
+  .fasilitas-sd-smp-sma-icon-wrapper {
+    width: 64px;
+    height: 64px;
+
+    padding: 5px;
+
+    border-radius: 14px;
+  }
+
+  .fasilitas-sd-smp-sma-icon-wrapper::before {
+    border-radius: 12px;
+  }
+
+  .fasilitas-sd-smp-sma-icon {
+    width: 47px;
+    height: 47px;
+  }
+
+  .fasilitas-sd-smp-sma-index {
+    height: 21px;
+
+    font-size: 0.5rem;
+  }
+
+  .fasilitas-sd-smp-sma-title {
+    font-size: 0.83rem;
+  }
+
+  .fasilitas-sd-smp-sma-list > li {
+    gap: 7px;
+
+    padding: 6px 7px;
+
+    border-radius: 10px;
+
+    font-size: 0.71rem;
+    line-height: 1.5;
+  }
+
+  .fasilitas-sd-smp-sma-check {
+    width: 19px;
+    height: 19px;
+
+    font-size: 0.52rem;
+  }
+
+  .fasilitas-sd-smp-sma-target-box {
+    padding: 8px;
+
+    border-radius: 13px;
+  }
+
+  .fasilitas-sd-smp-sma-target-title {
+    font-size: 0.72rem;
+  }
+
+  .fasilitas-sd-smp-sma-sub-list li {
+    font-size: 0.69rem;
+  }
+
+  .fasilitas-sd-smp-sma-location-card {
+    padding: 8px;
+
+    border-radius: 13px;
+  }
+
+  .fasilitas-sd-smp-sma-location-header h3 {
+    font-size: 0.72rem;
+  }
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .fasilitas-sd-smp-sma-card,
+  .fasilitas-sd-smp-sma-card::after,
+  .fasilitas-sd-smp-sma-icon-wrapper,
+  .fasilitas-sd-smp-sma-list > li,
+  .fasilitas-sd-smp-sma-check {
+    transition-duration: 1ms;
   }
 }

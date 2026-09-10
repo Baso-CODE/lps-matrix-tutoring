@@ -1,104 +1,584 @@
-/* Indicator Section (List of signs) */
+/* MataPelajaranLPSNew.css */
+
 .container-needs-indicator-section {
+  width: 100%;
+
   margin-top: 2vh;
   margin-bottom: 2vh;
 }
-.needs-indicator-section {
-  background-color: #f9f9f9;
-  border-left: 5px solid #ff6500;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+
+/* =========================
+   HEADER
+========================= */
+
+.mata-pelajaran-header {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  margin-bottom: 15px;
+}
+
+.mata-pelajaran-eyebrow {
+  position: relative;
+
+  display: inline-flex;
+
+  min-height: 28px;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  overflow: hidden;
+
+  margin-bottom: 9px;
+  padding: 4px 10px;
+
+  border: 1px solid rgba(255, 101, 0, 0.16);
+  border-radius: 999px;
+
+  color: var(--color-orange-default);
+
+  font-family: "Poppins", sans-serif;
+  font-size: 0.58rem;
+  font-weight: 700;
+
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  background:
+    radial-gradient(circle at 25% 0%, rgba(255, 255, 255, 1), transparent 60%),
+    linear-gradient(
+      145deg,
+      rgba(255, 248, 242, 0.82),
+      rgba(255, 237, 224, 0.36)
+    );
+
+  -webkit-backdrop-filter: blur(15px) saturate(180%);
+  backdrop-filter: blur(15px) saturate(180%);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(255, 101, 0, 0.05);
+}
+
+.mata-pelajaran-eyebrow::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  right: 15%;
+  left: 15%;
+
+  height: 1px;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 1),
+    transparent
+  );
+}
+
+.mata-pelajaran-eyebrow-dot {
+  width: 6px;
+  height: 6px;
+
+  flex-shrink: 0;
+
+  border-radius: 999px;
+
+  background: var(--color-orange-default);
+
+  box-shadow: 0 0 0 4px rgba(255, 101, 0, 0.07);
 }
 
 .indicator-title {
-  font-size: 1.2rem;
-  color: var(--color-gray-darker);
-  margin-bottom: 15px;
-  font-weight: 700;
+  max-width: 900px;
 
-  text-align: left; /* Pastikan judul rata kiri */
+  margin: 0;
+
+  color: var(--color-gray-darker);
+
+  font-family: "Poppins", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.55;
+
+  text-align: left;
 }
+
+/* =========================
+   MAIN LIQUID GLASS
+========================= */
+
+.needs-indicator-section {
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 16px;
+
+  border: 1px solid rgba(205, 218, 235, 0.72);
+  border-radius: 24px;
+
+  background:
+    radial-gradient(
+      ellipse 90% 55% at 14% -12%,
+      rgba(255, 255, 255, 0.98) 0%,
+      rgba(255, 255, 255, 0.5) 43%,
+      transparent 73%
+    ),
+    radial-gradient(
+      ellipse 100% 70% at 92% 115%,
+      rgba(202, 227, 249, 0.18) 0%,
+      rgba(235, 246, 255, 0.06) 52%,
+      transparent 76%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.6) 0%,
+      rgba(255, 255, 255, 0.3) 55%,
+      rgba(247, 251, 255, 0.2) 100%
+    );
+
+  -webkit-backdrop-filter: blur(22px) saturate(185%);
+  backdrop-filter: blur(22px) saturate(185%);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(205, 218, 235, 0.14);
+}
+
+.needs-indicator-section::before {
+  content: "";
+
+  position: absolute;
+  inset: 1px;
+
+  pointer-events: none;
+
+  border: 1px solid rgba(255, 255, 255, 0.58);
+  border-radius: 23px;
+}
+
+.needs-indicator-section::after {
+  content: "";
+
+  position: absolute;
+
+  top: -35%;
+  left: -35%;
+
+  width: 18%;
+  height: 170%;
+
+  pointer-events: none;
+
+  opacity: 0;
+
+  transform: skewX(-18deg);
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.72),
+    transparent
+  );
+
+  transition:
+    left 850ms ease,
+    opacity 300ms ease;
+}
+
+.needs-indicator-section:hover::after {
+  left: 125%;
+
+  opacity: 0.8;
+}
+
+.needs-indicator-specular {
+  position: absolute;
+
+  top: 0;
+  right: 8%;
+  left: 8%;
+
+  z-index: 5;
+
+  height: 1px;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 1),
+    transparent
+  );
+}
+
+.needs-indicator-refraction {
+  position: absolute;
+
+  right: 12%;
+  bottom: -35px;
+  left: 12%;
+
+  height: 85px;
+
+  pointer-events: none;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    ellipse,
+    rgba(188, 221, 248, 0.17) 0%,
+    rgba(228, 242, 253, 0.06) 52%,
+    transparent 76%
+  );
+
+  filter: blur(15px);
+}
+
+/* =========================
+   COLUMN
+========================= */
+
+.subject-columns-wrapper {
+  position: relative;
+  z-index: 3;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+
+  width: 100%;
+}
+
+.subject-columns-wrapper.split-columns {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 10px 14px;
+
+  align-items: start;
+}
+
+/* =========================
+   LIST
+========================= */
 
 .indicator-list {
-  list-style-type: none; /* Hapus bullet default */
-  padding: 0;
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+
   margin: 0;
+  padding: 0;
+
+  list-style: none;
 }
+
+/* =========================
+   MINI LIQUID GLASS ITEM
+========================= */
 
 .indicator-list li {
   position: relative;
-  padding-left: 25px;
-  margin-bottom: 10px;
-  font-size: 0.95rem;
+
+  display: flex;
+
+  min-width: 0;
+  min-height: 43px;
+
+  align-items: center;
+
+  gap: 9px;
+
+  overflow: hidden;
+
+  margin: 0;
+  padding: 7px 10px;
+
+  border: 1px solid rgba(205, 218, 235, 0.5);
+  border-radius: 13px;
+
+  color: #343131;
+
+  font-size: 0.82rem;
+  font-weight: 400;
+  line-height: 1.4;
+
+  background:
+    radial-gradient(
+      ellipse 80% 80% at 10% -30%,
+      rgba(255, 255, 255, 0.96),
+      rgba(255, 255, 255, 0.4) 50%,
+      transparent 75%
+    ),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.5), rgba(247, 251, 255, 0.2));
+
+  -webkit-backdrop-filter: blur(14px) saturate(175%);
+  backdrop-filter: blur(14px) saturate(175%);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    inset 0 -1px 0 rgba(205, 218, 235, 0.08);
+
+  transition:
+    transform 260ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 260ms ease,
+    background 260ms ease;
 }
 
 .indicator-list li::before {
-  content: "👉";
+  content: "";
+
   position: absolute;
-  left: 0;
-  color: #ff6500;
-  font-size: 1rem;
-  line-height: 1.6;
+
+  top: 0;
+  right: 12%;
+  left: 12%;
+
+  height: 1px;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.9),
+    transparent
+  );
 }
 
-/* --- Gaya baru untuk wrapper kolom --- */
-.subject-columns-wrapper {
-  display: flex; /* Default ke flex-column untuk 1 kolom atau jika tidak dibagi */
-  flex-direction: column;
-  align-items: flex-start; /* Rata kiri daftar */
-  gap: 10px; /* Jarak antar ul jika 1 kolom */
-  margin-top: 15px; /* Jarak dari judul */
+.indicator-list li:hover {
+  transform: translateX(3px);
+
+  border-color: rgba(255, 101, 0, 0.24);
+
+  background:
+    radial-gradient(
+      ellipse 80% 80% at 10% -30%,
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 0.5) 50%,
+      transparent 75%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.62),
+      rgba(255, 244, 235, 0.26)
+    );
 }
 
-/* Terapkan grid hanya jika class 'split-columns' ada */
-.subject-columns-wrapper.split-columns {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* 2 kolom */
-  gap: 30px; /* Jarak antar kolom */
-  align-items: start; /* Rata atas item dalam grid */
+/* =========================
+   CHECK BUBBLE
+========================= */
+
+.indicator-check {
+  position: relative;
+
+  display: inline-flex;
+
+  width: 25px;
+  height: 25px;
+
+  flex-shrink: 0;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(35, 170, 93, 0.18);
+  border-radius: 999px;
+
+  color: #159447;
+
+  font-size: 0.68rem;
+  font-weight: 800;
+
+  background:
+    radial-gradient(circle at 28% 0%, rgba(255, 255, 255, 1), transparent 58%),
+    linear-gradient(145deg, rgba(239, 255, 246, 0.92), rgba(216, 248, 229, 0.4));
+
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  backdrop-filter: blur(10px) saturate(180%);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(21, 148, 71, 0.06);
+
+  transition:
+    transform 260ms ease,
+    border-color 260ms ease;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .needs-indicator-section {
-    padding: 15px;
-    margin: 20px auto;
-  }
-  .indicator-title {
-    font-size: 1.1rem;
-    margin-bottom: 10px;
-  }
-  .indicator-list li {
-    font-size: 0.9rem;
-    margin-bottom: 8px;
-  }
-  .indicator-list li::before {
-    font-size: 0.95rem;
-  }
+.indicator-list li:hover .indicator-check {
+  transform: scale(1.08) rotate(-4deg);
 
-  /* Di mobile, selalu kembali ke 1 kolom */
-  .subject-columns-wrapper.split-columns {
-    grid-template-columns: 1fr; /* Pastikan 1 kolom di mobile */
-    display: flex; /* Pastikan flex untuk 1 kolom */
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
+  border-color: rgba(35, 170, 93, 0.3);
 }
 
-@media (max-width: 480px) {
-  .needs-indicator-section {
-    padding: 10px;
-  }
+.indicator-subject-text {
+  position: relative;
+  z-index: 2;
+
+  min-width: 0;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1024px) {
   .indicator-title {
     font-size: 1rem;
   }
-  .indicator-list li {
-    font-size: 0.85rem;
-    padding-left: 20px;
+
+  .needs-indicator-section {
+    padding: 14px;
   }
-  .indicator-list li::before {
-    font-size: 0.9rem;
+
+  .indicator-list li {
+    font-size: 0.8rem;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+  .mata-pelajaran-header {
+    margin-bottom: 12px;
+  }
+
+  .indicator-title {
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+
+  .needs-indicator-section {
+    padding: 10px;
+
+    border-radius: 19px;
+  }
+
+  .needs-indicator-section::before {
+    border-radius: 18px;
+  }
+
+  .subject-columns-wrapper.split-columns {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+  }
+
+  .indicator-list {
+    width: 100%;
+
+    gap: 7px;
+  }
+
+  .indicator-list li {
+    width: 100%;
+
+    min-height: 40px;
+
+    padding: 6px 8px;
+
+    border-radius: 12px;
+
+    font-size: 0.78rem;
+  }
+
+  .indicator-check {
+    width: 23px;
+    height: 23px;
+
+    font-size: 0.62rem;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+  .mata-pelajaran-eyebrow {
+    min-height: 26px;
+
+    margin-bottom: 7px;
+    padding: 4px 8px;
+
+    font-size: 0.54rem;
+  }
+
+  .mata-pelajaran-eyebrow-dot {
+    width: 5px;
+    height: 5px;
+  }
+
+  .indicator-title {
+    font-size: 0.85rem;
+  }
+
+  .needs-indicator-section {
+    padding: 8px;
+
+    border-radius: 17px;
+  }
+
+  .needs-indicator-section::before {
+    border-radius: 16px;
+  }
+
+  .indicator-list {
+    gap: 6px;
+  }
+
+  .indicator-list li {
+    min-height: 38px;
+
+    gap: 8px;
+
+    padding: 6px 7px;
+
+    border-radius: 11px;
+
+    font-size: 0.74rem;
+  }
+
+  .indicator-check {
+    width: 22px;
+    height: 22px;
+
+    font-size: 0.59rem;
+  }
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .needs-indicator-section::after,
+  .indicator-list li,
+  .indicator-check {
+    transition-duration: 1ms;
   }
 }

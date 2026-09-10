@@ -43,7 +43,7 @@ body {
   .container-all {
     padding-left: 3%;
     padding-right: 3%;
-    padding-top: 40px; /* Padding top dihilangkan untuk tablet & mobile */
+    padding-top: 60px; /* Padding top dihilangkan untuk tablet & mobile */
   }
 }
 

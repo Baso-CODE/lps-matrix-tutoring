@@ -1,125 +1,200 @@
-import "./FasilitasSimakUI.css"; // Import file CSS
+import "./FasilitasSimakUI.css";
+
+const fasilitasData = [
+  {
+    title: "Fasilitas",
+    image: "/images/icon/fasilitas/fasilitas.webp",
+    items: [
+      "Mapping kebutuhan belajar siswa",
+      "Kegiatan belajar privat terprogram & intensif",
+      "Pengajar yang berkualitas dari UI & PTN Terbaik",
+      "Modul Belajar Prediktif",
+      "Bimbingan dan arahan strategi belajar efektif",
+      "Progress report & evaluasi belajar secara berkala",
+    ],
+  },
+  {
+    title: "Target Belajar",
+    image: "/images/icon/fasilitas/target.webp",
+    items: [
+      "Implementasi efektif model belajar berdasarkan hasil dari mapping kebutuhan siswa",
+      "Penguasaan strategi belajar efektif Simak UI",
+      "Peningkatan kemampuan mengerjakan soal secara cepat & tepat",
+      "Siswa siap menghadapi Simak UI",
+      "Siswa sukses masuk UI sesuai dengan jurusan yang diinginkan",
+    ],
+  },
+  {
+    title: "Scheduling",
+    image: "/images/icon/fasilitas/schedulling.webp",
+    items: [
+      "Penjadwalan dihandle langsung oleh admin Scheduling.",
+      "Jadwal belajar dapat disesuaikan dengan ketersediaan waktu siswa.",
+      "Perubahan atau cancel jadwal bisa langsung dikomunikasikan dengan admin Scheduling.",
+      "Durasi belajar setiap sesinya adalah 1,5 - 2 jam.",
+      "Frekuensi belajar (jumlah sesi pertemuan) dapat direncanakan bersama.",
+      "Pergantian guru jika merasa kurang cocok bisa dikomunikasikan dengan admin Scheduling.",
+      "Fokus kami: efektivitas kegiatan belajar dan ketercapaian target belajar.",
+    ],
+  },
+];
 
 const FasilitasSimakUI = () => {
   return (
-    <div className="fasilitas-simak-ui-container">
-      {/* Card Container */}
+    <section className="fasilitas-simak-ui-container">
       <div className="fasilitas-simak-ui-cards">
-        {/* Card 1: Fasilitas */}
-        <div className="fasilitas-simak-ui-card">
-          <img
-            src="/images/icon/fasilitas/fasilitas.webp"
-            alt="Icon Fasilitas"
-            className="fasilitas-icon"
-            loading="lazy"
-          />
-          <h2 className="fasilitas-title">Fasilitas</h2>
-          <ul className="fasilitas-list">
-            <li>Mapping kebutuhan belajar siswa</li>
-            <li>Kegiatan belajar privat terprogram & intensif</li>
-            <li>Pengajar yang berkualitas dari UI & PTN Terbaik</li>
-            <li>Modul Belajar Prediktif</li>
-            <li>Bimbingan dan arahan strategi belajar efektif</li>
-            <li>Progress report & evaluasi belajar secara berkala</li>
-          </ul>
-        </div>
+        {fasilitasData.map((item, index) => (
+          <article key={item.title} className="fasilitas-simak-ui-card">
+            <span className="fasilitas-card-specular" aria-hidden="true" />
 
-        {/* Card 2: Target Belajar */}
-        <div className="fasilitas-simak-ui-card">
-          <img
-            loading="lazy"
-            src="/images/icon/fasilitas/target.webp"
-            alt="Icon Fasilitas"
-            className="fasilitas-icon"
-          />
-          <h2 className="fasilitas-title">Target Belajar</h2>
-          <ul className="fasilitas-list">
-            <li>
-              Implementasi efektif model belajar berdasarkan hasil dari mapping
-              kebutuhan siswa
-            </li>
-            <li>Penguasaan strategi belajar efektif Simak UI</li>
-            <li>Peningkatan kemampuan mengerjakan soal secara cepat & tepat</li>
-            <li>Siswa siap menghadapi Simak UI</li>
-            <li>Siswa sukses masuk UI sesuai dengan jurusan yang diinginkan</li>
-          </ul>
-        </div>
+            <span className="fasilitas-card-refraction" aria-hidden="true" />
 
-        {/* Card 3: Scheduling */}
-        <div className="fasilitas-simak-ui-card">
-          <img
-            loading="lazy"
-            src="/images/icon/fasilitas/schedulling.webp"
-            alt="Icon Fasilitas"
-            className="fasilitas-icon"
-          />
-          <h2 className="fasilitas-title">Scheduling</h2>
-          <ul className="fasilitas-list">
-            <li>Penjadwalan dihandle langsung oleh admin Scheduling.</li>
-            <li>
-              Jadwal belajar dapat disesuaikan dengan ketersediaan waktu siswa.
-            </li>
-            <li>
-              Perubahan atau cancel jadwal bisa langsung dikomunikasikan dengan
-              admin Scheduling.
-            </li>
-            <li>Durasi belajar setiap sesinya adalah 1,5 - 2 jam.</li>
-            <li>
-              Frekuensi belajar (jumlah sesi pertemuan) dapat direncanakan
-              bersama.
-            </li>
-            <li>
-              Pergantian guru jika merasa kurang cocok bisa dikomunikasikan
-              dengan admin Scheduling
-            </li>
-            <li>
-              Fokus kami: efektivitas kegiatan belajar dan ketercapaian target
-              belajar.
-            </li>
-          </ul>
-        </div>
+            <div className="fasilitas-icon-wrapper">
+              <span className="fasilitas-icon-specular" aria-hidden="true" />
 
-        {/* Card 4: Lokasi Belajar */}
-        <div className="fasilitas-simak-ui-card">
-          <img
-            loading="lazy"
-            src="/images/icon/fasilitas/location.webp"
-            alt="Icon Fasilitas"
-            className="fasilitas-icon"
-          />
+              <img
+                src={item.image}
+                alt={`Icon ${item.title}`}
+                className="fasilitas-icon"
+                loading="lazy"
+              />
+            </div>
+
+            <span className="fasilitas-index">
+              {String(index + 1).padStart(2, "0")}
+            </span>
+
+            <h2 className="fasilitas-title">{item.title}</h2>
+
+            <ul className="fasilitas-list">
+              {item.items.map((text) => (
+                <li key={text}>
+                  <span className="fasilitas-check" aria-hidden="true">
+                    ✓
+                  </span>
+
+                  <span>{text}</span>
+                </li>
+              ))}
+            </ul>
+          </article>
+        ))}
+
+        <article className="fasilitas-simak-ui-card">
+          <span className="fasilitas-card-specular" aria-hidden="true" />
+
+          <span className="fasilitas-card-refraction" aria-hidden="true" />
+
+          <div className="fasilitas-icon-wrapper">
+            <span className="fasilitas-icon-specular" aria-hidden="true" />
+
+            <img
+              loading="lazy"
+              src="/images/icon/fasilitas/location.webp"
+              alt="Icon Lokasi Belajar"
+              className="fasilitas-icon"
+            />
+          </div>
+
+          <span className="fasilitas-index">04</span>
+
           <h2 className="fasilitas-title">Lokasi Belajar</h2>
-          <ul className="fasilitas-list">
-            <li>
-              <strong>Privat Offline:</strong>
-            </li>
-            <ul>
-              <li>Belajar dengan sistem tatap muka langsung</li>
-              <li>Guru privat datang ke rumah</li>
-              <li>Sistem belajar One on One Tutoring (Privat 1 siswa)</li>
-              <li>
-                Area jangkauan: Jakarta, Bogor, Depok, Tangerang, Tangsel,
-                Bekasi, dan sekitarnya.
-              </li>
-            </ul>
 
-            <li>
-              <strong>Privat Online:</strong>
-            </li>
-            <ul>
-              <li>
-                Belajar dengan guru privat secara Online menggunakan Zoom,
-                Google Meet atau aplikasi lain,
-              </li>
+          <div className="fasilitas-location-grid">
+            <div className="fasilitas-location-box">
+              <span
+                className="fasilitas-location-specular"
+                aria-hidden="true"
+              />
 
-              <li>Sistem belajar One on One Tutoring (Privat 1 siswa)</li>
-              <li>
-                Area Jangkauan: seluruh wilayah di Indonesia dan Luar Negeri.
-              </li>
-            </ul>
-          </ul>
-        </div>
+              <h3 className="fasilitas-location-title">Privat Offline</h3>
+
+              <ul className="fasilitas-list">
+                <li>
+                  <span className="fasilitas-check" aria-hidden="true">
+                    ✓
+                  </span>
+
+                  <span>Belajar dengan sistem tatap muka langsung</span>
+                </li>
+
+                <li>
+                  <span className="fasilitas-check" aria-hidden="true">
+                    ✓
+                  </span>
+
+                  <span>Guru privat datang ke rumah</span>
+                </li>
+
+                <li>
+                  <span className="fasilitas-check" aria-hidden="true">
+                    ✓
+                  </span>
+
+                  <span>
+                    Sistem belajar One on One Tutoring (Privat 1 siswa)
+                  </span>
+                </li>
+
+                <li>
+                  <span className="fasilitas-check" aria-hidden="true">
+                    ✓
+                  </span>
+
+                  <span>
+                    Area jangkauan: Jakarta, Bogor, Depok, Tangerang, Tangsel,
+                    Bekasi, dan sekitarnya.
+                  </span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="fasilitas-location-box">
+              <span
+                className="fasilitas-location-specular"
+                aria-hidden="true"
+              />
+
+              <h3 className="fasilitas-location-title">Privat Online</h3>
+
+              <ul className="fasilitas-list">
+                <li>
+                  <span className="fasilitas-check" aria-hidden="true">
+                    ✓
+                  </span>
+
+                  <span>
+                    Belajar dengan guru privat secara Online menggunakan Zoom,
+                    Google Meet atau aplikasi lain.
+                  </span>
+                </li>
+
+                <li>
+                  <span className="fasilitas-check" aria-hidden="true">
+                    ✓
+                  </span>
+
+                  <span>
+                    Sistem belajar One on One Tutoring (Privat 1 siswa)
+                  </span>
+                </li>
+
+                <li>
+                  <span className="fasilitas-check" aria-hidden="true">
+                    ✓
+                  </span>
+
+                  <span>
+                    Area Jangkauan: seluruh wilayah di Indonesia dan Luar
+                    Negeri.
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </article>
       </div>
-    </div>
+    </section>
   );
 };
 

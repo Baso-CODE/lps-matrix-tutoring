@@ -1,89 +1,432 @@
 /* MateriUjianSNBT.css */
 
+/*
+  Container TIDAK menggunakan width: 100%.
+  Ukurannya mengikuti parent .container-all.
+*/
 .container-materi-snbt {
   margin: 0 auto;
+  margin-bottom: 50px;
 }
 
-.main-title {
-  font-size: 1.4rem;
+/* =========================
+   LIST
+========================= */
 
-  color: #ff8000;
-  text-align: center;
+.materi-snbt-list {
+  display: flex;
+  flex-direction: column;
 
-  margin-bottom: 2rem;
+  gap: 14px;
 }
+
+/* =========================
+   LIQUID GLASS CARD
+========================= */
 
 .materi-item {
-  margin-bottom: 1.5rem;
+  position: relative;
+
+  overflow: hidden;
+
+  margin: 0;
+  padding: 15px;
+
+  border: 1px solid rgba(205, 218, 235, 0.7);
+  border-radius: 20px;
+
+  background:
+    radial-gradient(
+      ellipse 90% 65% at 14% -15%,
+      rgba(255, 255, 255, 0.98) 0%,
+      rgba(255, 255, 255, 0.48) 44%,
+      transparent 73%
+    ),
+    radial-gradient(
+      ellipse 100% 70% at 92% 115%,
+      rgba(199, 225, 249, 0.17) 0%,
+      rgba(235, 246, 255, 0.06) 52%,
+      transparent 76%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.58) 0%,
+      rgba(255, 255, 255, 0.29) 56%,
+      rgba(247, 251, 255, 0.19) 100%
+    );
+
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(205, 218, 235, 0.13);
+
+  transition:
+    transform 300ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 300ms ease,
+    background 300ms ease;
 }
+
+.materi-item::before {
+  content: "";
+
+  position: absolute;
+  inset: 1px;
+
+  pointer-events: none;
+
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 19px;
+}
+
+.materi-item::after {
+  content: "";
+
+  position: absolute;
+
+  top: -35%;
+  left: -40%;
+
+  width: 20%;
+  height: 170%;
+
+  pointer-events: none;
+
+  opacity: 0;
+
+  transform: skewX(-18deg);
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.72),
+    transparent
+  );
+
+  transition:
+    left 750ms ease,
+    opacity 280ms ease;
+}
+
+.materi-item:hover {
+  transform: translateY(-3px);
+
+  border-color: rgba(255, 101, 0, 0.25);
+
+  background:
+    radial-gradient(
+      ellipse 90% 65% at 14% -15%,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0.55) 44%,
+      transparent 73%
+    ),
+    radial-gradient(
+      ellipse 100% 70% at 92% 115%,
+      rgba(195, 223, 248, 0.21) 0%,
+      rgba(235, 246, 255, 0.08) 52%,
+      transparent 76%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.66) 0%,
+      rgba(255, 247, 240, 0.31) 56%,
+      rgba(247, 251, 255, 0.21) 100%
+    );
+}
+
+.materi-item:hover::after {
+  left: 125%;
+
+  opacity: 0.9;
+}
+
+/* =========================
+   SPECULAR
+========================= */
+
+.materi-item-specular {
+  position: absolute;
+
+  top: 0;
+  right: 9%;
+  left: 9%;
+
+  z-index: 5;
+
+  height: 1px;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 1),
+    transparent
+  );
+}
+
+/* =========================
+   WATER REFRACTION
+========================= */
+
+.materi-item-refraction {
+  position: absolute;
+
+  right: 12%;
+  bottom: -35px;
+  left: 12%;
+
+  height: 75px;
+
+  pointer-events: none;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    ellipse,
+    rgba(187, 220, 248, 0.16) 0%,
+    rgba(228, 242, 253, 0.06) 52%,
+    transparent 76%
+  );
+
+  filter: blur(13px);
+}
+
+/* =========================
+   TITLE
+========================= */
 
 .materi-title {
-  font-size: 1rem;
+  position: relative;
+  z-index: 3;
 
-  background-color: var(--color-orange-default);
-  color: #ffffff;
-  padding: 0.4rem 0.6rem;
-  border-radius: 8px;
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-bottom: 10px;
+  padding: 5px 11px 5px 6px;
+
+  border: 1px solid rgba(255, 101, 0, 0.18);
+  border-radius: 999px;
+
+  color: var(--color-orange-default);
+
+  font-family: "Poppins", sans-serif;
+  font-size: 0.84rem;
   font-weight: 700;
-  cursor: default;
-  width: fit-content;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin-bottom: 0.5rem;
+
+  background:
+    radial-gradient(circle at 25% 0%, rgba(255, 255, 255, 1), transparent 58%),
+    linear-gradient(
+      145deg,
+      rgba(255, 248, 242, 0.88),
+      rgba(255, 235, 219, 0.38)
+    );
+
+  -webkit-backdrop-filter: blur(14px) saturate(180%);
+  backdrop-filter: blur(14px) saturate(180%);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(255, 101, 0, 0.05);
 }
+
+/* =========================
+   NUMBER
+========================= */
+
+.materi-number {
+  display: inline-flex;
+
+  width: 28px;
+  height: 28px;
+
+  flex-shrink: 0;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  border-radius: 999px;
+
+  color: #ffffff;
+
+  font-size: 0.62rem;
+  font-weight: 700;
+
+  background:
+    radial-gradient(
+      circle at 30% 5%,
+      rgba(255, 255, 255, 0.3),
+      transparent 45%
+    ),
+    linear-gradient(
+      135deg,
+      #f56600 0%,
+      var(--color-orange-default) 55%,
+      #ff8a20 100%
+    );
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -1px 0 rgba(155, 70, 0, 0.08);
+}
+
+.materi-title-text {
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================
+   DESCRIPTION
+========================= */
 
 .materi-description {
-  font-size: 0.9rem;
+  position: relative;
+  z-index: 3;
+
+  margin: 0;
+
   color: #343131;
-  line-height: normal;
-  font-weight: normal;
+
+  font-size: 0.86rem;
+  font-weight: 400;
+  line-height: 1.65;
+
+  text-align: left;
 }
 
-/* For screens up to 1024px (tablet landscape) */
+/* =========================
+   TABLET
+========================= */
+
 @media (max-width: 1024px) {
-  .main-title {
-    font-size: 1.8rem; /* Slightly smaller */
+  .materi-snbt-list {
+    gap: 12px;
+  }
+
+  .materi-item {
+    padding: 13px;
+
+    border-radius: 18px;
+  }
+
+  .materi-item::before {
+    border-radius: 17px;
   }
 
   .materi-title {
-    font-size: 1.1rem; /* Adjusted for tablet */
+    font-size: 0.8rem;
   }
 
   .materi-description {
-    font-size: 0.95rem; /* Slightly smaller for readability */
-    margin-left: 1rem; /* Adjust margin */
+    font-size: 0.84rem;
+
+    margin-left: 0;
   }
 }
 
-/* For screens up to 768px (tablet portrait) */
+/* =========================
+   MOBILE
+========================= */
+
 @media (max-width: 768px) {
-  .main-title {
-    font-size: 1.6rem; /* Smaller font size for portrait tablet */
+  .materi-snbt-list {
+    gap: 10px;
+  }
+
+  .materi-item {
+    padding: 11px;
+
+    border-radius: 17px;
+  }
+
+  .materi-item::before {
+    border-radius: 16px;
   }
 
   .materi-title {
-    font-size: 1rem; /* Adjusted for portrait tablet */
-    padding: 0.5rem 0.8rem; /* Adjust padding */
+    gap: 7px;
+
+    max-width: 100%;
+
+    margin-bottom: 8px;
+    padding: 4px 9px 4px 5px;
+
+    border-radius: 14px;
+
+    font-size: 0.76rem;
+    line-height: 1.4;
+  }
+
+  .materi-number {
+    width: 25px;
+    height: 25px;
+
+    font-size: 0.57rem;
   }
 
   .materi-description {
-    font-size: 0.9rem; /* Slightly smaller */
-    margin-left: 0.8rem; /* Reduce margin */
+    margin-left: 0;
+
+    font-size: 0.8rem;
+    line-height: 1.6;
   }
 }
 
-/* For screens up to 500px (mobile) */
+/* =========================
+   SMALL MOBILE
+========================= */
+
 @media (max-width: 500px) {
-  .main-title {
-    font-size: 1.4rem; /* Smaller font size for mobile */
+  .materi-snbt-list {
+    gap: 9px;
+  }
+
+  .materi-item {
+    padding: 10px;
+
+    border-radius: 16px;
+  }
+
+  .materi-item::before {
+    border-radius: 15px;
   }
 
   .materi-title {
-    font-size: 0.9rem; /* Reduced for smaller screens */
-    padding: 0.4rem 0.6rem; /* Compact padding */
+    align-items: flex-start;
+
+    font-size: 0.72rem;
+  }
+
+  .materi-number {
+    width: 24px;
+    height: 24px;
+
+    margin-top: -1px;
+
+    font-size: 0.55rem;
   }
 
   .materi-description {
-    font-size: 0.85rem; /* Smaller font for mobile */
-    margin-left: 0.5rem; /* Minimal margin */
+    margin-left: 0;
+
+    font-size: 0.78rem;
+    line-height: 1.58;
+  }
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .materi-item,
+  .materi-item::after {
+    transition-duration: 1ms;
   }
 }

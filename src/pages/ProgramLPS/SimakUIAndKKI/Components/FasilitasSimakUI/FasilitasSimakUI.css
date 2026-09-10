@@ -1,130 +1,713 @@
-/* Container Styling */
+/* FasilitasSimakUI.css */
+
 .fasilitas-simak-ui-container {
-  margin-bottom: 2vh;
   margin-top: 2vh;
-  overflow: hidden;
-  padding: 20px 15px;
+  margin-bottom: 2vh;
 }
 
-/* Card Container Styling */
+/* =========================
+   GRID
+========================= */
+
 .fasilitas-simak-ui-cards {
   display: grid;
-  gap: 1.5rem;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 14px;
 }
 
-/* Card Styling */
-.fasilitas-simak-ui-card {
-  background-color: #ffffff;
-  border: 2px solid var(--color-orange-default);
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 1rem;
-  text-align: center;
+/* =========================
+   LIQUID GLASS CARD
+========================= */
 
-  transition: transform 0.2s;
+.fasilitas-simak-ui-card {
+  position: relative;
+
+  min-width: 0;
+
+  overflow: hidden;
+
+  padding: 16px;
+
+  border: 1px solid rgba(205, 218, 235, 0.7);
+  border-radius: 22px;
+
+  text-align: left;
+
+  background:
+    radial-gradient(
+      ellipse 90% 65% at 14% -15%,
+      rgba(255, 255, 255, 0.98) 0%,
+      rgba(255, 255, 255, 0.49) 44%,
+      transparent 73%
+    ),
+    radial-gradient(
+      ellipse 100% 72% at 92% 115%,
+      rgba(198, 225, 249, 0.18) 0%,
+      rgba(235, 246, 255, 0.06) 52%,
+      transparent 76%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.6) 0%,
+      rgba(255, 255, 255, 0.3) 56%,
+      rgba(247, 251, 255, 0.2) 100%
+    );
+
+  -webkit-backdrop-filter: blur(21px) saturate(185%);
+  backdrop-filter: blur(21px) saturate(185%);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(205, 218, 235, 0.13);
+
+  transition:
+    transform 320ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 320ms ease,
+    background 320ms ease;
+}
+
+.fasilitas-simak-ui-card::before {
+  content: "";
+
+  position: absolute;
+  inset: 1px;
+
+  pointer-events: none;
+
+  border: 1px solid rgba(255, 255, 255, 0.56);
+  border-radius: 21px;
+}
+
+.fasilitas-simak-ui-card::after {
+  content: "";
+
+  position: absolute;
+
+  top: -40%;
+  left: -40%;
+
+  width: 20%;
+  height: 180%;
+
+  pointer-events: none;
+
+  opacity: 0;
+
+  transform: skewX(-18deg);
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.72),
+    transparent
+  );
+
+  transition:
+    left 850ms ease,
+    opacity 300ms ease;
 }
 
 .fasilitas-simak-ui-card:hover {
-  transform: scale(1.05);
+  transform: translateY(-4px);
+
+  border-color: rgba(255, 101, 0, 0.26);
+
+  background:
+    radial-gradient(
+      ellipse 90% 65% at 14% -15%,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0.56) 44%,
+      transparent 73%
+    ),
+    radial-gradient(
+      ellipse 100% 72% at 92% 115%,
+      rgba(194, 223, 248, 0.22) 0%,
+      rgba(235, 246, 255, 0.08) 52%,
+      transparent 76%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.67) 0%,
+      rgba(255, 247, 240, 0.31) 56%,
+      rgba(247, 251, 255, 0.22) 100%
+    );
 }
 
-/* Icon Styling */
-/* Icon Styling */
+.fasilitas-simak-ui-card:hover::after {
+  left: 125%;
+
+  opacity: 0.9;
+}
+
+/* =========================
+   SPECULAR
+========================= */
+
+.fasilitas-card-specular {
+  position: absolute;
+
+  top: 0;
+  right: 9%;
+  left: 9%;
+
+  z-index: 5;
+
+  height: 1px;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 1),
+    transparent
+  );
+}
+
+/* =========================
+   REFRACTION
+========================= */
+
+.fasilitas-card-refraction {
+  position: absolute;
+
+  right: 12%;
+  bottom: -42px;
+  left: 12%;
+
+  height: 100px;
+
+  pointer-events: none;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    ellipse,
+    rgba(183, 218, 247, 0.17) 0%,
+    rgba(227, 241, 253, 0.06) 52%,
+    transparent 76%
+  );
+
+  filter: blur(15px);
+}
+
+/* =========================
+   ICON GLASS
+========================= */
+
+.fasilitas-icon-wrapper {
+  position: relative;
+  z-index: 3;
+
+  display: flex;
+
+  width: 88px;
+  height: 88px;
+
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  margin: 0 auto 10px;
+  padding: 7px;
+
+  border: 1px solid rgba(205, 218, 235, 0.54);
+  border-radius: 20px;
+
+  background:
+    radial-gradient(
+      ellipse 90% 70% at 16% -15%,
+      rgba(255, 255, 255, 0.98),
+      rgba(255, 255, 255, 0.45) 48%,
+      transparent 74%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.55),
+      rgba(242, 249, 255, 0.21)
+    );
+
+  -webkit-backdrop-filter: blur(15px) saturate(180%);
+  backdrop-filter: blur(15px) saturate(180%);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(205, 218, 235, 0.08);
+
+  transition:
+    transform 320ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 320ms ease;
+}
+
+.fasilitas-icon-wrapper::before {
+  content: "";
+
+  position: absolute;
+  inset: 1px;
+
+  pointer-events: none;
+
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 18px;
+}
+
+.fasilitas-icon-specular {
+  position: absolute;
+
+  top: 1px;
+  right: 15%;
+  left: 15%;
+
+  height: 1px;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 1),
+    transparent
+  );
+}
+
+.fasilitas-simak-ui-card:hover .fasilitas-icon-wrapper {
+  transform: translateY(-2px) scale(1.03) rotate(-1deg);
+
+  border-color: rgba(255, 101, 0, 0.2);
+}
+
 .fasilitas-icon {
-  width: 8rem;
-  height: 8rem;
-  margin-bottom: 0.5rem; /* Berikan jarak dengan elemen berikutnya */
-  display: inline-block;
+  position: relative;
+  z-index: 2;
+
+  display: block;
+
+  width: 68px;
+  height: 68px;
+
+  margin: 0;
+
   object-fit: contain;
 }
 
-/* Title Styling */
-.fasilitas-title {
-  font-size: 1.3rem;
-  color: #ff8000;
-  font-weight: 600;
-  margin-bottom: 1rem;
+/* =========================
+   INDEX
+========================= */
+
+.fasilitas-index {
+  position: relative;
+  z-index: 3;
+
+  display: inline-flex;
+
+  min-width: 30px;
+  height: 24px;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 7px;
+  padding: 0 7px;
+
+  border: 1px solid rgba(255, 101, 0, 0.16);
+  border-radius: 999px;
+
+  color: var(--color-orange-default);
+
+  font-size: 0.56rem;
+  font-weight: 700;
+
+  background:
+    radial-gradient(circle at 25% 0%, rgba(255, 255, 255, 1), transparent 60%),
+    linear-gradient(
+      145deg,
+      rgba(255, 248, 242, 0.88),
+      rgba(255, 235, 219, 0.38)
+    );
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(255, 101, 0, 0.05);
 }
 
-/* List Styling */
+/* =========================
+   TITLE
+========================= */
+
+.fasilitas-title {
+  position: relative;
+  z-index: 3;
+
+  margin: 0 0 11px;
+
+  color: var(--color-orange-default);
+
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+/* =========================
+   LIST
+========================= */
+
 .fasilitas-list {
-  list-style-type: disc; /* Gunakan tanda bulat */
-  padding: 0 1.5rem; /* Tambahkan padding kiri untuk menyesuaikan posisi */
+  position: relative;
+  z-index: 3;
 
-  color: #343131;
+  display: flex;
 
-  line-height: normal;
-  text-align: start;
+  flex-direction: column;
+
+  gap: 7px;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
 }
 
 .fasilitas-list li {
-  font-weight: 400;
-  border-radius: 8px;
-  margin-bottom: 0.4rem;
-  text-align: start; /* Pastikan teks rata kiri */
-  color: #343131;
-  font-size: 1rem;
-  display: list-item;
-  position: relative;
-}
-.li-no-content {
-  font-weight: 400;
-  border-radius: 8px;
-  margin-bottom: 0.4rem;
-  text-align: start; /* Pastikan teks rata kiri */
-  color: #343131;
-  font-size: 1rem;
-  display: none;
-  list-style: none;
-  position: relative;
-}
-
-.fasilitas-list li::marker {
-  color: #4caf50; /* Ubah warna bulatan menjadi hijau */
-  font-size: 1rem; /* Sesuaikan ukuran bulatan */
-}
-
-.fasilitas-list li:last-child {
-  border-bottom: none;
-}
-
-.fasilitas-list ul li {
-  padding-left: 1rem;
-  position: relative;
   display: flex;
+
   align-items: flex-start;
+
+  gap: 8px;
+
+  margin: 0;
+  padding: 7px 8px;
+
+  border: 1px solid rgba(205, 218, 235, 0.42);
+  border-radius: 11px;
+
+  color: var(--color-gray-dark);
+
+  font-size: 0.78rem;
+  font-weight: 400;
+  line-height: 1.55;
+
+  background:
+    radial-gradient(
+      ellipse 80% 80% at 10% -30%,
+      rgba(255, 255, 255, 0.94),
+      rgba(255, 255, 255, 0.36) 50%,
+      transparent 75%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.46),
+      rgba(247, 251, 255, 0.18)
+    );
+
+  -webkit-backdrop-filter: blur(11px) saturate(170%);
+  backdrop-filter: blur(11px) saturate(170%);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    inset 0 -1px 0 rgba(205, 218, 235, 0.06);
+
+  transition:
+    transform 240ms ease,
+    border-color 240ms ease;
 }
 
-.fasilitas-list ul li::before {
-  content: "-";
-  color: #343131;
-  font-weight: bold;
-  font-size: 1rem;
+.fasilitas-list li:hover {
+  transform: translateX(3px);
+
+  border-color: rgba(255, 101, 0, 0.2);
+}
+
+.fasilitas-list li strong {
+  color: var(--color-gray-darker);
+}
+
+/* =========================
+   CHECK BUBBLE
+========================= */
+
+.fasilitas-check {
+  display: inline-flex;
+
+  width: 21px;
+  height: 21px;
+
+  flex-shrink: 0;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 1px;
+
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: 999px;
+
+  color: #159447;
+
+  font-size: 0.57rem;
+  font-weight: 800;
+
+  background:
+    radial-gradient(circle at 30% 0%, rgba(255, 255, 255, 1), transparent 58%),
+    linear-gradient(145deg, rgba(239, 255, 246, 0.92), rgba(216, 248, 229, 0.4));
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(21, 148, 71, 0.05);
+}
+
+/* =========================
+   LOCATION
+========================= */
+
+.fasilitas-location-grid {
+  position: relative;
+  z-index: 3;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 10px;
+}
+
+.fasilitas-location-box {
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 10px;
+
+  border: 1px solid rgba(205, 218, 235, 0.5);
+  border-radius: 15px;
+
+  background:
+    radial-gradient(
+      ellipse 90% 70% at 15% -15%,
+      rgba(255, 255, 255, 0.96),
+      rgba(255, 255, 255, 0.4) 48%,
+      transparent 74%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.49),
+      rgba(245, 250, 255, 0.19)
+    );
+
+  -webkit-backdrop-filter: blur(14px) saturate(175%);
+  backdrop-filter: blur(14px) saturate(175%);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    inset 0 -1px 0 rgba(205, 218, 235, 0.07);
+}
+
+.fasilitas-location-specular {
   position: absolute;
-  left: 0;
+
   top: 0;
-  line-height: inherit;
+  right: 12%;
+  left: 12%;
+
+  height: 1px;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.95),
+    transparent
+  );
 }
 
-/* Responsive Styling */
-@media (min-width: 768px) {
-  /* Tablet and above: 2 columns */
+.fasilitas-location-title {
+  margin: 0 0 8px;
+
+  color: var(--color-gray-darker);
+
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1024px) {
   .fasilitas-simak-ui-cards {
-    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
-}
 
-@media (min-width: 1024px) {
-  /* Desktop and above: 2 columns */
-  .fasilitas-simak-ui-cards {
-    grid-template-columns: repeat(2, 1fr);
+  .fasilitas-simak-ui-card {
+    padding: 14px;
+
+    border-radius: 19px;
   }
-}
 
-/* Responsif untuk layar kecil */
-@media (max-width: 768px) {
+  .fasilitas-simak-ui-card::before {
+    border-radius: 18px;
+  }
+
+  .fasilitas-title {
+    font-size: 0.94rem;
+  }
+
   .fasilitas-list li {
-    font-size: 0.9rem;
+    font-size: 0.76rem;
+  }
+
+  .fasilitas-icon-wrapper {
+    width: 80px;
+    height: 80px;
+  }
+
+  .fasilitas-icon {
+    width: 61px;
+    height: 61px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+  .fasilitas-simak-ui-cards {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+  }
+
+  .fasilitas-simak-ui-card {
+    padding: 11px;
+
+    border-radius: 18px;
+  }
+
+  .fasilitas-simak-ui-card::before {
+    border-radius: 17px;
+  }
+
+  .fasilitas-icon-wrapper {
+    width: 72px;
+    height: 72px;
+
+    margin-bottom: 8px;
+
+    border-radius: 16px;
+  }
+
+  .fasilitas-icon-wrapper::before {
+    border-radius: 14px;
+  }
+
+  .fasilitas-icon {
+    width: 54px;
+    height: 54px;
+  }
+
+  .fasilitas-title {
+    margin-bottom: 8px;
+
+    font-size: 0.88rem;
+  }
+
+  .fasilitas-list {
+    gap: 6px;
+  }
+
+  .fasilitas-list li {
+    gap: 7px;
+
+    padding: 7px;
+
+    font-size: 0.75rem;
+  }
+
+  .fasilitas-location-grid {
+    grid-template-columns: 1fr;
+
+    gap: 7px;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+  .fasilitas-simak-ui-card {
+    padding: 10px;
+
+    border-radius: 17px;
+  }
+
+  .fasilitas-simak-ui-card::before {
+    border-radius: 16px;
+  }
+
+  .fasilitas-icon-wrapper {
+    width: 64px;
+    height: 64px;
+
+    padding: 5px;
+
+    border-radius: 14px;
+  }
+
+  .fasilitas-icon-wrapper::before {
+    border-radius: 12px;
+  }
+
+  .fasilitas-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .fasilitas-index {
+    height: 22px;
+
+    font-size: 0.52rem;
+  }
+
+  .fasilitas-title {
+    font-size: 0.84rem;
+  }
+
+  .fasilitas-list li {
+    font-size: 0.72rem;
+    line-height: 1.5;
+  }
+
+  .fasilitas-check {
+    width: 19px;
+    height: 19px;
+
+    font-size: 0.53rem;
+  }
+
+  .fasilitas-location-box {
+    padding: 8px;
+
+    border-radius: 13px;
+  }
+
+  .fasilitas-location-title {
+    font-size: 0.74rem;
+  }
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .fasilitas-simak-ui-card,
+  .fasilitas-simak-ui-card::after,
+  .fasilitas-icon-wrapper,
+  .fasilitas-list li {
+    transition-duration: 1ms;
   }
 }

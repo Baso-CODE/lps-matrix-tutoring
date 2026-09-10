@@ -1,133 +1,603 @@
 /* TigaJalurMasukPTN.css */
+
 .container-tiga-jalur {
+  width: 100%;
+
   margin-top: 1vh;
   margin-bottom: 5vh;
-  overflow: hidden;
+
+  overflow: visible;
+
   text-align: center;
 }
 
-.title-tiga-jalur {
-  font-size: 1.4rem;
-  color: #333;
+/* =========================
+   HEADER
+========================= */
+
+.tiga-jalur-header {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
   margin-bottom: 2rem;
 }
 
-.card-container-tiga-jalur {
-  display: flex;
-  justify-content: space-around;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-  margin-bottom: 3rem;
+.tiga-jalur-eyebrow {
+  position: relative;
+
+  display: inline-flex;
+
+  min-height: 29px;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  overflow: hidden;
+
+  margin-bottom: 10px;
+  padding: 5px 10px;
+
+  border: 1px solid rgba(255, 101, 0, 0.16);
+  border-radius: 999px;
+
+  color: var(--color-orange-default);
+
+  font-family: "Poppins", sans-serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  background:
+    radial-gradient(circle at 25% 0%, rgba(255, 255, 255, 1), transparent 58%),
+    linear-gradient(
+      145deg,
+      rgba(255, 248, 242, 0.82),
+      rgba(255, 237, 224, 0.38)
+    );
+
+  -webkit-backdrop-filter: blur(15px) saturate(180%);
+  backdrop-filter: blur(15px) saturate(180%);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(255, 101, 0, 0.05);
 }
 
+.tiga-jalur-eyebrow::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  right: 15%;
+  left: 15%;
+
+  height: 1px;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 1),
+    transparent
+  );
+}
+
+.tiga-jalur-eyebrow-dot {
+  width: 6px;
+  height: 6px;
+
+  flex-shrink: 0;
+
+  border-radius: 999px;
+
+  background: var(--color-orange-default);
+
+  box-shadow: 0 0 0 4px rgba(255, 101, 0, 0.07);
+}
+
+.title-tiga-jalur {
+  margin: 0;
+
+  color: var(--color-gray-darker);
+
+  font-family: "Poppins", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+/* =========================
+   CARD GRID
+========================= */
+
+.card-container-tiga-jalur {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 16px;
+
+  width: 100%;
+
+  margin-bottom: 2.5rem;
+}
+
+/* =========================
+   LIQUID GLASS CARD
+========================= */
+
 .card-tiga-jalur {
-  flex: 1;
-  max-width: 300px;
-  background-color: #ffffff;
-  border-radius: 8px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s;
-  text-align: start;
+  position: relative;
+
+  display: flex;
+
+  min-width: 0;
+  min-height: 100%;
+
+  align-items: flex-start;
+
+  gap: 12px;
+
+  overflow: hidden;
+
+  padding: 16px;
+
+  border: 1px solid rgba(205, 218, 235, 0.72);
+  border-radius: 22px;
+
+  text-align: left;
+
+  background:
+    radial-gradient(
+      ellipse 90% 65% at 16% -15%,
+      rgba(255, 255, 255, 0.98) 0%,
+      rgba(255, 255, 255, 0.48) 45%,
+      transparent 74%
+    ),
+    radial-gradient(
+      ellipse 100% 75% at 90% 115%,
+      rgba(204, 228, 250, 0.17) 0%,
+      rgba(235, 246, 255, 0.06) 52%,
+      transparent 76%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.6) 0%,
+      rgba(255, 255, 255, 0.31) 55%,
+      rgba(247, 251, 255, 0.2) 100%
+    );
+
+  -webkit-backdrop-filter: blur(22px) saturate(185%);
+  backdrop-filter: blur(22px) saturate(185%);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(205, 218, 235, 0.14);
+
+  transition:
+    transform 320ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 320ms ease,
+    background 320ms ease;
+}
+
+.card-tiga-jalur::before {
+  content: "";
+
+  position: absolute;
+  inset: 1px;
+
+  pointer-events: none;
+
+  border: 1px solid rgba(255, 255, 255, 0.58);
+  border-radius: 21px;
+}
+
+.card-tiga-jalur::after {
+  content: "";
+
+  position: absolute;
+
+  top: -30%;
+  left: -50%;
+
+  width: 26%;
+  height: 160%;
+
+  pointer-events: none;
+
+  opacity: 0;
+
+  transform: skewX(-18deg);
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.75),
+    transparent
+  );
+
+  transition:
+    left 750ms ease,
+    opacity 280ms ease;
 }
 
 .card-tiga-jalur:hover {
-  transform: scale(1.05);
+  transform: translateY(-5px);
+
+  border-color: rgba(255, 101, 0, 0.28);
+
+  background:
+    radial-gradient(
+      ellipse 90% 65% at 16% -15%,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0.56) 45%,
+      transparent 74%
+    ),
+    radial-gradient(
+      ellipse 100% 75% at 90% 115%,
+      rgba(199, 225, 249, 0.22) 0%,
+      rgba(235, 246, 255, 0.08) 52%,
+      transparent 76%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.68) 0%,
+      rgba(255, 247, 240, 0.32) 55%,
+      rgba(247, 251, 255, 0.22) 100%
+    );
+}
+
+.card-tiga-jalur:hover::after {
+  left: 125%;
+
+  opacity: 1;
+}
+
+.card-tiga-jalur-specular {
+  position: absolute;
+
+  top: 0;
+  right: 10%;
+  left: 10%;
+
+  z-index: 5;
+
+  height: 1px;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 1),
+    transparent
+  );
+}
+
+/* =========================
+   NUMBER BUBBLE
+========================= */
+
+.card-tiga-jalur-number {
+  position: relative;
+  z-index: 3;
+
+  display: inline-flex;
+
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 101, 0, 0.18);
+  border-radius: 14px;
+
+  color: var(--color-orange-default);
+
+  font-family: "Poppins", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+
+  background:
+    radial-gradient(circle at 30% 0%, rgba(255, 255, 255, 1), transparent 60%),
+    linear-gradient(145deg, rgba(255, 248, 242, 0.9), rgba(255, 229, 209, 0.4));
+
+  -webkit-backdrop-filter: blur(14px) saturate(180%);
+  backdrop-filter: blur(14px) saturate(180%);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(255, 101, 0, 0.06);
+
+  transition:
+    transform 320ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 320ms ease;
+}
+
+.card-tiga-jalur:hover .card-tiga-jalur-number {
+  transform: translateY(-2px) rotate(-3deg);
+
+  border-color: rgba(255, 101, 0, 0.3);
+}
+
+/* =========================
+   CARD CONTENT
+========================= */
+
+.card-tiga-jalur-content {
+  position: relative;
+  z-index: 3;
+
+  min-width: 0;
+
+  flex: 1;
 }
 
 .card-title-tiga-jalur {
-  font-size: 1.1rem;
-  color: #ff8000;
-  margin-bottom: 1rem;
+  margin: 1px 0 8px;
+
+  color: var(--color-orange-default);
+
+  font-family: "Poppins", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.4;
 }
 
 .card-description-tiga-jalur {
-  font-size: 0.9rem;
+  margin: 0;
+
   color: #343131;
-  line-height: normal;
+
+  font-size: 0.82rem;
+  font-weight: 400;
+  line-height: 1.65;
 }
 
-/* Additional Description Styling */
-.additional-description {
-  font-size: 0.9rem;
-  color: #343131;
-  text-align: start;
-  font-weight: 400;
-  /* margin-top: 20px; */
-  margin-left: auto;
-  margin-right: auto;
-  line-height: normal;
+/* =========================
+   WATER ORB
+========================= */
+
+.card-tiga-jalur-liquid-orb {
+  position: absolute;
+
+  right: -26px;
+  bottom: -30px;
+
+  width: 90px;
+  height: 90px;
+
+  pointer-events: none;
+
+  border: 1px solid rgba(177, 211, 239, 0.2);
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 28% 23%,
+      rgba(255, 255, 255, 0.74) 0%,
+      rgba(255, 255, 255, 0.16) 31%,
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at 68% 76%,
+      rgba(178, 217, 247, 0.2),
+      transparent 62%
+    );
+
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+
+  opacity: 0.68;
+
+  transition:
+    transform 600ms cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 350ms ease;
 }
-/* Responsif untuk layar yang lebih kecil */
-@media (max-width: 768px) {
+
+.card-tiga-jalur:hover .card-tiga-jalur-liquid-orb {
+  transform: translate(-10px, -8px) scale(1.12);
+
+  opacity: 0.92;
+}
+
+/* =========================
+   ADDITIONAL CONTENT
+========================= */
+
+.tiga-jalur-additional-content {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 14px;
+
+  width: 100%;
+}
+
+.additional-description {
+  margin-top: 1.3rem;
+
+  color: #343131;
+
+  font-size: 0.88rem;
+  font-weight: 400;
+  line-height: 1.7;
+
+  text-align: left;
+}
+
+.color-d2b04c-description {
+  color: var(--color-orange-default);
+
+  font-weight: 600;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1024px) {
+  .title-tiga-jalur {
+    font-size: 1.2rem;
+  }
+
   .card-container-tiga-jalur {
-    flex-direction: column;
-    align-items: center;
+    gap: 12px;
   }
 
   .card-tiga-jalur {
-    max-width: 100%;
+    padding: 14px;
+  }
+
+  .card-title-tiga-jalur {
+    font-size: 0.9rem;
+  }
+
+  .card-description-tiga-jalur,
+  .additional-description {
+    font-size: 0.84rem;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+  .tiga-jalur-header {
     margin-bottom: 1.5rem;
   }
-}
 
-/* Responsif untuk tablet */
-@media (max-width: 1024px) {
   .title-tiga-jalur {
-    font-size: 1.3rem; /* Ukuran lebih kecil untuk tablet */
+    font-size: 1.1rem;
+  }
+
+  .card-container-tiga-jalur {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+
+    margin-bottom: 2rem;
+  }
+
+  .card-tiga-jalur {
+    min-height: auto;
+
+    padding: 12px;
+
+    border-radius: 18px;
+  }
+
+  .card-tiga-jalur::before {
+    border-radius: 17px;
+  }
+
+  .card-tiga-jalur-number {
+    width: 38px;
+    height: 38px;
+
+    border-radius: 12px;
+
+    font-size: 0.66rem;
   }
 
   .card-title-tiga-jalur {
-    font-size: 1.15rem; /* Ukuran lebih kecil untuk tablet */
+    margin-bottom: 6px;
+
+    font-size: 0.86rem;
   }
 
   .card-description-tiga-jalur {
-    font-size: 0.9rem; /* Ukuran lebih kecil untuk tablet */
+    font-size: 0.8rem;
+    line-height: 1.6;
   }
+
   .additional-description {
-    font-size: 0.9rem; /* Ukuran lebih kecil untuk tablet */
-    line-height: normal;
-    margin-top: 1.5rem; /* Mengurangi jarak margin atas */
+    font-size: 0.82rem;
+    line-height: 1.65;
   }
 }
 
-/* Responsif untuk ponsel */
-@media (max-width: 768px) {
-  .title-tiga-jalur {
-    font-size: 1.2rem; /* Ukuran lebih kecil untuk ponsel */
-  }
+/* =========================
+   SMALL MOBILE
+========================= */
 
-  .card-title-tiga-jalur {
-    font-size: 1rem; /* Ukuran lebih kecil untuk ponsel */
-  }
-
-  .card-description-tiga-jalur {
-    font-size: 0.85rem; /* Ukuran lebih kecil untuk ponsel */
-  }
-  .additional-description {
-    font-size: 0.85rem; /* Ukuran lebih kecil untuk ponsel */
-    line-height: normal;
-
-    margin-top: 1rem; /* Jarak margin atas lebih kecil */
-  }
-}
-
-/* Responsif untuk layar kecil */
 @media (max-width: 480px) {
+  .container-tiga-jalur {
+    margin-bottom: 4vh;
+  }
+
+  .tiga-jalur-eyebrow {
+    min-height: 27px;
+
+    padding: 4px 9px;
+
+    font-size: 0.55rem;
+  }
+
   .title-tiga-jalur {
-    font-size: 1.3rem; /* Ukuran terkecil untuk layar kecil */
+    font-size: 1rem;
+  }
+
+  .card-tiga-jalur {
+    gap: 10px;
+
+    padding: 11px;
+
+    border-radius: 17px;
+  }
+
+  .card-tiga-jalur::before {
+    border-radius: 16px;
+  }
+
+  .card-tiga-jalur-number {
+    width: 35px;
+    height: 35px;
+
+    border-radius: 11px;
+
+    font-size: 0.62rem;
   }
 
   .card-title-tiga-jalur {
-    font-size: 1.1rem; /* Ukuran terkecil untuk layar kecil */
+    font-size: 0.82rem;
   }
 
   .card-description-tiga-jalur {
-    font-size: 0.8rem; /* Ukuran terkecil untuk layar kecil */
+    font-size: 0.78rem;
   }
+
   .additional-description {
-    font-size: 0.9rem; /* Ukuran terkecil untuk layar kecil */
-    line-height: normal;
-    margin-top: 0.5rem; /* Jarak margin atas lebih kecil */
+    font-size: 0.8rem;
+  }
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .card-tiga-jalur,
+  .card-tiga-jalur-number,
+  .card-tiga-jalur-liquid-orb {
+    transition-duration: 1ms;
+  }
+
+  .card-tiga-jalur::after {
+    transition-duration: 1ms;
   }
 }

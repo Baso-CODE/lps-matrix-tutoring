@@ -3,7 +3,6 @@
   margin-bottom: 12vh;
   text-align: center;
   overflow: hidden;
-  padding: 0 20px;
 }
 
 .profile-title {
@@ -30,9 +29,6 @@
 }
 
 /* Item dari carousel */
-.carousel-item {
-  padding: 10px 15px;
-}
 
 .tutor-card {
   /* padding: 0 10px; */
@@ -116,9 +112,6 @@
     font-size: 0.85rem;
   }
 
-  .carousel-item {
-    padding: 10px 5px;
-  }
   .tutor-name {
     font-size: 1.1rem;
   }

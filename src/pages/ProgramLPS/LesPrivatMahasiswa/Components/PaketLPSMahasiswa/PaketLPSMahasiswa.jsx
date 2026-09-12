@@ -32,43 +32,95 @@ const PaketLPSMahasiswa = () => {
   ];
 
   const handleCallNow = (message) => {
+    if (!baseUrl) return;
+
     const finalUrl = `${baseUrl}${message}`;
-    window.open(finalUrl, "_blank");
+
+    window.open(finalUrl, "_blank", "noopener,noreferrer");
   };
 
   return (
-    <div className="paket-belajar-container__lps-mahasiswa">
-      <h2 className="title-paket-induk__lps-mahasiswa">
-        Paket LPS Education Mahasiswa
-      </h2>
-      <p className="description-paket-belajar__lps-mahasiswa">
-        PAKET didasarkan pada jumlah sesi yang akan diambil oleh siswa. Siswa
-        dapat memilih komposisi sesi berdasarkan pada prioritas berapa lama
-        siswa ingin belajar. Program dapat disesuaikan dan Anda dapat
-        berkonsultasi lebih detail untuk mendapatkan arahan dan rekomendasi sesi
-        terbaik.
-      </p>
-      <br />
+    <section className="paket-belajar-container__lps-mahasiswa">
+      <div className="paket-belajar-header__lps-mahasiswa">
+        <h2 className="title-paket-induk__lps-mahasiswa">
+          Paket LPS Education Mahasiswa
+        </h2>
+
+        <p className="description-paket-belajar__lps-mahasiswa">
+          PAKET didasarkan pada jumlah sesi yang akan diambil oleh siswa. Siswa
+          dapat memilih komposisi sesi berdasarkan pada prioritas berapa lama
+          siswa ingin belajar. Program dapat disesuaikan dan Anda dapat
+          berkonsultasi lebih detail untuk mendapatkan arahan dan rekomendasi
+          sesi terbaik.
+        </p>
+      </div>
+
       <div className="paket-cards__lps-mahasiswa">
-        {packages.map((pkg, index) => (
-          <div className="paket-card__lps-mahasiswa" key={index}>
-            <img
-              loading="lazy"
-              src={pkg.icon}
-              alt={`Icon Paket ${pkg.title} - Menunjukkan jumlah sesi dan komposisi program`}
-              className="paket-icon__lps-mahasiswa"
+        {packages.map((pkg) => (
+          <article className="paket-card__lps-mahasiswa" key={pkg.title}>
+            <span
+              className="paket-card-specular__lps-mahasiswa"
+              aria-hidden="true"
             />
-            <h2 className="paket-title__lps-mahasiswa">{pkg.title}</h2>
-            <p className="paket-sesi__lps-mahasiswa">{pkg.sessions}</p>
+
+            <span
+              className="paket-card-refraction__lps-mahasiswa"
+              aria-hidden="true"
+            />
+
+            <div className="paket-icon-area__lps-mahasiswa">
+              <div className="paket-icon-wrapper__lps-mahasiswa">
+                <span
+                  className="paket-icon-specular__lps-mahasiswa"
+                  aria-hidden="true"
+                />
+
+                <img
+                  loading="lazy"
+                  src={pkg.icon}
+                  alt={`Icon Paket ${pkg.title} - Menunjukkan jumlah sesi dan komposisi program`}
+                  className="paket-icon__lps-mahasiswa"
+                />
+              </div>
+            </div>
+
+            <h3 className="paket-title__lps-mahasiswa">{pkg.title}</h3>
+
+            <div className="paket-session-box__lps-mahasiswa">
+              <span className="paket-session-label__lps-mahasiswa">
+                Jumlah Pertemuan
+              </span>
+
+              <p className="paket-sesi__lps-mahasiswa">{pkg.sessions}</p>
+            </div>
+
             <button
+              type="button"
               className="call-button__lps-mahasiswa"
               onClick={() => handleCallNow(pkg.message)}>
-              Call Now
+              <span
+                className="call-button-specular__lps-mahasiswa"
+                aria-hidden="true"
+              />
+
+              <span className="call-button-text__lps-mahasiswa">
+                Konsultasi Sekarang
+              </span>
+
+              <span
+                className="call-button-orb__lps-mahasiswa"
+                aria-hidden="true"
+              />
             </button>
-          </div>
+
+            <span
+              className="paket-liquid-orb__lps-mahasiswa"
+              aria-hidden="true"
+            />
+          </article>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

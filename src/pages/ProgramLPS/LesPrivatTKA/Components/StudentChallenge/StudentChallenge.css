@@ -1,120 +1,633 @@
-.centered-content_student_challenge-tka {
-  width: 100%;
-  margin-bottom: 20px;
+/* StudentChallenge.css */
+
+.student-challenge-tka {
+  margin-top: 5vh;
+  margin-bottom: 5vh;
 }
 
-.centered-content_student_challenge-tka h2 {
-  font-size: 1.2rem;
-  color: #333333;
+/* =========================
+   MAIN LIQUID GLASS
+========================= */
 
-  font-weight: 700;
-  margin-bottom: 0.3rem;
-  line-height: 1.4;
-  border-left: 4px solid #ff6500;
-  padding-left: 0.3rem;
-}
-
-.centered-content_student_challenge-tka h3 {
-  font-size: 1.1rem;
-  color: #333333;
-
-  font-weight: 600;
-  margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.centered-content_student_challenge-tka h4 {
-  font-size: 1.02rem;
-  color: #444444;
-
-  font-weight: 600;
-  margin-bottom: 0.3rem;
-}
-
-.centered-content_student_challenge-tka p {
-  font-size: 0.9rem;
-  color: #343131;
-  line-height: 1.6;
-  font-weight: 400;
-
-  margin-bottom: 0.5rem;
-}
-
-.centered-content_student_challenge-tka ul {
-  margin-left: 1.2rem;
-  margin-bottom: 1rem;
-  list-style-type: disc;
-}
-
-.centered-content_student_challenge-tka li {
-  margin-bottom: 0.3rem;
-  color: #555555;
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-/* --- Checklist style --- */
-.centered-content_student_challenge-tka .checklist {
-  list-style: none; /* hilangkan bullet bawaan */
-  margin: 0;
-  padding: 0;
-}
-
-.centered-content_student_challenge-tka .checklist li {
+.student-challenge-tka__glass {
   position: relative;
-  padding-left: 1.6rem; /* kasih ruang buat icon ceklis */
-  margin-bottom: 0.4rem;
-  font-size: 1rem;
-  color: #444;
-  line-height: 1.5;
+  overflow: hidden;
+
+  padding: 16px;
+
+  border: 1px solid rgba(205, 218, 235, 0.72);
+  border-radius: 24px;
+
+  background:
+    radial-gradient(
+      ellipse 92% 65% at 14% -15%,
+      rgba(255, 255, 255, 0.99) 0%,
+      rgba(255, 255, 255, 0.5) 43%,
+      transparent 73%
+    ),
+    radial-gradient(
+      ellipse 100% 75% at 92% 115%,
+      rgba(195, 223, 248, 0.18) 0%,
+      rgba(232, 244, 254, 0.06) 52%,
+      transparent 77%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.63) 0%,
+      rgba(255, 255, 255, 0.3) 56%,
+      rgba(247, 251, 255, 0.2) 100%
+    );
+
+  -webkit-backdrop-filter: blur(24px) saturate(190%);
+  backdrop-filter: blur(24px) saturate(190%);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(205, 218, 235, 0.13);
+
+  transition:
+    transform 340ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 340ms ease;
 }
 
-.centered-content_student_challenge-tka .checklist li::before {
-  content: "✔"; /* ceklis manual */
+.student-challenge-tka__glass::before {
+  content: "";
+
   position: absolute;
-  left: 0;
+  inset: 1px;
+
+  pointer-events: none;
+
+  border: 1px solid rgba(255, 255, 255, 0.56);
+  border-radius: 23px;
+}
+
+.student-challenge-tka__glass::after {
+  content: "";
+
+  position: absolute;
+
+  top: -40%;
+  left: -42%;
+
+  width: 18%;
+  height: 180%;
+
+  pointer-events: none;
+
+  opacity: 0;
+
+  transform: skewX(-18deg);
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.76),
+    transparent
+  );
+
+  transition:
+    left 850ms ease,
+    opacity 280ms ease;
+}
+
+.student-challenge-tka__glass:hover {
+  transform: translateY(-3px);
+
+  border-color: rgba(255, 101, 0, 0.24);
+}
+
+.student-challenge-tka__glass:hover::after {
+  left: 125%;
+
+  opacity: 0.9;
+}
+
+/* =========================
+   SPECULAR
+========================= */
+
+.student-challenge-tka__specular {
+  position: absolute;
+
   top: 0;
-  color: #0077ff; /* biru biar standout */
-  font-weight: bold;
+  right: 9%;
+  left: 9%;
+
+  z-index: 5;
+
+  height: 1px;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 1),
+    transparent
+  );
 }
 
-/* --- Numbered list style --- */
-.centered-content_student_challenge-tka .numbered-list {
-  margin-left: 1.5rem;
-  margin-bottom: 1rem;
-  list-style-type: decimal;
+/* =========================
+   REFRACTION
+========================= */
+
+.student-challenge-tka__refraction {
+  position: absolute;
+
+  right: 12%;
+  bottom: -50px;
+  left: 12%;
+
+  height: 115px;
+
+  pointer-events: none;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    ellipse,
+    rgba(181, 217, 247, 0.18) 0%,
+    rgba(226, 241, 253, 0.06) 52%,
+    transparent 76%
+  );
+
+  filter: blur(16px);
 }
 
-.centered-content_student_challenge-tka .numbered-list li {
-  margin-bottom: 0.4rem;
-  color: #555;
-  font-size: 0.9rem;
-  line-height: 1.5;
+/* =========================
+   IMAGE
+========================= */
+
+.student-challenge-tka__image-wrapper {
+  position: relative;
+  z-index: 3;
+
+  overflow: hidden;
+
+  margin-bottom: 14px;
+
+  border: 1px solid rgba(205, 218, 235, 0.6);
+  border-radius: 18px;
+
+  background:
+    radial-gradient(
+      ellipse 90% 75% at 20% 0%,
+      rgba(255, 255, 255, 0.98),
+      rgba(255, 255, 255, 0.36) 55%,
+      transparent 80%
+    ),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.55), rgba(247, 251, 255, 0.2));
+
+  -webkit-backdrop-filter: blur(16px) saturate(185%);
+  backdrop-filter: blur(16px) saturate(185%);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.96),
+    inset 0 -1px 0 rgba(205, 218, 235, 0.08);
 }
 
-.les-privat-sd-image {
+.student-challenge-tka__image-wrapper::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  right: 10%;
+  left: 10%;
+
+  z-index: 2;
+
+  height: 1px;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.95),
+    transparent
+  );
+}
+
+.student-challenge-tka__image {
+  display: block;
+
   width: 100%;
   height: auto;
-  border-radius: 12px;
-  margin-bottom: 1rem;
-  display: block;
+
+  object-fit: cover;
 }
-/* Responsiveness */
-@media (max-width: 768px) {
-  .centered-content_student_challenge-tka h2 {
-    font-size: 1.1rem;
+
+/* =========================
+   CONTENT
+========================= */
+
+.student-challenge-tka__content {
+  position: relative;
+  z-index: 3;
+}
+
+.student-challenge-tka__title {
+  margin: 0 0 8px;
+
+  color: var(--color-gray-darker);
+
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.35;
+
+  letter-spacing: -0.03em;
+
+  text-align: left;
+}
+
+.student-challenge-tka__description {
+  margin: 0;
+
+  color: var(--color-gray-dark);
+
+  font-size: 0.88rem;
+  font-weight: 400;
+  line-height: 1.7;
+
+  letter-spacing: -0.012em;
+
+  text-align: left;
+}
+
+/* =========================
+   NUMBER LIST
+========================= */
+
+.student-challenge-tka__list {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 8px;
+
+  margin: 12px 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.student-challenge-tka__item {
+  position: relative;
+
+  display: flex;
+
+  min-width: 0;
+  min-height: 74px;
+
+  align-items: flex-start;
+
+  gap: 9px;
+
+  overflow: hidden;
+
+  margin: 0;
+  padding: 10px;
+
+  border: 1px solid rgba(205, 218, 235, 0.48);
+  border-radius: 14px;
+
+  background:
+    radial-gradient(
+      ellipse 85% 90% at 8% -35%,
+      rgba(255, 255, 255, 0.97),
+      rgba(255, 255, 255, 0.38) 50%,
+      transparent 75%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.51),
+      rgba(247, 251, 255, 0.18)
+    );
+
+  -webkit-backdrop-filter: blur(13px) saturate(175%);
+  backdrop-filter: blur(13px) saturate(175%);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.94),
+    inset 0 -1px 0 rgba(205, 218, 235, 0.06);
+
+  transition:
+    transform 260ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 260ms ease;
+}
+
+.student-challenge-tka__item::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  right: 10%;
+  left: 10%;
+
+  height: 1px;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.92),
+    transparent
+  );
+}
+
+.student-challenge-tka__item:hover {
+  transform: translateY(-2px);
+
+  border-color: rgba(255, 101, 0, 0.2);
+}
+
+/* =========================
+   NUMBER
+========================= */
+
+.student-challenge-tka__number {
+  display: inline-flex;
+
+  min-width: 30px;
+  height: 24px;
+
+  flex-shrink: 0;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 7px;
+
+  border: 1px solid rgba(255, 101, 0, 0.26);
+  border-radius: 999px;
+
+  color: var(--color-orange-default);
+
+  font-size: 0.57rem;
+  font-weight: 700;
+
+  background:
+    radial-gradient(circle at 25% 0%, rgba(255, 255, 255, 1), transparent 60%),
+    linear-gradient(
+      145deg,
+      rgba(255, 248, 242, 0.92),
+      rgba(255, 235, 219, 0.42)
+    );
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(255, 101, 0, 0.05);
+}
+
+.student-challenge-tka__item-text {
+  color: var(--color-gray-dark);
+
+  font-size: 0.83rem;
+  font-weight: 500;
+  line-height: 1.55;
+
+  letter-spacing: -0.01em;
+
+  text-align: left;
+}
+
+/* =========================
+   CLOSING
+========================= */
+
+.student-challenge-tka__closing {
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 10px;
+
+  border: 1px solid rgba(205, 218, 235, 0.46);
+  border-radius: 13px;
+
+  background:
+    radial-gradient(
+      ellipse 82% 80% at 10% -30%,
+      rgba(255, 255, 255, 0.95),
+      rgba(255, 255, 255, 0.38) 50%,
+      transparent 75%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.49),
+      rgba(247, 251, 255, 0.18)
+    );
+
+  -webkit-backdrop-filter: blur(13px) saturate(175%);
+  backdrop-filter: blur(13px) saturate(175%);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.93),
+    inset 0 -1px 0 rgba(205, 218, 235, 0.06);
+}
+
+/* =========================
+   LIQUID ORB
+========================= */
+
+.student-challenge-tka__orb {
+  position: absolute;
+
+  right: -34px;
+  bottom: -40px;
+
+  width: 105px;
+  height: 105px;
+
+  pointer-events: none;
+
+  border: 1px solid rgba(184, 214, 239, 0.2);
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 30% 24%,
+      rgba(255, 255, 255, 0.76) 0%,
+      rgba(255, 255, 255, 0.15) 31%,
+      transparent 56%
+    ),
+    radial-gradient(
+      circle at 70% 75%,
+      rgba(182, 219, 248, 0.21),
+      transparent 63%
+    );
+
+  opacity: 0.65;
+
+  transition:
+    transform 650ms cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 350ms ease;
+}
+
+.student-challenge-tka__glass:hover .student-challenge-tka__orb {
+  transform: translate(-13px, -10px) scale(1.14);
+
+  opacity: 0.9;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1024px) {
+  .student-challenge-tka__glass {
+    padding: 14px;
+
+    border-radius: 21px;
   }
 
-  .centered-content_student_challenge-tka h3 {
+  .student-challenge-tka__glass::before {
+    border-radius: 20px;
+  }
+
+  .student-challenge-tka__title {
+    font-size: 1.22rem;
+  }
+
+  .student-challenge-tka__description {
+    font-size: 0.84rem;
+  }
+
+  .student-challenge-tka__item-text {
+    font-size: 0.8rem;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+  .student-challenge-tka {
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+  }
+
+  .student-challenge-tka__glass {
+    padding: 11px;
+
+    border-radius: 18px;
+  }
+
+  .student-challenge-tka__glass::before {
+    border-radius: 17px;
+  }
+
+  .student-challenge-tka__image-wrapper {
+    margin-bottom: 11px;
+
+    border-radius: 14px;
+  }
+
+  .student-challenge-tka__title {
+    font-size: 1.08rem;
+  }
+
+  .student-challenge-tka__description {
+    font-size: 0.81rem;
+    line-height: 1.65;
+  }
+
+  .student-challenge-tka__list {
+    grid-template-columns: 1fr;
+
+    gap: 7px;
+
+    margin: 10px 0;
+  }
+
+  .student-challenge-tka__item {
+    min-height: 58px;
+
+    padding: 9px;
+
+    border-radius: 12px;
+  }
+
+  .student-challenge-tka__number {
+    min-width: 29px;
+    height: 23px;
+
+    font-size: 0.54rem;
+  }
+
+  .student-challenge-tka__item-text {
+    font-size: 0.79rem;
+  }
+
+  .student-challenge-tka__closing {
+    padding: 9px;
+
+    border-radius: 12px;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+  .student-challenge-tka {
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+  }
+
+  .student-challenge-tka__glass {
+    padding: 10px;
+
+    border-radius: 17px;
+  }
+
+  .student-challenge-tka__glass::before {
+    border-radius: 16px;
+  }
+
+  .student-challenge-tka__title {
     font-size: 1rem;
   }
 
-  .centered-content_student_challenge-tka h4 {
-    font-size: 0.95rem;
+  .student-challenge-tka__description {
+    font-size: 0.79rem;
   }
 
-  .centered-content_student_challenge-tka p,
-  .centered-content_student_challenge-tka li {
-    font-size: 0.9rem;
+  .student-challenge-tka__item {
+    min-height: 54px;
+
+    gap: 7px;
+
+    padding: 8px;
+  }
+
+  .student-challenge-tka__number {
+    min-width: 28px;
+    height: 22px;
+
+    font-size: 0.52rem;
+  }
+
+  .student-challenge-tka__item-text {
+    font-size: 0.77rem;
+  }
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .student-challenge-tka__glass,
+  .student-challenge-tka__glass::after,
+  .student-challenge-tka__item,
+  .student-challenge-tka__orb {
+    transition-duration: 1ms;
   }
 }

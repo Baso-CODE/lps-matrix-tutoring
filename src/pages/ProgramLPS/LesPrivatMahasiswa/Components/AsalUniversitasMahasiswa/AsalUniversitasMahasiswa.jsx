@@ -21,58 +21,80 @@ const AsalUniversitasMahasiswa = () => {
     "Universitas Negeri Lampung",
     "Universitas Sam Ratulangi",
     "Universitas Islam Negeri Alaudin Makassar",
-    "Universitas Muslim Indonesia ",
+    "Universitas Muslim Indonesia",
     "Universitas Negeri Makassar",
-    "Universitas Mataram ",
-    "Universitas Muhammadiyah Palu ",
+    "Universitas Mataram",
+    "Universitas Muhammadiyah Palu",
     "dan universitas lainnya",
   ];
 
   return (
-    <div>
-      <div className="asal-universitas-container">
-        <h1 className="asal-universitas-title">
+    <section className="asal-universitas-section-mahasiswa">
+      <article className="asal-universitas-container">
+        <span className="asal-universitas-specular" aria-hidden="true" />
+
+        <span className="asal-universitas-refraction" aria-hidden="true" />
+
+        <h2 className="asal-universitas-title">
           Asal Universitas Peserta Les Privat Mahasiswa
-        </h1>
+        </h2>
+
         <ul className="asal-universitas-list">
-          {universities.map((university, index) => (
-            <li key={index} className="asal-universitas-item">
-              {university}
+          {universities.map((university) => (
+            <li key={university} className="asal-universitas-item">
+              <span className="asal-universitas-check" aria-hidden="true">
+                ✓
+              </span>
+
+              <span className="asal-universitas-item-text">{university}</span>
             </li>
           ))}
         </ul>
+
         <p className="asal-universitas-note">
           Layanan Les Privat Online untuk Seluruh Wilayah di Indonesia
         </p>
-      </div>
+      </article>
 
-      <h2 className="program-mahasiswa-title-h2">Bimbel Online Mahasiswa</h2>
+      <article className="bimbel-online-mahasiswa-glass">
+        <span className="bimbel-online-mahasiswa-specular" aria-hidden="true" />
 
-      <p className="additional-description-mahasiswa">
-        Program{" "}
-        <span className="color-d2b04c-description">
-          Bimbel Online Mahasiswa - LPS Education
-        </span>{" "}
-        adalah kegiatan les privat yang dilaksanakan secara virtual (online)
-        menggunakan Zoom, Skype, Google Meet dan aplikasi lain yang siswa
-        miliki. Peserta bimbel online - LPS Education tidak hanya berasal dari
-        Jabodetabek, tetapi juga dari berbagai kota di Indonesia seperti Padang,
-        Aceh, Pekanbaru, Semarang, Bandung, Makasar, Surabaya, Malang, Bali, dan
-        daerah lainnya di Indonesia. Meski belajar secara online, pembelajaran
-        tetap berjalan secara efektif dan maksimal.
-      </p>
+        <span
+          className="bimbel-online-mahasiswa-refraction"
+          aria-hidden="true"
+        />
 
-      <p className="additional-description-mahasiswa">
-        Jadwal belajar siswa bimbel online Mahasiswa disesuaikan dengan
-        permintaan siswa les. Jadwal les privat dimulai dari hari Senin – Minggu
-        mulai pukul 08.00 WIB dan maksimal malam pukul 21.00 WIB. Dengan jadwal
-        fleksibel mengikuti permintaan siswa, maka peserta les yang sibuk dengan
-        rutinitasnya tetap bisa belajar dengan menyesuaikan waktu luang yang
-        dimiliki. Ayo daftarkan dirimu sekarang juga di Program Les Privat
-        Mahasiswa -{" "}
-        <span className="color-d2b04c-description">LPS Education</span>.
-      </p>
-    </div>
+        <h2 className="program-mahasiswa-title-h2">Bimbel Online Mahasiswa</h2>
+
+        <div className="bimbel-online-mahasiswa-content">
+          <p className="bimbel-online-mahasiswa-description">
+            Program{" "}
+            <span className="color-d2b04c-description">
+              Bimbel Online Mahasiswa - LPS Education
+            </span>{" "}
+            adalah kegiatan les privat yang dilaksanakan secara virtual (online)
+            menggunakan Zoom, Skype, Google Meet dan aplikasi lain yang siswa
+            miliki. Peserta bimbel online - LPS Education tidak hanya berasal
+            dari Jabodetabek, tetapi juga dari berbagai kota di Indonesia
+            seperti Padang, Aceh, Pekanbaru, Semarang, Bandung, Makasar,
+            Surabaya, Malang, Bali, dan daerah lainnya di Indonesia. Meski
+            belajar secara online, pembelajaran tetap berjalan secara efektif
+            dan maksimal.
+          </p>
+
+          <p className="bimbel-online-mahasiswa-description">
+            Jadwal belajar siswa bimbel online Mahasiswa disesuaikan dengan
+            permintaan siswa les. Jadwal les privat dimulai dari hari Senin –
+            Minggu mulai pukul 08.00 WIB dan maksimal malam pukul 21.00 WIB.
+            Dengan jadwal fleksibel mengikuti permintaan siswa, maka peserta les
+            yang sibuk dengan rutinitasnya tetap bisa belajar dengan
+            menyesuaikan waktu luang yang dimiliki. Ayo daftarkan dirimu
+            sekarang juga di Program Les Privat Mahasiswa -{" "}
+            <span className="color-d2b04c-description">LPS Education</span>.
+          </p>
+        </div>
+      </article>
+    </section>
   );
 };
 

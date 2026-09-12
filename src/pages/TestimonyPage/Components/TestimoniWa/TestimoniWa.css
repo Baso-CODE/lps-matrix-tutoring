@@ -1,21 +1,321 @@
-/* Gallery Container */
-.success-story-wa-siswa-page {
-  display: grid;
-  gap: 1.3rem;
-  margin-top: 2rem;
-  grid-template-columns: repeat(3, 1fr);
+/* TestimoniWa.css */
+
+.testimoni-wa-section {
+  margin-top: 5vh;
+  margin-bottom: 5vh;
 }
 
-/* Display 1 column on small screens, 2 columns on medium and larger screens */
-@media (min-width: 768px) {
+.succesStory-lps-header {
+  margin-bottom: 8px;
+}
+
+.succesStory-lps-header h2 {
+  margin: 0;
+
+  color: var(--color-gray-darker);
+
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.35;
+
+  letter-spacing: -0.03em;
+
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.additional-description-about__us {
+  margin: 0;
+
+  color: var(--color-gray-dark);
+
+  font-size: 0.88rem;
+  font-weight: 400;
+  line-height: 1.7;
+
+  letter-spacing: -0.012em;
+
+  text-align: left;
+}
+
+.testimoni-wa-closing {
+  margin-top: 16px;
+}
+
+/* =========================
+   GALLERY
+========================= */
+
+.success-story-wa-siswa-page {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 12px;
+
+  margin-top: 16px;
+}
+
+/* =========================
+   GLASS IMAGE CARD
+========================= */
+
+.success-story-image-card {
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 6px;
+
+  border: 1px solid rgba(205, 218, 235, 0.72);
+  border-radius: 18px;
+
+  background:
+    radial-gradient(
+      ellipse 92% 70% at 15% -15%,
+      rgba(255, 255, 255, 0.99) 0%,
+      rgba(255, 255, 255, 0.5) 45%,
+      transparent 74%
+    ),
+    radial-gradient(
+      ellipse 90% 75% at 90% 115%,
+      rgba(193, 222, 250, 0.18) 0%,
+      transparent 72%
+    ),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.62), rgba(247, 251, 255, 0.2));
+
+  -webkit-backdrop-filter: blur(18px) saturate(185%);
+  backdrop-filter: blur(18px) saturate(185%);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(205, 218, 235, 0.1);
+
+  transition:
+    transform 320ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 320ms ease;
+}
+
+.success-story-image-card::before {
+  content: "";
+
+  position: absolute;
+  inset: 1px;
+
+  z-index: 2;
+
+  pointer-events: none;
+
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 16px;
+}
+
+.success-story-image-card::after {
+  content: "";
+
+  position: absolute;
+
+  top: -35%;
+  left: -45%;
+
+  z-index: 3;
+
+  width: 24%;
+  height: 170%;
+
+  pointer-events: none;
+
+  opacity: 0;
+
+  transform: skewX(-18deg);
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.72),
+    transparent
+  );
+
+  transition:
+    left 800ms ease,
+    opacity 280ms ease;
+}
+
+.success-story-image-card:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(255, 101, 0, 0.24);
+}
+
+.success-story-image-card:hover::after {
+  left: 125%;
+
+  opacity: 0.9;
+}
+
+/* =========================
+   SPECULAR
+========================= */
+
+.success-story-image-specular {
+  position: absolute;
+
+  top: 0;
+  right: 10%;
+  left: 10%;
+
+  z-index: 4;
+
+  height: 1px;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 1),
+    transparent
+  );
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.success-story-image {
+  position: relative;
+  z-index: 1;
+
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  object-fit: cover;
+
+  border-radius: 12px;
+
+  transition: transform 450ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.success-story-image-card:hover .success-story-image {
+  transform: scale(1.025);
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1024px) {
   .success-story-wa-siswa-page {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 10px;
+  }
+
+  .success-story-image-card {
+    padding: 5px;
+
+    border-radius: 16px;
+  }
+
+  .success-story-image-card::before {
+    border-radius: 14px;
+  }
+
+  .success-story-image {
+    border-radius: 10px;
   }
 }
 
-@media (max-width: 480px) {
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+  .testimoni-wa-section {
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+  }
+
+  .succesStory-lps-header h2 {
+    font-size: 1.08rem;
+  }
+
+  .additional-description-about__us {
+    font-size: 0.81rem;
+    line-height: 1.65;
+  }
+
   .success-story-wa-siswa-page {
-    gap: 0.8rem;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 8px;
+
+    margin-top: 12px;
+  }
+
+  .success-story-image-card {
+    padding: 5px;
+
+    border-radius: 14px;
+  }
+
+  .success-story-image-card::before {
+    border-radius: 12px;
+  }
+
+  .success-story-image {
+    border-radius: 10px;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+  .testimoni-wa-section {
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+  }
+
+  .succesStory-lps-header h2 {
+    font-size: 1rem;
+  }
+
+  .additional-description-about__us {
+    font-size: 0.79rem;
+  }
+
+  .success-story-wa-siswa-page {
+    grid-template-columns: 1fr;
+
+    gap: 8px;
+  }
+
+  .success-story-image-card {
+    padding: 5px;
+
+    border-radius: 13px;
+  }
+
+  .success-story-image-card::before {
+    border-radius: 11px;
+  }
+
+  .success-story-image {
+    border-radius: 9px;
+  }
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .success-story-image-card,
+  .success-story-image-card::after,
+  .success-story-image {
+    transition-duration: 1ms;
   }
 }

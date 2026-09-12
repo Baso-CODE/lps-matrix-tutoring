@@ -1,145 +1,882 @@
-.centered-content_program-tka {
-  width: 100%;
-  margin-top: 5%;
-  margin-bottom: 20px;
+/* ProgramTKA.css */
+
+.program-tka-section {
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 14px;
 }
 
-.centered-content_program-tka h2 {
-  font-size: 1.2rem;
-  color: #333333;
+/* =========================
+   MAIN GLASS
+========================= */
+
+.program-tka-glass,
+.program-tka-subject-glass {
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 18px;
+
+  border: 1px solid rgba(205, 218, 235, 0.72);
+  border-radius: 24px;
+
+  background:
+    radial-gradient(
+      ellipse 92% 65% at 14% -15%,
+      rgba(255, 255, 255, 0.99) 0%,
+      rgba(255, 255, 255, 0.5) 43%,
+      transparent 73%
+    ),
+    radial-gradient(
+      ellipse 100% 75% at 92% 115%,
+      rgba(195, 223, 248, 0.18) 0%,
+      rgba(232, 244, 254, 0.06) 52%,
+      transparent 77%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.63) 0%,
+      rgba(255, 255, 255, 0.3) 56%,
+      rgba(247, 251, 255, 0.2) 100%
+    );
+
+  -webkit-backdrop-filter: blur(24px) saturate(190%);
+  backdrop-filter: blur(24px) saturate(190%);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(205, 218, 235, 0.13);
+
+  transition:
+    transform 340ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 340ms ease;
+}
+
+.program-tka-glass::before,
+.program-tka-subject-glass::before {
+  content: "";
+
+  position: absolute;
+  inset: 1px;
+
+  pointer-events: none;
+
+  border: 1px solid rgba(255, 255, 255, 0.56);
+  border-radius: 23px;
+}
+
+.program-tka-glass::after,
+.program-tka-subject-glass::after {
+  content: "";
+
+  position: absolute;
+
+  top: -40%;
+  left: -42%;
+
+  width: 18%;
+  height: 180%;
+
+  pointer-events: none;
+
+  opacity: 0;
+
+  transform: skewX(-18deg);
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.76),
+    transparent
+  );
+
+  transition:
+    left 850ms ease,
+    opacity 280ms ease;
+}
+
+.program-tka-glass:hover,
+.program-tka-subject-glass:hover {
+  transform: translateY(-3px);
+
+  border-color: rgba(255, 101, 0, 0.24);
+}
+
+.program-tka-glass:hover::after,
+.program-tka-subject-glass:hover::after {
+  left: 125%;
+
+  opacity: 0.9;
+}
+
+/* =========================
+   SPECULAR
+========================= */
+
+.program-tka-specular {
+  position: absolute;
+
+  top: 0;
+  right: 9%;
+  left: 9%;
+
+  z-index: 5;
+
+  height: 1px;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 1),
+    transparent
+  );
+}
+
+/* =========================
+   REFRACTION
+========================= */
+
+.program-tka-refraction {
+  position: absolute;
+
+  right: 12%;
+  bottom: -50px;
+  left: 12%;
+
+  height: 115px;
+
+  pointer-events: none;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    ellipse,
+    rgba(181, 217, 247, 0.18) 0%,
+    rgba(226, 241, 253, 0.06) 52%,
+    transparent 76%
+  );
+
+  filter: blur(16px);
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.program-tka-header {
+  position: relative;
+  z-index: 3;
+
+  margin-bottom: 12px;
+}
+
+.program-tka-title {
+  margin: 0 0 8px;
+
+  color: var(--color-gray-darker);
+
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.35;
+
+  letter-spacing: -0.03em;
+
+  text-align: left;
+}
+
+/* =========================
+   INTRO
+========================= */
+
+.program-tka-intro {
+  position: relative;
+  z-index: 3;
+
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 8px;
+
+  margin-bottom: 10px;
+}
+
+.program-tka-intro .program-tka-description {
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 10px;
+
+  border: 1px solid rgba(205, 218, 235, 0.46);
+  border-radius: 13px;
+
+  background:
+    radial-gradient(
+      ellipse 82% 80% at 10% -30%,
+      rgba(255, 255, 255, 0.95),
+      rgba(255, 255, 255, 0.38) 50%,
+      transparent 75%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.49),
+      rgba(247, 251, 255, 0.18)
+    );
+
+  -webkit-backdrop-filter: blur(13px) saturate(175%);
+  backdrop-filter: blur(13px) saturate(175%);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.93),
+    inset 0 -1px 0 rgba(205, 218, 235, 0.06);
+}
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+.program-tka-description {
+  margin: 0;
+
+  color: var(--color-gray-dark);
+
+  font-size: 0.86rem;
+  font-weight: 400;
+  line-height: 1.65;
+
+  letter-spacing: -0.012em;
+
+  text-align: left;
+}
+
+.program-tka-description b {
+  color: var(--color-gray-darker);
 
   font-weight: 700;
-  margin-bottom: 0.3rem;
-  line-height: 1.4;
-  border-left: 4px solid #ff6500;
-  padding-left: 0.3rem;
 }
 
-.centered-content_program-tka h3 {
-  font-size: 1.1rem;
-  color: #333333;
+/* =========================
+   METHOD
+========================= */
 
-  font-weight: 600;
-  margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.centered-content_program-tka h4 {
-  font-size: 1.02rem;
-  color: #444444;
-
-  font-weight: 600;
-  margin-bottom: 0.3rem;
-}
-
-.centered-content_program-tka p {
-  font-size: 0.9rem;
-  color: #343131;
-  line-height: 1.6;
-  font-weight: 400;
-
-  margin-bottom: 0.5rem;
-}
-
-.centered-content_program-tka ul {
-  /* margin-left: 1.2rem; */
-  margin-bottom: 1rem;
-  list-style-type: disc;
-}
-
-.centered-content_program-tka li {
-  margin-bottom: 0.3rem;
-  color: #555555;
-  gap: 0.3rem;
-  font-size: 0.9rem;
-  line-height: 1.5;
-}
-
-/* --- Checklist style --- */
-.centered-content_program-tka .checklist {
-  list-style: none; /* hilangkan bullet bawaan */
-  margin: 0;
-  padding: 0;
-}
-
-.centered-content_program-tka .checklist li {
+.program-tka-method-grid {
   position: relative;
-  padding-left: 1.6rem; /* kasih ruang buat icon ceklis */
-  margin-bottom: 0.4rem;
-  font-size: 1rem;
-  color: #444;
-  line-height: 1.5;
-}
+  z-index: 3;
 
-.centered-content_program-tka .checklist li::before {
-  content: "✔"; /* ceklis manual */
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: #0077ff; /* biru biar standout */
-  font-weight: bold;
-}
-
-/* --- Numbered list style --- */
-.centered-content_program-tka .numbered-list {
-  margin-left: 1.5rem;
-  margin-bottom: 1rem;
-  list-style-type: decimal;
-}
-
-.centered-content_program-tka .numbered-list li {
-  margin-bottom: 0.4rem;
-  color: #555;
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-.les-privat-sd-image {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  margin-bottom: 1rem;
-  display: block;
-}
-.subject-list-les-private-tka {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 8px;
+}
+
+.program-tka-method-card {
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 12px;
+
+  border: 1px solid rgba(205, 218, 235, 0.5);
+  border-radius: 15px;
+
+  background:
+    radial-gradient(
+      ellipse 85% 90% at 8% -35%,
+      rgba(255, 255, 255, 0.97),
+      rgba(255, 255, 255, 0.38) 50%,
+      transparent 75%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.51),
+      rgba(247, 251, 255, 0.18)
+    );
+
+  -webkit-backdrop-filter: blur(14px) saturate(180%);
+  backdrop-filter: blur(14px) saturate(180%);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    inset 0 -1px 0 rgba(205, 218, 235, 0.07);
+
+  transition:
+    transform 260ms ease,
+    border-color 260ms ease;
+}
+
+.program-tka-method-card:hover {
+  transform: translateY(-2px);
+
+  border-color: rgba(255, 101, 0, 0.2);
+}
+
+.program-tka-method-specular {
+  position: absolute;
+
+  top: 0;
+  right: 10%;
+  left: 10%;
+
+  height: 1px;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.95),
+    transparent
+  );
+}
+
+.program-tka-method-number {
+  display: inline-flex;
+
+  min-width: 31px;
+  height: 24px;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 8px;
+  padding: 0 8px;
+
+  border: 1px solid rgba(255, 101, 0, 0.26);
+  border-radius: 999px;
+
+  color: var(--color-orange-default);
+
+  font-size: 0.58rem;
+  font-weight: 700;
+
+  background:
+    radial-gradient(circle at 25% 0%, rgba(255, 255, 255, 1), transparent 60%),
+    linear-gradient(
+      145deg,
+      rgba(255, 248, 242, 0.92),
+      rgba(255, 235, 219, 0.42)
+    );
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(255, 101, 0, 0.05);
+}
+
+.program-tka-method-title {
+  margin: 0 0 6px;
+
+  color: var(--color-orange-default);
+
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.4;
+
+  letter-spacing: -0.02em;
+}
+
+.program-tka-method-description {
+  margin: 0;
+
+  color: var(--color-gray-dark);
+
+  font-size: 0.82rem;
+  font-weight: 400;
+  line-height: 1.6;
+
+  letter-spacing: -0.01em;
+
+  text-align: left;
+}
+
+/* =========================
+   LEVEL LIST
+========================= */
+
+.program-tka-level-list {
+  position: relative;
+  z-index: 3;
+
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 8px;
+
+  margin: 0 0 12px;
+  padding: 0;
+
+  list-style: none;
+}
+
+.program-tka-level-item {
+  position: relative;
+
+  display: flex;
+
+  min-width: 0;
+  min-height: 68px;
+
+  align-items: flex-start;
+
+  gap: 9px;
+
+  padding: 10px;
+
+  border: 1px solid rgba(205, 218, 235, 0.48);
+  border-radius: 14px;
+
+  background:
+    radial-gradient(
+      ellipse 85% 90% at 8% -35%,
+      rgba(255, 255, 255, 0.97),
+      rgba(255, 255, 255, 0.38) 50%,
+      transparent 75%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.51),
+      rgba(247, 251, 255, 0.18)
+    );
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.94),
+    inset 0 -1px 0 rgba(205, 218, 235, 0.06);
+}
+
+.program-tka-level-number {
+  display: inline-flex;
+
+  min-width: 30px;
+  height: 24px;
+
+  flex-shrink: 0;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 7px;
+
+  border: 1px solid rgba(255, 101, 0, 0.26);
+  border-radius: 999px;
+
+  color: var(--color-orange-default);
+
+  font-size: 0.57rem;
+  font-weight: 700;
+
+  background:
+    radial-gradient(circle at 25% 0%, rgba(255, 255, 255, 1), transparent 60%),
+    linear-gradient(
+      145deg,
+      rgba(255, 248, 242, 0.92),
+      rgba(255, 235, 219, 0.42)
+    );
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(255, 101, 0, 0.05);
+}
+
+.program-tka-level-text {
+  color: var(--color-gray-dark);
+
+  font-size: 0.83rem;
+  font-weight: 500;
+  line-height: 1.55;
+
+  letter-spacing: -0.01em;
+
+  text-align: left;
+}
+
+/* =========================
+   SUBJECT
+========================= */
+
+.program-tka-subject-description {
+  position: relative;
+  z-index: 3;
+
+  margin-bottom: 10px;
+}
+
+.subject-list-les-private-tka {
+  position: relative;
+  z-index: 3;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 7px;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
 }
 
 .subject-list-les-private-tka-item {
-  display: flex;
-  align-items: center;
-  font-size: 0.95rem;
-  margin-bottom: 8px;
-  font-weight: 500;
+  position: relative;
 
-  color: #4f4f4f;
+  display: flex;
+
+  min-width: 0;
+  min-height: 48px;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin: 0;
+  padding: 8px;
+
+  border: 1px solid rgba(205, 218, 235, 0.48);
+  border-radius: 12px;
+
+  background:
+    radial-gradient(
+      ellipse 85% 90% at 8% -35%,
+      rgba(255, 255, 255, 0.97),
+      rgba(255, 255, 255, 0.38) 50%,
+      transparent 75%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.51),
+      rgba(247, 251, 255, 0.18)
+    );
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.94),
+    inset 0 -1px 0 rgba(205, 218, 235, 0.06);
+
+  transition:
+    transform 260ms ease,
+    border-color 260ms ease;
+}
+
+.subject-list-les-private-tka-item:hover {
+  transform: translateY(-1px);
+
+  border-color: rgba(255, 101, 0, 0.18);
+}
+
+.subject-list-les-private-tka-check {
+  display: inline-flex;
+
+  width: 23px;
+  height: 23px;
+
+  flex-shrink: 0;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(16, 185, 129, 0.24);
+  border-radius: 50%;
+
+  color: #159447;
+
+  background:
+    radial-gradient(circle at 30% 0%, rgba(255, 255, 255, 1), transparent 65%),
+    linear-gradient(
+      145deg,
+      rgba(236, 253, 245, 0.92),
+      rgba(209, 250, 229, 0.44)
+    );
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(16, 185, 129, 0.06);
 }
 
 .subject-list-les-private-tka-icon {
-  margin-right: 0px;
-  color: #4caf50;
+  width: 13px;
+  height: 13px;
+
+  color: #159447;
 }
 
-/* Responsiveness */
-@media (max-width: 768px) {
-  .centered-content_program-tka h2 {
-    font-size: 1.1rem;
+.subject-list-les-private-tka-text {
+  color: var(--color-gray-dark);
+
+  font-size: 0.81rem;
+  font-weight: 500;
+  line-height: 1.45;
+
+  letter-spacing: -0.01em;
+
+  text-align: left;
+}
+
+/* =========================
+   ORB
+========================= */
+
+.program-tka-orb {
+  position: absolute;
+
+  right: -34px;
+  bottom: -40px;
+
+  width: 105px;
+  height: 105px;
+
+  pointer-events: none;
+
+  border: 1px solid rgba(184, 214, 239, 0.2);
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 30% 24%,
+      rgba(255, 255, 255, 0.76) 0%,
+      rgba(255, 255, 255, 0.15) 31%,
+      transparent 56%
+    ),
+    radial-gradient(
+      circle at 70% 75%,
+      rgba(182, 219, 248, 0.21),
+      transparent 63%
+    );
+
+  opacity: 0.65;
+
+  transition:
+    transform 650ms cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 350ms ease;
+}
+
+.program-tka-glass:hover .program-tka-orb,
+.program-tka-subject-glass:hover .program-tka-orb {
+  transform: translate(-13px, -10px) scale(1.14);
+
+  opacity: 0.9;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1024px) {
+  .program-tka-glass,
+  .program-tka-subject-glass {
+    padding: 15px;
+
+    border-radius: 21px;
   }
 
-  .centered-content_program-tka h3 {
+  .program-tka-glass::before,
+  .program-tka-subject-glass::before {
+    border-radius: 20px;
+  }
+
+  .program-tka-title {
+    font-size: 1.22rem;
+  }
+
+  .program-tka-description {
+    font-size: 0.83rem;
+  }
+
+  .program-tka-method-description {
+    font-size: 0.8rem;
+  }
+
+  .subject-list-les-private-tka {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+  .program-tka-section {
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+
+    gap: 10px;
+  }
+
+  .program-tka-glass,
+  .program-tka-subject-glass {
+    padding: 11px;
+
+    border-radius: 18px;
+  }
+
+  .program-tka-glass::before,
+  .program-tka-subject-glass::before {
+    border-radius: 17px;
+  }
+
+  .program-tka-title {
+    font-size: 1.08rem;
+  }
+
+  .program-tka-intro {
+    grid-template-columns: 1fr;
+
+    gap: 7px;
+  }
+
+  .program-tka-intro .program-tka-description {
+    padding: 9px;
+
+    border-radius: 12px;
+  }
+
+  .program-tka-description {
+    font-size: 0.81rem;
+    line-height: 1.62;
+  }
+
+  .program-tka-method-grid {
+    grid-template-columns: 1fr;
+
+    gap: 7px;
+  }
+
+  .program-tka-method-card {
+    padding: 10px;
+
+    border-radius: 13px;
+  }
+
+  .program-tka-method-title {
+    font-size: 0.94rem;
+  }
+
+  .program-tka-method-description {
+    font-size: 0.79rem;
+  }
+
+  .program-tka-level-list {
+    grid-template-columns: 1fr;
+
+    gap: 7px;
+  }
+
+  .program-tka-level-item {
+    min-height: 58px;
+
+    padding: 9px;
+
+    border-radius: 12px;
+  }
+
+  .program-tka-level-text {
+    font-size: 0.79rem;
+  }
+
+  .subject-list-les-private-tka {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 6px;
+  }
+
+  .subject-list-les-private-tka-item {
+    min-height: 44px;
+
+    padding: 7px;
+
+    border-radius: 11px;
+  }
+
+  .subject-list-les-private-tka-text {
+    font-size: 0.77rem;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+  .program-tka-section {
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+  }
+
+  .program-tka-glass,
+  .program-tka-subject-glass {
+    padding: 10px;
+
+    border-radius: 17px;
+  }
+
+  .program-tka-glass::before,
+  .program-tka-subject-glass::before {
+    border-radius: 16px;
+  }
+
+  .program-tka-title {
     font-size: 1rem;
   }
 
-  .centered-content_program-tka h4 {
-    font-size: 0.95rem;
+  .program-tka-description {
+    font-size: 0.79rem;
   }
 
-  .centered-content_program-tka p,
-  .centered-content_program-tka li {
+  .program-tka-method-number,
+  .program-tka-level-number {
+    min-width: 28px;
+    height: 22px;
+
+    font-size: 0.52rem;
+  }
+
+  .program-tka-method-title {
     font-size: 0.9rem;
+  }
+
+  .program-tka-method-description {
+    font-size: 0.77rem;
+  }
+
+  .subject-list-les-private-tka {
+    grid-template-columns: 1fr;
+  }
+
+  .subject-list-les-private-tka-check {
+    width: 22px;
+    height: 22px;
+  }
+
+  .subject-list-les-private-tka-icon {
+    width: 12px;
+    height: 12px;
+  }
+
+  .subject-list-les-private-tka-text {
+    font-size: 0.76rem;
+  }
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .program-tka-glass,
+  .program-tka-subject-glass,
+  .program-tka-glass::after,
+  .program-tka-subject-glass::after,
+  .program-tka-method-card,
+  .subject-list-les-private-tka-item,
+  .program-tka-orb {
+    transition-duration: 1ms;
   }
 }

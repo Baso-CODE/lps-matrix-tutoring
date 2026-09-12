@@ -7,20 +7,19 @@ const MockCategories = ({
   setActiveCategory,
 }) => {
   return (
-    <div>
-      <div className="category-buttons-container">
-        <div className="category-buttons-wrapper">
-          {mockCategories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setActiveCategory(category)}
-              className={`category-button ${
-                activeCategory === category ? "active" : ""
-              }`}>
-              {category}
-            </button>
-          ))}
-        </div>
+    <div className="category-buttons-container">
+      <div className="category-buttons-wrapper">
+        {mockCategories.map((category) => (
+          <button
+            key={category}
+            type="button"
+            onClick={() => setActiveCategory(category)}
+            className={`category-button ${
+              activeCategory === category ? "active" : ""
+            }`}>
+            {category}
+          </button>
+        ))}
       </div>
     </div>
   );

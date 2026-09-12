@@ -15,6 +15,7 @@ import "./BlogDetail.css";
 
 const BlogDetail = () => {
   const { slug } = useParams();
+
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -23,7 +24,7 @@ const BlogDetail = () => {
   const SITE_URL = "https://apps.lesprivatmasukptn.com";
 
   const handleImageError = (e) => {
-    e.target.src = FALLBACK_IMAGE;
+    e.currentTarget.src = FALLBACK_IMAGE;
   };
 
   const renderStructuredContent = (contentArray) => {
@@ -31,6 +32,7 @@ const BlogDetail = () => {
       switch (block.type) {
         case "heading": {
           const HeadingTag = `h${block.level}`;
+
           return (
             <HeadingTag
               key={index}
@@ -39,12 +41,14 @@ const BlogDetail = () => {
             </HeadingTag>
           );
         }
+
         case "paragraph":
           return (
             <p key={index} className="article-body-paragraph">
               {block.content}
             </p>
           );
+
         case "list":
           return (
             <ul key={index} className="article-body-list">
@@ -55,6 +59,7 @@ const BlogDetail = () => {
               ))}
             </ul>
           );
+
         default:
           return null;
       }
@@ -68,12 +73,15 @@ const BlogDetail = () => {
         .map((block) => block.content)
         .join(" ")
         .substring(0, 160);
-    } else if (typeof content === "string") {
+    }
+
+    if (typeof content === "string") {
       return content
         .replace(/[#*`[\]]/g, "")
         .split("\n")[0]
         .substring(0, 160);
     }
+
     return "";
   };
 
@@ -113,32 +121,62 @@ const BlogDetail = () => {
     }
   }, [slug]);
 
-  if (loading) return <div className="blog-detail-loading">Loading...</div>;
-  if (error) return <div className="blog-detail-error">{error}</div>;
-  if (!data)
-    return <div className="blog-detail-error">Artikel tidak ditemukan.</div>;
+  if (loading) {
+    return (
+      <div className="blog-detail-loading">
+        <div className="blog-detail-state-glass">Loading...</div>
+      </div>
+    );
+  }
 
-  const metaDescription = data?.description || extractPlainText(data?.content);
-  const articleUrl = `${SITE_URL}/blog/${data?.slug}`;
-  const imageUrl = data?.coverImage || `${SITE_URL}${FALLBACK_IMAGE}`;
+  if (error) {
+    return (
+      <div className="blog-detail-error">
+        <div className="blog-detail-state-glass">{error}</div>
+      </div>
+    );
+  }
+
+  if (!data) {
+    return (
+      <div className="blog-detail-error">
+        <div className="blog-detail-state-glass">Artikel tidak ditemukan.</div>
+      </div>
+    );
+  }
+
+  const metaDescription = data.description || extractPlainText(data.content);
+
+  const articleUrl = `${SITE_URL}/blog/${data.slug}`;
+
+  const imageUrl = data.coverImage || `${SITE_URL}${FALLBACK_IMAGE}`;
 
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    headline: data?.title,
+    headline: data.title,
     description: metaDescription,
     image: imageUrl,
-    datePublished: data?.publishedAt,
-    dateModified: data?.publishedAt,
-    author: { "@type": "Person", name: data?.author },
+    datePublished: data.publishedAt,
+    dateModified: data.publishedAt,
+    author: {
+      "@type": "Person",
+      name: data.author,
+    },
     publisher: {
       "@type": "Organization",
       name: "LPS Education",
-      logo: { "@type": "ImageObject", url: `${SITE_URL}/logo.png` },
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/logo.png`,
+      },
     },
-    mainEntityOfPage: { "@type": "WebPage", "@id": articleUrl },
-    articleSection: data?.categoriesarticle?.name,
-    keywords: data?.tags?.map((tag) => tag.name).join(", "),
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": articleUrl,
+    },
+    articleSection: data.categoriesarticle?.name,
+    keywords: data.tags?.map((tag) => tag.name).join(", "),
   };
 
   const organizationSchema = {
@@ -159,36 +197,48 @@ const BlogDetail = () => {
   return (
     <>
       <Helmet>
-        <title>{data?.title} | LPS Education Blog</title>
+        <title>{data.title} | LPS Education Blog</title>
+
         <meta name="description" content={metaDescription} />
+
         <meta
           name="keywords"
-          content={data?.tags?.map((tag) => tag.name).join(", ")}
+          content={data.tags?.map((tag) => tag.name).join(", ")}
         />
-        <meta name="author" content={data?.author} />
+
+        <meta name="author" content={data.author} />
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <meta property="og:type" content="article" />
-        <meta property="og:title" content={data?.title} />
+        <meta property="og:title" content={data.title} />
         <meta property="og:description" content={metaDescription} />
         <meta property="og:image" content={imageUrl} />
         <meta property="og:url" content={articleUrl} />
         <meta property="og:site_name" content="LPS Education" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={data?.title} />
+        <meta name="twitter:title" content={data.title} />
         <meta name="twitter:description" content={metaDescription} />
         <meta name="twitter:image" content={imageUrl} />
 
-        <meta property="article:published_time" content={data?.publishedAt} />
-        <meta property="article:modified_time" content={data?.publishedAt} />
-        <meta property="article:author" content={data?.author} />
+        <meta property="article:published_time" content={data.publishedAt} />
+
+        <meta property="article:modified_time" content={data.publishedAt} />
+
+        <meta property="article:author" content={data.author} />
+
         <meta
           property="article:section"
-          content={data?.categoriesarticle?.name}
+          content={data.categoriesarticle?.name}
         />
-        {data?.tags?.map((tag) => (
-          <meta key={tag.id} property="article:tag" content={tag.name} />
+
+        {data.tags?.map((tag, index) => (
+          <meta
+            key={tag.id || `${tag.name}-${index}`}
+            property="article:tag"
+            content={tag.name}
+          />
         ))}
 
         <link rel="canonical" href={articleUrl} />
@@ -196,79 +246,96 @@ const BlogDetail = () => {
         <script type="application/ld+json">
           {JSON.stringify(articleSchema)}
         </script>
+
         <script type="application/ld+json">
           {JSON.stringify(organizationSchema)}
         </script>
       </Helmet>
 
-      <div>
-        <img
-          src={data?.coverImage || FALLBACK_IMAGE}
-          alt={data?.title}
-          className="cover-image"
-          onError={handleImageError}
-        />
+      <main className="blog-detail-page">
+        <div className="blog-detail-cover-container">
+          <div className="blog-detail-cover-glass">
+            <span className="blog-detail-cover-specular" aria-hidden="true" />
+
+            <img
+              src={data.coverImage || FALLBACK_IMAGE}
+              alt={data.title}
+              className="cover-image"
+              onError={handleImageError}
+            />
+          </div>
+        </div>
 
         <div className="blog-detail-container">
           <div className="blog-detail-wrapper">
-            <Breadcrumbs articleTitle={data?.title} />
+            <Breadcrumbs articleTitle={data.title} />
 
-            <div className="article-content-wrapper">
-              <div className="article-header">
-                <h1 className="article-title">{data?.title}</h1>
+            <article className="article-content-wrapper">
+              <span className="article-content-specular" aria-hidden="true" />
+
+              <span className="article-content-refraction" aria-hidden="true" />
+
+              <header className="article-header">
+                <h1 className="article-title">{data.title}</h1>
 
                 <div className="article-meta">
                   <span className="meta-item">
-                    Oleh <span className="meta-value">{data?.author}</span>
+                    Oleh <span className="meta-value">{data.author}</span>
                   </span>
+
                   <span className="meta-separator">•</span>
+
                   <span className="meta-item">
                     Kategori:{" "}
                     <span className="meta-value-category">
-                      {data?.categoriesarticle?.name}
+                      {data.categoriesarticle?.name}
                     </span>
                   </span>
+
                   <span className="meta-separator">•</span>
+
                   <span className="meta-item">
                     Tanggal:{" "}
                     <span className="meta-value">
-                      {formatDate(data?.publishedAt)}
+                      {formatDate(data.publishedAt)}
                     </span>
                   </span>
                 </div>
 
-                <div className="tag-list">
-                  {data?.tags && data?.tags.length > 0
-                    ? data?.tags.map((tag, index) => (
-                        <span
-                          key={tag.id ? `tag-${tag.id}` : `tag-${index}`}
-                          className="tag-item">
-                          {tag.name}
-                        </span>
-                      ))
-                    : null}
-                </div>
+                {data.tags && data.tags.length > 0 ? (
+                  <div className="tag-list">
+                    {data.tags.map((tag, index) => (
+                      <span
+                        key={tag.id ? `tag-${tag.id}` : `tag-${index}`}
+                        className="tag-item">
+                        {tag.name}
+                      </span>
+                    ))}
+                  </div>
+                ) : null}
 
-                {data?.description && (
-                  <p className="article-description">{data?.description}</p>
+                {data.description && (
+                  <p className="article-description">{data.description}</p>
                 )}
-              </div>
+              </header>
 
               <div className="article-body">
-                {Array.isArray(data?.content) ? (
-                  renderStructuredContent(data?.content)
-                ) : typeof data?.content === "string" ? (
+                {Array.isArray(data.content) ? (
+                  renderStructuredContent(data.content)
+                ) : typeof data.content === "string" ? (
                   <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                    {data?.content || ""}
+                    {data.content || ""}
                   </ReactMarkdown>
                 ) : null}
               </div>
 
               <BlogCTA />
-            </div>
+
+              <span className="article-content-orb" aria-hidden="true" />
+            </article>
           </div>
         </div>
-      </div>
+      </main>
     </>
   );
 };

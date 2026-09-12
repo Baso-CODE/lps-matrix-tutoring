@@ -1,124 +1,817 @@
 /* FasilitasMahasiswa.css */
 
 .fasilitas-mahasiswa-container {
-  margin-bottom: 5vh;
   margin-top: 5vh;
-  overflow: hidden;
-  padding-bottom: 2vh;
-  padding-top: 2vh;
+  margin-bottom: 5vh;
 }
 
-/* Card Container Styling */
+/* =========================
+   GRID
+========================= */
+
 .fasilitas-mahasiswa-cards {
   display: grid;
-  gap: 1.5rem;
-  grid-template-columns: 1fr;
-  justify-content: center;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 14px;
 }
 
-/* Card Styling */
+/* =========================
+   MAIN CARD
+========================= */
+
 .fasilitas-mahasiswa-card {
-  background-color: #ffffff;
-  border: 2px solid #ff8000;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 1.5rem;
-  text-align: center;
-  transition: transform 0.2s;
+  position: relative;
+
+  display: flex;
+  min-width: 0;
+  min-height: 460px;
+
+  flex-direction: column;
+
+  overflow: hidden;
+
+  padding: 16px;
+
+  border: 1px solid rgba(205, 218, 235, 0.72);
+  border-radius: 24px;
+
+  background:
+    radial-gradient(
+      ellipse 92% 65% at 14% -15%,
+      rgba(255, 255, 255, 0.99) 0%,
+      rgba(255, 255, 255, 0.5) 43%,
+      transparent 73%
+    ),
+    radial-gradient(
+      ellipse 100% 75% at 92% 115%,
+      rgba(195, 223, 248, 0.18) 0%,
+      rgba(232, 244, 254, 0.06) 52%,
+      transparent 77%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.63) 0%,
+      rgba(255, 255, 255, 0.3) 56%,
+      rgba(247, 251, 255, 0.2) 100%
+    );
+
+  -webkit-backdrop-filter: blur(24px) saturate(190%);
+  backdrop-filter: blur(24px) saturate(190%);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(205, 218, 235, 0.13);
+
+  transition:
+    transform 340ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 340ms ease;
+}
+
+.fasilitas-mahasiswa-card::before {
+  content: "";
+
+  position: absolute;
+  inset: 1px;
+
+  pointer-events: none;
+
+  border: 1px solid rgba(255, 255, 255, 0.56);
+  border-radius: 23px;
 }
 
 .fasilitas-mahasiswa-card:hover {
   transform: translateY(-4px);
+
+  border-color: rgba(255, 101, 0, 0.25);
 }
 
-/* Icon Styling */
+/* =========================
+   SPECULAR
+========================= */
+
+.fasilitas-mahasiswa-card-specular {
+  position: absolute;
+
+  top: 0;
+  right: 8%;
+  left: 8%;
+
+  z-index: 5;
+
+  height: 1px;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 1),
+    transparent
+  );
+}
+
+/* =========================
+   REFRACTION
+========================= */
+
+.fasilitas-mahasiswa-card-refraction {
+  position: absolute;
+
+  right: 8%;
+  bottom: -50px;
+  left: 8%;
+
+  height: 120px;
+
+  pointer-events: none;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    ellipse,
+    rgba(181, 217, 247, 0.18) 0%,
+    rgba(226, 241, 253, 0.06) 52%,
+    transparent 76%
+  );
+
+  filter: blur(16px);
+}
+
+/* =========================
+   ICON AREA
+========================= */
+
+.fasilitas-mahasiswa-icon-area {
+  position: relative;
+  z-index: 3;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  min-height: 102px;
+
+  margin-bottom: 4px;
+}
+
+/* =========================
+   ICON GLASS
+========================= */
+
+.fasilitas-mahasiswa-icon-wrapper {
+  position: relative;
+
+  display: flex;
+
+  width: 90px;
+  height: 90px;
+
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(205, 218, 235, 0.62);
+  border-radius: 22px;
+
+  background:
+    radial-gradient(
+      circle at 28% 4%,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0.48) 42%,
+      transparent 70%
+    ),
+    radial-gradient(
+      circle at 80% 100%,
+      rgba(192, 223, 249, 0.18),
+      transparent 62%
+    ),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.6), rgba(242, 249, 255, 0.22));
+
+  -webkit-backdrop-filter: blur(17px) saturate(190%);
+  backdrop-filter: blur(17px) saturate(190%);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(205, 218, 235, 0.08);
+
+  transition:
+    transform 320ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 320ms ease;
+}
+
+.fasilitas-mahasiswa-icon-wrapper::before {
+  content: "";
+
+  position: absolute;
+  inset: 1px;
+
+  pointer-events: none;
+
+  border: 1px solid rgba(255, 255, 255, 0.52);
+  border-radius: 20px;
+}
+
+.fasilitas-mahasiswa-icon-specular {
+  position: absolute;
+
+  top: 1px;
+  right: 14%;
+  left: 14%;
+
+  height: 1px;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 1),
+    transparent
+  );
+}
+
 .fasilitas-mahasiswa-icon {
-  width: 5rem;
-  height: 5rem;
-  margin-bottom: 0.5rem;
-  display: inline-block;
+  position: relative;
+  z-index: 2;
+
+  display: block;
+
+  width: 68px;
+  height: 68px;
+
   object-fit: contain;
 }
 
-/* Title Styling */
-.fasilitas-mahasiswa-title {
-  font-size: 1.4rem;
-  color: #ff8000;
+.fasilitas-mahasiswa-card:hover .fasilitas-mahasiswa-icon-wrapper {
+  transform: translateY(-2px) scale(1.035);
+
+  border-color: rgba(255, 101, 0, 0.24);
+}
+
+/* =========================
+   HEADING
+========================= */
+
+.fasilitas-mahasiswa-heading {
+  position: relative;
+  z-index: 3;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  margin-bottom: 11px;
+}
+
+/* =========================
+   NUMBER
+========================= */
+
+.fasilitas-mahasiswa-index {
+  display: inline-flex;
+
+  min-width: 31px;
+  height: 24px;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 8px;
+  padding: 0 8px;
+
+  border: 1px solid rgba(255, 101, 0, 0.26);
+  border-radius: 999px;
+
+  color: var(--color-orange-default);
+
+  font-size: 0.58rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+
+  background:
+    radial-gradient(circle at 25% 0%, rgba(255, 255, 255, 1), transparent 60%),
+    linear-gradient(
+      145deg,
+      rgba(255, 248, 242, 0.92),
+      rgba(255, 235, 219, 0.42)
+    );
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(255, 101, 0, 0.05);
 }
 
-/* List Styling */
+/* =========================
+   TITLE
+========================= */
+
+.fasilitas-mahasiswa-title {
+  margin: 0;
+
+  color: var(--color-orange-default);
+
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.4;
+
+  letter-spacing: -0.025em;
+
+  text-align: left;
+}
+
+/* =========================
+   MAIN LIST
+========================= */
+
 .fasilitas-mahasiswa-list {
-  list-style-type: disc;
-  padding-left: 1.2rem;
-  color: #343131;
+  position: relative;
+  z-index: 3;
 
-  line-height: 1.6;
-  text-align: start;
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
 }
 
-.fasilitas-mahasiswa-list li {
+.fasilitas-mahasiswa-list > li {
+  position: relative;
+
+  display: flex;
+
+  min-width: 0;
+  min-height: 44px;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin: 0;
+  padding: 8px;
+
+  border: 1px solid rgba(205, 218, 235, 0.52);
+  border-radius: 12px;
+
+  background:
+    radial-gradient(
+      ellipse 85% 90% at 8% -35%,
+      rgba(255, 255, 255, 0.97),
+      rgba(255, 255, 255, 0.38) 50%,
+      transparent 75%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.52),
+      rgba(247, 251, 255, 0.18)
+    );
+
+  -webkit-backdrop-filter: blur(13px) saturate(175%);
+  backdrop-filter: blur(13px) saturate(175%);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.94),
+    inset 0 -1px 0 rgba(205, 218, 235, 0.06);
+
+  transition:
+    transform 260ms ease,
+    border-color 260ms ease;
+}
+
+.fasilitas-mahasiswa-list > li:hover {
+  transform: translateY(-1px);
+
+  border-color: rgba(255, 101, 0, 0.18);
+}
+
+/* =========================
+   CHECK
+========================= */
+
+.fasilitas-mahasiswa-check {
+  display: inline-flex;
+
+  width: 21px;
+  height: 21px;
+
+  flex-shrink: 0;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  border-radius: 50%;
+
+  color: #159447;
+
+  font-size: 0.62rem;
+  font-weight: 800;
+
+  background:
+    radial-gradient(circle at 30% 0%, rgba(255, 255, 255, 1), transparent 65%),
+    linear-gradient(
+      145deg,
+      rgba(236, 253, 245, 0.92),
+      rgba(209, 250, 229, 0.44)
+    );
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(16, 185, 129, 0.06);
+}
+
+.fasilitas-mahasiswa-list-text {
+  color: var(--color-gray-dark);
+
+  font-size: 0.84rem;
   font-weight: 400;
-  margin-bottom: 0.5rem;
-  text-align: start;
-  color: #343131;
-  font-size: 0.9rem;
+  line-height: 1.5;
+
+  letter-spacing: -0.01em;
+
+  text-align: left;
+}
+
+/* =========================
+   LOCATION
+========================= */
+
+.fasilitas-mahasiswa-location-grid {
   position: relative;
+  z-index: 3;
+
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 8px;
 }
 
-.fasilitas-mahasiswa-list li::marker {
-  color: #4caf50;
-}
-
-/* Sub-list / Nested List Styling */
-.fasilitas-mahasiswa-list ul {
-  list-style-type: none;
-  padding-left: 1rem;
-  margin-top: 0.3rem;
-  margin-bottom: 0.5rem;
-}
-
-.fasilitas-mahasiswa-list ul li {
-  padding-left: 1rem;
+.fasilitas-mahasiswa-location-box {
   position: relative;
-  display: block;
-  font-size: 0.95rem;
-  color: #555;
-  margin-bottom: 0.3rem;
+
+  overflow: hidden;
+
+  padding: 10px;
+
+  border: 1px solid rgba(205, 218, 235, 0.5);
+  border-radius: 14px;
+
+  background:
+    radial-gradient(
+      ellipse 85% 90% at 8% -35%,
+      rgba(255, 255, 255, 0.97),
+      rgba(255, 255, 255, 0.38) 50%,
+      transparent 75%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.52),
+      rgba(247, 251, 255, 0.18)
+    );
+
+  -webkit-backdrop-filter: blur(14px) saturate(180%);
+  backdrop-filter: blur(14px) saturate(180%);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    inset 0 -1px 0 rgba(205, 218, 235, 0.07);
 }
 
-.fasilitas-mahasiswa-list ul li::before {
-  content: "-";
-  color: #343131;
-  font-weight: bold;
+.fasilitas-mahasiswa-location-specular {
   position: absolute;
-  left: 0;
+
   top: 0;
+  right: 10%;
+  left: 10%;
+
+  height: 1px;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.95),
+    transparent
+  );
 }
 
-/* Responsive Grid Adjustments */
-@media (min-width: 768px) {
-  .fasilitas-mahasiswa-cards {
-    grid-template-columns: repeat(2, 1fr);
+.fasilitas-mahasiswa-location-title {
+  margin: 0 0 9px;
+
+  color: var(--color-orange-default);
+
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.4;
+
+  letter-spacing: -0.02em;
+}
+
+.fasilitas-mahasiswa-location-list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.fasilitas-mahasiswa-location-list li {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 7px;
+
+  color: var(--color-gray-dark);
+
+  font-size: 0.78rem;
+  font-weight: 400;
+  line-height: 1.5;
+
+  text-align: left;
+}
+
+/* =========================
+   LIQUID ORB
+========================= */
+
+.fasilitas-mahasiswa-liquid-orb {
+  position: absolute;
+
+  right: -34px;
+  bottom: -40px;
+
+  width: 105px;
+  height: 105px;
+
+  pointer-events: none;
+
+  border: 1px solid rgba(184, 214, 239, 0.2);
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 30% 24%,
+      rgba(255, 255, 255, 0.76) 0%,
+      rgba(255, 255, 255, 0.15) 31%,
+      transparent 56%
+    ),
+    radial-gradient(
+      circle at 70% 75%,
+      rgba(182, 219, 248, 0.21),
+      transparent 63%
+    );
+
+  opacity: 0.65;
+
+  transition:
+    transform 650ms cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 350ms ease;
+}
+
+.fasilitas-mahasiswa-card:hover .fasilitas-mahasiswa-liquid-orb {
+  transform: translate(-13px, -10px) scale(1.14);
+
+  opacity: 0.9;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1024px) {
+  .fasilitas-mahasiswa-card {
+    min-height: 430px;
+
+    padding: 14px;
+
+    border-radius: 21px;
   }
-}
 
-@media (min-width: 1024px) {
-  .fasilitas-mahasiswa-cards {
-    grid-template-columns: repeat(2, 1fr);
+  .fasilitas-mahasiswa-card::before {
+    border-radius: 20px;
   }
-}
 
-/* Responsif untuk layar kecil / Ponsel */
-@media (max-width: 768px) {
+  .fasilitas-mahasiswa-icon-area {
+    min-height: 94px;
+  }
+
+  .fasilitas-mahasiswa-icon-wrapper {
+    width: 82px;
+    height: 82px;
+
+    border-radius: 20px;
+  }
+
+  .fasilitas-mahasiswa-icon-wrapper::before {
+    border-radius: 18px;
+  }
+
+  .fasilitas-mahasiswa-icon {
+    width: 62px;
+    height: 62px;
+  }
+
   .fasilitas-mahasiswa-title {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
-  .fasilitas-mahasiswa-list li {
-    font-size: 0.9rem;
+
+  .fasilitas-mahasiswa-list-text {
+    font-size: 0.81rem;
   }
-  .fasilitas-mahasiswa-list ul li {
-    font-size: 0.85rem;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+  .fasilitas-mahasiswa-container {
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+  }
+
+  .fasilitas-mahasiswa-cards {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+  }
+
+  .fasilitas-mahasiswa-card {
+    min-height: auto;
+
+    padding: 11px;
+
+    border-radius: 18px;
+  }
+
+  .fasilitas-mahasiswa-card::before {
+    border-radius: 17px;
+  }
+
+  .fasilitas-mahasiswa-icon-area {
+    min-height: 88px;
+  }
+
+  .fasilitas-mahasiswa-icon-wrapper {
+    width: 76px;
+    height: 76px;
+
+    border-radius: 18px;
+  }
+
+  .fasilitas-mahasiswa-icon-wrapper::before {
+    border-radius: 16px;
+  }
+
+  .fasilitas-mahasiswa-icon {
+    width: 57px;
+    height: 57px;
+  }
+
+  .fasilitas-mahasiswa-heading {
+    margin-bottom: 9px;
+  }
+
+  .fasilitas-mahasiswa-index {
+    min-width: 29px;
+    height: 23px;
+
+    margin-bottom: 7px;
+
+    font-size: 0.54rem;
+  }
+
+  .fasilitas-mahasiswa-title {
+    font-size: 0.96rem;
+  }
+
+  .fasilitas-mahasiswa-list {
+    gap: 6px;
+  }
+
+  .fasilitas-mahasiswa-list > li {
+    min-height: 42px;
+
+    padding: 8px;
+
+    border-radius: 11px;
+  }
+
+  .fasilitas-mahasiswa-check {
+    width: 21px;
+    height: 21px;
+
+    font-size: 0.61rem;
+  }
+
+  .fasilitas-mahasiswa-list-text {
+    font-size: 0.79rem;
+  }
+
+  .fasilitas-mahasiswa-location-grid {
+    grid-template-columns: 1fr;
+
+    gap: 7px;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+  .fasilitas-mahasiswa-container {
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+  }
+
+  .fasilitas-mahasiswa-card {
+    padding: 10px;
+
+    border-radius: 17px;
+  }
+
+  .fasilitas-mahasiswa-card::before {
+    border-radius: 16px;
+  }
+
+  .fasilitas-mahasiswa-icon-area {
+    min-height: 82px;
+  }
+
+  .fasilitas-mahasiswa-icon-wrapper {
+    width: 70px;
+    height: 70px;
+
+    border-radius: 17px;
+  }
+
+  .fasilitas-mahasiswa-icon-wrapper::before {
+    border-radius: 15px;
+  }
+
+  .fasilitas-mahasiswa-icon {
+    width: 52px;
+    height: 52px;
+  }
+
+  .fasilitas-mahasiswa-title {
+    font-size: 0.94rem;
+  }
+
+  .fasilitas-mahasiswa-list > li {
+    min-height: 40px;
+
+    gap: 7px;
+
+    padding: 7px;
+  }
+
+  .fasilitas-mahasiswa-check {
+    width: 20px;
+    height: 20px;
+
+    font-size: 0.59rem;
+  }
+
+  .fasilitas-mahasiswa-list-text {
+    font-size: 0.77rem;
+    line-height: 1.5;
+  }
+
+  .fasilitas-mahasiswa-location-title {
+    font-size: 0.86rem;
+  }
+
+  .fasilitas-mahasiswa-location-list li {
+    font-size: 0.76rem;
+  }
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .fasilitas-mahasiswa-card,
+  .fasilitas-mahasiswa-icon-wrapper,
+  .fasilitas-mahasiswa-liquid-orb,
+  .fasilitas-mahasiswa-list > li {
+    transition-duration: 1ms;
   }
 }

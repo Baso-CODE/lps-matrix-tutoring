@@ -1,111 +1,520 @@
-/* Container Styling */
+/* LayananLPSMahasiswa.css */
+
 .container-layanan-lps-mahasiswa {
   margin-top: 5vh;
   margin-bottom: 5vh;
-  line-height: normal;
 }
 
-/* Title Styling (Baru ditambahkan) */
+/* =========================
+   MAIN LIQUID GLASS
+========================= */
+
+.layanan-mahasiswa-glass {
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 20px;
+
+  border: 1px solid rgba(205, 218, 235, 0.72);
+  border-radius: 24px;
+
+  background:
+    radial-gradient(
+      ellipse 92% 65% at 14% -15%,
+      rgba(255, 255, 255, 0.99) 0%,
+      rgba(255, 255, 255, 0.5) 43%,
+      transparent 73%
+    ),
+    radial-gradient(
+      ellipse 100% 75% at 92% 115%,
+      rgba(195, 223, 248, 0.18) 0%,
+      rgba(232, 244, 254, 0.06) 52%,
+      transparent 77%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.63) 0%,
+      rgba(255, 255, 255, 0.3) 56%,
+      rgba(247, 251, 255, 0.2) 100%
+    );
+
+  -webkit-backdrop-filter: blur(24px) saturate(190%);
+  backdrop-filter: blur(24px) saturate(190%);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(205, 218, 235, 0.13);
+
+  transition:
+    transform 340ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 340ms ease;
+}
+
+.layanan-mahasiswa-glass::before {
+  content: "";
+
+  position: absolute;
+  inset: 1px;
+
+  pointer-events: none;
+
+  border: 1px solid rgba(255, 255, 255, 0.56);
+  border-radius: 23px;
+}
+
+.layanan-mahasiswa-glass::after {
+  content: "";
+
+  position: absolute;
+
+  top: -40%;
+  left: -42%;
+
+  width: 18%;
+  height: 180%;
+
+  pointer-events: none;
+
+  opacity: 0;
+
+  transform: skewX(-18deg);
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.75),
+    transparent
+  );
+
+  transition:
+    left 850ms ease,
+    opacity 280ms ease;
+}
+
+.layanan-mahasiswa-glass:hover {
+  transform: translateY(-3px);
+
+  border-color: rgba(255, 101, 0, 0.24);
+}
+
+.layanan-mahasiswa-glass:hover::after {
+  left: 125%;
+
+  opacity: 0.9;
+}
+
+/* =========================
+   SPECULAR
+========================= */
+
+.layanan-mahasiswa-specular {
+  position: absolute;
+
+  top: 0;
+  right: 9%;
+  left: 9%;
+
+  z-index: 5;
+
+  height: 1px;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 1),
+    transparent
+  );
+}
+
+/* =========================
+   REFRACTION
+========================= */
+
+.layanan-mahasiswa-refraction {
+  position: absolute;
+
+  right: 12%;
+  bottom: -45px;
+  left: 12%;
+
+  height: 110px;
+
+  pointer-events: none;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    ellipse,
+    rgba(181, 217, 247, 0.18) 0%,
+    rgba(226, 241, 253, 0.06) 52%,
+    transparent 76%
+  );
+
+  filter: blur(16px);
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.layanan-mahasiswa-header {
+  position: relative;
+  z-index: 3;
+
+  margin-bottom: 16px;
+}
+
 .program-title-mahasiswa {
-  font-size: 1.2rem;
-  color: #333;
-  text-align: start;
-  font-weight: 600;
-  font-family:
-    "Inter",
-    -apple-system,
-    BlinkMacSystemFont,
-    "Helvetica Neue",
-    Arial,
-    sans-serif;
-  padding: 0;
-  margin: 0;
-  border-left: 4px solid #ff6500;
-  padding-left: 0.3rem;
-  margin-bottom: 1vh;
+  margin: 0 0 9px;
+
+  color: var(--color-gray-darker);
+
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.35;
+
+  letter-spacing: -0.03em;
+
+  text-align: left;
 }
 
 .additional-description-mahasiswa {
-  font-size: 0.9rem;
+  max-width: 900px;
+
+  margin: 0;
+
+  color: var(--color-gray-dark);
+
+  font-size: 0.94rem;
   font-weight: 400;
-  color: #343131;
-  line-height: normal;
-  text-align: start;
+  line-height: 1.7;
+
+  letter-spacing: -0.012em;
+
+  text-align: left;
 }
 
-/* List Styling */
+/* =========================
+   LIST
+========================= */
+
 .program-simak-ui-list__mahasiswa {
-  list-style-type: none;
-  padding-left: 0;
-  margin: 0;
-  font-size: 1rem;
-  color: #343131;
+  position: relative;
+  z-index: 3;
 
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 5px 18px;
 
-  overflow-y: visible;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 8px;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
 }
+
+/* =========================
+   LIST ITEM GLASS
+========================= */
 
 .program-simak-ui-list__mahasiswa li {
-  padding: 0.1rem 0;
   position: relative;
-  padding-left: 1.5rem;
-  font-size: 0.9rem;
+
+  display: flex;
+
+  min-width: 0;
+  min-height: 52px;
+
+  align-items: center;
+
+  gap: 10px;
+
+  overflow: hidden;
+
+  padding: 10px 11px;
+
+  border: 1px solid rgba(205, 218, 235, 0.46);
+  border-radius: 14px;
+
+  background:
+    radial-gradient(
+      ellipse 82% 80% at 10% -30%,
+      rgba(255, 255, 255, 0.95),
+      rgba(255, 255, 255, 0.38) 50%,
+      transparent 75%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.49),
+      rgba(247, 251, 255, 0.18)
+    );
+
+  -webkit-backdrop-filter: blur(13px) saturate(175%);
+  backdrop-filter: blur(13px) saturate(175%);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.93),
+    inset 0 -1px 0 rgba(205, 218, 235, 0.06);
+
+  transition:
+    transform 260ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 260ms ease,
+    background 260ms ease;
 }
 
-/* Custom marker styling */
 .program-simak-ui-list__mahasiswa li::before {
-  content: "•";
-  color: #1e3e62;
-  font-size: 1.2rem;
+  content: "";
+
   position: absolute;
-  left: 0;
-  top: 0.1rem;
+
+  top: 0;
+  right: 10%;
+  left: 10%;
+
+  height: 1px;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.92),
+    transparent
+  );
 }
 
-/* Tablet: Tetap 2 kolom */
-@media (min-width: 768px) and (max-width: 1024px) {
+.program-simak-ui-list__mahasiswa li:hover {
+  transform: translateY(-2px);
+
+  border-color: rgba(255, 101, 0, 0.2);
+
+  background:
+    radial-gradient(
+      ellipse 82% 80% at 10% -30%,
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 0.44) 50%,
+      transparent 75%
+    ),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.56), rgba(255, 244, 235, 0.2));
+}
+
+/* =========================
+   CHECK
+========================= */
+
+.mata-kuliah-check-mahasiswa {
+  display: inline-flex;
+
+  width: 27px;
+  height: 27px;
+
+  flex-shrink: 0;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(16, 185, 129, 0.22);
+  border-radius: 50%;
+
+  color: #159447;
+
+  font-size: 0.76rem;
+  font-weight: 800;
+
+  background:
+    radial-gradient(circle at 30% 0%, rgba(255, 255, 255, 1), transparent 65%),
+    linear-gradient(145deg, rgba(236, 253, 245, 0.9), rgba(209, 250, 229, 0.43));
+
+  -webkit-backdrop-filter: blur(10px) saturate(170%);
+  backdrop-filter: blur(10px) saturate(170%);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(16, 185, 129, 0.06);
+
+  transition:
+    transform 260ms ease,
+    border-color 260ms ease;
+}
+
+.program-simak-ui-list__mahasiswa li:hover .mata-kuliah-check-mahasiswa {
+  transform: scale(1.08);
+
+  border-color: rgba(16, 185, 129, 0.34);
+}
+
+/* =========================
+   TEXT
+========================= */
+
+.mata-kuliah-text-mahasiswa {
+  color: var(--color-gray-dark);
+
+  font-size: 0.86rem;
+  font-weight: 500;
+  line-height: 1.5;
+
+  letter-spacing: -0.012em;
+
+  text-align: left;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1024px) {
+  .layanan-mahasiswa-glass {
+    padding: 16px;
+
+    border-radius: 21px;
+  }
+
+  .layanan-mahasiswa-glass::before {
+    border-radius: 20px;
+  }
+
   .program-title-mahasiswa {
-    font-size: 1.4rem;
+    font-size: 1.28rem;
   }
-  .program-simak-ui-list__mahasiswa {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px 15px;
+
+  .additional-description-mahasiswa {
+    font-size: 0.9rem;
+  }
+
+  .mata-kuliah-text-mahasiswa {
+    font-size: 0.82rem;
   }
 }
 
-/* Mobile: 1 kolom dengan scroll vertikal */
+/* =========================
+   MOBILE
+========================= */
+
 @media (max-width: 767px) {
-  .program-title-mahasiswa {
-    font-size: 1.25rem;
+  .container-layanan-lps-mahasiswa {
+    margin-top: 4vh;
+    margin-bottom: 4vh;
   }
+
+  .layanan-mahasiswa-glass {
+    padding: 11px;
+
+    border-radius: 18px;
+  }
+
+  .layanan-mahasiswa-glass::before {
+    border-radius: 17px;
+  }
+
+  .layanan-mahasiswa-header {
+    margin-bottom: 12px;
+  }
+
+  .program-title-mahasiswa {
+    font-size: 1.15rem;
+    line-height: 1.4;
+  }
+
+  .additional-description-mahasiswa {
+    font-size: 0.84rem;
+    line-height: 1.65;
+  }
+
   .program-simak-ui-list__mahasiswa {
     grid-template-columns: 1fr;
-    gap: 5px 0;
-    padding-left: 1rem;
-    margin-top: 2vh;
-    max-height: 300px;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: thin;
-    scrollbar-color: #1e3e62 #f1f1f1;
+
+    gap: 7px;
+
+    max-height: none;
+
+    overflow: visible;
   }
 
-  /* Webkit browsers (Chrome, Safari) scrollbar styling */
-  .program-simak-ui-list__mahasiswa::-webkit-scrollbar {
-    width: 8px;
+  .program-simak-ui-list__mahasiswa li {
+    min-height: 50px;
+
+    padding: 9px;
+
+    border-radius: 12px;
   }
-  .program-simak-ui-list__mahasiswa::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 10px;
+
+  .mata-kuliah-check-mahasiswa {
+    width: 25px;
+    height: 25px;
+
+    font-size: 0.7rem;
   }
-  .program-simak-ui-list__mahasiswa::-webkit-scrollbar-thumb {
-    background: #1e3e62;
-    border-radius: 10px;
+
+  .mata-kuliah-text-mahasiswa {
+    font-size: 0.8rem;
   }
-  .program-simak-ui-list__mahasiswa::-webkit-scrollbar-thumb:hover {
-    background: #0f766e;
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+  .container-layanan-lps-mahasiswa {
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+  }
+
+  .layanan-mahasiswa-glass {
+    padding: 10px;
+
+    border-radius: 17px;
+  }
+
+  .layanan-mahasiswa-glass::before {
+    border-radius: 16px;
+  }
+
+  .program-title-mahasiswa {
+    font-size: 1.06rem;
+  }
+
+  .additional-description-mahasiswa {
+    font-size: 0.81rem;
+  }
+
+  .program-simak-ui-list__mahasiswa li {
+    min-height: 48px;
+
+    gap: 8px;
+
+    padding: 8px;
+
+    border-radius: 11px;
+  }
+
+  .mata-kuliah-check-mahasiswa {
+    width: 23px;
+    height: 23px;
+
+    font-size: 0.66rem;
+  }
+
+  .mata-kuliah-text-mahasiswa {
+    font-size: 0.78rem;
+    line-height: 1.5;
+  }
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .layanan-mahasiswa-glass,
+  .layanan-mahasiswa-glass::after,
+  .program-simak-ui-list__mahasiswa li,
+  .mata-kuliah-check-mahasiswa {
+    transition-duration: 1ms;
   }
 }

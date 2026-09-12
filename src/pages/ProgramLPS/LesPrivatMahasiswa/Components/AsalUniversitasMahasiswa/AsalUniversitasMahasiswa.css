@@ -1,145 +1,741 @@
-.asal-universitas-container {
-  /* Latar belakang lebih terang untuk kesan clean */
-  background-color: var(--color-gray-lightest);
-  text-align: center;
-  margin-top: 10vh;
-  margin-bottom: 10vh;
+/* AsalUniversitasMahasiswa.css */
 
-  padding: 5vh 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  border: 1px solid var(--color-gray-lighter);
+.asal-universitas-section-mahasiswa {
+  margin-top: 5vh;
+  margin-bottom: 5vh;
 }
+
+/* =========================
+   UNIVERSITAS GLASS
+========================= */
+
+.asal-universitas-container {
+  position: relative;
+
+  overflow: hidden;
+
+  margin: 0;
+  padding: 20px;
+
+  border: 1px solid rgba(205, 218, 235, 0.72);
+  border-radius: 24px;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      ellipse 92% 65% at 14% -15%,
+      rgba(255, 255, 255, 0.99) 0%,
+      rgba(255, 255, 255, 0.5) 43%,
+      transparent 73%
+    ),
+    radial-gradient(
+      ellipse 100% 75% at 92% 115%,
+      rgba(195, 223, 248, 0.18) 0%,
+      rgba(232, 244, 254, 0.06) 52%,
+      transparent 77%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.63) 0%,
+      rgba(255, 255, 255, 0.3) 56%,
+      rgba(247, 251, 255, 0.2) 100%
+    );
+
+  -webkit-backdrop-filter: blur(24px) saturate(190%);
+  backdrop-filter: blur(24px) saturate(190%);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(205, 218, 235, 0.13);
+
+  transition:
+    transform 340ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 340ms ease;
+}
+
+.asal-universitas-container::before {
+  content: "";
+
+  position: absolute;
+  inset: 1px;
+
+  pointer-events: none;
+
+  border: 1px solid rgba(255, 255, 255, 0.56);
+  border-radius: 23px;
+}
+
+.asal-universitas-container:hover {
+  transform: translateY(-3px);
+
+  border-color: rgba(255, 101, 0, 0.24);
+}
+
+/* =========================
+   SPECULAR
+========================= */
+
+.asal-universitas-specular {
+  position: absolute;
+
+  top: 0;
+  right: 8%;
+  left: 8%;
+
+  z-index: 5;
+
+  height: 1px;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 1),
+    transparent
+  );
+}
+
+/* =========================
+   REFRACTION
+========================= */
+
+.asal-universitas-refraction {
+  position: absolute;
+
+  right: 10%;
+  bottom: -55px;
+  left: 10%;
+
+  height: 120px;
+
+  pointer-events: none;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    ellipse,
+    rgba(181, 217, 247, 0.18) 0%,
+    rgba(226, 241, 253, 0.06) 52%,
+    transparent 76%
+  );
+
+  filter: blur(16px);
+}
+
+/* =========================
+   TITLE
+========================= */
 
 .asal-universitas-title {
-  font-size: 1.3rem;
+  position: relative;
+  z-index: 3;
+
+  margin: 0 0 18px;
+
+  color: var(--color-gray-darker);
+
+  font-size: 1.4rem;
   font-weight: 700;
-  margin-bottom: 1.5rem;
-  color: var(--color-gray-dark);
+  line-height: 1.35;
+
+  letter-spacing: -0.03em;
 }
+
+/* =========================
+   LIST
+========================= */
 
 .asal-universitas-list {
-  list-style-type: none;
-  padding: 0;
-  margin: 0 auto;
+  position: relative;
+  z-index: 3;
+
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 8px;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
 }
 
+/* =========================
+   LIST ITEM GLASS
+========================= */
+
 .asal-universitas-item {
-  background-color: #ffffff;
-  color: var(--color-gray-dark);
-  border: 1px solid var(--color-gray-lighter);
-  padding: 0.2rem 1rem;
-  border-radius: 8px;
+  position: relative;
 
   display: flex;
+
+  min-width: 0;
+  min-height: 58px;
+
   align-items: center;
-  justify-content: center;
-  min-height: 55px;
-  text-align: center;
-  font-size: 0.9rem;
-  transition: all 0.3s ease;
-  cursor: pointer;
+
+  gap: 8px;
+
+  overflow: hidden;
+
+  padding: 9px 10px;
+
+  border: 1px solid rgba(205, 218, 235, 0.48);
+  border-radius: 13px;
+
+  background:
+    radial-gradient(
+      ellipse 85% 90% at 8% -35%,
+      rgba(255, 255, 255, 0.97),
+      rgba(255, 255, 255, 0.38) 50%,
+      transparent 75%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.51),
+      rgba(247, 251, 255, 0.18)
+    );
+
+  -webkit-backdrop-filter: blur(13px) saturate(175%);
+  backdrop-filter: blur(13px) saturate(175%);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.94),
+    inset 0 -1px 0 rgba(205, 218, 235, 0.06);
+
+  transition:
+    transform 260ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 260ms ease,
+    background 260ms ease;
+}
+
+.asal-universitas-item::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  right: 10%;
+  left: 10%;
+
+  height: 1px;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.92),
+    transparent
+  );
 }
 
 .asal-universitas-item:hover {
-  background-color: var(--color-orange-lighter);
-  color: var(--color-orange-darker);
-  border-color: var(--color-orange-default);
   transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+  border-color: rgba(255, 101, 0, 0.22);
+
+  background:
+    radial-gradient(
+      ellipse 85% 90% at 8% -35%,
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 0.45) 50%,
+      transparent 75%
+    ),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.58), rgba(255, 244, 235, 0.2));
 }
+
+/* =========================
+   CHECK
+========================= */
+
+.asal-universitas-check {
+  display: inline-flex;
+
+  width: 22px;
+  height: 22px;
+
+  flex-shrink: 0;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(16, 185, 129, 0.24);
+  border-radius: 50%;
+
+  color: #159447;
+
+  font-size: 0.62rem;
+  font-weight: 800;
+
+  background:
+    radial-gradient(circle at 30% 0%, rgba(255, 255, 255, 1), transparent 65%),
+    linear-gradient(
+      145deg,
+      rgba(236, 253, 245, 0.92),
+      rgba(209, 250, 229, 0.44)
+    );
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(16, 185, 129, 0.06);
+
+  transition: transform 260ms ease;
+}
+
+.asal-universitas-item:hover .asal-universitas-check {
+  transform: scale(1.08);
+}
+
+.asal-universitas-item-text {
+  flex: 1;
+
+  color: var(--color-gray-dark);
+
+  font-size: 0.82rem;
+  font-weight: 500;
+  line-height: 1.45;
+
+  letter-spacing: -0.01em;
+
+  text-align: left;
+}
+
+/* =========================
+   NOTE
+========================= */
 
 .asal-universitas-note {
-  margin-top: 2rem;
-  font-size: 1rem;
-  color: var(--color-gray-medium);
-  font-style: italic;
-  font-weight: 500;
-}
+  position: relative;
+  z-index: 3;
 
-/* CSS Tambahan untuk Bagian Deskripsi di Bawah */
-.program-mahasiswa-title-h2 {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--color-gray-dark, #333);
-  margin-top: 3vh;
-  margin-bottom: 1rem;
-  text-align: start;
-}
+  margin: 18px 0 0;
 
-.additional-description-mahasiswa {
+  color: var(--color-orange-default);
+
   font-size: 0.9rem;
-  color: #343131;
-  font-weight: 400;
+  font-weight: 600;
+  line-height: 1.5;
 
+  letter-spacing: -0.01em;
+}
+
+/* =========================
+   BIMBEL ONLINE GLASS
+========================= */
+
+.bimbel-online-mahasiswa-glass {
+  position: relative;
+
+  overflow: hidden;
+
+  margin-top: 14px;
+  padding: 18px;
+
+  border: 1px solid rgba(205, 218, 235, 0.72);
+  border-radius: 24px;
+
+  background:
+    radial-gradient(
+      ellipse 92% 65% at 14% -15%,
+      rgba(255, 255, 255, 0.99) 0%,
+      rgba(255, 255, 255, 0.49) 43%,
+      transparent 73%
+    ),
+    radial-gradient(
+      ellipse 100% 75% at 92% 115%,
+      rgba(195, 223, 248, 0.18) 0%,
+      rgba(232, 244, 254, 0.06) 52%,
+      transparent 77%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.63) 0%,
+      rgba(255, 255, 255, 0.3) 56%,
+      rgba(247, 251, 255, 0.2) 100%
+    );
+
+  -webkit-backdrop-filter: blur(24px) saturate(190%);
+  backdrop-filter: blur(24px) saturate(190%);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(205, 218, 235, 0.13);
+
+  transition:
+    transform 340ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 340ms ease;
+}
+
+.bimbel-online-mahasiswa-glass::before {
+  content: "";
+
+  position: absolute;
+  inset: 1px;
+
+  pointer-events: none;
+
+  border: 1px solid rgba(255, 255, 255, 0.56);
+  border-radius: 23px;
+}
+
+.bimbel-online-mahasiswa-glass:hover {
+  transform: translateY(-3px);
+
+  border-color: rgba(255, 101, 0, 0.24);
+}
+
+.bimbel-online-mahasiswa-specular {
+  position: absolute;
+
+  top: 0;
+  right: 9%;
+  left: 9%;
+
+  z-index: 5;
+
+  height: 1px;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 1),
+    transparent
+  );
+}
+
+.bimbel-online-mahasiswa-refraction {
+  position: absolute;
+
+  right: 12%;
+  bottom: -45px;
+  left: 12%;
+
+  height: 110px;
+
+  pointer-events: none;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    ellipse,
+    rgba(181, 217, 247, 0.18) 0%,
+    rgba(226, 241, 253, 0.06) 52%,
+    transparent 76%
+  );
+
+  filter: blur(16px);
+}
+
+/* =========================
+   ONLINE TITLE
+========================= */
+
+.program-mahasiswa-title-h2 {
+  position: relative;
+  z-index: 3;
+
+  margin: 0 0 12px;
+
+  color: var(--color-gray-darker);
+
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.4;
+
+  letter-spacing: -0.03em;
+
+  text-align: left;
+}
+
+/* =========================
+   ONLINE CONTENT
+========================= */
+
+.bimbel-online-mahasiswa-content {
+  position: relative;
+  z-index: 3;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.bimbel-online-mahasiswa-description {
+  position: relative;
+
+  margin: 0;
+  padding: 11px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(205, 218, 235, 0.46);
+  border-radius: 14px;
+
+  color: var(--color-gray-dark);
+
+  font-size: 0.88rem;
+  font-weight: 400;
   line-height: 1.7;
-  margin-bottom: 1.5rem;
-  text-align: justify;
+
+  letter-spacing: -0.012em;
+
+  text-align: left;
+
+  background:
+    radial-gradient(
+      ellipse 82% 80% at 10% -30%,
+      rgba(255, 255, 255, 0.95),
+      rgba(255, 255, 255, 0.38) 50%,
+      transparent 75%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.49),
+      rgba(247, 251, 255, 0.18)
+    );
+
+  -webkit-backdrop-filter: blur(13px) saturate(175%);
+  backdrop-filter: blur(13px) saturate(175%);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.93),
+    inset 0 -1px 0 rgba(205, 218, 235, 0.06);
+}
+
+.bimbel-online-mahasiswa-description::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  right: 10%;
+  left: 10%;
+
+  height: 1px;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.92),
+    transparent
+  );
 }
 
 .color-d2b04c-description {
-  color: #ff8000;
+  color: var(--color-orange-default);
+
   font-weight: 600;
 }
 
-/* Aturan responsif */
+/* =========================
+   TABLET
+========================= */
+
 @media (max-width: 1024px) {
+  .asal-universitas-container {
+    padding: 16px;
+
+    border-radius: 21px;
+  }
+
+  .asal-universitas-container::before {
+    border-radius: 20px;
+  }
+
   .asal-universitas-title {
-    font-size: 1.3rem;
+    font-size: 1.28rem;
   }
+
   .asal-universitas-list {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 600px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .asal-universitas-item {
-    font-size: 0.9rem;
-    padding: 0.7rem 1rem;
+
+  .asal-universitas-item-text {
+    font-size: 0.81rem;
+  }
+
+  .program-mahasiswa-title-h2 {
+    font-size: 1.18rem;
+  }
+
+  .bimbel-online-mahasiswa-description {
+    font-size: 0.85rem;
   }
 }
+
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 768px) {
-  .asal-universitas-list {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.8rem;
+  .asal-universitas-section-mahasiswa {
+    margin-top: 4vh;
+    margin-bottom: 4vh;
   }
-  .asal-universitas-title {
-    font-size: 1.25rem;
-  }
-  .asal-universitas-item {
-    font-size: 0.85rem;
-    min-height: 45px;
-  }
+
   .asal-universitas-container {
-    padding: 3vh 15px;
-    margin-left: 15px;
-    margin-right: 15px;
+    padding: 11px;
+
+    border-radius: 18px;
   }
+
+  .asal-universitas-container::before {
+    border-radius: 17px;
+  }
+
+  .asal-universitas-title {
+    margin-bottom: 13px;
+
+    font-size: 1.12rem;
+  }
+
+  .asal-universitas-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 7px;
+  }
+
+  .asal-universitas-item {
+    min-height: 50px;
+
+    padding: 8px;
+
+    border-radius: 11px;
+  }
+
+  .asal-universitas-check {
+    width: 21px;
+    height: 21px;
+
+    font-size: 0.6rem;
+  }
+
+  .asal-universitas-item-text {
+    font-size: 0.78rem;
+  }
+
+  .asal-universitas-note {
+    margin-top: 14px;
+
+    font-size: 0.82rem;
+  }
+
+  .bimbel-online-mahasiswa-glass {
+    margin-top: 10px;
+    padding: 11px;
+
+    border-radius: 18px;
+  }
+
+  .bimbel-online-mahasiswa-glass::before {
+    border-radius: 17px;
+  }
+
   .program-mahasiswa-title-h2 {
-    font-size: 1.2rem;
+    font-size: 1.06rem;
   }
-  .additional-description-mahasiswa {
-    font-size: 0.9rem;
+
+  .bimbel-online-mahasiswa-content {
+    gap: 7px;
+  }
+
+  .bimbel-online-mahasiswa-description {
+    padding: 9px;
+
+    border-radius: 12px;
+
+    font-size: 0.81rem;
+    line-height: 1.65;
   }
 }
 
+/* =========================
+   SMALL MOBILE
+========================= */
+
 @media (max-width: 480px) {
+  .asal-universitas-section-mahasiswa {
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+  }
+
+  .asal-universitas-container {
+    padding: 10px;
+
+    border-radius: 17px;
+  }
+
+  .asal-universitas-container::before {
+    border-radius: 16px;
+  }
+
+  .asal-universitas-title {
+    font-size: 1.04rem;
+  }
+
   .asal-universitas-list {
     grid-template-columns: 1fr;
-    gap: 0.6rem;
+
+    gap: 6px;
   }
-  .asal-universitas-title {
-    font-size: 1.2rem;
-  }
+
   .asal-universitas-item {
-    font-size: 0.8rem;
-    min-height: 40px;
-    padding: 0.2rem 12px;
+    min-height: 46px;
+
+    padding: 8px;
+
+    border-radius: 10px;
   }
+
+  .asal-universitas-item-text {
+    font-size: 0.77rem;
+  }
+
   .asal-universitas-note {
-    font-size: 0.85rem;
-    margin-top: 1.5rem;
+    font-size: 0.78rem;
+  }
+
+  .bimbel-online-mahasiswa-glass {
+    padding: 10px;
+
+    border-radius: 17px;
+  }
+
+  .bimbel-online-mahasiswa-glass::before {
+    border-radius: 16px;
+  }
+
+  .program-mahasiswa-title-h2 {
+    font-size: 1rem;
+  }
+
+  .bimbel-online-mahasiswa-description {
+    padding: 8px;
+
+    border-radius: 11px;
+
+    font-size: 0.79rem;
+  }
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .asal-universitas-container,
+  .asal-universitas-item,
+  .asal-universitas-check,
+  .bimbel-online-mahasiswa-glass {
+    transition-duration: 1ms;
   }
 }

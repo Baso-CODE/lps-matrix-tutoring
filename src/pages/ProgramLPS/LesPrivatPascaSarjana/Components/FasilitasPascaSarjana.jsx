@@ -1,135 +1,214 @@
 import "./FasilitasPascaSarjana.css";
 
+const fasilitasPascaData = [
+  {
+    id: 1,
+    title: "Fasilitas",
+    icon: "/images/icon/fasilitas/fasilitas.webp",
+    items: [
+      "Mapping kebutuhan belajar siswa",
+      "Kegiatan belajar privat terprogram & intensif",
+      "Pengajar yang berkualitas dari UI & PTN Terbaik",
+      "Modul Belajar Prediktif",
+      "Bimbingan dan arahan strategi belajar efektif",
+      "Progress report & evaluasi belajar secara berkala",
+    ],
+  },
+  {
+    id: 2,
+    title: "Target Belajar",
+    icon: "/images/icon/fasilitas/target.webp",
+    items: [
+      "Implementasi model belajar yang efektif berdasarkan hasil pemetaan kebutuhan siswa",
+      "Penguasaan strategi menjawab soal TPA dan Bahasa Inggris sesuai standar Ujian Masuk Pascasarjana",
+      "Peningkatan kemampuan berpikir kritis dan analitis dalam waktu yang efisien",
+      "Siswa siap menghadapi berbagai jenis ujian masuk Pascasarjana (SIMAK UI, Ujian Mandiri, dll.)",
+      "Siswa berhasil lolos Seleksi Masuk Pascasarjana sesuai dengan program studi impian",
+    ],
+  },
+  {
+    id: 3,
+    title: "Scheduling",
+    icon: "/images/icon/fasilitas/schedulling.webp",
+    items: [
+      "Penjadwalan dihandle langsung oleh admin Scheduling.",
+      "Jadwal belajar dapat disesuaikan dengan ketersediaan waktu siswa.",
+      "Perubahan atau cancel jadwal bisa langsung dikomunikasikan dengan admin Scheduling.",
+      "Durasi belajar setiap sesinya adalah 1,5 - 2 jam.",
+      "Frekuensi belajar (jumlah sesi pertemuan) dapat direncanakan bersama.",
+      "Pergantian guru jika merasa kurang cocok bisa dikomunikasikan dengan admin Scheduling.",
+      "Fokus kami: efektivitas kegiatan belajar dan ketercapaian target belajar.",
+    ],
+  },
+];
+
 const FasilitasPascaSarjana = () => {
   return (
-    <div className="fasilitas-pasca-container">
-      {/* Card Container */}
+    <section className="fasilitas-pasca-container">
       <div className="fasilitas-pasca-cards">
-        {/* Card 1: Fasilitas */}
-        <div className="fasilitas-pasca-card">
-          <img
-            src="/images/icon/fasilitas/fasilitas.webp"
-            alt="Icon Fasilitas"
-            className="fasilitas-pasca-icon"
-            loading="lazy"
-          />
-          <h2 className="fasilitas-pasca-title">Fasilitas</h2>
-          <ul className="fasilitas-pasca-list">
-            <li>Mapping kebutuhan belajar siswa</li>
-            <li>Kegiatan belajar privat terprogram & intensif</li>
-            <li>Pengajar yang berkualitas dari UI & PTN Terbaik</li>
-            <li>Modul Belajar Prediktif</li>
-            <li>Bimbingan dan arahan strategi belajar efektif</li>
-            <li>Progress report & evaluasi belajar secara berkala</li>
-          </ul>
-        </div>
+        {fasilitasPascaData.map((item, index) => (
+          <article key={item.id} className="fasilitas-pasca-card">
+            <span
+              className="fasilitas-pasca-card-specular"
+              aria-hidden="true"
+            />
 
-        {/* Card 2: Target Belajar */}
-        <div className="fasilitas-pasca-card">
-          <img
-            loading="lazy"
-            src="/images/icon/fasilitas/target.webp"
-            alt="Icon Target Belajar"
-            className="fasilitas-pasca-icon"
-          />
-          <h2 className="fasilitas-pasca-title">Target Belajar</h2>
-          <ul className="fasilitas-pasca-list">
-            <li>
-              Implementasi model belajar yang efektif berdasarkan hasil pemetaan
-              kebutuhan siswa
-            </li>
-            <li>
-              Penguasaan strategi menjawab soal TPA dan Bahasa Inggris sesuai
-              standar Ujian Masuk Pascasarjana
-            </li>
-            <li>
-              Peningkatan kemampuan berpikir kritis dan analitis dalam waktu
-              yang efisien
-            </li>
-            <li>
-              Siswa siap menghadapi berbagai jenis ujian masuk Pascasarjana
-              (SIMAK UI, Ujian Mandiri, dll.)
-            </li>
-            <li>
-              Siswa berhasil lolos Seleksi Masuk Pascasarjana sesuai dengan
-              program studi impian
-            </li>
-          </ul>
-        </div>
+            <span
+              className="fasilitas-pasca-card-refraction"
+              aria-hidden="true"
+            />
 
-        {/* Card 3: Scheduling */}
-        <div className="fasilitas-pasca-card">
-          <img
-            loading="lazy"
-            src="/images/icon/fasilitas/schedulling.webp"
-            alt="Icon Scheduling"
-            className="fasilitas-pasca-icon"
-          />
-          <h2 className="fasilitas-pasca-title">Scheduling</h2>
-          <ul className="fasilitas-pasca-list">
-            <li>Penjadwalan dihandle langsung oleh admin Scheduling.</li>
-            <li>
-              Jadwal belajar dapat disesuaikan dengan ketersediaan waktu siswa.
-            </li>
-            <li>
-              Perubahan atau cancel jadwal bisa langsung dikomunikasikan dengan
-              admin Scheduling.
-            </li>
-            <li>Durasi belajar setiap sesinya adalah 1,5 - 2 jam.</li>
-            <li>
-              Frekuensi belajar (jumlah sesi pertemuan) dapat direncanakan
-              bersama.
-            </li>
-            <li>
-              Pergantian guru jika merasa kurang cocok bisa dikomunikasikan
-              dengan admin Scheduling.
-            </li>
-            <li>
-              Fokus kami: efektivitas kegiatan belajar dan ketercapaian target
-              belajar.
-            </li>
-          </ul>
-        </div>
+            <div className="fasilitas-pasca-icon-area">
+              <div className="fasilitas-pasca-icon-wrapper">
+                <span
+                  className="fasilitas-pasca-icon-specular"
+                  aria-hidden="true"
+                />
 
-        {/* Card 4: Lokasi Belajar */}
-        <div className="fasilitas-pasca-card">
-          <img
-            loading="lazy"
-            src="/images/icon/fasilitas/location.webp"
-            alt="Icon Lokasi Belajar"
-            className="fasilitas-pasca-icon"
+                <img
+                  src={item.icon}
+                  alt={`Icon ${item.title}`}
+                  className="fasilitas-pasca-icon"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            <div className="fasilitas-pasca-heading">
+              <span className="fasilitas-pasca-index">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+
+              <h2 className="fasilitas-pasca-title">{item.title}</h2>
+            </div>
+
+            <ul className="fasilitas-pasca-list">
+              {item.items.map((listItem) => (
+                <li key={listItem}>
+                  <span className="fasilitas-pasca-check">✓</span>
+
+                  <span className="fasilitas-pasca-list-text">{listItem}</span>
+                </li>
+              ))}
+            </ul>
+
+            <span className="fasilitas-pasca-liquid-orb" aria-hidden="true" />
+          </article>
+        ))}
+
+        <article className="fasilitas-pasca-card fasilitas-pasca-location-card">
+          <span className="fasilitas-pasca-card-specular" aria-hidden="true" />
+
+          <span
+            className="fasilitas-pasca-card-refraction"
+            aria-hidden="true"
           />
-          <h2 className="fasilitas-pasca-title">Lokasi Belajar</h2>
-          <ul className="fasilitas-pasca-list">
-            <li>
-              <strong>Privat Offline:</strong>
-              <ul>
-                <li>Belajar dengan sistem tatap muka langsung</li>
-                <li>Guru privat datang ke rumah</li>
-                <li>Sistem belajar One on One Tutoring (Privat 1 siswa)</li>
+
+          <div className="fasilitas-pasca-icon-area">
+            <div className="fasilitas-pasca-icon-wrapper">
+              <span
+                className="fasilitas-pasca-icon-specular"
+                aria-hidden="true"
+              />
+
+              <img
+                loading="lazy"
+                src="/images/icon/fasilitas/location.webp"
+                alt="Icon Lokasi Belajar"
+                className="fasilitas-pasca-icon"
+              />
+            </div>
+          </div>
+
+          <div className="fasilitas-pasca-heading">
+            <span className="fasilitas-pasca-index">04</span>
+
+            <h2 className="fasilitas-pasca-title">Lokasi Belajar</h2>
+          </div>
+
+          <div className="fasilitas-pasca-location-grid">
+            <div className="fasilitas-pasca-location-box">
+              <span
+                className="fasilitas-pasca-location-specular"
+                aria-hidden="true"
+              />
+
+              <h3 className="fasilitas-pasca-location-title">Privat Offline</h3>
+
+              <ul className="fasilitas-pasca-location-list">
                 <li>
-                  Area jangkauan: Jakarta, Bogor, Depok, Tangerang, Tangsel,
-                  Bekasi, dan sekitarnya.
+                  <span className="fasilitas-pasca-check">✓</span>
+
+                  <span>Belajar dengan sistem tatap muka langsung</span>
+                </li>
+
+                <li>
+                  <span className="fasilitas-pasca-check">✓</span>
+
+                  <span>Guru privat datang ke rumah</span>
+                </li>
+
+                <li>
+                  <span className="fasilitas-pasca-check">✓</span>
+
+                  <span>
+                    Sistem belajar One on One Tutoring (Privat 1 siswa)
+                  </span>
+                </li>
+
+                <li>
+                  <span className="fasilitas-pasca-check">✓</span>
+
+                  <span>
+                    Area jangkauan: Jakarta, Bogor, Depok, Tangerang, Tangsel,
+                    Bekasi, dan sekitarnya.
+                  </span>
                 </li>
               </ul>
-            </li>
-            <li>
-              <strong>Privat Online:</strong>
-              <ul>
+            </div>
+
+            <div className="fasilitas-pasca-location-box">
+              <span
+                className="fasilitas-pasca-location-specular"
+                aria-hidden="true"
+              />
+
+              <h3 className="fasilitas-pasca-location-title">Privat Online</h3>
+
+              <ul className="fasilitas-pasca-location-list">
                 <li>
-                  Belajar dengan guru privat secara Online menggunakan Zoom,
-                  Google Meet atau aplikasi lain.
+                  <span className="fasilitas-pasca-check">✓</span>
+
+                  <span>
+                    Belajar dengan guru privat secara Online menggunakan Zoom,
+                    Google Meet atau aplikasi lain.
+                  </span>
                 </li>
-                <li>Sistem belajar One on One Tutoring (Privat 1 siswa)</li>
+
                 <li>
-                  Area Jangkauan: seluruh wilayah di Indonesia dan Luar Negeri.
+                  <span className="fasilitas-pasca-check">✓</span>
+
+                  <span>
+                    Sistem belajar One on One Tutoring (Privat 1 siswa)
+                  </span>
+                </li>
+
+                <li>
+                  <span className="fasilitas-pasca-check">✓</span>
+
+                  <span>
+                    Area Jangkauan: seluruh wilayah di Indonesia dan Luar
+                    Negeri.
+                  </span>
                 </li>
               </ul>
-            </li>
-          </ul>
-        </div>
+            </div>
+          </div>
+
+          <span className="fasilitas-pasca-liquid-orb" aria-hidden="true" />
+        </article>
       </div>
-    </div>
+    </section>
   );
 };
 

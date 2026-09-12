@@ -24,17 +24,21 @@ const ArrowRightIcon = () => (
 const BlogCTA = () => {
   const { csData } = useCSData();
   const selectedCS = useRotatingCS(csData);
+
   const fallbackCS = {
     nama_cs: "Tim LPS Education",
     link_cta:
       "https://api.whatsapp.com/send?phone=6281311778441&text=Halo,%20saya%20tertarik%20dengan%20program%20LPS%20Education",
   };
+
   const contactCS = selectedCS || fallbackCS;
 
   return (
-    <div className="blog-cta">
+    <section className="blog-cta">
+      <span className="blog-cta-specular" aria-hidden="true" />
+      <span className="blog-cta-refraction" aria-hidden="true" />
+
       <div className="cta-wrapper">
-        {/* Eyebrow badge */}
         <div className="cta-eyebrow">
           <span className="cta-eyebrow-dot" aria-hidden="true" />
           Konsultasi Gratis
@@ -45,32 +49,57 @@ const BlogCTA = () => {
             Siap tingkatkan{" "}
             <span className="cta-title-accent">prestasi akademik</span> Anda?
           </h2>
+
           <p className="cta-text">
             Bimbingan personal dari tutor berpengalaman, program yang
             disesuaikan dengan kebutuhan Anda — tanpa komitmen awal.
           </p>
 
-          {/* Feature Pills */}
           <ul className="cta-features" aria-label="Keunggulan program">
-            <li>Tutor dari PTN terkemuka</li>
-            <li>Program personal & fleksibel</li>
-            <li>Konsultasi gratis, tanpa syarat</li>
+            <li>
+              <span className="cta-feature-check" aria-hidden="true">
+                ✓
+              </span>
+              <span>Tutor dari PTN terkemuka</span>
+            </li>
+
+            <li>
+              <span className="cta-feature-check" aria-hidden="true">
+                ✓
+              </span>
+              <span>Program personal & fleksibel</span>
+            </li>
+
+            <li>
+              <span className="cta-feature-check" aria-hidden="true">
+                ✓
+              </span>
+              <span>Konsultasi gratis, tanpa syarat</span>
+            </li>
           </ul>
 
-          {/* CTA Button */}
           <div className="cta-buttons">
             <a
               href={contactCS.link_cta}
               className="btn-primary"
               target="_blank"
               rel="noopener noreferrer">
-              Hubungi {contactCS.nama_cs}
+              <span className="btn-primary-specular" aria-hidden="true" />
+
+              <span className="btn-primary-text">
+                Hubungi {contactCS.nama_cs}
+              </span>
+
               <ArrowRightIcon />
+
+              <span className="btn-primary-orb" aria-hidden="true" />
             </a>
           </div>
         </div>
       </div>
-    </div>
+
+      <span className="blog-cta-liquid-orb" aria-hidden="true" />
+    </section>
   );
 };
 

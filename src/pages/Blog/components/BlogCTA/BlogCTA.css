@@ -1,87 +1,258 @@
-/* src/pages/Blog/components/BlogCTA/BlogCTA.css */
-@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
+/* BlogCTA.css */
 
-/* ─── Shell ─────────────────────────────────────────────── */
 .blog-cta {
-  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
   position: relative;
-  padding: 56px 40px;
-  margin: 48px 0;
-  border-radius: 20px;
-  overflow: hidden;
-  background: #f8f8f8;
-  border: 1px solid #ebebeb;
-  isolation: isolate;
-}
 
-/* Subtle orange glow corners */
-.blog-cta::before {
-  content: "";
-  position: absolute;
-  inset: 0;
+  overflow: hidden;
+  isolation: isolate;
+
+  margin: 42px 0 0;
+  padding: 38px 28px;
+
+  border: 1px solid rgba(205, 218, 235, 0.72);
+  border-radius: 24px;
+
   background:
     radial-gradient(
-      ellipse 60% 70% at 95% 50%,
-      rgba(255, 101, 0, 0.1) 0%,
-      transparent 65%
+      ellipse 90% 70% at 14% -15%,
+      rgba(255, 255, 255, 0.99) 0%,
+      rgba(255, 255, 255, 0.5) 44%,
+      transparent 73%
     ),
     radial-gradient(
-      ellipse 50% 55% at 5% 50%,
-      rgba(255, 140, 51, 0.08) 0%,
-      transparent 65%
+      ellipse 90% 80% at 90% 115%,
+      rgba(193, 222, 250, 0.18) 0%,
+      rgba(230, 244, 255, 0.06) 52%,
+      transparent 76%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.64) 0%,
+      rgba(255, 255, 255, 0.3) 55%,
+      rgba(247, 251, 255, 0.2) 100%
     );
-  pointer-events: none;
-  z-index: 0;
+
+  -webkit-backdrop-filter: blur(24px) saturate(190%);
+  backdrop-filter: blur(24px) saturate(190%);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(205, 218, 235, 0.12);
+
+  transition:
+    transform 340ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 340ms ease;
 }
 
-/* Decorative blur blob */
+.blog-cta::before {
+  content: "";
+
+  position: absolute;
+  inset: 1px;
+
+  z-index: -1;
+
+  pointer-events: none;
+
+  border: 1px solid rgba(255, 255, 255, 0.56);
+  border-radius: 23px;
+}
+
 .blog-cta::after {
   content: "";
+
   position: absolute;
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  background: rgba(255, 101, 0, 0.07);
-  bottom: -60px;
-  right: -50px;
-  filter: blur(55px);
-  pointer-events: none;
+
+  top: -40%;
+  left: -42%;
+
+  width: 18%;
+  height: 180%;
+
   z-index: 0;
+
+  pointer-events: none;
+
+  opacity: 0;
+
+  transform: skewX(-18deg);
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.78),
+    transparent
+  );
+
+  transition:
+    left 900ms ease,
+    opacity 280ms ease;
 }
 
-/* ─── Wrapper ────────────────────────────────────────────── */
+.blog-cta:hover {
+  transform: translateY(-3px);
+
+  border-color: rgba(255, 101, 0, 0.24);
+}
+
+.blog-cta:hover::after {
+  left: 125%;
+
+  opacity: 0.9;
+}
+
+/* =========================
+   SPECULAR
+========================= */
+
+.blog-cta-specular {
+  position: absolute;
+
+  top: 0;
+  right: 9%;
+  left: 9%;
+
+  z-index: 6;
+
+  height: 1px;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 1),
+    transparent
+  );
+}
+
+/* =========================
+   REFRACTION
+========================= */
+
+.blog-cta-refraction {
+  position: absolute;
+
+  right: 10%;
+  bottom: -55px;
+  left: 10%;
+
+  height: 125px;
+
+  pointer-events: none;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    ellipse,
+    rgba(181, 217, 247, 0.18) 0%,
+    rgba(226, 241, 253, 0.06) 52%,
+    transparent 76%
+  );
+
+  filter: blur(18px);
+}
+
+/* =========================
+   WRAPPER
+========================= */
+
 .cta-wrapper {
   position: relative;
-  z-index: 1;
-  max-width: 620px;
-  margin: 0 auto;
+  z-index: 3;
+
   display: flex;
+
+  max-width: 680px;
+
   flex-direction: column;
   align-items: center;
+
+  margin: 0 auto;
 }
 
-/* ─── Eyebrow pill ───────────────────────────────────────── */
+/* =========================
+   EYEBROW
+========================= */
+
 .cta-eyebrow {
+  position: relative;
+
   display: inline-flex;
+
+  min-height: 30px;
+
   align-items: center;
+  justify-content: center;
+
   gap: 7px;
-  background: rgba(255, 101, 0, 0.09);
-  border: 1px solid rgba(255, 101, 0, 0.25);
-  border-radius: 100px;
-  padding: 5px 15px;
-  margin-bottom: 22px;
-  font-size: 0.75rem;
+
+  margin-bottom: 18px;
+  padding: 5px 13px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(255, 101, 0, 0.24);
+  border-radius: 999px;
+
+  color: var(--color-orange-dark);
+
+  font-size: 0.68rem;
   font-weight: 700;
-  letter-spacing: 0.07em;
+
+  letter-spacing: 0.055em;
   text-transform: uppercase;
-  color: #d94f00;
+
+  background:
+    radial-gradient(
+      ellipse 80% 75% at 20% -25%,
+      rgba(255, 255, 255, 1),
+      rgba(255, 244, 235, 0.43) 48%,
+      transparent 74%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.55),
+      rgba(255, 235, 219, 0.24)
+    );
+
+  -webkit-backdrop-filter: blur(14px) saturate(185%);
+  backdrop-filter: blur(14px) saturate(185%);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(255, 101, 0, 0.06);
+}
+
+.cta-eyebrow::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  right: 14%;
+  left: 14%;
+
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 1),
+    transparent
+  );
 }
 
 .cta-eyebrow-dot {
   width: 6px;
   height: 6px;
+
+  flex-shrink: 0;
+
   border-radius: 50%;
-  background: #ff6500;
+
+  background: var(--color-orange-default);
+
   animation: pulse-dot 2s ease-in-out infinite;
 }
 
@@ -91,192 +262,586 @@
     opacity: 1;
     transform: scale(1);
   }
+
   50% {
-    opacity: 0.4;
-    transform: scale(0.6);
+    opacity: 0.45;
+    transform: scale(0.68);
   }
 }
 
-/* ─── Content ────────────────────────────────────────────── */
+/* =========================
+   CONTENT
+========================= */
+
 .cta-content {
   width: 100%;
+
   text-align: center;
 }
 
 .cta-title {
-  font-size: 2rem;
+  margin: 0 0 12px;
+
+  color: var(--color-gray-darker);
+
+  font-size: 1.75rem;
   font-weight: 800;
-  margin: 0 0 14px;
-  line-height: 1.22;
-  letter-spacing: -0.03em;
-  color: #111111;
+  line-height: 1.2;
+
+  letter-spacing: -0.04em;
 }
 
 .cta-title-accent {
-  color: #ff6500;
+  color: var(--color-orange-default);
 }
 
 .cta-text {
-  font-size: 0.97rem;
-  line-height: 1.7;
-  margin: 0 auto 28px;
-  max-width: 510px;
-  color: #666666;
+  max-width: 540px;
+
+  margin: 0 auto 22px;
+
+  color: var(--color-gray-dark);
+
+  font-size: 0.9rem;
   font-weight: 400;
+  line-height: 1.7;
+
+  letter-spacing: -0.012em;
 }
 
-/* ─── Feature Pills ──────────────────────────────────────── */
+/* =========================
+   FEATURES
+========================= */
+
 .cta-features {
-  list-style: none;
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 7px;
+
+  margin: 0 0 24px;
   padding: 0;
-  margin: 0 auto 32px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 9px;
+
+  list-style: none;
 }
 
 .cta-features li {
-  display: inline-flex;
+  position: relative;
+
+  display: flex;
+
+  min-width: 0;
+  min-height: 48px;
+
   align-items: center;
-  gap: 7px;
-  padding: 7px 14px;
-  border-radius: 100px;
-  background: #ffffff;
-  border: 1px solid #e8e8e8;
-  font-size: 0.86rem;
+
+  gap: 8px;
+
+  overflow: hidden;
+
+  padding: 8px 9px;
+
+  border: 1px solid rgba(205, 218, 235, 0.5);
+  border-radius: 13px;
+
+  color: var(--color-gray-dark);
+
+  font-size: 0.78rem;
   font-weight: 500;
-  color: #333333;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  line-height: 1.4;
+
+  text-align: left;
+
+  background:
+    radial-gradient(
+      ellipse 85% 90% at 8% -35%,
+      rgba(255, 255, 255, 0.97),
+      rgba(255, 255, 255, 0.38) 50%,
+      transparent 75%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.51),
+      rgba(247, 251, 255, 0.18)
+    );
+
+  -webkit-backdrop-filter: blur(13px) saturate(175%);
+  backdrop-filter: blur(13px) saturate(175%);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    inset 0 -1px 0 rgba(205, 218, 235, 0.06);
+
+  transition:
+    transform 260ms ease,
+    border-color 260ms ease;
 }
 
 .cta-features li::before {
   content: "";
-  display: block;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: rgba(255, 101, 0, 0.12);
-  border: 1.5px solid #ff6500;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 8l2.5 2.5L12 5.5' stroke='%23ff6500' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  background-size: cover;
-  flex-shrink: 0;
+
+  position: absolute;
+
+  top: 0;
+  right: 10%;
+  left: 10%;
+
+  height: 1px;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.93),
+    transparent
+  );
 }
 
-/* ─── Button ─────────────────────────────────────────────── */
+.cta-features li:hover {
+  transform: translateY(-2px);
+
+  border-color: rgba(255, 101, 0, 0.18);
+}
+
+/* =========================
+   CHECK
+========================= */
+
+.cta-feature-check {
+  display: inline-flex;
+
+  width: 22px;
+  height: 22px;
+
+  flex-shrink: 0;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(16, 185, 129, 0.24);
+  border-radius: 50%;
+
+  color: #159447;
+
+  font-size: 0.62rem;
+  font-weight: 800;
+
+  background:
+    radial-gradient(circle at 30% 0%, rgba(255, 255, 255, 1), transparent 65%),
+    linear-gradient(
+      145deg,
+      rgba(236, 253, 245, 0.92),
+      rgba(209, 250, 229, 0.44)
+    );
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(16, 185, 129, 0.06);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
 .cta-buttons {
   display: flex;
+
   justify-content: center;
 }
 
+/* =========================
+   LIQUID ORANGE BUTTON
+========================= */
+
 .btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 14px 32px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #ff7a2b 0%, #ff5500 100%);
-  color: #ffffff;
-  font-family: inherit;
-  font-size: 0.95rem;
-  font-weight: 700;
-  text-decoration: none;
-  letter-spacing: 0.01em;
-  border: none;
-  cursor: pointer;
-  box-shadow:
-    0 4px 16px rgba(255, 101, 0, 0.28),
-    0 1px 3px rgba(255, 101, 0, 0.18);
-  transition:
-    transform 0.22s ease,
-    box-shadow 0.22s ease;
   position: relative;
+
+  display: inline-flex;
+
+  min-height: 50px;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
   overflow: hidden;
+
+  padding: 10px 24px;
+
+  cursor: pointer;
+
+  border: 1px solid rgba(255, 255, 255, 0.52);
+  border-radius: 999px;
+
+  color: #ffffff;
+
+  font-size: 0.86rem;
+  font-weight: 700;
+
+  letter-spacing: -0.012em;
+
+  text-decoration: none;
+
+  background:
+    radial-gradient(
+      ellipse 80% 75% at 22% -25%,
+      rgba(255, 255, 255, 0.36) 0%,
+      rgba(255, 255, 255, 0.09) 44%,
+      transparent 72%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.14),
+      rgba(255, 255, 255, 0.02) 48%,
+      transparent 72%
+    ),
+    linear-gradient(
+      135deg,
+      #f56600 0%,
+      var(--color-orange-default) 55%,
+      #ff8a20 100%
+    );
+
+  -webkit-backdrop-filter: blur(18px) saturate(195%);
+  backdrop-filter: blur(18px) saturate(195%);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 0 rgba(145, 63, 0, 0.1);
+
+  transition:
+    transform 280ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 280ms ease,
+    filter 280ms ease;
 }
 
-/* Shimmer sweep on hover */
-.btn-primary::after {
+.btn-primary::before {
   content: "";
+
   position: absolute;
-  inset: 0;
+
+  top: -25%;
+  left: -45%;
+
+  width: 22%;
+  height: 150%;
+
+  pointer-events: none;
+
+  opacity: 0;
+
+  transform: skewX(-18deg);
+
   background: linear-gradient(
-    105deg,
-    transparent 35%,
-    rgba(255, 255, 255, 0.17) 50%,
-    transparent 65%
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.78),
+    transparent
   );
-  transform: translateX(-100%);
-  transition: transform 0.45s ease;
+
+  transition:
+    left 700ms ease,
+    opacity 260ms ease;
 }
 
 .btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(255, 101, 0, 0.35);
+  transform: translateY(-2px);
+
+  border-color: rgba(255, 255, 255, 0.76);
+
+  color: #ffffff;
+
+  filter: saturate(1.08);
 }
 
-.btn-primary:hover::after {
-  transform: translateX(100%);
+.btn-primary:hover::before {
+  left: 125%;
+
+  opacity: 1;
+}
+
+.btn-primary:active {
+  transform: scale(0.97);
+}
+
+.btn-primary:focus-visible {
+  outline: 2px solid rgba(255, 101, 0, 0.3);
+  outline-offset: 3px;
+}
+
+.btn-primary-specular {
+  position: absolute;
+
+  top: 1px;
+  right: 14%;
+  left: 14%;
+
+  height: 1px;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.98),
+    transparent
+  );
+}
+
+.btn-primary-text {
+  position: relative;
+  z-index: 2;
 }
 
 .btn-arrow {
+  position: relative;
+  z-index: 2;
+
   display: inline-flex;
-  transition: transform 0.22s ease;
+
+  flex-shrink: 0;
+
+  transition: transform 220ms ease;
 }
 
 .btn-primary:hover .btn-arrow {
   transform: translateX(4px);
 }
 
-/* ─── Responsive ─────────────────────────────────────────── */
-@media (max-width: 768px) {
-  .blog-cta {
-    padding: 44px 24px;
-  }
+.btn-primary-orb {
+  position: absolute;
 
-  .cta-title {
-    font-size: 1.65rem;
-  }
+  right: -10px;
+  bottom: -14px;
 
-  .cta-features {
-    flex-direction: column;
-    align-items: center;
-  }
+  width: 46px;
+  height: 46px;
 
-  .cta-features li {
-    width: fit-content;
-  }
+  pointer-events: none;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle at 28% 24%,
+    rgba(255, 255, 255, 0.4),
+    rgba(255, 207, 170, 0.15) 44%,
+    transparent 70%
+  );
+
+  filter: blur(2px);
 }
 
-@media (max-width: 480px) {
+/* =========================
+   LIQUID ORB
+========================= */
+
+.blog-cta-liquid-orb {
+  position: absolute;
+
+  right: -38px;
+  bottom: -44px;
+
+  width: 115px;
+  height: 115px;
+
+  z-index: 1;
+
+  pointer-events: none;
+
+  border: 1px solid rgba(184, 214, 239, 0.2);
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 30% 24%,
+      rgba(255, 255, 255, 0.76) 0%,
+      rgba(255, 255, 255, 0.15) 31%,
+      transparent 56%
+    ),
+    radial-gradient(
+      circle at 70% 75%,
+      rgba(182, 219, 248, 0.21),
+      transparent 63%
+    );
+
+  opacity: 0.65;
+
+  transition:
+    transform 650ms cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 350ms ease;
+}
+
+.blog-cta:hover .blog-cta-liquid-orb {
+  transform: translate(-13px, -10px) scale(1.14);
+
+  opacity: 0.9;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1024px) {
   .blog-cta {
-    padding: 36px 16px;
-    border-radius: 14px;
-    margin: 32px 0;
+    padding: 32px 22px;
+
+    border-radius: 22px;
+  }
+
+  .blog-cta::before {
+    border-radius: 21px;
   }
 
   .cta-title {
-    font-size: 1.4rem;
-    letter-spacing: -0.02em;
+    font-size: 1.6rem;
   }
 
   .cta-text {
-    font-size: 0.92rem;
+    font-size: 0.87rem;
+  }
+
+  .cta-features li {
+    font-size: 0.76rem;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+  .blog-cta {
+    margin-top: 28px;
+    padding: 24px 12px;
+
+    border-radius: 18px;
+  }
+
+  .blog-cta::before {
+    border-radius: 17px;
+  }
+
+  .cta-eyebrow {
+    min-height: 28px;
+
+    margin-bottom: 14px;
+    padding: 4px 11px;
+
+    font-size: 0.62rem;
+  }
+
+  .cta-title {
+    font-size: 1.35rem;
+    line-height: 1.24;
+  }
+
+  .cta-text {
+    max-width: none;
+
+    margin-bottom: 18px;
+
+    font-size: 0.82rem;
+    line-height: 1.65;
+  }
+
+  .cta-features {
+    grid-template-columns: 1fr;
+
+    gap: 6px;
+
+    margin-bottom: 18px;
+  }
+
+  .cta-features li {
+    min-height: 44px;
+
+    padding: 8px;
+
+    border-radius: 12px;
+
+    font-size: 0.78rem;
+  }
+
+  .cta-feature-check {
+    width: 21px;
+    height: 21px;
+
+    font-size: 0.6rem;
+  }
+
+  .btn-primary {
+    min-height: 46px;
+
+    padding: 9px 20px;
+
+    font-size: 0.81rem;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+  .blog-cta {
+    margin-top: 24px;
+    padding: 20px 10px;
+
+    border-radius: 17px;
+  }
+
+  .blog-cta::before {
+    border-radius: 16px;
+  }
+
+  .cta-title {
+    font-size: 1.2rem;
+
+    letter-spacing: -0.035em;
+  }
+
+  .cta-text {
+    font-size: 0.79rem;
+  }
+
+  .cta-features li {
+    min-height: 42px;
+
+    font-size: 0.76rem;
+  }
+
+  .cta-buttons {
+    width: 100%;
   }
 
   .btn-primary {
     width: 100%;
-    justify-content: center;
-    padding: 14px 24px;
+
+    min-height: 45px;
+
+    padding: 8px 16px;
+
+    font-size: 0.79rem;
   }
 }
 
+/* =========================
+   REDUCED MOTION
+========================= */
+
 @media (prefers-reduced-motion: reduce) {
-  .cta-eyebrow-dot {
-    animation: none;
-  }
+  .blog-cta,
+  .blog-cta::after,
+  .cta-eyebrow-dot,
+  .cta-features li,
   .btn-primary,
-  .btn-primary::after,
-  .btn-arrow {
-    transition: none;
+  .btn-primary::before,
+  .btn-arrow,
+  .blog-cta-liquid-orb {
+    animation: none;
+    transition-duration: 1ms;
   }
 }

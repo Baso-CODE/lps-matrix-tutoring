@@ -1,8 +1,7 @@
 /* BenefitLolosCPNS.css */
 
 .cpns-benefit-section {
-  padding: 80px 0;
-
+  padding: 60px 0;
   text-align: center;
 }
 
@@ -12,134 +11,772 @@
   padding: 0 20px;
 }
 
-.cpns-benefit-title {
-  font-size: 1.4rem;
-  color: var(--color-dark-blue, #1e3e62);
-  margin-bottom: 15px;
-  text-transform: uppercase;
-  font-weight: 700;
-  font-family:
-    "Inter",
-    -apple-system,
-    BlinkMacSystemFont,
-    "Helvetica Neue",
-    Arial,
-    sans-serif;
-}
+/* =========================
+   HEADER
+========================= */
 
-.cpns-benefit-title span {
-  color: var(--color-orange-default, #ff8000);
-}
-
-.cpns-benefit-subtitle {
-  font-size: 1rem;
-  color: var(--color-gray-dark, #555555);
-
-  margin-bottom: 50px;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.6;
-}
-
-.cpns-benefit-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  justify-content: center;
-}
-
-.cpns-benefit-card {
-  background-color: #ffffff;
-  border-radius: 12px;
-  padding: 30px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-  text-align: center;
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    filter 0.3s ease-in-out;
+.cpns-benefit-header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  cursor: pointer;
+  margin-bottom: 28px;
 }
 
-/* Efek saat hover pada kartu yang tidak aktif */
+.cpns-benefit-eyebrow {
+  position: relative;
+
+  display: inline-flex;
+  min-height: 28px;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  overflow: hidden;
+
+  margin-bottom: 9px;
+  padding: 4px 10px;
+
+  border: 1px solid rgba(255, 101, 0, 0.16);
+  border-radius: 999px;
+
+  color: var(--color-orange-default);
+
+  font-size: 0.58rem;
+  font-weight: 700;
+
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  background:
+    radial-gradient(circle at 25% 0%, rgba(255, 255, 255, 1), transparent 60%),
+    linear-gradient(
+      145deg,
+      rgba(255, 248, 242, 0.82),
+      rgba(255, 237, 224, 0.36)
+    );
+
+  -webkit-backdrop-filter: blur(15px) saturate(180%);
+  backdrop-filter: blur(15px) saturate(180%);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(255, 101, 0, 0.05);
+}
+
+.cpns-benefit-eyebrow::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  right: 15%;
+  left: 15%;
+
+  height: 1px;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 1),
+    transparent
+  );
+}
+
+.cpns-benefit-eyebrow-dot {
+  width: 6px;
+  height: 6px;
+
+  flex-shrink: 0;
+
+  border-radius: 999px;
+
+  background: var(--color-orange-default);
+
+  box-shadow: 0 0 0 4px rgba(255, 101, 0, 0.07);
+}
+
+.cpns-benefit-title {
+  margin: 0 0 10px;
+
+  color: var(--color-gray-darker);
+
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.45;
+
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.cpns-benefit-title span {
+  color: var(--color-orange-default);
+}
+
+.cpns-benefit-subtitle {
+  max-width: 760px;
+
+  margin: 0;
+
+  color: var(--color-gray-dark);
+
+  font-size: 0.86rem;
+  font-weight: 400;
+  line-height: 1.7;
+
+  letter-spacing: -0.01em;
+
+  text-align: center;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.cpns-benefit-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 14px;
+}
+
+/* =========================
+   LIQUID GLASS CARD
+========================= */
+
+.cpns-benefit-card {
+  position: relative;
+
+  display: flex;
+
+  min-width: 0;
+  min-height: 285px;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  overflow: hidden;
+
+  padding: 16px;
+
+  cursor: default;
+
+  border: 1px solid rgba(205, 218, 235, 0.72);
+  border-radius: 22px;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      ellipse 92% 65% at 14% -15%,
+      rgba(255, 255, 255, 0.98) 0%,
+      rgba(255, 255, 255, 0.49) 43%,
+      transparent 73%
+    ),
+    radial-gradient(
+      ellipse 100% 72% at 92% 115%,
+      rgba(198, 225, 249, 0.18) 0%,
+      rgba(235, 246, 255, 0.06) 52%,
+      transparent 76%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.61) 0%,
+      rgba(255, 255, 255, 0.3) 56%,
+      rgba(247, 251, 255, 0.2) 100%
+    );
+
+  -webkit-backdrop-filter: blur(22px) saturate(185%);
+  backdrop-filter: blur(22px) saturate(185%);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(205, 218, 235, 0.13);
+
+  transition:
+    transform 320ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 320ms ease,
+    background 320ms ease,
+    opacity 320ms ease,
+    filter 320ms ease;
+}
+
+.cpns-benefit-card::before {
+  content: "";
+
+  position: absolute;
+  inset: 1px;
+
+  pointer-events: none;
+
+  border: 1px solid rgba(255, 255, 255, 0.56);
+  border-radius: 21px;
+}
+
+.cpns-benefit-card::after {
+  content: "";
+
+  position: absolute;
+
+  top: -35%;
+  left: -45%;
+
+  width: 24%;
+  height: 170%;
+
+  pointer-events: none;
+
+  opacity: 0;
+
+  transform: skewX(-18deg);
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.75),
+    transparent
+  );
+
+  transition:
+    left 800ms ease,
+    opacity 280ms ease;
+}
+
 .cpns-benefit-card:not(.blurred):hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+  transform: translateY(-5px);
+
+  border-color: rgba(255, 101, 0, 0.26);
+
+  background:
+    radial-gradient(
+      ellipse 92% 65% at 14% -15%,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0.57) 43%,
+      transparent 73%
+    ),
+    radial-gradient(
+      ellipse 100% 72% at 92% 115%,
+      rgba(194, 223, 248, 0.22) 0%,
+      rgba(235, 246, 255, 0.08) 52%,
+      transparent 76%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.68) 0%,
+      rgba(255, 247, 240, 0.31) 56%,
+      rgba(247, 251, 255, 0.22) 100%
+    );
 }
 
-/* Kelas untuk efek blur */
+.cpns-benefit-card:not(.blurred):hover::after {
+  left: 125%;
+  opacity: 0.9;
+}
+
+/* =========================
+   BLUR
+========================= */
+
 .cpns-benefit-card.blurred {
-  filter: blur(3px) brightness(0.7);
-  opacity: 0.7;
+  filter: blur(2px);
+  opacity: 0.55;
+
+  transform: scale(0.985);
+
   pointer-events: none;
 }
 
-.cpns-benefit-card:not(.blurred) {
-  border: 2px solid var(--color-orange-default, #ff8000);
+/* =========================
+   SPECULAR
+========================= */
+
+.cpns-benefit-card-specular {
+  position: absolute;
+
+  top: 0;
+  right: 10%;
+  left: 10%;
+
+  z-index: 5;
+
+  height: 1px;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 1),
+    transparent
+  );
 }
 
-.cpns-benefit-icon-wrapper {
-  width: 90px;
-  height: 90px;
-  background-color: var(--color-orange-light, #fff3e0);
+/* =========================
+   REFRACTION
+========================= */
+
+.cpns-benefit-card-refraction {
+  position: absolute;
+
+  right: 10%;
+  bottom: -42px;
+  left: 10%;
+
+  height: 100px;
+
+  pointer-events: none;
+
   border-radius: 50%;
+
+  background: radial-gradient(
+    ellipse,
+    rgba(184, 219, 247, 0.18) 0%,
+    rgba(226, 241, 253, 0.06) 52%,
+    transparent 76%
+  );
+
+  filter: blur(15px);
+}
+
+/* =========================
+   ICON GLASS
+========================= */
+
+.cpns-benefit-icon-wrapper {
+  position: relative;
+  z-index: 3;
+
   display: flex;
-  justify-content: center;
+
+  width: 88px;
+  height: 88px;
+
   align-items: center;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  justify-content: center;
+
+  overflow: hidden;
+
+  margin-bottom: 11px;
+
+  border: 1px solid rgba(205, 218, 235, 0.55);
+  border-radius: 22px;
+
+  background:
+    radial-gradient(
+      circle at 28% 4%,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0.44) 42%,
+      transparent 70%
+    ),
+    radial-gradient(
+      circle at 80% 100%,
+      rgba(192, 223, 249, 0.17),
+      transparent 62%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.56),
+      rgba(242, 249, 255, 0.21)
+    );
+
+  -webkit-backdrop-filter: blur(16px) saturate(185%);
+  backdrop-filter: blur(16px) saturate(185%);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(205, 218, 235, 0.08);
+
+  transition:
+    transform 320ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 320ms ease;
+}
+
+.cpns-benefit-icon-wrapper::before {
+  content: "";
+
+  position: absolute;
+  inset: 1px;
+
+  pointer-events: none;
+
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+}
+
+.cpns-benefit-icon-specular {
+  position: absolute;
+
+  top: 1px;
+  right: 15%;
+  left: 15%;
+
+  height: 1px;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 1),
+    transparent
+  );
+}
+
+.cpns-benefit-card:not(.blurred):hover .cpns-benefit-icon-wrapper {
+  transform: translateY(-2px) scale(1.04) rotate(-1.5deg);
+
+  border-color: rgba(255, 101, 0, 0.22);
 }
 
 .cpns-benefit-icon-wrapper img {
-  width: 50px;
-  height: 50px;
+  position: relative;
+  z-index: 2;
+
+  display: block;
+
+  width: 58px;
+  height: 58px;
+
   object-fit: contain;
 }
 
-.cpns-benefit-card-title {
-  font-size: 1.1rem;
-  color: var(--color-orange-dark, #cc6600);
+/* =========================
+   NUMBER
+========================= */
+
+.cpns-benefit-number {
+  position: relative;
+  z-index: 3;
+
+  display: inline-flex;
+
+  min-width: 29px;
+  height: 23px;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 8px;
+  padding: 0 7px;
+
+  border: 1px solid rgba(255, 101, 0, 0.16);
+  border-radius: 999px;
+
+  color: var(--color-orange-default);
+
+  font-size: 1rem;
   font-weight: 700;
-  margin-bottom: 10px;
+
+  background:
+    radial-gradient(circle at 25% 0%, rgba(255, 255, 255, 1), transparent 60%),
+    linear-gradient(
+      145deg,
+      rgba(255, 248, 242, 0.88),
+      rgba(255, 235, 219, 0.38)
+    );
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(255, 101, 0, 0.05);
 }
+
+/* =========================
+   TITLE
+========================= */
+
+.cpns-benefit-card-title {
+  position: relative;
+  z-index: 3;
+
+  margin: 0 0 8px;
+
+  color: var(--color-gray-darker);
+
+  font-size: 0.94rem;
+  font-weight: 700;
+  line-height: 1.45;
+
+  letter-spacing: -0.02em;
+}
+
+/* =========================
+   DESCRIPTION
+========================= */
 
 .cpns-benefit-card-description {
-  font-size: 0.9rem;
-  color: var(--color-gray-medium, #666666);
-  line-height: 1.7;
+  position: relative;
+  z-index: 3;
 
   flex-grow: 1;
+
+  margin: 0;
+
+  color: var(--color-gray-dark);
+
+  font-size: 0.78rem;
+  font-weight: 400;
+  line-height: 1.65;
+
+  letter-spacing: -0.01em;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
+/* =========================
+   LIQUID ORB
+========================= */
+
+.cpns-benefit-liquid-orb {
+  position: absolute;
+
+  right: -32px;
+  bottom: -38px;
+
+  width: 100px;
+  height: 100px;
+
+  pointer-events: none;
+
+  border: 1px solid rgba(184, 214, 239, 0.2);
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 30% 24%,
+      rgba(255, 255, 255, 0.72) 0%,
+      rgba(255, 255, 255, 0.15) 31%,
+      transparent 56%
+    ),
+    radial-gradient(
+      circle at 70% 75%,
+      rgba(182, 219, 248, 0.2),
+      transparent 63%
+    );
+
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+
+  opacity: 0.65;
+
+  transition:
+    transform 650ms cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 350ms ease;
+}
+
+.cpns-benefit-card:not(.blurred):hover .cpns-benefit-liquid-orb {
+  transform: translate(-12px, -9px) scale(1.13);
+
+  opacity: 0.9;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1024px) {
+  .cpns-benefit-section {
+    padding: 50px 0;
+  }
+
+  .cpns-benefit-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+  }
+
+  .cpns-benefit-card {
+    min-height: 265px;
+
+    padding: 14px;
+
+    border-radius: 20px;
+  }
+
+  .cpns-benefit-card::before {
+    border-radius: 19px;
+  }
+
   .cpns-benefit-title {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
-  .cpns-benefit-subtitle {
-    font-size: 1rem;
-  }
+
   .cpns-benefit-card-title {
-    font-size: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .cpns-benefit-card-description {
+    font-size: 0.76rem;
   }
 }
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+  .cpns-benefit-section {
+    padding: 40px 0;
+  }
+
+  .cpns-benefit-container {
+    padding: 0;
+  }
+
+  .cpns-benefit-header {
+    margin-bottom: 20px;
+  }
+
+  .cpns-benefit-title {
+    font-size: 1rem;
+  }
+
+  .cpns-benefit-subtitle {
+    font-size: 0.8rem;
+    line-height: 1.65;
+
+    text-align: left;
+  }
+
+  .cpns-benefit-grid {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+  }
+
+  .cpns-benefit-card {
+    min-height: auto;
+
+    padding: 11px;
+
+    border-radius: 18px;
+  }
+
+  .cpns-benefit-card::before {
+    border-radius: 17px;
+  }
+
+  .cpns-benefit-card.blurred {
+    filter: none;
+
+    opacity: 1;
+
+    transform: none;
+
+    pointer-events: auto;
+  }
+
+  .cpns-benefit-icon-wrapper {
+    width: 72px;
+    height: 72px;
+
+    margin-bottom: 9px;
+
+    border-radius: 17px;
+  }
+
+  .cpns-benefit-icon-wrapper::before {
+    border-radius: 15px;
+  }
+
+  .cpns-benefit-icon-wrapper img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .cpns-benefit-card-title {
+    font-size: 0.86rem;
+  }
+
+  .cpns-benefit-card-description {
+    font-size: 0.75rem;
+    line-height: 1.6;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
 
 @media (max-width: 480px) {
   .cpns-benefit-section {
-    padding: 60px 0;
+    padding: 32px 0;
   }
+
+  .cpns-benefit-eyebrow {
+    min-height: 26px;
+
+    padding: 4px 8px;
+
+    font-size: 0.53rem;
+  }
+
+  .cpns-benefit-eyebrow-dot {
+    width: 5px;
+    height: 5px;
+  }
+
   .cpns-benefit-title {
-    font-size: 1.2rem;
+    font-size: 0.94rem;
   }
+
+  .cpns-benefit-subtitle {
+    font-size: 0.76rem;
+  }
+
   .cpns-benefit-card {
-    padding: 25px;
+    padding: 10px;
+
+    border-radius: 17px;
   }
+
+  .cpns-benefit-card::before {
+    border-radius: 16px;
+  }
+
   .cpns-benefit-icon-wrapper {
-    width: 70px;
-    height: 70px;
+    width: 66px;
+    height: 66px;
+
+    border-radius: 15px;
+  }
+
+  .cpns-benefit-icon-wrapper::before {
+    border-radius: 13px;
+  }
+
+  .cpns-benefit-icon-wrapper img {
+    width: 44px;
+    height: 44px;
+  }
+
+  .cpns-benefit-number {
+    height: 21px;
+
+    font-size: 0.9rem;
+  }
+
+  .cpns-benefit-card-title {
+    font-size: 0.82rem;
+  }
+
+  .cpns-benefit-card-description {
+    font-size: 0.72rem;
+    line-height: 1.58;
+  }
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .cpns-benefit-card,
+  .cpns-benefit-card::after,
+  .cpns-benefit-icon-wrapper,
+  .cpns-benefit-liquid-orb {
+    transition-duration: 1ms;
   }
 }

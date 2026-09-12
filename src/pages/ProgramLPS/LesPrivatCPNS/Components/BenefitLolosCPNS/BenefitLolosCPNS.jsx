@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./BenefitLolosCPNS.css"; // Import CSS khusus
+import "./BenefitLolosCPNS.css";
 
 const BenefitLolosCPNS = () => {
   const benefits = [
@@ -52,33 +52,62 @@ const BenefitLolosCPNS = () => {
   return (
     <section className="cpns-benefit-section">
       <div className="cpns-benefit-container">
-        <h2 className="cpns-benefit-title">
-          Raih <span>Keuntungan Besar</span> Menjadi PNS!
-        </h2>
-        <p className="cpns-benefit-subtitle">
-          Menjadi Pegawai Negeri Sipil (PNS) bukan sekadar pekerjaan, ini adalah
-          karir dengan beragam jaminan dan kesempatan emas. Berikut adalah
-          keuntungan yang menanti Anda:
-        </p>
+        <div className="cpns-benefit-header">
+          <span className="cpns-benefit-eyebrow">
+            <span className="cpns-benefit-eyebrow-dot" />
+            Benefit Menjadi PNS
+          </span>
+
+          <h2 className="cpns-benefit-title">
+            Raih <span>Keuntungan Besar</span> Menjadi PNS!
+          </h2>
+
+          <p className="cpns-benefit-subtitle">
+            Menjadi Pegawai Negeri Sipil (PNS) bukan sekadar pekerjaan, ini
+            adalah karir dengan beragam jaminan dan kesempatan emas. Berikut
+            adalah keuntungan yang menanti Anda:
+          </p>
+        </div>
+
         <div className="cpns-benefit-grid">
-          {benefits.map((subject) => (
-            <div
-              key={subject.id}
+          {benefits.map((benefit, index) => (
+            <article
+              key={benefit.id}
               className={`cpns-benefit-card ${
-                hoveredCardId !== null && hoveredCardId !== subject.id
+                hoveredCardId !== null && hoveredCardId !== benefit.id
                   ? "blurred"
                   : ""
               }`}
-              onMouseEnter={() => setHoveredCardId(subject.id)}
+              onMouseEnter={() => setHoveredCardId(benefit.id)}
               onMouseLeave={() => setHoveredCardId(null)}>
+              <span className="cpns-benefit-card-specular" aria-hidden="true" />
+
+              <span
+                className="cpns-benefit-card-refraction"
+                aria-hidden="true"
+              />
+
               <div className="cpns-benefit-icon-wrapper">
-                <img src={subject.icon} alt={subject.title} loading="lazy" />
+                <span
+                  className="cpns-benefit-icon-specular"
+                  aria-hidden="true"
+                />
+
+                <img src={benefit.icon} alt={benefit.title} loading="lazy" />
               </div>
-              <h3 className="cpns-benefit-card-title">{subject.title}</h3>
+
+              <span className="cpns-benefit-number">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+
+              <h3 className="cpns-benefit-card-title">{benefit.title}</h3>
+
               <p className="cpns-benefit-card-description">
-                {subject.description}
+                {benefit.description}
               </p>
-            </div>
+
+              <span className="cpns-benefit-liquid-orb" aria-hidden="true" />
+            </article>
           ))}
         </div>
       </div>

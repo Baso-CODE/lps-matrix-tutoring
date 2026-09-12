@@ -14,35 +14,46 @@ const TestimoniWa = () => {
         console.error("error fetching data", error);
       }
     };
+
     fetchData();
   }, []);
 
   return (
-    <section id="TESTIMONI">
+    <section id="TESTIMONI" className="testimoni-wa-section">
       <div className="succesStory-lps-container">
         <div className="succesStory-lps-header">
           <h2>Testimonials</h2>
         </div>
+
         <p className="additional-description-about__us">
           Berikut adalah kumpulan testimoni dari siswa dan orang tua yang telah
           merasakan manfaat LPS Education. Bukti nyata keberhasilan mereka dalam
           meraih impian dan PTN Favorit impian!
         </p>
-        {/* Image Gallery */}
+
         <div className="success-story-wa-siswa-page">
           {dataTestimoniWa.map((item, index) => (
-            <img
-              loading="lazy"
-              src={item.link_image}
-              alt="Bimbel Les Privat ONLINE dan Les Privat Datang ke Rumah untuk Program SBMPTN UTBK SNBT Simak UI UTUL UGM. Guru Privat Masuk UI ITB UGM dan Kedokteran di PTN Favorit."
-              key={index}
-              width={128}
-              height={128}
-              className="success-story-image"
-            />
+            <div
+              className="success-story-image-card"
+              key={item.id || item.link_image || index}>
+              <span
+                className="success-story-image-specular"
+                aria-hidden="true"
+              />
+
+              <img
+                loading="lazy"
+                src={item.link_image}
+                alt="Bimbel Les Privat ONLINE dan Les Privat Datang ke Rumah untuk Program SBMPTN UTBK SNBT Simak UI UTUL UGM. Guru Privat Masuk UI ITB UGM dan Kedokteran di PTN Favorit."
+                width={128}
+                height={128}
+                className="success-story-image"
+              />
+            </div>
           ))}
         </div>
-        <p className="additional-description-about__us">
+
+        <p className="additional-description-about__us testimoni-wa-closing">
           Dan masih banyak lagi kisah sukses yang terus bertambah setiap
           tahunnya, membuktikan komitmen kami dalam mengantar siswa lolos ke
           Kedokteran dan berbagai Program Studi unggulan di PTN Favorit impian

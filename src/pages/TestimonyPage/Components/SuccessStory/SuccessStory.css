@@ -1,75 +1,85 @@
-/* Styling untuk Komponen AlumniLpsNew */
+#success-story {
+  width: 100%;
+}
+
 .succesStory-lps-container {
-  margin-top: 5vh;
+  width: 100%;
   max-width: 1200px;
-  margin-left: 0;
+  margin: 5vh auto 2rem;
+
+  box-sizing: border-box;
   overflow: hidden;
-  margin-right: 0;
-  margin-bottom: 2rem;
 }
 
 .succesStory-lps-header h2 {
-  text-align: start;
-
+  text-align: center;
   font-weight: 700;
-  color: var(--color-gray-darker); /* Abu-abu sangat gelap untuk judul */
+  color: var(--color-gray-darker);
   font-size: 1.4rem;
   margin-bottom: 15px;
 }
 
+.additional-description-about__us {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 25px;
+  line-height: 1.7;
+}
+
 .color-d2b04c-description {
-  color: var(--color-orange-default); /* Oranye utama, konsisten dengan palet */
+  color: var(--color-orange-default);
   font-weight: bold;
 }
 
-/* Grid Container for Images */
-.alumnilPS-images-grid {
+.success-story-gallery {
   display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
-  padding: 0;
-  list-style: none;
-  margin-bottom: 30px; /* Jarak antara grid gambar dan pagination */
-}
-
-.alumnilPS-images-grid img {
   width: 100%;
-  border-radius: 8px;
-  object-fit: cover; /* Memastikan gambar mengisi area tanpa terdistorsi */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow tetap menggunakan RGBA untuk transparansi */
+  margin: 30px auto;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* --- Pagination Controls Styling --- */
+.success-story-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 .pagination-controls {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
   flex-wrap: wrap;
+  margin-top: 20px;
 }
 
 .pagination-button {
-  background-color: var(
-    --color-orange-default
-  ); /* Warna utama tombol paginasi: oranye */
-  color: var(--color-gray-lightest); /* Warna teks tombol: putih keabu-abuan */
+  background-color: var(--color-orange-default);
+  color: var(--color-gray-lightest);
   border: none;
   border-radius: 5px;
-  padding: 0; /* Set padding menjadi 0 */
-  width: 40px; /* Lebar tetap untuk tombol */
-  height: 40px; /* Tinggi tetap untuk tombol */
-  font-size: 1rem; /* Biarkan jika ada teks nomor halaman */
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  font-size: 1rem;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition:
     background-color 0.3s ease,
     transform 0.2s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  display: flex; /* Gunakan flexbox untuk menengahkan gambar/konten */
-  justify-content: center;
-  align-items: center;
-  overflow: hidden; /* Pastikan tidak ada yang meluap dari tombol */
 }
 
-/* Styling untuk gambar di dalam tombol paginasi */
 .pagination-button img {
   width: 100%;
   height: 100%;
@@ -78,67 +88,82 @@
 }
 
 .pagination-button:hover:not(:disabled) {
-  background-color: var(
-    --color-orange-dark
-  ); /* Oranye lebih gelap saat hover */
-  transform: translateY(-2px); /* Efek sedikit naik saat hover */
+  background-color: var(--color-orange-dark);
+  transform: translateY(-2px);
 }
 
 .pagination-button:disabled {
-  background-color: var(--color-gray-light); /* Abu-abu terang saat disabled */
+  background-color: var(--color-gray-light);
   cursor: not-allowed;
   box-shadow: none;
 }
 
 .pagination-button.active {
-  background-color: var(
-    --color-orange-default
-  ); /* Oranye utama untuk halaman aktif */
+  background-color: var(--color-orange-default);
   font-weight: bold;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* Loading and Error Messages */
 .loading-message,
 .no-data-message {
   text-align: center;
   font-size: 1.1rem;
-  color: var(--color-gray-dark); /* Abu-abu gelap untuk pesan umum */
+  color: var(--color-gray-dark);
   margin-top: 30px;
 }
 
 .error-message {
-  color: var(--color-error-red); /* Merah dari palet untuk error */
+  color: var(--color-error-red);
 }
 
-/* --- Media Queries for Responsive Design --- */
-
-/* Desktop Layout (3 columns) */
 @media (min-width: 992px) {
-  .alumnilPS-images-grid {
-    grid-template-columns: repeat(3, 1fr);
+  .success-story-gallery {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
-/* Tablet Layout (2 columns) */
 @media (min-width: 768px) and (max-width: 991px) {
-  .alumnilPS-images-grid {
-    grid-template-columns: repeat(3, 1fr);
+  .success-story-gallery {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
   }
 }
 
-/* Mobile Layout (1 column) */
 @media (max-width: 767px) {
+  .succesStory-lps-container {
+    margin-top: 3vh;
+    padding: 0 16px;
+  }
+
   .succesStory-lps-header h2 {
     font-size: 1.2rem;
-    text-align: start;
+    text-align: center;
   }
 
-  .alumnilPS-images-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .additional-description-about__us {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
   }
 
-  .alumnilPS-images-grid img {
-    height: 100%; /* Sedikit lebih kecil di mobile */
+  .success-story-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin: 20px auto;
+  }
+
+  .success-story-image {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .succesStory-lps-container {
+    padding: 0 12px;
+  }
+
+  .success-story-gallery {
+    gap: 10px;
   }
 }

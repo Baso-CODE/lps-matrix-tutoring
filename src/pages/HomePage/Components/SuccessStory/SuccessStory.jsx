@@ -1,5 +1,5 @@
-import { Link, useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
+import { Link, useLocation } from "react-router-dom";
 import "./SuccessStory.css";
 
 const SuccessStory = ({ city: cityProp }) => {
@@ -24,6 +24,30 @@ const SuccessStory = ({ city: cityProp }) => {
     { image: "/images/success-story/testimoni-10.webp" },
     { image: "/images/success-story/testimoni-11.webp" },
     { image: "/images/success-story/testimoni-12.webp" },
+    { image: "/images/success-story/Ahmad-Razzaq-Tohir.webp" },
+    { image: "/images/success-story/Aisha-Zakka-Nariswari.webp" },
+    { image: "/images/success-story/Aisya-Adriennelia-Celine-Cahyono.webp" },
+    { image: "/images/success-story/Aisyah-Avisena-Juanda.webp" },
+    { image: "/images/success-story/Alexandria-Haffianto.webp" },
+    { image: "/images/success-story/Andi-Ainun-Mardiah.webp" },
+    { image: "/images/success-story/Anggita-Meilani-Faiza.webp" },
+    { image: "/images/success-story/Anggoro-Putri-Widya-Kartika.webp" },
+    { image: "/images/success-story/Anisa-Masaad-Santi.webp" },
+    { image: "/images/success-story/Challice-Chavella.webp" },
+    { image: "/images/success-story/Chelsea-Nusantara-Simanjuntak.webp" },
+    { image: "/images/success-story/Cynthia-siswa-Kenzo-Wijaya.webp" },
+    { image: "/images/success-story/Darrel-Akhtar-Ramadhan.webp" },
+    { image: "/images/success-story/Dinda-Salma-Djuwita.webp" },
+    { image: "/images/success-story/Farah-Miyako-Emi-Joanna.webp" },
+    { image: "/images/success-story/Imannia-Khairana.webp" },
+    { image: "/images/success-story/Joanne-Vanesha-Gazali.webp" },
+    { image: "/images/success-story/Johan-Sugio.webp" },
+    { image: "/images/success-story/Kaori-Chandra-Bunawan.webp" },
+    { image: "/images/success-story/Michelle-Debora-Farra-Handoko.webp" },
+    { image: "/images/success-story/Muhammad-Bagas-Firjatullah.webp" },
+    { image: "/images/success-story/Rafael-Jojo-Abuno.webp" },
+    { image: "/images/success-story/Rafif-Arkana.webp" },
+    { image: "/images/success-story/Renata-Brilian-Cantiqa-Fatimayra.webp" },
   ];
   return (
     <div className="container-succes-story-home">

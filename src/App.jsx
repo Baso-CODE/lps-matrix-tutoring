@@ -1,22 +1,19 @@
-import AOS from "aos";
 import "aos/dist/aos.css";
 import { lazy, Suspense, useEffect, useState } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
+
 import FloatingCTA from "./components/FloatingCTA/FloatingCTA";
 import FooterNew from "./components/FooterNew/FooterNew";
 import BottomNavigationBar from "./components/Navbar/BottomNavigationBar/BottomNavigationBar";
 import Nav from "./components/Navbar/Nav/Nav";
-import ProgramModal from "./components/Navbar/ProgramModal/ProgramModal";
-import StoriesModal from "./components/Navbar/StoriesModal/StoriesModal";
 import { Menus } from "./helpers/NavbarMenus/Menus";
 import ScrollToTopButton from "./helpers/ScrollToTopButton/ScrollToTopButton";
 import ToTop from "./helpers/ToTop";
 import { fetchContactCs } from "./lib/features/contactCsSlice";
 import { useAppDispatch } from "./lib/hooks";
+import HomePage from "./pages/HomePage/HomePage";
 
-// Lazy load semua halaman
-const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
 const PageLinkTree = lazy(() => import("./pages/PageLinkTree/PageLinkTree"));
 const BlogPage = lazy(() => import("./pages/Blog/BlogPage"));
 const BlogDetail = lazy(
@@ -28,6 +25,7 @@ const SuccessStoriesPage = lazy(
   () => import("./pages/SuccesStoriesPage/SuccessStoriesPage"),
 );
 const ListSiswaPage = lazy(() => import("./pages/ListSiswaLPS/ListSiswaPage"));
+
 const LesPrivatUTBK = lazy(
   () => import("./pages/ProgramLPS/LesPrivatUTBK/LesPrivatUTBK"),
 );
@@ -85,31 +83,85 @@ const LesPrivatOSNSlug = lazy(
     import("./pages/ProgramLPS/LesPrivatOSN/LesPrivatOSNSlug/LesPrivatOSNSlug"),
 );
 
+const ProgramModal = lazy(
+  () => import("./components/Navbar/ProgramModal/ProgramModal"),
+);
+const StoriesModal = lazy(
+  () => import("./components/Navbar/StoriesModal/StoriesModal"),
+);
+
 const programSubMenuData =
   Menus.find((menu) => menu.name === "Program")?.subMenu || [];
+
 const storiesSubMenuData =
   Menus.find((menu) => menu.name === "Stories")?.subMenu || [];
 
 function App() {
   const location = useLocation();
   const dispatch = useAppDispatch();
+  const [showProgramModal, setShowProgramModal] = useState(false);
+  const [showStoriesModal, setShowStoriesModal] = useState(false);
 
   const isLinksPage = location.pathname === "/links";
   const isBlogDetailPage =
     location.pathname.startsWith("/blog/") &&
     location.pathname.split("/").length > 2;
-  const shouldShowGlobalComponents = !isBlogDetailPage && !isLinksPage;
 
-  const [showProgramModal, setShowProgramModal] = useState(false);
-  const [showStoriesModal, setShowStoriesModal] = useState(false);
+  const shouldShowGlobalComponents = !isBlogDetailPage && !isLinksPage;
 
   useEffect(() => {
     dispatch(fetchContactCs());
   }, [dispatch]);
 
   useEffect(() => {
-    AOS.init({ duration: 1400, once: true });
-  }, [location, isLinksPage]);
+    let cancelled = false;
+    let idleId;
+    let timeoutId;
+
+    const initializeAOS = async () => {
+      try {
+        const { default: AOS } = await import("aos");
+        if (cancelled) return;
+
+        if (!window.__LPS_AOS_INITIALIZED__) {
+          AOS.init({
+            duration: 800,
+            once: true,
+            offset: 80,
+            disableMutationObserver: false,
+          });
+          window.__LPS_AOS_INITIALIZED__ = true;
+        } else {
+          AOS.refreshHard();
+        }
+      } catch (error) {
+        console.error("Failed to initialize AOS:", error);
+      }
+    };
+
+    if ("requestIdleCallback" in window) {
+      idleId = window.requestIdleCallback(initializeAOS, {
+        timeout: 1500,
+      });
+    } else {
+      timeoutId = window.setTimeout(initializeAOS, 200);
+    }
+
+    return () => {
+      cancelled = true;
+      if (idleId !== undefined) {
+        window.cancelIdleCallback(idleId);
+      }
+      if (timeoutId !== undefined) {
+        window.clearTimeout(timeoutId);
+      }
+    };
+  }, [location.pathname]);
+
+  useEffect(() => {
+    setShowProgramModal(false);
+    setShowStoriesModal(false);
+  }, [location.pathname]);
 
   return (
     <>
@@ -131,11 +183,8 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/links" element={<PageLinkTree />} />
-            <Route path="*" element={<HomePage />} />
-
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/blog/:slug" element={<BlogDetail />} />
-
             <Route path="/about-us" element={<AboutPage />} />
             <Route path="/testimoni-lps" element={<TestimonyPage />} />
             <Route
@@ -212,22 +261,31 @@ function App() {
               path="/les-privat-osn-terbaik-di/:slug"
               element={<LesPrivatOSNSlug />}
             />
+
+            <Route path="*" element={<HomePage />} />
           </Routes>
         </Suspense>
       </main>
 
       {shouldShowGlobalComponents && <FooterNew />}
 
-      <ProgramModal
-        isOpen={showProgramModal}
-        onClose={() => setShowProgramModal(false)}
-        programSubMenu={programSubMenuData}
-      />
-      <StoriesModal
-        isOpen={showStoriesModal}
-        onClose={() => setShowStoriesModal(false)}
-        storiesSubMenu={storiesSubMenuData}
-      />
+      <Suspense fallback={null}>
+        {showProgramModal && (
+          <ProgramModal
+            isOpen={showProgramModal}
+            onClose={() => setShowProgramModal(false)}
+            programSubMenu={programSubMenuData}
+          />
+        )}
+
+        {showStoriesModal && (
+          <StoriesModal
+            isOpen={showStoriesModal}
+            onClose={() => setShowStoriesModal(false)}
+            storiesSubMenu={storiesSubMenuData}
+          />
+        )}
+      </Suspense>
     </>
   );
 }

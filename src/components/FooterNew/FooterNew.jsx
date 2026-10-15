@@ -53,11 +53,11 @@ const FooterNew = () => {
     <footer className="container-footer">
       <div className="new-footer">
         <div className="new-footer-section">
-          <h3>Our Office</h3>
-          <h4>
+          <h2>Our Office</h2>
+          <h3>
             Bimbel Masuk FK, PTN, Kedinasan Akademik SD SMP SMA TKA Mahasiswa
             Olimpiade LPDP & CPNS
-          </h4>
+          </h3>
           <ul>
             <li>- Guru Kerumah</li>
             <li>- Privat Online</li>
@@ -65,13 +65,13 @@ const FooterNew = () => {
           </ul>
           <br />
 
-          <h4>OFFICE</h4>
+          <h3>OFFICE</h3>
           <p className="new-footer-section-alamat">
             Pesona Khayangan Blok CP No. 4, Depok, Jawa Barat (Lingkungan
             Pendidikan UI)
           </p>
 
-          <h4>Jam kunjugan visit:</h4>
+          <h3>Jam kunjugan visit:</h3>
           <p className="new-footer-section-alamat">
             Senin sd Jumat: 09.00 – 16.00 WIB
             <br />
@@ -79,7 +79,7 @@ const FooterNew = () => {
           </p>
           <br />
 
-          <h4>Hubungi Kami:</h4>
+          <h3>Hubungi Kami:</h3>
           <ul>
             {admins.map((admin, index) => (
               <li key={index}>
@@ -95,11 +95,11 @@ const FooterNew = () => {
             ))}
           </ul>
 
-          <h4>Layanan Call dan Pesan WhatsApp buka 24 jam setiap hari</h4>
+          <h3>Layanan Call dan Pesan WhatsApp buka 24 jam setiap hari</h3>
         </div>
 
         <div className="new-footer-section">
-          <h3>Company Profile</h3>
+          <h2>Company Profile</h2>
           <p className="new-footer-section-description">
             LPS Education (ONLINE & OFFLINE) adalah Bimbel Peningkatan Prestasi
             Akademik Sekolah dan Persiapan Masuk PTN Favorit (UI ITB UGM IPB
@@ -123,7 +123,7 @@ const FooterNew = () => {
         </div>
 
         <div className="new-footer-section">
-          <h3>Navigation</h3>
+          <h2>Navigation</h2>
           <ul className="footer-nav">
             <li>
               <a href="/">Homepage</a>
@@ -193,7 +193,7 @@ const FooterNew = () => {
 
         {/* Bagian Chat Us Now dengan Rotasi CS */}
         <div className="new-footer-section">
-          <h3>Chat Us Now</h3>
+          <h2>Chat Us Now</h2>
           <a
             href={activeCS.link_cta}
             target="_blank"
@@ -202,9 +202,11 @@ const FooterNew = () => {
             title={`Hubungi ${activeCS.nama_cs || "CS"}`}>
             <img
               loading="lazy"
-              src="/images/banner.webp"
+              src="/images/banner-optimized.webp"
               alt="Bimbel Karantina Masuk PTN dan Program Les Privat terbaik untuk UTBK, SIMAK UI, KKI, dan semua jenjang pendidikan."
               className="member-logo-footer-matrix"
+              width={480}
+              height={480}
             />
           </a>
         </div>

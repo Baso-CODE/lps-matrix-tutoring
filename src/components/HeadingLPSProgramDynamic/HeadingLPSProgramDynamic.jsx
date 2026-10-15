@@ -12,6 +12,7 @@ const HeadingLPSProgramDynamic = ({
   defaultProgramName,
   imageUrlsDesktop,
   imageUrlsMobile,
+  imageDimensions,
   descriptionParagraphs,
   city,
 }) => {
@@ -50,6 +51,10 @@ const HeadingLPSProgramDynamic = ({
     : imageUrlsDesktop?.length > 0
       ? imageUrlsDesktop
       : ["/images/program/default.webp"];
+
+  const dimensions = isMobile
+    ? imageDimensions?.mobile
+    : imageDimensions?.desktop;
 
   const isMultipleImages = images.length > 1;
 
@@ -92,6 +97,9 @@ const HeadingLPSProgramDynamic = ({
                         className="program-hero-image"
                         src={imgUrl}
                         alt={`${altText} Gambar ${index + 1}`}
+                        width={dimensions?.width}
+                        height={dimensions?.height}
+                        decoding="async"
                       />
                     </div>
                   </div>
@@ -103,9 +111,12 @@ const HeadingLPSProgramDynamic = ({
               <img
                 loading="eager"
                 fetchPriority="high"
+                decoding="async"
                 className="program-hero-image"
                 src={images[0]}
                 alt={altText}
+                width={dimensions?.width}
+                height={dimensions?.height}
               />
             </div>
           )}
@@ -187,6 +198,16 @@ HeadingLPSProgramDynamic.propTypes = {
   imageUrlsMobile: PropTypes.arrayOf(PropTypes.string).isRequired,
   descriptionParagraphs: PropTypes.arrayOf(PropTypes.string),
   city: PropTypes.string,
+  imageDimensions: PropTypes.shape({
+    desktop: PropTypes.shape({
+      width: PropTypes.number,
+      height: PropTypes.number,
+    }),
+    mobile: PropTypes.shape({
+      width: PropTypes.number,
+      height: PropTypes.number,
+    }),
+  }),
 };
 
 export default HeadingLPSProgramDynamic;

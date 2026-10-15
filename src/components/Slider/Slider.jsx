@@ -5,17 +5,17 @@ import "./Slider.css";
 const desktopSliders = [
   {
     id: 1,
-    src: "/images/slider/desktop-1.webp",
+    src: "/images/slider/desktop-1-optimized.webp",
     alt: "Promo Les Privat UTBK SNBT - LPS Education",
   },
   {
     id: 2,
-    src: "/images/slider/desktop-2.webp",
+    src: "/images/slider/desktop-2-optimized.webp",
     alt: "Promo Bimbel CPNS - LPS Education",
   },
   {
     id: 3,
-    src: "/images/slider/desktop-3.webp",
+    src: "/images/slider/desktop-3-optimized.webp",
     alt: "Promo Les Privat SIMAK UI - LPS Education",
   },
 ];
@@ -23,17 +23,17 @@ const desktopSliders = [
 const mobileSliders = [
   {
     id: 1,
-    src: "/images/slider/mobile-1.webp",
+    src: "/images/slider/mobile-1-optimized.webp",
     alt: "Promo Les Privat UTBK SNBT - LPS Education",
   },
   {
     id: 2,
-    src: "/images/slider/mobile-2.webp",
+    src: "/images/slider/mobile-2-optimized.webp",
     alt: "Promo Bimbel CPNS - LPS Education",
   },
   {
     id: 3,
-    src: "/images/slider/mobile-3.webp",
+    src: "/images/slider/mobile-3-optimized.webp",
     alt: "Promo Les Privat SIMAK UI - LPS Education",
   },
 ];
@@ -78,10 +78,12 @@ const Slider = () => {
                 <div className="slider">
                   <img
                     loading="lazy"
+                    decoding="async"
                     src={promo.src}
                     alt={promo.alt}
-                    width="100%"
-                    height="auto"
+                    width={800}
+                    height={450}
+                    style={{ width: "100%", height: "auto" }}
                   />
                 </div>
               </div>

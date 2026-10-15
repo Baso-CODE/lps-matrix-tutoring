@@ -1,13 +1,14 @@
 import { lazy, Suspense } from "react";
 import { Helmet } from "react-helmet-async";
 import { useParams } from "react-router-dom";
-
-// Above-the-fold: langsung load
 import HeadingLPSProgramDynamic from "../../../../components/HeadingLPSProgramDynamic/HeadingLPSProgramDynamic";
-import Slider from "../../../../components/Slider/Slider";
-import TigaJalurMasukPTN from "../Components/TigaJalurMasukPTN/TigaJalurMasukPTN";
+import LazySection from "../../../../components/LazySection/LazySection";
+import { galleryBelajarSiswaUTBK } from "../../../../helpers/DummyData/UTBK/utbk_dummyData";
 
-// Below-the-fold: lazy load
+const TigaJalurMasukPTN = lazy(
+  () => import("../Components/TigaJalurMasukPTN/TigaJalurMasukPTN"),
+);
+const Slider = lazy(() => import("../../../../components/Slider/Slider"));
 const MataPelajaranLPSNew = lazy(
   () => import("../Components/MataPelajaranLPSNew/MataPelajaranLPSNew"),
 );
@@ -69,213 +70,255 @@ const FomoTicker = lazy(
   () => import("../../../../components/FomoTicker/FomoTicker"),
 );
 
-import { galleryBelajarSiswaUTBK } from "../../../../helpers/DummyData/UTBK/utbk_dummyData";
+const DeferredSection = ({ children, minHeight = 350 }) => (
+  <LazySection minHeight={minHeight} rootMargin="300px 0px">
+    <Suspense fallback={null}>{children}</Suspense>
+  </LazySection>
+);
 
-const LesPrivatUTBKSlug = () => {
+const BASE_URL = "https://apps.lesprivatmasukptn.com";
+const UTBK_URL = `${BASE_URL}/les-privat-utbk-terbaik`;
+
+const utbkImagesDesktop = ["/images/program/program-LPS-UTBK-SNBT.webp"];
+
+const utbkImagesMobile = [
+  "/images/program/program-LPS-UTBK-SNBT-mobile-optimized.webp",
+];
+
+const utbkDescription = [
+  `Program <span class="color-highlight">Super Intensif UTBK SNBT</span> menawarkan pembelajaran privat yang berfokus pada pemahaman mendalam konsep dasar dan latihan intensif untuk kesiapan UTBK. Dengan bimbingan tutor berpengalaman, kami hadir di rumah atau secara online. Program ini dirancang untuk meningkatkan keterampilan mengerjakan soal dan pemahaman materi esensial, didukung evaluasi berkala oleh <span class="color-highlight">Tim Akademik LPS Education</span> yang akan memberikan rekomendasi untuk mendukung kemajuan belajar siswa.`,
+  `Tujuan program ini adalah membantu siswa meraih hasil terbaik dan mempersiapkan diri untuk seleksi perguruan tinggi melalui pendampingan yang fokus dan strategis.`,
+];
+
+function formatSlugToTitle(value = "") {
+  return value
+    .split("-")
+    .filter(Boolean)
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+}
+
+function createStructuredData({
+  canonicalUrl,
+  locationName,
+  pageTitle,
+  description,
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${canonicalUrl}#breadcrumb`,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: `${BASE_URL}/`,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Bimbel dan Les Privat UTBK SNBT",
+            item: UTBK_URL,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: `Les Privat UTBK SNBT di ${locationName}`,
+            item: canonicalUrl,
+          },
+        ],
+      },
+      {
+        "@type": "EducationalOrganization",
+        "@id": `${BASE_URL}/#organization`,
+        name: "LPS Education",
+        url: `${BASE_URL}/`,
+        logo: `${BASE_URL}/images/LOGO2.webp`,
+      },
+      {
+        "@type": "WebPage",
+        "@id": `${canonicalUrl}#webpage`,
+        url: canonicalUrl,
+        name: pageTitle,
+        description,
+        inLanguage: "id-ID",
+        breadcrumb: {
+          "@id": `${canonicalUrl}#breadcrumb`,
+        },
+        publisher: {
+          "@id": `${BASE_URL}/#organization`,
+        },
+        mainEntity: {
+          "@id": `${canonicalUrl}#service`,
+        },
+      },
+      {
+        "@type": "Service",
+        "@id": `${canonicalUrl}#service`,
+        name: `Bimbel dan Les Privat UTBK SNBT di ${locationName}`,
+        description,
+        serviceType: "Bimbingan Belajar UTBK SNBT",
+        provider: {
+          "@id": `${BASE_URL}/#organization`,
+        },
+        areaServed: {
+          "@type": "Place",
+          name: locationName,
+        },
+        url: canonicalUrl,
+      },
+    ],
+  };
+}
+
+export default function LesPrivatUTBKSlug() {
   const { slug } = useParams();
+  const safeSlug = slug || "";
+  const locationName = formatSlugToTitle(safeSlug) || "Indonesia";
+  const canonicalUrl = `${BASE_URL}/les-privat-utbk-terbaik-di/${encodeURIComponent(safeSlug)}`;
 
-  const utbkImagesDescktop = ["/images/program/program-LPS-UTBK-SNBT.webp"];
-  const utbkImagesMobile = [
-    "/images/program/program-LPS-SUPERCAMP-UTBK-SNBT-mobile.webp",
-    "/images/program/program-LPS-UTBK-SNBT-mobile.webp",
-  ];
-  const utbkDefaultProgramName = "Les Privat Persiapan UTBK SNBT";
-  const utbkDescription = [
-    `Program <span class='color-highlight'>Super Intensif UTBK SNBT</span> menawarkan pembelajaran privat yang berfokus pada pemahaman mendalam konsep dasar dan latihan intensif untuk kesiapan UTBK. Dengan bimbingan tutor berpengalaman, kami hadir di rumah atau secara online. Program ini dirancang untuk meningkatkan keterampilan mengerjakan soal dan pemahaman materi esensial, didukung evaluasi berkala oleh <span class='color-highlight'>Tim Akademik LPS Education</span> yang akan memberikan rekomendasi untuk mendukung kemajuan belajar siswa.`,
-    `Tujuan program ini adalah memastikan siswa dapat meraih hasil terbaik dan lolos ke perguruan tinggi impian mereka melalui pendampingan yang fokus dan strategis.`,
-  ];
+  const pageTitle = `Bimbel & Les Privat UTBK SNBT di ${locationName} | LPS Education`;
+  const descriptionContent = `Persiapan UTBK SNBT di ${locationName} bersama LPS Education. Les privat online dan offline, latihan soal, pembahasan materi, dan pendampingan tutor.`;
 
-  const formatSlugToTitle = (textSlug) =>
-    textSlug
-      ? textSlug
-          .split("-")
-          .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-          .join(" ")
-      : "";
-
-  const dynamicLocationName = formatSlugToTitle(slug) || "Indonesia";
-  const baseUrl = "https://apps.lesprivatmasukptn.com";
-  const canonicalUrl = `${baseUrl}/les-privat-utbk-terbaik-di/${slug}`;
-  const ogImage = "https://apps.lesprivatmasukptn.com/images/program/UTBK.webp";
-  const pageTitle = `🎓 Bimbel & Les Privat UTBK SNBT di ${dynamicLocationName} | Masuk PTN Favorit - LPS Education`;
-  const descriptionContent = `Kursus Bimbel & Les Privat UTBK SNBT di ${dynamicLocationName} Terbaik ✔️ Dibimbing GURU BERPENGALAMAN ✔️ Persiapan Komprehensif Masuk PTN Favorit. Daftar? Segera kunjungi situs LPS Education...`;
-  const ogTitle = `Bimbel & Les Privat UTBK SNBT di ${dynamicLocationName} | Masuk PTN Favorit - LPS Education`;
-  const ogDescription = `Siapkan diri Anda untuk UTBK SNBT dengan bimbingan intensif dari LPS Education di ${dynamicLocationName}. Program terbaik untuk lolos PTN favorit. Jaminan belajar fokus dan materi lengkap.`;
-  const twitterTitle = `Bimbel & Les Privat UTBK SNBT di ${dynamicLocationName} | LPS Education`;
-  const twitterDescription = `Lolos UTBK SNBT & masuk PTN impian Anda! Bimbel & Les Privat LPS Education di ${dynamicLocationName} hadir dengan program persiapan terbaik online & offline.`;
-  const ogImageAlt = `Bimbel Les Privat UTBK SNBT ${dynamicLocationName} LPS Education`;
-  const articleTags = [
-    "bimbel UTBK SNBT",
-    "les privat UTBK",
-    "les SNBT",
-    "persiapan masuk PTN",
-    "UTBK online",
-    "UTBK offline",
-    "guru privat UTBK",
-    "soal UTBK",
-    "tryout UTBK",
-    "bimbingan SBMPTN",
-    "Simak UI",
-    "UTUL UGM",
-    "jalur mandiri PTN",
-    "masuk Kedokteran",
-    "materi TPS",
-    "penalaran matematika",
-    "literasi bahasa",
-    "LPS Education",
-    dynamicLocationName.toLowerCase(),
-    "SNBP",
-    "SNPMB",
-  ];
+  const ogImage = `${BASE_URL}/images/program/UTBK.webp`;
+  const schema = createStructuredData({
+    canonicalUrl,
+    locationName,
+    pageTitle,
+    description: descriptionContent,
+  });
 
   return (
     <>
       <Helmet>
         <title>{pageTitle}</title>
         <meta name="description" content={descriptionContent} />
-        <meta
-          name="keywords"
-          content={`bimbel UTBK SNBT ${dynamicLocationName}, les privat UTBK ${dynamicLocationName}, les SNBT ${dynamicLocationName}, persiapan masuk PTN ${dynamicLocationName}, UTBK online ${dynamicLocationName}, UTBK offline ${dynamicLocationName}, guru privat UTBK ${dynamicLocationName}, soal UTBK ${dynamicLocationName}, tryout UTBK ${dynamicLocationName}, bimbingan SBMPTN ${dynamicLocationName}, Simak UI ${dynamicLocationName}, UTUL UGM ${dynamicLocationName}, jalur mandiri PTN ${dynamicLocationName}, masuk Kedokteran ${dynamicLocationName}, TPS ${dynamicLocationName}, penalaran matematika ${dynamicLocationName}, literasi bahasa ${dynamicLocationName}, LPS Education, SNBP ${dynamicLocationName}, SNPMB ${dynamicLocationName}`}
-        />
+        <meta name="robots" content="index,follow,max-image-preview:large" />
         <link rel="canonical" href={canonicalUrl} />
-        <meta
-          name="robots"
-          content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"
-        />
+
         <meta property="og:locale" content="id_ID" />
-        <meta property="og:type" content="article" />
-        <meta property="og:title" content={ogTitle} />
-        <meta property="og:description" content={ogDescription} />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={descriptionContent} />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:site_name" content="LPS Education" />
         <meta property="og:image" content={ogImage} />
-        <meta property="og:image:secure_url" content={ogImage} />
-        <meta property="og:image:width" content="800" />
-        <meta property="og:image:height" content="600" />
-        <meta property="og:image:alt" content={ogImageAlt} />
-        <meta property="og:image:type" content="image/webp" />
-        {articleTags.map((tag) => (
-          <meta key={tag} property="og:article:tag" content={tag} />
-        ))}
-        <meta property="article:section" content="UTBK SNBT" />
+        <meta
+          property="og:image:alt"
+          content={`Les Privat UTBK SNBT di ${locationName} - LPS Education`}
+        />
+
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={twitterTitle} />
-        <meta name="twitter:description" content={twitterDescription} />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={descriptionContent} />
         <meta name="twitter:image" content={ogImage} />
-        <script type="application/ld+json">
-          {`
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "BreadcrumbList",
-          "@id": "${canonicalUrl}#breadcrumb",
-          "itemListElement": [
-            { "@type": "ListItem", "position": 1, "item": { "@id": "${baseUrl}", "name": "Home" } },
-            { "@type": "ListItem", "position": 2, "item": { "@id": "${baseUrl}/les-privat-utbk-terbaik", "name": "Bimbel & Les Privat UTBK SNBT" } },
-            { "@type": "ListItem", "position": 3, "item": { "@id": "${canonicalUrl}", "name": "${pageTitle.replace(/<\/?[^>]+(>|$)/g, "")}" } }
-          ]
-        },
-        {
-          "@type": "EducationalOrganization",
-          "@id": "${canonicalUrl}#organization",
-          "name": "LPS Education",
-          "description": "LPS Education menyediakan Bimbel & Les Privat UTBK SNBT terbaik di ${dynamicLocationName} untuk memastikan siswa lolos PTN favorit.",
-          "url": "${canonicalUrl}",
-          "areaServed": "${dynamicLocationName}",
-          "sameAs": ["${baseUrl}", "https://www.instagram.com/lps.privatsbmptn/", "https://www.tiktok.com/@lesprivatsbmptn.com"],
-          "brand": { "@type": "Brand", "name": "LPS Education", "logo": "${baseUrl}/images/LOGO2.webp" },
-          "contactPoint": { "@type": "ContactPoint", "telephone": "+62-858-8756-2039", "contactType": "Customer Service", "areaServed": "ID", "availableLanguage": ["Indonesian"] },
-          "keywords": "${articleTags.join(", ")}"
-        },
-        {
-          "@type": "WebPage",
-          "@id": "${canonicalUrl}#webpage",
-          "url": "${canonicalUrl}",
-          "name": "${pageTitle.replace(/<\/?[^>]+(>|$)/g, "")}",
-          "inLanguage": "id-ID",
-          "description": "${descriptionContent}",
-          "isPartOf": { "@id": "${baseUrl}" },
-          "about": { "@id": "${canonicalUrl}#organization" },
-          "mainEntity": {
-            "@type": "Service",
-            "name": "Bimbel & Les Privat UTBK SNBT di ${dynamicLocationName}",
-            "provider": { "@id": "${canonicalUrl}#organization" },
-            "serviceType": "Bimbingan Belajar Ujian Masuk Perguruan Tinggi Negeri",
-            "areaServed": "${dynamicLocationName}",
-            "offers": { "@type": "Offer", "priceCurrency": "IDR", "availability": "https://schema.org/InStock", "url": "${canonicalUrl}" }
-          }
-        },
-        {
-          "@type": "FAQPage",
-          "@id": "${canonicalUrl}#faq",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "Apa perbedaan Bimbel dan Les Privat UTBK SNBT yang ditawarkan LPS Education di ${dynamicLocationName}?",
-              "acceptedAnswer": { "@type": "Answer", "text": "Bimbel adalah bimbingan dalam kelas kecil (kelompok), sedangkan Les Privat adalah bimbingan 1-on-1 yang lebih personal, fleksibel, dan fokus pada kelemahan spesifik siswa." }
-            },
-            {
-              "@type": "Question",
-              "name": "Apakah LPS Education menjamin kelulusan siswa ke PTN Favorit?",
-              "acceptedAnswer": { "@type": "Answer", "text": "LPS Education berkomitmen memberikan program terbaik, materi terstruktur, dan bimbingan tutor ahli. Kami memberikan garansi pengulangan program untuk beberapa skema, namun kelulusan sangat bergantung pada usaha dan kedisiplinan siswa." }
-            },
-            {
-              "@type": "Question",
-              "name": "Bagaimana LPS Education menyusun jadwal belajar UTBK SNBT?",
-              "acceptedAnswer": { "@type": "Answer", "text": "Jadwal disusun secara fleksibel dan personal. Kami akan menyesuaikan ketersediaan waktu siswa dan tutor, memastikan sesi belajar tidak mengganggu aktivitas sekolah atau kegiatan lainnya." }
-            }
-          ]
-        }
-      ]
-    }
-  `}
-        </script>
+
+        <script type="application/ld+json">{JSON.stringify(schema)}</script>
       </Helmet>
 
       <div className="container-all">
-        {/* Above the fold — langsung render */}
         <HeadingLPSProgramDynamic
-          defaultProgramName={utbkDefaultProgramName}
-          imageUrlsDesktop={utbkImagesDescktop}
+          defaultProgramName="Les Privat Persiapan UTBK SNBT"
+          programName="Bimbel & Les Privat UTBK SNBT"
+          city={locationName}
+          imageUrlsDesktop={utbkImagesDesktop}
           imageUrlsMobile={utbkImagesMobile}
           descriptionParagraphs={utbkDescription}
-          programName="Bimbel & Les Privat UTBK SNBT"
-          city={dynamicLocationName}
+          imageDimensions={{
+            desktop: { width: 1600, height: 900 },
+            mobile: { width: 750, height: 750 },
+          }}
         />
-        <TigaJalurMasukPTN />
-        <Slider />
 
-        {/* Below the fold — lazy load */}
-        <Suspense fallback={null}>
+        <DeferredSection minHeight={450}>
+          <TigaJalurMasukPTN />
+        </DeferredSection>
+
+        <DeferredSection minHeight={250}>
+          <Slider />
+        </DeferredSection>
+
+        <DeferredSection minHeight={450}>
           <MataPelajaranLPSNew />
+        </DeferredSection>
+
+        <DeferredSection minHeight={400}>
           <PerbedaanSBMPTAndSNBT />
+        </DeferredSection>
+
+        <DeferredSection minHeight={450}>
           <MateriUjianSNBT />
+        </DeferredSection>
+
+        <DeferredSection minHeight={350}>
           <VisiEndMisiLps />
+        </DeferredSection>
+
+        <DeferredSection minHeight={350}>
           <VideoKarantina />
-          <ProfileTutor city={dynamicLocationName} />
+        </DeferredSection>
+
+        <DeferredSection minHeight={450}>
+          <ProfileTutor city={locationName} />
+        </DeferredSection>
+
+        <DeferredSection minHeight={350}>
           <UnivPengajarLps />
+        </DeferredSection>
+
+        <DeferredSection minHeight={450}>
           <KeunggulanEndAlasanMemilih />
+        </DeferredSection>
+
+        <DeferredSection minHeight={450}>
           <SolusiSuksesMasukPTN />
+        </DeferredSection>
+
+        <DeferredSection minHeight={450}>
           <CaraBelajarOfflineAtauOnline />
-          <AlumniLpsNew city={dynamicLocationName} />
+        </DeferredSection>
+
+        <DeferredSection minHeight={450}>
+          <AlumniLpsNew city={locationName} />
+        </DeferredSection>
+
+        <DeferredSection minHeight={400}>
           <GaleryBelajarSiswa
             description={galleryBelajarSiswaUTBK.description}
           />
-          <TestimoniWaSlider cityProp={dynamicLocationName} />
-          <SuccessStory city={dynamicLocationName} />
-          <TestimoniWaSiswa cityProp={dynamicLocationName} />
-          <AllAlumniLpsImage city={dynamicLocationName} />
+        </DeferredSection>
+
+        <DeferredSection minHeight={350}>
+          <TestimoniWaSlider cityProp={locationName} />
+        </DeferredSection>
+
+        <DeferredSection minHeight={450}>
+          <SuccessStory city={locationName} />
+        </DeferredSection>
+
+        <DeferredSection minHeight={350}>
+          <TestimoniWaSiswa cityProp={locationName} />
+        </DeferredSection>
+
+        <DeferredSection minHeight={450}>
+          <AllAlumniLpsImage city={locationName} />
+        </DeferredSection>
+
+        <DeferredSection minHeight={450}>
           <ListSiswaLPS />
-          <SliderTestimoniSiswa city={dynamicLocationName} />
-          <FomoTicker
-            namaWilayah={dynamicLocationName}
-            namaProgram={"UTBK SNBT"}
-          />
-        </Suspense>
+        </DeferredSection>
+
+        <DeferredSection minHeight={350}>
+          <SliderTestimoniSiswa city={locationName} />
+        </DeferredSection>
+
+        <DeferredSection minHeight={200}>
+          <FomoTicker namaWilayah={locationName} namaProgram="UTBK SNBT" />
+        </DeferredSection>
       </div>
     </>
   );
-};
-
-export default LesPrivatUTBKSlug;
+}

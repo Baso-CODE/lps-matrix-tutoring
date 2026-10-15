@@ -3,7 +3,7 @@ import "./FasilitasOSN.css";
 const fasilitasOSNData = [
   {
     title: "Fasilitas",
-    icon: "/images/icon/fasilitas/fasilitas.webp",
+    icon: "/images/icon/fasilitas/optimized/fasilitas.webp",
     alt: "Icon Fasilitas",
     items: [
       "Mapping kebutuhan belajar siswa",
@@ -15,7 +15,7 @@ const fasilitasOSNData = [
   },
   {
     title: "Target Belajar",
-    icon: "/images/icon/fasilitas/target.webp",
+    icon: "/images/icon/fasilitas/optimized/target.webp",
     alt: "Icon Target Belajar",
     items: [
       "Implementasi efektif model belajar berdasarkan hasil dari mapping kebutuhan siswa",
@@ -28,7 +28,7 @@ const fasilitasOSNData = [
   },
   {
     title: "Scheduling",
-    icon: "/images/icon/fasilitas/schedulling.webp",
+    icon: "/images/icon/fasilitas/optimized/schedulling.webp",
     alt: "Icon Scheduling",
     items: [
       "Penjadwalan dihandle langsung oleh admin Scheduling.",
@@ -66,6 +66,7 @@ const FasilitasOSN = () => {
                 alt={item.alt}
                 className="fasilitas-osn-icon"
                 loading="lazy"
+                decoding="async"
               />
             </div>
 
@@ -99,9 +100,10 @@ const FasilitasOSN = () => {
 
             <img
               loading="lazy"
-              src="/images/icon/fasilitas/location.webp"
+              src="/images/icon/fasilitas/optimized/location.webp"
               alt="Icon Lokasi Belajar"
               className="fasilitas-osn-icon"
+              decoding="async"
             />
           </div>
 

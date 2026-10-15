@@ -50,7 +50,7 @@ const Nav = () => {
             <Link to="/" aria-label="LPS Education">
               <img
                 loading="eager"
-                src="/images/LOGO2.webp"
+                src="/images/LOGO2-optimized.webp"
                 alt="Bimbel Les Privat ONLINE dan Les Privat Datang ke Rumah untuk Program SBMPTN UTBK SNBT Simak UI UTUL UGM. Guru Privat Masuk UI ITB UGM dan Kedokteran di PTN Favorit."
                 className="logo-nav"
                 width={673}
@@ -82,7 +82,7 @@ const Nav = () => {
 
               <span className="sign-in-icon-wrapper">
                 <img
-                  src="/images/daftar-sekarang.webp"
+                  src="/images/daftar-sekarang-optimized.webp"
                   alt=""
                   aria-hidden="true"
                   width={512}

@@ -4,43 +4,71 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-HF2JD0W5NX"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
+      (function () {
+        const path = window.location.pathname.replace(/\/+$/, "") || "/";
+        const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
-      function gtag() {
-        dataLayer.push(arguments);
-      }
+        const heroImages = [
+          {
+            routes: ["/"],
+            desktop: "/images/jumbotron_bimbel_lps.webp",
+            mobile: "/images/jumbotron_bimbel_lps.webp",
+          },
+          {
+            routes: ["/les-privat-osn-terbaik", "/les-privat-osn-terbaik-di/"],
+            desktop: "/images/program/program-LPS-OLIMPIADE.webp",
+            mobile:
+              "/images/program/program-LPS-OLIMPIADE-mobile-optimized.webp",
+          },
+          {
+            routes: ["/les-privat-utbk-terbaik"],
+            desktop: "/images/program/program-LPS-UTBK-SNBT.webp",
+            mobile:
+              "/images/program/program-LPS-UTBK-SNBT-mobile-optimized.webp",
+          },
+          {
+            routes: ["/les-privat-utbk-terbaik-di/"],
+            desktop: "/images/program/program-LPS-UTBK-SNBT.webp",
+            mobile:
+              "/images/program/program-LPS-UTBK-SNBT-mobile-optimized.webp",
+          },
+        ];
 
-      gtag("js", new Date());
-      gtag("config", "G-HF2JD0W5NX");
+        const matched = heroImages.find((item) =>
+          item.routes.some((route) => {
+            if (route === "/") return path === "/";
+            if (route.endsWith("/")) return path.startsWith(route);
+            return path === route;
+          }),
+        );
+
+        if (!matched) return;
+
+        const imageUrl = isMobile ? matched.mobile : matched.desktop;
+        if (!imageUrl) return;
+
+        const link = document.createElement("link");
+        link.rel = "preload";
+        link.as = "image";
+        link.href = imageUrl;
+        link.setAttribute("fetchpriority", "high");
+        document.head.appendChild(link);
+      })();
     </script>
 
-    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/logo.ico" />
-
-    <!-- Canonical & Verification -->
-    <link rel="canonical" href="https://apps.lesprivatmasukptn.com" />
 
     <meta
       name="google-site-verification"
       content="MDRGUWTNR41fumGzlAZc9nYRJVAPMggiXtHi1xr7JR4" />
 
-    <!-- Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <link
-      rel="preload"
-      as="style"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      onload="
-        this.onload = null;
-        this.rel = 'stylesheet';
-      " />
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=optional" />
 
     <noscript>
       <link
@@ -48,7 +76,6 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
     </noscript>
 
-    <!-- Primary Meta -->
     <title>
       Les Privat SD SMP SMA SIMAK UI OSN MAHASISWA CPNS | LPS EDUCATION✨
     </title>
@@ -59,56 +86,56 @@
 
     <meta
       name="keywords"
-      content="bimbel OSN, bimbingan belajar OSN SD,SMP, SMA, persiapan OSN, bimbel terbaik, OSN SD, OSN SMP, OSN SMA, Edumatrix" />
+      content="les privat, bimbel online, bimbel offline, les privat OSN, les privat UTBK SNBT, les privat SD, SMP, SMA, bimbel CPNS, persiapan masuk PTN, LPS Education" />
 
-    <!-- Open Graph -->
     <meta property="og:type" content="website" />
-
-    <meta property="og:url" content="https://apps.lesprivatmasukptn.com" />
-
+    <meta property="og:url" content="https://apps.lesprivatmasukptn.com/" />
     <meta
       property="og:title"
       content="Les Privat SD SMP SMA SIMAK UI OSN MAHASISWA CPNS | LPS EDUCATION✨" />
-
     <meta
       property="og:description"
-      content="Kursus Les Privat OSN SD SMP SMA CPNS UTBK SIMAK UI CPNS Terbaik ✔️ Dibimbing GURU BERPENGALAMAN ✔️ Peraih Lisensi OSN ✔️ Garansi REPORT CARD ✍️ Daftar? Segera kunjungi situs kami..." />
-
+      content="Kursus Les Privat OSN SD SMP SMA CPNS UTBK SIMAK UI CPNS Terbaik bersama LPS Education. Guru berpengalaman dengan program belajar online dan offline." />
     <meta
       property="og:image"
       content="https://apps.lesprivatmasukptn.com/images/banner.webp" />
 
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-
     <meta
       name="twitter:title"
       content="Les Privat SD SMP SMA SIMAK UI OSN MAHASISWA CPNS | LPS EDUCATION✨" />
-
     <meta
       name="twitter:description"
-      content="Kursus Les Privat OSN SD SMP SMA CPNS UTBK SIMAK UI CPNS Terbaik ✔️ Dibimbing GURU BERPENGALAMAN ✔️ Peraih Lisensi OSN ✔️ Garansi REPORT CARD ✍️ Daftar? Segera kunjungi situs kami..." />
-
+      content="Raih prestasi bersama LPS Education. Program les privat online dan offline untuk SD, SMP, SMA, OSN, UTBK SNBT, CPNS, dan persiapan masuk PTN." />
     <meta
       name="twitter:image"
       content="https://apps.lesprivatmasukptn.com/images/banner.webp" />
 
-    <!-- Google Tag Manager -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-HF2JD0W5NX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-HF2JD0W5NX");
+    </script>
+
     <script>
       (function (w, d, s, l, i) {
         w[l] = w[l] || [];
-
         w[l].push({
           "gtm.start": new Date().getTime(),
           event: "gtm.js",
         });
 
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
+        var f = d.getElementsByTagName(s)[0];
+        var j = d.createElement(s);
+        var dl = l !== "dataLayer" ? "&l=" + l : "";
 
         j.async = true;
-
         j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
 
         f.parentNode.insertBefore(j, f);
@@ -117,7 +144,6 @@
   </head>
 
   <body>
-    <!-- Google Tag Manager (noscript) -->
     <noscript>
       <iframe
         src="https://www.googletagmanager.com/ns.html?id=GTM-K6CK6D4S"
@@ -127,7 +153,6 @@
     </noscript>
 
     <div id="root"></div>
-
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

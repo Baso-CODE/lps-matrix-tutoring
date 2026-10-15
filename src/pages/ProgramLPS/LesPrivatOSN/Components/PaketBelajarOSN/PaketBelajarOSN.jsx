@@ -8,19 +8,19 @@ const PaketBelajarOSN = () => {
 
   const packages = [
     {
-      icon: "/images/icon/paket/silver.webp",
+      icon: "/images/icon/paket/optimized/silver.webp",
       title: "Silver Paket",
       sessions: "20 sesi",
       message: `Paket: Silver Package%0ASesi: 20 sesi`,
     },
     {
-      icon: "/images/icon/paket/gold.webp",
+      icon: "/images/icon/paket/optimized/gold.webp",
       title: "Gold Paket",
       sessions: "40 sesi",
       message: `Paket: Gold Package%0ASesi: 40 sesi`,
     },
     {
-      icon: "/images/icon/paket/platinum.webp",
+      icon: "/images/icon/paket/optimized/platinum.webp",
       title: "Platinum Paket",
       sessions: "60 sesi",
       message: `Paket: Platinum Package%0ASesi: 60 sesi`,

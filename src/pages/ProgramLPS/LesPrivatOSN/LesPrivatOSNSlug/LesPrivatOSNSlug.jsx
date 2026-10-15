@@ -1,17 +1,27 @@
 import { lazy, Suspense } from "react";
 import { Helmet } from "react-helmet-async";
 import { useParams } from "react-router-dom";
-
-// Above-the-fold: dimuat langsung untuk mengoptimalkan performa FCP & LCP
 import HeadingLPSProgramDynamic from "../../../../components/HeadingLPSProgramDynamic/HeadingLPSProgramDynamic";
-import Slider from "../../../../components/Slider/Slider";
-import FasilitasOSN from "../Components/FasilitasOSN";
-import OsnCurriculumOverview from "../Components/OsnCurriculumOverview/OsnCurriculumOverview";
-import OsnWinnerBenefits from "../Components/OsnWinnerBenefits/OsnWinnerBenefits";
-import PaketBelajarOSN from "../Components/PaketBelajarOSN/PaketBelajarOSN";
-import ProgramIntensiOSN from "../Components/ProgramIntensiOSN/ProgramIntensiOSN";
+import LazySection from "../../../../components/LazySection/LazySection";
+import {
+  galleryBelajarOSNData,
+  successStoryWaSliderOSN,
+} from "../../../../helpers/DummyData/OSN/osn_dummy_data";
 
-// Below-the-fold: dimuat secara lazy loading
+const ProgramIntensiOSN = lazy(
+  () => import("../Components/ProgramIntensiOSN/ProgramIntensiOSN"),
+);
+const Slider = lazy(() => import("../../../../components/Slider/Slider"));
+const FasilitasOSN = lazy(() => import("../Components/FasilitasOSN"));
+const PaketBelajarOSN = lazy(
+  () => import("../Components/PaketBelajarOSN/PaketBelajarOSN"),
+);
+const OsnCurriculumOverview = lazy(
+  () => import("../Components/OsnCurriculumOverview/OsnCurriculumOverview"),
+);
+const OsnWinnerBenefits = lazy(
+  () => import("../Components/OsnWinnerBenefits/OsnWinnerBenefits"),
+);
 const VisiEndMisiLps = lazy(
   () => import("../../../HomePage/Components/VisiEndMisiLps/VisiEndMisiLps"),
 );
@@ -56,288 +66,253 @@ const FomoTicker = lazy(
   () => import("../../../../components/FomoTicker/FomoTicker"),
 );
 
-// Data Helpers
-import {
-  galleryBelajarOSNData,
-  successStoryWaSliderOSN,
-} from "../../../../helpers/DummyData/OSN/osn_dummy_data";
+const DeferredSection = ({ children, minHeight = 350 }) => (
+  <LazySection minHeight={minHeight} rootMargin="300px 0px">
+    <Suspense fallback={null}>{children}</Suspense>
+  </LazySection>
+);
 
-const LesPrivatOSNSlug = () => {
-  const { slug } = useParams();
+const BASE_URL = "https://apps.lesprivatmasukptn.com";
+const OSN_URL = `${BASE_URL}/les-privat-osn-terbaik`;
 
-  const osnImagesDescktop = ["/images/program/program-LPS-OLIMPIADE.webp"];
-  const osnImagesMobile = ["/images/program/program-LPS-OLIMPIADE-mobile.webp"];
+const osnImagesDesktop = ["/images/program/program-LPS-OLIMPIADE.webp"];
+const osnImagesMobile = [
+  "/images/program/program-LPS-OLIMPIADE-mobile-optimized.webp",
+];
 
-  const osnDefaultProgramName = "Les Privat OSN, ISO, IMO, SEAMO";
-  const osnProgramNameDisplay =
-    "Les Privat OSN, ISO, IMO, SEAMO (ONLINE & OFFLINE)";
+const osnDescription = [
+  `<span class="color-highlight">LPS Education</span> - Program Les Privat OSN, ISO, IMO dirancang khusus untuk siswa yang ingin meraih prestasi luar biasa di ajang <span class="color-highlight">Olimpiade Sains Nasional (OSN)</span> serta kompetisi internasional seperti ISO, IMO, dan SEAMO. Program ini tersedia dalam format <span class="color-highlight">Privat Offline</span> dan <span class="color-highlight">Privat Online</span>.`,
+  `Dengan guru les privat yang berpengalaman mendampingi siswa persiapan Olimpiade di tingkat nasional maupun internasional, program ini memastikan <span class="color-highlight">pendalaman konsep dasar</span>, penyelesaian soal-soal tingkat tinggi, dan bimbingan intensif. Progress belajar siswa dipantau secara berkala oleh Tim Akademik.`,
+  `Target utama kami adalah mendukung siswa dalam meraih medali bergengsi pada ajang Olimpiade. Fokus utama kami terletak pada penguasaan materi yang mendalam dan pencapaian prestasi akademik yang luar biasa. Wujudkan potensi terbaik Anda di bidang akademik dengan <span class="color-highlight">Program Super Intensif Privat OSN dan Olimpiade Internasional</span>.`,
+];
 
-  const osnDescription = [
-    `<span class='color-highlight'>LPS Education</span> - Program Les Privat OSN, ISO, IMO dirancang khusus untuk siswa yang ingin meraih prestasi luar biasa di ajang <span class='color-highlight'>Olimpiade Sains Nasional (OSN)</span> serta kompetisi internasional seperti ISO, IMO, dan SEAMO. Program ini tersedia dalam format <span class='color-highlight'>Privat Offline</span> dan <span class='color-highlight'>Privat Online</span>.`,
-    `Dengan guru les privat yang berpengalaman mendampingi siswa persiapan Olimpiade di tingkat nasional maupun internasional, program ini memastikan <span class='color-highlight'>pendalaman konsep dasar</span>, penyelesaian soal-soal tingkat tinggi, dan bimbingan intensif. Progress belajar siswa dipantau secara berkala oleh Tim Akademik.`,
-    `Target utama kami adalah mendukung siswa dalam meraih medali bergengsi pada ajang Olimpiade. Fokus utama kami terletak pada penguasaan materi yang mendalam dan pencapaian prestasi akademik yang luar biasa. Wujudkan potensi terbaik Anda di bidang akademik dengan <span class='color-highlight'>Program Super Intensif Privat OSN dan Olimpiade Internasional</span>.`,
-  ];
+function formatSlugToTitle(slug = "") {
+  return slug
+    .split("-")
+    .filter(Boolean)
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+}
 
-  const formatSlugToTitle = (textSlug) => {
-    return textSlug
-      ? textSlug
-          .split("-")
-          .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-          .join(" ")
-      : "";
+function createSchema({ canonicalUrl, locationName, description }) {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${canonicalUrl}#breadcrumb`,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: `${BASE_URL}/`,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Les Privat OSN",
+            item: OSN_URL,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: `Les Privat OSN di ${locationName}`,
+            item: canonicalUrl,
+          },
+        ],
+      },
+      {
+        "@type": "EducationalOrganization",
+        "@id": `${BASE_URL}/#organization`,
+        name: "LPS Education",
+        url: `${BASE_URL}/`,
+        logo: `${BASE_URL}/images/LOGO2.webp`,
+      },
+      {
+        "@type": "WebPage",
+        "@id": `${canonicalUrl}#webpage`,
+        url: canonicalUrl,
+        name: `Les Privat OSN di ${locationName} | LPS Education`,
+        description,
+        inLanguage: "id-ID",
+        breadcrumb: {
+          "@id": `${canonicalUrl}#breadcrumb`,
+        },
+        publisher: {
+          "@id": `${BASE_URL}/#organization`,
+        },
+        mainEntity: {
+          "@id": `${canonicalUrl}#service`,
+        },
+      },
+      {
+        "@type": "Service",
+        "@id": `${canonicalUrl}#service`,
+        name: `Les Privat OSN di ${locationName}`,
+        serviceType: "Bimbingan Belajar Olimpiade Sains",
+        description,
+        provider: {
+          "@id": `${BASE_URL}/#organization`,
+        },
+        areaServed: {
+          "@type": "Place",
+          name: locationName,
+        },
+        url: canonicalUrl,
+      },
+    ],
   };
+}
 
-  const dynamicLocationName = formatSlugToTitle(slug) || "Indonesia";
-  const baseUrl = "https://apps.lesprivatmasukptn.com";
-  const canonicalUrl = `${baseUrl}/les-privat-osn-terbaik-di/${slug}`;
-  const ogImage = "https://apps.lesprivatmasukptn.com/images/program/OSN.webp";
+export default function LesPrivatOSNSlug() {
+  const { slug } = useParams();
+  const safeSlug = slug || "";
+  const locationName = formatSlugToTitle(safeSlug) || "Indonesia";
+  const canonicalUrl = `${BASE_URL}/les-privat-osn-terbaik-di/${encodeURIComponent(safeSlug)}`;
 
-  const pageTitle = `📚 Les Privat Olimpiade OSN ${dynamicLocationName} | LPS Education Terbaik #1`;
-  const descriptionContent = `Kursus Les Privat Olimpiade OSN di ${dynamicLocationName} Terbaik ✔️ Dibimbing GURU BERPENGALAMAN ✔️ Peraih Lisensi OSN ✔️ Garansi REPORT CARD ✍️ Daftar? Segera kunjungi situs LPS Education...`;
-  const ogTitle = `Les Privat Olimpiade OSN ${dynamicLocationName} Terbaik - LPS Education`;
-  const ogDescription = `Persiapkan diri untuk Olimpiade Sains Nasional (OSN) dengan les privat intensif di ${dynamicLocationName}. Pengajar berpengalaman LPS Education siap membimbing siswa SD, SMP, SMA meraih medali.`;
-  const twitterTitle = `Les Privat Olimpiade OSN ${dynamicLocationName} | LPS Education`;
-  const twitterDescription = `Bimbel les privat OSN (Olimpiade Sains Nasional) untuk siswa SD, SMP, SMA di ${dynamicLocationName}. Tingkatkan kemampuan sains dan raih prestasi bersama LPS Education.`;
+  const pageTitle = `Les Privat OSN di ${locationName} Online & Offline | LPS Education`;
+  const descriptionContent = `Les privat OSN di ${locationName} untuk siswa SD, SMP, dan SMA. Persiapan Olimpiade Matematika, IPA, IPS, dan bidang sains lainnya bersama tutor LPS Education.`;
 
-  const ogImageAlt = `Les Privat Olimpiade OSN ${dynamicLocationName} LPS Education`;
+  const ogImage = `${BASE_URL}/images/program/OSN.webp`;
 
-  const articleTags = [
-    "les privat OSN",
-    "bimbel OSN",
-    "Olimpiade Sains Nasional",
-    "persiapan OSN SD",
-    "persiapan OSN SMP",
-    "persiapan OSN SMA",
-    "OSN Matematika",
-    "OSN Fisika",
-    "OSN Kimia",
-    "OSN Biologi",
-    "OSN Komputer",
-    "OSN Astronomi",
-    "OSN Kebumian",
-    "OSN Geografi",
-    "OSN Ekonomi",
-    "OSN online",
-    "guru privat OSN",
-    "LPS Education",
-    dynamicLocationName.toLowerCase(),
-    "Olimpiade",
-    "KSN",
-    "IMO",
-    "JISMO",
-    "ISO",
-    "LPS Education",
-  ];
+  const structuredData = createSchema({
+    canonicalUrl,
+    locationName,
+    description: descriptionContent,
+  });
 
   return (
     <>
       <Helmet>
         <title>{pageTitle}</title>
         <meta name="description" content={descriptionContent} />
-        <meta
-          name="keywords"
-          content={`les privat OSN ${dynamicLocationName}, bimbingan OSN ${dynamicLocationName}, Olimpiade Sains Nasional ${dynamicLocationName}, persiapan OSN SD ${dynamicLocationName}, persiapan OSN SMP ${dynamicLocationName}, persiapan OSN SMA ${dynamicLocationName}, OSN Matematika ${dynamicLocationName}, OSN Fisika ${dynamicLocationName}, OSN Kimia ${dynamicLocationName}, OSN Biologi ${dynamicLocationName}, OSN Komputer ${dynamicLocationName}, guru privat OSN ${dynamicLocationName}, LPS Education, bimbel OSN ${dynamicLocationName}, kursus OSN ${dynamicLocationName}, juara OSN ${dynamicLocationName}`}
-        />
+        <meta name="robots" content="index,follow,max-image-preview:large" />
         <link rel="canonical" href={canonicalUrl} />
-        <meta
-          name="robots"
-          content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"
-        />
 
-        {/* Open Graph Meta Tags */}
         <meta property="og:locale" content="id_ID" />
-        <meta property="og:type" content="article" />
-        <meta property="og:title" content={ogTitle} />
-        <meta property="og:description" content={ogDescription} />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={descriptionContent} />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:site_name" content="LPS Education" />
         <meta property="og:image" content={ogImage} />
-        <meta property="og:image:secure_url" content={ogImage} />
-        <meta property="og:image:width" content="800" />
-        <meta property="og:image:height" content="600" />
-        <meta property="og:image:alt" content={ogImageAlt} />
-        <meta property="og:image:type" content="image/webp" />
-        {articleTags.map((tag) => (
-          <meta key={tag} property="og:article:tag" content={tag} />
-        ))}
-        <meta property="article:section" content="Olimpiade" />
+        <meta
+          property="og:image:alt"
+          content={`Les Privat Olimpiade OSN di ${locationName} - LPS Education`}
+        />
 
-        {/* Twitter Card Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={twitterTitle} />
-        <meta name="twitter:description" content={twitterDescription} />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={descriptionContent} />
         <meta name="twitter:image" content={ogImage} />
 
         <script type="application/ld+json">
-          {`
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "BreadcrumbList",
-          "@id": "${canonicalUrl}#breadcrumb",
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "item": {
-                "@id": "${baseUrl}",
-                "name": "Home"
-              }
-            },
-            {
-              "@type": "ListItem",
-              "position": 2,
-              "item": {
-                "@id": "${baseUrl}/les-privat-osn-terbaik", 
-                "name": "Les Privat OSN"
-              }
-            },
-            {
-              "@type": "ListItem",
-              "position": 3,
-              "item": {
-                "@id": "${canonicalUrl}",
-                "name": "Les Privat OSN di ${dynamicLocationName}"
-              }
-            }
-          ]
-        },
-
-        {
-          "@type": "EducationalOrganization",
-          "@id": "${canonicalUrl}#organization",
-          "name": "LPS Education",
-          "description": "LPS Education menyediakan Les Privat Olimpiade Sains Nasional (OSN) terbaik di ${dynamicLocationName} untuk SD, SMP, dan SMA. Bimbingan intensif meraih medali OSN/Olimpiade Internasional.",
-          "url": "${canonicalUrl}",
-          "areaServed": "${dynamicLocationName}", 
-          "sameAs": [
-            "${baseUrl}",
-            "https://www.instagram.com/lps.privatsbmptn/", 
-            "https://www.tiktok.com/@lesprivatsbmptn.com?_r=1&_t=ZS-918OcGnyuIS" 
-          ],
-          "brand": {
-            "@type": "Brand",
-            "name": "LPS Education",
-            "logo": "${baseUrl}/images/LOGO2.webp" 
-          },
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+62-858-8756-2039", 
-            "contactType": "Customer Service",
-            "areaServed": "ID",
-            "availableLanguage": ["Indonesian"]
-          },
-          "keywords": "${articleTags.join(", ")}"
-        },
-
-        {
-          "@type": "WebPage",
-          "@id": "${canonicalUrl}#webpage",
-          "url": "${canonicalUrl}",
-          "name": "${pageTitle.replace(/<\/?[^>]+(>|$)/g, "")}", 
-          "inLanguage": "id-ID",
-          "description": "${descriptionContent}",
-          "isPartOf": { "@id": "${baseUrl}" },
-          "about": { "@id": "${canonicalUrl}#organization" },
-          "mainEntity": {
-            "@type": "Service",
-            "name": "Les Privat OSN dan Olimpiade Internasional di ${dynamicLocationName}",
-            "provider": { "@id": "${canonicalUrl}#organization" },
-            "serviceType": "Bimbingan Belajar Olimpiade Sains",
-            "areaServed": "${dynamicLocationName}",
-            "offers": {
-              "@type": "Offer",
-              "priceCurrency": "IDR",
-              "availability": "https://schema.org/InStock",
-              "url": "${canonicalUrl}"
-            }
-          }
-        },
-
-        {
-          "@type": "FAQPage",
-          "@id": "${canonicalUrl}#faq",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "Bidang studi OSN apa saja yang dilayani LPS Education?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Kami melayani bimbingan OSN untuk berbagai bidang, termasuk Matematika, Fisika, Kimia, Biologi, Komputer/Informatika, Kebumian, Astronomi, dan Ekonomi untuk jenjang SD, SMP, dan SMA."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Apakah program Les Privat OSN LPS Education juga mempersiapkan untuk Olimpiade Internasional?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Ya, program kami dirancang secara komprehensif untuk mempersiapkan siswa meraih prestasi di tingkat Nasional (OSN) maupun kompetisi Internasional seperti ISO, IMO, dan SEAMO."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Siapa pengajar yang akan membimbing Les Privat OSN?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Tutor kami adalah alumni peraih medali OSN atau mahasiswa/alumni dari PTN unggulan (UI, ITB, UGM) yang sangat berpengalaman dalam membimbing materi Olimpiade tingkat lanjut."
-              }
-            }
-          ]
-        }
-      ]
-    }
-  `}
+          {JSON.stringify(structuredData)}
         </script>
       </Helmet>
 
       <div className="container-all">
-        {/* Above the fold — langsung render */}
         <HeadingLPSProgramDynamic
-          city={dynamicLocationName}
-          defaultProgramName={osnDefaultProgramName}
-          imageUrlsDesktop={osnImagesDescktop}
+          city={locationName}
+          defaultProgramName="Les Privat OSN, ISO, IMO, SEAMO"
+          programName="Les Privat OSN, ISO, IMO, SEAMO"
+          imageUrlsDesktop={osnImagesDesktop}
           imageUrlsMobile={osnImagesMobile}
+          imageDimensions={{
+            desktop: { width: 1600, height: 900 },
+            mobile: { width: 750, height: 750 },
+          }}
           descriptionParagraphs={osnDescription}
-          programName={osnProgramNameDisplay}
         />
-        <ProgramIntensiOSN />
-        <Slider />
-        <FasilitasOSN />
-        <PaketBelajarOSN />
-        <OsnCurriculumOverview />
-        <OsnWinnerBenefits />
 
-        {/* Below the fold — lazy load */}
-        <Suspense fallback={null}>
+        <DeferredSection minHeight={450}>
+          <ProgramIntensiOSN />
+        </DeferredSection>
+
+        <DeferredSection minHeight={250}>
+          <Slider />
+        </DeferredSection>
+
+        <DeferredSection minHeight={400}>
+          <FasilitasOSN />
+        </DeferredSection>
+
+        <DeferredSection minHeight={450}>
+          <PaketBelajarOSN />
+        </DeferredSection>
+
+        <DeferredSection minHeight={450}>
+          <OsnCurriculumOverview />
+        </DeferredSection>
+
+        <DeferredSection minHeight={450}>
+          <OsnWinnerBenefits />
+        </DeferredSection>
+
+        <DeferredSection minHeight={350}>
           <VisiEndMisiLps />
+        </DeferredSection>
+
+        <DeferredSection minHeight={450}>
           <ProgramBelajarLps />
+        </DeferredSection>
+
+        <DeferredSection minHeight={450}>
           <FiturDanLayanan />
-          <ProfileTutor city={dynamicLocationName} />
+        </DeferredSection>
+
+        <DeferredSection minHeight={450}>
+          <ProfileTutor city={locationName} />
+        </DeferredSection>
+
+        <DeferredSection minHeight={350}>
           <UnivPengajarLps />
-          <AlumniLpsNew city={dynamicLocationName} />
+        </DeferredSection>
+
+        <DeferredSection minHeight={450}>
+          <AlumniLpsNew city={locationName} />
+        </DeferredSection>
+
+        <DeferredSection minHeight={400}>
           <GaleryBelajarSiswa
             title={galleryBelajarOSNData.title}
             description={galleryBelajarOSNData.description}
           />
+        </DeferredSection>
+
+        <DeferredSection minHeight={350}>
           <TestimoniWaSlider
-            cityProp={dynamicLocationName}
-            description={successStoryWaSliderOSN.description}
+            cityProp={locationName}
             title={successStoryWaSliderOSN.title}
+            description={successStoryWaSliderOSN.description}
           />
-          <SuccessStory city={dynamicLocationName} />
-          <TestimoniWaSiswa cityProp={dynamicLocationName} />
-          <AllAlumniLpsImage city={dynamicLocationName} />
+        </DeferredSection>
+
+        <DeferredSection minHeight={450}>
+          <SuccessStory city={locationName} />
+        </DeferredSection>
+
+        <DeferredSection minHeight={350}>
+          <TestimoniWaSiswa cityProp={locationName} />
+        </DeferredSection>
+
+        <DeferredSection minHeight={450}>
+          <AllAlumniLpsImage city={locationName} />
+        </DeferredSection>
+
+        <DeferredSection minHeight={450}>
           <ListSiswaLPS />
-          <SliderTestimoniSiswa city={dynamicLocationName} />
-          <FomoTicker
-            namaWilayah={dynamicLocationName}
-            namaProgram={"OSN ISMO IMO"}
-          />
-        </Suspense>
+        </DeferredSection>
+
+        <DeferredSection minHeight={350}>
+          <SliderTestimoniSiswa city={locationName} />
+        </DeferredSection>
+
+        <DeferredSection minHeight={200}>
+          <FomoTicker namaWilayah={locationName} namaProgram="OSN ISMO IMO" />
+        </DeferredSection>
       </div>
     </>
   );
-};
-
-export default LesPrivatOSNSlug;
+}

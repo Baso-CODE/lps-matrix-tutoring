@@ -1,12 +1,12 @@
 import { lazy, Suspense } from "react";
 import { Helmet } from "react-helmet-async";
-
-// Above-the-fold: langsung load
-import Slider from "../../components/Slider/Slider";
+import LazySection from "../../components/LazySection/LazySection";
 import ProfileLps from "./Components/ProfileLps/ProfileLps";
-import SolusiSuksesMasukPTN from "./Components/SolusiSuksesMasukPTN/SolusiSuksesMasukPTN";
 
-// Below-the-fold: lazy load
+const SolusiSuksesMasukPTN = lazy(
+  () => import("./Components/SolusiSuksesMasukPTN/SolusiSuksesMasukPTN"),
+);
+const Slider = lazy(() => import("../../components/Slider/Slider"));
 const KeunggulanEndAlasanMemilih = lazy(
   () =>
     import("./Components/KeunggulanEndAlasanMemilih/KeunggulanEndAlasanMemilih"),
@@ -57,7 +57,15 @@ const SliderTestimoniSiswa = lazy(
 
 import "./HomePage.css";
 
-const HomePage = () => {
+const DeferredSection = ({ children, minHeight = 350 }) => (
+  <LazySection minHeight={minHeight} rootMargin="300px 0px">
+    <Suspense fallback={null}>{children}</Suspense>
+  </LazySection>
+);
+
+export default function HomePage() {
+  const canonicalUrl = "https://apps.lesprivatmasukptn.com/";
+
   return (
     <>
       <Helmet>
@@ -85,8 +93,8 @@ const HomePage = () => {
           property="og:image"
           content="https://apps.lesprivatmasukptn.com/images/banner.webp"
         />
-        <meta property="og:url" content={window.location.href} />
-        <link rel="canonical" href={window.location.href} />
+        <meta property="og:url" content={canonicalUrl} />
+        <link rel="canonical" href={canonicalUrl} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
@@ -103,33 +111,80 @@ const HomePage = () => {
       </Helmet>
 
       <div className="container-all">
-        {/* Above the fold — langsung render */}
         <ProfileLps />
-        <SolusiSuksesMasukPTN />
-        <Slider />
 
-        {/* Below the fold — lazy load */}
-        <Suspense fallback={null}>
+        <DeferredSection minHeight={450}>
+          <SolusiSuksesMasukPTN />
+        </DeferredSection>
+
+        <DeferredSection minHeight={250}>
+          <Slider />
+        </DeferredSection>
+
+        <DeferredSection minHeight={450}>
           <KeunggulanEndAlasanMemilih />
+        </DeferredSection>
+
+        <DeferredSection minHeight={350}>
           <VisiEndMisiLps />
+        </DeferredSection>
+
+        <DeferredSection minHeight={450}>
           <ProgramBelajarLps />
+        </DeferredSection>
+
+        <DeferredSection minHeight={450}>
           <FiturDanLayanan />
+        </DeferredSection>
+
+        <DeferredSection minHeight={350}>
           <VideoKarantina />
+        </DeferredSection>
+
+        <DeferredSection minHeight={450}>
           <ProfileTutor />
+        </DeferredSection>
+
+        <DeferredSection minHeight={350}>
           <UnivPengajarLps />
+        </DeferredSection>
+
+        <DeferredSection minHeight={450}>
           <AlumniLpsNew />
+        </DeferredSection>
+
+        <DeferredSection minHeight={400}>
           <GaleryBelajarSiswa />
+        </DeferredSection>
+
+        <DeferredSection minHeight={350}>
           <TestimoniWaSlider />
+        </DeferredSection>
+
+        <DeferredSection minHeight={450}>
           <SuccessStory />
+        </DeferredSection>
+
+        <DeferredSection minHeight={350}>
           <MateriUTBK2026 />
+        </DeferredSection>
+
+        <DeferredSection minHeight={350}>
           <TestimoniWaSiswa />
+        </DeferredSection>
+
+        <DeferredSection minHeight={450}>
           <AllAlumniLpsImage />
+        </DeferredSection>
+
+        <DeferredSection minHeight={450}>
           <ListSiswaLPS />
+        </DeferredSection>
+
+        <DeferredSection minHeight={350}>
           <SliderTestimoniSiswa />
-        </Suspense>
+        </DeferredSection>
       </div>
     </>
   );
-};
-
-export default HomePage;
+}

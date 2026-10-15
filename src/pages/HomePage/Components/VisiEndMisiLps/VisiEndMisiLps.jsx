@@ -47,7 +47,7 @@ const VisiEndMisiLps = () => {
 
           <div className="visi-misi-logo-glass">
             <img
-              src="/images/visi-misi-lps-logo.webp"
+              src="/images/visi-misi-lps-logo-optimized.webp"
               alt="Visi Misi LPS Education Logo"
               loading="eager"
               width={640}

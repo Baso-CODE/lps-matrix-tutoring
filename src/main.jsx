@@ -1,3 +1,4 @@
+import "@fontsource-variable/inter";
 import { createRoot } from "react-dom/client";
 import { HelmetProvider } from "react-helmet-async";
 import { Provider } from "react-redux";
@@ -13,5 +14,5 @@ createRoot(document.getElementById("root")).render(
         <App />
       </HelmetProvider>
     </BrowserRouter>
-  </Provider>
+  </Provider>,
 );

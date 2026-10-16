@@ -87,15 +87,22 @@ const ProfileLps = () => {
         </div>
 
         <div className="image-hero-wrapper">
-          <img
-            src="/images/jumbotron_bimbel_lps.webp"
-            className="rumah-adat-hero-home"
-            alt="Video Profil LPS"
-            loading="eager"
-            fetchPriority="high"
-            width="600"
-            height="800"
-          />
+          <picture>
+            <source
+              media="(max-width: 768px)"
+              srcSet="/images/jumbotron_bimbel_lps-mobile-optimized.webp"
+            />
+            <img
+              src="/images/jumbotron_bimbel_lps-desktop-optimized.webp"
+              className="rumah-adat-hero-home"
+              alt="Program bimbingan belajar dan les privat LPS Education"
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
+              width={2022}
+              height={2952}
+            />
+          </picture>
 
           <div className="shadow-bottom-image-profile-lps" />
         </div>

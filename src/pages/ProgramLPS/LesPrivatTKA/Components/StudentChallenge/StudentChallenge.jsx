@@ -20,14 +20,13 @@ const StudentChallenge = () => {
 
         <div className="student-challenge-tka__image-wrapper">
           <img
-            src="/images/program/TKA-SUBHERO.webp"
+            src="/images/program/TKA-SUBHERO-optimized.webp"
             alt="Tantangan siswa menghadapi TKA"
             className="student-challenge-tka__image"
             loading="lazy"
-            onError={(e) => {
-              e.currentTarget.src =
-                "https://placehold.co/800x360/ff6500/ffffff?text=CHALLENGE+STUDENT+LES+PRIVAT+TKA";
-            }}
+            decoding="async"
+            width={900}
+            height={675}
           />
         </div>
 

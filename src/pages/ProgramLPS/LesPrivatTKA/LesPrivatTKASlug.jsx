@@ -48,9 +48,6 @@ const ListSiswaLPS = lazy(() => import("../../ListSiswaLPS/ListSiswaLPS"));
 const SliderTestimoniSiswa = lazy(
   () => import("../../../components/SliderTestimoniSiswa/SliderTestimoniSiswa"),
 );
-const FomoTicker = lazy(
-  () => import("../../../components/FomoTicker/FomoTicker"),
-);
 
 const DeferredSection = ({ children, minHeight = 350 }) => (
   <LazySection minHeight={minHeight} rootMargin="300px 0px">
@@ -290,9 +287,9 @@ export default function LesPrivatTKASlug() {
           <SliderTestimoniSiswa city={locationName} />
         </DeferredSection>
 
-        <DeferredSection minHeight={200}>
+        {/* <DeferredSection minHeight={200}>
           <FomoTicker namaProgram="TKA" namaWilayah={locationName} />
-        </DeferredSection>
+        </DeferredSection> */}
       </div>
     </>
   );

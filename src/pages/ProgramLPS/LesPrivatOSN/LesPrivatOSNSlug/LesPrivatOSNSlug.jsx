@@ -62,9 +62,6 @@ const SliderTestimoniSiswa = lazy(
   () =>
     import("../../../../components/SliderTestimoniSiswa/SliderTestimoniSiswa"),
 );
-const FomoTicker = lazy(
-  () => import("../../../../components/FomoTicker/FomoTicker"),
-);
 
 const DeferredSection = ({ children, minHeight = 350 }) => (
   <LazySection minHeight={minHeight} rootMargin="300px 0px">
@@ -309,9 +306,9 @@ export default function LesPrivatOSNSlug() {
           <SliderTestimoniSiswa city={locationName} />
         </DeferredSection>
 
-        <DeferredSection minHeight={200}>
+        {/* <DeferredSection minHeight={200}>
           <FomoTicker namaWilayah={locationName} namaProgram="OSN ISMO IMO" />
-        </DeferredSection>
+        </DeferredSection> */}
       </div>
     </>
   );

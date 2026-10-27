@@ -58,9 +58,6 @@ const SliderTestimoniSiswa = lazy(
   () =>
     import("../../../../components/SliderTestimoniSiswa/SliderTestimoniSiswa"),
 );
-const FomoTicker = lazy(
-  () => import("../../../../components/FomoTicker/FomoTicker"),
-);
 
 // Data Helpers
 import {
@@ -335,10 +332,10 @@ const LesPrivatCPNSSlug = () => {
           <AllAlumniLpsImage city={dynamicLocationName} />
           <ListSiswaLPS />
           <SliderTestimoniSiswa city={dynamicLocationName} />
-          <FomoTicker
+          {/* <FomoTicker
             namaWilayah={dynamicLocationName}
             namaProgram={"CPNS & Kedinasan"}
-          />
+          /> */}
         </Suspense>
       </div>
     </>

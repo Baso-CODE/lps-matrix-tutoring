@@ -1,21 +1,20 @@
-cat > public/llms.txt << 'EOF'
 # LPS Education
 
-Bimbingan belajar spesialis persiapan masuk PTN, UTBK-SNBT, SIMAK UI/KKI, dan Ujian Mandiri PTN.
+> LPS Education menyediakan layanan bimbingan belajar dan les privat online serta offline untuk berbagai jenjang pendidikan dan persiapan ujian.
 
-## Program
-- Les Privat UTBK SNBT
-- Bimbel CPNS & Kedinasan
-- Bimbel SIMAK UI & KKI
-- Les Privat Mahasiswa
-- Les Privat SD SMP SMA
-- Les Privat Pascasarjana
-- Les Privat OSN
-- Bimbel TKA
+## Program Belajar
 
-## Kontak
-Website: https://apps.lesprivatmasukptn.com
+- [Homepage LPS Education](https://apps.lesprivatmasukptn.com/)
+- [Bimbel CPNS](https://apps.lesprivatmasukptn.com/bimbel-persiapan-cpns-terbaik)
+- [Bimbel UTBK SNBT](https://apps.lesprivatmasukptn.com/les-privat-utbk-terbaik)
+- [Bimbel OSN](https://apps.lesprivatmasukptn.com/les-privat-osn-terbaik)
+- [Bimbel TKA](https://apps.lesprivatmasukptn.com/les-privat-tes-kemampuan-akademik)
+- [Bimbel SIMAK UI dan KKI](https://apps.lesprivatmasukptn.com/bimbel-persiapan-masuk-ui-kki-terbaik)
+- [Les Privat SD SMP SMA](https://apps.lesprivatmasukptn.com/les-privat-sd-smp-sma-terbaik)
+- [Les Privat Mahasiswa](https://apps.lesprivatmasukptn.com/les-privat-mahasiswa-terbaik)
+- [Les Privat Pascasarjana](https://apps.lesprivatmasukptn.com/les-privat-pascasarjana-terbaik)
 
-## Kebijakan
-Konten di website ini boleh digunakan sebagai referensi informasi pendidikan.
-EOF
+## Informasi Lainnya
+
+- [Tentang LPS Education](https://apps.lesprivatmasukptn.com/about-us)
+- [Testimoni Siswa](https://apps.lesprivatmasukptn.com/testimoni-lps)

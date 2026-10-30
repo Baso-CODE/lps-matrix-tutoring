@@ -1,193 +1,409 @@
+import { lazy, Suspense } from "react";
 import { Helmet } from "react-helmet-async";
-import UnivPengajarLps from "../../../components/UnivPengajarLps/UnivPengajarLps";
-import FasilitasSimakUI from "./Components/FasilitasSimakUI/FasilitasSimakUI";
-import PaketBelajarSimakUI from "./Components/PaketBelajarSimakUI/PaketBelajarSimakUI";
-import "./SimakUIAndKKI.css";
 
-import AlumniLpsNew from "../../../components/AlumniLpsNew/AlumniLpsNew";
-import GaleryBelajarSiswa from "../../../components/GaleryBelajarSiswa/GaleryBelajarSiswa";
 import HeadingLPSProgramDynamic from "../../../components/HeadingLPSProgramDynamic/HeadingLPSProgramDynamic";
-import Slider from "../../../components/Slider/Slider";
-import SliderTestimoniSiswa from "../../../components/SliderTestimoniSiswa/SliderTestimoniSiswa";
-import TestimoniWaSlider from "../../../components/TestimoniWaSlider/TestimoniWaSlider";
-import VideoKarantina from "../../../components/VideoKarantina/VideoKarantina";
+import LazySection from "../../../components/LazySection/LazySection";
+
 import {
   galleryBelajarSiswaSimakUI,
   successStoryWaSliderSimakUI,
 } from "../../../helpers/DummyData/SIMAK-UI/simak-ui_dummyData";
-import FiturDanLayanan from "../../HomePage/Components/FiturDanLayanan/FiturDanLayanan";
-import ProfileTutor from "../../HomePage/Components/ProfileTutor/ProfileTutor";
-import ProgramBelajarLps from "../../HomePage/Components/ProgramBelajarLps/ProgramBelajarLps";
-import SuccessStory from "../../HomePage/Components/SuccessStory/SuccessStory";
-import TestimoniWaSiswa from "../../HomePage/Components/TestimoniWaSiswa/TestimoniWaSiswa";
-import VisiEndMisiLps from "../../HomePage/Components/VisiEndMisiLps/VisiEndMisiLps";
-import AllAlumniLpsImage from "../../ListSiswaLPS/AllAlumniLps/AllAlumniLpsImage";
-import ListSiswaLPS from "../../ListSiswaLPS/ListSiswaLPS";
+
+import "./SimakUIAndKKI.css";
+
+// ========================================
+// BELOW THE FOLD - LAZY COMPONENTS
+// ========================================
+
+const FasilitasSimakUI = lazy(
+  () => import("./Components/FasilitasSimakUI/FasilitasSimakUI"),
+);
+
+const PaketBelajarSimakUI = lazy(
+  () => import("./Components/PaketBelajarSimakUI/PaketBelajarSimakUI"),
+);
+
+const Slider = lazy(() => import("../../../components/Slider/Slider"));
+
+const VisiEndMisiLps = lazy(
+  () => import("../../HomePage/Components/VisiEndMisiLps/VisiEndMisiLps"),
+);
+
+const ProgramBelajarLps = lazy(
+  () => import("../../HomePage/Components/ProgramBelajarLps/ProgramBelajarLps"),
+);
+
+const FiturDanLayanan = lazy(
+  () => import("../../HomePage/Components/FiturDanLayanan/FiturDanLayanan"),
+);
+
+const VideoKarantina = lazy(
+  () => import("../../../components/VideoKarantina/VideoKarantina"),
+);
+
+const ProfileTutor = lazy(
+  () => import("../../HomePage/Components/ProfileTutor/ProfileTutor"),
+);
+
+const UnivPengajarLps = lazy(
+  () => import("../../../components/UnivPengajarLps/UnivPengajarLps"),
+);
+
+const AlumniLpsNew = lazy(
+  () => import("../../../components/AlumniLpsNew/AlumniLpsNew"),
+);
+
+const GaleryBelajarSiswa = lazy(
+  () => import("../../../components/GaleryBelajarSiswa/GaleryBelajarSiswa"),
+);
+
+const TestimoniWaSlider = lazy(
+  () => import("../../../components/TestimoniWaSlider/TestimoniWaSlider"),
+);
+
+const SuccessStory = lazy(
+  () => import("../../HomePage/Components/SuccessStory/SuccessStory"),
+);
+
+const TestimoniWaSiswa = lazy(
+  () => import("../../HomePage/Components/TestimoniWaSiswa/TestimoniWaSiswa"),
+);
+
+const AllAlumniLpsImage = lazy(
+  () => import("../../ListSiswaLPS/AllAlumniLps/AllAlumniLpsImage"),
+);
+
+const ListSiswaLPS = lazy(() => import("../../ListSiswaLPS/ListSiswaLPS"));
+
+const SliderTestimoniSiswa = lazy(
+  () => import("../../../components/SliderTestimoniSiswa/SliderTestimoniSiswa"),
+);
+
+// ========================================
+// DEFERRED SECTION
+// ========================================
+
+const DeferredSection = ({ children, minHeight = 350 }) => (
+  <LazySection minHeight={minHeight} rootMargin="300px 0px">
+    <Suspense fallback={null}>{children}</Suspense>
+  </LazySection>
+);
+
+// ========================================
+// WEBSITE CONFIG
+// ========================================
+
+const BASE_URL = "https://apps.lesprivatmasukptn.com";
+
+const CANONICAL_URL = `${BASE_URL}/bimbel-persiapan-masuk-ui-kki-terbaik`;
+
+// Gunakan OG Image yang sudah tersedia.
+// Pastikan file berikut benar-benar ada di public/images/program.
+const OG_IMAGE = `${BASE_URL}/images/program/SIMAK-UI.webp`;
+
+// ========================================
+// HERO IMAGES
+// ========================================
+
+// Tahap pertama memakai gambar asli.
+// Setelah menjalankan script Sharp,
+// ubah ke file optimized pada langkah 4.
+const simakUIImagesDesktop = [
+  "/images/program/program-LPS-SIMAK-UI-KKI-desktop-optimized.webp",
+];
+
+const simakUIImagesMobile = [
+  "/images/program/program-LPS-SIMAK-UI-KKI-mobile-optimized.webp",
+];
+// ========================================
+// HERO CONTENT
+// ========================================
+
+const simakUIDefaultProgramName =
+  "Bimbingan Belajar Intensif Les Privat Simak UI";
+
+const simakUIProgramNameDisplay =
+  "Bimbingan Belajar Intensif Les Privat Simak UI dan KKI";
+
+const simakUIDescription = [
+  `Program <span class="color-highlight">Super Intensif Privat Simak UI</span> merupakan program belajar intensif untuk persiapan Seleksi Masuk Universitas Indonesia dengan sistem <span class="color-highlight">Privat Offline</span> (guru datang ke rumah) dan <span class="color-highlight">Privat Online</span>. Program disusun secara sistematis dengan pendampingan tutor berpengalaman. Pembelajaran difokuskan pada pendalaman konsep, latihan soal, dan strategi menghadapi seleksi masuk UI.`,
+
+  `Perkembangan belajar siswa dimonitor oleh Tim Akademik LPS Education. Evaluasi dilakukan untuk mengetahui penguasaan materi dan menentukan strategi belajar berikutnya. Program ini bertujuan membantu siswa mempersiapkan diri menghadapi seleksi <span class="color-highlight">SIMAK UI dan KKI</span> sesuai program studi yang dituju.`,
+
+  `<span class="color-highlight">LPS Education</span> menyediakan layanan persiapan <span class="color-highlight">SIMAK UI dan KKI</span> untuk siswa SMA dan alumni yang ingin mengikuti seleksi Universitas Indonesia. Pendampingan juga dapat disesuaikan dengan kebutuhan persiapan seleksi program Vokasi, Sarjana, Kelas Internasional, dan Pascasarjana sesuai ketentuan jalur penerimaan yang berlaku.`,
+];
+
+// ========================================
+// SEO METADATA
+// ========================================
+
+const pageTitle = "Bimbel SIMAK UI & KKI Online Offline | LPS Education";
+
+const descriptionContent =
+  "Persiapan SIMAK UI dan KKI bersama LPS Education. Bimbel dan les privat online maupun offline dengan tutor berpengalaman, latihan soal, serta evaluasi belajar.";
+
+const ogTitle = pageTitle;
+
+const ogDescription =
+  "Program bimbel dan les privat SIMAK UI serta KKI Universitas Indonesia. Persiapkan seleksi masuk UI melalui pembelajaran intensif bersama LPS Education.";
+
+const twitterTitle = pageTitle;
+
+const twitterDescription = descriptionContent;
+
+// ========================================
+// STRUCTURED DATA JSON-LD
+// ========================================
+
+const structuredData = {
+  "@context": "https://schema.org",
+
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+
+      "@id": `${CANONICAL_URL}#breadcrumb`,
+
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: `${BASE_URL}/`,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Bimbel SIMAK UI dan KKI",
+          item: CANONICAL_URL,
+        },
+      ],
+    },
+
+    {
+      "@type": "EducationalOrganization",
+
+      "@id": `${BASE_URL}/#organization`,
+
+      name: "LPS Education",
+
+      url: `${BASE_URL}/`,
+
+      logo: `${BASE_URL}/images/LOGO2-optimized.webp`,
+    },
+
+    {
+      "@type": "WebPage",
+
+      "@id": `${CANONICAL_URL}#webpage`,
+
+      url: CANONICAL_URL,
+
+      name: pageTitle,
+
+      description: descriptionContent,
+
+      inLanguage: "id-ID",
+
+      breadcrumb: {
+        "@id": `${CANONICAL_URL}#breadcrumb`,
+      },
+
+      publisher: {
+        "@id": `${BASE_URL}/#organization`,
+      },
+
+      mainEntity: {
+        "@id": `${CANONICAL_URL}#service`,
+      },
+    },
+
+    {
+      "@type": "Service",
+
+      "@id": `${CANONICAL_URL}#service`,
+
+      name: "Bimbel dan Les Privat SIMAK UI dan KKI",
+
+      serviceType:
+        "Bimbingan Belajar Persiapan Seleksi Masuk Universitas Indonesia",
+
+      description: descriptionContent,
+
+      url: CANONICAL_URL,
+
+      provider: {
+        "@id": `${BASE_URL}/#organization`,
+      },
+
+      areaServed: {
+        "@type": "Country",
+        name: "Indonesia",
+      },
+    },
+  ],
+};
+
+// ========================================
+// MAIN COMPONENT
+// ========================================
 
 const SimakUIAndKKI = () => {
-  const baseUrl = "https://apps.lesprivatmasukptn.com";
-
-  const simakUIImagesDescktop = [
-    "/images/program/program-LPS-SIMAK-UI-KKI.webp",
-  ];
-  const simakUIImagesMobile = [
-    "/images/program/program-LPS-SIMAK-UI-KKI-mobile.webp",
-  ];
-
-  const simakUIDefaultProgramName =
-    "Bimbingan Belajar Intensif Les Privat Simak UI";
-  const simakUIProgramNameDisplay =
-    "Bimbingan Belajar Intensif Les Privat Simak UI dan KKI";
-  const simakUIDescription = [
-    // Paragraf 1 (Definisi Program)
-    `Program <span class='color-highlight'>Super Intensif Privat Simak UI</span> merupakan suatu bentuk program belajar fokus Intensif Persiapan Ujian Simak UI dengan sistem belajar <span class='color-highlight'>Privat Offline</span> (guru datang ke rumah) dan <span class='color-highlight'>Privat Online</span>. Program ini disusun secara sistematis dan didukung dengan guru les privat berpengalaman untuk program Seleksi Masuk Universitas Indonesia. Program belajar difokuskan pada pendalaman konsep dasar materi dan peningkatan keterampilan penyelesaian soal-soal Simak UI.`,
-
-    // Paragraf 2 & 3 (Monitoring dan Target, digabung)
-    `Progress belajar akan dimonitoring oleh Tim Akademik LPS Education. Kami akan memberikan rekomendasi yang dibutuhkan sesuai dengan progres belajar siswa. Target Program Super Intensif Simak UI adalah mengantarkan siswa <span class='color-highlight'>Sukses Masuk UI sesuai jurusan yang diinginkan</span>.`,
-
-    // Paragraf 4 (Jenis Layanan SIMAK UI yang dicakup)
-    `<span class='color-highlight'>LPS Education</span> memiliki Layanan Intensif Les Privat Simak UI dan KKI yang ditujukan untuk siswa SMA dan alumni untuk jenjang Sarjana Reguler, Vokasi (D3/D4), dan S1 Kelas Internasional UI (KKI). Selain itu, kami juga memiliki layanan Les Privat Simak UI untuk <span class='color-highlight'>S2 dan S3 (Pascasarjana)</span>.`,
-  ];
-
-  const canonicalUrl = `${baseUrl}/bimbel-persiapan-masuk-ui-kki-terbaik`;
-
-  const ogImage =
-    "https://apps.lesprivatmasukptn.com/images/program/SIMAK-UI.webp";
-
-  const pageTitle = `🏫 Bimbel & Les Privat SIMAK UI, KKI, UTUL UGM | Terbaik - LPS Education`;
-  const descriptionContent = `Bimbel & Les Privat SIMAK UI, KKI UI, dan UTUL UGM (CBT UGM) terbaik dari LPS Education. Persiapan intensif, pengajar berpengalaman, dan fasilitas lengkap untuk lolos UI & UGM impian Anda.`;
-  const ogTitle = `Bimbel & Les Privat SIMAK UI, KKI, UTUL UGM | Terbaik - LPS Education`; // Tanpa emoji di OG title
-  const ogDescription = `Program bimbingan intensif SIMAK UI, KKI UI, dan UTUL UGM (CBT UGM) dari LPS Education. Dapatkan persiapan terbaik untuk lolos seleksi UI & UGM. Pengajar handal & materi komprehensif.`;
-  const twitterTitle = `Bimbel & Les Privat SIMAK UI, KKI, UTUL UGM | LPS Education`;
-  const twitterDescription = `Siapkan diri Anda untuk SIMAK UI, KKI UI, dan UTUL UGM (CBT UGM) dengan bimbingan terbaik dari LPS Education. Fasilitas lengkap dan pengajar berpengalaman.`;
-
-  const ogImageAlt = "Bimbel Les Privat SIMAK UI KKI UTUL UGM LPS Education";
-
-  const articleTags = [
-    "bimbel SIMAK UI",
-    "les privat SIMAK UI",
-    "persiapan SIMAK UI",
-    "SIMAK KKI UI",
-    "les privat KKI UI",
-    "bimbel UTUL UGM",
-    "CBT UGM",
-    "bimbingan masuk UI",
-    "bimbingan masuk UGM",
-    "les privat PTN",
-    "tryout SIMAK UI",
-    "materi SIMAK UI",
-    "LPS Education", // Mengganti LPS Education dengan LPS Education
-    "lolos UI",
-    "lolos UGM",
-    "SIMAK UI S1",
-    "SIMAK UI Vokasi",
-    "SIMAK UI Internasional",
-    "UTUL UGM CBT",
-  ];
-
   return (
     <>
+      {/* ================================= */}
+      {/* SEO METADATA */}
+      {/* ================================= */}
+
       <Helmet>
-        {/* Basic SEO Meta Tags */}
         <title>{pageTitle}</title>
+
         <meta name="description" content={descriptionContent} />
-        <meta
-          name="keywords"
-          content={`bimbel SIMAK UI, les privat SIMAK UI, persiapan SIMAK UI, SIMAK KKI UI, les privat KKI UI, bimbel UTUL UGM, CBT UGM, bimbingan masuk UI, bimbingan masuk UGM, les privat PTN, tryout SIMAK UI, materi SIMAK UI, LPS Education, lolos UI, lolos UGM, SIMAK UI S1, SIMAK UI Vokasi, SIMAK UI Internasional, UTUL UGM CBT`}
-        />
-        <link rel="canonical" href={canonicalUrl} />
-        <meta
-          name="robots"
-          content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"
-        />
-        {/* Open Graph Meta Tags (for social media sharing) */}
+
+        <meta name="robots" content="index,follow,max-image-preview:large" />
+
+        <link rel="canonical" href={CANONICAL_URL} />
+
+        {/* Open Graph */}
+
         <meta property="og:locale" content="id_ID" />
-        <meta property="og:type" content="article" />{" "}
-        {/* Diubah ke "article" */}
+
+        <meta property="og:type" content="website" />
+
         <meta property="og:title" content={ogTitle} />
+
         <meta property="og:description" content={ogDescription} />
-        <meta property="og:url" content={canonicalUrl} />
+
+        <meta property="og:url" content={CANONICAL_URL} />
+
         <meta property="og:site_name" content="LPS Education" />
-        <meta property="og:image" content={ogImage} />
-        <meta property="og:image:secure_url" content={ogImage} />
-        <meta property="og:image:width" content="800" />
-        <meta property="og:image:height" content="600" />
-        <meta property="og:image:alt" content={ogImageAlt} />
-        <meta property="og:image:type" content="image/webp" />
-        {articleTags.map((tag) => (
-          <meta key={tag} property="og:article:tag" content={tag} />
-        ))}
-        <meta property="article:section" content="SIMAK UI & UTUL UGM" />{" "}
-        {/* Tambahkan section */}
-        {/* Twitter Card Meta Tags */}
+
+        <meta property="og:image" content={OG_IMAGE} />
+
+        <meta
+          property="og:image:alt"
+          content="Program Bimbel SIMAK UI dan KKI LPS Education"
+        />
+
+        {/* Twitter Card */}
+
         <meta name="twitter:card" content="summary_large_image" />
+
         <meta name="twitter:title" content={twitterTitle} />
+
         <meta name="twitter:description" content={twitterDescription} />
-        <meta name="twitter:image" content={ogImage} />
-        {/* Schema Markup (JSON-LD) - BreadcrumbList */}
+
+        <meta name="twitter:image" content={OG_IMAGE} />
+
+        {/* Structured Data */}
+
         <script type="application/ld+json">
-          {`
-            {
-              "@context": "https://schema.org",
-              "@graph": [
-                {
-                  "@type": "BreadcrumbList",
-                  "@id": "${canonicalUrl}#breadcrumb",
-                  "itemListElement": [
-                    {
-                      "@type": "ListItem",
-                      "position": "1",
-                      "item": {
-                        "@id": "${baseUrl}",
-                        "name": "Home"
-                      }
-                    },
-                    {
-                      "@type": "ListItem",
-                      "position": "2",
-                      "item": {
-                        "@id": "${canonicalUrl}",
-                        "name": "${pageTitle.replace(/<\/?[^>]+(>|$)/g, "")}"
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          `}
+          {JSON.stringify(structuredData)}
         </script>
       </Helmet>
 
+      {/* ================================= */}
+      {/* PAGE CONTENT */}
+      {/* ================================= */}
+
       <div className="container-all">
+        {/* ================================= */}
+        {/* ABOVE THE FOLD */}
+        {/* ================================= */}
+
         <HeadingLPSProgramDynamic
           defaultProgramName={simakUIDefaultProgramName}
-          imageUrlsDesktop={simakUIImagesDescktop}
+          imageUrlsDesktop={simakUIImagesDesktop}
           imageUrlsMobile={simakUIImagesMobile}
+          imageDimensions={{
+            desktop: {
+              width: 1280,
+              height: 720,
+            },
+            mobile: {
+              width: 750,
+              height: 750,
+            },
+          }}
           descriptionParagraphs={simakUIDescription}
           programName={simakUIProgramNameDisplay}
         />
-        <FasilitasSimakUI />
-        <PaketBelajarSimakUI />
-        <Slider />
-        <VisiEndMisiLps />
-        <ProgramBelajarLps />
-        <FiturDanLayanan />
-        <VideoKarantina />
-        <ProfileTutor />
-        <UnivPengajarLps />
-        <AlumniLpsNew />
-        <GaleryBelajarSiswa
-          description={galleryBelajarSiswaSimakUI.description}
-        />
-        <TestimoniWaSlider
-          title={successStoryWaSliderSimakUI.title}
-          description={successStoryWaSliderSimakUI.description}
-        />
-        <SuccessStory />
-        <TestimoniWaSiswa />
-        <AllAlumniLpsImage />
-        <ListSiswaLPS />
-        <SliderTestimoniSiswa />
+        {/* ================================= */}
+        {/* BELOW THE FOLD */}
+        {/* ================================= */}
+
+        <DeferredSection minHeight={450}>
+          <FasilitasSimakUI />
+        </DeferredSection>
+
+        <DeferredSection minHeight={450}>
+          <PaketBelajarSimakUI />
+        </DeferredSection>
+
+        <DeferredSection minHeight={250}>
+          <Slider />
+        </DeferredSection>
+
+        <DeferredSection minHeight={350}>
+          <VisiEndMisiLps />
+        </DeferredSection>
+
+        <DeferredSection minHeight={450}>
+          <ProgramBelajarLps />
+        </DeferredSection>
+
+        <DeferredSection minHeight={450}>
+          <FiturDanLayanan />
+        </DeferredSection>
+
+        <DeferredSection minHeight={350}>
+          <VideoKarantina />
+        </DeferredSection>
+
+        <DeferredSection minHeight={450}>
+          <ProfileTutor />
+        </DeferredSection>
+
+        <DeferredSection minHeight={350}>
+          <UnivPengajarLps />
+        </DeferredSection>
+
+        <DeferredSection minHeight={450}>
+          <AlumniLpsNew />
+        </DeferredSection>
+
+        <DeferredSection minHeight={400}>
+          <GaleryBelajarSiswa
+            description={galleryBelajarSiswaSimakUI.description}
+          />
+        </DeferredSection>
+
+        <DeferredSection minHeight={350}>
+          <TestimoniWaSlider
+            title={successStoryWaSliderSimakUI.title}
+            description={successStoryWaSliderSimakUI.description}
+          />
+        </DeferredSection>
+
+        <DeferredSection minHeight={450}>
+          <SuccessStory />
+        </DeferredSection>
+
+        <DeferredSection minHeight={350}>
+          <TestimoniWaSiswa />
+        </DeferredSection>
+
+        <DeferredSection minHeight={450}>
+          <AllAlumniLpsImage />
+        </DeferredSection>
+
+        <DeferredSection minHeight={450}>
+          <ListSiswaLPS />
+        </DeferredSection>
+
+        <DeferredSection minHeight={350}>
+          <SliderTestimoniSiswa />
+        </DeferredSection>
       </div>
     </>
   );

@@ -2,330 +2,452 @@ import { lazy, Suspense } from "react";
 import { Helmet } from "react-helmet-async";
 import { useParams } from "react-router-dom";
 
-// Above-the-fold: langsung dimuat untuk mengoptimalkan performa FCP & LCP
 import HeadingLPSProgramDynamic from "../../../../components/HeadingLPSProgramDynamic/HeadingLPSProgramDynamic";
-import Slider from "../../../../components/Slider/Slider";
-import FasilitasSDSMPSMA from "../Components/FasilitasSDSMPSMA/FasilitasSDSMPSMA";
-import PaketBelajarSDSMPSMA from "../Components/PaketBelajarSDSMPSMA/PaketBelajarSDSMPSMA";
-import ProgramIntensifLpsSDSMPSMA from "../Components/ProgramIntensifLpsSDSMPSMA/ProgramIntensifLpsSDSMPSMA";
+import LazySection from "../../../../components/LazySection/LazySection";
 
-// Below-the-fold: dimuat secara lazy loading
+import { testimoniWaSliderDataSDSMPSMA } from "../../../../helpers/DummyData/SDSMPSMA/sdsmpsma_dummyData";
+
+// ========================================
+// LAZY COMPONENTS
+// ========================================
+
+const FasilitasSDSMPSMA = lazy(
+  () => import("../Components/FasilitasSDSMPSMA/FasilitasSDSMPSMA"),
+);
+
+const ProgramIntensifLpsSDSMPSMA = lazy(
+  () =>
+    import("../Components/ProgramIntensifLpsSDSMPSMA/ProgramIntensifLpsSDSMPSMA"),
+);
+
+const PaketBelajarSDSMPSMA = lazy(
+  () => import("../Components/PaketBelajarSDSMPSMA/PaketBelajarSDSMPSMA"),
+);
+
+const Slider = lazy(() => import("../../../../components/Slider/Slider"));
+
 const VisiEndMisiLps = lazy(
   () => import("../../../HomePage/Components/VisiEndMisiLps/VisiEndMisiLps"),
 );
+
 const ProgramBelajarLps = lazy(
   () =>
     import("../../../HomePage/Components/ProgramBelajarLps/ProgramBelajarLps"),
 );
+
 const FiturDanLayanan = lazy(
   () => import("../../../HomePage/Components/FiturDanLayanan/FiturDanLayanan"),
 );
+
 const KeunggulanEndAlasanMemilih = lazy(
   () =>
     import("../../../HomePage/Components/KeunggulanEndAlasanMemilih/KeunggulanEndAlasanMemilih"),
 );
+
 const VideoKarantina = lazy(
   () => import("../../../../components/VideoKarantina/VideoKarantina"),
 );
+
 const ProfileTutor = lazy(
   () => import("../../../HomePage/Components/ProfileTutor/ProfileTutor"),
 );
+
 const UnivPengajarLps = lazy(
   () => import("../../../../components/UnivPengajarLps/UnivPengajarLps"),
 );
+
 const AlumniLpsNew = lazy(
   () => import("../../../../components/AlumniLpsNew/AlumniLpsNew"),
 );
+
 const TestimoniWaSlider = lazy(
   () => import("../../../../components/TestimoniWaSlider/TestimoniWaSlider"),
 );
+
 const TestimoniWaSiswa = lazy(
   () =>
     import("../../../HomePage/Components/TestimoniWaSiswa/TestimoniWaSiswa"),
 );
+
 const AllAlumniLpsImage = lazy(
   () => import("../../../ListSiswaLPS/AllAlumniLps/AllAlumniLpsImage"),
 );
+
 const ListSiswaLPS = lazy(() => import("../../../ListSiswaLPS/ListSiswaLPS"));
+
 const SliderTestimoniSiswa = lazy(
   () =>
     import("../../../../components/SliderTestimoniSiswa/SliderTestimoniSiswa"),
 );
 
-// Data Helpers
-import { testimoniWaSliderDataSDSMPSMA } from "../../../../helpers/DummyData/SDSMPSMA/sdsmpsma_dummyData";
+// ========================================
+// DEFERRED SECTION
+// ========================================
+
+const DeferredSection = ({ children, minHeight = 350 }) => (
+  <LazySection minHeight={minHeight} rootMargin="300px 0px">
+    <Suspense fallback={null}>{children}</Suspense>
+  </LazySection>
+);
+
+// ========================================
+// WEBSITE CONFIG
+// ========================================
+
+const BASE_URL = "https://apps.lesprivatmasukptn.com";
+
+const MAIN_URL = `${BASE_URL}/les-privat-sd-smp-sma-terbaik`;
+
+const SLUG_PATH = "/les-privat-sd-smp-sma-terbaik-di";
+
+const OG_IMAGE = `${BASE_URL}/images/program/SD,SMP,SMA.webp`;
+
+// ========================================
+// OPTIMIZED HERO IMAGES
+// ========================================
+
+const sdsmpsmaImagesDesktop = [
+  "/images/program/program-LPS-SD-desktop-optimized.webp",
+  "/images/program/program-LPS-SMP-desktop-optimized.webp",
+  "/images/program/program-LPS-SMA-desktop-optimized.webp",
+];
+
+const sdsmpsmaImagesMobile = [
+  "/images/program/program-LPS-SD-mobile-optimized.webp",
+  "/images/program/program-LPS-SMP-mobile-optimized.webp",
+  "/images/program/program-LPS-SMA-mobile-optimized.webp",
+];
+
+// Sesuaikan jika hasil akhir Sharp memiliki ukuran berbeda.
+// const HERO_DIMENSIONS = {
+//   desktop: {
+//     width: 1280,
+//     height: 720,
+//   },
+//   mobile: {
+//     width: 750,
+//     height: 750,
+//   },
+// };
+
+// ========================================
+// HERO CONTENT
+// ========================================
+
+const PROGRAM_NAME = "Les Privat SD SMP SMA";
+
+const sdsmpSmaDescription = [
+  `<span class="color-highlight">Program Intensif Privat SD SMP SMA</span> merupakan program bimbingan belajar untuk meningkatkan pemahaman materi akademik sekolah dan persiapan ujian. Tersedia layanan <span class="color-highlight">Privat Offline (guru datang ke rumah)</span> dan <span class="color-highlight">Privat Online</span> bersama tutor berpengalaman.`,
+
+  `Pembelajaran difokuskan pada pendalaman konsep, latihan soal, dan persiapan <span class="color-highlight">PR, Ulangan Harian, Ujian Semester, Ujian Sekolah, serta TKA (Tes Kemampuan Akademik)</span>. Perkembangan belajar siswa dimonitor dan dievaluasi oleh Tim Akademik LPS Education.`,
+
+  `Melalui <span class="color-highlight">Program Intensif Privat SD SMP SMA</span>, LPS Education membantu siswa meningkatkan kemampuan akademik, membangun kebiasaan belajar yang baik, dan mempersiapkan diri menghadapi ujian maupun seleksi masuk sekolah unggulan.`,
+];
+
+// ========================================
+// HELPERS
+// ========================================
+
+const formatSlugToTitle = (value = "") => {
+  return value
+    .split("-")
+    .filter(Boolean)
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+};
+
+// ========================================
+// STRUCTURED DATA
+// ========================================
+
+const createStructuredData = ({
+  canonicalUrl,
+  locationName,
+  pageTitle,
+  description,
+}) => ({
+  "@context": "https://schema.org",
+
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+
+      "@id": `${canonicalUrl}#breadcrumb`,
+
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: `${BASE_URL}/`,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Les Privat SD SMP SMA",
+          item: MAIN_URL,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: `Les Privat SD SMP SMA di ${locationName}`,
+          item: canonicalUrl,
+        },
+      ],
+    },
+
+    {
+      "@type": "EducationalOrganization",
+
+      "@id": `${BASE_URL}/#organization`,
+
+      name: "LPS Education",
+
+      url: `${BASE_URL}/`,
+
+      logo: `${BASE_URL}/images/LOGO2.webp`,
+    },
+
+    {
+      "@type": "WebPage",
+
+      "@id": `${canonicalUrl}#webpage`,
+
+      url: canonicalUrl,
+
+      name: pageTitle,
+
+      description,
+
+      inLanguage: "id-ID",
+
+      breadcrumb: {
+        "@id": `${canonicalUrl}#breadcrumb`,
+      },
+
+      publisher: {
+        "@id": `${BASE_URL}/#organization`,
+      },
+
+      mainEntity: {
+        "@id": `${canonicalUrl}#service`,
+      },
+    },
+
+    {
+      "@type": "Service",
+
+      "@id": `${canonicalUrl}#service`,
+
+      name: `Les Privat SD SMP SMA di ${locationName}`,
+
+      serviceType: "Bimbingan Belajar Akademik SD SMP SMA",
+
+      description,
+
+      url: canonicalUrl,
+
+      provider: {
+        "@id": `${BASE_URL}/#organization`,
+      },
+
+      areaServed: {
+        "@type": "Place",
+        name: locationName,
+      },
+    },
+  ],
+});
+
+// ========================================
+// MAIN COMPONENT
+// ========================================
 
 const LesPrivatSDSMPSMASlug = () => {
   const { slug } = useParams();
 
-  const sdsmpsmaImagesDescktop = [
-    "/images/program/program-LPS-SD.webp",
-    "/images/program/program-LPS-SMP.webp",
-    "/images/program/program-LPS-SMA.webp",
-  ];
+  const safeSlug = slug || "";
 
-  const sdsmpsmaImagesMobile = [
-    "/images/program/program-LPS-SD-mobile.webp",
-    "/images/program/program-LPS-SMP-mobile.webp",
-    "/images/program/program-LPS-SMA-mobile.webp",
-  ];
+  const dynamicLocationName = formatSlugToTitle(safeSlug) || "Indonesia";
 
-  const sdsmpSmaDescription = [
-    `<span class='color-highlight'>Program Intensif Privat SD SMP SMA</span> adalah program belajar fokus Akademik Sekolah dan persiapan Ujian dengan sistem belajar <span class='color-highlight'>Privat Offline (guru datang ke rumah)</span> dan <span class='color-highlight'>Privat Online</span>. Program ini didukung dengan guru les berpengalaman dan berkompeten mengajar siswa SD SMP SMA.`,
-    `Program belajar ini difokuskan pada pendalaman konsep dan peningkatan keterampilan pengerjaan soal untuk <span class='color-highlight'>PR, Ulangan, Ujian Semester, Ujian Kenaikan Kelas, dan Ujian Sekolah</span>, serta persiapan <span class='color-highlight'>TKA (Tes Kemampuan Akademik)</span> dan Ujian Masuk Sekolah Unggulan. Progress belajar siswa akan dimonitoring dan dievaluasi oleh Tim Akademik LPS Education.`,
-    `Target utama Program <span class='color-highlight'>Intensif Privat SD SMP SMA</span> adalah mendampingi siswa mencapai prestasi Akademik yang memuaskan dan bisa diterima di sekolah impian. Kami memberikan rekomendasi yang dibutuhkan sesuai dengan progres belajar siswa.`,
-  ];
+  const canonicalUrl = `${BASE_URL}${SLUG_PATH}/${encodeURIComponent(
+    safeSlug,
+  )}`;
 
-  const formatSlugToTitle = (textSlug) => {
-    return textSlug
-      ? textSlug
-          .split("-")
-          .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-          .join(" ")
-      : "";
-  };
+  // ========================================
+  // DYNAMIC SEO METADATA
+  // ========================================
 
-  const dynamicLocationName = formatSlugToTitle(slug) || "Online";
-  const baseUrl = "https://apps.lesprivatmasukptn.com";
-  const canonicalUrl = `${baseUrl}/les-privat-sd-smp-sma-terbaik-di/${slug}`;
-  const ogImage =
-    "https://apps.lesprivatmasukptn.com/images/program/SD,SMP,SMA.webp";
+  const pageTitle = `Les Privat SD SMP SMA di ${dynamicLocationName} | LPS Education`;
 
-  const pageTitle = `📖 Les Privat SD, SMP, SMA di ${dynamicLocationName} | Semua Mapel - LPS Education`;
-  const descriptionContent = `Dapatkan les privat SD, SMP, dan SMA di ${dynamicLocationName} terbaik dari LPS Education ✔️ Guru Datang ke Rumah/Online ✔️ Untuk Semua Mata Pelajaran. Tingkatkan prestasi akademik siswa.`;
-  const ogTitle = `Les Privat SD, SMP, SMA di ${dynamicLocationName} | Semua Mata Pelajaran - LPS Education`;
-  const ogDescription = `Bimbingan belajar privat SD, SMP, SMA intensif di ${dynamicLocationName} dengan pengajar berpengalaman dari LPS Education. Tersedia online dan offline. Bantu tingkatkan prestasi akademik siswa.`;
-  const twitterTitle = `Les Privat SD, SMP, SMA di ${dynamicLocationName} | LPS Education`;
-  const twitterDescription = `Tingkatkan prestasi belajar SD, SMP, SMA dengan les privat dari LPS Education di ${dynamicLocationName}. Program fleksibel, guru profesional, online atau offline.`;
+  const descriptionContent = `Les privat SD, SMP, dan SMA di ${dynamicLocationName} bersama LPS Education. Tersedia guru privat online dan kunjungan ke rumah sesuai area layanan.`;
 
-  const ogImageAlt = `Les Privat SD SMP SMA ${dynamicLocationName} LPS Education`;
+  const ogTitle = pageTitle;
 
-  const articleTags = [
-    "les privat SD",
-    "les privat SMP",
-    "les privat SMA",
-    "bimbingan belajar online",
-    "guru privat datang ke rumah",
-    "les privat semua mata pelajaran",
-    "les privat Matematika",
-    "les privat IPA",
-    "les privat Bahasa Inggris",
-    "persiapan Ujian Nasional",
-    "persiapan PTS PAS",
-    "LPS Education",
-    dynamicLocationName.toLowerCase(),
-    "les privat Fisika",
-    "les privat Kimia",
-    "les privat Biologi",
-    "les privat Sejarah",
-    "les privat Geografi",
-    "les privat Sosiologi",
-    "les privat Ekonomi",
-    "les privat Akuntansi",
-  ];
+  const ogDescription = `Bimbingan belajar privat SD, SMP, dan SMA di ${dynamicLocationName}. Pendampingan akademik, latihan soal, dan persiapan ujian bersama LPS Education.`;
+
+  const structuredData = createStructuredData({
+    canonicalUrl,
+    locationName: dynamicLocationName,
+    pageTitle,
+    description: descriptionContent,
+  });
 
   return (
     <>
+      {/* ================================= */}
+      {/* SEO METADATA */}
+      {/* ================================= */}
+
       <Helmet>
-        {/* Basic SEO Meta Tags */}
         <title>{pageTitle}</title>
+
         <meta name="description" content={descriptionContent} />
-        <meta
-          name="keywords"
-          content={`les privat SD ${dynamicLocationName}, les privat SMP ${dynamicLocationName}, les privat SMA ${dynamicLocationName}, bimbingan belajar ${dynamicLocationName}, guru privat ${dynamicLocationName}, les privat semua mata pelajaran ${dynamicLocationName}, les privat Matematika ${dynamicLocationName}, les privat IPA ${dynamicLocationName}, les privat Bahasa Inggris ${dynamicLocationName}, persiapan Ujian Nasional ${dynamicLocationName}, persiapan PTS PAS ${dynamicLocationName}, LPS Education, les privat Fisika ${dynamicLocationName}, les privat Kimia ${dynamicLocationName}, les privat Biologi ${dynamicLocationName}, les privat Sejarah ${dynamicLocationName}, les privat Geografi ${dynamicLocationName}, les privat Sosiologi ${dynamicLocationName}, les privat Ekonomi ${dynamicLocationName}, les privat Akuntansi ${dynamicLocationName}`}
-        />
+
+        <meta name="robots" content="index,follow,max-image-preview:large" />
+
         <link rel="canonical" href={canonicalUrl} />
+
+        {/* OPEN GRAPH */}
+
+        <meta property="og:locale" content="id_ID" />
+
+        <meta property="og:type" content="website" />
+
+        <meta property="og:title" content={ogTitle} />
+
+        <meta property="og:description" content={ogDescription} />
+
+        <meta property="og:url" content={canonicalUrl} />
+
+        <meta property="og:site_name" content="LPS Education" />
+
+        <meta property="og:image" content={OG_IMAGE} />
+
         <meta
-          name="robots"
-          content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"
+          property="og:image:alt"
+          content={`Les Privat SD SMP SMA di ${dynamicLocationName} - LPS Education`}
         />
 
-        {/* Open Graph Meta Tags */}
-        <meta property="og:locale" content="id_ID" />
-        <meta property="og:type" content="article" />
-        <meta property="og:title" content={ogTitle} />
-        <meta property="og:description" content={ogDescription} />
-        <meta property="og:url" content={canonicalUrl} />
-        <meta property="og:site_name" content="LPS Education" />
-        <meta property="og:image" content={ogImage} />
-        <meta property="og:image:secure_url" content={ogImage} />
-        <meta property="og:image:width" content="800" />
-        <meta property="og:image:height" content="600" />
-        <meta property="og:image:alt" content={ogImageAlt} />
-        <meta property="og:image:type" content="image/webp" />
-        {articleTags.map((tag) => (
-          <meta key={tag} property="og:article:tag" content={tag} />
-        ))}
-        <meta property="article:section" content="Les Privat SD SMP SMA" />
+        {/* TWITTER CARD */}
 
-        {/* Twitter Card Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={twitterTitle} />
-        <meta name="twitter:description" content={twitterDescription} />
-        <meta name="twitter:image" content={ogImage} />
+
+        <meta name="twitter:title" content={pageTitle} />
+
+        <meta name="twitter:description" content={descriptionContent} />
+
+        <meta name="twitter:image" content={OG_IMAGE} />
+
+        {/* JSON-LD */}
 
         <script type="application/ld+json">
-          {`
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "BreadcrumbList",
-          "@id": "${canonicalUrl}#breadcrumb",
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "item": {
-                "@id": "${baseUrl}",
-                "name": "Home"
-              }
-            },
-            {
-              "@type": "ListItem",
-              "position": 2,
-              "item": {
-                "@id": "${baseUrl}/les-privat-sd-smp-sma-terbaik",
-                "name": "Les Privat SD, SMP, SMA"
-              }
-            },
-            {
-              "@type": "ListItem",
-              "position": 3,
-              "item": {
-                "@id": "${canonicalUrl}",
-                "name": "Les Privat SD, SMP, SMA di ${dynamicLocationName}"
-              }
-            }
-          ]
-        },
-
-        {
-          "@type": "EducationalOrganization",
-          "@id": "${canonicalUrl}#organization",
-          "name": "LPS Education",
-          "description": "LPS Education menyediakan Les Privat Intensif Akademik untuk SD, SMP, dan SMA terbaik di ${dynamicLocationName}. Fokus pada peningkatan nilai sekolah, persiapan ujian (PTS/PAS), dan Ujian Sekolah.",
-          "url": "${canonicalUrl}",
-          "areaServed": "${dynamicLocationName}", 
-          "sameAs": [
-            "${baseUrl}",
-            "https://www.instagram.com/lps.privatsbmptn/", 
-            "https://www.tiktok.com/@lesprivatsbmptn.com?_r=1&_t=ZS-918OcGnyuIS" 
-          ],
-          "brand": {
-            "@type": "Brand",
-            "name": "LPS Education",
-            "logo": "${baseUrl}/images/LOGO2.webp" 
-          },
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+62-858-8756-2039",
-            "contactType": "Customer Service",
-            "areaServed": "ID",
-            "availableLanguage": ["Indonesian"]
-          },
-          "keywords": "${articleTags.join(", ")}"
-        },
-
-        {
-          "@type": "WebPage",
-          "@id": "${canonicalUrl}#webpage",
-          "url": "${canonicalUrl}",
-          "name": "${pageTitle.replace(/<\/?[^>]+(>|$)/g, "")}", 
-          "inLanguage": "id-ID",
-          "description": "${descriptionContent}",
-          "isPartOf": { "@id": "${baseUrl}" },
-          "about": { "@id": "${canonicalUrl}#organization" },
-          "mainEntity": {
-            "@type": "Service",
-            "name": "Les Privat Akademik SD, SMP, SMA di ${dynamicLocationName}",
-            "provider": { "@id": "${canonicalUrl}#organization" },
-            "serviceType": "Bimbingan Belajar Akademik Sekolah",
-            "areaServed": "${dynamicLocationName}",
-            "offers": {
-              "@type": "Offer",
-              "priceCurrency": "IDR",
-              "availability": "https://schema.org/InStock",
-              "url": "${canonicalUrl}"
-            }
-          }
-        },
-
-        {
-          "@type": "FAQPage",
-          "@id": "${canonicalUrl}#faq",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "Apa fokus utama Program Les Privat SD, SMP, SMA LPS Education?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Fokus utama kami adalah pendalaman materi akademik sekolah, membantu pengerjaan PR, dan persiapan menyeluruh untuk Ulangan Harian, Ujian Tengah Semester (PTS), Ujian Akhir Semester (PAS), hingga Ujian Sekolah."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Mata pelajaran apa saja yang dicakup dalam program ini?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Kami mencakup semua mata pelajaran kurikulum Sekolah, termasuk Matematika, IPA (Fisika, Kimia, Biologi), Bahasa Inggris, Bahasa Indonesia, Ilmu Pengetahuan Sosial (IPS), dan mata pelajaran wajib lainnya sesuai jenjang SD, SMP, dan SMA."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Apakah program ini juga melayani persiapan ujian masuk sekolah unggulan?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Ya, selain fokus pada akademik sekolah, program kami juga dirancang untuk membantu siswa mempersiapkan diri menghadapi Tes Kemampuan Akademik (TKA) dan ujian masuk untuk sekolah-sekolah unggulan atau favorit."
-              }
-            }
-          ]
-        }
-      ]
-    }
-  `}
+          {JSON.stringify(structuredData)}
         </script>
       </Helmet>
 
+      {/* ================================= */}
+      {/* PAGE CONTENT */}
+      {/* ================================= */}
+
       <div className="container-all">
-        {/* Above the fold — langsung render */}
+        {/* ================================= */}
+        {/* ABOVE THE FOLD */}
+        {/* ================================= */}
         <HeadingLPSProgramDynamic
-          defaultProgramName="Les Privat SD SMP SMA"
-          imageUrlsDesktop={sdsmpsmaImagesDescktop}
+          defaultProgramName={PROGRAM_NAME}
+          imageUrlsDesktop={sdsmpsmaImagesDesktop}
           imageUrlsMobile={sdsmpsmaImagesMobile}
+          imageDimensions={{
+            desktop: {
+              width: 1280,
+              height: 720,
+            },
+            mobile: {
+              width: 750,
+              height: 750,
+            },
+          }}
           descriptionParagraphs={sdsmpSmaDescription}
-          programName="Les Privat SD SMP SMA"
+          programName={PROGRAM_NAME}
           city={dynamicLocationName}
         />
-        <FasilitasSDSMPSMA />
-        <ProgramIntensifLpsSDSMPSMA />
-        <PaketBelajarSDSMPSMA />
-        <Slider />
 
-        {/* Below the fold — lazy load */}
-        <Suspense fallback={null}>
+        {/* ================================= */}
+        {/* BELOW THE FOLD */}
+        {/* ================================= */}
+
+        <DeferredSection minHeight={450}>
+          <FasilitasSDSMPSMA />
+        </DeferredSection>
+
+        <DeferredSection minHeight={450}>
+          <ProgramIntensifLpsSDSMPSMA />
+        </DeferredSection>
+
+        <DeferredSection minHeight={450}>
+          <PaketBelajarSDSMPSMA />
+        </DeferredSection>
+
+        <DeferredSection minHeight={250}>
+          <Slider />
+        </DeferredSection>
+
+        <DeferredSection minHeight={350}>
           <VisiEndMisiLps />
+        </DeferredSection>
+
+        <DeferredSection minHeight={450}>
           <ProgramBelajarLps />
+        </DeferredSection>
+
+        <DeferredSection minHeight={450}>
           <FiturDanLayanan />
+        </DeferredSection>
+
+        <DeferredSection minHeight={450}>
           <KeunggulanEndAlasanMemilih />
+        </DeferredSection>
+
+        <DeferredSection minHeight={350}>
           <VideoKarantina />
+        </DeferredSection>
+
+        <DeferredSection minHeight={450}>
           <ProfileTutor city={dynamicLocationName} />
+        </DeferredSection>
+
+        <DeferredSection minHeight={350}>
           <UnivPengajarLps />
+        </DeferredSection>
+
+        <DeferredSection minHeight={450}>
           <AlumniLpsNew city={dynamicLocationName} />
+        </DeferredSection>
+
+        <DeferredSection minHeight={350}>
           <TestimoniWaSlider
             cityProp={dynamicLocationName}
             title={testimoniWaSliderDataSDSMPSMA.title}
             description={testimoniWaSliderDataSDSMPSMA.description}
           />
+        </DeferredSection>
+
+        <DeferredSection minHeight={350}>
           <TestimoniWaSiswa cityProp={dynamicLocationName} />
+        </DeferredSection>
+
+        <DeferredSection minHeight={450}>
           <AllAlumniLpsImage city={dynamicLocationName} />
+        </DeferredSection>
+
+        <DeferredSection minHeight={450}>
           <ListSiswaLPS />
+        </DeferredSection>
+
+        <DeferredSection minHeight={350}>
           <SliderTestimoniSiswa city={dynamicLocationName} />
-          {/* <FomoTicker
-            namaWilayah={dynamicLocationName}
-            namaProgram={"SD SMP SMA"}
-          /> */}
-        </Suspense>
+        </DeferredSection>
       </div>
     </>
   );

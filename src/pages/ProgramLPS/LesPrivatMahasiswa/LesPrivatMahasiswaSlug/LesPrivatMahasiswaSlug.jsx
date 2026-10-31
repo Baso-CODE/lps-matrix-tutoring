@@ -2,331 +2,427 @@ import { lazy, Suspense } from "react";
 import { Helmet } from "react-helmet-async";
 import { useParams } from "react-router-dom";
 
-// Above-the-fold: langsung load untuk kecepatan awal render
 import HeadingLPSProgramDynamic from "../../../../components/HeadingLPSProgramDynamic/HeadingLPSProgramDynamic";
-import Slider from "../../../../components/Slider/Slider";
-import LayananLPSMahasiswa from "../Components/LayananLPSMahasiswa/LayananLPSMahasiswa";
+import LazySection from "../../../../components/LazySection/LazySection";
 
-// Below-the-fold: lazy load
-const FasilitasMahasiswa = lazy(
-  () => import("../Components/FasilitasMahasiswa/FasilitasMahasiswa"),
-);
-const PaketLPSMahasiswa = lazy(
-  () => import("../Components/PaketLPSMahasiswa/PaketLPSMahasiswa"),
-);
-const AsalUniversitasMahasiswa = lazy(
-  () =>
-    import("../Components/AsalUniversitasMahasiswa/AsalUniversitasMahasiswa"),
-);
-const VisiEndMisiLps = lazy(
-  () => import("../../../HomePage/Components/VisiEndMisiLps/VisiEndMisiLps"),
-);
-const ProfileTutor = lazy(
-  () => import("../../../HomePage/Components/ProfileTutor/ProfileTutor"),
-);
-const UnivPengajarLps = lazy(
-  () => import("../../../../components/UnivPengajarLps/UnivPengajarLps"),
-);
-const AlumniLpsNew = lazy(
-  () => import("../../../../components/AlumniLpsNew/AlumniLpsNew"),
-);
-const GaleryBelajarSiswa = lazy(
-  () => import("../../../../components/GaleryBelajarSiswa/GaleryBelajarSiswa"),
-);
-const TestimoniWaSlider = lazy(
-  () => import("../../../../components/TestimoniWaSlider/TestimoniWaSlider"),
-);
-const TestimoniWaSiswa = lazy(
-  () =>
-    import("../../../HomePage/Components/TestimoniWaSiswa/TestimoniWaSiswa"),
-);
-const AllAlumniLpsImage = lazy(
-  () => import("../../../ListSiswaLPS/AllAlumniLps/AllAlumniLpsImage"),
-);
-const ListSiswaLPS = lazy(() => import("../../../ListSiswaLPS/ListSiswaLPS"));
-const SliderTestimoniSiswa = lazy(
-  () =>
-    import("../../../../components/SliderTestimoniSiswa/SliderTestimoniSiswa"),
-);
-
-// Data Helpers
 import {
   galleryBelajarMahasiswaData,
   testimoniWaSliderMahasiswaData,
 } from "../../../../helpers/DummyData/Mahasiswa/mahasiswa_dummyData";
 
+// ========================================
+// LAZY COMPONENTS
+// ========================================
+
+const LayananLPSMahasiswa = lazy(
+  () => import("../Components/LayananLPSMahasiswa/LayananLPSMahasiswa"),
+);
+
+const Slider = lazy(() => import("../../../../components/Slider/Slider"));
+
+const FasilitasMahasiswa = lazy(
+  () => import("../Components/FasilitasMahasiswa/FasilitasMahasiswa"),
+);
+
+const PaketLPSMahasiswa = lazy(
+  () => import("../Components/PaketLPSMahasiswa/PaketLPSMahasiswa"),
+);
+
+const AsalUniversitasMahasiswa = lazy(
+  () =>
+    import("../Components/AsalUniversitasMahasiswa/AsalUniversitasMahasiswa"),
+);
+
+const VisiEndMisiLps = lazy(
+  () => import("../../../HomePage/Components/VisiEndMisiLps/VisiEndMisiLps"),
+);
+
+const ProfileTutor = lazy(
+  () => import("../../../HomePage/Components/ProfileTutor/ProfileTutor"),
+);
+
+const UnivPengajarLps = lazy(
+  () => import("../../../../components/UnivPengajarLps/UnivPengajarLps"),
+);
+
+const AlumniLpsNew = lazy(
+  () => import("../../../../components/AlumniLpsNew/AlumniLpsNew"),
+);
+
+const GaleryBelajarSiswa = lazy(
+  () => import("../../../../components/GaleryBelajarSiswa/GaleryBelajarSiswa"),
+);
+
+const TestimoniWaSlider = lazy(
+  () => import("../../../../components/TestimoniWaSlider/TestimoniWaSlider"),
+);
+
+const TestimoniWaSiswa = lazy(
+  () =>
+    import("../../../HomePage/Components/TestimoniWaSiswa/TestimoniWaSiswa"),
+);
+
+const AllAlumniLpsImage = lazy(
+  () => import("../../../ListSiswaLPS/AllAlumniLps/AllAlumniLpsImage"),
+);
+
+const ListSiswaLPS = lazy(() => import("../../../ListSiswaLPS/ListSiswaLPS"));
+
+const SliderTestimoniSiswa = lazy(
+  () =>
+    import("../../../../components/SliderTestimoniSiswa/SliderTestimoniSiswa"),
+);
+
+// ========================================
+// DEFERRED SECTION
+// ========================================
+
+const DeferredSection = ({ children, minHeight = 350 }) => (
+  <LazySection minHeight={minHeight} rootMargin="300px 0px">
+    <Suspense fallback={null}>{children}</Suspense>
+  </LazySection>
+);
+
+// ========================================
+// WEBSITE CONFIG
+// ========================================
+
+const BASE_URL = "https://apps.lesprivatmasukptn.com";
+
+const MAIN_URL = `${BASE_URL}/les-privat-mahasiswa-terbaik`;
+
+const SLUG_PATH = "/les-privat-mahasiswa-terbaik-di";
+
+const OG_IMAGE = `${BASE_URL}/images/program/MAHASISWA.webp`;
+
+// ========================================
+// OPTIMIZED HERO IMAGES
+// ========================================
+
+const mahasiswaImagesDesktop = [
+  "/images/program/program-LPS-MAHASISWA-desktop-optimized.webp",
+];
+
+const mahasiswaImagesMobile = [
+  "/images/program/program-LPS-MAHASISWA-mobile-optimized.webp",
+];
+
+const IMAGE_DIMENSIONS = {
+  desktop: {
+    width: 1280,
+    height: 720,
+  },
+  mobile: {
+    width: 750,
+    height: 750,
+  },
+};
+
+// ========================================
+// HERO CONTENT
+// ========================================
+
+const DEFAULT_PROGRAM_NAME = "Program Les Privat Mahasiswa";
+
+const PROGRAM_NAME = "Program Les Privat Mahasiswa - Privat Offline dan Online";
+
+const mahasiswaDescription = [
+  `Program <span class="color-highlight">Les Privat Mahasiswa</span> menyediakan pendampingan belajar intensif untuk berbagai mata kuliah sesuai jurusan dan universitas melalui <span class="color-highlight">Privat Offline (guru datang ke rumah)</span> maupun <span class="color-highlight">Privat Online</span>.`,
+
+  `Tim pengajar LPS Education terdiri dari tutor berpengalaman di bidang akademik, termasuk alumni perguruan tinggi seperti UI, ITB, UGM, Unpad, IPB, dan perguruan tinggi lainnya.`,
+
+  `Mahasiswa dapat menyampaikan kebutuhan pembelajaran serta kriteria pengajar yang diinginkan, misalnya latar belakang jurusan yang sesuai atau pengalaman menjadi asisten dosen, agar pendampingan lebih relevan dengan mata kuliah yang dipelajari.`,
+];
+
+// ========================================
+// HELPERS
+// ========================================
+
+function formatSlugToTitle(value = "") {
+  return value
+    .split("-")
+    .filter(Boolean)
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+}
+
+// ========================================
+// STRUCTURED DATA JSON-LD
+// ========================================
+
+function createStructuredData({
+  canonicalUrl,
+  locationName,
+  pageTitle,
+  description,
+}) {
+  return {
+    "@context": "https://schema.org",
+
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+
+        "@id": `${canonicalUrl}#breadcrumb`,
+
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: `${BASE_URL}/`,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Les Privat Mahasiswa",
+            item: MAIN_URL,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: `Les Privat Mahasiswa di ${locationName}`,
+            item: canonicalUrl,
+          },
+        ],
+      },
+
+      {
+        "@type": "EducationalOrganization",
+
+        "@id": `${BASE_URL}/#organization`,
+
+        name: "LPS Education",
+
+        url: `${BASE_URL}/`,
+
+        logo: `${BASE_URL}/images/LOGO2.webp`,
+      },
+
+      {
+        "@type": "WebPage",
+
+        "@id": `${canonicalUrl}#webpage`,
+
+        url: canonicalUrl,
+
+        name: pageTitle,
+
+        description,
+
+        inLanguage: "id-ID",
+
+        breadcrumb: {
+          "@id": `${canonicalUrl}#breadcrumb`,
+        },
+
+        publisher: {
+          "@id": `${BASE_URL}/#organization`,
+        },
+
+        mainEntity: {
+          "@id": `${canonicalUrl}#service`,
+        },
+      },
+
+      {
+        "@type": "Service",
+
+        "@id": `${canonicalUrl}#service`,
+
+        name: `Les Privat Mahasiswa di ${locationName}`,
+
+        serviceType: "Bimbingan Belajar Akademik Mahasiswa",
+
+        description,
+
+        url: canonicalUrl,
+
+        provider: {
+          "@id": `${BASE_URL}/#organization`,
+        },
+
+        areaServed: {
+          "@type": "Place",
+          name: locationName,
+        },
+      },
+    ],
+  };
+}
+
+// ========================================
+// MAIN COMPONENT
+// ========================================
+
 const LesPrivatMahasiswaSlug = () => {
   const { slug } = useParams();
 
-  const mahasiswaImagesDescktop = [
-    "/images/program/program-LPS-MAHASISWA.webp",
-  ];
+  const safeSlug = slug || "";
 
-  const mahasiswaImagesMobile = [
-    "/images/program/program-LPS-MAHASISWA-mobile.webp",
-  ];
+  const dynamicLocationName = formatSlugToTitle(safeSlug) || "Indonesia";
 
-  const mahasiswaDefaultProgramName = "Program Les Privat Mahasiswa";
-  const mahasiswaProgramNameDisplay =
-    "Program Les Privat Mahasiswa - Privat Offline dan Online";
+  // ========================================
+  // DYNAMIC SEO
+  // ========================================
 
-  const mahasiswaDescription = [
-    `Program Les Privat Mahasiswa adalah suatu bentuk program belajar fokus Intensif belajar Mata Kuliah Jurusan dan Universitas dengan sistem belajar <span class='color-highlight'>Privat Offline (guru datang ke rumah)</span> dan <span class='color-highlight'>Privat Online</span>.`,
-    `Tim Pengajar Les Privat Mahasiswa adalah alumni - alumni terbaik dari UI, ITB, UGM, Unpad, IPB, STAN, STIS, dan perguruan tinggi lainnya yang berpengalaman dan berkompeten di bidangnya, serta telah melalui serangkaian proses seleksi ketat.`,
-    `Pendaftar Program Les Privat Mahasiswa juga bisa menuliskan kriteria pengajar yang diinginkan, misalnya harus dari Universitas dan Jurusan yang sama, atau pernah menjadi Asisten Dosen, dan sebagainya.`,
-  ];
+  const canonicalUrl = `${BASE_URL}${SLUG_PATH}/${encodeURIComponent(safeSlug)}`;
 
-  const formatSlugToTitle = (textSlug) => {
-    return textSlug
-      ? textSlug
-          .split("-")
-          .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-          .join(" ")
-      : "";
-  };
+  const pageTitle = `Les Privat Mahasiswa di ${dynamicLocationName} | LPS Education`;
 
-  const dynamicLocationName = formatSlugToTitle(slug) || "Online";
+  const descriptionContent = `Les privat mahasiswa di ${dynamicLocationName} bersama LPS Education. Bimbingan berbagai mata kuliah secara online dan privat ke rumah sesuai area layanan.`;
 
-  const baseUrl = "https://apps.lesprivatmasukptn.com";
-  const canonicalUrl = `${baseUrl}/les-privat-mahasiswa-terbaik-di/${slug}`;
-  const ogImage =
-    "https://apps.lesprivatmasukptn.com/images/program/MAHASISWA.webp";
+  const ogDescription = `Bimbingan akademik mahasiswa di ${dynamicLocationName}. Pendalaman materi kuliah, latihan soal, dan persiapan ujian bersama tutor LPS Education.`;
 
-  const pageTitle = `🎓 Les Privat Mahasiswa di ${dynamicLocationName} | Kedokteran, Akuntansi, Teknik - LPS Education`;
-  const descriptionContent = `Bimbingan Les Privat Mahasiswa di ${dynamicLocationName} Terbaik dari LPS Education ✔️ Guru Datang ke Rumah/Online ✔️ Untuk Kedokteran, Akuntansi, Teknik & Jurusan Lain. Tingkatkan IPK, sukses skripsi/tes.`;
-  const ogTitle = `Les Privat Mahasiswa di ${dynamicLocationName} | Kedokteran, Akuntansi, Teknik - LPS Education`;
-  const ogDescription = `Dapatkan bimbingan privat komprehensif untuk mahasiswa di ${dynamicLocationName} dari berbagai jurusan. Tingkatkan pemahaman materi, raih IPK tinggi, dan sukseskan studi Anda bersama pengajar profesional LPS Education.`;
-  const twitterTitle = `Les Privat Mahasiswa di ${dynamicLocationName} | LPS Education`;
-  const twitterDescription = `Bimbingan privat untuk mahasiswa Kedokteran, Akuntansi, Ekonomi, Manajemen, dan jurusan lainnya di ${dynamicLocationName}. Tersedia online dan guru datang ke rumah dari LPS Education. Dukungan akademik untuk kesuksesan Anda.`;
-
-  const ogImageAlt = `Les Privat Mahasiswa ${dynamicLocationName} LPS Education`;
-
-  const articleTags = [
-    "les privat mahasiswa",
-    "bimbingan mahasiswa",
-    "les online mahasiswa",
-    "guru privat mahasiswa",
-    "les Kedokteran",
-    "les Akuntansi",
-    "les Ekonomi",
-    "les Manajemen",
-    "les Teknik",
-    "les Hukum",
-    "persiapan skripsi",
-    "persiapan ujian universitas",
-    "IPK tinggi",
-    "bimbingan akademik",
-    "LPS Education",
-    dynamicLocationName.toLowerCase(),
-    "les kalkulus",
-    "les statistika",
-    "les fisika dasar",
-    "les kimia dasar",
-    "les algoritma",
-    "les pemrograman",
-    "les metode penelitian",
-  ];
+  const structuredData = createStructuredData({
+    canonicalUrl,
+    locationName: dynamicLocationName,
+    pageTitle,
+    description: descriptionContent,
+  });
 
   return (
     <>
+      {/* ================================= */}
+      {/* SEO METADATA */}
+      {/* ================================= */}
+
       <Helmet>
-        {/* Basic SEO Meta Tags */}
         <title>{pageTitle}</title>
+
         <meta name="description" content={descriptionContent} />
-        <meta
-          name="keywords"
-          content={`les privat mahasiswa ${dynamicLocationName}, bimbingan mahasiswa ${dynamicLocationName}, les online mahasiswa ${dynamicLocationName}, guru privat mahasiswa ${dynamicLocationName}, les Kedokteran ${dynamicLocationName}, les Akuntansi ${dynamicLocationName}, les Ekonomi ${dynamicLocationName}, les Manajemen ${dynamicLocationName}, les Teknik ${dynamicLocationName}, les Hukum ${dynamicLocationName}, persiapan skripsi, persiapan ujian universitas, IPK tinggi, bimbingan akademik, LPS Education, les kalkulus ${dynamicLocationName}, les statistika ${dynamicLocationName}, les fisika dasar ${dynamicLocationName}, les kimia dasar ${dynamicLocationName}, les algoritma ${dynamicLocationName}, les pemrograman ${dynamicLocationName}, les metode penelitian ${dynamicLocationName}`}
-        />
+
+        <meta name="robots" content="index,follow,max-image-preview:large" />
+
         <link rel="canonical" href={canonicalUrl} />
+
+        {/* OPEN GRAPH */}
+
+        <meta property="og:locale" content="id_ID" />
+
+        <meta property="og:type" content="website" />
+
+        <meta property="og:title" content={pageTitle} />
+
+        <meta property="og:description" content={ogDescription} />
+
+        <meta property="og:url" content={canonicalUrl} />
+
+        <meta property="og:site_name" content="LPS Education" />
+
+        <meta property="og:image" content={OG_IMAGE} />
+
         <meta
-          name="robots"
-          content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"
+          property="og:image:alt"
+          content={`Les Privat Mahasiswa di ${dynamicLocationName} - LPS Education`}
         />
 
-        {/* Open Graph Meta Tags */}
-        <meta property="og:locale" content="id_ID" />
-        <meta property="og:type" content="article" />
-        <meta property="og:title" content={ogTitle} />
-        <meta property="og:description" content={ogDescription} />
-        <meta property="og:url" content={canonicalUrl} />
-        <meta property="og:site_name" content="LPS Education" />
-        <meta property="og:image" content={ogImage} />
-        <meta property="og:image:secure_url" content={ogImage} />
-        <meta property="og:image:width" content="800" />
-        <meta property="og:image:height" content="600" />
-        <meta property="og:image:alt" content={ogImageAlt} />
-        <meta property="og:image:type" content="image/webp" />
-        {articleTags.map((tag) => (
-          <meta key={tag} property="og:article:tag" content={tag} />
-        ))}
-        <meta property="article:section" content="Les Privat Mahasiswa" />
+        {/* TWITTER CARD */}
 
-        {/* Twitter Card Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={twitterTitle} />
-        <meta name="twitter:description" content={twitterDescription} />
-        <meta name="twitter:image" content={ogImage} />
+
+        <meta name="twitter:title" content={pageTitle} />
+
+        <meta name="twitter:description" content={descriptionContent} />
+
+        <meta name="twitter:image" content={OG_IMAGE} />
+
+        {/* STRUCTURED DATA */}
 
         <script type="application/ld+json">
-          {`
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "BreadcrumbList",
-          "@id": "${canonicalUrl}#breadcrumb",
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "item": {
-                "@id": "${baseUrl}",
-                "name": "Home"
-              }
-            },
-            {
-              "@type": "ListItem",
-              "position": 2,
-              "item": {
-                "@id": "${baseUrl}/les-privat-mahasiswa-terbaik", 
-                "name": "Les Privat Mahasiswa" 
-              }
-            },
-            {
-              "@type": "ListItem",
-              "position": 3,
-              "item": {
-                "@id": "${canonicalUrl}",
-                "name": "Les Privat Mahasiswa di ${dynamicLocationName}" 
-              }
-            }
-          ]
-        },
-        {
-          "@type": "EducationalOrganization",
-          "@id": "${canonicalUrl}#organization",
-          "name": "LPS Education",
-          "description": "LPS Education menyediakan Les Privat Mahasiswa terbaik di ${dynamicLocationName}. Bimbingan mata kuliah jurusan (Kedokteran, Teknik, dll.) untuk meningkatkan IPK.",
-          "url": "${canonicalUrl}",
-          "areaServed": "${dynamicLocationName}", 
-          "sameAs": [
-            "${baseUrl}",
-            "https://www.instagram.com/lps.privatsbmptn/", 
-            "https://www.tiktok.com/@lesprivatsbmptn.com?_r=1&_t=ZS-918OcGnyuIS" 
-          ],
-          "brand": {
-            "@type": "Brand",
-            "name": "LPS Education",
-            "logo": "${baseUrl}/images/LOGO2.webp" 
-          },
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+62-858-8756-2039",
-            "contactType": "Customer Service",
-            "areaServed": "ID",
-            "availableLanguage": ["Indonesian"]
-          },
-          "keywords": "${articleTags.join(", ")}"
-        },
-        {
-          "@type": "WebPage",
-          "@id": "${canonicalUrl}#webpage",
-          "url": "${canonicalUrl}",
-          "name": "${pageTitle.replace(/<\/?[^>]+(>|$)/g, "")}",
-          "inLanguage": "id-ID",
-          "description": "${descriptionContent}",
-          "isPartOf": { "@id": "${baseUrl}" },
-          "about": { "@id": "${canonicalUrl}#organization" },
-          "mainEntity": {
-            "@type": "Service",
-            "name": "Les Privat Mahasiswa (Mata Kuliah Jurusan) di ${dynamicLocationName}",
-            "provider": { "@id": "${canonicalUrl}#organization" },
-            "serviceType": "Bimbingan Belajar Akademik Universitas",
-            "areaServed": "${dynamicLocationName}",
-            "offers": {
-              "@type": "Offer",
-              "priceCurrency": "IDR",
-              "availability": "https://schema.org/InStock",
-              "url": "${canonicalUrl}"
-            }
-          }
-        },
-        {
-          "@type": "FAQPage",
-          "@id": "${canonicalUrl}#faq",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "Mata kuliah apa saja yang bisa dileskan untuk mahasiswa di ${dynamicLocationName}?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "LPS Education melayani les privat untuk berbagai mata kuliah, termasuk Kalkulus, Statistika, Fisika Dasar, Kimia Dasar, Akuntansi, Teknik, Kedokteran, dan mata kuliah spesifik jurusan lainnya."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Apakah tutor Les Privat Mahasiswa LPS Education berasal dari PTN terkemuka?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Ya, tim pengajar kami adalah alumni dan mahasiswa berprestasi dari PTN ternama seperti UI, ITB, UGM, Unpad, IPB, dan lain-lain, yang berkompeten di bidang mata kuliah masing-masing."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Berapa lama durasi belajar privat untuk mahasiswa?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Durasi belajar sangat fleksibel. Biasanya per sesi adalah 90 atau 120 menit, dan jumlah sesi per minggu disesuaikan dengan kebutuhan mahasiswa, jadwal ujian, serta tingkat kesulitan mata kuliah."
-              }
-            }
-          ]
-        }
-      ]
-    }
-  `}
+          {JSON.stringify(structuredData)}
         </script>
       </Helmet>
 
+      {/* ================================= */}
+      {/* PAGE CONTENT */}
+      {/* ================================= */}
+
       <div className="container-all">
-        {/* Above the fold — langsung render */}
+        {/* ================================= */}
+        {/* ABOVE THE FOLD */}
+        {/* ================================= */}
+
         <HeadingLPSProgramDynamic
           city={dynamicLocationName}
-          defaultProgramName={mahasiswaDefaultProgramName}
-          imageUrlsDesktop={mahasiswaImagesDescktop}
+          defaultProgramName={DEFAULT_PROGRAM_NAME}
+          imageUrlsDesktop={mahasiswaImagesDesktop}
           imageUrlsMobile={mahasiswaImagesMobile}
+          imageDimensions={IMAGE_DIMENSIONS}
           descriptionParagraphs={mahasiswaDescription}
-          programName={mahasiswaProgramNameDisplay}
+          programName={PROGRAM_NAME}
         />
-        <LayananLPSMahasiswa />
-        <Slider />
 
-        {/* Below the fold — lazy load */}
-        <Suspense fallback={null}>
+        {/* ================================= */}
+        {/* BELOW THE FOLD */}
+        {/* ================================= */}
+
+        <DeferredSection minHeight={450}>
+          <LayananLPSMahasiswa />
+        </DeferredSection>
+
+        <DeferredSection minHeight={250}>
+          <Slider />
+        </DeferredSection>
+
+        <DeferredSection minHeight={450}>
           <FasilitasMahasiswa />
+        </DeferredSection>
+
+        <DeferredSection minHeight={450}>
           <PaketLPSMahasiswa />
+        </DeferredSection>
+
+        <DeferredSection minHeight={400}>
           <AsalUniversitasMahasiswa />
+        </DeferredSection>
+
+        <DeferredSection minHeight={350}>
           <VisiEndMisiLps />
+        </DeferredSection>
+
+        <DeferredSection minHeight={450}>
           <ProfileTutor city={dynamicLocationName} />
+        </DeferredSection>
+
+        <DeferredSection minHeight={350}>
           <UnivPengajarLps />
+        </DeferredSection>
+
+        <DeferredSection minHeight={450}>
           <AlumniLpsNew city={dynamicLocationName} />
+        </DeferredSection>
+
+        <DeferredSection minHeight={400}>
           <GaleryBelajarSiswa
             title={galleryBelajarMahasiswaData.title}
             description={galleryBelajarMahasiswaData.description}
           />
+        </DeferredSection>
+
+        <DeferredSection minHeight={350}>
           <TestimoniWaSlider
             cityProp={dynamicLocationName}
             title={testimoniWaSliderMahasiswaData.title}
             description={testimoniWaSliderMahasiswaData.description}
           />
+        </DeferredSection>
+
+        <DeferredSection minHeight={350}>
           <TestimoniWaSiswa cityProp={dynamicLocationName} />
+        </DeferredSection>
+
+        <DeferredSection minHeight={450}>
           <AllAlumniLpsImage city={dynamicLocationName} />
+        </DeferredSection>
+
+        <DeferredSection minHeight={450}>
           <ListSiswaLPS />
+        </DeferredSection>
+
+        <DeferredSection minHeight={350}>
           <SliderTestimoniSiswa city={dynamicLocationName} />
-          {/* <FomoTicker
-            namaWilayah={dynamicLocationName}
-            namaProgram={"Mahasiswa"}
-          /> */}
-        </Suspense>
+        </DeferredSection>
       </div>
     </>
   );
